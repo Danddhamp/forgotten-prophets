@@ -1,0 +1,115 @@
+a{
+    color:rgb(91, 176, 187);
+}
+/*a:visited{
+    color:rgb(223, 93, 255);
+}*/
+a:hover{
+    color:rgb(19, 19, 19);
+}
+.apostle{
+    background-color:darkslategrey;
+    color:goldenrod;
+}
+.hc{
+    background-color:lightblue;
+    color:black;
+}
+.jod{
+    background-color:tan;
+    color:black;
+}
+.chc{
+    background-color:lightgreen;
+    color:black;
+    a{
+        color:midnightblue;
+    }
+}
+.byu-speeches{
+                background-color:darkblue;
+                color:white;
+                background-size: cover;
+                background-position: center;
+}
+.talk-link {
+                display: flex;
+                align-items: center;   /* vertically centers image + text */
+                gap: 10px;             /* space between image and text */
+                text-decoration: none;  /* removes underline */
+                color: rgb(0, 0, 0);           /* or any color you want */
+            }
+
+            .talk-link img {
+                height: 200px;
+}
+            .talk-link:hover {
+            color: #a39f9f;
+            text-decoration: underline;
+}
+body{
+    background-color:#002E5D;
+    color:whitesmoke;
+    font-family:'Bookman Old Style', 'Times New Roman', serif;
+    text-align:center;
+}
+.container-flex {
+    align-items: center; /* Centers content vertically */
+    display: flex; /* Makes the container a flex container */
+    justify-content: center; /* Centers content horizontally */
+}
+.first-presidency{
+    background-color:cornflowerblue;
+}
+.funfact{
+    background-color:darkblue;
+    font-size: larger;
+}
+h1{
+    font-size:70px;
+}
+h2{
+    font-size:40px;
+}
+html{
+    scroll-behavior: smooth;
+}
+img{
+    width:200px;
+    height: auto;
+}
+img.shadow-filter:hover{
+    /*filter: drop-shadow(8px 8px 10px rgb(159, 213, 247));*/
+    box-shadow: 10px 5px 5px rgba(204, 207, 212, 0.607);
+}
+.otherprophet{
+    background-color:mediumpurple;
+}
+.president{
+    background-color:midnightblue;
+    color:slategray;
+}
+.quote{
+    color:lightskyblue;
+    font-style:italic;
+}
+.sermon a:hover{
+    color:rgb(109, 109, 109);
+}
+.sermon hr{
+    color:honeydew;
+}
+.sermon p{
+    line-height: 2;
+}
+table{
+    border:2px;
+    border-collapse:collapse; /*Border collapse gets rid of the gaps in the table */
+    margin:auto;
+}
+th, td{
+    border:5px solid black;
+}
+.epistle-background{
+    background-color: #00A2E8;
+}
