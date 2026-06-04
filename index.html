@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>The Forgotten Prophets</title>
+        <link rel="stylesheet" type="text/css" href="scripts/style.css"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/png" href="favicon/favicon.png">
+    </head>
+    <body>
+        <h1>The Forgotten Prophets</h1>
+        <p>DISCLAIMER:
+            <br>
+            All images are within the Public Domain*. The Biographies fall within America's fair-use laws**. Answers to Questions are MY OWN opinions, and should not be regarded as official Church teachings.
+        </p>
+        <div class="wrapper">
+        <!--iframe width="1536" height="562" src="https://www.youtube.com/embed/LZ7rmiLaAxY" title="The Forgotten Prophets of the Latter Days. Intro/Theme" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe-->
+        <!--a href="/scripts/modern-bible.html">Modern Bible</a-->
+        <a href="scripts/!common-questions.html"><img title="common questions" class="shadow-filter size-filter" src="media/images/buttons/common-questions.png"></a>
+        <a href="scripts/topics.html"><img title ="topics" class="shadow-filter size-filter" src="media/images/buttons/topics.png"></a>
+        <a href="scripts/sermons.html"><img title="sermons" class="shadow-filter size-filter" src="media/images/buttons/sermons.png"></a>
+        <a href="scripts/onthisday.html"><img class="shadow-filter size-filter" src="media/images/buttons/on-this-day.png"></a>
+        <a href="scripts/biographies.htm"><img class="shadow-filter size-filter" src="media/images/buttons/biographies.png"></a>
+        <a href="scripts/writings.htm"><img class="shadow-filter size-filter" src="media/images/buttons/writings.png"></a>
+        
+        
+        
+        
+        
+        <a id="daily-sermon-link" href="https://www.churchofjesuschrist.org/study/general-conference">
+    <img id="daily-sermon-img" class="shadow-filter size-filter" src="media/images/buttons/daily-sermon.png" alt="Daily Sermon">
+</a>
+<!--Daily Sermon-->
+<script>
+    (function() {
+        const sermonList = [
+        //Adam S. Bennion
+        "https://catalog.churchofjesuschrist.org/assets/cda0a4fc-a051-4fba-9a4a-1c60aeaec7d5/0/0/",
+        //Albert E. Bowen
+        "https://catalog.churchofjesuschrist.org/assets/5cb5ef96-7eec-4e0c-8cf2-4fae088c621e/0/0?lang=eng",
+        "https://catalog.churchofjesuschrist.org/assets/24e364ea-afc9-4a78-9419-fe834e9d0185/0/0?lang=eng",
+        //Alvin R. Dyer
+        "https://catalog.churchofjesuschrist.org/assets/15ffe853-4b17-4e5a-9477-63377b3e5517/0/0/",
+        //Bruce R. McConkie
+        "https://catalog.churchofjesuschrist.org/assets/aa0ea520-64a2-47cb-ab9f-424e15be1bb1/0/0/",
+        //Boyd K. Packer
+        "https://catalog.churchofjesuschrist.org/assets/fc236e47-4bd6-42ad-8516-561c9f529708/0/0/",
+        //David O' McKay
+        "https://catalog.churchofjesuschrist.org/assets/e43b0963-b35d-4eb6-b51e-320874748922/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/5d0f4b75-03a5-4800-a45a-2d25051c7bb0/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/8c2acaa3-06dc-4d51-b714-d7a40e05c52e/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/37828144-3827-4c89-90bb-de8fc788a393/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/44a06f94-3dc1-4a23-9a85-cbfb55ff842d/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/cfd15624-88ab-4881-9485-8c171e443a48/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/ab75b5f6-3424-49d9-adc5-3f7682b782b7/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/6858612d-b88b-4d38-84a5-ea32de5d5eab/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/0b077c2b-f002-4a34-b5b1-fa581f0a50d8/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/4852313f-5818-4de4-96fb-bc6c6c882fa8/0/0/",
+        //Delbert L. Stapley
+        "https://catalog.churchofjesuschrist.org/assets/12d446c9-2dda-4205-91e0-642bf22b95e7/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/188936a0-10df-46c6-934f-0b8bf017a17d/0/0/",
+        //Ezra Taft Benson
+        "https://catalog.churchofjesuschrist.org/assets/61d34a60-8e3d-4614-a312-574126dce02d/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/89261c48-f327-4352-af72-9bf52455304c/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/de4c5959-c259-4ffd-a782-fd8e9ad54f98/0/0/",
+        //George Albert Smith
+        "https://catalog.churchofjesuschrist.org/assets/972768f2-f944-4363-bf3c-d27586faf70c/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/ded56c70-e169-427d-ad18-ddfdd6271712/0/0/",
+        //George Q. Morris
+        "https://catalog.churchofjesuschrist.org/assets/69efda93-8348-4482-9da4-dcdd0d6482ae/0/0/",
+        //Henry D. Moyle
+        "https://catalog.churchofjesuschrist.org/assets/8e5a8727-0b35-4e18-93a1-a20a1f759fdf/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/f19d6e10-7aef-4948-87a0-505e73f0a1fd/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/cacd0f94-9cff-4a72-8010-b10527dab2ab/0/0/",
+        //Harold B. Lee
+        "https://catalog.churchofjesuschrist.org/assets/ffa8e247-03ee-4d01-82ad-84e6e92f4ec7/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/b6c13780-ae9d-4a07-a22a-eb1ebc07c6ca/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/5b13d2e0-1ca1-4767-8c24-cdc321d9716f/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/be033abe-4f32-4ce4-946b-1bb2c617368c/0/0/",
+        //Hugh B. Brown
+        "https://catalog.churchofjesuschrist.org/assets/69c0b01e-7895-44af-b785-a7a0b381ec7f/0/0/",
+        //J. Reuben Clark Jr.
+        "https://catalog.churchofjesuschrist.org/assets/e967e3fc-3750-4007-a450-a94e7d7c7fe4/0/0?lang=eng",
+        "https://catalog.churchofjesuschrist.org/assets/ef007115-aab4-4571-86e0-5c0b773bd5af/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/1bf8eef7-1780-48c9-8ce3-5d38ec16430d/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/2aa2b7b9-e41b-4c17-8362-7b2ca1b9e2b4/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/dec182c6-39e6-4f17-9248-5218738cd040/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/d3a7fd00-2c51-423f-90f3-fb7ea3dd4b42/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/62a390de-2379-4e3d-86da-50a363399f46/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/7dfb6000-7c46-43f8-96dc-b4cdd73a3c3d/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/f31d9966-d1c4-4410-8143-66b0476ce7ac/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/ba6fca45-f605-42a7-b5c0-0049054dbd8a/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/9614cc81-a934-4ed6-9ea5-595a61e3f922/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/c708e33c-674a-4c6f-873d-c3a696e8253f/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/6286cf4d-43e3-4243-94f5-eeb8108b85d0/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/55e51751-713c-400e-9daf-be06604138dd/0/0/",
+        //Joseph F. Merrill
+        "https://catalog.churchofjesuschrist.org/assets/8ed4354a-c05d-48ac-a5bd-29a2d27166fe/0/0/",
+        //Joseph Fielding Smith
+        "https://catalog.churchofjesuschrist.org/assets/2307a85b-4b54-4bfb-9552-d55e3df4735a/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/d6940519-279e-47ee-ae6d-ccae93737dfa/0/0/",
+        "https://www.churchofjesuschrist.org/study/general-conference/1971/10/i-know-that-my-redeemer-liveth?lang=eng",
+        //Joseph L. Wirthlin
+        "https://catalog.churchofjesuschrist.org/assets/87d452da-f2e7-4407-a4ec-a5328dd13ed2/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/93c1a0a9-b6b8-4bc6-943a-d1251bcf25db/0/0/",
+        //John Andreas Widtsoe
+        "https://catalog.churchofjesuschrist.org/assets/8069a871-bf56-42cb-bd93-5dac8c191bd6/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/bb505272-0471-4d6f-93ce-1f0701e275e7/0/0/",
+        //LeGrand Richards
+        "https://catalog.churchofjesuschrist.org/assets/9e06a103-6a6a-40d8-8c39-cadcce9656dc/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/d10ebd01-512d-4067-90ab-b047b9288851/0/0/",
+        "https://www.churchofjesuschrist.org/study/general-conference/1981/04/call-of-the-prophets?lang=eng",
+        //Marion G. Romney
+        "https://catalog.churchofjesuschrist.org/assets/b1d4139e-0053-4ff8-9ff8-6f1c74e67e49/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/1ad10350-91f7-4c3e-b7b8-70891b58e6cd/0/0/",
+        "https://www.churchofjesuschrist.org/study/general-conference/1974/10/how-men-are-saved?lang=eng",
+        //Mark E. Petersen
+        "https://catalog.churchofjesuschrist.org/assets/1ec48723-eb6b-448e-bf31-c817bc347a2d/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/4c3160ea-7ec5-44f6-8e77-60b6b7d2560e/0/0/",
+        //Marvin J. Ashton
+        "https://speeches.byu.edu/talks/marvin-j-ashton/murmur-not/",
+        "https://www.churchofjesuschrist.org/study/general-conference/1971/04/love-of-the-right?lang=eng",
+        "https://www.churchofjesuschrist.org/study/general-conference/1971/10/you-can-get-there-from-here?lang=eng",
+        "https://www.churchofjesuschrist.org/study/general-conference/1972/04/what-is-your-destination?lang=eng",
+        "https://www.churchofjesuschrist.org/study/general-conference/1972/10/what-is-a-friend?lang=eng",
+        "https://speeches.byu.edu/talks/marvin-j-ashton/patience-great-power/",
+        "https://www.churchofjesuschrist.org/study/general-conference/1973/04/in-his-strength?lang=eng",
+        "https://www.churchofjesuschrist.org/study/general-conference/1973/10/he-took-him-by-the-hand?lang=eng",
+        "https://www.churchofjesuschrist.org/study/general-conference/1974/04/a-time-of-urgency?lang=eng",
+        "https://www.churchofjesuschrist.org/study/general-conference/1974/10/whos-losing?lang=eng",
+        "https://speeches.byu.edu/talks/marvin-j-ashton/shall/",
+        "https://www.churchofjesuschrist.org/study/general-conference/1975/04/the-time-is-now?lang=eng",
+        "https://www.churchofjesuschrist.org/study/general-conference/1975/10/love-takes-time?lang=eng",
+        "https://www.churchofjesuschrist.org/study/general-conference/1976/04/family-communications?lang=eng",
+        "https://speeches.byu.edu/talks/marvin-j-ashton/appreciation-sign-maturity/",
+        "https://www.churchofjesuschrist.org/study/general-conference/1976/10/proper-self-management?lang=eng",
+        "https://speeches.byu.edu/talks/marvin-j-ashton/family-home-storage/",
+        "https://www.churchofjesuschrist.org/study/general-conference/1977/04/the-power-of-plainness?lang=eng",
+        "https://www.churchofjesuschrist.org/study/general-conference/1977/10/rated-a?lang=eng",
+        "https://speeches.byu.edu/talks/marvin-j-ashton/n-eldon-tanner-example-follow/",
+        "https://www.churchofjesuschrist.org/study/general-conference/1978/04/no-time-for-contention?lang=eng",
+        "https://www.churchofjesuschrist.org/study/general-conference/1978/10/who-will-forfeit-the-harvest?lang=eng",
+        "https://www.churchofjesuschrist.org/study/general-conference/1979/04/roadblocks-to-progress?lang=eng",
+        "https://www.churchofjesuschrist.org/study/general-conference/1979/10/progress-through-change",
+        "https://www.churchofjesuschrist.org/study/general-conference/1980/04/the-prophet-and-the-prison",
+        "https://www.churchofjesuschrist.org/study/general-conference/1980/10/adversity-and-you",
+        "https://www.churchofjesuschrist.org/study/general-conference/1981/04/we-serve-that-which-we-love",
+        "https://www.churchofjesuschrist.org/study/general-conference/1981/10/give-with-wisdom-that-they-may-receive-with-dignity",
+        "https://speeches.byu.edu/talks/marvin-j-ashton/fun-poor/",
+        "https://www.churchofjesuschrist.org/study/general-conference/1982/04/this-is-no-harm",
+        "https://www.churchofjesuschrist.org/study/general-conference/1982/10/pure-religion",
+        "https://www.churchofjesuschrist.org/study/general-conference/1983/04/straightway",
+        "https://www.churchofjesuschrist.org/study/general-conference/1983/10/the-word-is-commitment",
+        "https://www.churchofjesuschrist.org/study/general-conference/1984/04/choose-the-good-part",
+        "https://www.churchofjesuschrist.org/study/general-conference/1984/10/if-thou-endure-it-well",
+        "https://speeches.byu.edu/talks/marvin-j-ashton/personal-ranking/",
+        "https://www.churchofjesuschrist.org/study/general-conference/1985/04/spencer-w-kimball-a-true-disciple-of-christ",
+        "https://www.churchofjesuschrist.org/study/general-conference/1985/10/peace-a-triumph-of-principles",
+        "https://www.churchofjesuschrist.org/study/general-conference/1986/04/be-of-good-cheer",
+        "https://www.churchofjesuschrist.org/study/general-conference/1986/10/shake-off-the-chains-with-which-ye-are-bound",
+        "https://www.churchofjesuschrist.org/study/general-conference/1987/04/i-am-an-adult-now",
+        "https://speeches.byu.edu/talks/marvin-j-ashton/carry-cross/",
+        "https://www.churchofjesuschrist.org/study/general-conference/1987/10/there-are-many-gifts?lang=eng",
+        "https://www.churchofjesuschrist.org/study/general-conference/1988/04/while-they-are-waiting",
+        "https://speeches.byu.edu/talks/marvin-j-ashton/lessons-master/",
+        "https://www.churchofjesuschrist.org/study/general-conference/1988/10/the-measure-of-our-hearts",
+        "https://speeches.byu.edu/talks/marvin-j-ashton/loveth-right/",
+        "https://www.churchofjesuschrist.org/study/general-conference/1989/04/on-being-worthy",
+        "https://speeches.byu.edu/talks/marvin-j-ashton/1989-spring-commencement-address/",
+        "https://www.churchofjesuschrist.org/study/general-conference/1989/10/stalwart-and-brave-we-stand",
+        "https://speeches.byu.edu/talks/marvin-j-ashton/still-voice-perfect-mildness/",
+        "https://www.churchofjesuschrist.org/study/general-conference/1990/04/neither-boast-of-faith-nor-of-mighty-works",
+        "https://www.churchofjesuschrist.org/study/general-conference/1990/10/a-pattern-in-all-things",
+        "https://www.churchofjesuschrist.org/study/general-conference/1991/04/a-voice-of-gladness",
+        "https://speeches.byu.edu/talks/marvin-j-ashton/everything-give-thanks/",
+        "https://www.churchofjesuschrist.org/study/general-conference/1991/10/strengthen-the-feeble-knees",
+        "https://www.churchofjesuschrist.org/study/general-conference/1992/04/the-tongue-can-be-a-sharp-sword",
+        "https://speeches.byu.edu/talks/marvin-j-ashton/teaching-mentoring-things-spirit/",
+        "https://www.churchofjesuschrist.org/study/general-conference/1992/10/a-yearning-for-home",
+        "https://speeches.byu.edu/talks/marvin-j-ashton/know-2/",
+        //Matthew Cowley
+        "https://catalog.churchofjesuschrist.org/assets/6fab722f-8670-4253-a354-4f33fc4b9fb2/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/7e40e39f-fb93-4dad-acc4-cda8074ffc6e/0/0/",
+        //Neil A. Maxwell
+        "https://speeches.byu.edu/talks/neal-a-maxwell/if-thou-endure-well/",
+        //Richard L. Evans
+        "https://www.churchofjesuschrist.org/study/general-conference/1971/04/where-are-you-really-going?lang=eng",
+        "https://catalog.churchofjesuschrist.org/assets/bcfeded4-6bf4-4247-b1ea-df40f9703cbb/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/e4970420-0372-4dd5-8f02-9c90981c718a/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/022b30a9-a575-43da-beb4-1fbc9b085cc9/0/0/",
+        "https://www.churchofjesuschrist.org/study/general-conference/1971/10/should-the-commandments-be-rewritten?lang=eng",
+        //Spencer W. Kimball
+        "https://catalog.churchofjesuschrist.org/assets/3be11788-3a7e-434c-91bf-99cc8658850d/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/f0db5ac8-9fea-494b-8b42-c0cc5c3acfa6/0/0/",
+        //Stephen L Richards
+        "https://catalog.churchofjesuschrist.org/assets/6c493dea-86e7-429c-b6bb-47f01e2ab0ed/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/88acd350-89cd-488a-a98d-ccb066a28548/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/1c6c86a9-ff6f-4f05-aa07-c5787b4fcbdd/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/ae40a7d3-426c-452d-b4fa-d557f7aaf69d/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/3778594d-99e5-49ee-ae73-d45c43105035/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/b1aebc77-fd1b-4779-abce-f6ad0c56ea29/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/537bcc94-1a97-40de-8872-0e157518fbc1/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/7e18fef2-94e9-40c2-94f7-9dcbc2927dd9/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/4339f549-d3fc-4e26-b4d5-c5f5a89f1735/0/0/",
+        //Thorpe B. Isaacson
+        "https://catalog.churchofjesuschrist.org/assets/0769b2fb-581f-4638-ba10-e3688c3a7f1a/0/0/",
+        ];
+
+        const now = new Date();
+        const start = new Date(now.getFullYear(), 0, 0);
+        const diff = now - start;
+        const oneDay = 1000 * 60 * 60 * 24;
+        const dayOfYear = Math.floor(diff / oneDay);
+
+        const selectedSermon = sermonList[dayOfYear % sermonList.length];
+        
+        // This line finds the link above and swaps the URL
+        const linkElement = document.getElementById('daily-sermon-link');
+        if (linkElement) {
+            linkElement.href = selectedSermon;
+        }
+    })();
+</script>
+
+
+<a id="sermon-finder-link" href="javascript:void(0)" onclick="findSermon()" title="Find a Sermon">
+    <img id="sermon-finder-img" class="shadow-filter size-filter" src="media/images/buttons/random-sermon.png" alt="Find a Sermon">
+</a>
+<!--Find A Sermon-->
+<script>
+    const sermonList = [
+        //Adam S. Bennion
+        "https://catalog.churchofjesuschrist.org/assets/cda0a4fc-a051-4fba-9a4a-1c60aeaec7d5/0/0/",
+        //Albert E. Bowen
+        "https://catalog.churchofjesuschrist.org/assets/5cb5ef96-7eec-4e0c-8cf2-4fae088c621e/0/0?lang=eng",
+        "https://catalog.churchofjesuschrist.org/assets/24e364ea-afc9-4a78-9419-fe834e9d0185/0/0?lang=eng",
+        //Alvin R. Dyer
+        "https://catalog.churchofjesuschrist.org/assets/15ffe853-4b17-4e5a-9477-63377b3e5517/0/0/",
+        //Bruce R. McConkie
+        "https://catalog.churchofjesuschrist.org/assets/aa0ea520-64a2-47cb-ab9f-424e15be1bb1/0/0/",
+        //Boyd K. Packer
+        "https://catalog.churchofjesuschrist.org/assets/fc236e47-4bd6-42ad-8516-561c9f529708/0/0/",
+        //David O' McKay
+        "https://catalog.churchofjesuschrist.org/assets/e43b0963-b35d-4eb6-b51e-320874748922/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/5d0f4b75-03a5-4800-a45a-2d25051c7bb0/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/8c2acaa3-06dc-4d51-b714-d7a40e05c52e/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/37828144-3827-4c89-90bb-de8fc788a393/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/44a06f94-3dc1-4a23-9a85-cbfb55ff842d/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/cfd15624-88ab-4881-9485-8c171e443a48/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/ab75b5f6-3424-49d9-adc5-3f7682b782b7/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/6858612d-b88b-4d38-84a5-ea32de5d5eab/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/0b077c2b-f002-4a34-b5b1-fa581f0a50d8/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/4852313f-5818-4de4-96fb-bc6c6c882fa8/0/0/",
+        //Delbert L. Stapley
+        "https://catalog.churchofjesuschrist.org/assets/12d446c9-2dda-4205-91e0-642bf22b95e7/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/188936a0-10df-46c6-934f-0b8bf017a17d/0/0/",
+        //Ezra Taft Benson
+        "https://catalog.churchofjesuschrist.org/assets/61d34a60-8e3d-4614-a312-574126dce02d/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/89261c48-f327-4352-af72-9bf52455304c/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/de4c5959-c259-4ffd-a782-fd8e9ad54f98/0/0/",
+        //George Albert Smith
+        "https://catalog.churchofjesuschrist.org/assets/972768f2-f944-4363-bf3c-d27586faf70c/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/ded56c70-e169-427d-ad18-ddfdd6271712/0/0/",
+        //George Q. Morris
+        "https://catalog.churchofjesuschrist.org/assets/69efda93-8348-4482-9da4-dcdd0d6482ae/0/0/",
+        //Henry D. Moyle
+        "https://catalog.churchofjesuschrist.org/assets/8e5a8727-0b35-4e18-93a1-a20a1f759fdf/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/f19d6e10-7aef-4948-87a0-505e73f0a1fd/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/cacd0f94-9cff-4a72-8010-b10527dab2ab/0/0/",
+        //Harold B. Lee
+        "https://catalog.churchofjesuschrist.org/assets/ffa8e247-03ee-4d01-82ad-84e6e92f4ec7/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/b6c13780-ae9d-4a07-a22a-eb1ebc07c6ca/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/5b13d2e0-1ca1-4767-8c24-cdc321d9716f/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/be033abe-4f32-4ce4-946b-1bb2c617368c/0/0/",
+        //Hugh B. Brown
+        "https://catalog.churchofjesuschrist.org/assets/69c0b01e-7895-44af-b785-a7a0b381ec7f/0/0/",
+        //J. Reuben Clark Jr.
+        "https://catalog.churchofjesuschrist.org/assets/e967e3fc-3750-4007-a450-a94e7d7c7fe4/0/0?lang=eng",
+        "https://catalog.churchofjesuschrist.org/assets/ef007115-aab4-4571-86e0-5c0b773bd5af/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/1bf8eef7-1780-48c9-8ce3-5d38ec16430d/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/2aa2b7b9-e41b-4c17-8362-7b2ca1b9e2b4/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/dec182c6-39e6-4f17-9248-5218738cd040/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/d3a7fd00-2c51-423f-90f3-fb7ea3dd4b42/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/62a390de-2379-4e3d-86da-50a363399f46/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/7dfb6000-7c46-43f8-96dc-b4cdd73a3c3d/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/f31d9966-d1c4-4410-8143-66b0476ce7ac/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/ba6fca45-f605-42a7-b5c0-0049054dbd8a/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/9614cc81-a934-4ed6-9ea5-595a61e3f922/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/c708e33c-674a-4c6f-873d-c3a696e8253f/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/6286cf4d-43e3-4243-94f5-eeb8108b85d0/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/55e51751-713c-400e-9daf-be06604138dd/0/0/",
+        //Joseph F. Merrill
+        "https://catalog.churchofjesuschrist.org/assets/8ed4354a-c05d-48ac-a5bd-29a2d27166fe/0/0/",
+        //Joseph Fielding Smith
+        "https://catalog.churchofjesuschrist.org/assets/2307a85b-4b54-4bfb-9552-d55e3df4735a/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/d6940519-279e-47ee-ae6d-ccae93737dfa/0/0/",
+        "https://www.churchofjesuschrist.org/study/general-conference/1971/10/i-know-that-my-redeemer-liveth?lang=eng",
+        //Joseph L. Wirthlin
+        "https://catalog.churchofjesuschrist.org/assets/87d452da-f2e7-4407-a4ec-a5328dd13ed2/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/93c1a0a9-b6b8-4bc6-943a-d1251bcf25db/0/0/",
+        //John Andreas Widtsoe
+        "https://catalog.churchofjesuschrist.org/assets/8069a871-bf56-42cb-bd93-5dac8c191bd6/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/bb505272-0471-4d6f-93ce-1f0701e275e7/0/0/",
+        //LeGrand Richards
+        "https://catalog.churchofjesuschrist.org/assets/9e06a103-6a6a-40d8-8c39-cadcce9656dc/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/d10ebd01-512d-4067-90ab-b047b9288851/0/0/",
+        "https://www.churchofjesuschrist.org/study/general-conference/1981/04/call-of-the-prophets?lang=eng",
+        //Marion G. Romney
+        "https://catalog.churchofjesuschrist.org/assets/b1d4139e-0053-4ff8-9ff8-6f1c74e67e49/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/1ad10350-91f7-4c3e-b7b8-70891b58e6cd/0/0/",
+        "https://www.churchofjesuschrist.org/study/general-conference/1974/10/how-men-are-saved?lang=eng",
+        //Mark E. Petersen
+        "https://catalog.churchofjesuschrist.org/assets/1ec48723-eb6b-448e-bf31-c817bc347a2d/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/4c3160ea-7ec5-44f6-8e77-60b6b7d2560e/0/0/",
+        //Marvin J. Ashton
+        "https://speeches.byu.edu/talks/marvin-j-ashton/murmur-not/",
+        "https://www.churchofjesuschrist.org/study/general-conference/1971/04/love-of-the-right?lang=eng",
+        "https://www.churchofjesuschrist.org/study/general-conference/1971/10/you-can-get-there-from-here?lang=eng",
+        "https://www.churchofjesuschrist.org/study/general-conference/1972/04/what-is-your-destination?lang=eng",
+        "https://www.churchofjesuschrist.org/study/general-conference/1972/10/what-is-a-friend?lang=eng",
+        "https://speeches.byu.edu/talks/marvin-j-ashton/patience-great-power/",
+        "https://www.churchofjesuschrist.org/study/general-conference/1973/04/in-his-strength?lang=eng",
+        "https://www.churchofjesuschrist.org/study/general-conference/1973/10/he-took-him-by-the-hand?lang=eng",
+        "https://www.churchofjesuschrist.org/study/general-conference/1974/04/a-time-of-urgency?lang=eng",
+        "https://www.churchofjesuschrist.org/study/general-conference/1974/10/whos-losing?lang=eng",
+        "https://speeches.byu.edu/talks/marvin-j-ashton/shall/",
+        "https://www.churchofjesuschrist.org/study/general-conference/1975/04/the-time-is-now?lang=eng",
+        "https://www.churchofjesuschrist.org/study/general-conference/1975/10/love-takes-time?lang=eng",
+        "https://www.churchofjesuschrist.org/study/general-conference/1976/04/family-communications?lang=eng",
+        "https://speeches.byu.edu/talks/marvin-j-ashton/appreciation-sign-maturity/",
+        "https://www.churchofjesuschrist.org/study/general-conference/1976/10/proper-self-management?lang=eng",
+        "https://speeches.byu.edu/talks/marvin-j-ashton/family-home-storage/",
+        "https://www.churchofjesuschrist.org/study/general-conference/1977/04/the-power-of-plainness?lang=eng",
+        "https://www.churchofjesuschrist.org/study/general-conference/1977/10/rated-a?lang=eng",
+        "https://speeches.byu.edu/talks/marvin-j-ashton/n-eldon-tanner-example-follow/",
+        "https://www.churchofjesuschrist.org/study/general-conference/1978/04/no-time-for-contention?lang=eng",
+        "https://www.churchofjesuschrist.org/study/general-conference/1978/10/who-will-forfeit-the-harvest?lang=eng",
+        "https://www.churchofjesuschrist.org/study/general-conference/1979/04/roadblocks-to-progress?lang=eng",
+        "https://www.churchofjesuschrist.org/study/general-conference/1979/10/progress-through-change",
+        "https://www.churchofjesuschrist.org/study/general-conference/1980/04/the-prophet-and-the-prison",
+        "https://www.churchofjesuschrist.org/study/general-conference/1980/10/adversity-and-you",
+        "https://www.churchofjesuschrist.org/study/general-conference/1981/04/we-serve-that-which-we-love",
+        "https://www.churchofjesuschrist.org/study/general-conference/1981/10/give-with-wisdom-that-they-may-receive-with-dignity",
+        "https://speeches.byu.edu/talks/marvin-j-ashton/fun-poor/",
+        "https://www.churchofjesuschrist.org/study/general-conference/1982/04/this-is-no-harm",
+        "https://www.churchofjesuschrist.org/study/general-conference/1982/10/pure-religion",
+        "https://www.churchofjesuschrist.org/study/general-conference/1983/04/straightway",
+        "https://www.churchofjesuschrist.org/study/general-conference/1983/10/the-word-is-commitment",
+        "https://www.churchofjesuschrist.org/study/general-conference/1984/04/choose-the-good-part",
+        "https://www.churchofjesuschrist.org/study/general-conference/1984/10/if-thou-endure-it-well",
+        "https://speeches.byu.edu/talks/marvin-j-ashton/personal-ranking/",
+        "https://www.churchofjesuschrist.org/study/general-conference/1985/04/spencer-w-kimball-a-true-disciple-of-christ",
+        "https://www.churchofjesuschrist.org/study/general-conference/1985/10/peace-a-triumph-of-principles",
+        "https://www.churchofjesuschrist.org/study/general-conference/1986/04/be-of-good-cheer",
+        "https://www.churchofjesuschrist.org/study/general-conference/1986/10/shake-off-the-chains-with-which-ye-are-bound",
+        "https://www.churchofjesuschrist.org/study/general-conference/1987/04/i-am-an-adult-now",
+        "https://speeches.byu.edu/talks/marvin-j-ashton/carry-cross/",
+        "https://www.churchofjesuschrist.org/study/general-conference/1987/10/there-are-many-gifts?lang=eng",
+        "https://www.churchofjesuschrist.org/study/general-conference/1988/04/while-they-are-waiting",
+        "https://speeches.byu.edu/talks/marvin-j-ashton/lessons-master/",
+        "https://www.churchofjesuschrist.org/study/general-conference/1988/10/the-measure-of-our-hearts",
+        "https://speeches.byu.edu/talks/marvin-j-ashton/loveth-right/",
+        "https://www.churchofjesuschrist.org/study/general-conference/1989/04/on-being-worthy",
+        "https://speeches.byu.edu/talks/marvin-j-ashton/1989-spring-commencement-address/",
+        "https://www.churchofjesuschrist.org/study/general-conference/1989/10/stalwart-and-brave-we-stand",
+        "https://speeches.byu.edu/talks/marvin-j-ashton/still-voice-perfect-mildness/",
+        "https://www.churchofjesuschrist.org/study/general-conference/1990/04/neither-boast-of-faith-nor-of-mighty-works",
+        "https://www.churchofjesuschrist.org/study/general-conference/1990/10/a-pattern-in-all-things",
+        "https://www.churchofjesuschrist.org/study/general-conference/1991/04/a-voice-of-gladness",
+        "https://speeches.byu.edu/talks/marvin-j-ashton/everything-give-thanks/",
+        "https://www.churchofjesuschrist.org/study/general-conference/1991/10/strengthen-the-feeble-knees",
+        "https://www.churchofjesuschrist.org/study/general-conference/1992/04/the-tongue-can-be-a-sharp-sword",
+        "https://speeches.byu.edu/talks/marvin-j-ashton/teaching-mentoring-things-spirit/",
+        "https://www.churchofjesuschrist.org/study/general-conference/1992/10/a-yearning-for-home",
+        "https://speeches.byu.edu/talks/marvin-j-ashton/know-2/",
+        //Matthew Cowley
+        "https://catalog.churchofjesuschrist.org/assets/6fab722f-8670-4253-a354-4f33fc4b9fb2/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/7e40e39f-fb93-4dad-acc4-cda8074ffc6e/0/0/",
+        //Neil A. Maxwell
+        "https://speeches.byu.edu/talks/neal-a-maxwell/if-thou-endure-well/",
+        //Richard L. Evans
+        "https://www.churchofjesuschrist.org/study/general-conference/1971/04/where-are-you-really-going?lang=eng",
+        "https://catalog.churchofjesuschrist.org/assets/bcfeded4-6bf4-4247-b1ea-df40f9703cbb/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/e4970420-0372-4dd5-8f02-9c90981c718a/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/022b30a9-a575-43da-beb4-1fbc9b085cc9/0/0/",
+        "https://www.churchofjesuschrist.org/study/general-conference/1971/10/should-the-commandments-be-rewritten?lang=eng",
+        //Spencer W. Kimball
+        "https://catalog.churchofjesuschrist.org/assets/3be11788-3a7e-434c-91bf-99cc8658850d/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/f0db5ac8-9fea-494b-8b42-c0cc5c3acfa6/0/0/",
+        //Stephen L Richards
+        "https://catalog.churchofjesuschrist.org/assets/6c493dea-86e7-429c-b6bb-47f01e2ab0ed/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/88acd350-89cd-488a-a98d-ccb066a28548/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/1c6c86a9-ff6f-4f05-aa07-c5787b4fcbdd/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/ae40a7d3-426c-452d-b4fa-d557f7aaf69d/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/3778594d-99e5-49ee-ae73-d45c43105035/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/b1aebc77-fd1b-4779-abce-f6ad0c56ea29/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/537bcc94-1a97-40de-8872-0e157518fbc1/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/7e18fef2-94e9-40c2-94f7-9dcbc2927dd9/0/0/",
+        "https://catalog.churchofjesuschrist.org/assets/4339f549-d3fc-4e26-b4d5-c5f5a89f1735/0/0/",
+        //Thorpe B. Isaacson
+        "https://catalog.churchofjesuschrist.org/assets/0769b2fb-581f-4638-ba10-e3688c3a7f1a/0/0/",
+        
+        
+    ];
+
+    function findSermon() {
+        // Picks a random talk from your list
+        const randomIndex = Math.floor(Math.random() * sermonList.length);
+        const selectedUrl = sermonList[randomIndex];
+
+        // Opens the talk in a new tab so they don't lose your site
+        window.open(selectedUrl, '_blank');
+    }
+</script>
+<!--Weekly Conference-->
+<a id="weekly-conference-link" href="#" title="Weekly Conference">
+    <img id="weekly-conference-img" class="shadow-filter size-filter" src="media/images/buttons/weekly-conference.png" alt="Weekly Conference">
+</a>
+
+<script>
+    (function() {
+        const conferenceList = [
+            //April 1936
+            "https://catalog.churchofjesuschrist.org/record/2b8598d8-cb11-4dc0-940b-bf84d68f85e5/27e55dd0-d8ae-4ffb-91c3-7d68a6dce4ad?view=browse&lang=eng",
+            //October 1936
+            "https://catalog.churchofjesuschrist.org/record/2b8598d8-cb11-4dc0-940b-bf84d68f85e5/9d2a13c6-9814-4c72-95a0-cabcf2ce5f84?view=browse&lang=eng",
+            //April 1938
+            "https://catalog.churchofjesuschrist.org/record/2b8598d8-cb11-4dc0-940b-bf84d68f85e5/9f283d32-b272-485e-b2fc-751cf52ee968?view=browse&lang=eng",
+            //October 1938
+            "https://catalog.churchofjesuschrist.org/record/2b8598d8-cb11-4dc0-940b-bf84d68f85e5/e8d640ce-5ebb-4997-ad7d-b47703c8f83b?view=browse&lang=eng",
+            //April 1939
+            "https://catalog.churchofjesuschrist.org/record/2b8598d8-cb11-4dc0-940b-bf84d68f85e5/82bcf61b-112f-49d4-95f0-dcbe78973541?view=browse&lang=eng",
+            //October 1939
+            "https://catalog.churchofjesuschrist.org/record/2b8598d8-cb11-4dc0-940b-bf84d68f85e5/e50146ae-a088-4644-9161-40b4722bdbfe?view=browse&lang=eng",
+            //April 1940
+            "https://catalog.churchofjesuschrist.org/record/2b8598d8-cb11-4dc0-940b-bf84d68f85e5/dade69d3-0016-416e-8bf0-d69f8225cece?view=browse&lang=eng",
+            //October 1940
+            "https://catalog.churchofjesuschrist.org/record/2b8598d8-cb11-4dc0-940b-bf84d68f85e5/9cb47807-9569-4977-afd7-8284ed79d99d?view=browse&lang=eng",
+            //April 1941
+            "https://catalog.churchofjesuschrist.org/record/2b8598d8-cb11-4dc0-940b-bf84d68f85e5/c69ac0fe-407a-4ccf-a623-267b063c489e?view=browse&lang=eng",
+            //October 1941
+            "https://catalog.churchofjesuschrist.org/record/2b8598d8-cb11-4dc0-940b-bf84d68f85e5/6ef6741b-3450-4279-a58b-f15a03ee5411?view=browse&lang=eng",
+            //April 1942
+            "https://catalog.churchofjesuschrist.org/record/2b8598d8-cb11-4dc0-940b-bf84d68f85e5/e586f29b-c653-4ab6-92a5-82e1139a9ff0?view=browse&lang=eng",
+            //October 1942
+            "https://catalog.churchofjesuschrist.org/record/2b8598d8-cb11-4dc0-940b-bf84d68f85e5/813bc00f-931f-4ef0-9a94-c9bb77e4fc68?view=browse&lang=eng",
+            //April 1943
+            "https://catalog.churchofjesuschrist.org/record/2b8598d8-cb11-4dc0-940b-bf84d68f85e5/50d80f59-0f71-45bd-a005-dfc0d9eede71?view=browse&lang=eng",
+            //October 1943
+            "https://catalog.churchofjesuschrist.org/record/2b8598d8-cb11-4dc0-940b-bf84d68f85e5/2c01eb87-7945-406b-899b-54c32a1ca717?view=browse&lang=eng",
+            //April 1944
+            "https://catalog.churchofjesuschrist.org/record/2b8598d8-cb11-4dc0-940b-bf84d68f85e5/8596a341-05fb-4ec5-8fc5-c98417b27be4?view=browse&lang=eng",
+            //October 1944
+            "https://catalog.churchofjesuschrist.org/record/2b8598d8-cb11-4dc0-940b-bf84d68f85e5/3071e7fd-14ea-4259-ae27-0f0ddeedc132?view=browse&lang=eng",
+            //April 1945
+            "https://catalog.churchofjesuschrist.org/record/2b8598d8-cb11-4dc0-940b-bf84d68f85e5/96fe6682-f47d-433a-837a-2c91a7ca0f73?view=browse&lang=eng",
+            //October 1945
+            "https://catalog.churchofjesuschrist.org/record/2b8598d8-cb11-4dc0-940b-bf84d68f85e5/907831ee-a14d-416a-a62d-05ef3727b659?view=browse&lang=eng",
+            //April 1946
+            "https://catalog.churchofjesuschrist.org/record/2b8598d8-cb11-4dc0-940b-bf84d68f85e5/86bb779d-7429-4f61-a09c-edfc63d80e43?view=browse&lang=eng",
+            //October 1946
+            "https://catalog.churchofjesuschrist.org/record/2b8598d8-cb11-4dc0-940b-bf84d68f85e5/61483ebd-7cc0-49be-970c-d5bb6c606afe?view=browse&lang=eng",
+            //April 1947
+            "https://catalog.churchofjesuschrist.org/record/2b8598d8-cb11-4dc0-940b-bf84d68f85e5/2e1f5f52-b685-4ddd-9716-af6822cc7f03?view=browse&lang=eng",
+            //October 1947
+            "https://catalog.churchofjesuschrist.org/record/2b8598d8-cb11-4dc0-940b-bf84d68f85e5/c052fe54-d232-4821-b502-08098d3b2996?view=browse&lang=eng",
+            //April 1948
+            "https://catalog.churchofjesuschrist.org/record/2b8598d8-cb11-4dc0-940b-bf84d68f85e5/6901d888-4505-42e1-be01-558ae92c0616?view=browse&lang=eng",
+            //October 1948
+            "https://catalog.churchofjesuschrist.org/record/2b8598d8-cb11-4dc0-940b-bf84d68f85e5/1d430dab-8110-4b8b-b55e-40c4683f45d8?view=browse&lang=eng",
+            //April 1949
+            "https://catalog.churchofjesuschrist.org/record/2b8598d8-cb11-4dc0-940b-bf84d68f85e5/fa84f43e-ed9d-46e9-937b-8529f87096ac?view=browse&lang=eng",
+            
+        ];
+
+        // Weekly Logic
+        const now = new Date();
+        const oneJan = new Date(now.getFullYear(), 0, 1);
+        const days = Math.floor((now - oneJan) / (24 * 60 * 60 * 1000));
+        const weekOfYear = Math.ceil((days + oneJan.getDay() + 1) / 7);
+
+        // Pick conference based on the week
+        const selectedUrl = conferenceList[weekOfYear % conferenceList.length];
+
+        // Update the link
+        const linkElement = document.getElementById('weekly-conference-link');
+        if (linkElement) {
+            linkElement.href = selectedUrl;
+        }
+    })();
+</script>
+        
+        
+        
+        <!--a href="my-takes.html"><img class="shadow-filter size-filter" title="My Takes" src="media/images/buttons/my-takes.png" alt="my-takes"></a-->
+        <a href="image-gallery.html"><img class="shadow-filter size-filter" title="Gallery" alt="Gallery" src="media/images/buttons/image-gallery.png"></a>
+        <a href="resources.html"><img class="shadow-filter size-filter" src="media/images/buttons/resources.png"></a>
+        <a href=""><img class="shadow-filter size-filter" src="media/images/buttons/videos.png"></a>
+        <table>
+            <thead>
+        <!--tr>
+            <th>Last, First Middle</th>
+            <th>Year of Death</th>
+            <th>Year of Birth</th>
+            <th>Year Called</th>
+            <th>Year Released</th>
+        </tr-->
+    </thead>
+    <tbody> <!--A-G-
+        <tr id="marvinashton">
+            <td>Ashton, Marvin J.</td>
+            <td>Feb 25, 1994</td>
+            <td>May 6, 1915</td>
+        </tr>
+        <tr>
+            <td>Ballard, Melvin J.</td>
+            <td>July 30, 1939</td>
+            <td>Feb 9, 1873</td>
+            <td><a href="ballard,melvin-j.html">Ballard, Melvin J.</a></td>
+        </tr>
+        <tr>
+            <td>Ballard, M. Russel</td>
+            <td>Nov 12, 2023</td>
+            <td>Oct 8, 1928</td>
+            <td><a href="ballard,m-russel.html">Ballard, M. Russel</a></td>
+        </tr>
+        <tr>
+            <td>Bennett, John C.</td>
+            <td>August 5, 1867</td>
+            <td>August 4, 1804</td>
+            <td><a href="bennett,john-c.html">Bennett, John C.</a></td>
+        </tr>
+        <tr>
+            <td>Bennion, Adam S.</td>
+            <td>Feb 11, 1958</td>
+            <td>Dec 2, 1886</td>
+            <td><a href="bennion,adam-s.html">Bennion, Adam S.</a></td>
+        </tr>
+        <tr>
+            <td>Benson, Ezra T.</td>
+            <td>Sep 3, 1869</td>
+            <td>Feb 11, 1811</td>
+            <td><a href="benson,ezra-t.html">Benson, Ezra T.</a></td>
+        </tr>
+        <tr>
+            <td>Benson, Ezra Taft</td>
+            <td>May 30, 1994</td>
+            <td>Aug 4, 1899</td>
+            <td><a href="benson,ezra-taft.html">Benson, Ezra Taft</a></td>
+        </tr>
+        <tr>
+            <td>Boynton, John F.</td>
+            <td>Oct 20, 1890</td>
+            <td>Sep 20, 1811</td>
+            <td><a href="boynton,john-f.html">Boynton, John F.</a></td>
+        </tr> 
+        <tr id="albertbowen">
+            <td>Bowen, Albert E.</td>
+            <td>July 15, 1953</td>
+            <td>Oct 31, 1875</td>
+        </tr>
+        <tr>
+            <td>Brown, Hugh B.</td>
+            <td>Dec 2, 1975</td>
+            <td>Oct 24, 1883</td>
+            <td><a href="brown,hugh-b.html">Brown, Hugh B.</a></td>
+        </tr>
+        <tr>
+            <td>Callis, Charles A.</td>
+            <td>Jan 21, 1947</td>
+            <td>May 4, 1865</td>
+            <td><a href="callis,charles-a.html">Callis, Charles A.</a></td>
+        </tr>
+        <tr>
+            <td>Cannon, Abraham H.</td>
+            <td>July 19, 1896</td>
+            <td>March 12, 1859</td>
+            <td><a href="cannon,abraham-h.html">Cannon, Abraham H.</a></td>
+        </tr>
+        <tr>
+            <td>Cannon, George Q.</td>
+            <td>April 12, 1901</td>
+            <td>Jan 11, 1827</td>
+            <td><a href="cannon,george-q.html">Cannon, George Q.</a></td>
+        </tr>
+        <tr>
+            <td>Cannon, Sylvester Q.</td>
+            <td>May 29, 1943</td>
+            <td>June 10, 1877</td>
+            <td><a href="cannon,sylvester-q.html">Cannon, Sylvester Q.</a></td>
+        </tr>
+        <tr>
+            <td>Carrington, Albert</td>
+            <td>Sep 19, 1889</td>
+            <td>Jan 8, 1813</td>
+            <td><a href="carrington,albert.html">Carrington, Albert</a></td>
+        </tr>
+        <tr>
+            <td>Clark Jr, J. Reuben</td>
+            <td>Oct 6, 1961</td>
+            <td>Sep 1, 1871</td>
+            <td><a href="clark-jr,j-reuben.html">Clark Jr, J. Reuben</a></td>
+        </tr>
+        <tr>
+            <td>Clawson, Rudger</td>
+            <td>June 21, 1943</td>
+            <td>March 12, 1857</td>
+            <td><a href="clawson,rudger.html">Clawson, Rudger</a></td>
+        </tr>
+        <tr>
+            <td>Cowdery, Oliver</td>
+            <td>March 3, 1850</td>
+            <td>Oct 3, 1806</td>
+            <td><a href="cowdery,oliver.html">Cowdery, Oliver</a></td>
+        </tr>
+        <tr>
+            <td>Cowley, Matthew</td>
+            <td>Dec 13, 1953</td>
+            <td>August 2, 1897</td>
+            <td><a href="cowley,matthew.html">Cowley, Matthew</a></td>
+        </tr>
+        <tr>
+            <td>Cowley, Matthias F.</td>
+            <td>June 16, 1940</td>
+            <td>Aug 25, 1858</td>
+            <td><a href="cowley,matthias-f.html">Cowley, Matthias F.</a></td>
+        </tr>
+        <tr>
+            <td>Dyer, Alvin R.</td>
+            <td>March 6, 1977</td>
+            <td>Jan 1, 1903</td>
+            <td><a href="dyer,alvin-r.html">Dyer, Alvin R.</a></td>
+        </tr>
+        <tr>
+            <td>Evans, Richard L.</td>
+            <td>Nov 1, 1971</td>
+            <td>March 23, 1906</td>
+            <td><a href="evans,richard-l.html">Evans, Richard L.</a></td>
+        </tr>
+        <tr>
+            <td>Faust, James E.</td>
+            <td>Aug 10, 2007</td>
+            <td>July 31, 1920</td>
+            <td><a href="faust,james-e.html">Faust, James E.</a></td>
+        </tr>
+        <tr>
+            <td>Gausse, Jesse</td>
+            <td>1836</td>
+            <td>1785</td>
+            <td><a href="gausse,jesse.html">Gausse, Jesse</a></td>
+        </tr>
+        <tr>
+            <td>Grant, Heber J.</td>
+            <td>May 14, 1945</td>
+            <td>Nov 22, 1856</td>
+            <td><a href="grant,heber-j.html">Grant, Heber J.</a></td>
+        </tr>
+        <tr>
+            <td>Grant, Jebediah M.</td>
+            <td>Dec 1, 1856</td>
+            <td>Feb 21, 1816</td>
+            <td><a href="grant,jebediah-m.html">Grant, Jebediah M.</a></td>
+            </tr>
+        -->
+    </tbody>
+    <tbody> <!--H-N-->
+        <!--
+        <tr>
+            <td>Hales, Robert D.</td>
+            <td>Oct 1, 2017</td>
+            <td>Aug 24, 1932</td>
+            <td><a href="hales,robert-d.html">Hales, Robert D.</a></td>
+        </tr>
+            <tr>
+                <td>Haight, David B.</td>
+                <td>July 31, 2004</td>
+                <td>Sep 2, 1906</td>
+                <td><a href="haight,david-b.html">Haight, David B.</a></td>
+            </tr>
+            <tr>
+                <td>Hinckley, Alonzo A.</td>
+                <td>Dec 22, 1936</td>
+                <td>April 23, 1870</td>
+                <td><a href="hinckley,alonzo-a.html">Hinckley, Alonzo A.</a></td>
+            </tr>
+            <tr>
+                <td>Hinckley, Gordon B.</td>
+                <td>Jan 27, 2008</td>
+                <td>June 23, 1910</td>
+                <td><a href="hinckley,gordon-b.html">Hinckley, Gordon B.</a></td>
+            </tr>
+            <tr>
+                <td>Holland, Jeffery R.</td>
+                <td>Dec 3, 1940</td>
+                <td>Dec 27, 2025</td>
+                <td><a href="holland,jeffery-r.html">Holland, Jeffery R.</a></td>
+            </tr>
+            <tr>
+                <td>Hunter, Howard W.</td>
+                <td>March 3, 1995</td>
+                <td>Nov 14, 1907</td>
+                <td><a href="hunter,howard-w.html">Hunter, Howard W.</a></td>
+            </tr>
+            <tr>
+                <td>Hyde, Orson</td>
+                <td>Nov 28, 1878</td>
+                <td>Jan 8, 1805</td>
+                <td><a href="hyde,orson.html">Hyde, Orson</a></td>
+            </tr>
+            <tr>
+                <td>Isaacson, Thorpe B.</td>
+                <td>Nov 9, 1970</td>
+                <td>Sep 6, 1898</td>
+                <td><a href="isaacson,thorpe-b.html">Isaacson, Thorpe B.</a></td>
+            </tr>
+            <tr>
+                <td>Ivins, Anthony W.</td>
+                <td>Sep 23, 1934</td>
+                <td>Sep 16, 1852</td>
+                <td><a href="ivins,anthony-w.html">Ivins, Anthony W.</a></td>
+            </tr>
+            <tr>
+                <td>Johnson, Luke</td>
+                <td>Nov 3, 1807</td>
+                <td>Dec 9, 1861</td>
+                <td><a href="johnson,luke.html">Johnson, Luke</a></td>
+            </tr>
+            <tr>
+                <td>Johnson, Lyman E.</td>
+                <td>Dec 20, 1859</td>
+                <td>Oct 24, 1811</td>
+                <td><a href="johnson,lyman-e.">Johnson, Lyman E.</a></td>
+            </tr>
+            <tr>
+                <td>Kimball, Heber C.</td>
+                <td>June 22,1868</td>
+                <td>June 14, 1801</td>
+                <td><a href="kimball,heber-c.html">Kimball, Heber C.</a></td>
+            </tr>
+            <tr>
+                <td>Kimball, Spencer W.</td>
+                <td>Nov 5, 1985</td>
+                <td>March 28, 1895</td>
+                <td><a href="kimball,spencer-w.html">Kimball, Spencer W.</a></td>
+            </tr>
+            <tr>
+                <td>Law, William</td>
+                <td>Jan 19, 1892</td>
+                <td>Sep 8, 1809</td>
+                <td><a href="law,william.html">Law, William</a></td>
+            </tr>
+            <tr>
+                <td>Lee, Harold B.</td>
+                <td>Dec 26, 1973</td>
+                <td>March 28, 1899</td>
+                <td><a href="lee,harold-b.html">Lee, Harold B.</a></td>
+            </tr>
+            <tr>
+                <td>Lund, Anthon H.</td>
+                <td>March 2, 1921</td>
+                <td>May 15, 1844</td>
+                <td><a href="lund,anthon-h.html">Lund, Anthon H.</a></td>
+            </tr>
+            <tr>
+                <td>Lyman, Amasa M.</td>
+                <td>March 30, 1813</td>
+                <td>Feb 4, 1877</td>
+                <td><a href="lyman,amasa-m.html">Lyman, Amasa M.</a></td>
+            </tr>
+            <tr>
+                <td>Lyman, Francis M.</td>
+                <td>Nov 18, 1916</td>
+                <td>Jan 12, 1840</td>
+                <td><a href="lyman,francis-m.html">Lyman, Francis M.</a></td>
+            </tr>
+            <tr>
+                <td>Lyman, Richard R.</td>
+                <td>Dec 31, 1963</td>
+                <td>Nov 23, 1870</td>
+                <td><a href="lyman,richard-r.html">Lyman, Richard R.</a></td>
+            </tr>
+            <tr>
+                <td>Maxwell, Neil A.</td>
+                <td>July 21, 2004</td>
+                <td>July 6, 1926</td>
+                <td><a href="maxwell,neil-a.html">Maxwell, Neil A.</a></td>
+            </tr>
+            <tr>
+                <td>McConkie, Bruce R.</td>
+                <td>April 19, 1985</td>
+                <td>July 29, 1915</td>
+                <td><a href="mcconkie,bruce-r.html">McConkie, Bruce R.</a></td>
+            </tr>
+            <tr>
+                <td>Mckay, David O.</td>
+                <td>Jan 18, 1970</td>
+                <td>Sep 8, 1873</td>
+                <td><a href="mckay,david-o.html">Mckay, David O.</a></td>
+            </tr>
+            <tr>
+                <td>McLellin, William E.</td>
+                <td>April 24, 1883</td>
+                <td>Jan 18, 1806</td>
+                <td><a href="mclellin,william-e.html">McLellin, William E.</a></td>
+            </tr>
+            <tr>
+                <td>Merrill, Joseph F.</td>
+                <td>Feb 3, 1952</td>
+                <td>Aug 24, 1868</td>
+                <td><a href="merrill,joseph-f.html">Merrill, Joseph F.</a></td>
+            </tr>
+            <tr>
+                <td>Monson, Thomas S.</td>
+                <td>Jan 2, 2018</td>
+                <td>Aug 21, 1927</td>
+                <td><a href="monson,thomas-s.html">Monson, Thomas S.</a></td>
+            </tr>
+            <tr>
+                <td>Morris, George Q.</td>
+                <td>April 23, 1962</td>
+                <td>Feb 20, 1874</td>
+                <td><a href="morris,george-q.html">Morris, George Q.</a></td>
+            </tr>
+            <tr>
+                <td>Moyle, Henry D.</td>
+                <td>April 22, 1889</td>
+                <td>Sep 18, 1963</td>
+                <td><a href="moyle,henry-d.html">Moyle, Henry D.</a></td>
+            </tr>
+            <tr >
+                <td>Nelson, Russel M.</td>
+                <td>Sep 27, 2025</td>
+                <td>Sep 9, 1924</td>
+                <td><a href="nelson,russel-m.html">Nelson, Russel M.</a></td>
+            </tr>
+            <tr>
+                <td>Nibley, Charles W.</td>
+                <td>Dec 11, 1931</td>
+                <td>Feb 5, 1849</td>
+                <td><a href="nibley,charles-w.html">Nibley, Charles W.</a></td>
+            </tr>
+        -->
+    </tbody>
+    <tbody> <!--O-Z-->
+        <!--
+            <tr>
+                <td>Packer, Boyd K.</td>
+                <td>July 3, 2015</td>
+                <td>Sep 10, 1924</td>
+                <td><a href="packer,boyd-k.html">Packer, Boyd K.</a></td>
+            </tr>
+            <tr >
+                <td>Page, John E.</td>
+                <td>Oct 14, 1867</td>
+                <td>Feb 25, 1799</td>
+                <td><a href="page,john-e.html">Page, John E.</a></td>
+            </tr>
+            <tr>
+                <td>Patten, David W.</td>
+                <td>Oct 25, 1838</td>
+                <td>Nov 14, 1799</td>
+                <td><a href="patten,david-w.html">Patten, David W.</a></td>
+            </tr>
+            <tr>
+                <td>Penrose, Charles W.</td>
+                <td>May 16, 1925</td>
+                <td>Feb 4, 1832</td>
+                <td><a href="penrose,charles-w.html">Penrose, Charles W.</a></td>
+            </tr>
+            <tr>
+                <td>Perry, L. Tom</td>
+                <td>May 30, 2015</td>
+                <td>Aug 5, 1922</td>
+                <td><a href="perry,l-tom.html">Perry, L. Tom</a></td>
+            </tr>
+            <tr >
+                <td>Petersen, Mark E.</td>
+                <td>Jan 11, 1984</td>
+                <td>Nov 7, 1900</td>
+                <td><a href="petersen,mark-e.html">Petersen, Mark E.</a></td>
+            </tr>
+            <tr >
+                <td>Pratt, Orson</td>
+                <td>Oct 3, 1881</td>
+                <td>Sep 19, 1811</td>
+                <td><a href="pratt,orson.html">Pratt, Orson</a></td>
+            </tr>
+            <tr >
+                <td>Pratt, Parley</td>
+                <td>May 13, 1857</td>
+                <td>April 12, 1807</td>
+                <td><a href="pratt,parley.html">Pratt, Parley</a></td>
+            </tr>
+            <tr >
+                <td>Rich, Charles C.</td>
+                <td>Nov 17, 1883</td>
+                <td>Aug 21, 1809</td>
+                <td><a href="rich,charles-c.html">Rich, Charles C.</a></td>
+            </tr>
+            <tr >
+                <td>Richards, Franklin D.</td>
+                <td>Dec 9, 1899</td>
+                <td>April 2, 1821</td>
+                <td><a href="richards,franklin-d.html">Richards, Franklin D.</a></td>
+            </tr>
+            <tr >
+                <td>Richards, LeGrand</td>
+                <td>Jan 11, 1983</td>
+                <td>Feb 6, 1886</td>
+                <td><a href="richard,legrand.html">Richards, LeGrand</a></td>
+            </tr>
+            <tr >
+                <td>Richards, Stephen L</td>
+                <td>May 19, 1959</td>
+                <td>June 18, 1879</td>
+                <td><a href="richards,stephen-l.html">Richards, Stephen L</a></td>
+            </tr>
+            <tr >
+                <td>Richards, Willard</td>
+                <td>March 11, 1854</td>
+                <td>June 24, 1804</td>
+                <td><a href="richards,willard.html">Richard, Willard</a></td>
+            </tr>
+            <tr >
+                <td>Rigdon, Sidney</td>
+                <td>July 14, 1876</td>
+                <td>Feb 19, 1793</td>
+                <td><a href="rigdon,sidney.html">Rigdon, Sidney</a></td>
+            </tr>
+            <tr >
+                <td>Romney, Marion G.</td>
+                <td>May 20, 1988</td>
+                <td>Sep 19, 1897</td>
+                <td><a href="romney,marion-g.html">Romney, Marion G.</a></td>
+            </tr>
+            <tr >
+                <td>Scott, Richard G.</td>
+                <td>Sep 22, 2015</td>
+                <td>Nov 7, 1928</td>
+                <td><a href="scott,richard-g.html">Scott, Richard G.</a></td>
+            </tr>
+            <tr >
+                <td>Smith, George A.</td>
+                <td>Sep 1, 1875</td>
+                <td>June 26, 1817</td>
+                <td><a href="smith,george-a.html">Smith, George A.</a></td>
+            </tr>
+            <tr >
+                <td>Smith, George Albert</td>
+                <td>April 4, 1951</td>
+                <td>April 4, 1870</td>
+                <td><a href="smith,george-albert.html">Smith, George Albert</a></td>
+            </tr>
+            <tr >
+                <td>Smith, Hyrum</td>
+                <td>Feb 9, 1800</td>
+                <td>June 27, 1844</td>
+                <td><a href="smith,hyrum.html">Smith, Hyrum</a></td>
+            </tr>
+            <tr >
+                <td>Smith, Hyrum M.</td>
+                <td>Jan 23, 1918</td>
+                <td>March 21, 1872</td>
+                <td><a href="smith,hyrum-m.html">Smith, Hyrum M.</a></td>
+            </tr>
+            <tr >
+                <td>Smith, John H.</td>
+                <td>Oct 13, 1911</td>
+                <td>Sep 18, 1848</td>
+                <td><a href="smith,john-h.html">Smith, John H.</a></td>
+            </tr>
+            <tr >
+                <td>Smith, John (Uncle John)</td>
+                <td>May 23, 1854</td>
+                <td>July 16, 1781</td>
+                <td><a href="smith,john.html">Smith, John</a></td>
+            </tr>
+            <tr >
+                <td>Smith, Joseph F.</td>
+                <td>Nov 19, 1918</td>
+                <td>Nov 13, 1838</td>
+                <td><a href="smith,joseph-f.html">Smith, Joseph F.</a></td>
+            </tr>
+            <tr>
+                <td>Smith Jr., Joseph Fielding</td>
+                <td>July 2, 1972</td>
+                <td>July 19, 1876</td>
+                <td><a href="smith-jr,joseph-fielding.html">Smith Jr., Josph Fielding</a></td>
+            </tr>
+            <tr >
+                <td>Smith Jr., Joseph</td>
+                <td>June 27, 1844</td>
+                <td>Dec 23, 1805</td>
+                <td><a href="smith-jr,joseph.html">Smith Jr., Joseph</a></td>
+            </tr>
+            <tr >
+                <td>Smith Sr., Joseph</td>
+                <td>Sep 14, 1840</td>
+                <td>July 12, 1771</td>
+                <td><a href="smith-sr,joseph.html">Smith Sr., Joseph</a></td>
+            </tr>
+            <tr >
+                <td>Smith, William</td>
+                <td>Nov 13, 1893</td>
+                <td>March 13, 1811</td>
+                <td><a href="smith,william.html">Smith, William</a></td>
+            </tr>
+            <tr >
+                <td>Smoot, Reed</td>
+                <td>Feb 9, 1941</td>
+                <td>Jan 10, 1862</td>
+                <td><a href="smoot,reed.html">Smoot, Reed</a></td>
+            </tr>
+            <tr >
+                <td>Snow, Erastus</td>
+                <td>May 27, 1888</td>
+                <td>Nov 9, 1818</td>
+                <td><a href="snow,erastus.html">Snow, Erastus</a></td>
+            </tr>
+            <tr >
+                <td>Snow, Lorenzo</td>
+                <td>Oct 10, 1901</td>
+                <td>April 3, 1814</td>
+                <td><a href="snow,lorenzo.html">Snow, Lorenzo</a></td>
+            </tr>
+            <tr >
+                <td>Stapley, Delbert L.</td>
+                <td>Aug 19, 1978</td>
+                <td>Dec 11, 1896</td>
+                <td><a href="stapley,delbert-l.html">Stapley, Delbert L.</a></td>
+            </tr>
+            <tr >
+                <td>Talmage, James E.</td>
+                <td>July 27, 1933</td>
+                <td>Sep 21, 1862</td>
+                <td><a href="talmage,james-e.html">Talmage, James E.</a></td>
+            </tr>
+            <tr >
+                <td>Tanner, Nathan E.</td>
+                <td>Nov 27, 1982</td>
+                <td>May 9, 1898</td>
+                <td><a href="tanner,nathan-e.html">Tanner, Nathan E.</a></td>
+            </tr>
+            <tr >
+                <td>Taylor, John</td>
+                <td>July 25, 1887</td>
+                <td>Nov 1, 1808</td>
+                <td><a href="taylor,john.html">Taylor, John</a></td>
+            </tr>
+            <tr >
+                <td>Taylor, John W.</td>
+                <td>Oct 10, 1916</td>
+                <td>May 15, 1858</td>
+                <td><a href="taylor,john-w.html">Taylor, John W.</a></td>
+            </tr>
+            <tr >
+                <td>Teasdale, George</td>
+                <td>June 9, 1907</td>
+                <td>Dec 8, 1831</td>
+                <td><a href="teasdale,george.html">Teasdale, George</a></td>
+            </tr>
+            <tr >
+                <td>Thatcher, Moses</td>
+                <td>Aug 22, 1909</td>
+                <td>Feb 2, 1842</td>
+                <td><a href="thatcher,moses.html">Thatcher, Moses</a></td>
+            </tr>
+            <tr >
+                <td>Wells, Daniel H.</td>
+                <td>March 24, 1891</td>
+                <td>Oct 27, 1814</td>
+                <td><a href="wells,daniel-h.html">Wells, Daniel H.</a></td>
+            </tr>
+            <tr >
+                <td>Whitmer, David</td>
+                <td>Jan 25, 1888</td>
+                <td>Jan 7, 1805</td>
+                <td><a href="whitmer,david.html">Whitmer, David</a></td>
+            </tr>
+            <tr >
+                <td>Whitney, Orson F.</td>
+                <td>May 16, 1931</td>
+                <td>July 1, 1855</td>
+                <td><a href="whitney,orson-f.html">Whitney, Orson F.</a></td>
+            </tr>
+            <tr id="johnwidtsoe">
+                <td>Widtsoe, John A.</td>
+                <td>Nov 29, 1952</td>
+                <td>Jan 31, 1872</td>
+            </tr>
+            <tr >
+                <td>Wight, Lyman</td>
+                <td>March 31, 1858</td>
+                <td>May 9, 1796</td>
+                <td><a href="wight,lyman.html">Wight, Lyman</a></td>
+            </tr>
+            <tr >
+                <td>Williams, Frederick G.</td>
+                <td>Oct 10, 1842</td>
+                <td>Oct 17, 1787</td>
+                <td><a href="williams,frederick-g.html">Williams, Frederick G.</a></td>
+            </tr>
+            <tr >
+                <td>Winder, John R.</td>
+                <td>March 27, 1910</td>
+                <td>Dec 11, 1821</td>
+                <td><a href="winder,john-r.html">Winder, John R.</a></td>
+            </tr>
+            <tr >
+                <td>Wirthlin, Joseph B.</td>
+                <td>Dec 1, 2008</td>
+                <td>June 11, 1917</td>
+                <td><a href="wirthlin,joseph-b.html">Wirthlin, Joseph B.</a></td>
+            </tr>
+            <tr >
+                <td>Woodruff, Abraham O.</td>
+                <td>June 20, 1904</td>
+                <td>Nov 23, 1872</td>
+                <td><a href="woodruff,abraham-o.html">Woodruff, Abraham O.</a></td>
+            </tr>
+            <tr >
+                <td>Woodruff, Wilford</td>
+                <td>Sep 2, 1898</td>
+                <td>March 1, 1807</td>
+                <td><a href="woodruff,wilford.html">Woodruff, Wilford</a></td>
+            </tr>
+            <tr >
+                <td>Young, Brigham</td>
+                <td>Aug 29, 1877</td>
+                <td>Jun 1, 1801</td>
+                <td><a href="young,brigham.html">Young, Brigham</a></td>
+            </tr>
+            <tr >
+                <td>Young, John W.</td>
+                <td>Feb 12, 1924</td>
+                <td>Oct 1, 1844</td>
+                <td><a href="young,john-w.html">Young, John W.</a></td>
+            </tr>
+            <tr >
+                <td>Young Jr., Brigham</td>
+                <td>April 11, 1903</td>
+                <td>Dec 18, 1836</td>
+                <td><a href="young-jr,brigham.html">Young Jr., Brigham</a></td>
+            </tr>
+    </tbody>-->
+        </table>
+        <p>Did we get something wrong? Contact us: <a href="mailto:theforgottenprophetslatterdays@gmail.com">Email</a></p>
+        <p>Do you want to learn more about the Gospel? <a href="https://www.churchofjesuschrist.org/comeuntochrist">Come and See!</a></p>
+        <h4>The Favicon is the USVA headstone for Latter-Day Saints</h4>
+        <!--p>My other works:
+            <a href="file:///C:/Users/dandd/OneDrive/Desktop/Biblical%20Mormonism/index.html">Biblical Mormonism</a>,
+            <a href="file:///C:/Users/dandd/OneDrive/Desktop/Mormon%20Martyrs/index.html">Mormon Martyrs</a>,
+            <a href="">Latter-Day Controversies</a>
+        </p-->
+        <p><a href="https://discord.gg/EjbMXNTUxd"><img src="media/images/favicon/discord.png" alt="Discord"style="height:20px; width:20px;"></a>        <a href="https://www.youtube.com/@danddhamp"><img src="media/images/favicon/youtube.png" alt="YouTube" style="height:20px; width:20px"></a></p>
+    </body>
+</html>
