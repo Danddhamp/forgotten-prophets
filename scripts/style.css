@@ -22,13 +22,16 @@ a:hover{
 .dezweek{
     background-color:honeydew;
     color:black;
+    a{
+        color:black;
+    }
 }
 .jod{
     background-color:tan;
     color:black;
 }
 .chc{
-    background-color:lightgreen;
+    background-color:rgb(114, 121, 114);
     color:black;
     a{
         color:midnightblue;
@@ -52,7 +55,6 @@ a:hover{
                 height: 200px;
 }
             .talk-link:hover {
-            color: #a39f9f;
             text-decoration: underline;
 }
 body{
@@ -100,9 +102,6 @@ img.shadow-filter:hover{
 .quote{
     color:lightskyblue;
     font-style:italic;
-}
-.sermon a:hover{
-    color:rgb(109, 109, 109);
 }
 .sermon hr{
     color:honeydew;
