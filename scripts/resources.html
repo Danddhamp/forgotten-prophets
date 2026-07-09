@@ -4,14 +4,78 @@
         <title>Resources</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style>
-            a:visited{
-                color:blue;
+            a:visited {
+                color: blue;
+            }
+
+            /* Custom Timeline Formatting Styles */
+            .timeline-filters {
+                background: #f7f9fa;
+                border: 1px solid #dcdcdc;
+                padding: 12px;
+                border-radius: 4px;
+                margin-bottom: 18px;
+            }
+            .filter-item {
+                margin: 8px 0;
+            }
+            .filter-item label {
+                font-weight: bold;
+                margin-right: 8px;
+            }
+            .timeline-container {
+                position: relative;
+                border-left: 2px solid #0056b3;
+                padding-left: 18px;
+                margin: 15px 0 15px 8px;
+            }
+            .timeline-event {
+                position: relative;
+                margin-bottom: 20px;
+                background: #ffffff;
+                padding: 10px;
+                border: 1px solid #e0e0e0;
+                border-radius: 4px;
+            }
+            /* Vertical line tracking node dots */
+            .timeline-event::before {
+                content: '';
+                position: absolute;
+                left: -25px;
+                top: 14px;
+                width: 10px;
+                height: 10px;
+                background: #0056b3;
+                border-radius: 50%;
+            }
+            .event-meta {
+                font-size: 0.85em;
+                color: #555;
+                margin-bottom: 4px;
+                display: flex;
+                gap: 10px;
+            }
+            .event-tag {
+                background: #e2e8f0;
+                padding: 1px 5px;
+                border-radius: 3px;
+                font-size: 0.9em;
+                text-transform: capitalize;
+            }
+            .event-title {
+                margin: 0 0 5px 0;
+                font-size: 1.1em;
+            }
+            .no-events {
+                color: #777;
+                font-style: italic;
             }
         </style>
     </head>
     <body>
         <a href="../index.html">Home</a>
         <h1>Resources</h1>
+        
         <summary>Image Gallery</summary>
         <details>
             <ul>
@@ -24,137 +88,285 @@
                 <li><a href="https://catalog.churchofjesuschrist.org/record/5708a889-6343-4b5c-9561-668e5d40ba84/16caeb75-8263-4321-8b29-2f3c05c6f8d0?view=browse&lang=eng">Bathsheba W. Bigler Smith photograph collection, circa 1865-1900</a></li>
             </ul>
         </details>
+        
         <summary>Sermons/Discourses and Epistles</summary>
         <details>
-        <p>Audio-visual Aid</p>
+            <p>Audio-visual Aid</p>
             <p><a href="https://catalog.churchofjesuschrist.org/record/7eacaa5b-fb1e-4d82-a6b7-8f12159c97bf/40860424-63a7-49c0-950a-41fd0f74205b?view=browse&lang=eng">1949-1970 (Video only)</a></p>
             <p><a href="https://catalog.churchofjesuschrist.org/record/2b8598d8-cb11-4dc0-940b-bf84d68f85e5/27e55dd0-d8ae-4ffb-91c3-7d68a6dce4ad?view=browse&lang=eng">1936-49 (Audio only)</a></p>
-        <ol>
-            <li>General Conference (1971-Present)</li>
-            <ul>
-                <li><a href="https://www.churchofjesuschrist.org/study/general-conference?lang=eng">lds.org</a></li>
-            </ul>
-            <li>General Conference Reports (1880-2017)</li>
-            <ul>
-                <li><a href="https://archive.org/details/conferencereport">Internet Archive</a></li>
-                <li><a href="https://catalog.churchofjesuschrist.org/record/7fd062e7-7654-47c1-84e4-7bb27c3e93b7/0?view=browse">Church History Catalog</a></li>
-                <li><a href="https://archiveviewer.org/collections/en/deseret-news-weekly">Archive Viewer</a></li>
-            </ul>
-            <li>BYU Speeches</li>
-            <ul>
-                <li><a href="https://speeches.byu.edu">BYU.edu</a></li>
-            </ul>
-            <li>Journal of Discourses (1854-86)</li>
-            <ul>
-                <li><a href="https://archive.org/details/JournalOfDiscourses18541898">Internet Archive</a></li>
-                <li><a href="https://journalofdiscourses.com/">Journal of Discourses Website</a></li>
-                <li><a href="https://www.josephsmithfoundation.org/journalofdiscourses/">Joseph Smith Foundation</a></li>
-            </ul>
-            <li>Church Periodicals (Note: Not all are official publications)</li>
-            <ul>
-                <li>The Evening and Morning Star (1832-34)</li>
-                <ul><li><a href="https://archiveviewer.org/collections/en/the-evening-and-the-morning-star">Archive Viewer</a></li>
-                    <li><a href="https://catalog.churchofjesuschrist.org/assets/4f409ef3-4279-4d4e-aa89-870de5498410/0/0">Church History Catalog</a></li>
-                    <li><a href="https://archive.org/details/EveningAndMorningStar18321834/mode/1up">Internet Archive</a></li>
-                </ul>
-                <li>Messenger and Advocate (1832-37)</li>
+            <ol>
+                <li>General Conference (1971-Present)</li>
                 <ul>
-                    <li><a href="https://archiveviewer.org/collections/en/latter-day-saints-messenger-and-advocate">Archive Viewer</a></li>
-                    <li><a href="https://catalog.churchofjesuschrist.org/record/20ac4aeb-6117-4cdb-8131-097568ce8d1f/0?view=browse">Church History Catalog</a></li>
-                    <li><a href="https://archive.org/details/latterdaysaintsm01unse">Internet Archive</a></li>
+                    <li><a href="https://www.churchofjesuschrist.org/study/general-conference?lang=eng">lds.org</a></li>
                 </ul>
-                <li>Elders' Journal (1837-38)</li>
+                <li>General Conference Reports (1880-2017)</li>
                 <ul>
-                    <li><a href="https://archiveviewer.org/collections/en/elders-journal-marsh">Archive Viewer</a></li>
-                    <li><a href="https://archive.org/details/eldersjournalkir04smit/page/n5/mode/2up">Internet Archive</a></li>
-                </ul>
-                <li>Times and Seasons (1839-46)</li>
-                <ul>
-                    <li><a href="https://archiveviewer.org/collections/en/times-and-seasons">Archive Viewer</a></li>
-                    <li><a href="https://catalog.churchofjesuschrist.org/record/7c4aec9f-2e47-4490-8061-5c1ed6060e96/0?view=browse">Church History Catalog</a></li>
-                    <li><a href="https://archive.org/details/TimesAndSeasons18391846/mode/1up">Internet Archive</a></li>
-                </ul>
-                <li>Millenial Star (1840-1970)</li>
-                <ul>
-                    <li><a href="https://archiveviewer.org/collections/en/millennial-star">Archive Viewer</a></li>
-                </ul>
-                <li>The Gospel Reflector (1841)</li>
-                <ul>
-                    <li><a href="https://archiveviewer.org/collections/en/the-gospel-reflector">Archive Viewer</a></li>
-                    <li><a href="https://archive.org/details/GospelReflector1841/mode/1up">Internet Archive</a></li>
-                </ul>
-                <li>The Wasp (1842-43)</li>
-                <ul>
-                    <li><a href="https://archiveviewer.org/collections/en/the-wasp">Archive Viewer</a></li>
-                </ul>
-                <li>The Gospel Light (1843-44)</li>
-                <ul>
-                    <li><a href="https://archiveviewer.org/collections/en/the-gospel-light">Archive Viewer</a></li>
-                    <li><a href="https://archive.org/details/GospelLight18431844/mode/1up">Internet Archive</a></li>
-                </ul>
-                <li>Nauvoo Neighbor (1843-45)</li>
-                <ul>
-                    <li><a href="https://archiveviewer.org/collections/en/nauvoo-neighbor">Archive Viewer</a></li>
-                </ul>
-                <li>The People's Organ (1844)</li>
-                <ul>
-                    <li><a href="https://archiveviewer.org/collections/en/the-peoples-organ">Archive Viewer</a></li>
-                </ul>
-                <li>The Prophet (1844-45)</li>
-                <ul>
-                    <li><a href="https://archiveviewer.org/viewer/internet-archive/TheProphet18441845">Archive Viewer</a></li>
-                </ul>
-                <li>The New York Messenger (1845)</li>
-                <ul>
-                    <li><a href="https://archiveviewer.org/viewer/internet-archive/NewYorkMessenger1845">Archive Viewer</a></li>
-                </ul>
-                <li>The Frontier Guardian (1849-53)</li>
-                <ul>
-                    <li><a href="https://archiveviewer.org/collections/en/the-frontier-guardian">Archive Viewer</a></li>
-                </ul>
-                <li>Deseret News (1850-98)</li>
-                <ul>
+                    <li><a href="https://archive.org/details/conferencereport">Internet Archive</a></li>
+                    <li><a href="https://catalog.churchofjesuschrist.org/record/7fd062e7-7654-47c1-84e4-7bb27c3e93b7/0?view=browse">Church History Catalog</a></li>
                     <li><a href="https://archiveviewer.org/collections/en/deseret-news-weekly">Archive Viewer</a></li>
                 </ul>
-                <li>Deseret Almanac (1851-65)</li>
+                <li>BYU Speeches</li>
                 <ul>
-                    <li><a href="https://archiveviewer.org/collections/en/deseret-almanac">Archive Viewer</a></li>
+                    <li><a href="https://speeches.byu.edu">BYU.edu</a></li>
                 </ul>
-                <li>The Seer (1853-54)</li>
+                <li>Journal of Discourses (1854-86)</li>
                 <ul>
-                    <li><a href="https://archiveviewer.org/collections/en/the-seer">Archive Viewer</a></li>
+                    <li><a href="https://archive.org/details/JournalOfDiscourses18541898">Internet Archive</a></li>
+                    <li><a href="https://journalofdiscourses.com/">Journal of Discourses Website</a></li>
+                    <li><a href="https://www.josephsmithfoundation.org/journalofdiscourses/">Joseph Smith Foundation</a></li>
                 </ul>
-                <li>Zion's Watchman (1853-56)</li>
+                <li>Church Periodicals (Note: Not all are official publications)</li>
                 <ul>
-                    <li><a href="https://archiveviewer.org/collections/en/zions-watchman">Archive Viewer</a></li>
+                    <li>The Evening and Morning Star (1832-34)</li>
+                    <ul><li><a href="https://archiveviewer.org/collections/en/the-evening-and-the-morning-star">Archive Viewer</a></li>
+                        <li><a href="https://catalog.churchofjesuschrist.org/assets/4f409ef3-4279-4d4e-aa89-870de5498410/0/0">Church History Catalog</a></li>
+                        <li><a href="https://archive.org/details/EveningAndMorningStar18321834/mode/1up">Internet Archive</a></li>
+                    </ul>
+                    <li>Messenger and Advocate (1832-37)</li>
+                    <ul>
+                        <li><a href="https://archiveviewer.org/collections/en/latter-day-saints-messenger-and-advocate">Archive Viewer</a></li>
+                        <li><a href="https://catalog.churchofjesuschrist.org/record/20ac4aeb-6117-4cdb-8131-097568ce8d1f/0?view=browse">Church History Catalog</a></li>
+                        <li><a href="https://archive.org/details/latterdaysaintsm01unse">Internet Archive</a></li>
+                    </ul>
+                    <li>Elders' Journal (1837-38)</li>
+                    <ul>
+                        <li><a href="https://archiveviewer.org/collections/en/elders-journal-marsh">Archive Viewer</a></li>
+                        <li><a href="https://archive.org/details/eldersjournalkir04smit/page/n5/mode/2up">Internet Archive</a></li>
+                    </ul>
+                    <li>Times and Seasons (1839-46)</li>
+                    <ul>
+                        <li><a href="https://archiveviewer.org/collections/en/times-and-seasons">Archive Viewer</a></li>
+                        <li><a href="https://catalog.churchofjesuschrist.org/record/7c4aec9f-2e47-4490-8061-5c1ed6060e96/0?view=browse">Church History Catalog</a></li>
+                        <li><a href="https://archive.org/details/TimesAndSeasons18391846/mode/1up">Internet Archive</a></li>
+                    </ul>
+                    <li>Millenial Star (1840-1970)</li>
+                    <ul>
+                        <li><a href="https://archiveviewer.org/collections/en/millennial-star">Archive Viewer</a></li>
+                    </ul>
+                    <li>The Gospel Reflector (1841)</li>
+                    <ul>
+                        <li><a href="https://archiveviewer.org/collections/en/the-gospel-reflector">Archive Viewer</a></li>
+                        <li><a href="https://archive.org/details/GospelReflector1841/mode/1up">Internet Archive</a></li>
+                    </ul>
+                    <li>The Wasp (1842-43)</li>
+                    <ul>
+                        <li><a href="https://archiveviewer.org/collections/en/the-wasp">Archive Viewer</a></li>
+                    </ul>
+                    <li>The Gospel Light (1843-44)</li>
+                    <ul>
+                        <li><a href="https://archiveviewer.org/collections/en/the-gospel-light">Archive Viewer</a></li>
+                        <li><a href="https://archive.org/details/GospelLight18431844/mode/1up">Internet Archive</a></li>
+                    </ul>
+                    <li>Nauvoo Neighbor (1843-45)</li>
+                    <ul>
+                        <li><a href="https://archiveviewer.org/collections/en/nauvoo-neighbor">Archive Viewer</a></li>
+                    </ul>
+                    <li>The People's Organ (1844)</li>
+                    <ul>
+                        <li><a href="https://archiveviewer.org/collections/en/the-peoples-organ">Archive Viewer</a></li>
+                    </ul>
+                    <li>The Prophet (1844-45)</li>
+                    <ul>
+                        <li><a href="https://archiveviewer.org/viewer/internet-archive/TheProphet18441845">Archive Viewer</a></li>
+                    </ul>
+                    <li>The New York Messenger (1845)</li>
+                    <ul>
+                        <li><a href="https://archiveviewer.org/viewer/internet-archive/NewYorkMessenger1845">Archive Viewer</a></li>
+                    </ul>
+                    <li>The Frontier Guardian (1849-53)</li>
+                    <ul>
+                        <li><a href="https://archiveviewer.org/collections/en/the-frontier-guardian">Archive Viewer</a></li>
+                    </ul>
+                    <li>Deseret News (1850-98)</li>
+                    <ul>
+                        <li><a href="https://archiveviewer.org/collections/en/deseret-news-weekly">Archive Viewer</a></li>
+                    </ul>
+                    <li>Deseret Almanac (1851-65)</li>
+                    <ul>
+                        <li><a href="https://archiveviewer.org/collections/en/deseret-almanac">Archive Viewer</a></li>
+                    </ul>
+                    <li>The Seer (1853-54)</li>
+                    <ul>
+                        <li><a href="https://archiveviewer.org/collections/en/the-seer">Archive Viewer</a></li>
+                    </ul>
+                    <li>Zion's Watchman (1853-56)</li>
+                    <ul>
+                        <li><a href="https://archiveviewer.org/collections/en/zions-watchman">Archive Viewer</a></li>
+                    </ul>
+                    <li>St. Louis Luminary (1854-55)</li>
+                    <ul>
+                        <li><a href="https://archiveviewer.org/collections/en/st-louis-luminary">Archive Viewer</a></li>
+                    </ul>
+                    <li>The Mormon (1855-57)</li>
+                    <ul>
+                        <li><a href="https://archiveviewer.org/collections/en/the-mormon">Archive Viewer</a></li>
+                    </ul>
+                    <li>Western Standard (1856-57)</li>
+                    <ul>
+                        <li><a href="https://archiveviewer.org/collections/en/western-standard">Archive Viewer</a></li>
+                    </ul>
+                    <li>Juvenile Instructor (1866-1929)</li>
+                    <ul>
+                        <li><a href="https://archiveviewer.org/collections/en/juvenile-instructor">Archive Viewer</a></li>
+                    </ul>
+                    <li>Woman's Exponent (1872-1914)</li>
+                    <ul>
+                        <li><a href="https://archiveviewer.org/collections/en/womans-exponent">Archive Viewer</a></li>
+                    </ul>
+                    <li>The Contributer (1879-96)</li>
+                    <ul>
+                        <li><a href="https://archiveviewer.org/collections/en/the-contributor">Archive Viewer</a></li>
+                    </ul>
+                    <li>Young Woman's Journal (1889-1929)</li>
+                    <ul>
+                        <li><a href="https://archiveviewer.org/collections/en/young-womans-journal">Archive Viewer</a></li>
+                    </ul>
+                    <li>Improvement Era (1897-1970)</li>
+                    <ul>
+                        <li><a href="https://archiveviewer.org/collections/en/improvement-era">Archive Viewer</a></li>
+                    </ul>
+                    <li>Southern Star (1898-1900)</li>
+                    <ul>
+                        <li><a href="https://archiveviewer.org/collections/en/latter-day-saints-southern-star">Archive Viewer</a></li>
+                    </ul>
+                    <li>The Children's Friend (1902-70)</li>
+                    <ul>
+                        <li><a href="https://archiveviewer.org/collections/en/the-childrens-friend">Archive Viewer</a></li>
+                    </ul>
+                    <li>Utah Genealogical and Historical Magazine (1910-40)</li>
+                    <ul>
+                        <li><a href="https://archiveviewer.org/collections/en/utah-genealogical-and-historical-magazine">Archive Viewer</a></li>
+                    </ul>
+                    <li>Relief Society Magazine (1914-70)</li>
+                    <ul>
+                        <li><a href="https://archiveviewer.org/collections/en/relief-society-magazine">Archive Viewer</a></li>
+                    </ul>
+                    <li>Church News (1930-Present)</li>
+                    <ul>
+                        <li><a href="https://archiveviewer.org/collections/en/church-news">Archive Viewer</a></li>
+                    </ul>
+                    <li>Ensign (1971-2020)</li>
+                    <ul>
+                        <li><a href="https://archiveviewer.org/collections/en/ensign">Archive Viewer</a></li>
+                    </ul>
+                    <li>New Era (1971-2020)</li>
+                    <ul>
+                        <li><a href="https://archiveviewer.org/collections/en/new-era">Archive Viewer</a></li>
+                    </ul>
+                    <li>Friend (1971-2020)</li>
+                    <ul>
+                        <li><a href="https://archiveviewer.org/collections/en/friend">Archive Viewer</a></li>
+                    </ul>
+                    <li>Liahona (1977-Present)</li>
+                    <ul>
+                        <li><a href="https://www.churchofjesuschrist.org/study/magazines/liahona?lang=eng">lds.org</a></li>
+                    </ul>
+                    <li>For the Strength of Youth (2021-Present)</li>
+                    <ul>
+                        <li><a href="https://www.churchofjesuschrist.org/study/magazines/for-the-strength-of-youth?lang=eng">lds.org</a></li>
+                    </ul>
                 </ul>
-                <li>St. Louis Luminary (1854-55)</li>
-                <ul>
-                    <li><a href="https://archiveviewer.org/collections/en/st-louis-luminary">Archive Viewer</a></li>
-                </ul>
-                <li>The Mormon (1855-57)</li>
-                <ul>
-                    <li><a href="https://archiveviewer.org/collections/en/the-mormon">Archive Viewer</a></li>
-                </ul>
-                <li>Western Standard (1856-57)</li>
-                <ul>
-                    <li><a href="https://archiveviewer.org/collections/en/western-standard">Archive Viewer</a></li>
-                </ul>
-                <li>Juvenile Instructor (1866-1929)</li>
-                <ul>
-                    <li><a href="https://archiveviewer.org/collections/en/juvenile-instructor">Archive Viewer</a></li>
-                </ul>
-                <li>Woman's Exponent (1872-1914)</li>
-                <ul>
-                    <li><a href="https://archiveviewer.org/collections/en/womans-exponent">Archive Viewer</a></li>
-                </ul>
-                <li>The Contributer (1879-96)</li>
-                <ul>
-                    <li><a href="https://archiveviewer.org/collections/en/the-contributor">Archive Viewer</a></li>
-                </ul>
-                <li>Young Woman's Journal (1889-1929)</li>
-                <ul>
-                    <li><a href="https://archiveviewer.org/collections/en/young-womans-journal">Archive Viewer</a></li>
+            </ol>
+        </details>
+
+        <!-- NEW TIMELINE SECTION -->
+        <summary>Interactive Historical Timeline</summary>
+        <details>
+            <div class="timeline-filters">
+                <div class="filter-item">
+                    <label for="era-select">Era:</label>
+                    <select id="era-select">
+                        <option value="all">All Eras</option>
+                        <option value="1820-1830">Early Era (1820-1830)</option>
+                        <option value="1831-1844">Nauvoo/Kirtland (1831-1844)</option>
+                        <option value="1845-1890">Pioneer Era (1845-1890)</option>
+                    </select>
+                </div>
+                <div class="filter-item">
+                    <label for="type-select">Focus Group:</label>
+                    <select id="type-select">
+                        <option value="all">All Profiles</option>
+                        <option value="general">General Events</option>
+                        <option value="first-presidency">First Presidency</option>
+                        <option value="apostles">Quorum of the Twelve / Apostles</option>
+                    </select>
+                </div>
+                <div class="filter-item">
+                    <label for="source-select">Source Class:</label>
+                    <select id="source-select">
+                        <option value="all">All Sources</option>
+                        <option value="revelation">Revelations & Official Records</option>
+                        <option value="periodical">Newspapers & Magazines</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="timeline-output" class="timeline-container">
+                <!-- Javascript builds events here dynamically -->
+            </div>
+        </details>
+
+        <script>
+            // Data structure storing your chronological entries
+            const historyData = [
+                {
+                    date: "Spring 1820",
+                    era: "1820-1830",
+                    type: "general",
+                    source: "revelation",
+                    title: "The First Vision",
+                    description: "Joseph Smith receives his foundational vision in a grove of trees near his home in Manchester, New York."
+                },
+                {
+                    date: "April 6, 1830",
+                    era: "1820-1830",
+                    type: "general",
+                    source: "revelation",
+                    title: "Organization of the Church",
+                    description: "The Church is officially organized in Fayette, New York, with six formal members."
+                },
+                {
+                    date: "1832-1834",
+                    era: "1831-1844",
+                    type: "general",
+                    source: "periodical",
+                    title: "The Evening and Morning Star Publication",
+                    description: "The first official monthly periodical published for the Church, printed at Independence, Missouri."
+                },
+                {
+                    date: "Feb 14, 1835",
+                    era: "1831-1844",
+                    type: "apostles",
+                    source: "revelation",
+                    title: "Quorum of the Twelve Organised",
+                    description: "The three witnesses of the Book of Mormon select and ordain the first twelve members of the Quorum of Apostles in this dispensation."
+                },
+                {
+                    date: "1839-1846",
+                    era: "1831-1844",
+                    type: "first-presidency",
+                    source: "periodical",
+                    title: "Times and Seasons Printing",
+                    description: "Published out of Nauvoo, Illinois, providing news, general epistles, and regular discourses from Church leadership."
+                },
+                {
+                    date: "July 24, 1847",
+                    era: "1845-1890",
+                    type: "first-presidency",
+                    source: "general",
+                    title: "Pioneers Enter the Salt Lake Valley",
+                    description: "President Brigham Young enters the Great Salt Lake Valley, famously declaring, 'This is the right place.'"
+                }
+            ];
+
+            const eraSelect = document.getElementById('era-select');
+            const typeSelect = document.getElementById('type-select');
+            const sourceSelect = document.getElementById('source-select');
+            const timelineOutput = document.getElementById('timeline-output');
+
+            function updateTimeline() {
+                const targetEra = eraSelect.value;
+                const targetType = typeSelect.><a href="https://archiveviewer.org/collections/en/young-womans-journal">Archive Viewer</a></li>
                 </ul>
                 <li>Improvement Era (1897-1970)</li>
                 <ul>
