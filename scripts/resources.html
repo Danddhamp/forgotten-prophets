@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style>
             a:visited {
-                color: blue;
+                color: purple;
             }
 
             /* Custom Timeline Formatting Styles */
@@ -34,6 +34,263 @@
                 margin-bottom: 20px;
                 background: #ffffff;
                 padding: 10px;
+                border: 1px solid #e0e0e0;
+                border-radius: 4px;
+            }
+            /* Vertical line tracking node dots */
+            .timeline-event::before {
+                content: '';
+                position: absolute;
+                left: -25px;
+                top: 14px;
+                width: 10px;
+                height: 10px;
+                background: #0056b3;
+                border-radius: 50%;
+            }
+            .event-meta {
+                font-size: 0.85em;
+                color: #555;
+                margin-bottom: 4px;
+                display: flex;
+                gap: 10px;
+            }
+            .event-tag {
+                background: #e2e8f0;
+                padding: 1px 5px;
+                border-radius: 3px;
+                font-size: 0.9em;
+                text-transform: capitalize;
+            }
+            .event-title {
+                margin: 0 0 5px 0;
+                font-size: 1.1em;
+            }
+            .no-events {
+                color: #777;
+                font-style: italic;
+            }
+        </style>
+    </head>
+    <body>
+        <a href="../index.html">Home</a>
+        <h1>Resources</h1>
+        
+        <details>
+            <summary>Image Gallery</summary>
+            <ul>
+                <li><a href="https://churchhistorylibrary.churchofjesuschrist.org/guides/photograph-collections?lang=eng">Photograph Collections</a></li>
+                <li><a href="https://catalog.churchofjesuschrist.org/assets/aa8e84c8-3e5d-4740-a95d-4524325aa324/0/0?lang=eng">General Authority photograph portraits, circa 1870s</a></li>
+                <li><a href="https://catalog.churchofjesuschrist.org/record/799cd835-cb2e-41d7-b9d8-378ed7a6c4f6/11cda390-da6a-451e-bee3-921cd48f08da?view=browse">General Authority portrait collection</a></li>
+                <li><a href="https://catalog.churchofjesuschrist.org/record/0b45bf17-8421-4a20-aceb-c898a2691a7c/0?view=browse&lang=eng">Photograph album of LDS Church leaders, circa 1880s-early 1900s</a></li>
+                <li><a href="https://catalog.churchofjesuschrist.org/record/c4aff5f9-175d-4be6-95c0-42ebb1f43d58/853fa08e-a072-4fb9-b68a-243afbe5c04d?view=browse&lang=eng">Daguerreotype collection</a></li>
+                <li><a href="https://catalog.churchofjesuschrist.org/record/312ab6d1-b11e-4dde-add0-2c59580015f1/d4be7023-d655-4cc8-a678-216e382fae2d?view=browse&lang=eng">Savage and Ottinger collection</a></li>
+                <li><a href="https://catalog.churchofjesuschrist.org/record/5708a889-6343-4b5c-9561-668e5d40ba84/16caeb75-8263-4321-8b29-2f3c05c6f8d0?view=browse&lang=eng">Bathsheba W. Bigler Smith photograph</a></li>
+            </ul>
+        </details>
+        
+        <details>
+            <summary>Sermons/Discourses and Epistles</summary>
+            <p>Audio-visual Aid</p>
+            <p><a href="https://catalog.churchofjesuschrist.org/record/7eacaa5b-fb1e-4d82-a6b7-8f12159c97bf/40860424-63a7-49c0-950a-41fd0f74205b?view=browse&lang=eng">1949-1970 (Video only)</a></p>
+            <p><a href="https://catalog.churchofjesuschrist.org/record/2b8598d8-cb11-4dc0-940b-bf84d68f85e5/27e55dd0-d8ae-4ffb-91c3-7d68a6dce4ad?view=browse&lang=eng">1936-49 (Audio only)</a></p>
+            <ol>
+                <li>General Conference (1971-Present)
+                    <ul>
+                        <li><a href="https://www.churchofjesuschrist.org/study/general-conference?lang=eng">lds.org</a></li>
+                    </ul>
+                </li>
+                <li>General Conference Reports (1880-2017)
+                    <ul>
+                        <li><a href="https://archive.org/details/conferencereport">Internet Archive</a></li>
+                        <li><a href="https://catalog.churchofjesuschrist.org/record/7fd062e7-7654-47c1-84e4-7bb27c3e93b7/0?view=browse">Church History Catalog</a></li>
+                        <li><a href="https://archiveviewer.org/collections/en/deseret-news-weekly">Archive Viewer</a></li>
+                    </ul>
+                </li>
+                <li>BYU Speeches
+                    <ul>
+                        <li><a href="https://speeches.byu.edu">BYU.edu</a></li>
+                    </ul>
+                </li>
+                <li>Journal of Discourses (1854-86)
+                    <ul>
+                        <li><a href="https://archive.org/details/JournalOfDiscourses18541898">Internet Archive</a></li>
+                        <li><a href="https://journalofdiscourses.com/">Journal of Discourses Website</a></li>
+                        <li><a href="https://www.josephsmithfoundation.org/journalofdiscourses/">Joseph Smith Foundation</a></li>
+                    </ul>
+                </li>
+                <!-- TODO: additional list items belonged here in the original page but were not provided to me,
+                     so I could not restore them. Paste the missing entries back in below. -->
+            </ol>
+        </details>
+
+        <!-- TIMELINE SECTION -->
+        <details open>
+            <summary>Interactive Historical Timeline</summary>
+            <div class="timeline-filters">
+                <div class="filter-item">
+                    <label for="era-select">Era:</label>
+                    <select id="era-select">
+                        <option value="all">All Eras</option>
+                        <option value="1820-1830">Early Era (1820-1830)</option>
+                        <option value="1831-1846">Nauvoo/Kirtland (1831-1846)</option>
+                        <option value="1847-1890">Pioneer Era (1847-1890)</option>
+                    </select>
+                </div>
+                <div class="filter-item">
+                    <label for="type-select">Focus Group:</label>
+                    <select id="type-select">
+                        <option value="all">All Profiles</option>
+                        <option value="general">General Events</option>
+                        <option value="first-presidency">First Presidency</option>
+                        <option value="apostles">Quorum of the Twelve / Apostles</option>
+                    </select>
+                </div>
+                <div class="filter-item">
+                    <label for="source-select">Source Class:</label>
+                    <select id="source-select">
+                        <option value="all">All Sources</option>
+                        <option value="revelation">Revelations & Official Records</option>
+                        <option value="periodical">Newspapers & Magazines</option>
+                        <option value="general">General / Firsthand Accounts</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="timeline-output" class="timeline-container">
+                <!-- Javascript builds events here dynamically -->
+            </div>
+        </details>
+
+        <script>
+            // Data structure storing your chronological entries
+            const historyData = [
+                {
+                    date: "Spring 1820",
+                    era: "1820-1830",
+                    type: "general",
+                    source: "revelation",
+                    title: "The First Vision",
+                    description: "Joseph Smith receives his foundational vision in a grove of trees near his home in Manchester, New York."
+                },
+                {
+                    date: "April 6, 1830",
+                    era: "1820-1830",
+                    type: "general",
+                    source: "revelation",
+                    title: "Organization of the Church",
+                    description: "The Church is officially organized in Fayette, New York, with six formal members."
+                },
+                {
+                    date: "1832-1834",
+                    era: "1831-1846",
+                    type: "general",
+                    source: "periodical",
+                    title: "The Evening and Morning Star Publication",
+                    description: "The first official monthly periodical published for the Church, printed at Independence, Missouri."
+                },
+                {
+                    date: "Feb 14, 1835",
+                    era: "1831-1846",
+                    type: "apostles",
+                    source: "revelation",
+                    title: "Quorum of the Twelve Organised",
+                    description: "The three witnesses of the Book of Mormon select and ordain the first twelve members of the Quorum of Apostles in this dispensation."
+                },
+                {
+                    date: "1839-1846",
+                    era: "1831-1846",
+                    type: "first-presidency",
+                    source: "periodical",
+                    title: "Times and Seasons Printing",
+                    description: "Published out of Nauvoo, Illinois, providing news, general epistles, and regular discourses from Church leadership."
+                },
+                {
+                    date: "July 24, 1847",
+                    era: "1847-1890",
+                    type: "first-presidency",
+                    source: "general",
+                    title: "Pioneers Enter the Salt Lake Valley",
+                    description: "President Brigham Young enters the Great Salt Lake Valley, famously declaring, 'This is the right place.'"
+                }
+            ];
+
+            const eraSelect = document.getElementById('era-select');
+            const typeSelect = document.getElementById('type-select');
+            const sourceSelect = document.getElementById('source-select');
+            const timelineOutput = document.getElementById('timeline-output');
+
+            // Parse the leading date out of each entry so events can be sorted
+            // chronologically regardless of the order they're listed in the array.
+            function getSortableDate(dateStr) {
+                const match = dateStr.match(/\d{4}/);
+                return match ? parseInt(match[0], 10) : 0;
+            }
+
+            function updateTimeline() {
+                const targetEra = eraSelect.value;
+                const targetType = typeSelect.value;
+                const targetSource = sourceSelect.value;
+
+                const filtered = historyData.filter(item => {
+                    if (targetEra !== 'all' && item.era !== targetEra) return false;
+                    if (targetType !== 'all' && item.type !== targetType) return false;
+                    if (targetSource !== 'all' && item.source !== targetSource) return false;
+                    return true;
+                });
+
+                // Clear output
+                timelineOutput.innerHTML = '';
+
+                if (filtered.length === 0) {
+                    const noEvents = document.createElement('div');
+                    noEvents.className = 'no-events';
+                    noEvents.textContent = 'No events match the current filters.';
+                    timelineOutput.appendChild(noEvents);
+                    return;
+                }
+
+                // Sort chronologically by the year found in each event's date string.
+                filtered.sort((a, b) => getSortableDate(a.date) - getSortableDate(b.date));
+
+                filtered.forEach(item => {
+                    const eventEl = document.createElement('div');
+                    eventEl.className = 'timeline-event';
+
+                    const meta = document.createElement('div');
+                    meta.className = 'event-meta';
+                    const dateSpan = document.createElement('span');
+                    dateSpan.textContent = item.date;
+                    const tagSpan = document.createElement('span');
+                    tagSpan.className = 'event-tag';
+                    tagSpan.textContent = item.type;
+                    meta.appendChild(dateSpan);
+                    meta.appendChild(tagSpan);
+
+                    const title = document.createElement('h3');
+                    title.className = 'event-title';
+                    title.textContent = item.title;
+
+                    const desc = document.createElement('p');
+                    desc.textContent = item.description;
+
+                    eventEl.appendChild(meta);
+                    eventEl.appendChild(title);
+                    eventEl.appendChild(desc);
+
+                    timelineOutput.appendChild(eventEl);
+                });
+            }
+
+            eraSelect.addEventListener('change', updateTimeline);
+            typeSelect.addEventListener('change', updateTimeline);
+            sourceSelect.addEventListener('change', updateTimeline);
+
+            // Initialize on DOM ready
+            document.addEventListener('DOMContentLoaded', updateTimeline);
+        </script>
+    </body>
+</html>
                 border: 1px solid #e0e0e0;
                 border-radius: 4px;
             }
