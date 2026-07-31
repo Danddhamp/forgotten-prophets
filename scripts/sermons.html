@@ -89,6 +89,84 @@
                 .content{
                         flex:1;
                 }
+                @media (max-width: 768px) {
+    .page {
+        flex-direction: column;
+    }
+
+    .timeline {
+        position: relative;
+        top: auto;
+        width: auto;
+        max-height: 200px;
+        margin-right: 0;
+        margin-bottom: 20px;
+        border-left: none;
+        border-bottom: 4px solid white;
+        padding-left: 0;
+        padding-bottom: 15px;
+    }
+
+    .timeline h2 {
+        margin-left: 0;
+    }
+
+    .timeline a {
+        margin: 12px 0;
+        font-size: 16px;
+    }
+
+    .dot {
+        margin-left: 0;
+    }
+
+    .prophet {
+        width: calc(50% - 20px);
+        margin: 5px;
+    }
+
+    .prophet img {
+        height: 250px;
+        width: 100%;
+    }
+
+    #searchBar {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+@media (max-width: 480px) {
+    .prophet {
+        width: 100%;
+    }
+}
+#backToTop {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #003b75;
+    color: white;
+    border: 2px solid white;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+}
+
+#backToTop:hover {
+    background-color: #ffd24d;
+    color: #002E5D;
+}
+@media (max-width: 768px) {
+    #backToTop {
+        display: block;
+    }
+}
         </style>
     </head>
     <body>
@@ -115,6 +193,7 @@
                 <a href="#2000s"><span class="dot"></span>2000s</a>
         </aside>
         <main class="content">
+        <button id="backToTop" onclick="scrollToTop()" title="Back to top">↑</button>
         <h1>The Prophets' Teachings</h1>
         <h4>Discourses, Epistles, Books, Sermons, &c.</h4>
         <a href="../index.html" class="button" id="homebutton">Home</a>
@@ -1338,5 +1417,12 @@ function searchProphets() {
     }
 }
 </script>
+
+        <script>
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+}
+</script>
+
     </body>
 </html>
