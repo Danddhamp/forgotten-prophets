@@ -136,3 +136,60 @@ th, td{
 .epistle-background{
     background-color: #00A2E8;
 }
+#searchBar {
+                    width: 300px;
+                    max-width: 90%;
+                    padding: 8px 12px;
+                    margin: 15px 0;
+                    font-size: 16px;
+                    border: 2px solid whitesmoke;
+                    border-radius: 5px;
+                    background-color: #002E5D;
+                    color: whitesmoke;
+                }
+#searchBar::placeholder {
+        color: lightgray;
+    }
+button {
+    padding: 8px 12px;
+    margin: 15px 5px;
+    font-size: 16px;
+    border: 2px solid whitesmoke;
+    border-radius: 5px;
+    background-color: #002E5D;
+    color: whitesmoke;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+button:hover {
+    background-color: whitesmoke;
+    color: #002E5D;
+}
+
+button:active {
+    transform: scale(0.97);
+}
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #003b75;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+}
+#timelineButton {
+     position: fixed;
+    top: 0;
+    right: 0;
+    margin: 10px;
+    z-index: 1000;
+}
+#homebutton {
+    position: fixed;
+    top: 50px;
+    right: 20px;
+    z-index: 1000;
+    padding: 10px 15px;
+    border-radius: 8px;
+}
