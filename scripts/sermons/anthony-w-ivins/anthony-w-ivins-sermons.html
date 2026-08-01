@@ -1,232 +1,531 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>A-W-I</title>
+        <title>Anthony W. Ivins' Teachings</title>
         <link rel="stylesheet" type="text/css" href="../../style.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <base href="" target="_blank">
+        <style>
+            .teaching-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(420px,1fr));
+
+    gap:25px;
+
+    width:95%;
+
+    margin:auto;
+
+    margin-top:40px;
+
+}
+
+.teaching-tile{
+
+    border:3px solid whitesmoke;
+
+    padding:20px;
+
+    min-height:300px;
+
+    text-align:center;
+
+}
+
+.teaching-tile h2{
+
+    margin:0;
+
+    font-size:30px;
+
+}
+
+.year{
+
+    font-size:26px;
+
+    margin-top:8px;
+
+}
+
+.calling{
+
+    font-size:22px;
+
+    margin-top:8px;
+
+    margin-bottom:18px;
+
+}
+
+.sources{
+
+    display:flex;
+
+    justify-content:space-evenly;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+
+    margin-bottom:15px;
+
+}
+
+.sources a{
+
+    color:lightskyblue;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+}
+
+.sources a:hover{
+
+    text-decoration:underline;
+
+}
+
+.other-source{
+
+    margin-bottom:20px;
+
+}
+
+.other-source a{
+
+    color:lightgreen;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+}
+
+.other-source a:hover{
+
+    text-decoration:underline;
+
+}
+
+.teaching-type{
+
+    font-size:22px;
+
+    margin-bottom:45px;
+
+}
+
+.topics{
+
+    text-align:left;
+
+    font-size:20px;
+
+    line-height:1.5;
+
+}
+@media (max-width:768px){
+
+.teaching-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.teaching-tile{
+
+    min-height:auto;
+
+}
+
+.sources{
+
+    flex-direction:column;
+
+}
+
+}
+.filters{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:15px;
+    margin:25px auto;
+}
+
+.filters select,
+.filters input{
+    padding:10px;
+    font-size:16px;
+    border:2px solid whitesmoke;
+    border-radius:8px;
+    background:#002E5D;
+    color:white;
+    font-family:inherit;
+}
+
+.filters select{
+    cursor:pointer;
+}
+        </style>
     </head>
-    <body class="sermon">
+    <body class="teachings-page">
+        <header class="page-header">
         <a href="../../../index.html" target="_self">Home Page</a>
         <br>
-        <a href="../../sermons.html" target="_self">Sermons Page</a>
+        <a href="../../sermons.html" target="_self">Teachings Page</a>
         <br>
-        [Sources]
+        <a href="../../resources.html" target="_self">Resources</a>
             <hr>
-    <p>President of the YMMIA, Counselor in the St. George Stake: January 1879-September 1895</p>
-<div class="dezweek">
-        <p>Deseret Weekly</p>
-    <a href="https://newspapers.lib.utah.edu/search?facet_type=%22page%22&gallery=1&rows=200&parent_i=2745784#g11" class="talk-link">
-        <img src="../../../media/images/prophets/anthony-w-ivins/anthony-w-ivins-1885.jpg">
-        <span>October 1889 General Conference</span>
-    </a>
-    <a href="https://www.google.com/books/edition/_/FawUAAAAYAAJ?gbpv=1&pg=PA492">Google Books</a>
-    <br>
-    <a href="https://contentdm.lib.byu.edu/digital/collection/desnews7/id/1159">BYU Library</a>
-    <p>topics: [topics]</p>
-    <hr>
+            <h1>Teachings from Anthony W. Ivins</h1>
+            <img class="portrait" src="../../../media/images/prophets/anthony-w-ivins/anthony-w-ivins-1934.jpg" alt="Anthony W. Ivins, 1934">
+            <p class="photo-source">November 1934 <a href="https://archive.org/details/improvementera3711unse/page/647/mode/1up">Improvement Era</a>, Page 647</p>
+        </header>
+<div class="filters">
+
+    <input type="text" id="searchBar"
+           placeholder="Search teachings...">
 </div>
-<p>President of Juarez Stake: 1895-1908</p>
-<div class="dezweek">
-        <p>Deseret Weekly</p>
-    <a href="https://newspapers.lib.utah.edu/search?facet_type=%22page%22&gallery=1&rows=200&parent_i=2708606#g19" class="talk-link">
-        <img src="../../../media/images/prophets/anthony-w-ivins/anthony-w-ivins-1885.jpg">
-        <span>October 1895 General Conference</span>
-    </a>
-    <a href="https://www.google.com/books/edition/_/_mbUAAAAMAAJ?gbpv=1&pg=PA532">Google Books</a>
-    <br>
-    <a href="https://contentdm.lib.byu.edu/digital/collection/desnews5/id/3505">BYU Library</a>
-    <p>topics: [topics]</p>
-    <hr>
+<div class="filters">
+    <select id="callingFilter">
+        <option value="all">All Callings</option>
+        <option value="apostle">Apostle</option>
+        <option value="first-presidency">First Presidency</option>
+        <option value="mission-president">Mission President</option>
+        <option value="stake-president">Stake President</option>
+    </select>
+
+    <select id="typeFilter">
+        <option value="all">All Types</option>
+        <option value="general-conference">General Conference</option>
+        <option value="deseret-weekly">Deseret Weekly</option>
+        <option value="conference-report">Conference Report</option>
+        <option value="improvement-era">Improvement Era</option>
+        <option value="article">Article</option>
+        <option value="letter">Letter</option>
+    </select>
+
 </div>
-<div class="chc">
-        <p>Conference Reports</p>
-    <a href="https://catalog.churchofjesuschrist.org/assets/12ff548e-6f93-4580-b619-ca2e31b265d6/0/58" class="talk-link">
-        <img src="../../../media/images/prophets/anthony-w-ivins/anthony-w-ivins-1885.jpg">
-        <span>April 1901 General Conference</span>
-    </a>
-    <a href="https://archive.org/details/conferencereport1901a/page/57/mode/1up">Internet Archive</a>
-    <br>
-    <a href="https://historicalgeneralconferences.weebly.com/1901-april.html#AWI">Historical Conferences</a>
-    <p>topics: [topics]</p>
-    <hr>
-        <p>Conference Reports</p>
-    <a href="https://catalog.churchofjesuschrist.org/assets/34b0275f-2c3a-4e95-8e80-dca34e7d333d/0/27" class="talk-link">
-        <img src="../../../media/images/prophets/anthony-w-ivins/anthony-w-ivins-1885.jpg">
-        <span>October 1902 General Conference</span>
-    </a>
-    <a href="https://archive.org/details/conferencereport1902sa/page/26/mode/1up">Internet Archive</a>
-    <br>
-    <a href="https://historicalgeneralconferences.weebly.com/1902-october.html#AWI">Historical Conferences</a>
-    <p>topics: [topics]</p>
-    <hr>
-        <p>Conference Reports</p>
-    <a href="https://catalog.churchofjesuschrist.org/assets/027f29e8-af66-4745-97af-ea632ef4a98f/0/54" class="talk-link">
-        <img src="../../../media/images/prophets/anthony-w-ivins/anthony-w-ivins-1885.jpg">
-        <span>April 1904 General Conference</span>
-    </a>
-    <a href="https://archive.org/details/conferencereport1904a/page/53/mode/1up">Internet Archive</a>
-    <br>
-    <a href="https://historicalgeneralconferences.weebly.com/1904-april.html#AWI">Historical Conferences</a>
-    <p>topics: [topics]</p>
-    <hr>
-        <p>Conference Reports</p>
-    <a href="https://catalog.churchofjesuschrist.org/assets/7c783428-5d66-4f67-80e1-d994ce3b0da7/0/55" class="talk-link">
-        <img src="../../../media/images/prophets/anthony-w-ivins/anthony-w-ivins-1885.jpg">
-        <span>October 1905 General Conference</span>
-    </a>
-    <a href="https://archive.org/details/conferencereport1905sa/page/54/mode/1up">Internet Archive</a>
-    <br>
-    <a href="https://historicalgeneralconferences.weebly.com/1905-october.html#AWI">Historical Conferences</a>
-    <p>topics: [topics]</p>
-    <hr>
-        <p>Conference Reports</p>
-    <a href="https://catalog.churchofjesuschrist.org/assets/415827de-4456-458a-a1f1-3b1b2d5c1211/0/46" class="talk-link">
-        <img src="../../../media/images/prophets/anthony-w-ivins/anthony-w-ivins-1885.jpg">
-        <span>April 1906 General Conference</span>
-    </a>
-    <a href="https://archive.org/details/conferencereport1906a/page/45/mode/1up">Internet Archive</a>
-    <br>
-    <a href="https://historicalgeneralconferences.weebly.com/1906-april.html#AWI">Historical Conferences</a>
-    <p>topics: [topics]</p>
+    <p>Biography Accessible at <a href="../../biographies/anthony-w-ivins-bio.html">Anthony W. Ivins</a></p>
+<div class="teaching-grid">
+<div class="teaching-tile">
+        <h2>October 1889 General Conference</h2>
+        <div class="year">1889</div>
+        <div class="calling">Counselor in the St. George Stake</div>
+        <div class="sources">
+            <a href="https://newspapers.lib.utah.edu/search?facet_type=%22page%22&gallery=1&rows=200&parent_i=2745784#g11">UT Digital Library</a>
+            <a href="https://www.google.com/books/edition/_/FawUAAAAYAAJ?gbpv=1&pg=PA492">Google Books</a>
+            <a href="https://contentdm.lib.byu.edu/digital/collection/desnews7/id/1159">BYU Library</a>
+        </div>
+        <div class="other-source">
+            <a href="https://historicalgeneralconferences.weebly.com/1889-october.html#AWI">Historical General Conferences</a>
+        </div>
+        <div class="teaching-type">
+            General Conference Talk - Deseret Weekly
+        </div>
+        <div class="topics">
+            <strong>Topics</strong>
+            Repentance
+        </div>
 </div>
-<p>President of Mexican Mission</p>
-<div class="chc">
-    <hr>
-        <p>Conference Reports</p>
-    <a href="https://catalog.churchofjesuschrist.org/assets/d7b0d1c8-8c43-4510-bebc-be191a946cc9/0/75" class="talk-link">
-        <img src="../../../media/images/prophets/anthony-w-ivins/anthony-w-ivins-1885.jpg">
-        <span>April 1907 General Conference</span>
-    </a>
-    <a href="https://archive.org/details/conferencereport1907a/page/74/mode/1up">Internet Archive</a>
-    <br>
-    <a href="https://historicalgeneralconferences.weebly.com/1907-april.html#AWI">Historical Conferences</a>
-    <p>topics: [topics]</p>
-    <hr>
-    
+<div class="teaching-tile">
+    <h2>October 1895 General Conference</h2>
+    <div class="year">1895</div>
+    <div class="calling">President of the Juraez Stake</div>
+    <div class="sources">
+        <a href="https://newspapers.lib.utah.edu/search?facet_type=%22page%22&gallery=1&rows=200&parent_i=2708606#g19">Utah Digital Library</a>
+        <a href="https://www.google.com/books/edition/_/_mbUAAAAMAAJ?gbpv=1&pg=PA532">Google Books</a>
+        <a href="https://contentdm.lib.byu.edu/digital/collection/desnews5/id/3505">BYU Library</a>
+    </div>
+    <div class="other-source">
+        <a href="https://historicalgeneralconferences.weebly.com/1895-october.html#AWI">Historical General Conferences</a>
+    </div>
+    <div class="teaching-type">
+        General Conference Talk - Deseret Weekly
+    </div>
+    <div class="topics">
+        <strong>Topics</strong>
+        Gathering Israel, Prophecies(fulfillment of)
+    </div>
+</div>
+<div class="teaching-tile">
+    <h2>April 1901 General Conference</h2>
+    <div class="year">1901</div>
+    <div class="calling">President of the Juraez Stake</div>
+    <div class="sources">
+        <a href="https://catalog.churchofjesuschrist.org/assets/12ff548e-6f93-4580-b619-ca2e31b265d6/0/58">Church History Catalog</a>
+        <a href="https://archive.org/details/conferencereport1901a/page/57/mode/1up">Internet Archive</a>
+        <a href="https://historicalgeneralconferences.weebly.com/1901-april.html#AWI">Historical General Conferences</a>
+    </div>
+    <div class="teaching-type">General Conference Talk - GC Reports</div>
+    <div class="topics">
+        <strong>Topics</strong>
+        Testimonies, Growth of the Church, Gathering Israel, Lamanites, Zion(redemption of)
+    </div>
+</div>
+<div class="teaching-tile">
+    <h2>October 1902 General Conference</h2>
+    <div class="year">1902</div>
+    <div class="calling">President of the Juraez Stake</div>
+    <div class="sources">
+        <a href="https://catalog.churchofjesuschrist.org/assets/34b0275f-2c3a-4e95-8e80-dca34e7d333d/0/27">Church History Catalog</a>
+        <a href="https://archive.org/details/conferencereport1902sa/page/26/mode/1up">Internet Archive</a>
+        <a href="https://historicalgeneralconferences.weebly.com/1902-october.html#AWI">Historical General Conferences</a>
+    </div>
+    <div class="teaching-type">General Conference Talk - GC Reports</div>
+    <div class="topics">
+        <strong>Topics</strong>
+        
+    </div>
+</div>
+<div class="teaching-tile">
+    <h2>October 1904 General Conference</h2>
+    <div class="year">1904</div>
+    <div class="calling">President of the Juraez Stake</div>
+    <div class="sources">
+        <a href="https://catalog.churchofjesuschrist.org/assets/027f29e8-af66-4745-97af-ea632ef4a98f/0/54">Church History Catalog</a>
+        <a href="https://archive.org/details/conferencereport1904a/page/53/mode/1up">Internet Archive</a>
+        <a href="https://historicalgeneralconferences.weebly.com/1904-april.html#AWI">Historical General Conferences</a>
+    </div>
+    <div class="teaching-type">General Conference Talk - GC Reports</div>
+    <div class="topics">
+        <strong>Topics</strong>
+        
+    </div>
+</div>
+<div class="teaching-tile">
+    <h2>October 1905 General Conference</h2>
+    <div class="year">1905</div>
+    <div class="calling">President of the Juraez Stake</div>
+    <div class="sources">
+        <a href="https://catalog.churchofjesuschrist.org/assets/7c783428-5d66-4f67-80e1-d994ce3b0da7/0/55">Church History Catalog</a>
+        <a href="https://archive.org/details/conferencereport1905sa/page/54/mode/1up">Internet Archive</a>
+        <a href="https://historicalgeneralconferences.weebly.com/1905-october.html#AWI">Historical General Conferences</a>
+    </div>
+    <div class="teaching-type">General Conference Talk - GC Reports</div>
+    <div class="topics">
+        <strong>Topics</strong>
+        
+    </div>
+</div>
+<div class="teaching-tile">
+    <h2>April 1906 General Conference</h2>
+    <div class="year">1906</div>
+    <div class="calling">President of the Juraez Stake</div>
+    <div class="sources">
+        <a href="https://catalog.churchofjesuschrist.org/assets/415827de-4456-458a-a1f1-3b1b2d5c1211/0/46">Church History Catalog</a>
+        <a href="https://archive.org/details/conferencereport1906a/page/45/mode/1up">Internet Archive</a>
+        <a href="https://historicalgeneralconferences.weebly.com/1906-april.html#AWI">Historical General Conferences</a>
+    </div>
+    <div class="teaching-type">General Conference Talk - GC Reports</div>
+    <div class="topics">
+        <strong>Topics</strong>
+        
+    </div>
+</div>
+<div class="teaching-tile">
+    <h2>April 1907 General Conference</h2>
+    <div class="year">1907</div>
+    <div class="calling">President of the Mexico Mission</div>
+    <div class="sources">
+        <a href="https://catalog.churchofjesuschrist.org/assets/d7b0d1c8-8c43-4510-bebc-be191a946cc9/0/75">Church History Catalog</a>
+        <a href="https://archive.org/details/conferencereport1907a/page/74/mode/1up">Internet Archive</a>
+        <a href="https://historicalgeneralconferences.weebly.com/1907-april.html#AWI">Historical General Conferences</a>
+    </div>
+    <div class="teaching-type">General Conference Talk - GC Reports</div>
+    <div class="topics">
+        <strong>Topics</strong>
+        
+    </div>
+</div>
+<div class="teaching-tile">
+    <h2>April 1908 General Conference</h2>
+    <div class="year">1908</div>
+    <div class="calling">Apostle in the Twelve</div>
+    <div class="sources">
+        <a href="https://catalog.churchofjesuschrist.org/assets/b7b79df0-d6a5-4108-8b93-bd27c5e50ba0/0/99">Church History Catalog</a>
+        <a href="https://archive.org/details/conferencereport1908a/page/98/mode/1up">Internet Archive</a>
+        <a href="https://historicalgeneralconferences.weebly.com/1908-april.html#AWI">Historical General Conferences</a>
+    </div>
+    <div class="teaching-type">General Conference Talk - GC Reports</div>
+    <div class="topics">
+        <strong>Topics</strong>
+        
+    </div>
+</div>
+<div class="teaching-tile">
+    <h2>October 1908 General Conference (1)</h2>
+    <div class="year">1908</div>
+    <div class="calling">Apostle in the Twelve</div>
+    <div class="sources">
+        <a href="https://catalog.churchofjesuschrist.org/assets/edda8e9f-ffd0-4175-aa46-ea500d05b09e/0/15">Church History Catalog</a>
+        <a href="https://archive.org/details/conferencereport1908sa/page/14/mode/1up">Internet Archive</a>
+        <a href="https://historicalgeneralconferences.weebly.com/1908-october.html#AWI">Historical General Conferences</a>
+    </div>
+    <div class="teaching-type">General Conference Talk - GC Reports</div>
+    <div class="topics">
+        <strong>Topics</strong>
+        
+    </div>
+</div>
+<div class="teaching-tile">
+    <h2>October 1908 General Conference (2)</h2>
+    <div class="year">1908</div>
+    <div class="calling">Apostle in the Twelve</div>
+    <div class="sources">
+        <a href="https://catalog.churchofjesuschrist.org/assets/edda8e9f-ffd0-4175-aa46-ea500d05b09e/0/66">Church History Catalog</a>
+        <a href="https://archive.org/details/conferencereport1908sa/page/65/mode/1up">Internet Archive</a>
+        <a href="https://historicalgeneralconferences.weebly.com/1908-october.html#AWI2">Historical General Conferences</a>
+    </div>
+    <div class="teaching-type">General Conference Talk - GC Reports</div>
+    <div class="topics">
+        <strong>Topics</strong>
+        
+    </div>
+</div>
+<div class="teaching-tile">
+    <h2>April 1909 General Conference</h2>
+    <div class="year">1909</div>
+    <div class="calling">Apostle in the Twelve</div>
+    <div class="sources">
+        <a href="https://catalog.churchofjesuschrist.org/assets/a2fd2a2d-3296-4cac-9e1c-948ac080fd0c/0/58">Church History Catalog</a>
+        <a href="https://archive.org/details/conferencereport1909a/page/57/mode/1up">Internet Archive</a>
+        <a href="https://historicalgeneralconferences.weebly.com/1909-april.html#AWI">Historical General Conferences</a>
+    </div>
+    <div class="teaching-type">General Conference Talk - GC Reports</div>
+    <div class="topics">
+        <strong>Topics</strong>
+        
+    </div>
+</div>
+<div class="teaching-tile">
+    <h2>October 1909 General Conference</h2>
+    <div class="year">1909</div>
+    <div class="calling">Apostle in the Twelve</div>
+    <div class="sources">
+        <a href="https://catalog.churchofjesuschrist.org/assets/ce5c193b-4708-42db-8852-3e8521ab17e2/0/96">Church History Catalog</a>
+        <a href="https://archive.org/details/conferencereport1909sa/page/95/mode/1up">Internet Archive</a>
+        <a href="https://historicalgeneralconferences.weebly.com/1909-october.html#AWI">Historical General Conferences</a>
+    </div>
+    <div class="teaching-type">General Conference Talk - GC Reports</div>
+    <div class="topics">
+        <strong>Topics</strong>
+        
+    </div>
+</div>
+<div class="teaching-tile">
+    <h2>April 1910 General Conference (1)</h2>
+    <div class="year">1910</div>
+    <div class="calling">Apostle in the Twelve</div>
+    <div class="sources">
+        <a href="https://catalog.churchofjesuschrist.org/assets/ad5f6db3-6f1b-4943-a22d-7229b319cf89/0/14">Church History Catalog</a>
+        <a href="https://archive.org/details/conferencereport1910a/page/13/mode/1up">Internet Archive</a>
+        <a href="https://historicalgeneralconferences.weebly.com/1910-april.html#AWI">Historical General Conferences</a>
+    </div>
+    <div class="teaching-type">General Conference Talk - GC Reports</div>
+    <div class="topics">
+        <strong>Topics</strong>
+        
+    </div>
+</div>
+<div class="teaching-tile">
+    <h2>April 1910 General Conference (2)</h2>
+    <div class="year">1910</div>
+    <div class="calling">Apostle in the Twelve</div>
+    <div class="sources">
+        <a href="https://catalog.churchofjesuschrist.org/assets/ad5f6db3-6f1b-4943-a22d-7229b319cf89/0/111">Church History Catalog</a>
+        <a href="https://archive.org/details/conferencereport1910a/page/110/mode/1up">Internet Archive</a>
+        <a href="https://historicalgeneralconferences.weebly.com/1910-april.html#AWI2">Historical General Conferences</a>
+    </div>
+    <div class="teaching-type">General Conference Talk - GC Reports</div>
+    <div class="topics">
+        <strong>Topics</strong>
+        
+    </div>
+</div>
+<div class="teaching-tile">
+    <h2>October 1910 General Conference (1)</h2>
+    <div class="year">1910</div>
+    <div class="calling">Apostle in the Twelve</div>
+    <div class="sources">
+        <a href="https://catalog.churchofjesuschrist.org/assets/d0f4ea14-9ce5-439a-847c-fe3bc4ed1663/0/42">Church History Catalog</a>
+        <a href="https://archive.org/details/conferencereport1910sa/page/41/mode/1up">Internet Archive</a>
+        <a href="https://historicalgeneralconferences.weebly.com/1910-october.html#AWI">Historical General Conferences</a>
+    </div>
+    <div class="teaching-type">General Conference Talk - GC Reports</div>
+    <div class="topics">
+        <strong>Topics</strong>
+        
+    </div>
+</div>
+<div class="teaching-tile">
+    <h2>October 1910 General Conference (2)</h2>
+    <div class="year">1910</div>
+    <div class="calling">Apostle in the Twelve</div>
+    <div class="sources">
+        <a href="https://catalog.churchofjesuschrist.org/assets/d0f4ea14-9ce5-439a-847c-fe3bc4ed1663/0/73">Church History Catalog</a>
+        <a href="https://archive.org/details/conferencereport1910sa/page/72/mode/1up">Internet Archive</a>
+        <a href="https://historicalgeneralconferences.weebly.com/1910-october.html#AWI2">Historical General Conferences</a>
+    </div>
+    <div class="teaching-type">General Conference Talk - GC Reports</div>
+    <div class="topics">
+        <strong>Topics</strong>
+        
+    </div>
+</div>
+<div class="teaching-tile">
+    <h2>April 1911 General Conference</h2>
+    <div class="year">1911</div>
+    <div class="calling">Apostle in the Twelve</div>
+    <div class="sources">
+        <a href="https://catalog.churchofjesuschrist.org/assets/101dcbd1-ac50-469e-a639-f0018a2c9360/0/116">Church History Catalog</a>
+        <a href="https://archive.org/details/conferencereport1911a/page/115/mode/1up">Internet Archive</a>
+        <a href="https://historicalgeneralconferences.weebly.com/1911-april.html#AWI">Historical General Conferences</a>
+    </div>
+    <div class="teaching-type">General Conference Talk - GC Reports</div>
+    <div class="topics">
+        <strong>Topics</strong>
+        
+    </div>
+</div>
+<div class="teaching-tile">
+    <h2>October 1911 General Conference</h2>
+    <div class="year">1911</div>
+    <div class="calling">Apostle in the Twelve</div>
+    <div class="sources">
+        <a href="https://catalog.churchofjesuschrist.org/assets/cc1004ea-ea03-44e4-95b1-cd631f3bf443/0/71">Church History Catalog</a>
+        <a href="https://archive.org/details/conferencereport1911sa/page/70/mode/1up">Internet Archive</a>
+        <a href="https://historicalgeneralconferences.weebly.com/1911-october.html#AWI">Historical General Conferences</a>
+    </div>
+    <div class="teaching-type">General Conference Talk - GC Reports</div>
+    <div class="topics">
+        <strong>Topics</strong>
+        
+    </div>
+</div>
+<div class="teaching-tile">
+    <h2>April 1912 General Conference</h2>
+    <div class="year">1912</div>
+    <div class="calling">Apostle in the Twelve</div>
+    <div class="sources">
+        <a href="https://catalog.churchofjesuschrist.org/assets/83016aba-48c6-432b-b4f6-9c88b238d354/0/61">Church History Catalog</a>
+        <a href="https://archive.org/details/conferencereport1912a/page/60/mode/1up">Internet Archive</a>
+        <a href="https://historicalgeneralconferences.weebly.com/1912-april.html#AWI">Historical General Conferences</a>
+    </div>
+    <div class="teaching-type">General Conference Talk - GC Reports</div>
+    <div class="topics">
+        <strong>Topics</strong>
+        
+    </div>
+</div>
 </div>
 <p>Apostle: 1907-1934</p>
 <div class="chc">
-        <p>Conference Reports</p>
-    <a href="https://catalog.churchofjesuschrist.org/assets/b7b79df0-d6a5-4108-8b93-bd27c5e50ba0/0/99" class="talk-link">
-        <img src="../../../media/images/prophets/anthony-w-ivins/anthony-w-ivins-1921.jpg">
-        <span>April 1908 General Conference</span>
-    </a>
-    <a href="https://archive.org/details/conferencereport1908a/page/98/mode/1up">Internet Archive</a>
-    <br>
-    <a href="https://historicalgeneralconferences.weebly.com/1908-april.html#AWI">Historical Conferences</a>
-    <p>topics: [topics]</p>
-    <hr>
-        <p>Conference Reports</p>
-    <a href="https://catalog.churchofjesuschrist.org/assets/edda8e9f-ffd0-4175-aa46-ea500d05b09e/0/15" class="talk-link">
-        <img src="../../../media/images/prophets/anthony-w-ivins/anthony-w-ivins-1921.jpg">
-        <span>October 1908 General Conference(1)</span>
-    </a>
-    <a href="https://archive.org/details/conferencereport1908sa/page/14/mode/1up">Internet Archive</a>
-    <br>
-    <a href="https://historicalgeneralconferences.weebly.com/1908-october.html#AWI">Historical Conferences</a>
-    <p>topics: [topics]</p>
-    <hr>
-        <p>Conference Reports</p>
-    <a href="https://catalog.churchofjesuschrist.org/assets/edda8e9f-ffd0-4175-aa46-ea500d05b09e/0/66" class="talk-link">
-        <img src="../../../media/images/prophets/anthony-w-ivins/anthony-w-ivins-1921.jpg">
-        <span>October 1908 General Conference(2)</span>
-    </a>
-    <a href="https://archive.org/details/conferencereport1908sa/page/65/mode/1up">Internet Archive</a>
-    <br>
-    <a href="https://historicalgeneralconferences.weebly.com/1908-october.html#AWI2">Historical Conferences</a>
-    <p>topics: [topics]</p>
-    <hr>
-        <p>Conference Reports</p>
-    <a href="https://catalog.churchofjesuschrist.org/assets/a2fd2a2d-3296-4cac-9e1c-948ac080fd0c/0/58" class="talk-link">
-        <img src="../../../media/images/prophets/anthony-w-ivins/anthony-w-ivins-1921.jpg">
-        <span>April 1909 General Conference</span>
-    </a>
-    <a href="https://archive.org/details/conferencereport1909a/page/57/mode/1up">Internet Archive</a>
-    <br>
-    <a href="https://historicalgeneralconferences.weebly.com/1909-april.html#AWI">Historical Conferences</a>
-    <p>topics: [topics]</p>
-    <hr>
-        <p>Conference Reports</p>
-    <a href="https://catalog.churchofjesuschrist.org/assets/ce5c193b-4708-42db-8852-3e8521ab17e2/0/96" class="talk-link">
-        <img src="../../../media/images/prophets/anthony-w-ivins/anthony-w-ivins-1921.jpg">
-        <span>October 1909 General Conference</span>
-    </a>
-    <a href="https://archive.org/details/conferencereport1909sa/page/95/mode/1up">Internet Archive</a>
-    <br>
-    <a href="https://historicalgeneralconferences.weebly.com/1909-october.html#AWI">Historical Conferences</a>
-    <p>topics: [topics]</p>
-    <hr>
-        <p>Conference Reports</p>
-    <a href="https://catalog.churchofjesuschrist.org/assets/ad5f6db3-6f1b-4943-a22d-7229b319cf89/0/14" class="talk-link">
-        <img src="../../../media/images/prophets/anthony-w-ivins/anthony-w-ivins-1921.jpg">
-        <span>April 1910 General Conference(1)</span>
-    </a>
-    <a href="https://archive.org/details/conferencereport1910a/page/13/mode/1up">Internet Archive</a>
-    <br>
-    <a href="https://historicalgeneralconferences.weebly.com/1910-april.html#AWI">Historical Conferences</a>
-    <p>topics: [topics]</p>
-    <hr>
-        <p>Conference Reports</p>
-    <a href="https://catalog.churchofjesuschrist.org/assets/ad5f6db3-6f1b-4943-a22d-7229b319cf89/0/111" class="talk-link">
-        <img src="../../../media/images/prophets/anthony-w-ivins/anthony-w-ivins-1921.jpg">
-        <span>April 1910 General Conference(2)</span>
-    </a>
-    <a href="https://archive.org/details/conferencereport1910a/page/110/mode/1up">Internet Archive</a>
-    <br>
-    <a href="https://historicalgeneralconferences.weebly.com/1910-april.html#AWI2">Historical Conferences</a>
-    <p>topics: [topics]</p>
-    <hr>
-        <p>Conference Reports</p>
-    <a href="https://catalog.churchofjesuschrist.org/assets/d0f4ea14-9ce5-439a-847c-fe3bc4ed1663/0/42" class="talk-link">
-        <img src="../../../media/images/prophets/anthony-w-ivins/anthony-w-ivins-1921.jpg">
-        <span>October 1910 General Conference(1)</span>
-    </a>
-    <a href="https://archive.org/details/conferencereport1910sa/page/41/mode/1up">Internet Archive</a>
-    <br>
-    <a href="https://historicalgeneralconferences.weebly.com/1910-october.html#AWI">Historical Conferences</a>
-    <p>topics: [topics]</p>
-    <hr>
-        <p>Conference Reports</p>
-    <a href="https://catalog.churchofjesuschrist.org/assets/d0f4ea14-9ce5-439a-847c-fe3bc4ed1663/0/73" class="talk-link">
-        <img src="../../../media/images/prophets/anthony-w-ivins/anthony-w-ivins-1921.jpg">
-        <span>October 1910 General Conference(2)</span>
-    </a>
-    <a href="https://archive.org/details/conferencereport1910sa/page/72/mode/1up">Internet Archive</a>
-    <br>
-    <a href="https://historicalgeneralconferences.weebly.com/1910-october.html#AWI2">Historical Conferences</a>
-    <p>topics: [topics]</p>
-    <hr>
-        <p>Conference Reports</p>
-    <a href="https://catalog.churchofjesuschrist.org/assets/101dcbd1-ac50-469e-a639-f0018a2c9360/0/116" class="talk-link">
-        <img src="../../../media/images/prophets/anthony-w-ivins/anthony-w-ivins-1921.jpg">
-        <span>April 1911 General Conference</span>
-    </a>
-    <a href="https://archive.org/details/conferencereport1911a/page/115/mode/1up">Internet Archive</a>
-    <br>
-    <a href="https://historicalgeneralconferences.weebly.com/1911-april.html#AWI">Historical Conferences</a>
-    <p>topics: [topics]</p>
-    <hr>
-        <p>Conference Reports</p>
-    <a href="https://catalog.churchofjesuschrist.org/assets/cc1004ea-ea03-44e4-95b1-cd631f3bf443/0/71" class="talk-link">
-        <img src="../../../media/images/prophets/anthony-w-ivins/anthony-w-ivins-1921.jpg">
-        <span>October 1911 General Conference</span>
-    </a>
-    <a href="https://archive.org/details/conferencereport1911sa/page/70/mode/1up">Internet Archive</a>
-    <br>
-    <a href="https://historicalgeneralconferences.weebly.com/1911-october.html#AWI">Historical Conferences</a>
-    <p>topics: [topics]</p>
-    <hr>
-        <p>Conference Reports</p>
-    <a href="https://catalog.churchofjesuschrist.org/assets/83016aba-48c6-432b-b4f6-9c88b238d354/0/61" class="talk-link">
-        <img src="../../../media/images/prophets/anthony-w-ivins/anthony-w-ivins-1921.jpg">
-        <span>April 1912 General Conference</span>
-    </a>
-    <a href="https://archive.org/details/conferencereport1912a/page/60/mode/1up">Internet Archive</a>
-    <br>
-    <a href="https://historicalgeneralconferences.weebly.com/1912-april.html#AWI">Historical Conferences</a>
-    <p>topics: [topics]</p>
-    <hr>
         <p>Conference Reports</p>
     <a href="https://catalog.churchofjesuschrist.org/assets/bdfc8ca9-419d-4303-9de8-b3b90d7472fd/0/100" class="talk-link">
         <img src="../../../media/images/prophets/anthony-w-ivins/anthony-w-ivins-1921.jpg">
@@ -720,5 +1019,52 @@
     <p>Died September 1934</p>
     <p>Elder Ivin's Writings can be found <a href="../../writings.htm#anthony-w-ivins">here</a></p>
         </div>
+
+
+
+        <script>
+const searchBar = document.getElementById("searchBar");
+const callingFilter = document.getElementById("callingFilter");
+const typeFilter = document.getElementById("typeFilter");
+
+function filterTeachings() {
+
+    const search = searchBar.value.toLowerCase();
+    const calling = callingFilter.value;
+    const type = typeFilter.value;
+
+    const tiles = document.querySelectorAll(".teaching-tile");
+
+    tiles.forEach(tile => {
+
+        const tileText = tile.innerText.toLowerCase();
+
+        const tileCalling = tile.dataset.calling;
+        const tileType = tile.dataset.type;
+
+        const matchesSearch = tileText.includes(search);
+
+        const matchesCalling =
+            calling === "all" || tileCalling === calling;
+
+        const matchesType =
+            type === "all" || tileType === type;
+
+        if (matchesSearch && matchesCalling && matchesType) {
+            tile.style.display = "flex";
+        } else {
+            tile.style.display = "none";
+        }
+
+    });
+
+}
+
+searchBar.addEventListener("input", filterTeachings);
+
+callingFilter.addEventListener("change", filterTeachings);
+
+typeFilter.addEventListener("change", filterTeachings);
+</script>
     </body>
 </html>
