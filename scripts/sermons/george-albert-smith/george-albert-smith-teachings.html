@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>George Albert Smith's Teachings</title>
+        <link rel="stylesheet" type="text/css" href="../../style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <base href="" target="_blank">
+    </head>
+    <body class="teachings-page">
+        <header class="page-header">
+        <a href="../../../index.html" target="_self">Home Page</a>
+        <br>
+        <a href="../../sermons.html" target="_self">Teachings Page</a>
+        <br>
+        <a href="../../resources.html" target="_self">Resources</a>
+            <hr>
+            <h1>Teachings from President <br> George Albert Smith</h1>
+            <img class="portrait" src="../../../media/images/prophets/george-albert-smith/george-albert-smith-1939.jpg" alt="George Albert Smith, 1939">
+            <p class="photo-source">George Albert Smith <a href="https://commons.wikimedia.org/wiki/File:George_Albert_Smith_1939.JPG">Wikimedia</a>, 1939</p>
+        </header>
+<div class="filters">
+
+    <input type="text" id="searchBar"
+           placeholder="Search teachings...">
+</div>
+<div class="filters">
+    <select id="callingFilter">
+        <option value="all">All Callings</option>
+        <option value="apostle">Apostle</option>
+        <option value="first-presidency">First Presidency</option>
+        <option value="mission-president">Mission President</option>
+        <option value="stake-president">Stake President</option>
+    </select>
+
+    <select id="typeFilter">
+        <option value="all">All Types</option>
+        <option value="general-conference">General Conference</option>
+        <option value="deseret-weekly">Deseret Weekly</option>
+        <option value="conference-report">Conference Report</option>
+        <option value="improvement-era">Improvement Era</option>
+        <option value="article">Article</option>
+        <option value="letter">Letter</option>
+    </select>
+
+</div>
+    <p>Biography Accessible at <a href="">George Albert Smith</a></p>
+<div class="teaching-grid">
+<div class="teaching-tile">
+    <h2>"And Ye Would Not!" <h5>(GC Reports, Oct 1943, PP. 42-47)</h5></h2>
+    <div class="year">1943</div>
+    <div class="calling">President of the Council of the Twelve Apostles</div>
+    <div class="sources">
+        <a href="https://catalog.churchofjesuschrist.org/assets/becedc7a-4c96-48e8-9add-a485c6c406cc/0/43">Church History Catalog(GC Reports)</a>
+        <a href="https://archive.org/details/conferencereport1943sa/page/42/mode/1up">Internet Archive(GC Reports)</a>
+        <a href="https://archive.org/details/improvementera4611unse/page/660/mode/1up">Internet Archive(Improvement Era)</a>
+    </div>
+    <div class="other-source">
+        <a href="https://catalog.churchofjesuschrist.org/assets/eab446f5-eb78-410b-b92c-bc76a58e4fc4/0/0">(!!CHURCH ACCOUNT NEEDED!!) Audio Recording (Timestamp 1:21:48-1:45:50)</a>
+    </div>
+    <div class="teaching-type">Talk - Semi-Annual General Conference</div>
+    <div class="topics">
+        <strong>Topics</strong>
+        Destruction, <a href="../../topics/prophets.html">Prophets</a>, Prophecies Fulfilled, Heber J. Grant
+    </div>
+</div>
+</div>
+    <p id="lecturesfootnote">*The Lectures on Faith don't have any clear provider. Some scholars argue that they were largely given by Sidney Rigdon with the approval of Joseph Smith Jr.</p>
+    <p>Excommunicated September 1844</p>
+        </div>
+
+
+
+        <script>
+const searchBar = document.getElementById("searchBar");
+const callingFilter = document.getElementById("callingFilter");
+const typeFilter = document.getElementById("typeFilter");
+
+function filterTeachings() {
+
+    const search = searchBar.value.toLowerCase();
+    const calling = callingFilter.value;
+    const type = typeFilter.value;
+
+    const tiles = document.querySelectorAll(".teaching-tile");
+
+    tiles.forEach(tile => {
+
+        const tileText = tile.innerText.toLowerCase();
+
+        const tileCalling = tile.dataset.calling;
+        const tileType = tile.dataset.type;
+
+        const matchesSearch = tileText.includes(search);
+
+        const matchesCalling =
+            calling === "all" || tileCalling === calling;
+
+        const matchesType =
+            type === "all" || tileType === type;
+
+        if (matchesSearch && matchesCalling && matchesType) {
+            tile.style.display = "flex";
+        } else {
+            tile.style.display = "none";
+        }
+
+    });
+
+}
+
+searchBar.addEventListener("input", filterTeachings);
+
+callingFilter.addEventListener("change", filterTeachings);
+
+typeFilter.addEventListener("change", filterTeachings);
+</script>
+    </body>
+</html>
