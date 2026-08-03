@@ -7,37 +7,12 @@
         <link rel="icon" type="image/png" href="./favicon/USVA_headstone_emb-11.svg.png">
         <base href="" target="_blank">
         <style>
-            .left-image {
-                float: left;
-                width: 200px;       /* Adjust as desired */
-                margin: 0 20px 15px 0;
-                border: 1px solid #000; /* Optional */
-            }
-            .right-image {
-                float: right;
-                width: 200px;       /* Adjust as desired */
-                margin: 0 20px 15px 0;
-                border: 1px solid #000; /* Optional */
-            }
-            .quote-section {
-                display: flex;
-                align-items: flex-start;
-                gap: 20px;
-            }
-
-            .quote-section img {
-                width: 200px;
-                flex-shrink: 0;
-            }
-
-            .quote-section div {
-                flex: 1;
-            }
         </style>
     </head>
     <body>
         <h1>Prophets</h1>
-        <a href="../../index.html">Home</a>
+        <a href="../../index.html" target="_self">Home</a>
+        <button id="backToTop" onclick="scrollToTop()" title="Back to top">↑</button>
         <p>Contents:</p>
         <details>
             <summary>Presidents of the Church</summary>
@@ -45,6 +20,7 @@
             <li><a href="#brigham-young" target="_self">Brigham Young</a></li>
             <li><a href="#john-taylor" target="_self">John Taylor</a></li>
             <li><a href="#george-albert-smith" target="_self">George Albert Smith</a></li>
+            <li><a href="#harold-b-lee" target="_self">Harold B. Lee</a></li>
         </details>
         <details>
             <summary>Other Prophets</summary>
@@ -72,6 +48,7 @@
         <a href="../sermons/george-albert-smith/george-albert-smith-teachings.html">
             <img src="../../media/images/prophets/george-albert-smith/george-albert-smith-1939.jpg" alt="George Albert Smith, 1939" class="right-image">
         </a>
+        <div>
         <h4 id="george-albert-smith">George Albert Smith taught...</h4>
         <p>"One of the prophets told us that the Lord God would do nothing but He would reveal His secrets to His servants the prophets. In other words, the world would not be taken by surprise if they paid attention to the leadership that the Lord provided."
             <br>
@@ -91,6 +68,18 @@
         <br>
         (<a href="https://archive.org/details/improvementera4611unse/page/660/mode/1up">November 1843 GC, Improvement Era</a>)
         </p>
+        </div>
+    </div>
+    <div class="quote-section">
+        <a href="../sermons/harold-b-lee/harold-b-lee-teachings.html">
+            <img src="../../media/images/prophets/harold-b-lee/harold-b-lee-1944.jpg" alt="Harold B. Lee">
+        </a>
+        <div>
+            <h4 id="harold-b-lee">Harold B. Lee taught...</h4>
+            <p>"I think we could learn a lesson from the story that we read in the book of Exodus (17:6-13), in the life of Moses the prophet. You will recall that Amalek had come upon Israel, and Joshua was commanded by Moses to go out with his army. He said to Joshua, 'I will stand upon the mount with the rod of the Lord in my hand, and you go fight the battles of Israel.' And as long as he stood with his hands upraised Israel prevailed against the enemy, but his hands became heavy and he could not hold them up, and when he would drop his hands, the enemy prevailed over Israel. And so they sat him upon a rock upon the Mount, and Aaron and Hur stood holding his hands upraised, that Israel would prevail in that terrible day. That also is not without its shadow today and its lesson to Israel. Here sits today on this stand the man as President of this Church who holds in his hand the rod of the Lord; he is sitting upon the mount, and as long as his hands are upheld by obedience to his direction and his counsel, Israel will prevail against her enemies. But whenever we come to a time when we allow his hands to fall, and we as the Priesthood of the living God fail to uphold his hands, just in that day we may expect our enemies to come upon us and to destroy us."</p>
+            <p>"'Is now the day for us to come up to Zion, where we can come to the mountain of the Lord, where we can be protected from our enemies?' I pondered that question, I prayed about it. What should we say to those people who were in their anxiety? I have studied it a bit, I have learned something of what the Spirit has taught, and I know now that the place of safety in this world is not in any given place: it doesn't make so much difference where we live; but the all-important thing is how we live, and I have found that security can come to Israel only when they keep the commandments, when they live so that they can enjoy the companionship, the direction, the comfort, and the guidance of the Holy Spirit of the Lord, when they are willing to listen to these men whom God has set here to preside as His mouthpieces, and when we obey the counsels of the Church."</p>
+            <p>(<a href="https://archive.org/details/conferencereport1943a/page/124/mode/1up">GC Reports:124-130, April 1943</a>)</p>
+        </div>
     </div>
         <hr>
         <h3>What have other Prophets taught?</h3>
@@ -103,5 +92,13 @@
     </div>
         <hr>
         <h3>Consensus?</h3>
+
+
+
+<script>
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+}
+</script>
     </body>
 </html>
