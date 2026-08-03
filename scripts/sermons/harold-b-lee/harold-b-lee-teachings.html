@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Harold B. Lee's Teachings</title>
+        <link rel="stylesheet" type="text/css" href="../../style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <base href="" target="_blank">
+    </head>
+    <body class="teachings-page">
+    <button id="backToTop" onclick="scrollToTop()" title="Back to top">↑</button>
+        <header class="page-header">
+        <a href="../../../index.html" target="_self">Home Page</a>
+        <br>
+        <a href="../../sermons.html" target="_self">Teachings Page</a>
+        <br>
+        <a href="../../resources.html" target="_self">Resources</a>
+            <hr>
+            <h1>Teachings from President <br> Harold B. Lee</h1>
+            <img class="portrait" src="../../../media/images/prophets/harold-b-lee/harold-b-lee-1944.jpg" alt="George Albert Smith, 1939">
+            <p class="photo-source">George Albert Smith <a href="https://commons.wikimedia.org/wiki/File:George_Albert_Smith_1939.JPG">Wikimedia</a>, 1939</p>
+        </header>
+<div class="filters">
+
+    <input type="text" id="searchBar"
+           placeholder="Search teachings...">
+</div>
+<div class="filters">
+    <select id="callingFilter">
+        <option value="all">All Callings</option>
+        <option value="apostle">Apostle</option>
+        <option value="first-presidency">First Presidency</option>
+        <option value="mission-president">Mission President</option>
+        <option value="stake-president">Stake President</option>
+    </select>
+
+    <select id="typeFilter">
+        <option value="all">All Types</option>
+        <option value="general-conference">General Conference</option>
+        <option value="deseret-weekly">Deseret Weekly</option>
+        <option value="conference-report">Conference Report</option>
+        <option value="improvement-era">Improvement Era</option>
+        <option value="article">Article</option>
+        <option value="letter">Letter</option>
+    </select>
+
+</div>
+    <p>Biography Accessible at <a href="">George Albert Smith</a></p>
+<div class="teaching-grid">
+<div class="teaching-tile">
+    <h2>Hearing the Voice <h5>(GC Reports, April 1943, PP. 124-130)</h5></h2>
+    <div class="year">1943</div>
+    <div class="calling">President of the Council of the Twelve Apostles</div>
+    <div class="sources">
+        <a href="https://archive.org/details/improvementera4607unse/page/397/mode/1up">Internet Archive(Improvement Era)</a>
+        <a href="https://archive.org/details/conferencereport1943a/page/124/mode/1up">Internet Archive(GC Reports)</a>
+    </div>
+    <div class="other-source">
+        <a href="https://catalog.churchofjesuschrist.org/assets/5cc0a6d1-8319-4a32-b18e-1265b339bb78/0/0">(!!CHURCH ACCOUNT NEEDED!!) Audio Recording (Timestamp 1:28:55 - 1:50:00)</a>
+    </div>
+    <div class="teaching-type">Talk - Annual General Conference</div>
+    <div class="topics">
+        <strong>Topics</strong>
+        The Holy Spirit(Comforter), Prophecies Fulfilled, <a href="../../topics/prophets.html">Prophets</a>, Protection, Doctrine Deciding(Majority), Zion
+    </div>
+</div>
+</div>
+    <p>Died April 1951</p>
+        </div>
+
+
+
+        <script>
+const searchBar = document.getElementById("searchBar");
+const callingFilter = document.getElementById("callingFilter");
+const typeFilter = document.getElementById("typeFilter");
+
+function filterTeachings() {
+
+    const search = searchBar.value.toLowerCase();
+    const calling = callingFilter.value;
+    const type = typeFilter.value;
+
+    const tiles = document.querySelectorAll(".teaching-tile");
+
+    tiles.forEach(tile => {
+
+        const tileText = tile.innerText.toLowerCase();
+
+        const tileCalling = tile.dataset.calling;
+        const tileType = tile.dataset.type;
+
+        const matchesSearch = tileText.includes(search);
+
+        const matchesCalling =
+            calling === "all" || tileCalling === calling;
+
+        const matchesType =
+            type === "all" || tileType === type;
+
+        if (matchesSearch && matchesCalling && matchesType) {
+            tile.style.display = "flex";
+        } else {
+            tile.style.display = "none";
+        }
+
+    });
+
+}
+
+searchBar.addEventListener("input", filterTeachings);
+
+callingFilter.addEventListener("change", filterTeachings);
+
+typeFilter.addEventListener("change", filterTeachings);
+</script>
+<script>
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+}
+</script>
+    </body>
+</html>
