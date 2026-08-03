@@ -408,3 +408,72 @@ html, body {
 .filters select{
     cursor:pointer;
 }
+#backToTop {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #003b75;
+    color: white;
+    border: 2px solid white;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+}
+
+#backToTop:hover {
+    background-color: #ffd24d;
+    color: #002E5D;
+}
+@media (max-width: 768px) {
+    #backToTop {
+        display: block;
+    }
+}
+            .left-image {
+                float: left;
+                width: 200px;       /* Adjust as desired */
+                margin: 0 20px 15px 0;
+                border: 1px solid #000; /* Optional */
+            }
+            .right-image {
+                float: right;
+                width: 200px;       /* Adjust as desired */
+                margin: 0 20px 15px 0;
+                border: 1px solid #000; /* Optional */
+            }
+            .quote-section {
+                display: flex;
+                align-items: flex-start;
+                gap: 20px;
+            }
+
+            .quote-section img {
+                width: 200px;
+                flex-shrink: 0;
+            }
+
+            .quote-section div {
+                flex: 1;
+            }
+            .quote-section {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+@media (max-width: 768px) {
+    .quote-section {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .quote-section img {
+        width: 200px;
+    }
+}
