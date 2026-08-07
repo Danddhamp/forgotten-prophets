@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Joseph Smith Jr.'s Teachings</title>
+        <link rel="stylesheet" type="text/css" href="../../style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <base href="" target="_blank">
+    </head>
+    <body class="teachings-page">
+        <header class="page-header">
+        <a href="../../../index.html" target="_self">Home Page</a>
+        <br>
+        <a href="../../sermons.html" target="_self">Teachings Page</a>
+        <br>
+        <a href="../../resources.html" target="_self">Resources</a>
+            <hr>
+            <h1>Teachings from the Prophet <br> Joseph Smith Jr.</h1>
+            <img class="portrait" src="../../../media/images/prophets/joseph-smithjr/joseph-smith-jr-bathshebasmithportrait.jpg" alt="Joseph Smith Jr. circa 1843">
+            <p class="photo-source">Joseph Smith Jr., Bathsehba Smith Profile <a href="https://commons.wikimedia.org/wiki/File:Joseph_Smith,_Jr._profile_by_Bathsheba_Smith_circa_1843.jpg">Wikimedia</a>, circa 1843</p>
+        </header>
+<div class="filters">
+
+    <input type="text" id="searchBar"
+           placeholder="Search teachings...">
+</div>
+<div class="filters">
+    <select id="callingFilter">
+        <option value="all">All Callings</option>
+        <option value="apostle">Apostle</option>
+        <option value="first-presidency">First Presidency</option>
+        <option value="mission-president">Mission President</option>
+        <option value="stake-president">Stake President</option>
+    </select>
+
+    <select id="typeFilter">
+        <option value="all">All Types</option>
+        <option value="general-conference">General Conference</option>
+        <option value="deseret-weekly">Deseret Weekly</option>
+        <option value="conference-report">Conference Report</option>
+        <option value="improvement-era">Improvement Era</option>
+        <option value="article">Article</option>
+        <option value="letter">Letter</option>
+    </select>
+
+</div>
+    <p>Biography Accessible at <a href="">Joseph Smith Jr.</a></p>
+<div class="teaching-grid">
+<div class="teaching-tile">
+        <h2>Doctrine and Covenants, Sections 1-135,137</h2>
+        <div class="year">1823-1843</div>
+        <div class="calling">Prophet of the Restoration</div>
+        <div class="sources">
+            <a href="https://www.churchofjesuschrist.org/study/scriptures/dc-testament?lang=eng">ChurchofJesusChristofLatter-daySaints.org</a>
+        </div>
+        <div class="other-source">
+            <a href="https://openscriptures.net/wp-content/uploads/2021/04/doctrine-and-covenants-LdS.pdf">OpenScriptures.net</a>
+        </div>
+        <div class="teaching-type">
+            Standard Works
+        </div>
+</div>
+<div class="teaching-tile">
+    <h2>The Articles of Faith</h2>
+    <div class="year">1842</div>
+    <div class="calling">Prophet of the Restoration</div>
+    <div class="sources">
+        <a href="https://www.churchofjesuschrist.org/study/scriptures/pgp/a-of-f/1?lang=eng">ChurchofJesusChristofLatter-daySaints.org</a>
+    </div>
+    <div class="teaching-type">
+        Standard Works
+    </div>
+</div>
+<div class="teaching-tile">
+    <h2>The Constitutions of the United States and Illinois—Nauvoo Charter and Municipal Court—Writ of Habeas Corpus</h2>
+    <div class="year">1843</div>
+    <div class="calling">Prophet of the Restoration</div>
+    <div class="sources">
+        <a href="https://archive.org/details/JoDV02/page/n170/mode/1up">Internet Archive(Journal of Discourses)</a>
+    </div>
+    <div class="other-source">
+        <a href="https://journalofdiscourses.com/2/30">JournalOfDiscourses.com</a>
+    </div>
+    <div class="teaching-type">Sermon - Journal of Discourses 2:163-169</div>
+    <div class="topics">
+        <strong>Topics</strong>
+    </div>
+    <div class="scripture-references">
+        <strong>Scripture References</strong>
+    </div>
+</div>
+</div>
+    <p>Died September 1934</p>
+    <p>Elder Ivin's Writings can be found <a href="../../writings.htm#anthony-w-ivins">here</a></p>
+        </div>
+
+
+
+        <script>
+const searchBar = document.getElementById("searchBar");
+const callingFilter = document.getElementById("callingFilter");
+const typeFilter = document.getElementById("typeFilter");
+
+function filterTeachings() {
+
+    const search = searchBar.value.toLowerCase();
+    const calling = callingFilter.value;
+    const type = typeFilter.value;
+
+    const tiles = document.querySelectorAll(".teaching-tile");
+
+    tiles.forEach(tile => {
+
+        const tileText = tile.innerText.toLowerCase();
+
+        const tileCalling = tile.dataset.calling;
+        const tileType = tile.dataset.type;
+
+        const matchesSearch = tileText.includes(search);
+
+        const matchesCalling =
+            calling === "all" || tileCalling === calling;
+
+        const matchesType =
+            type === "all" || tileType === type;
+
+        if (matchesSearch && matchesCalling && matchesType) {
+            tile.style.display = "flex";
+        } else {
+            tile.style.display = "none";
+        }
+
+    });
+
+}
+
+searchBar.addEventListener("input", filterTeachings);
+
+callingFilter.addEventListener("change", filterTeachings);
+
+typeFilter.addEventListener("change", filterTeachings);
+</script>
+    </body>
+</html>
