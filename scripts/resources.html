@@ -1,1432 +1,3812 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Teachings of the Prophets</title>
-        <link rel="stylesheet" type="text/css" href="style.css">
-        <link rel="icon" type="image/png" href="../favicon/favicon.png">
+        <title>Resources</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style>
-                img{
-                        height:200px;
-                        vertical-align:
-                        top;
-                }
-                img:hover{
-                        filter: drop-shadow(10px 10px 20px rgb(0, 0, 0));
-                }
-                body{
-                        background-color:#002E5D;
-                }
-                .prophet span{
-                        display:block;
-                        margin-top:5px;
-                }
-                .prophet img{
-                        display:block;
-                        height:400px;
-                        width:200px;
-                        object-fit: cover;
-                }
-                .prophet{
-                        display:inline-block;
-                        text-align:center;
-                        margin:10px;
-                        vertical-align:top;
-                        color:white;
-                }
-                .page{
-                        display:flex;
-                        align-items:flex-start;
-                }
+            a:visited{
+                color:blue;
+            }
+            th {
+                cursor: pointer;
+            }
+            th:hover {
+                background-color: #ddd;
+            }
+            table {
+                border-collapse: collapse;
+                margin: auto;
+            }
+            th, td {
+                border: 2px solid whitesmoke;
+                padding: 8px;
+                text-align: left;
+            }
 
-.timeline{
-        position:sticky;
-        top:20px;
-        width:250px;
-        margin-right:40px;
-        padding-left:25px;
-        padding-bottom:30px;
-        border-left:4px solid white;
-        max-height: calc(100dvh - 40px);
-        overflow-y: auto;
-        box-sizing: border-box;
-        scrollbar-color: #003b75 #002E5D;
-
-}
-
-
-                .timeline h2{
-                        color:white;
-                        margin-top:0;
-                        margin-left:-12px;
-                }
-
-                .timeline a{
-                        display:flex;
-                        align-items:center;
-                        gap:15px;
-                        color:white;
-                        text-decoration:none;
-                        margin:22px 0;
-                        font-size:18px;
-                        transition:.2s;
-                }
-
-                .timeline a:hover{
-                        transform:translateX(6px);
-                        color:#ffd24d;
-                }
-
-                .dot{
-                        width:16px;
-                        height:16px;
-                        background:white;
-                        border-radius:50%;
-                        margin-left:-35px;
-                        flex-shrink:0;
-                }
-
-                .content{
-                        flex:1;
-                }
-                @media (max-width: 768px) {
-    .page {
-        flex-direction: column;
-    }
-
-    .timeline {
-        position: relative;
-        top: auto;
-        width: auto;
-        max-height: 200px;
-        margin-right: 0;
-        margin-bottom: 20px;
-        border-left: none;
-        border-bottom: 4px solid white;
-        padding-left: 0;
-        padding-bottom: 15px;
-    }
-
-    .timeline h2 {
-        margin-left: 0;
-    }
-
-    .timeline a {
-        margin: 12px 0;
-        font-size: 16px;
-    }
-
-    .dot {
-        margin-left: 0;
-    }
-
-    .prophet {
-        width: calc(50% - 20px);
-        margin: 5px;
-    }
-
-    .prophet img {
-        height: 250px;
-        width: 100%;
-    }
-
-    #searchBar {
-        width: 100%;
-        box-sizing: border-box;
-    }
-}
-html, body {
-    overflow-x: clip;
-    max-width: 100%;
-}
-
-@media (max-width: 480px) {
-    .prophet {
-        width: 100%;
-    }
-}
-#backToTop {
-    display: none;
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: #003b75;
-    color: white;
-    border: 2px solid white;
-    font-size: 24px;
-    cursor: pointer;
-    z-index: 1000;
-    box-shadow: 2px 2px 8px rgba(0,0,0,0.4);
-}
-
-#backToTop:hover {
-    background-color: #ffd24d;
-    color: #002E5D;
-}
-@media (max-width: 768px) {
-    #backToTop {
-        display: block;
-    }
-}
+            th {
+                background-color: #003b75;
+            }
         </style>
+            
+        <base href="" target="_blank">
     </head>
     <body>
-<div class="page">
-        <aside class="timeline" id="timeline">
-                <h2>Timeline</h2>
-                <a href="#1830"><span class="dot"></span>1830</a>
-                <a href="#1840"><span class="dot"></span>1840</a>
-                <a href="#1850"><span class="dot"></span>1850</a>
-                <a href="#1860"><span class="dot"></span>1860</a>
-                <a href="#1870"><span class="dot"></span>1870</a>
-                <a href="#1880"><span class="dot"></span>1880</a>
-                <a href="#1890"><span class="dot"></span>1890</a>
-                <a href="#1900"><span class="dot"></span>1900</a>
-                <a href="#1910"><span class="dot"></span>1910</a>
-                <a href="#1920"><span class="dot"></span>1920</a>
-                <a href="#1930"><span class="dot"></span>1930</a>
-                <a href="#1940"><span class="dot"></span>1940</a>
-                <a href="#1950"><span class="dot"></span>1950</a>
-                <a href="#1960"><span class="dot"></span>1960</a>
-                <a href="#1970"><span class="dot"></span>1970</a>
-                <a href="#1980"><span class="dot"></span>1980</a>
-                <a href="#1990"><span class="dot"></span>1990</a>
-                <a href="#2000s"><span class="dot"></span>2000s</a>
-        </aside>
-        <main class="content">
-        <button id="backToTop" onclick="scrollToTop()" title="Back to top">↑</button>
-        <h1>The Prophets' Teachings</h1>
-        <h4>Discourses, Epistles, Books, Sermons, &c.</h4>
-        <a href="../index.html" class="button" id="homebutton">Home</a>
-        <button onclick="toggleTimeline()" id="timelineButton">Hide Timeline</button>
-        <input type="text" id="searchBar" placeholder="Search prophets..." autocomplete="off" onkeyup="searchProphets()">
-        <p id="noResults" style="display:none; color:white;"> No prophets found.</p>
-        <details id="filters">
-                <summary>Filters</summary>
-                <label>
-    <input type="checkbox" value="president" checked onchange="filterProphets()">
-    Presidents
-</label>
-<label>
-    <input type="checkbox" value="first-presidency" checked onchange="filterProphets()">
-    First-Presidency
-</label>
-<label>
-    <input type="checkbox" value="apostle" checked onchange="filterProphets()">
-    Apostles
-</label>
-<label>
-    <input type="checkbox" value="patriarch" checked onchange="filterProphets()">
-    Patriarchs
-</label>
+        <a href="../index.html">Home</a>
+        <h1>Resources</h1>
+        <details>
+        <summary>Image Gallery</summary>
+            <ul>
+                <li><a href="https://churchhistorylibrary.churchofjesuschrist.org/guides/photograph-collections?lang=eng">Photograph Collections</a></li>
+                <li><a href="https://catalog.churchofjesuschrist.org/assets/aa8e84c8-3e5d-4740-a95d-4524325aa324/0/0?lang=eng">General Authority photograph portraits, circa 1870s</a></li>
+                <li><a href="https://catalog.churchofjesuschrist.org/record/799cd835-cb2e-41d7-b9d8-378ed7a6c4f6/11cda390-da6a-451e-bee3-921cd48f08da?view=browse">General Authority portrait collection, circa 1850-1985</a></li>
+                <li><a href="https://catalog.churchofjesuschrist.org/record/0b45bf17-8421-4a20-aceb-c898a2691a7c/0?view=browse&lang=eng">Photograph album of LDS Church leaders, circa 1880s-early 1900s</a></li>
+                <li><a href="https://catalog.churchofjesuschrist.org/record/c4aff5f9-175d-4be6-95c0-42ebb1f43d58/853fa08e-a072-4fb9-b68a-243afbe5c04d?view=browse&lang=eng">Daguerreotype collection, circa 1850s-1860s</a></li>
+                <li><a href="https://catalog.churchofjesuschrist.org/record/312ab6d1-b11e-4dde-add0-2c59580015f1/d4be7023-d655-4cc8-a678-216e382fae2d?view=browse&lang=eng">Savage and Ottinger collection of studio portraits, circa 1862-1872</a></li>
+                <li><a href="https://catalog.churchofjesuschrist.org/record/5708a889-6343-4b5c-9561-668e5d40ba84/16caeb75-8263-4321-8b29-2f3c05c6f8d0?view=browse&lang=eng">Bathsheba W. Bigler Smith photograph collection, circa 1865-1900</a></li>
+            </ul>
         </details>
-<br>
-        <p id="galleryLink">All images can be found at <a href="image-gallery.html" target="_blank">Image Gallery</a></p>
-<div class="prophet" data-role="apostle first-presidency president">
-        <a href="sermons/joseph-smithjr/joseph-smithjr-teachings.html"><img alt="Joseph Smith Jr." src="../media/images/prophets/joseph-smithjr/joseph-smith-jr-bathshebasmithportrait.jpg" title="Joseph Smith Jr." ></a>
-        <span>
-        Joseph Smith Jr.
-        <br>
-        Ordained Apostle:
-        <br>
-        May 1829
-        </span>
-</div>
-<div class="prophet" data-role="first-presidency">
-        <a href=""><img alt="Oliver Cowdery" src="../media/images/prophets/oliver-cowdery/olivercowderydaugerrotype.jpg" title="Oliver Cowdery"></a>
-        <span>
-        Oliver Cowdery
-        <br>
-        Ordained Apostle:
-        <br>
-        May 1829
-        </span>
-</div>
-        <h2 id="1830">1830</h2>
-<div class="prophet" data-role="first-presidency">
-        <a href="sermons/sidney-rigdon/sidney-rigdon-teachings.html"><img alt="Sidney Rigdon" src="../media/images/prophets/sidney-rigdon/rigdon-1873.jpg" title="Sidney Rigdon"></a>
-        <span>
-        Sidney Rigdon
-        <br>
-        Ordained 2nd Counselor:
-        <br>
-        March 1832
-        </span>
-</div>
-<div class="prophet" data-role="apostle first-presidency">
-        <a href=""><img alt="Jesse Gause" src="../media/images/prophets/jesseguase/emptyphoto.png" title="Jesse Gausse"></a>
-        <span>
-        Jesse Gause
-        <br>
-        Ordained 1st Counselor:
-        <br>
-        March 1832
-        </span>
-</div>
-<div class="prophet" data-role="apostle first-presidency">
-        <a href=""><img alt="Frederick G. William" src="../media/images/prophets/frederick-g-william/frederick-g-williams-portrait.jpg" title="Frederick G. William"></a>
-        <span>
-        Frederick G. William
-        <br>
-        Ordained 2nd Counselor:
-        <br>
-        Feb 1833
-        </span>
-</div>
-<div class="prophet" data-role="patriarch first-presidency">
-        <a href=""><img alt="Joseph Smith Sr." src="../media/images/prophets/joseph-smith-sr/joseph-smith-sr.jpg" title="Joseph Smith Sr."></a>
-        <span>
-        Joseph Smith Sr.
-        <br>
-        Oradained Patriarch:
-        <br>
-        Dec 1833
-        </span>
-</div>
-<div class="prophet" data-role="apostle">
-        <a href=""><img alt="Abraham H. Cannon" src="../media/images/prophets/thomas-b-marsh/thomas-b-marsh-wikipedia.jpg" title="Thomas B. Marsh"></a>
-        <span>
-        Thomas B. Marsh
-        <br>
-        Ordained Apostle:
-        <br>
-        April 1835
-        </span>
-</div>
-<div class="prophet" data-role="apostle">
-        <a href=""><img alt="David W. Patten" src="../media/images/prophets/david-w-patten/David-Wyman-Patten-church-website-1.jpg" title="David W. Patten"></a>
-        <span>
-        David W. Patten
-        <br>
-        Ordained Apostle:
-        <br>
-        Feb 1835
-        </span>
-</div>
-<div class="prophet" data-role="president first-presidency apostle">
-        <a href="sermons/brigham-young-sr/brigham-young-sermons.html"><img alt="Brigham Young" src="../media/images/prophets/brigham-young/brigham-young-1855.jpg" title="Brigham Young" ></a>
-        <span>
-        Brigham Young
-        <br>
-        Ordained Apostle:
-        <br>
-        Feb 1835
-        </span>
-</div>
-<div class="prophet" data-role="apostle first-presidency">
-        <a href=""><img alt="Heber C. Kimball" src="../media/images/prophets/heber-c-kimball/heber-c-kimball-portrait.jpg" title="Heber C. Kimball"></a>
-        <span>
-        Heber C. Kimball
-        <br>
-        Ordained Apostle:
-        <br>
-        Feb 1835
-        </span>
-</div>
-<div class="prophet" data-role="apostle">
-        <a href=""><img alt="Orson Hyde" src="../media/images/prophets/orson-hyde/orson-hydedaguerrotype.jpg" title="Orson Hyde"></a>
-        <span>
-        Orson Hyde
-        <br>
-        Ordained Apostle:
-        <br>
-        Feb 1835
-        </span>
-</div>
-<div class="prophet" data-role="apostle">
-        <a href=""><img alt="William E. McClellin" src="../media/images/prophets/william-e-mcclellin/william-e-mcclellin.jpg" title="William E. McClellin"></a>
-        <span>
-        William E. McClellin
-        <br>
-        Ordained Apostle:
-        <br>
-        Feb 1835
-        </span>
-</div>
-<div class="prophet" data-role="apostle">
-        <a href=""><img alt="Parley P. Pratt" src="../media/images/prophets/parley-p-pratt/parley-p-pratt-1835.jpg" title="Parley P. Pratt"></a>
-        <span>
-        Parley P. Pratt
-        <br>
-        Ordained Apostle:
-        <br>
-        Feb 1835
-        </span>
-</div>
-<div class="prophet" data-role="apostle">
-        <a href=""><img alt="Luke S. Johnson" src="../media/images/prophets/luke-s-johnson/luke-s-johnson-painting.jpg" title="Luke S. Johnson"></a>
-        <span>
-        Luke S. Johnson
-        <br>
-        Ordained Apostle:
-        <br>
-        Feb 1835
-        </span>
-</div>
-<div class="prophet" data-role="apostle">
-        <a href=""><img alt="William B. Smith" src="../media/images/prophets/william-b-smith/william-b-smith-photo.jpg" title="William B. Smith"></a>
-        <span>
-        William B. Smith
-        <br>
-        Ordained Apostle:
-        <br>
-        Feb 1835
-        </span>
-</div>
-<div class="prophet" data-role="apostle">
-        <a href=""><img alt="Orson Pratt" src="../media/images/prophets/orson-pratt/orson-pratt-1851.png" title="Orson Pratt"></a>
-        <span>
-        Orson Pratt
-        <br>
-        Ordained Apostle:
-        <br>
-        Feb 1835
-        </span>
-</div>
-<div class="prophet" data-role="apostle">
-        <a href=""><img alt="John F. Boynton" src="../media/images/prophets/john-f-boynton/wikipedia.jpg" title="John F. Boynton"></a>
-        <span>
-        John F. Boynton
-        <br>
-        Oradained Apostle:
-        <br>
-        Feb 1835
-        </span>
-</div>
-<div class="prophet" data-role="apostle">
-        <a href=""><img alt="Lyman E. Johnson" src="../media/images/prophets/lyman-e-johnson/lyman-e-johnson.jpg" title="Lyman E. Johnson"></a>
-        <span>
-        Lyman E. Johnson
-        <br>
-        Ordained Apostle:
-        <br>
-        Feb 1835
-        </span>
-</div>
-<div class="prophet" data-role="first-presidency">
-        <a href=""><img alt="Hyrum Smith" src="../media/images/prophets/hyrum-smith/filler.jpg" title="Hyrum Smith"></a>
-        <span>
-        Hyrum Smith
-        <br>
-        Ordained 2nd Counselor:
-        <br>
-        Nov 1837
-        </span>
-</div>
-<div class="prophet" data-role="apostle first-presidency president">
-        <a href=""><img alt="John Taylor" src="../media/images/prophets/john-taylor/JohnTaylor2.jpg" title="John Taylor" ></a>
-        <span>
-        John Taylor
-        <br>
-        Ordained Apostle:
-        <br>
-        Dec 1838
-        </span>
-</div>
-<div class="prophet" data-role="apostle">
-        <a href=""><img alt="John E. Page" src="../media/images/prophets/john-e-page/fillerimage.jpg" title="John E. Page"></a>
-        <span>
-        John E. Page
-        <br>
-        Ordained Apostle:
-        <br>
-        Dec 1838
-        </span>
-</div>
-<div class="prophet" data-role="apostle first-presidency president">
-        <a href=""><img alt="Wilford Woodruff" src="../media/images/prophets/wilford-woodruff/Wilford_Woodruff_2.jpg" title="Wilford Woodruff" ></a>
-        <span>
-        Wilford Woodruff
-        <br>
-        Ordained Apostle:
-        <br>
-        April 1839
-        </span>
-</div>
-<div class="prophet" data-role="apostle first-presidency">
-        <a href=""><img alt="George A. Smith" src="../media/images/prophets/george-a-smith/george-a-smith-byu.jpg" title="George A. Smith"></a>
-        <span>
-        George A. Smith
-        <br>
-        Ordained Apostle:
-        <br>
-        Aug 1839
-        </span>
-</div>
-        <h2 id="1840">1840</h2>
-<div class="prophet" data-role="apostle first-presidency">
-        <a href=""><img alt="Willard Richards" src="../media/images/prophets/willard-richards/willard-richards.jpg" title="Willard Richards"></a>
-        <span>
-        Willard Richards
-        <br>
-        Ordained Apostle:
-        <br>
-        April 1840
-        </span>
-</div>
-<div class="prophet" data-role="apostle first-presidency">
-        <a href=""><img alt="William Law" src="../media/images/prophets/william-law/william-law.jpg" title="William Law"></a>
-        <span>
-        William Law
-        <br>
-        Ordained 2nd Counselor:
-        <br>
-        Jan 1841
-        </span>
-</div>
-<div class="prophet" data-role="first-presidency">
-        <a href=""><img alt="John C. Bennett" src="../media/images/prophets/john-c-bennett/wikipedia.jpg" title="John C. Bennett"></a>
-        <span>
-        John C. Bennett
-        <br>
-        Ordained Ass't Pres't:
-        <br>
-        April 1841
-        </span>
-</div>
-<div class="prophet" data-role="apostle">
-        <a href=""><img alt="Lyman Wight" src="../media/images/prophets/lyman-wight/lyman-wight.jpg" title="Lyman Wight"></a>
-        <span>
-        Lyman Wight
-        <br>
-        Ordained Apostle:
-        <br>
-        April 1841
-        </span>
-</div>
-<div class="prophet" data-role="apostle first-presidency">
-        <a href="sermons/amasa-m-lyman/amasa-m-lyman-sermons.html"><img alt="Amasa M. Lyman" src="../media/images/prophets/amasa-m-lyman/amasa-m-lyman-portrait.png" title="Amasa M. Lyman"></a>
-        <span>
-        Amasa M. Lyman
-        <br>
-        Ordained Apostle:
-        <br>
-        Aug 1842
-        </span>
-</div>
-<div class="prophet" data-role="apostle">
-        <a href=""><img alt="Ezra T. Benson" src="../media/images/prophets/ezra-t-benson/filler.jpg" title="Ezra T. Benson"></a>
-        <span>
-        Ezra T. Benson
-        <br>
-        Ordained Apostle:
-        <br>
-        July 1846
-        </span>
-</div>
-<div class="prophet" data-role="patriarch">
-        <a href=""><img alt="Uncle John" src="../media/images/prophets/john-smith-unclejohn/john-smith-fourthpatriarch.jpg" title="Uncle John"></a>
-        <span>
-        Uncle John
-        <br>
-        Ordained Patriarch:
-        <br>
-        Jan 1849
-        </span>
-</div>
-<div class="prophet" data-role="apostle">
-        <a href=""><img alt="Charles C. Rich" src="../media/images/prophets/charles-c-rich/charles-c-rich-1880.jpg" title="Charles C. Rich"></a>
-        <span>
-        Charles C. Rich
-        <br>
-        Ordained Apostle:
-        <br>
-        Feb 1849
-        </span>
-</div>
-<div class="prophet" data-role="apostle first-presidency president">
-        <a href=""><img alt="Lorenzo Snow" src="../media/images/prophets/lorenzo-snow/lorenzo-snow.jpg" title="Lorenzo Snow" ></a>
-        <span>
-        Lorenzo Snow
-        <br>
-        Ordained Apostle:
-        <br>
-        Feb 1849
-        </span>
-</div>
-<div class="prophet" data-role="apostle">
-        <a href=""><img alt="Erastus Snow" src="../media/images/prophets/erastus-snow/filler.jpg" title="Erastus Snow"></a>
-        <span>
-        Erastus Snow
-        <br>
-        Ordained Apostle:
-        <br>
-        Feb 1849
-        </span>
-</div>
-<div class="prophet" data-role="apostle">
-        <a href=""><img alt="Franklin D. Richards" src="../media/images/prophets/franklin-d-richards/filler.jpg" title="Franklin D. Richards"></a>
-        <span>
-        Franklin D. Richards
-        <br>
-        Ordained Apostle:
-        <br>
-        Feb 1849
-        </span>
-</div>
-        <h2 id="1850">1850</h2>
-<div class="prophet" data-role="apostle first-presidency">
-        <a href=""><img alt="Jebediah M. Grant" src="../media/images/prophets/jebediah-m-grant/filler-image.gif" title="Jebediah M. Grant"></a>
-        <span>
-        Jebediah M. Grant
-        <br>
-        Ordained 2nd Counselor:
-        <br>
-        April 1854
-        </span>
-</div>
-<div class="prophet" data-role="patriarch">
-        <a href=""><img src="../media/images/prophets/john-smith-patriarch/john-smith-wikipedia-patriarch.jpg" alt="John Smith" title="John Smith"></a>
-        <span>
-        John Smith
-        <br>
-        Ordained a Patriarch:
-        <br>
-        Feb 1855
-        </span>
-</div>
-<div class="prophet" data-role="apostle first-presidency">
-        <a href=""><img alt="Daniel H. Wells" src="../media/images/prophets/daniel-h-wells/daniel-h-wells-1904.jpg" title="Daniel H. Wells"></a>
-        <span>
-        Daniel H. Wells
-        <br>
-        Ordained 2nd Counselor:
-        <br>
-        Jan 1857
-        </span>
-</div>
-        <h2 id="1860">1860</h2>
-<div class="prophet" data-role="apostle first-presidency">
-        <a href=""><img alt="George Q. Cannon" src="../media/images/prophets/george-q-cannon/george-q-cannon-1870-1880.jpg" title="George Q. Cannon"></a>
-        <span>
-        George Q. Cannon
-        <br>
-        Ordained Apostle:
-        <br>
-        Aug 1860
-        </span>
-</div>
-<div class="prophet" data-role="apostle first-presidency president">
-        <a href=""><img alt="Joseph F. Smith" src="../media/images/prophets/joseph-f-smith/Joseph-F-Smith-mormon.jpg" title="Joseph F. Smith" ></a>
-        <span>
-        Joseph F. Smith
-        <br>
-        Ordained Counselor:
-        <br>
-        July 1866
-        </span>
-</div>
-<div class="prophet" data-role="apostle first-presidency">
-        <a href=""><img alt="Brigham Young Jr." src="../media/images/prophets/brigham-young-jr/brigham-youngjr-portrait.jpg" title="Brigham Young Jr."></a>
-        <span>
-        Brigham Young Jr.
-        <br>
-        Ordained Apostle:
-        <br>
-        Oct 1868
-        </span>
-</div>
-        <h2 id="1870">1870</h2>
-<div class="prophet" data-role="apostle first-presidency">
-        <a href="sermons/albert-carrington/albert-carrington-sermons.html"><img alt="Albert Carrington" src="../media/images/prophets/albert-carrington/albert-carrington-1866.jpg" title="Albert Carrington"></a>
-        <span>
-        Albert Carrington
-        <br>
-        Ordained Apostle:
-        <br>
-        July 1870
-        </span>
-</div>
-<div class="prophet" data-role="apostle">
-        <a href=""><img alt="John W. Young" src="../media/images/prophets/john-w-young/John_W_Young.gif" title="John W. Young"></a>
-        <span>
-        John W. Young
-        <br>
-        Ordained Counselor:
-        <br>
-        June 1873
-        </span>
-</div>
-<div class="prophet" data-role="apostle">
-        <a href=""><img alt="Moses Thatcher" src="../media/images/prophets/moses-thatcher/moses-thatcher-placeholder.jpg" title="Moses Thatcher"></a>
-        <span>
-        Moses Thatcher
-        <br>
-        Ordained Apostle:
-        <br>
-        April 1879
-        </span>
-</div>
-        <h2 id="1880">1880</h2>
-<div class="prophet" data-role="apostle">
-        <a href=""><img alt="Francis M. Lyman" src="../media/images/prophets/francis-m-lyman/francis-m-lyman-1917.jpg" title="Francis M. Lyman"></a>
-        <span>
-        Francis M. Lyman
-        <br>
-        Ordained Apostle:
-        <br>
-        Oct 1880
-        </span>
-</div>
-<div class="prophet" data-role="apostle first-presidency">
-        <a href=""><img alt="John H. Smith" src="../media/images/prophets/john-h-smith/john-h-smith-wikipedia.jpg" title="John H. Smith"></a>
-        <span>
-        John H. Smith
-        <br>
-        Ordained Apostle:
-        <br>
-        Oct 1880
-        </span>
-</div>
-<div class="prophet" data-role="apostle">
-        <a href=""><img alt="George Teasdale" src="../media/images/prophets/george-teasdale/filler.jpg" title="George Teasdale"></a>
-        <span>
-        George Teasdale
-        <br>
-        Ordained Apostle:
-        <br>
-        Oct 1882
-        </span>
-</div>
-<div class="prophet" data-role="apostle first-presidency president">
-        <a href=""><img alt="Heber J. Grant" src="../media/images/prophets/heber-j-grant/heber-j-grant-1880s.jpg" title="Heber J. Grant" ></a>
-        <span>
-        Heber J. Grant
-        <br>
-        Ordained Apostle:
-        <br>
-        Oct 1882
-        </span>
-</div>
-<div class="prophet" data-role="apostle">
-        <a href=""><img alt="John W. Taylor" src="../media/images/prophets/john-w-taylor/Johnwtaylor.gif" title="John W. Taylor"></a>
-        <span>
-        John W. Taylor
-        <br>
-        Ordained Apostle:
-        <br>
-        April 1884
-        </span>
-</div>
-<div class="prophet" data-role="apostle">
-        <a href=""><img alt="Marriner W. Merrill" src="../media/images/prophets/marriner-w-merrill/marriner-w-merrill.jpg" title="Marriner W. Merrill"></a>
-        <span>
-        Marriner W. Merrill
-        <br>
-        Ordained Apostle:
-        <br>
-        Oct 1889
-        </span>
-</div>
-<div class="prophet" data-role="apostle first-presidency">
-        <a href="sermons/anthon-h-lund/anthon-h-lund-sermons.html"><img alt="Anthon H. Lund" src="../media/images/prophets/anthon-h-lund/anthon-h-lund-1905.jpg" title="Anthon H. Lund"></a>
-        <span>
-        Anthon H. Lund
-        <br>
-        Ordained Apostle:
-        <br>
-        Oct 1889
-        </span>
-</div>
-<div class="prophet" data-role="apostle">
-        <a href="sermons/abraham-h-cannon/abraham-h-cannon-sermon.html"><img alt="Abraham H. Cannon" src="../media/images/prophets/abraham-h-cannon/abraham-h-cannon-1895.jpeg" title="Abraham H. Cannon"></a>
-        <span>
-        Abraham H. Cannon
-        <br>
-        Ordained Apostle:
-        <br>
-        Oct 1889
-        </span>
-</div>
-        <h2 id="1890">1890</h2>
-<div class="prophet" data-role="apostle">
-        <a href=""><img alt="Matthias F Cowley" src="../media/images/prophets/matthias-f-cowley/mattias-f-cowley-placeholder.jpg" title="Matthias F Cowley"></a>
-        <span>
-        Matthias F Cowley
-        <br>
-        Ordained Apostle:
-        <br>
-        Oct 1897
-        </span>
-</div>
-<div class="prophet" data-role="apostle">
-        <a href="sermons/abraham-o-woodruff/abraham-o-woodruff-sermon.html"><img alt="Abraham O. Woodruff" src="../media/images/prophets/abraham-o-woodruff/abraham-o-woodruff-1904.jpg" title="Abraham O. Woodruff"></a>
-        <span>
-        Abraham O. Woodruff
-        <br>
-        Ordained Apostle:
-        <br>
-        Oct 1897
-        </span>
-</div>
-<div class="prophet" data-role="apostle first-presidency">
-        <a href=""><img alt="Rudger Clawson" src="../media/images/prophets/rudger-clawson/rudger-clawson-placeholder.jpg" title="Rudger Clawson"></a>
-        <span>
-        Rudger Clawson
-        <br>
-        Ordained Apostle:
-        <br>
-        Oct 1898
-        </span>
-</div>
-        <h2 id="1900">1900</h2>
-<div class="prophet" data-role="apostle">
-        <a href=""><img alt="Reed Smoot" src="../media/images/prophets/reed-smoot/senator-reed-smoot-placeholder.jpg" title="Reed Smoot"></a>
-        <span>
-        Reed Smoot
-        <br>
-        Ordained Apostle:
-        <br>
-        April 1900
-        </span>
-</div>
-<div class="prophet" data-role="first-presidency">
-        <a href=""><img alt="John R. Winder" src="../media/images/prophets/john-r-winder/john-r-winder-1901-wikipedia.jpg" title="John R. Winder"></a>
-        <span>
-        John R. Winder
-        <br>
-        Ordained Counselor:
-        <br>
-        Oct 1901
-        </span>
-</div>
-<div class="prophet" data-role="apostle">
-        <a href=""><img alt="Hyrum M. Smith" src="../media/images/prophets/hyrum-m-smith/hyrum-m-smith-1926.jpg" title="Hyrum M. Smith"></a>
-        <span>
-        Hyrum M. Smith
-        <br>
-        Ordained Apostle:
-        <br>
-        Oct 1901
-        </span>
-</div>
-<div class="prophet" data-role="apostle first-presidency president">
-        <a href="sermons/george-albert-smith/george-albert-smith-teachings.html"><img alt="George Albert Smith" src="../media/images/prophets/george-albert-smith/george-albert-smith-1939.jpg" title="George Albert Smith" ></a>
-        <span>
-        George Albert Smith
-        <br>
-        Ordained Apostle:
-        <br>
-        Oct 1903
-        </span>
-</div>
-<div class="prophet" data-role="apostle first-presidency">
-        <a href=""><img alt="Charles W. Penrose" src="../media/images/prophets/charles-w-penrose/charles-w-penrose-first-presidency.jpg" title="Charles W. Penrose"></a>
-        <span>
-        Charles W. Penrose
-        <br>
-        Ordained Apostle:
-        <br>
-        July 1904
-        </span>
-</div>
-<div class="prophet" data-role="apostle">
-        <a href=""><img alt="George F. Richards" src="../media/images/prophets/george-f-richards/george-f-richards-1915.jpg" title="George F. Richards"></a>
-        <span>
-        George F. Richards
-        <br>
-        Ordained Apostle:
-        <br>
-        April 1906
-        </span>
-</div>
-<div class="prophet" data-role="apostle">
-        <a href=""><img alt="Orson F. Whitney" src="../media/images/prophets/orson-f-whitney/orson-f-whitney.jpg" title="Orson F. Whitney"></a>
-        <span>
-        Orson F. Whitney
-        <br>
-        Ordained Apostle:
-        <br>
-        April 1906
-        </span>
-</div>
-<div class="prophet" data-role="apostle first-presidency president">
-        <a href=""><img alt="David O. McKay" src="../media/images/prophets/david-o-mckay/david-o-mckay-1925.jpg" title="David O. McKay" ></a>
-        <span>
-        David O. McKay
-        <br>
-        Ordained Apostle:
-        <br>
-        April 1906
-        </span>
-</div>
-<div class="prophet" data-role="apostle first-presidency">
-        <a href="sermons/anthony-w-ivins/anthony-w-ivins-sermons.html"><img alt="Anthony W. Ivins" src="../media/images/prophets/anthony-w-ivins/anthony-w-ivins-1921.jpg" title="Anthony W. Ivins"></a>
-        <span>
-        Anthony W. Ivins
-        <br>
-        Ordained Apostle:
-        <br>
-        Oct 1907
-        </span>
-</div>
-        <h2 id="1910">1910</h2>
-<div class="prophet" data-role="apostle first-presidency president">
-        <a href=""><img alt="Joseph Fielding Smith" src="../media/images/prophets/joseph-fielding-smith/joseph-fielding-smith1943circa.jpg" title="Joseph Fielding Smith" ></a>
-        <span>
-        Joseph Fielding Smith
-        <br>
-        Ordained Apostle:
-        <br>
-        April 1910
-        </span>
-</div>
-<div class="prophet" data-role="apostle">
-        <a href=""><img alt="James E. Talmage" src="../media/images/prophets/james-e-talmage/filler-image.jpg" title="James E. Talmage"></a>
-        <span>
-        James E. Talmage
-        <br>
-        Ordained Apostle:
-        <br>
-        Dec 1911
-        </span>
-</div>
-<div class="prophet" data-role="patriarch">
-        <a href=""><img src="../media/images/prophets/hyrum-g-smith/hyrum-g-smith-1932.jpg" alt="Hyrum G. Smith" title="Hyrum G. Smith"></a>
-        <span>
-                Hyrum G. Smith
-                <br>
-                Ordained a Patriarch:
-                <br>
-                May 1912
-        </span>
-</div>
-<div class="prophet" data-role="apostle first-presidency">
-        <a href=""><img alt="Stephen L Richards" src="../media/images/prophets/stephen-l-richards/richards1920.jpg" title="Stephen L Richards"></a>
-        <span>
-        Stephen L Richards
-        <br>
-        Ordained Apostle:
-        <br>
-        Jan 1917
-        </span>
-</div>
-<div class="prophet" data-role="apostle">
-        <a href=""><img alt="Richard R. Lyman" src="../media/images/prophets/richard-r-lyman/richard-r-lyman1939.jpg" title="Richard R. Lyman"></a>
-        <span>
-        Richard R. Lyman
-        <br>
-        Ordained Apostle:
-        <br>
-        April 1918
-        </span>
-</div>
-<div class="prophet" data-role="apostle">
-        <a href="../sermons/a-g/bal-mel-j-sermon.html"><img alt="Melvin J. Ballard" src="../media/images/prophets/melvin-j-ballard/melvin-j-ballard1919.jpg" title="Melvin J. Ballard"></a>
-        <span>
-        Melvin J. Ballard
-        <br>
-        Ordained and Apostle:
-        <br>
-        Jan 1919
-        </span>
-</div>
-        <h2 id="1920">1920</h2>
-<div class="prophet" data-role="apostle">
-        <a href=""><img alt="John A. Widtsoe" src="../media/images/prophets/john-a-widtsoe/john-a-widtsoe-circa1920.jpg" title="John A. Widtsoe"></a>
-        <span>
-        John A. Widtsoe
-        <br>
-        Ordained an Apostle:
-        <br>
-        March 1921
-        </span>
-</div>
-<div class="prophet" data-role="first-presidency">
-        <a href=""><img alt="Charles W. Nibley" src="../media/images/prophets/charles-w-nibley/charles-w-nibley-first-presidency.jpg" title="Charles W. Nibley"></a>
-        <span>
-        Charles W. Nibley
-        <br>
-        Ordained a Counselor:
-        <br>
-        May 1925
-        </span>
-</div>
-        <h2 id="1930">1930</h2>
-<div class="prophet" data-role="apostle">
-        <a href=""><img alt="Joseph F. Merrill" src="../media/images/prophets/joseph-f-merrill/Joseph-F.-Merrill.webp" title="Joseph F. Merrill"></a>
-        <span>
-        Joseph F. Merrill
-        <br>
-        Ordained an Apostle:
-        <br>
-        Oct 1931
-        </span>
-</div>
-<div class="prophet" data-role="apostle first-presidency">
-        <a href=""><img alt="J. Reuben Clark Jr." src="../media/images/prophets/j-reuben-clark-jr/j-reuben-clark-jr-circa1914-wikipedia.jpg" title="J. Reuben Clark Jr."></a>
-        <span>
-        J. Reuben Clark Jr.
-        <br>
-        Ordained Second Counselor:
-        <br>
-        April 1933
-        </span>
-</div>
-<div class="prophet" data-role="apostle">
-        <a href=""><img alt="Charles A. Callis" src="../media/images/prophets/charles-a-callis/charles-a-callis-1939.jpg" title="Charles A. Callis"></a>
-        <span>
-        Charles A. Callis
-        <br>
-        Ordained an Apostle:
-        <br>
-        Oct 1933
-        </span>
-</div>
-<div class="prophet" data-role="apostle">
-        <a href="sermons/alonzo-a-hinckley/alonzo-a-hinckley-sermons.html"><img alt="Alonzo A. Hinckley" src="../media/images/prophets/alonzo-a-hinckley/alonzo-a-hinckley-1934.jpg" title="Alonzo A. Hinckley"></a>
-        <span>
-        Alonzo A. Hinckley
-        <br>
-        Ordained an Apostle:
-        <br>
-        Oct 1934
-        </span>
-</div>
-<div class="prophet" data-role="apostle">
-        <a href="sermons/albert-e-bowen/albert-e-bowen-sermons.html"><img alt="Albert E. Bowen" src="../media/images/prophets/albert-e-bowen/albert-e-bowen-1920.jpg" title="Albert E. Bowen"></a>
-        <span>
-        Albert E. Bowen
-        <br>
-        Ordained an Apostle:
-        <br>
-        April 1937
-        </span>
-</div>
-<div class="prophet" data-role="apostle">
-        <a href=""><img alt="Sylvester Q. Cannon" src="../media/images/prophets/sylvester-q-cannon/sylvester-q-cannon.png" title="Sylvester Q. Cannon"></a>
-        <span>
-        Sylvester Q. Cannon
-        <br>
-        Ordained an Apostle:
-        <br>
-        Oct 1939
-        </span>
-</div>
-        <h2 id="1940">1940</h2>
-<div class="prophet" data-role="apostle first-presidency president">
-        <a href=""><img alt="Harold B. Lee" src="../media/images/prophets/harold-b-lee/harold-b-lee-1944.jpg" title="Harold B. Lee" ></a>
-        <span>
-        Harold B. Lee
-        <br>
-        Ordained an Apostle:
-        <br>
-        April 1941
-        </span>
-</div>
-<div class="prophet" data-role="patriarch">
-        <a href=""><img src="../media/images/prophets/joseph-f-smith-second/Joseph_Fielding_Smith_(presiding_patriarch).jpg" alt="Joseph F. Smith II" title="Joseph F. Smith II"></a>
-        <span>
-        Joseph F. Smith II
-        <br>
-        Ordained a Patriarch:
-        <br>
-        Sept 1942
-        </span>
-</div>
-<div class="prophet" data-role="apostle first-presidency president">
-        <a href=""><img alt="Spencer W. Kimball" src="../media/images/prophets/spencer-w-kimball/spencer-w-kimballplaceholder.png" title="Spencer W. Kimball" ></a>
-        <span>
-        Spencer W. Kimball
-        <br>
-        Ordained an Apostle:
-        <br>
-        Oct 1943
-        </span>
-</div>
-<div class="prophet" data-role="apostle first-presidency president">
-        <a href=""><img alt="Ezra Taft Benson" src="../media/images/prophets/ezra-taft-benson/Ezra_Taft_Benson.jpg" title="Ezra Taft Benson" ></a>
-        <span>
-        Ezra Taft Benson
-        <br>
-        Ordained an Apostle:
-        <br>
-        Oct 1943
-        </span>
-</div>
-<div class="prophet" data-role="apostle">
-        <a href=""><img alt="Mark E. Petersen" src="../media/images/prophets/mark-e-petersen/mark-e-petersen.jpg" title="Mark E. Petersen"></a>
-        <span>
-        Mark E. Petersen
-        <br>
-        Ordained an Apostle:
-        <br>
-        April 1944
-        </span>
-</div>
-<div class="prophet" data-role="apostle">
-        <a href=""><img alt="Matthew Cowley" src="../media/images/prophets/matthew-cowley/matthew-cowley.jpg" title="Matthew Cowley"></a>
-        <span>
-        Matthew Cowley
-        <br>
-        Ordained an Apostle:
-        <br>
-        Oct 1945
-        </span>
-</div>
-<div class="prophet" data-role="apostle first-presidency">
-        <a href=""><img alt="Henry D. Moyle" src="../media/images/prophets/henry-d-moyle/henry-d-moyle-1961.jpg" title="Henry D. Moyle"></a>
-        <span>
-        Henry D. Moyle
-        <br>
-        Ordained an Apostle:
-        <br>
-        April 1947
-        </span>
-</div>
-<div class="prophet" data-role="patriarch">
-        <a href=""><img src="../media/images/prophets/eldred-g-smith/eldred-g-smith-1957.jpg" alt="Eldred G. Smith" title="Eldred G. Smith"></a>
-        <span>
-        Eldred G. Smith
-        <br>
-        Ordained a Patriarch:
-        <br>
-        April 1947
-        </span>
-</div>
-        <h2 id="1950">1950</h2>
-<div class="prophet" data-role="apostle">
-        <a href=""><img alt="Delbert L. Stapley" src="../media/images/prophets/delbert-l-stapley/delbert-l-stapley-1963.jpg" title="Delbert L. Stapley"></a>
-        <span>
-        Delbert L. Stapley
-        <br>
-        Ordained an Apostle:
-        <br>
-        Oct 1950
-        </span>
-</div>
-<div class="prophet" data-role="apostle first-presidency">
-        <a href=""><img alt="Marion G. Romney" src="../media/images/prophets/marion-g-romney/marion-g-romney.jpg" title="Marion G. Romney"></a>
-        <span>
-        Marion G. Romney
-        <br>
-        Ordained an Apostle:
-        <br>
-        Oct 1951
-        </span>
-</div>
-<div class="prophet" data-role="apostle">
-        <a href=""><img alt="LeGrand Richards" src="../media/images/prophets/legrand-richards/legrand-richards1963.jpg" title="LeGrand Richards"></a>
-        <span>
-        LeGrand Richards
-        <br>
-        Ordained an Apostle:
-        <br>
-        April 1952
-        </span>
-</div>
-<div class="prophet" data-role="apostle">
-        <a href="sermons/adam-s-bennion/adam-s-bennion-sermons.html"><img alt="Adam S. Bennion" src="../media/images/prophets/adam-s-bennion/adam-s-bennion-1953.jpg" title="Adam S. Bennion"></a>
-        <span>
-        Adam S. Bennion
-        <br>
-        Ordained an Apostle:
-        <br>
-        April 1953
-        </span>
-</div>
-<div class="prophet" data-role="apostle">
-        <a href=""><img alt="Richard L. Evans" src="../media/images/prophets/richard-l-evans/richard-l-evans.jpg" title="Richard L. Evans"></a>
-        <span>
-        Richard L. Evans
-        <br>
-        Ordained an Apostle:
-        <br>
-        Oct 1953
-        </span>
-</div>
-<div class="prophet" data-role="apostle">
-        <a href=""><img alt="George Q. Morris" src="../media/images/prophets/george-q-morris/george-q-morris-1962.jpg" title="George Q. Morris"></a>
-        <span>
-        George Q. Morris
-        <br>
-        Ordained an Apostle:
-        <br>
-        April 1954
-        </span>
-</div>
-<div class="prophet" data-role="apostle first-presidency">
-        <a href=""><img alt="Hugh B. Brown" src="../media/images/prophets/hugh-b-brown/filler.jpg" title="Hugh B. Brown"></a>
-        <span>
-        Hugh B. Brown
-        <br>
-        Ordained an Apostle:
-        <br>
-        April 1958
-        </span>
-</div>
-<div class="prophet" data-role="apostle first-presidency president">
-        <a href=""><img alt="Howard W. Hunter" src="../media/images/prophets/howard-w-hunter/howard-w-hunter-1975.jpg" title="Howard W. Hunter" ></a>
-        <span>
-        Howard W. Hunter
-        <br>
-        Ordained an Apostle:
-        <br>
-        Oct 1959
-        </span>
-</div>
-        <h2 id="1960">1960</h2>
-<div class="prophet" data-role="apostle first-presidency president">
-        <a href=""><img alt="Gordon B. Hinckley" src="../media/images/prophets/gordon-b-hinckley/gordon-b-hinckley-1976.jpg" title="Gordon B. Hinckely" ></a>
-        <span>
-        Gordon B. Hinckley
-        <br>
-        Ordained an Apostle:
-        <br>
-        Oct 1961
-        </span>
-</div>
-<div class="prophet" data-role="apostle first-presidency">
-        <a href=""><img alt="Nathan E. Tanner" src="../media/images/prophets/nathan-e-tanner/n-eldon-tanner.jpg" title="Nathan E. Tanner"></a>
-        <span>
-        Nathan E. Tanner
-        <br>
-        Ordained an Apostle:
-        <br>
-        Oct 1962
-        </span>
-</div>
-<div class="prophet" data-role="apostle first-presidency president">
-        <a href=""><img alt="Thomas S. Monson" src="../media/images/prophets/thomas-s-monson/thomas-s-monson.jpg" title="Thomas S. Monson" ></a>
-        <span>
-        Thomas S. Monson
-        <br>
-        Ordained an Apostle:
-        <br>
-        Oct 1963
-        </span>
-</div>
-<div class="prophet" data-role="first-presidency">
-        <a href=""><img src="../media/images/prophets/thorpe-b-isaacson/thorpe-b-isaacson.jpg" alt="Thorpe B. Isaacson" title="Thorpe B. Isaacson"></a>
-        <span>
-        Thorpe B. Isaacson
-        <br>
-        Ordained a Counselor:
-        <br>
-        Oct 1965
-        </span>
-</div>
-<div class="prophet" data-role="first-presidency">
-        <a href=""><img src="../media/images/prophets/alvin-r-dyer/alvin-r-dyer-wikipedia.jpg" alt="Alvin R. Dyer" title="Alvin R. Dyer"></a>
-        <span>
-                Alvin R. Dyer
-                <br>
-                Ordained a Counselor:
-                <br>
-                April 1968
-        </span>
-</div>
-        <h2 id="1970">1970</h2>
-<div class="prophet" data-role="apostle">
-        <a href="sermons/boyd-k-packer/boyd-k-packer-sermons.html"><img alt="Boyd K. Packer" src="../media/images/prophets/boyd-k-packer/boyd-k-packer1961.jpg" title="Boyd K. Packer"></a>
-        <span>
-        Boyd K. Packer
-        <br>
-        Ordained an Apostle:
-        <br>
-        April 1970
-        </span>
-</div>
-<div class="prophet" data-role="apostle">
-        <a href="../sermons/a-g/ash-marv-j-sermon.html"><img alt="Marvin J. Ashton" src="../media/images/prophets/marvin-j-ashton/marvin-j-ashton.jpg" title="Marvin J. Ashton"></a>
-        <span>
-        Marvin J. Ashton
-        <br>
-        Ordained an Apostle:
-        <br>
-        Dec 1971
-        </span>
-</div>
-<div class="prophet" data-role="apostle">
-        <a href=""><img alt="Bruce R. McConkie" src="../media/images/prophets/bruce-r-mcconkie/bruce-r-mcconkie-1976.jpg" title="Bruce R. McConkie"></a>
-        <span>
-        Bruce R. McConkie
-        <br>
-        Ordained an Apostle:
-        <br>
-        Oct 1972
-        </span>
-</div>
-<div class="prophet" data-role="apostle">
-        <a href=""><img alt="L. Tom Perry" src="../media/images/prophets/l-tom-perry/l-tom-perry.jpg" title="L. Tom Perry"></a>
-        <span>
-        L. Tom Perry
-        <br>
-        Ordained an Apostle:
-        <br>
-        April 1974
-        </span>
-</div>
-<div class="prophet" data-role="apostle">
-        <a href=""><img alt="David B. Haight" src="../media/images/prophets/david-b-haight/filler-image-.jpg" title="David B. Haight"></a>
-        <span>
-        David B. Haight
-        <br>
-        Ordained an Apostle:
-        <br>
-        Jan 1976
-        </span>
-</div>
-<div class="prophet" data-role="apostle first-presidency">
-        <a href=""><img alt="James E. Faust" src="../media/images/prophets/james-e-faust/filler-image.jpg" title="James E. Faust"></a>
-        <span>
-        James E. Faust
-        <br>
-        Ordained an Apostle:
-        <br>
-        Oct 1978
-        </span>
-</div>
-        <h2 id="1980">1980</h2>
-<div class="prophet" data-role="apostle">
-        <a href=""><img alt="Neil A. Maxwell" src="../media/images/prophets/neil-a-maxwell/neil-a-maxwell.jpg" title="Neil A. Maxwell"></a>
-        <span>
-        Neil A. Maxwell
-        <br>
-        Ordained an Apostle:
-        <br>
-        July 1981
-        </span>
-</div>
-<div class="prophet" data-role="apostle first-presidency president">
-        <a href=""><img alt="Russell M. Nelson" src="../media/images/prophets/russel-m-nelson/russell-m-nelson.jpg" title="Russell M. Nelson" ></a>
-        <span>
-        Russell M. Nelson
-        <br>
-        Ordained an Apostle:
-        <br>
-        April 1984
-        </span>
-</div>
-<div class="prophet" data-role="apostle">
-        <a href=""><img alt="M. Russel Ballard" src="../media/images/prophets/m-russell-ballard/m-russell-ballard.jpg" title="M. Russel Ballard"></a>
-        <span>
-        M. Russell Ballard
-        <br>
-        Ordained an Apostle:
-        <br>
-        Oct 1985
-        </span>
-</div>
-<div class="prophet" data-role="apostle">
-        <a href=""><img alt="Joseph B. Wirthlin" src="../media/images/prophets/joseph-b-wirthlin/Wirthlin_Joseph-Web-compressor.jpg" title="Joseph B. Wirthlin"></a>
-        <span>
-        Joseph B. Wirthlin
-        <br>
-        Ordained an Apostle:
-        <br>
-        Oct 1986
-        </span>
-</div>
-<div class="prophet" data-role="apostle">
-        <a href=""><img alt="Richard G. Scott" src="../media/images/prophets/richard-g-scott/richard-g-scott.jpg" title="Richard G. Scott"></a>
-        <span>
-        Richard G. Scott
-        <br>
-        Ordained an Apostle:
-        <br>
-        Oct 6, 1988
-        </span>
-</div>
-        <h2 id="1990">1990</h2>
-<div class="prophet" data-role="apostle">
-        <a href=""><img alt="Robert D. Hales" src="../media/images/prophets/robert-d-hales/robert-d-hales.jpg" title="Robert D. Hales"></a>
-        <span>
-        Robert D. Hales
-        <br>
-        Ordained an Apostle:
-        <br>
-        April 1994
-        </span>
-</div>
-<div class="prophet" data-role="apostle">
-        <a href=""><img alt="Jeffery R. Holland" src="../media/images/prophets/jeffery-r-holland/filler-imaage.webp" title="Jeffery R. Holland"></a>
-        <span>
-        Jeffery R. Holland
-        <br>
-        Ordained an Apostle:
-        <br>
-        June 1994
-        </span>
-</div>
-        <h2 id="2000s">2000s</h2>
-        <p>None Yet</p>
-
-
-
-</div>
-</main>
+        <details>
+        <summary>Sermons/Discourses and Epistles</summary>
+        <p>Audio-visual Aid</p>
+            <p><a href="https://catalog.churchofjesuschrist.org/record/7eacaa5b-fb1e-4d82-a6b7-8f12159c97bf/40860424-63a7-49c0-950a-41fd0f74205b?view=browse&lang=eng">1949-1970 (Video only)</a></p>
+            <p><a href="https://catalog.churchofjesuschrist.org/record/2b8598d8-cb11-4dc0-940b-bf84d68f85e5/27e55dd0-d8ae-4ffb-91c3-7d68a6dce4ad?view=browse&lang=eng">1936-49 (Audio only)</a></p>
+        <ol>
+            <li>General Conference (1971-Present)</li>
+            <ul>
+                <li><a href="https://www.churchofjesuschrist.org/study/general-conference?lang=eng">lds.org</a></li>
+            </ul>
+            <li>General Conference Reports (1880-2017)</li>
+            <ul>
+                <li><a href="https://archive.org/details/conferencereport">Internet Archive</a></li>
+                <li><a href="https://catalog.churchofjesuschrist.org/record/7fd062e7-7654-47c1-84e4-7bb27c3e93b7/0?view=browse">Church History Catalog</a></li>
+                <li><a href="https://archiveviewer.org/collections/en/deseret-news-weekly">Archive Viewer</a></li>
+            </ul>
+            <li>BYU Speeches</li>
+            <ul>
+                <li><a href="https://speeches.byu.edu">BYU.edu</a></li>
+            </ul>
+            <li>YSA Devotionals</li>
+            <ul>
+                <li><a href="https://www.churchofjesuschrist.org/study/handbooks-and-callings/seminaries-and-institutes/si-broadcasts/devotionals-for-young-adults?lang=eng">lds.org</a></li>
+            </ul>
+            <li>Journal of Discourses (1854-86)</li>
+            <ul>
+                <li><a href="https://archive.org/details/JournalOfDiscourses18541898">Internet Archive</a></li>
+                <li><a href="https://journalofdiscourses.com/">Journal of Discourses Website</a></li>
+                <li><a href="https://www.josephsmithfoundation.org/journalofdiscourses/">Joseph Smith Foundation</a></li>
+            </ul>
+            <li>Church Periodicals (Note: Not all are official publications)</li>
+            <ul>
+                <li>The Evening and Morning Star (1832-34)</li>
+                <ul><li><a href="https://archiveviewer.org/collections/en/the-evening-and-the-morning-star">Archive Viewer</a></li>
+                    <li><a href="https://catalog.churchofjesuschrist.org/assets/4f409ef3-4279-4d4e-aa89-870de5498410/0/0">Church History Catalog</a></li>
+                    <li><a href="https://archive.org/details/EveningAndMorningStar18321834/mode/1up">Internet Archive</a></li>
+                </ul>
+                <li>Messenger and Advocate (1832-37)</li>
+                <ul>
+                    <li><a href="https://archiveviewer.org/collections/en/latter-day-saints-messenger-and-advocate">Archive Viewer</a></li>
+                    <li><a href="https://catalog.churchofjesuschrist.org/record/20ac4aeb-6117-4cdb-8131-097568ce8d1f/0?view=browse">Church History Catalog</a></li>
+                    <li><a href="https://archive.org/details/latterdaysaintsm01unse">Internet Archive</a></li>
+                </ul>
+                <li>Elders' Journal (1837-38)</li>
+                <ul>
+                    <li><a href="https://archiveviewer.org/collections/en/elders-journal-marsh">Archive Viewer</a></li>
+                    <li><a href="https://archive.org/details/eldersjournalkir04smit/page/n5/mode/2up">Internet Archive</a></li>
+                </ul>
+                <li>Times and Seasons (1839-46)</li>
+                <ul>
+                    <li><a href="https://archiveviewer.org/collections/en/times-and-seasons">Archive Viewer</a></li>
+                    <li><a href="https://catalog.churchofjesuschrist.org/record/7c4aec9f-2e47-4490-8061-5c1ed6060e96/0?view=browse">Church History Catalog</a></li>
+                    <li><a href="https://archive.org/details/TimesAndSeasons18391846/mode/1up">Internet Archive</a></li>
+                </ul>
+                <li>Millenial Star (1840-1970)</li>
+                <ul>
+                    <li><a href="https://archiveviewer.org/collections/en/millennial-star">Archive Viewer</a></li>
+                </ul>
+                <li>The Gospel Reflector (1841)</li>
+                <ul>
+                    <li><a href="https://archiveviewer.org/collections/en/the-gospel-reflector">Archive Viewer</a></li>
+                    <li><a href="https://archive.org/details/GospelReflector1841/mode/1up">Internet Archive</a></li>
+                </ul>
+                <li>The Wasp (1842-43)</li>
+                <ul>
+                    <li><a href="https://archiveviewer.org/collections/en/the-wasp">Archive Viewer</a></li>
+                </ul>
+                <li>The Gospel Light (1843-44)</li>
+                <ul>
+                    <li><a href="https://archiveviewer.org/collections/en/the-gospel-light">Archive Viewer</a></li>
+                    <li><a href="https://archive.org/details/GospelLight18431844/mode/1up">Internet Archive</a></li>
+                </ul>
+                <li>Nauvoo Neighbor (1843-45)</li>
+                <ul>
+                    <li><a href="https://archiveviewer.org/collections/en/nauvoo-neighbor">Archive Viewer</a></li>
+                </ul>
+                <li>The People's Organ (1844)</li>
+                <ul>
+                    <li><a href="https://archiveviewer.org/collections/en/the-peoples-organ">Archive Viewer</a></li>
+                </ul>
+                <li>The Prophet (1844-45)</li>
+                <ul>
+                    <li><a href="https://archiveviewer.org/viewer/internet-archive/TheProphet18441845">Archive Viewer</a></li>
+                </ul>
+                <li>The New York Messenger (1845)</li>
+                <ul>
+                    <li><a href="https://archiveviewer.org/viewer/internet-archive/NewYorkMessenger1845">Archive Viewer</a></li>
+                </ul>
+                <li>The Frontier Guardian (1849-53)</li>
+                <ul>
+                    <li><a href="https://archiveviewer.org/collections/en/the-frontier-guardian">Archive Viewer</a></li>
+                </ul>
+                <li>Deseret News (1850-98)</li>
+                <ul>
+                    <li><a href="https://archiveviewer.org/collections/en/deseret-news-weekly">Archive Viewer</a></li>
+                </ul>
+                <li>Deseret Almanac (1851-65)</li>
+                <ul>
+                    <li><a href="https://archiveviewer.org/collections/en/deseret-almanac">Archive Viewer</a></li>
+                </ul>
+                <li>The Seer (1853-54)</li>
+                <ul>
+                    <li><a href="https://archiveviewer.org/collections/en/the-seer">Archive Viewer</a></li>
+                </ul>
+                <li>Zion's Watchman (1853-56)</li>
+                <ul>
+                    <li><a href="https://archiveviewer.org/collections/en/zions-watchman">Archive Viewer</a></li>
+                </ul>
+                <li>St. Louis Luminary (1854-55)</li>
+                <ul>
+                    <li><a href="https://archiveviewer.org/collections/en/st-louis-luminary">Archive Viewer</a></li>
+                </ul>
+                <li>The Mormon (1855-57)</li>
+                <ul>
+                    <li><a href="https://archiveviewer.org/collections/en/the-mormon">Archive Viewer</a></li>
+                </ul>
+                <li>Western Standard (1856-57)</li>
+                <ul>
+                    <li><a href="https://archiveviewer.org/collections/en/western-standard">Archive Viewer</a></li>
+                </ul>
+                <li>Juvenile Instructor (1866-1929)</li>
+                <ul>
+                    <li><a href="https://archiveviewer.org/collections/en/juvenile-instructor">Archive Viewer</a></li>
+                </ul>
+                <li>Woman's Exponent (1872-1914)</li>
+                <ul>
+                    <li><a href="https://archiveviewer.org/collections/en/womans-exponent">Archive Viewer</a></li>
+                </ul>
+                <li>The Contributer (1879-96)</li>
+                <ul>
+                    <li><a href="https://archiveviewer.org/collections/en/the-contributor">Archive Viewer</a></li>
+                </ul>
+                <li>Young Woman's Journal (1889-1929)</li>
+                <ul>
+                    <li><a href="https://archiveviewer.org/collections/en/young-womans-journal">Archive Viewer</a></li>
+                </ul>
+                <li>Improvement Era (1897-1970)</li>
+                <ul>
+                    <li><a href="https://archiveviewer.org/collections/en/improvement-era">Archive Viewer</a></li>
+                </ul>
+                <li>Southern Star (1898-1900)</li>
+                <ul>
+                    <li><a href="https://archiveviewer.org/collections/en/latter-day-saints-southern-star">Archive Viewer</a></li>
+                </ul>
+                <li>The Children's Friend (1902-70)</li>
+                <ul>
+                    <li><a href="https://archiveviewer.org/collections/en/the-childrens-friend">Archive Viewer</a></li>
+                </ul>
+                <li>Utah Genealogical and Historical Magazine (1910-40)</li>
+                <ul>
+                    <li><a href="https://archiveviewer.org/collections/en/utah-genealogical-and-historical-magazine">Archive Viewer</a></li>
+                </ul>
+                <li>Relief Society Magazine (1914-70)</li>
+                <ul>
+                    <li><a href="https://archiveviewer.org/collections/en/relief-society-magazine">Archive Viewer</a></li>
+                </ul>
+                <li>Church News (1930-Present)</li>
+                <ul>
+                    <li><a href="https://archiveviewer.org/collections/en/church-news">Archive Viewer</a></li>
+                </ul>
+                <li>Ensign (1971-2020)</li>
+                <ul>
+                    <li><a href="https://archiveviewer.org/collections/en/ensign">Archive Viewer</a></li>
+                </ul>
+                <li>New Era (1971-2020)</li>
+                <ul>
+                    <li><a href="https://archiveviewer.org/collections/en/new-era">Archive Viewer</a></li>
+                </ul>
+                <li>Friend (1971-2020)</li>
+                <ul>
+                    <li><a href="https://archiveviewer.org/collections/en/friend">Archive Viewer</a></li>
+                </ul>
+                <li>Liahona (1977-Present)</li>
+                <ul>
+                    <li><a href="https://www.churchofjesuschrist.org/study/magazines/liahona?lang=eng">lds.org</a></li>
+                </ul>
+                <li>For the Strength of Youth (2021-Present)</li>
+                <ul>
+                    <li><a href="https://www.churchofjesuschrist.org/study/magazines/for-the-strength-of-youth?lang=eng">lds.org</a></li>
+                </ul>
+            </ul>
+        </ol>
+    </details>
+    <details>
+    <summary>Apostle's Diaries</summary>
+    <details>
+    <summary>A</summary>
+        <ul>
+            <li>Abraham H. Cannon</li>
+            <ul>
+                <li>Abraham H. Cannon, Journal Excerpts</li>
+                <ul>
+                    <li><a href="https://archive.org/details/AbrahamHCannonJournalExcerpts/mode/2up">Internet Archive</a></li>
+                </ul>
+                <li>Abraham H. Cannon, Diaries</li>
+                <ul>
+                    <li><a href="https://archives.lib.byu.edu/repositories/14/resources/7098">BYU Libraries</a></li>
+                </ul>
+            </ul>
+            <li>Abraham O. Woodruff</li>
+            <ul>
+                <li>Abraham O. Woodruff, Journals</li>
+                <ul>
+                    <li><a href="https://archives.lib.byu.edu/repositories/ltpsc/archival_objects/c34a8dfdadd40346d6c601a1fd49f0c0">BYU Library</a></li>
+                </ul>
+            </ul>
+        </ul>
+    </details>
+    <details>
+    <summary>G</summary>
+        <ul>
+            <li>George A. Smith</li>
+            <ul>
+                <li>George A. Smith, Autobiography</li>
+                <ul>
+                    <li><a href="https://catalog.churchofjesuschrist.org/record/65b2c0df-dc2f-4fb6-ae5d-8079fb2d9c28/0?view=browse&lang=eng">Church History Catalog</a></li>
+                </ul>
+                <li>George A. Smith Papers</li>
+                <ul>
+                    <li><a href="https://catalog.churchofjesuschrist.org/record/96f980e2-25c7-4563-a5e5-bb019850219e/0?view=browse&lang=eng">Church History Catalog</a></li>
+                </ul>
+                <li>George A. Smith, Biography</li>
+                <ul>
+                    <li><a href="https://www.josephsmithpapers.org/person/george-albert-smith">Joseph Smith Papers</a></li>
+                </ul>
+            </ul>
+        </ul>
+    </details>
+</details>
+<details>
+    <summary>Teachings of the Prophets</summary>
+    <a href="https://1drv.ms/x/c/eed7428446d28507/IQAVGRXn7_ZnR4gfSikDQVjlATl8pZPy9Ec7mTc3PEZTaDo?e=7FadYH">Excel Sheet</a>
+    <table id="prophetTable">
+    <thead>
+        <tr>
+            <th onclick="sortTable(0)">
+                Link
+            </th>
+            <th onclick="sortTable(1)">
+                Prophet(s)
+            </th>
+            <th onclick="sortTable(2)">
+                Source
+            </th>
+            <th onclick="sortTable(3)">
+                Date
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <a href="https://catalog.churchofjesuschrist.org/assets/4f409ef3-4279-4d4e-aa89-870de5498410/0/103" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                John F. Boynton
+            </td>
+            <td>
+                Evening and Mornin Star
+            </td>
+            <td>
+                Circa 1833
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://catalog.churchofjesuschrist.org/assets/4f409ef3-4279-4d4e-aa89-870de5498410/0/111" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Charles Rich
+            </td>
+            <td>
+                Evening and Mornin Star
+            </td>
+            <td>
+                Circa 1833
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://catalog.churchofjesuschrist.org/assets/4f409ef3-4279-4d4e-aa89-870de5498410/0/116" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Oliver Cowdery
+            </td>
+            <td>
+                Evening and Mornin Star
+            </td>
+            <td>
+                December 1833
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://catalog.churchofjesuschrist.org/assets/4f409ef3-4279-4d4e-aa89-870de5498410/0/121" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Orson Hyde
+            </td>
+            <td>
+                Evening and Mornin Star
+            </td>
+            <td>
+                Circa 1833
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://catalog.churchofjesuschrist.org/assets/4f409ef3-4279-4d4e-aa89-870de5498410/0/123" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Orson Hyde
+            </td>
+            <td>
+                Evening and Mornin Star
+            </td>
+            <td>
+                Circa 1833
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://catalog.churchofjesuschrist.org/assets/4f409ef3-4279-4d4e-aa89-870de5498410/0/127" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Oliver Cowdery
+            </td>
+            <td>
+                Evening and Mornin Star
+            </td>
+            <td>
+                Circa 1834
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://catalog.churchofjesuschrist.org/assets/4f409ef3-4279-4d4e-aa89-870de5498410/0/130" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Oliver Cowdery(?)
+            </td>
+            <td>
+                Evening and Mornin Star
+            </td>
+            <td>
+                Circa 1834
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://catalog.churchofjesuschrist.org/assets/4f409ef3-4279-4d4e-aa89-870de5498410/0/137" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                John F. Boynton, Orson Pratt(?)
+            </td>
+            <td>
+                Evening and Mornin Star
+            </td>
+            <td>
+                Circa 1834
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://catalog.churchofjesuschrist.org/assets/4f409ef3-4279-4d4e-aa89-870de5498410/0/142" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Oliver Cowdery(?), John F. Boynton(?)
+            </td>
+            <td>
+                Evening and Mornin Star
+            </td>
+            <td>
+                Circa 1834
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://catalog.churchofjesuschrist.org/assets/4f409ef3-4279-4d4e-aa89-870de5498410/0/154" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Sidney Rigdon
+            </td>
+            <td>
+                Evening and Mornin Star
+            </td>
+            <td>
+                Circa 1834
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://catalog.churchofjesuschrist.org/assets/4f409ef3-4279-4d4e-aa89-870de5498410/0/163" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                General Conference Minutes
+            </td>
+            <td>
+                Evening and Mornin Star
+            </td>
+            <td>
+                May 1834
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://catalog.churchofjesuschrist.org/assets/4f409ef3-4279-4d4e-aa89-870de5498410/0/178" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                W. E. McLellin
+            </td>
+            <td>
+                Evening and Mornin Star
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://catalog.churchofjesuschrist.org/assets/4f409ef3-4279-4d4e-aa89-870de5498410/0/185" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                General Conference Minutes
+            </td>
+            <td>
+                Evening and Mornin Star
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://catalog.churchofjesuschrist.org/assets/4f409ef3-4279-4d4e-aa89-870de5498410/0/187" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                David Whitmer, Parley P. Pratt, Lyman Wight, Thomas B. Marsh
+            </td>
+            <td>
+                Evening and Mornin Star
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://catalog.churchofjesuschrist.org/assets/4f409ef3-4279-4d4e-aa89-870de5498410/0/188" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Oliver Cowdery
+            </td>
+            <td>
+                Evening and Mornin Star
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://catalog.churchofjesuschrist.org/assets/4f409ef3-4279-4d4e-aa89-870de5498410/0/194" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Oliver Cowdery
+            </td>
+            <td>
+                Evening and Mornin Star
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://catalog.churchofjesuschrist.org/assets/4f409ef3-4279-4d4e-aa89-870de5498410/0/195" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Joseph Smith Jr
+            </td>
+            <td>
+                Evening and Mornin Star
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/latterdaysaintsm01unse/page/2/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Oliver Cowdery
+            </td>
+            <td>
+                Messenger and Advocate
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/latterdaysaintsm01unse/page/7/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Oliver Cowdery
+            </td>
+            <td>
+                Messenger and Advocate
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/latterdaysaintsm01unse/page/13/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Oliver Cowdery, Orson Hyde
+            </td>
+            <td>
+                Messenger and Advocate
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/latterdaysaintsm01unse/page/16/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Oliver Cowdery
+            </td>
+            <td>
+                Messenger and Advocate
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/latterdaysaintsm01unse/page/24/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                David W. Patten
+            </td>
+            <td>
+                Messenger and Advocate
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/latterdaysaintsm01unse/page/40/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Joseph Smith Jr
+            </td>
+            <td>
+                Messenger and Advocate
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/latterdaysaintsm01unse/page/80/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Oliver Cowdery, W. E. McLellin
+            </td>
+            <td>
+                Messenger and Advocate
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/latterdaysaintsm01unse/page/89/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Orson Pratt
+            </td>
+            <td>
+                Messenger and Advocate
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/latterdaysaintsm01unse/page/90/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Orson Hyde, W. E. McLellin
+            </td>
+            <td>
+                Messenger and Advocate
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/latterdaysaintsm01unse/page/103/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                W. E. McLellin, Orson Hyde
+            </td>
+            <td>
+                Messenger and Advocate
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/latterdaysaintsm01unse/page/116/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Orson Hyde, W. E. McLellin
+            </td>
+            <td>
+                Messenger and Advocate
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/latterdaysaintsm01unse/page/122/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Oliver Cowdery
+            </td>
+            <td>
+                Messenger and Advocate
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/latterdaysaintsm01unse/page/135/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Wilford Woodruff
+            </td>
+            <td>
+                Messenger and Advocate
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/latterdaysaintsm01unse/page/140/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Orson Pratt
+            </td>
+            <td>
+                Messenger and Advocate
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/latterdaysaintsm01unse/page/n164/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Oliver Cowdery
+            </td>
+            <td>
+                Messenger and Advocate
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/latterdaysaintsm01unse/page/n166/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Oliver Cowdery, Orson Hyde
+            </td>
+            <td>
+                Messenger and Advocate
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/latterdaysaintsm01unse/page/n169/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Oliver Cowdery, Sidney Rigdon
+            </td>
+            <td>
+                Messenger and Advocate
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/latterdaysaintsm01unse/page/n172/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Orson Hyde
+            </td>
+            <td>
+                Messenger and Advocate
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/latterdaysaintsm01unse/page/n187/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Joseph Smith Jr
+            </td>
+            <td>
+                Messenger and Advocate
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/latterdaysaintsm01unse/page/n191/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                David W. Patten(?)
+            </td>
+            <td>
+                Messenger and Advocate
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/latterdaysaintsm01unse/page/n196/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Wilford Woodruff
+            </td>
+            <td>
+                Messenger and Advocate
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/latterdaysaintsm01unse/page/n207/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Oliver Cowdery
+            </td>
+            <td>
+                Messenger and Advocate
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/latterdaysaintsm01unse/page/n212/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Orson Hyde, W. E. McLellin
+            </td>
+            <td>
+                Messenger and Advocate
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/latterdaysaintsm01unse/page/n217/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Joseph Smith Jr
+            </td>
+            <td>
+                Messenger and Advocate
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/latterdaysaintsm01unse/page/n225/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Thomas B. Marsh
+            </td>
+            <td>
+                Messenger and Advocate
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/latterdaysaintsm01unse/page/n229/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Orson Pratt
+            </td>
+            <td>
+                Messenger and Advocate
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/latterdaysaintsm01unse/page/n235/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Joseph Smith Jr
+            </td>
+            <td>
+                Messenger and Advocate
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/latterdaysaintsm01unse/page/n242/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Oliver Cowdery, Wilford Woodruff
+            </td>
+            <td>
+                Messenger and Advocate
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/latterdaysaintsm01unse/page/n245/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Joseph Smith Jr
+            </td>
+            <td>
+                Messenger and Advocate
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/latterdaysaintsm01unse/page/n250/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Sidney Rigdon
+            </td>
+            <td>
+                Messenger and Advocate
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/latterdaysaintsm01unse/page/n261/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Orson Hyde
+            </td>
+            <td>
+                Messenger and Advocate
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/latterdaysaintsm01unse/page/n268/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Sidney Rigdon, Charles C. Rich
+            </td>
+            <td>
+                Messenger and Advocate
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/latterdaysaintsm01unse/page/n272/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Oliver Cowdery, Orson Hyde
+            </td>
+            <td>
+                Messenger and Advocate
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/latterdaysaintsm01unse/page/n273/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Oliver Cowdery
+            </td>
+            <td>
+                Messenger and Advocate
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/latterdaysaintsm01unse/page/n276/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Uncle John(?)
+            </td>
+            <td>
+                Messenger and Advocate
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/latterdaysaintsm01unse/page/n278/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Sidney Rigdon
+            </td>
+            <td>
+                Messenger and Advocate
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/latterdaysaintsm01unse/page/n279/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Sidney Rigdon
+            </td>
+            <td>
+                Messenger and Advocate
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/latterdaysaintsm01unse/page/n296/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Joseph Smith Jr
+            </td>
+            <td>
+                Messenger and Advocate
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/latterdaysaintsm01unse/page/n301/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Orson Hyde
+            </td>
+            <td>
+                Messenger and Advocate
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/latterdaysaintsm01unse/page/n304/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Sidney Rigdon
+            </td>
+            <td>
+                Messenger and Advocate
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/latterdaysaintsm01unse/page/n323/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Parley P. Pratt
+            </td>
+            <td>
+                Messenger and Advocate
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/latterdaysaintsm01unse/page/n334/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                F. G. Williams, Oliver Cowdery, Sidney Rigdon
+            </td>
+            <td>
+                Messenger and Advocate
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/latterdaysaintsm01unse/page/n335/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Luke Johnson, Amasa Lyman
+            </td>
+            <td>
+                Messenger and Advocate
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/latterdaysaintsm01unse/page/n337/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                David W. Patten (General Conference?)
+            </td>
+            <td>
+                Messenger and Advocate
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/latterdaysaintsm01unse/page/n340/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Sidney Rigdon
+            </td>
+            <td>
+                Messenger and Advocate
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/latterdaysaintsm01unse/page/n347/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Orson Hyde
+            </td>
+            <td>
+                Messenger and Advocate
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/latterdaysaintsm01unse/page/n364/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Sidney Rigdon, Joseph Smith Jr, Oliver Cowdery, Hyrum Smith, F. G. Williams
+            </td>
+            <td>
+                Messenger and Advocate
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/latterdaysaintsm01unse/page/n387/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Brigham Young
+            </td>
+            <td>
+                Messenger and Advocate
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/latterdaysaintsm01unse/page/n391/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Oliver Cowdery
+            </td>
+            <td>
+                Messenger and Advocate
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/latterdaysaintsm01unse/page/n398/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Oliver Cowdery
+            </td>
+            <td>
+                Messenger and Advocate
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/latterdaysaintsm01unse/page/n402/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Orson Pratt
+            </td>
+            <td>
+                Messenger and Advocate
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/latterdaysaintsm01unse/page/n413/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Brigham Young
+            </td>
+            <td>
+                Messenger and Advocate
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/latterdaysaintsm01unse/page/n428/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Sidney Rigdon
+            </td>
+            <td>
+                Messenger and Advocate
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/latterdaysaintsm01unse/page/n437/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Wilford Woodruff
+            </td>
+            <td>
+                Messenger and Advocate
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/latterdaysaintsm01unse/page/n440/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                William Smith(?)
+            </td>
+            <td>
+                Messenger and Advocate
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/latterdaysaintsm01unse/page/n444/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Sidney Rigdon
+            </td>
+            <td>
+                Messenger and Advocate
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/latterdaysaintsm01unse/page/n445/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Erastus Snow, Heber Kimball, Conference
+            </td>
+            <td>
+                Messenger and Advocate
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/latterdaysaintsm01unse/page/n446/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Thomas B. Marsh
+            </td>
+            <td>
+                Messenger and Advocate
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/latterdaysaintsm01unse/page/n448/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Joseph Smith Jr
+            </td>
+            <td>
+                Messenger and Advocate
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/latterdaysaintsm01unse/page/n448/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Joseph Smith Jr
+            </td>
+            <td>
+                Messenger and Advocate
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/latterdaysaintsm01unse/page/n451/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                John E. Page, Conference
+            </td>
+            <td>
+                Messenger and Advocate
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/latterdaysaintsm01unse/page/n452/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                John E. Page, Joseph Smith Jr.
+            </td>
+            <td>
+                Messenger and Advocate
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/latterdaysaintsm01unse/page/n453/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Parley P. Pratt
+            </td>
+            <td>
+                Messenger and Advocate
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/latterdaysaintsm01unse/page/n456/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Wilford Woodruff
+            </td>
+            <td>
+                Messenger and Advocate
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/latterdaysaintsm01unse/page/n484/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Sidney Rigdon
+            </td>
+            <td>
+                Messenger and Advocate
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/latterdaysaintsm01unse/page/n517/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                John E. Page
+            </td>
+            <td>
+                Messenger and Advocate
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/latterdaysaintsm01unse/page/n521/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                John Taylor
+            </td>
+            <td>
+                Messenger and Advocate
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/latterdaysaintsm01unse/page/n523/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Thomas B. Marsh
+            </td>
+            <td>
+                Messenger and Advocate
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/latterdaysaintsm01unse/page/n530/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                General Conference(?)
+            </td>
+            <td>
+                Messenger and Advocate
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/latterdaysaintsm01unse/page/n552/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Sidney Rigdon
+            </td>
+            <td>
+                Messenger and Advocate
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/latterdaysaintsm01unse/page/n553/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Oliver Cowdery
+            </td>
+            <td>
+                Messenger and Advocate
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/latterdaysaintsm01unse/page/n557/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Orson Hyde
+            </td>
+            <td>
+                Messenger and Advocate
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/latterdaysaintsm01unse/page/n564/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                John E. Page
+            </td>
+            <td>
+                Messenger and Advocate
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/latterdaysaintsm01unse/page/n565/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Joseph Smith Jr
+            </td>
+            <td>
+                Messenger and Advocate
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/latterdaysaintsm01unse/page/n579/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Sidney Rigdon
+            </td>
+            <td>
+                Messenger and Advocate
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/eldersjournalkir04smit/page/3/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Wilford Woodruff
+            </td>
+            <td>
+                Elders&#x27; Journal
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/eldersjournalkir04smit/page/7/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Heber C Kimball
+            </td>
+            <td>
+                Elders&#x27; Journal
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/eldersjournalkir04smit/page/8/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Sidney Rigdon
+            </td>
+            <td>
+                Elders&#x27; Journal
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/eldersjournalkir04smit/page/9/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Parley P. Pratt
+            </td>
+            <td>
+                Elders&#x27; Journal
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/eldersjournalkir04smit/page/17/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Joseph Smith Jr
+            </td>
+            <td>
+                Elders&#x27; Journal
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/eldersjournalkir04smit/page/19/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Wilford Woodruff
+            </td>
+            <td>
+                Elders&#x27; Journal
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/eldersjournalkir04smit/page/22/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Orson Hyde
+            </td>
+            <td>
+                Elders&#x27; Journal
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/eldersjournalkir04smit/page/23/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Erastus Snow
+            </td>
+            <td>
+                Elders&#x27; Journal
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/eldersjournalkir04smit/page/30/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Thomas B. Marsh
+            </td>
+            <td>
+                Elders&#x27; Journal
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/eldersjournalkir04smit/page/31/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Thomas B. Marsh
+            </td>
+            <td>
+                Elders&#x27; Journal
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/eldersjournalkir04smit/page/36/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Wilford Woodruff
+            </td>
+            <td>
+                Elders&#x27; Journal
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/eldersjournalkir04smit/page/38/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Thomas B. Marsh
+            </td>
+            <td>
+                Elders&#x27; Journal
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/eldersjournalkir04smit/page/42/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                David W. Patten
+            </td>
+            <td>
+                Elders&#x27; Journal
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/eldersjournalkir04smit/page/45/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Thomas B. Marsh
+            </td>
+            <td>
+                Elders&#x27; Journal
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/eldersjournalkir04smit/page/46/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Thomas B. Marsh, David W. Patten
+            </td>
+            <td>
+                Elders&#x27; Journal
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/eldersjournalkir04smit/page/47/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                General Conference
+            </td>
+            <td>
+                Elders&#x27; Journal
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/eldersjournalkir04smit/page/n56/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Parley P. Pratt
+            </td>
+            <td>
+                Elders&#x27; Journal
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/eldersjournalkir04smit/page/50/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Thomas B. Marsh
+            </td>
+            <td>
+                Elders&#x27; Journal
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/eldersjournalkir04smit/page/52/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Sidney Rigdon
+            </td>
+            <td>
+                Elders&#x27; Journal
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="https://archive.org/details/eldersjournalkir04smit/page/61/mode/1up" target="_blank">
+                    Link
+                </a>
+            </td>
+            <td>
+                Multiple Speakers
+            </td>
+            <td>
+                Elders&#x27; Journal
+            </td>
+            <td>
+            </td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1/mode/1up" target="_blank">Link</a></td>
+            <td>Joseph Smith Jr</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n14/mode/1up" target="_blank">Link</a></td>
+            <td>Multiple Speakers</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n15/mode/1up" target="_blank">Link</a></td>
+            <td>Brigham Young</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n24/mode/1up" target="_blank">Link</a></td>
+            <td>Joseph Smith Jr</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n30/mode/1up" target="_blank">Link</a></td>
+            <td>Multiple Speakers</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n39/mode/1up" target="_blank">Link</a></td>
+            <td>Hyrum Smith</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n59/mode/1up" target="_blank">Link</a></td>
+            <td>Parley P. Pratt</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n61/mode/1up" target="_blank">Link</a></td>
+            <td>Parley P. Pratt</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n71/mode/1up" target="_blank">Link</a></td>
+            <td>Joseph Smith Jr</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n85/mode/1up" target="_blank">Link</a></td>
+            <td>Parley P. Pratt</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n86/mode/1up" target="_blank">Link</a></td>
+            <td>Multiple Speakers</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n88/mode/1up" target="_blank">Link</a></td>
+            <td>Orson Hyde</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n101/mode/1up" target="_blank">Link</a></td>
+            <td>Joseph Smith Jr</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n102/mode/1up" target="_blank">Link</a></td>
+            <td>Multiple Speakers</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n119/mode/1up" target="_blank">Link</a></td>
+            <td>Multiple Speakers</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n132/mode/1up" target="_blank">Link</a></td>
+            <td>Multiple Speakers</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n136/mode/1up" target="_blank">Link</a></td>
+            <td>Multiple Speakers</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n137/mode/1up" target="_blank">Link</a></td>
+            <td>Multiple Speakers</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n149/mode/1up" target="_blank">Link</a></td>
+            <td>Multiple Speakers</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n152/mode/1up" target="_blank">Link</a></td>
+            <td>Sidney Rigdon</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n154/mode/1up" target="_blank">Link</a></td>
+            <td>Heber C Kimball</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n156/mode/1up" target="_blank">Link</a></td>
+            <td>Daniel H. Wells</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n157/mode/1up" target="_blank">Link</a></td>
+            <td>Daniel H. Wells</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n172/mode/1up" target="_blank">Link</a></td>
+            <td>Orson Hyde</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n184/mode/1up" target="_blank">Link</a></td>
+            <td>Orson Pratt</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n189/mode/1up" target="_blank">Link</a></td>
+            <td>Uncle John</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n190/mode/1up" target="_blank">Link</a></td>
+            <td>John C. Bennett</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n200/mode/1up" target="_blank">Link</a></td>
+            <td>General Conference</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n217/mode/1up" target="_blank">Link</a></td>
+            <td>Oliver Cowdery</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n220/mode/1up" target="_blank">Link</a></td>
+            <td>Orson Hyde</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n231/mode/1up" target="_blank">Link</a></td>
+            <td>Orson Hyde</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n236/mode/1up" target="_blank">Link</a></td>
+            <td>Erastus Snow</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n237/mode/1up" target="_blank">Link</a></td>
+            <td>Multiple Speakers</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n241/mode/1up" target="_blank">Link</a></td>
+            <td>Oliver Cowdery</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n258/mode/1up" target="_blank">Link</a></td>
+            <td>Oliver Cowdery</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n267/mode/1up" target="_blank">Link</a></td>
+            <td>Multiple Speakers</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n268/mode/1up" target="_blank">Link</a></td>
+            <td>William Smith</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n271/mode/1up" target="_blank">Link</a></td>
+            <td>Amasa Lyman</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n276/mode/1up" target="_blank">Link</a></td>
+            <td>Joseph Smith Jr</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n279/mode/1up" target="_blank">Link</a></td>
+            <td>Multiple Speakers</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n292/mode/1up" target="_blank">Link</a></td>
+            <td>Multiple Speakers</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n314/mode/1up" target="_blank">Link</a></td>
+            <td>Multiple Speakers</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n316/mode/1up" target="_blank">Link</a></td>
+            <td>Orson Hyde</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n317/mode/1up" target="_blank">Link</a></td>
+            <td>George A. Smith</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n323/mode/1up" target="_blank">Link</a></td>
+            <td>Wilford Woodruff</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n325/mode/1up" target="_blank">Link</a></td>
+            <td>William Smith</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n327/mode/1up" target="_blank">Link</a></td>
+            <td>John C. Bennett</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n330/mode/1up" target="_blank">Link</a></td>
+            <td>John C. Bennett</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n331/mode/1up" target="_blank">Link</a></td>
+            <td>John C. Bennett</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n340/mode/1up" target="_blank">Link</a></td>
+            <td>Wilford Woodruff</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n345/mode/1up" target="_blank">Link</a></td>
+            <td>John C. Bennett</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n346/mode/1up" target="_blank">Link</a></td>
+            <td>John C. Bennett</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n347/mode/1up" target="_blank">Link</a></td>
+            <td>William Smith</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n374/mode/1up" target="_blank">Link</a></td>
+            <td>Parley P. Pratt</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n406/mode/1up" target="_blank">Link</a></td>
+            <td>Oliver Cowdery</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n411/mode/1up" target="_blank">Link</a></td>
+            <td>John Taylor</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n414/mode/1up" target="_blank">Link</a></td>
+            <td>Multiple Speakers</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n422/mode/1up" target="_blank">Link</a></td>
+            <td>Hyrum Smith</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n423/mode/1up" target="_blank">Link</a></td>
+            <td>Joseph Smith Jr</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n427/mode/1up" target="_blank">Link</a></td>
+            <td>Multiple Speakers</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n428/mode/1up" target="_blank">Link</a></td>
+            <td>John C. Bennett</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n442/mode/1up" target="_blank">Link</a></td>
+            <td>Joseph Smith Jr</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n443/mode/1up" target="_blank">Link</a></td>
+            <td>Joseph Smith Jr</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n444/mode/1up" target="_blank">Link</a></td>
+            <td>Multiple Speakers</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n452/mode/1up" target="_blank">Link</a></td>
+            <td>Heber C Kimball</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n454/mode/1up" target="_blank">Link</a></td>
+            <td>William Smith</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n490/mode/1up" target="_blank">Link</a></td>
+            <td>John C. Bennett</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n492/mode/1up" target="_blank">Link</a></td>
+            <td>Orson Hyde</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n494/mode/1up" target="_blank">Link</a></td>
+            <td>Uncle John</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n503/mode/1up" target="_blank">Link</a></td>
+            <td>Heber C Kimball</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n520/mode/1up" target="_blank">Link</a></td>
+            <td>Heber C Kimball</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n525/mode/1up" target="_blank">Link</a></td>
+            <td>Amasa Lyman</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n526/mode/1up" target="_blank">Link</a></td>
+            <td>Multiple Speakers</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n529/mode/1up" target="_blank">Link</a></td>
+            <td>William Law</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n530/mode/1up" target="_blank">Link</a></td>
+            <td>Multiple Speakers</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n531/mode/1up" target="_blank">Link</a></td>
+            <td>Brigham Young</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n539/mode/1up" target="_blank">Link</a></td>
+            <td>Lorenzo Snow</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n547/mode/1up" target="_blank">Link</a></td>
+            <td>Multiple Speakers</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n551/mode/1up" target="_blank">Link</a></td>
+            <td>Multiple Speakers</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n553/mode/1up" target="_blank">Link</a></td>
+            <td>Lorenzo Snow</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n557/mode/1up" target="_blank">Link</a></td>
+            <td>Uncle John</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n563/mode/1up" target="_blank">Link</a></td>
+            <td>Orson Hyde</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n564/mode/1up" target="_blank">Link</a></td>
+            <td>Orson Hyde</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n567/mode/1up" target="_blank">Link</a></td>
+            <td>John C. Bennett</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n579/mode/1up" target="_blank">Link</a></td>
+            <td>Multiple Speakers</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n582/mode/1up" target="_blank">Link</a></td>
+            <td>Orson Hyde</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n585/mode/1up" target="_blank">Link</a></td>
+            <td>General Conference</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n591/mode/1up" target="_blank">Link</a></td>
+            <td>Multiple Speakers</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n604/mode/1up" target="_blank">Link</a></td>
+            <td>Hyrum Smith</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n606/mode/1up" target="_blank">Link</a></td>
+            <td>Brigham Young</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n613/mode/1up" target="_blank">Link</a></td>
+            <td>Parley P. Pratt</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n619/mode/1up" target="_blank">Link</a></td>
+            <td>Multiple Speakers</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n633/mode/1up" target="_blank">Link</a></td>
+            <td>Hyrum Smith</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n634/mode/1up" target="_blank">Link</a></td>
+            <td>Multiple Speakers</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n635/mode/1up" target="_blank">Link</a></td>
+            <td>Multiple Speakers</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n637/mode/1up" target="_blank">Link</a></td>
+            <td>Lorenzo Snow</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n640/mode/1up" target="_blank">Link</a></td>
+            <td>Parley P. Pratt</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n644/mode/1up" target="_blank">Link</a></td>
+            <td>Multiple Speakers</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n654/mode/1up" target="_blank">Link</a></td>
+            <td>John C. Bennett</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n655/mode/1up" target="_blank">Link</a></td>
+            <td>Joseph Smith Jr</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n665/mode/1up" target="_blank">Link</a></td>
+            <td>Parley P. Pratt</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n668/mode/1up" target="_blank">Link</a></td>
+            <td>Joseph Smith Jr</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n669/mode/1up" target="_blank">Link</a></td>
+            <td>John C. Bennett</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n670/mode/1up" target="_blank">Link</a></td>
+            <td>John C. Bennett</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n671/mode/1up" target="_blank">Link</a></td>
+            <td>Multiple Speakers</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n684/mode/1up" target="_blank">Link</a></td>
+            <td>Multiple Speakers</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n694/mode/1up" target="_blank">Link</a></td>
+            <td>Willard Richards</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n700/mode/1up" target="_blank">Link</a></td>
+            <td>Parley P. Pratt</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n703/mode/1up" target="_blank">Link</a></td>
+            <td>John C. Bennett</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n717/mode/1up" target="_blank">Link</a></td>
+            <td>Multiple Speakers</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n718/mode/1up" target="_blank">Link</a></td>
+            <td>Multiple Speakers</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n727/mode/1up" target="_blank">Link</a></td>
+            <td>Joseph Smith Jr</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n729/mode/1up" target="_blank">Link</a></td>
+            <td>Lorenzo Snow</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n731/mode/1up" target="_blank">Link</a></td>
+            <td>Heber C Kimball</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n732/mode/1up" target="_blank">Link</a></td>
+            <td>Multiple Speakers</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n733/mode/1up" target="_blank">Link</a></td>
+            <td>Brigham Young</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n735/mode/1up" target="_blank">Link</a></td>
+            <td>Multiple Speakers</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n742/mode/1up" target="_blank">Link</a></td>
+            <td>Multiple Speakers</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n743/mode/1up" target="_blank">Link</a></td>
+            <td>John C. Bennett</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n744/mode/1up" target="_blank">Link</a></td>
+            <td>Joseph Smith Jr</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n751/mode/1up" target="_blank">Link</a></td>
+            <td>John C. Bennett</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n756/mode/1up" target="_blank">Link</a></td>
+            <td>Multiple Speakers</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n760/mode/1up" target="_blank">Link</a></td>
+            <td>Orson Hyde</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n779/mode/1up" target="_blank">Link</a></td>
+            <td>General Conference</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n783/mode/1up" target="_blank">Link</a></td>
+            <td>Multiple Speakers</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n784/mode/1up" target="_blank">Link</a></td>
+            <td>Multiple Speakers</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n787/mode/1up" target="_blank">Link</a></td>
+            <td>Multiple Speakers</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n789/mode/1up" target="_blank">Link</a></td>
+            <td>Parley P. Pratt</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n794/mode/1up" target="_blank">Link</a></td>
+            <td>Orson Hyde</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n800/mode/1up" target="_blank">Link</a></td>
+            <td>Multiple Speakers</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n816/mode/1up" target="_blank">Link</a></td>
+            <td>Willard Richards</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n826/mode/1up" target="_blank">Link</a></td>
+            <td>John C. Bennett</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n832/mode/1up" target="_blank">Link</a></td>
+            <td>Willard Richards</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n847/mode/1up" target="_blank">Link</a></td>
+            <td>General Conference</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n848/mode/1up" target="_blank">Link</a></td>
+            <td>Multiple Speakers</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n850/mode/1up" target="_blank">Link</a></td>
+            <td>William Law</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n859/mode/1up" target="_blank">Link</a></td>
+            <td>Multiple Speakers</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n860/mode/1up" target="_blank">Link</a></td>
+            <td>Joseph Smith Jr</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n871/mode/1up" target="_blank">Link</a></td>
+            <td>Orson Hyde</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n880/mode/1up" target="_blank">Link</a></td>
+            <td>Multiple Speakers</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n886/mode/1up" target="_blank">Link</a></td>
+            <td>John C. Bennett</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n888/mode/1up" target="_blank">Link</a></td>
+            <td>Multiple Speakers</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n889/mode/1up" target="_blank">Link</a></td>
+            <td>Multiple Speakers</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n890/mode/1up" target="_blank">Link</a></td>
+            <td>Multiple Speakers</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n891/mode/1up" target="_blank">Link</a></td>
+            <td>Daniel H. Wells</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n893/mode/1up" target="_blank">Link</a></td>
+            <td>Sidney Rigdon</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n894/mode/1up" target="_blank">Link</a></td>
+            <td>John C. Bennett</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n895/mode/1up" target="_blank">Link</a></td>
+            <td>John C. Bennett</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n902/mode/1up" target="_blank">Link</a></td>
+            <td>Multiple Speakers</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n914/mode/1up" target="_blank">Link</a></td>
+            <td>Multiple Speakers</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n916/mode/1up" target="_blank">Link</a></td>
+            <td>Multiple Speakers</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n926/mode/1up" target="_blank">Link</a></td>
+            <td>William Law</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n938/mode/1up" target="_blank">Link</a></td>
+            <td>Joseph Smith Jr</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n944/mode/1up" target="_blank">Link</a></td>
+            <td>Multiple Speakers</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n954/mode/1up" target="_blank">Link</a></td>
+            <td>Joseph Smith Jr</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n985/mode/1up" target="_blank">Link</a></td>
+            <td>Multiple Speakers</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n987/mode/1up" target="_blank">Link</a></td>
+            <td>Multiple Speakers</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n993/mode/1up" target="_blank">Link</a></td>
+            <td>Lyman Wight</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n994/mode/1up" target="_blank">Link</a></td>
+            <td>Lyman Wight</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1011/mode/1up" target="_blank">Link</a></td>
+            <td>Joseph Smith Jr</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1017/mode/1up" target="_blank">Link</a></td>
+            <td>Lyman Wight</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1018/mode/1up" target="_blank">Link</a></td>
+            <td>Lyman Wight</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1022/mode/1up" target="_blank">Link</a></td>
+            <td>Joseph Smith Jr</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1042/mode/1up" target="_blank">Link</a></td>
+            <td>Jebediah Grant</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1064/mode/1up" target="_blank">Link</a></td>
+            <td>Joseph Smith Jr</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1070/mode/1up" target="_blank">Link</a></td>
+            <td>Orson Hyde</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1077/mode/1up" target="_blank">Link</a></td>
+            <td>Joseph Smith Jr</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1080/mode/1up" target="_blank">Link</a></td>
+            <td>Sidney Rigdon</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1092/mode/1up" target="_blank">Link</a></td>
+            <td>Joseph Smith Jr</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1095/mode/1up" target="_blank">Link</a></td>
+            <td>William Smith</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1128/mode/1up" target="_blank">Link</a></td>
+            <td>Parley P. Pratt</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1131/mode/1up" target="_blank">Link</a></td>
+            <td>Orson Pratt</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1138/mode/1up" target="_blank">Link</a></td>
+            <td>Brigham Young</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1144/mode/1up" target="_blank">Link</a></td>
+            <td>Parley P. Pratt</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1155/mode/1up" target="_blank">Link</a></td>
+            <td>Uncle John</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1163/mode/1up" target="_blank">Link</a></td>
+            <td>Joseph Smith Jr</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1173/mode/1up" target="_blank">Link</a></td>
+            <td>Joseph Smith Jr</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1178/mode/1up" target="_blank">Link</a></td>
+            <td>Willard Richards</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1180/mode/1up" target="_blank">Link</a></td>
+            <td>Uncle John</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1197/mode/1up" target="_blank">Link</a></td>
+            <td>Amasa Lyman</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1211/mode/1up" target="_blank">Link</a></td>
+            <td>Brigham Young</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1223/mode/1up" target="_blank">Link</a></td>
+            <td>Joseph Smith Jr</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1235/mode/1up" target="_blank">Link</a></td>
+            <td>Hyrum Smith</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1239/mode/1up" target="_blank">Link</a></td>
+            <td>Parley P. Pratt</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1242/mode/1up" target="_blank">Link</a></td>
+            <td>Brigham Young</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1257/mode/1up" target="_blank">Link</a></td>
+            <td>Sidney Rigdon</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1265/mode/1up" target="_blank">Link</a></td>
+            <td>Lyman Wight</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1274/mode/1up" target="_blank">Link</a></td>
+            <td>William Smith</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1309/mode/1up" target="_blank">Link</a></td>
+            <td>Multiple Speakers</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1312/mode/1up" target="_blank">Link</a></td>
+            <td>Joseph Smith Jr</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1327/mode/1up" target="_blank">Link</a></td>
+            <td>Multiple Speakers</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1340/mode/1up" target="_blank">Link</a></td>
+            <td>Brigham Young</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1341/mode/1up" target="_blank">Link</a></td>
+            <td>Wilford Woodruff</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1355/mode/1up" target="_blank">Link</a></td>
+            <td>Joseph Smith Jr</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1357/mode/1up" target="_blank">Link</a></td>
+            <td>Joseph Smith Jr</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1369/mode/1up" target="_blank">Link</a></td>
+            <td>Joseph Smith Jr</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1383/mode/1up" target="_blank">Link</a></td>
+            <td>Joseph Smith Jr</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1385/mode/1up" target="_blank">Link</a></td>
+            <td>Joseph Smith Jr</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1412/mode/1up" target="_blank">Link</a></td>
+            <td>Multiple Speakers</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1422/mode/1up" target="_blank">Link</a></td>
+            <td>Oliver Cowdery</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1448/mode/1up" target="_blank">Link</a></td>
+            <td>Charles C. Rich</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1463/mode/1up" target="_blank">Link</a></td>
+            <td>Multiple Speakers</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1495/mode/1up" target="_blank">Link</a></td>
+            <td>Brigham Young</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1500/mode/1up" target="_blank">Link</a></td>
+            <td>Willard Richards</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1522/mode/1up" target="_blank">Link</a></td>
+            <td>Joseph Smith Jr</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1525/mode/1up" target="_blank">Link</a></td>
+            <td>Joseph Smith Jr</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1526/mode/1up" target="_blank">Link</a></td>
+            <td>Willard Richards</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1530/mode/1up" target="_blank">Link</a></td>
+            <td>Multiple Speakers</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1531/mode/1up" target="_blank">Link</a></td>
+            <td>Daniel H. Wells</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1533/mode/1up" target="_blank">Link</a></td>
+            <td>Joseph Smith Jr</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1537/mode/1up" target="_blank">Link</a></td>
+            <td>Joseph Smith Jr</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1547/mode/1up" target="_blank">Link</a></td>
+            <td>Multiple Speakers</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1548/mode/1up" target="_blank">Link</a></td>
+            <td>Hyrum Smith</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1550/mode/1up" target="_blank">Link</a></td>
+            <td>Multiple Speakers</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1555/mode/1up" target="_blank">Link</a></td>
+            <td>Willard Richards</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1557/mode/1up" target="_blank">Link</a></td>
+            <td>Multiple Speakers</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1569/mode/1up" target="_blank">Link</a></td>
+            <td>Wilford Woodruff</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1570/mode/1up" target="_blank">Link</a></td>
+            <td>George A. Smith</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1571/mode/1up" target="_blank">Link</a></td>
+            <td>Amasa Lyman</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1576/mode/1up" target="_blank">Link</a></td>
+            <td>Multiple Speakers</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1588/mode/1up" target="_blank">Link</a></td>
+            <td>Willard Richards</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1609/mode/1up" target="_blank">Link</a></td>
+            <td>Brigham Young</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1612/mode/1up" target="_blank">Link</a></td>
+            <td>Willard Richards</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1620/mode/1up" target="_blank">Link</a></td>
+            <td>Multiple Speakers</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1627/mode/1up" target="_blank">Link</a></td>
+            <td>Brigham Young</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1628/mode/1up" target="_blank">Link</a></td>
+            <td>Parley P. Pratt</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1659/mode/1up" target="_blank">Link</a></td>
+            <td>Brigham Young</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1663/mode/1up" target="_blank">Link</a></td>
+            <td>Joseph Smith Jr</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1680/mode/1up" target="_blank">Link</a></td>
+            <td>General Conference</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1686/mode/1up" target="_blank">Link</a></td>
+            <td>Brigham Young</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1689/mode/1up" target="_blank">Link</a></td>
+            <td>Wilford Woodruff</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1696/mode/1up" target="_blank">Link</a></td>
+            <td>Joseph Smith Jr</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1709/mode/1up" target="_blank">Link</a></td>
+            <td>Joseph Smith Jr</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1711/mode/1up" target="_blank">Link</a></td>
+            <td>Multiple Speakers</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1713/mode/1up" target="_blank">Link</a></td>
+            <td>Multiple Speakers</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1728/mode/1up" target="_blank">Link</a></td>
+            <td>Orson Hyde</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1731/mode/1up" target="_blank">Link</a></td>
+            <td>Multiple Speakers</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1742/mode/1up" target="_blank">Link</a></td>
+            <td>Joseph Smith Jr</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1743/mode/1up" target="_blank">Link</a></td>
+            <td>Joseph Smith Jr</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1751/mode/1up" target="_blank">Link</a></td>
+            <td>Brigham Young</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1752/mode/1up" target="_blank">Link</a></td>
+            <td>Orson Hyde</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1756/mode/1up" target="_blank">Link</a></td>
+            <td>John Taylor</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1762/mode/1up" target="_blank">Link</a></td>
+            <td>Hyrum Smith</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1763/mode/1up" target="_blank">Link</a></td>
+            <td>Heber C. Kimball</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1770/mode/1up" target="_blank">Link</a></td>
+            <td>Parley P. Pratt</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1772/mode/1up" target="_blank">Link</a></td>
+            <td>Brigham Young</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1776/mode/1up" target="_blank">Link</a></td>
+            <td>Brigham Young</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1783/mode/1up" target="_blank">Link</a></td>
+            <td>Brigham Young</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1784/mode/1up" target="_blank">Link</a></td>
+            <td>Orson Hyde</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1794/mode/1up" target="_blank">Link</a></td>
+            <td>Multiple Speakers</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1795/mode/1up" target="_blank">Link</a></td>
+            <td>Multiple Speakers</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1796/mode/1up" target="_blank">Link</a></td>
+            <td>Multiple Speakers</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1798/mode/1up" target="_blank">Link</a></td>
+            <td>F. G. Williams</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1807/mode/1up" target="_blank">Link</a></td>
+            <td>William Smith</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1833/mode/1up" target="_blank">Link</a></td>
+            <td>Brigham Young</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1856/mode/1up" target="_blank">Link</a></td>
+            <td>Heber C. Kimball</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1858/mode/1up" target="_blank">Link</a></td>
+            <td>F. G. Williams</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1864/mode/1up" target="_blank">Link</a></td>
+            <td>Multiple Speakers</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1871/mode/1up" target="_blank">Link</a></td>
+            <td>Brigham Young</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1892/mode/1up" target="_blank">Link</a></td>
+            <td>Joseph Smith Jr</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1898/mode/1up" target="_blank">Link</a></td>
+            <td>William Smith</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1900/mode/1up" target="_blank">Link</a></td>
+            <td>Wilford Woodruff</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1908/mode/1up" target="_blank">Link</a></td>
+            <td>Joseph Smith Jr</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1922/mode/1up" target="_blank">Link</a></td>
+            <td>Joseph Smith Jr</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1936/mode/1up" target="_blank">Link</a></td>
+            <td>Wilford Woodruff</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1944/mode/1up" target="_blank">Link</a></td>
+            <td>Wilford Woodruff</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1963/mode/1up" target="_blank">Link</a></td>
+            <td>Multiple Speakers</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1970/mode/1up" target="_blank">Link</a></td>
+            <td>Orson Hyde</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1976/mode/1up" target="_blank">Link</a></td>
+            <td>Willard Richards</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1979/mode/1up" target="_blank">Link</a></td>
+            <td>Heber C. Kimball</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1985/mode/1up" target="_blank">Link</a></td>
+            <td>Orson Hyde</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1987/mode/1up" target="_blank">Link</a></td>
+            <td>Multiple Speakers</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1988/mode/1up" target="_blank">Link</a></td>
+            <td>Multiple Speakers</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1991/mode/1up" target="_blank">Link</a></td>
+            <td>Orson Pratt</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n1994/mode/1up" target="_blank">Link</a></td>
+            <td>Orson Hyde</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n2000/mode/1up" target="_blank">Link</a></td>
+            <td>Multiple Speakers</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n2012/mode/1up" target="_blank">Link</a></td>
+            <td>Multiple Speakers</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n2016/mode/1up" target="_blank">Link</a></td>
+            <td>Multiple Speakers</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n2018/mode/1up" target="_blank">Link</a></td>
+            <td>John F. Boynton</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n2030/mode/1up" target="_blank">Link</a></td>
+            <td>Orson Pratt</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n2031/mode/1up" target="_blank">Link</a></td>
+            <td>J. M. Grant</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n2032/mode/1up" target="_blank">Link</a></td>
+            <td>Willard Richards</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n2033/mode/1up" target="_blank">Link</a></td>
+            <td>Oliver Cowdery</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n2034/mode/1up" target="_blank">Link</a></td>
+            <td>Multiple Speakers</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n2035/mode/1up" target="_blank">Link</a></td>
+            <td>Orson Pratt</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n2054/mode/1up" target="_blank">Link</a></td>
+            <td>Oliver Cowdery</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n2058/mode/1up" target="_blank">Link</a></td>
+            <td>Wilford Woodruff</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n2061/mode/1up" target="_blank">Link</a></td>
+            <td>Wilford Woodruff</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n2064/mode/1up" target="_blank">Link</a></td>
+            <td>Wilford Woodruff</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n2087/mode/1up" target="_blank">Link</a></td>
+            <td>Wilford Woodruff</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n2090/mode/1up" target="_blank">Link</a></td>
+            <td>John Taylor</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n2099/mode/1up" target="_blank">Link</a></td>
+            <td>Joseph Smith Jr</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n2102/mode/1up" target="_blank">Link</a></td>
+            <td>Multiple Speakers</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n2103/mode/1up" target="_blank">Link</a></td>
+            <td>F. G. Williams</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n2116/mode/1up" target="_blank">Link</a></td>
+            <td>Multiple Speakers</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="https://archive.org/details/TimesAndSeasons18391846/page/n2123/mode/1up" target="_blank">Link</a></td>
+            <td>Wilford Woodruff</td>
+            <td>Times and Seasons</td>
+            <td></td>
+        </tr>
+        </tr>
+    </tbody>
+</table>
 <script>
-function filterProphets() {
-
-    const selected = [...document.querySelectorAll('input[type="checkbox"]:checked')]
-        .map(box => box.value);
-
-    document.querySelectorAll('.prophet').forEach(prophet => {
-
-        const roles = prophet.dataset.role?.split(" ") || [];
-
-        const show = roles.some(role => selected.includes(role));
-
-        prophet.style.display = show ? "inline-block" : "none";
-    });
-}
+    function sortTable(n) {
+            var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+            table = document.getElementById("prophetTable");
+            switching = true;
+            dir = "asc"; 
+            while (switching) {
+                switching = false;
+                rows = table.rows;
+                for (i = 1; i < (rows.length - 1); i++) {
+                    shouldSwitch = false;
+                    x = rows[i].getElementsByTagName("TD")[n];
+                    y = rows[i + 1].getElementsByTagName("TD")[n];
+                    if (dir == "asc") {
+                        if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                            shouldSwitch = true;
+                            break;
+                        }
+                    } else if (dir == "desc") {
+                        if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                            shouldSwitch = true;
+                            break;
+                        }
+                    }
+                }
+                if (shouldSwitch) {
+                    rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                    switching = true;
+                    switchcount ++;      
+                } else {
+                    if (switchcount == 0 && dir == "asc") {
+                        dir = "desc";
+                        switching = true;
+                    }
+                }
+            }
+        }
 </script>
-<script>
-function searchProphets() {
-    const input = document.getElementById("searchBar").value.toLowerCase();
-    const prophets = document.querySelectorAll(".prophet");
-    const years = document.querySelectorAll("h2");
-
-    // Hide year headings while searching
-    years.forEach(year => {
-        year.style.display = input ? "none" : "block";
-    });
-
-    prophets.forEach(prophet => {
-        const text = prophet.textContent.toLowerCase();
-
-        prophet.style.display = text.includes(input)
-            ? "inline-block"
-            : "none";
-    });
-
-    const visible = [...prophets]
-        .some(prophet => prophet.style.display !== "none");
-
-    document.getElementById("noResults").style.display =
-        visible ? "none" : "block";
-
-    document.getElementById("filters").style.display =
-        visible ? "block" : "none";
-
-    document.getElementById("galleryLink").style.display =
-        visible ? "block" : "none";
-}
-</script>
-<script>
-        function toggleTimeline() {
-    const timeline = document.getElementById("timeline");
-    const button = document.getElementById("timelineButton");
-
-    if (timeline.style.display === "none") {
-        timeline.style.display = "block";
-        button.textContent = "Hide Timeline";
-    } else {
-        timeline.style.display = "none";
-        button.textContent = "Show Timeline";
-    }
-}
-</script>
-
-        <script>
-function scrollToTop() {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-}
-</script>
-
+</details>
+<details>
+    <summary>General Conference Reports</summary>
+    <a href="https://1drv.ms/x/c/eed7428446d28507/IQA1jD7I7zZBRbHpsW4guRoMAaoaUj7Q5A6ShGABAHwDkKM?e=ngMkaS">EXCEL</a>
+</details>
     </body>
 </html>
