@@ -312,7 +312,7 @@ html, body {
 
 .sources a{
 
-    color:lightskyblue;
+    color:rgb(1, 17, 98);
 
     text-decoration:none;
 
@@ -334,7 +334,7 @@ html, body {
 
 .other-source a{
 
-    color:lightgreen;
+    color:rgb(4, 84, 4);
 
     text-decoration:none;
 
@@ -361,6 +361,15 @@ html, body {
     text-align:left;
 
     font-size:20px;
+
+    line-height:1.5;
+
+}
+.scripture-references{
+
+    text-align:left;
+
+    font-size:18px;
 
     line-height:1.5;
 
