@@ -1,98 +1,165 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>John Taylor's teachings</title>
-        <link rel="stylesheet" type="text/css" href="../../style.css">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <base href="" target="_blank">
-    </head>
-    <body class="sermon">
-        <header class="page-header">
-        <a href="../../../index.html" target="_self">Home Page</a>
-        <br>
-        <a href="../../sermons.html" target="_self">Teachings Page</a>
-        <br>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John Taylor's Teachings</title>
+    <link rel="stylesheet" type="text/css" href="../../style.css">
+    <base href="" target="_blank">
+</head>
+<body class="sermon">
+
+    <header class="page-header">
+        <a href="../../../index.html" target="_self">Home Page</a><br>
+        <a href="../../sermons.html" target="_self">Teachings Page</a><br>
         <a href="../../resources.html" target="_self">Resources</a>
-            <hr>
-            <h1>Teachings from President <br> John Taylor</h1>
-            <img class="portrait" src="../../../media/images/prophets/john-taylor/JohnTaylor2.jpg" alt="John Taylor, ">
-            <p class="photo-source">John Taylor <a href="">Wikimedia</a>, 1860ca</p>
-        </header>
-<div class="teaching-grid">
-<div class="teaching-tile">
-    <h2>Elder John Taylor's Mission to Europe in 1849-1852</h2>
-    <div class="year">1852</div>
-    <div class="calling">Elder in the Council of the Twelve Apostles</div>
-    <div class="sources">
-        <a href="https://archive.org/details/JoDV01/page/16/mode/1up">Internet Archive(Journal of Discourses)</a>
-    </div>
-    <div class="other-source">
-        <a href="https://journalofdiscourses.com/1/3">JournalOfDiscourses.com</a>
-    </div>
-    <div class="teaching-type">Sermon - Journal of Discourses 1:16-28</div>
-    <div class="topics">
-        <strong>Topics</strong>
-    </div>
-    <div class="scripture-references">
-        <strong>Scripture References</strong>
-    </div>
-</div>
-<div class="teaching-tile">
-    <h2>Motives and Feelings of the Saints; Experience Necessary; The State of the World; Infidels; Religions and Works of Men, and the Religion and Works of God; Truth and Salvation</h2>
-    <div class="year">1853</div>
-    <div class="calling">Elder in the Council of the Twelve Apostles</div>
-    <div class="sources">
-        <a href="https://archive.org/details/JoDV01/page/147/mode/1up">Internet Archive(Journal of Discourses)</a>
-    </div>
-    <div class="other-source">
-        <a href="https://journalofdiscourses.com/1/25">JournalOfDiscourses.com</a>
-    </div>
-    <div class="teaching-type">Sermon - Journal of Discourses 1:147-159</div>
-    <div class="topics">
-        <strong>Topics</strong>
-    </div>
-    <div class="scripture-references">
-        <strong>Scripture References</strong>
-    </div>
-</div>
-<div class="teaching-tile">
-    <h2>Legitimacy and Illegitimacy</h2>
-    <div class="year">1853</div>
-    <div class="calling">Elder in the Council of the Twelve Apostles</div>
-    <div class="sources">
-        <a href="https://archive.org/details/JoDV01/page/221/mode/1up">Internet Archive(Journal of Discourses)</a>
-    </div>
-    <div class="other-source">
-        <a href="https://journalofdiscourses.com/1/34">JournalOfDiscourses.com</a>
-    </div>
-    <div class="teaching-type">Sermon - Journal of Discourses 1:221-233</div>
-    <div class="topics">
-        <strong>Topics</strong>
-    </div>
-    <div class="scripture-references">
-        <strong>Scripture References</strong>
-    </div>
-</div>
-<div class="teaching-tile">
-    <h2>Men Eternal Beings; Darkness, Ignorance and Weakness of the World; Privileges of the Saints</h2>
-    <div class="year">1854</div>
-    <div class="calling">Elder in the Council of the Twelve Apostles</div>
-    <div class="sources">
-        <a href="https://archive.org/details/JoDV01/page/365/mode/1up">Internet Archive(Journal of Discourses)</a>
-    </div>
-    <div class="other-source">
-        <a href="https://journalofdiscourses.com/1/53">JournalOfDiscourses.com</a>
-    </div>
-    <div class="teaching-type">Sermon - Journal of Discourses 1:365-375</div>
-    <div class="topics">
-        <strong>Topics</strong>
-    </div>
-    <div class="scripture-references">
-        <strong>Scripture References</strong>
-    </div>
-</div>
-</div>
-    <p>Died July 1877</p>
+        <hr>
+        <h1>Teachings from President <br> John Taylor</h1>
+        <img class="portrait" src="../../../media/images/prophets/john-taylor/JohnTaylor2.jpg" alt="John Taylor">
+        <p class="photo-source">John Taylor <a href="https://commons.wikimedia.org">Wikimedia</a>, c. 1860</p>
+
+        <div class="filters">
+            <input type="text" id="searchBar" placeholder="Search teachings...">
+            
+            <select id="callingFilter">
+                <option value="all">All Callings</option>
+                <option value="apostle">Apostle</option>
+                <option value="first-presidency">First Presidency</option>
+                <option value="mission-president">Mission President</option>
+                <option value="stake-president">Stake President</option>
+            </select>
+
+            <select id="typeFilter">
+                <option value="all">All Types</option>
+                <option value="journal-of-discourses">Journal of Discourses</option>
+                <option value="general-conference">General Conference</option>
+                <option value="deseret-weekly">Deseret Weekly</option>
+                <option value="conference-report">Conference Report</option>
+                <option value="improvement-era">Improvement Era</option>
+                <option value="article">Article</option>
+                <option value="letter">Letter</option>
+            </select>
         </div>
-    </body>
+    </header>
+
+    <div class="teaching-grid">
+
+        <!-- Tile 1 -->
+        <div class="teaching-tile apostle jod" data-calling="apostle" data-type="journal-of-discourses">
+            <h2>Elder John Taylor's Mission to Europe in 1849-1852</h2>
+            <div class="year">1852</div>
+            <div class="calling">Elder in the Council of the Twelve Apostles</div>
+            <div class="sources">
+                <a href="https://archive.org/details/JoDV01/page/16/mode/1up">Internet Archive (Journal of Discourses)</a>
+            </div>
+            <div class="other-source">
+                <a href="https://journalofdiscourses.com/1/3">JournalOfDiscourses.com</a>
+            </div>
+            <div class="teaching-type">Sermon - Journal of Discourses 1:16-28</div>
+            <div class="topics"><strong>Topics</strong></div>
+            <div class="scripture-references"><strong>Scripture References</strong></div>
+        </div>
+
+        <!-- Tile 2 -->
+        <div class="teaching-tile apostle jod" data-calling="apostle" data-type="journal-of-discourses">
+            <h2>Motives and Feelings of the Saints; Experience Necessary...</h2>
+            <div class="year">1853</div>
+            <div class="calling">Elder in the Council of the Twelve Apostles</div>
+            <div class="sources">
+                <a href="https://archive.org/details/JoDV01/page/147/mode/1up">Internet Archive (Journal of Discourses)</a>
+            </div>
+            <div class="other-source">
+                <a href="https://journalofdiscourses.com/1/25">JournalOfDiscourses.com</a>
+            </div>
+            <div class="teaching-type">Sermon - Journal of Discourses 1:147-159</div>
+            <div class="topics"><strong>Topics</strong></div>
+            <div class="scripture-references"><strong>Scripture References</strong></div>
+        </div>
+
+        <!-- Tile 3 -->
+        <div class="teaching-tile apostle jod" data-calling="apostle" data-type="journal-of-discourses">
+            <h2>Legitimacy and Illegitimacy</h2>
+            <div class="year">1853</div>
+            <div class="calling">Elder in the Council of the Twelve Apostles</div>
+            <div class="sources">
+                <a href="https://archive.org/details/JoDV01/page/221/mode/1up">Internet Archive (Journal of Discourses)</a>
+            </div>
+            <div class="other-source">
+                <a href="https://journalofdiscourses.com/1/34">JournalOfDiscourses.com</a>
+            </div>
+            <div class="teaching-type">Sermon - Journal of Discourses 1:221-233</div>
+            <div class="topics"><strong>Topics</strong></div>
+            <div class="scripture-references"><strong>Scripture References</strong></div>
+        </div>
+
+        <!-- Tile 4 -->
+        <div class="teaching-tile apostle jod" data-calling="apostle" data-type="journal-of-discourses">
+            <h2>Men Eternal Beings; Darkness, Ignorance and Weakness of the World...</h2>
+            <div class="year">1854</div>
+            <div class="calling">Elder in the Council of the Twelve Apostles</div>
+            <div class="sources">
+                <a href="https://archive.org/details/JoDV01/page/365/mode/1up">Internet Archive (Journal of Discourses)</a>
+            </div>
+            <div class="other-source">
+                <a href="https://journalofdiscourses.com/1/53">JournalOfDiscourses.com</a>
+            </div>
+            <div class="teaching-type">Sermon - Journal of Discourses 1:365-375</div>
+            <div class="topics"><strong>Topics</strong></div>
+            <div class="scripture-references"><strong>Scripture References</strong></div>
+        </div>
+
+        <!-- Tile 5 -->
+        <div class="teaching-tile first-presidency gc" data-calling="first-presidency" data-type="general-conference">
+            <h2>Two Day's Meeting</h2>
+            <div class="year">1880</div>
+            <div class="calling">President of the Church of Jesus Christ of Latter-day Saints</div>
+            <div class="sources">
+                <a href="https://archive.org/details/conferencereport1880a/page/5/mode/1up">Internet Archive (General Conference Reports)</a>
+            </div>
+            <div class="teaching-type">Sermon - GC:p5:A-1880</div>
+            <div class="topics">
+                <strong>Topics</strong><br>
+                Assembly Hall at SLC, Fiftieth Anniversary of the Church, Purpose of General Conference, Year of Jubilee
+            </div>
+            <div class="scripture-references">
+                <strong>Scripture References</strong><br>
+                <a href="https://www.churchofjesuschrist.org/study/scriptures/ot/lev/25?lang=eng&id=p8-p13#p8">Leviticus XXV:8-13</a>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        const searchBar = document.getElementById("searchBar");
+        const callingFilter = document.getElementById("callingFilter");
+        const typeFilter = document.getElementById("typeFilter");
+        const tiles = document.querySelectorAll(".teaching-tile");
+
+        function filterTeachings() {
+            const search = searchBar.value.toLowerCase().trim();
+            const calling = callingFilter.value;
+            const type = typeFilter.value;
+
+            tiles.forEach(tile => {
+                const tileText = tile.innerText.toLowerCase();
+                const tileCalling = tile.dataset.calling || "";
+                const tileType = tile.dataset.type || "";
+
+                const matchesSearch = search === "" || tileText.includes(search);
+                const matchesCalling = calling === "all" || tileCalling === calling;
+                const matchesType = type === "all" || tileType === type;
+
+                if (matchesSearch && matchesCalling && matchesType) {
+                    tile.style.display = ""; // Clears inline style and defers to CSS grid
+                } else {
+                    tile.style.display = "none";
+                }
+            });
+        }
+
+        searchBar.addEventListener("input", filterTeachings);
+        callingFilter.addEventListener("change", filterTeachings);
+        typeFilter.addEventListener("change", filterTeachings);
+    </script>
+</body>
 </html>
