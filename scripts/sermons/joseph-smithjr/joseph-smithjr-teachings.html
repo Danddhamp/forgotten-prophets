@@ -24,120 +24,136 @@
            placeholder="Search teachings...">
 </div>
 <div class="filters">
-    <select id="callingFilter">
-        <option value="all">All Callings</option>
-        <option value="apostle">Apostle</option>
-        <option value="first-presidency">First Presidency</option>
-        <option value="mission-president">Mission President</option>
-        <option value="stake-president">Stake President</option>
-    </select>
+            <input type="text" id="searchBar" placeholder="Search teachings...">
+            
+            <select id="callingFilter">
+                <option value="all">All Callings</option>
+                <option value="apostle">Apostle</option>
+                <option value="first-presidency">First Presidency</option>
+                <option value="q12-president">President of the Q12</option>
+            </select>
 
-    <select id="typeFilter">
-        <option value="all">All Types</option>
-        <option value="general-conference">General Conference</option>
-        <option value="deseret-weekly">Deseret Weekly</option>
-        <option value="conference-report">Conference Report</option>
-        <option value="improvement-era">Improvement Era</option>
-        <option value="article">Article</option>
-        <option value="letter">Letter</option>
-    </select>
-
-</div>
+            <select id="typeFilter">
+                <option value="all">All Types</option>
+                <option value="standard-works">Standard Works</option>
+                <option value="journal-of-discourses">Journal of Discourses</option>
+                <option value="general-conference">General Conference</option>
+                <option value="deseret-weekly">Deseret Weekly</option>
+                <option value="conference-report">Conference Report</option>
+                <option value="improvement-era">Improvement Era</option>
+                <option value="article">Article</option>
+                <option value="letter">Letter</option>
+                <option value="poem">Poems/Hymns</option>
+            </select>
+        </div>
     <p>Biography Accessible at <a href="">Joseph Smith Jr.</a></p>
 <div class="teaching-grid">
-<div class="teaching-tile">
-        <h2>Doctrine and Covenants, Sections 1-135,137</h2>
-        <div class="year">1823-1843</div>
-        <div class="calling">Prophet of the Restoration</div>
-        <div class="sources">
-            <a href="https://www.churchofjesuschrist.org/study/scriptures/dc-testament?lang=eng">ChurchofJesusChristofLatter-daySaints.org</a>
+    <!-- Tile -->
+        <div class="teaching-tile apostle standard-works" data-calling="apostle" data-type="journal-of-discourses">
+            <h2><a href="https://www.churchofjesuschrist.org/study/scriptures/dc-testament?lang=eng">Doctrine and Covenants, Sections 1-134,137</a></h2>
+            <div class="year">1823-1843</div>
+            <div class="calling">Prophet of the Restoration</div>
+            <div class="teaching-type">Standard Works</div>
         </div>
-        <div class="other-source">
-            <a href="https://openscriptures.net/wp-content/uploads/2021/04/doctrine-and-covenants-LdS.pdf">OpenScriptures.net</a>
+
+        <!-- Tile -->
+        <div class="teaching-tile apostle standard-works" data-calling="apostle" data-type="journal-of-discourses">
+            <h2><a href="https://www.churchofjesuschrist.org/study/scriptures/pgp/a-of-f/1?lang=eng">The Articles of Faith</a></h2>
+            <div class="year">1842</div>
+            <div class="calling">Prophet of the Restoration</div>
+            <div class="teaching-type">Standard Works</div>
         </div>
-        <div class="teaching-type">
-            Standard Works
-        </div>
-</div>
-<div class="teaching-tile">
-    <h2>The Articles of Faith</h2>
-    <div class="year">1842</div>
-    <div class="calling">Prophet of the Restoration</div>
-    <div class="sources">
-        <a href="https://www.churchofjesuschrist.org/study/scriptures/pgp/a-of-f/1?lang=eng">ChurchofJesusChristofLatter-daySaints.org</a>
-    </div>
-    <div class="teaching-type">
-        Standard Works
-    </div>
-</div>
-<div class="teaching-tile">
-    <h2>The Constitutions of the United States and Illinois—Nauvoo Charter and Municipal Court—Writ of Habeas Corpus</h2>
-    <div class="year">1843</div>
-    <div class="calling">Prophet of the Restoration</div>
-    <div class="sources">
-        <a href="https://archive.org/details/JoDV02/page/n170/mode/1up">Internet Archive(Journal of Discourses)</a>
-    </div>
-    <div class="other-source">
+
+        <!-- Tile -->
+        <div class="teaching-tile apostle jod" data-calling="apostle" data-type="journal-of-discourses">
+            <h2>The Constitutions of the United States and Illinois—Nauvoo Charter and Municipal Court—Writ of Habeas Corpus</h2>
+            <div class="year">1843</div>
+            <div class="calling">Prophet of the Restoration</div>
+            <div class="sources">
+                <a href="https://archive.org/details/JoDV02/page/n170/mode/1up">Internet Archive (Journal of Discourses)</a>
+            </div>
+            <div class="other-source">
         <a href="https://journalofdiscourses.com/2/30">JournalOfDiscourses.com</a>
-    </div>
-    <div class="teaching-type">Sermon - Journal of Discourses 2:163-169</div>
-    <div class="topics">
+        <div class="teaching-type">Sermon - Journal of Discourses 2:163-169</div>
+        <div class="topics">
         <strong>Topics</strong>
     </div>
     <div class="scripture-references">
         <strong>Scripture References</strong>
     </div>
+    </div>
 </div>
+<!-- Tile -->
+        <div class="teaching-tile apostle jod" data-calling="apostle" data-type="journal-of-discourses">
+            <h2>Character and Being of God—Creation—Salvation of the Dead—The Unpardonable Sin—Resurrection—Baptism of the Spirit, Etc</h2>
+            <div class="year">1844</div>
+            <div class="calling">Prophet of the Restoration</div>
+            <div class="sources">
+                <a href="https://archive.org/details/JoDV06/page/n8/mode/1up">Internet Archive (Journal of Discourses)</a>
+            </div>
+            <div class="other-source">
+        <a href="https://journalofdiscourses.com/6/1">JournalOfDiscourses.com</a>
+        <div class="teaching-type">Sermon - Journal of Discourses 6:1-11</div>
+        <div class="topics">
+        <strong>Topics</strong>
+    </div>
+    <div class="scripture-references">
+        <strong>Scripture References</strong>
+    </div>
+    </div>
 </div>
-    <p>Died September 1934</p>
-    <p>Elder Ivin's Writings can be found <a href="../../writings.htm#anthony-w-ivins">here</a></p>
-        </div>
+<!-- Tile -->
+        <div class="teaching-tile apostle jod" data-calling="apostle" data-type="journal-of-discourses">
+            <h2>The Priesthood—The Second Advent—The Gathering—Spiritual Ministrations and Manifestations</h2>
+            <div class="year">1839</div>
+            <div class="calling">Prophet of the Restoration</div>
+            <div class="sources">
+                <a href="https://archive.org/details/JoDV06/page/237/mode/1up">Internet Archive (Journal of Discourses)</a>
+            </div>
+            <div class="other-source">
+        <a href="https://journalofdiscourses.com/6/40">JournalOfDiscourses.com</a>
+        <div class="teaching-type">Sermon - Journal of Discourses 6:237-240</div>
+        <div class="topics">
+        <strong>Topics</strong>
+    </div>
+    <div class="scripture-references">
+        <strong>Scripture References</strong>
+    </div>
+    </div>
 
 
 
         <script>
-const searchBar = document.getElementById("searchBar");
-const callingFilter = document.getElementById("callingFilter");
-const typeFilter = document.getElementById("typeFilter");
+        const searchBar = document.getElementById("searchBar");
+        const callingFilter = document.getElementById("callingFilter");
+        const typeFilter = document.getElementById("typeFilter");
+        const tiles = document.querySelectorAll(".teaching-tile");
 
-function filterTeachings() {
+        function filterTeachings() {
+            const search = searchBar.value.toLowerCase().trim();
+            const calling = callingFilter.value;
+            const type = typeFilter.value;
 
-    const search = searchBar.value.toLowerCase();
-    const calling = callingFilter.value;
-    const type = typeFilter.value;
+            tiles.forEach(tile => {
+                const tileText = tile.innerText.toLowerCase();
+                const tileCalling = tile.dataset.calling || "";
+                const tileType = tile.dataset.type || "";
 
-    const tiles = document.querySelectorAll(".teaching-tile");
+                const matchesSearch = search === "" || tileText.includes(search);
+                const matchesCalling = calling === "all" || tileCalling === calling;
+                const matchesType = type === "all" || tileType === type;
 
-    tiles.forEach(tile => {
-
-        const tileText = tile.innerText.toLowerCase();
-
-        const tileCalling = tile.dataset.calling;
-        const tileType = tile.dataset.type;
-
-        const matchesSearch = tileText.includes(search);
-
-        const matchesCalling =
-            calling === "all" || tileCalling === calling;
-
-        const matchesType =
-            type === "all" || tileType === type;
-
-        if (matchesSearch && matchesCalling && matchesType) {
-            tile.style.display = "flex";
-        } else {
-            tile.style.display = "none";
+                if (matchesSearch && matchesCalling && matchesType) {
+                    tile.style.display = ""; // Clears inline style and defers to CSS grid
+                } else {
+                    tile.style.display = "none";
+                }
+            });
         }
 
-    });
-
-}
-
-searchBar.addEventListener("input", filterTeachings);
-
-callingFilter.addEventListener("change", filterTeachings);
-
-typeFilter.addEventListener("change", filterTeachings);
-</script>
+        searchBar.addEventListener("input", filterTeachings);
+        callingFilter.addEventListener("change", filterTeachings);
+        typeFilter.addEventListener("change", filterTeachings);
+    </script>
     </body>
 </html>
