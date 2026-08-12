@@ -18,12 +18,27 @@ a:hover{
 .timeseason{
     background-color:lightslategray;
     color:black;
+    a{
+        color:#ffd24d;
+    }
+}
+.standardworks{
+    background-color:aquamarine;
+    color:black;
+    a{
+        color:#020236;
+    }
 }
 .dezweek{
     background-color:honeydew;
     color:black;
     a{
         color:black;
+    }
+    .sources{
+        a{
+            color:red;
+        }
     }
 }
 .mesadvo{
