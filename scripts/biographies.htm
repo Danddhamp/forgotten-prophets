@@ -1,675 +1,1421 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Histories of the Prophets</title>
+        <title>Biographies</title>
         <link rel="stylesheet" type="text/css" href="style.css">
-            <style>
-            img{ height:200px; vertical-align: top; }
-            img:hover{ filter: drop-shadow(10px 10px 20px rgb(0, 0, 0)); }
-            body{ background-color:#006a20; zoom: 125%; }
-            .prophet span{
-                display:block;
-                margin-top:5px;
-            }
-            .prophet img{
-                display:block;
-                height:200px;
-            }
-            .prophet{
-                display:inline-block;
-                text-align:center;
-                margin:10px;
-                vertical-align:top;
-                color:white;
-            }
+        <link rel="icon" type="image/png" href="../favicon/favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+                img{
+                        height:200px;
+                        vertical-align:
+                        top;
+                }
+                img:hover{
+                        filter: drop-shadow(10px 10px 20px rgb(0, 0, 0));
+                }
+                body{
+                        background-color:#2a0566;
+                }
+                .prophet span{
+                        display:block;
+                        margin-top:5px;
+                }
+                .prophet img{
+                        display:block;
+                        height:400px;
+                        width:200px;
+                        object-fit: cover;
+                }
+                .prophet{
+                        display:inline-block;
+                        text-align:center;
+                        margin:10px;
+                        vertical-align:top;
+                        color:white;
+                }
+                .page{
+                        display:flex;
+                        align-items:flex-start;
+                }
 
+.timeline{
+        position:sticky;
+        top:20px;
+        width:250px;
+        margin-right:40px;
+        padding-left:25px;
+        padding-bottom:30px;
+        border-left:4px solid white;
+        max-height: calc(100dvh - 40px);
+        overflow-y: auto;
+        box-sizing: border-box;
+        scrollbar-color: #003b75 #002E5D;
+
+}
+
+
+                .timeline h2{
+                        color:white;
+                        margin-top:0;
+                        margin-left:-12px;
+                }
+
+                .timeline a{
+                        display:flex;
+                        align-items:center;
+                        gap:15px;
+                        color:white;
+                        text-decoration:none;
+                        margin:22px 0;
+                        font-size:18px;
+                        transition:.2s;
+                }
+
+                .timeline a:hover{
+                        transform:translateX(6px);
+                        color:#ffd24d;
+                }
+
+                .dot{
+                        width:16px;
+                        height:16px;
+                        background:white;
+                        border-radius:50%;
+                        margin-left:-35px;
+                        flex-shrink:0;
+                }
+
+                .content{
+                        flex:1;
+                }
+                @media (max-width: 768px) {
+    .page {
+        flex-direction: column;
+    }
+
+    .timeline {
+        position: relative;
+        top: auto;
+        width: auto;
+        max-height: 200px;
+        margin-right: 0;
+        margin-bottom: 20px;
+        border-left: none;
+        border-bottom: 4px solid white;
+        padding-left: 0;
+        padding-bottom: 15px;
+    }
+
+    .timeline h2 {
+        margin-left: 0;
+    }
+
+    .timeline a {
+        margin: 12px 0;
+        font-size: 16px;
+    }
+
+    .dot {
+        margin-left: 0;
+    }
+
+    .prophet {
+        width: calc(50% - 20px);
+        margin: 5px;
+    }
+
+    .prophet img {
+        height: 250px;
+        width: 100%;
+    }
+
+    #searchBar {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+html, body {
+    overflow-x: clip;
+    max-width: 100%;
+}
+
+@media (max-width: 480px) {
+    .prophet {
+        width: 100%;
+    }
+}
+#backToTop {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #003b75;
+    color: white;
+    border: 2px solid white;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+}
+
+#backToTop:hover {
+    background-color: #ffd24d;
+    color: #002E5D;
+}
+@media (max-width: 768px) {
+    #backToTop {
+        display: block;
+    }
+}
         </style>
     </head>
     <body>
-        <h1>Histories of the Prophets</h1>
-        <p><a href="../index.html">Home Page</a></p>
-        <p>All images can be found at <a href="image-gallery.html">Image Gallery</a></p>
-       <div class="prophet">
-        <a href="biographies/abraham-h-cannon-bio.html"><img alt="Abraham H. Cannon" src="../media/images/prophets/abraham-h-cannon/abraham-h-cannon-1895.jpeg" title="Abraham H. Cannon"></a>
-        <span class="prophet">
-        Abraham H. Cannon
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="Abraham O. Woodruff" src="../media/images/prophets/abraham-o-woodruff/abraham-o-woodruff-1904.jpg" title="Abraham O. Woodruff"></a>
-        <span class="prophet">
-        Abraham O. Woodruff
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="Adam S. Bennion" src="../media/images/prophets/adam-s-bennion/adam-s-bennion-1953.jpg" title="Adam S. Bennion"></a>
-        <span class="prophet">
-        Adam S. Bennion
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="Albert Carrington" src="../media/images/prophets/albert-carrington/albert-carrington-1866.jpg" title="Albert Carrington"></a>
-        <span class="prophet">
-        Albert Carrington
-        </span>
-</div>
-<div class="prophet">
-        <a href="../sermons/a-g/bow-alb-e-sermon.html"><img alt="Albert E. Bowen" src="../media/images/prophets/albert-e-bowen/albert-e-bowen-1920.jpg" title="Albert E. Bowen"></a>
-        <span class="prophet">
-        Albert E. Bowen
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="Alonzo A. Hinckley" src="../media/images/prophets/alonzo-a-hinckley/alonzo-a-hinckley-1934.jpg" title="Alonzo A. Hinckley"></a>
-        <span class="prophet">
-        Alonzo A. Hinckley
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="Alvin R. Dyer" src="../media/images/prophets/alvin-r-dyer/alvin-r-dyer-1970.jpg" title="Alvin R. Dyer"></a>
-        <span class="prophet">
-        Alvin R. Dyer
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="Amasa M. Lyman" src="../images/h-n/lyman,amasa-m.png" title="Amasa M. Lyman"></a>
-        <span class="prophet">
-        Amasa M. Lyman
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="Anthon H. Lund" src="../images/h-n/lund,anthon-h.jpg" title="Anthon H. Lund"></a>
-        <span class="prophet">
-        Anthon H. Lund
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="Anthony W. Ivins" src="../images/h-n/ivins,anthony-w.jpeg" title="Anthony W. Ivins"></a>
-        <span class="prophet">
-        Anthony W. Ivins
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="Boyd K. Packer" src="../images/o-z/packer,boyd-k.jpeg" title="Boyd K. Packer"></a>
-        <span class="prophet">
-        Boyd K. Packer
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="Brigham Young" src="../images/o-z/young-brigham.jpg" title="Brigham Young" ></a>
-        <span class="prophet">
-        Brigham Young
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="Brigham Young Jr." src="../images/o-z/young-jr,brigham.jpg" title="Brigham Young Jr."></a>
-        <span class="prophet">
-        Brigham Young Jr.
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="Bruce R. McConkie" src="../images/h-n/mcconkie,bruce-r.jpeg" title="Bruce R. McConkie"></a>
-        <span class="prophet">
-        Bruce R. McConkie
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="Charles A. Callis" src="../images/a-g/callis,charles-a.jpeg" title="Charles A. Callis"></a>
-        <span class="prophet">
-        Charles A. Callis
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="Charles C. Rich" src="../images/o-z/rich,charles-c.jpeg" title="Charles C. Rich"></a>
-        <span class="prophet">
-        Charles C. Rich
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="Charles W. Nibley" src="../images/h-n/nibley,charles-w.jpeg" title="Charles W. Nibley"></a>
-        <span class="prophet">
-        Charles W. Nibley
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="Charles W. Penrose" src="../images/o-z/penrose,charles-w.gif" title="Charles W. Penrose"></a>
-        <span class="prophet">
-        Charles W. Penrose
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="David B. Haight" src="../images/h-n/haight,david-b.jpeg" title="David B. Haight"></a>
-        <span class="prophet">
-        David B. Haight
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="David O. McKay" src="../images/h-n/mckay,david-o.jpeg" title="David O. McKay" ></a>
-        <span class="prophet">
-        David O. McKay
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="David W. Patten" src="../images/unknown.png" title="David W. Patten"></a>
-        <span class="prophet">
-        David W. Patten
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="David Whitmer" src="../images/o-z/whitmer,david.jpeg" title="David Whitmer"></a>
-        <span class="prophet">
-        David Whitmer
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="Delbert L. Stapley" src="../images/o-z/stapley,delbert-l.jpeg" title="Delbert L. Stapley"></a>
-        <span class="prophet">
-        Delbert L. Stapley
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="Daniel H. Wells" src="../images/o-z/wells,daniel-h.jpeg" title="Daniel H. Wells"></a>
-        <span class="prophet">
-        Daniel H. Wells
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="Erastus Snow" src="../images/o-z/snow-erastus.jpg" title="Erastus Snow"></a>
-        <span class="prophet">
-        Erastus Snow
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="Ezra T. Benson" src="../images/a-g/benson,ezra-t.jpeg" title="Ezra T. Benson"></a>
-        <span class="prophet">
-        Ezra T. Benson
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="Ezra Taft Benson" src="../images/a-g/benson,ezra-taft.jpeg" title="Ezra Taft Benson" ></a>
-        <span class="prophet">
-        Ezra Taft Benson
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="Franklin D. Richards" src="../images/o-z/richards,franklin-d.gif" title="Franklin D. Richards"></a>
-        <span class="prophet">
-        Franklin D. Richards
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="Francis M. Lyman" src="../images/h-n/lyman,francis-m.jpeg" title="Francis M. Lyman"></a>
-        <span class="prophet">
-        Francis M. Lyman
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="Frederick G. William" src="../images/o-z/williams,frederick-g.jpeg" title="Frederick G. William"></a>
-        <span class="prophet">
-        Frederick G. William
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="George A. Smith" src="../images/o-z/smith,george-a.jpeg" title="George A. Smith"></a>
-        <span class="prophet">
-        George A. Smith
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="George Albert Smith" src="../images/o-z/smith,george-albert.jpeg" title="George Albert Smith" ></a>
-        <span class="prophet">
-        George Albert Smith
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="George F. Richards" src="../images/o-z/richards,george-f.jpeg" title="George F. Richards"></a>
-        <span class="prophet">
-        George F. Richards
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="George Q. Cannon" src="../images/a-g/cannon,george-q.jpg" title="George Q. Cannon"></a>
-        <span class="prophet">
-        George Q. Cannon
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="George Q. Morris" src="../images/h-n/morris,george-q.jpeg" title="George Q. Morris"></a>
-        <span class="prophet">
-        George Q. Morris
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="George Teasdale" src="../images/o-z/teasdale,george.jpeg" title="George Teasdale"></a>
-        <span class="prophet">
-        George Teasdale
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="Gordon B. Hinckely" src="../images/h-n/hinckley,gordon-b.jpeg" title="Gordon B. Hinckely" ></a>
-        <span class="prophet">
-        Gordon B. Hinckely
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="Harold B. Lee" src="../images/h-n/lee-harold-b.jpg" title="Harold B. Lee" ></a>
-        <span class="prophet">
-        Harold B. Lee
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="Heber C. Kimball" src="../images/h-n/kimball,heber-c.png" title="Heber C. Kimball"></a>
-        <span class="prophet">
-        Heber C. Kimball
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="Heber J. Grant" src="../images/a-g/grant,heber-j.jpeg" title="Heber J. Grant" ></a>
-        <span class="prophet">
-        Heber J. Grant
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="Henry D. Moyle" src="../images/h-n/moyle,henry-d.jpeg" title="Henry D. Moyle"></a>
-        <span class="prophet">
-        Henry D. Moyle
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="Howard W. Hunter" src="../images/h-n/hunter,howard-w.jpeg" title="Howard W. Hunter" ></a>
-        <span class="prophet">
-        Howard W. Hunter
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="Hugh B. Brown" src="../images/a-g/brown,hugh-b.jpeg" title="Hugh B. Brown"></a>
-        <span class="prophet">
-        Hugh B. Brown
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="Hyrum Smith" src="../images/o-z/smith,hyrum.png" title="Hyrum Smith"></a>
-        <span class="prophet">
-        Hyrum Smith
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="Hyrum M. Smith" src="../images/o-z/smith,hyrum-m.jpg" title="Hyrum M. Smith"></a>
-        <span class="prophet">
-        Hyrum M. Smith
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="J. Reuben Clark Jr." src="../images/a-g/clark,reuben-j.jpeg" title="J. Reuben Clark Jr."></a>
-        <span class="prophet">
-        J. Reuben Clark Jr.
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="James E. Faust" src="../images/a-g/faust,james-e.jpeg" title="James E. Faust"></a>
-        <span class="prophet">
-        James E. Faust
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="James E. Talmage" src="../images/o-z/talmage-james-e.JPG" title="James E. Talmage"></a>
-        <span class="prophet">
-        James E. Talmage
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="Jebediah M. Grant" src="../images/a-g/grant-jebediah-m.gif" title="Jebediah M. Grant"></a>
-        <span class="prophet">
-        Jebediah M. Grant
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="Jeffery R. Holland" src="../images/h-n/holland,jeffery-r.jpeg" title="Jeffery R. Holland"></a>
-        <span class="prophet">
-        Jeffery R. Holland
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="Jesse Gausse" src="../images/unknown.png" title="Jesse Gausse"></a>
-        <span class="prophet">
-        Jesse Gausse
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="John A. Widtsoe" src="../images/o-z//widtsoe-john-a.jpg" title="John A. Widtsoe"></a>
-        <span class="prophet">
-        John A. Widtsoe
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="John C. Bennett" src="../images/a-g/bennett,john-c.jpeg" title="John C. Bennett"></a>
-        <span class="prophet">
-        John C. Bennett
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="John E. Page" src="../images/o-z/page,john-e.jpeg" title="John E. Page"></a>
-        <span class="prophet">
-        John E. Page
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="John F. Boynton" src="../images/a-g/boynton,john-f.jpeg" title="John F. Boynton"></a>
-        <span class="prophet">
-        John F. Boynton
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="John H. Smith" src="../images/o-z/smith,john-henry.jpeg" title="John H. Smith"></a>
-        <span class="prophet">
-        John H. Smith
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="John R. Winder" src="../images/o-z/winder,john-r.jpeg" title="John R. Winder"></a>
-        <span class="prophet">
-        John R. Winder
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="John Taylor" src="../images/o-z/taylor,john.jpg" title="John Taylor" ></a>
-        <span class="prophet">
-        John Taylor
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="John W. Taylor" src="../images/o-z/taylor,john-w.gif" title="John W. Taylor"></a>
-        <span class="prophet">
-        John W. Taylor
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="John W. Young" src="../images/o-z/young,john-w.gif" title="John W. Young"></a>
-        <span class="prophet">
-        John W. Young
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="Joseph B. Wirthlin" src="../images/o-z/wirthlin,joseph-b.jpeg" title="Joseph B. Wirthlin"></a>
-        <span class="prophet">
-        Joseph B. Wirthlin
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="Joseph F. Merrill" src="../images/h-n/merill,joseph-f.jpeg" title="Joseph F. Merrill"></a>
-        <span class="prophet">
-        Joseph F. Merrill
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="Joseph F. Smith" src="../images/o-z/smith,joseph-f.jpeg" title="Joseph F. Smith" ></a>
-        <span class="prophet">
-        Joseph F. Smith
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="Joseph Fielding Smith" src="../images/o-z/smith,joseph-fielding.jpeg" title="Joseph Fielding Smith" ></a>
-        <span class="prophet">
-        Joseph Fielding Smith
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="Joseph Smith Jr." src="../images/o-z/smith-jr,joseph.jpeg" title="Joseph Smith Jr." ></a>
-        <span class="prophet">
+<div class="page">
+        <aside class="timeline" id="timeline">
+                <h2>Timeline</h2>
+                <a href="#1830"><span class="dot"></span>1780</a>
+                <a href="#1840"><span class="dot"></span>1790</a>
+                <a href="#1850"><span class="dot"></span>1800</a>
+                <a href="#1860"><span class="dot"></span>1810</a>
+                <a href="#1870"><span class="dot"></span>1820</a>
+                <a href="#1880"><span class="dot"></span>1830</a>
+                <a href="#1890"><span class="dot"></span>1840</a>
+                <a href="#1900"><span class="dot"></span>1850</a>
+                <a href="#1910"><span class="dot"></span>1860</a>
+                <a href="#1920"><span class="dot"></span>1870</a>
+                <a href="#1930"><span class="dot"></span>1880</a>
+                <a href="#1940"><span class="dot"></span>1890</a>
+                <a href="#1950"><span class="dot"></span>1900</a>
+                <a href="#1960"><span class="dot"></span>1910</a>
+                <a href="#1970"><span class="dot"></span>1920</a>
+                <a href="#1980"><span class="dot"></span>1930</a>
+                <a href="#1990"><span class="dot"></span>1940</a>
+                <a href="#2000s"><span class="dot"></span>1950</a>
+        </aside>
+        <main class="content">
+        <button id="backToTop" onclick="scrollToTop()" title="Back to top">↑</button>
+        <h1>Biographies</h1>
+        <a href="../index.html" class="button" id="homebutton">Home</a>
+        <button onclick="toggleTimeline()" id="timelineButton">Hide Timeline</button>
+        <input type="text" id="searchBar" placeholder="Search prophets..." autocomplete="off" onkeyup="searchProphets()">
+        <p id="noResults" style="display:none; color:white;"> No prophets found.</p>
+        <details id="filters">
+                <summary>Filters</summary>
+                <label>
+    <input type="checkbox" value="president" checked onchange="filterProphets()">
+    Presidents
+</label>
+<label>
+    <input type="checkbox" value="first-presidency" checked onchange="filterProphets()">
+    First-Presidency
+</label>
+<label>
+    <input type="checkbox" value="apostle" checked onchange="filterProphets()">
+    Apostles
+</label>
+<label>
+    <input type="checkbox" value="patriarch" checked onchange="filterProphets()">
+    Patriarchs
+</label>
+        </details>
+<br>
+        <p id="galleryLink">All images can be found at <a href="image-gallery.html" target="_blank">Image Gallery</a></p>
+<div class="prophet" data-role="apostle first-presidency president">
+        <a href=""><img alt="Joseph Smith Jr." src="../media/images/prophets/joseph-smithjr/joseph-smith-jr-bathshebasmithportrait.jpg" title="Joseph Smith Jr." ></a>
+        <span>
         Joseph Smith Jr.
+        <br>
+        Born:
+        <br>
+        December 23, 1805
         </span>
 </div>
-<div class="prophet">
-        <a href=""><img alt="Joseph Smith Sr." src="../images/o-z/smith-sr,joseph.jpeg" title="Joseph Smith Sr."></a>
-        <span class="prophet">
-        Joseph Smith Sr.
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="Luke S. Johnson" src="../images/h-n/johnson,luke-s.gif" title="Luke S. Johnson"></a>
-        <span class="prophet">
-        Luke S. Johnson
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="LeGrand Richards" src="../images/o-z/richards,legrand.jpeg" title="LeGrand Richards"></a>
-        <span class="prophet">
-        LeGrand Richards
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="Lorenzo Snow" src="../images/o-z/snow,lorenzo.jpeg" title="Lorenzo Snow" ></a>
-        <span class="prophet">
-        Lorenzo Snow
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="Lyman E. Johnson" src="../images/h-n/johnson,lyman-e.jpeg" title="Lyman E. Johnson"></a>
-        <span class="prophet">
-        Lyman E. Johnson
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="Lyman Wight" src="../images/o-z/wight,lyman.gif" title="Lyman Wight"></a>
-        <span class="prophet">
-        Lyman Wight
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="M. Russel Ballard" src="../images/a-g/ballard,m-russel.jpeg" title="M. Russel Ballard"></a>
-        <span class="prophet">
-        M. Russel Ballard
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="Marion G. Romney" src="../images/o-z/romney,marion-g.png" title="Marion G. Romney"></a>
-        <span class="prophet">
-        Marion G. Romney
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="Mark E. Petersen" src="../images/o-z/petersen,mark-e.jpeg" title="Mark E. Petersen"></a>
-        <span class="prophet">
-        Mark E. Petersen
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="Marriner W. Merrill" src="../images/h-n/merrill,marriner-w.jpeg" title="Marriner W. Merrill"></a>
-        <span class="prophet">
-        Marriner W. Merrill
-        </span>
-</div>
-<div class="prophet">
-        <a href="../sermons/a-g/ash-marv-j-sermon.html"><img alt="Marvin J. Ashton" src="../images/a-g/ashton,marvin-j.jpeg" title="Marvin J. Ashton"></a>
-        <span class="prophet">
-        Marvin J. Ashton
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="Matthew Cowley" src="../images/a-g/cowley,matthew.jpeg" title="Matthew Cowley"></a>
-        <span class="prophet">
-        Matthew Cowley
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="Matthias F Cowley" src="../images/a-g/cowley,matthias-f.jpeg" title="Matthias F Cowley"></a>
-        <span class="prophet">
-        Matthias F Cowley
-        </span>
-</div>
-<div class="prophet">
-        <a href="../sermons/a-g/bal-mel-j-sermon.html"><img alt="Melvin J. Ballard" src="../images/a-g/ballard,melvin-j.jpeg" title="Melvin J. Ballard"></a>
-        <span class="prophet">
-        Melvin J. Ballard
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="Moses Thatcher" src="../images/o-z/thatcher,moses.jpeg" title="Moses Thatcher"></a>
-        <span class="prophet">
-        Moses Thatcher
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="Nathan E. Tanner" src="../images/o-z/tanner,nathan-eldon.jpeg" title="Nathan E. Tanner"></a>
-        <span class="prophet">
-        Nathan E. Tanner
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="Neil A. Maxwell" src="../images/h-n/maxwell,neil-a.jpeg" title="Neil A. Maxwell"></a>
-        <span class="prophet">
-        Neil A. Maxwell
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="Oliver Cowdery" src="../images/a-g/cowdery,oliver.jpeg" title="Oliver Cowdery"></a>
-        <span class="prophet">
+<div class="prophet" data-role="first-presidency">
+        <a href=""><img alt="Oliver Cowdery" src="../media/images/prophets/oliver-cowdery/olivercowderydaugerrotype.jpg" title="Oliver Cowdery"></a>
+        <span>
         Oliver Cowdery
+        <br>
+        Born:
+        <br>
+        October 3, 1806
         </span>
 </div>
-<div class="prophet">
-        <a href=""><img alt="Orson Hyde" src="../images/h-n/hyde,orson.jpeg" title="Orson Hyde"></a>
-        <span class="prophet">
-        Orson Hyde
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="Orson Pratt" src="../images/o-z/pratt,orson.jpg" title="Orson Pratt"></a>
-        <span class="prophet">
-        Orson Pratt
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="Orson F. Whitney" src="../images/o-z/whitney,orson-f.jpeg" title="Orson F. Whitney"></a>
-        <span class="prophet">
-        Orson F. Whitney
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="Parley P. Pratt" src="../images/o-z/pratt-parley-p.PNG" title="Parley P. Pratt"></a>
-        <span class="prophet">
-        Parley P. Pratt
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="Reed Smoot" src="../images/o-z/smoot,reed.jpeg" title="Reed Smoot"></a>
-        <span class="prophet">
-        Reed Smoot
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="Richard G. Scott" src="../images/o-z/scott,richard-g.jpeg" title="Richard G. Scott"></a>
-        <span class="prophet">
-        Richard G. Scott
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="Richard L. Evans" src="../images/a-g/evans,richard-l.jpeg" title="Richard L. Evans"></a>
-        <span class="prophet">
-        Richard L. Evans
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="Richard R. Lyman" src="../images/h-n/lyman,richard-r.jpeg" title="Richard R. Lyman"></a>
-        <span class="prophet">
-        Richard R. Lyman
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="Robert D. Hales" src="../images/h-n/hales,robert-d.jpeg" title="Robert D. Hales"></a>
-        <span class="prophet">
-        Robert D. Hales
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="Rudger Clawson" src="../images/a-g/clawson,rudger.gif" title="Rudger Clawson"></a>
-        <span class="prophet">
-        Rudger Clawson
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="Russel M. Nelson" src="../images/h-n/nelson,russel-m.jpeg" title="Russel M. Nelson" ></a>
-        <span class="prophet">
-        Russel M. Nelson
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="Sidney Rigdon" src="../images/o-z/rigdon,sidney.png" title="Sidney Rigdon"></a>
-        <span class="prophet">
+        <h2 id="1830">1780</h2>
+<div class="prophet" data-role="first-presidency">
+        <a href=""><img alt="Sidney Rigdon" src="../media/images/prophets/sidney-rigdon/rigdon-1873.jpg" title="Sidney Rigdon"></a>
+        <span>
         Sidney Rigdon
+        <br>
+        Born:
+        <br>
+        February 19, 1793
         </span>
 </div>
-<div class="prophet">
-        <a href=""><img alt="Spencer W. Kimball" src="../images/h-n/kimball,spencer-w.jpeg" title="Spencer W. Kimball" ></a>
-        <span class="prophet">
-        Spencer W. Kimball
+<div class="prophet" data-role="apostle first-presidency">
+        <a href=""><img alt="Frederick G. William" src="../media/images/prophets/frederick-g-william/frederick-g-williams-portrait.jpg" title="Frederick G. William"></a>
+        <span>
+        Frederick G. William
+        <br>
+        Born:
+        <br>
+        October 28, 1787
         </span>
 </div>
-<div class="prophet">
-        <a href=""><img alt="Stephen L Richards" src="../images/o-z/richards,stephen-l.jpeg" title="Stephen L Richards"></a>
-        <span class="prophet">
-        Stephen L Richards
+<div class="prophet" data-role="patriarch first-presidency">
+        <a href=""><img alt="Joseph Smith Sr." src="../media/images/prophets/joseph-smith-sr/joseph-smith-sr.jpg" title="Joseph Smith Sr."></a>
+        <span>
+        Joseph Smith Sr.
+        <br>
+        Born:
+        <br>
+        July 12, 1771
         </span>
 </div>
-<div class="prophet">
-        <a href=""><img alt="Sylvester Q. Cannon" src="../images/a-g/cannon,sylvester-q.JPG" title="Sylvester Q. Cannon"></a>
-        <span class="prophet">
-        Sylvester Q. Cannon
+<div class="prophet" data-role="apostle">
+        <a href=""><img alt="Thomas B. Marsh" src="../media/images/prophets/thomas-b-marsh/thomas-b-marsh-wikipedia.jpg" title="Thomas B. Marsh"></a>
+        <span>
+        Thomas B. Marsh
+        <br>
+        Born:
+        <br>
+        November 1, 1800
         </span>
 </div>
-<div class="prophet">
-        <a href=""><img alt="Thorpe B. Isaacson" src="../images/h-n/isaacson,thorpe-b.jpeg" title="Thorpe B. Isaacson"></a>
-        <span class="prophet">
-        Thorpe B. Isaacson
+<div class="prophet" data-role="apostle">
+        <a href=""><img alt="David W. Patten" src="../media/images/prophets/david-w-patten/David-Wyman-Patten-church-website-1.jpg" title="David W. Patten"></a>
+        <span>
+        David W. Patten
+        <br>
+        Born:
+        <br>
+        November 14, 1799
         </span>
 </div>
-<div class="prophet">
-        <a href=""><img alt="Thomas S. Monson" src="../images/h-n/monson,thomas-s.jpeg" title="Thomas S. Monson" ></a>
-        <span class="prophet">
-        Thomas S. Monson
+<div class="prophet" data-role="president first-presidency apostle">
+        <a href=""><img alt="Brigham Young" src="../media/images/prophets/brigham-young/brigham-young-1855.jpg" title="Brigham Young" ></a>
+        <span>
+        Brigham Young
+        <br>
+        Born:
+        <br>
+        June 1, 1801
         </span>
 </div>
-<div class="prophet">
-        <a href=""><img alt="Tom L. Perry" src="../images/o-z/perry,tom-l.jpeg" title="Tom L. Perry"></a>
-        <span class="prophet">
-        Tom L. Perry
+<div class="prophet" data-role="apostle first-presidency">
+        <a href=""><img alt="Heber C. Kimball" src="../media/images/prophets/heber-c-kimball/heber-c-kimball-portrait.jpg" title="Heber C. Kimball"></a>
+        <span>
+        Heber C. Kimball
+        <br>
+        Born:
+        <br>
+        June 14, 1801
         </span>
 </div>
-<div class="prophet">
-        <a href=""><img alt="Uncle John" src="../images/o-z/smith,john-unclejohn.jpeg" title="Uncle John"></a>
-        <span class="prophet">
-        Uncle John
+<div class="prophet" data-role="apostle">
+        <a href=""><img alt="Orson Hyde" src="../media/images/prophets/orson-hyde/orson-hydedaguerrotype.jpg" title="Orson Hyde"></a>
+        <span>
+        Orson Hyde
+        <br>
+        Born:
+        <br>
+        January 8, 1805
         </span>
 </div>
-<div class="prophet">
-        <a href=""><img alt="Wilford Woodruff" src="../images/o-z/woodruff,wilford.jpeg" title="Wilford Woodruff" ></a>
-        <span class="prophet">
-        Wilford Woodruff
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="Willard Richards" src="../images/o-z/richards,willard.jpeg" title="Willard Richards"></a>
-        <span class="prophet">
-        Willard Richards
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="William B. Smith" src="../images/o-z/smith,william-b.gif" title="William B. Smith"></a>
-        <span class="prophet">
-        William B. Smith
-        </span>
-</div>
-<div class="prophet">
-        <a href=""><img alt="William E. McClellin" src="../images/h-n/mcclellin,william-m.gif" title="William E. McClellin"></a>
-        <span class="prophet">
+<div class="prophet" data-role="apostle">
+        <a href=""><img alt="William E. McClellin" src="../media/images/prophets/william-e-mcclellin/william-e-mcclellin.jpg" title="William E. McClellin"></a>
+        <span>
         William E. McClellin
+        <br>
+        Born:
+        <br>
+        January 18, 1806
         </span>
 </div>
-<div class="prophet">
-        <a href=""><img alt="William Law" src="../images/h-n/law,william.jpeg" title="William Law"></a>
-        <span class="prophet">
+<div class="prophet" data-role="apostle">
+        <a href=""><img alt="Parley P. Pratt" src="../media/images/prophets/parley-p-pratt/parley-p-pratt-1835.jpg" title="Parley P. Pratt"></a>
+        <span>
+        Parley P. Pratt
+        <br>
+        Born:
+        <br>
+        April 12, 1807
+        </span>
+</div>
+<div class="prophet" data-role="apostle">
+        <a href=""><img alt="Luke S. Johnson" src="../media/images/prophets/luke-s-johnson/luke-s-johnson-painting.jpg" title="Luke S. Johnson"></a>
+        <span>
+        Luke S. Johnson
+        <br>
+        Born:
+        <br>
+        November 3, 1807
+        </span>
+</div>
+<div class="prophet" data-role="apostle">
+        <a href=""><img alt="William B. Smith" src="../media/images/prophets/william-b-smith/william-b-smith-photo.jpg" title="William B. Smith"></a>
+        <span>
+        William B. Smith
+        <br>
+        Born:
+        <br>
+        March 13, 1811
+        </span>
+</div>
+<div class="prophet" data-role="apostle">
+        <a href=""><img alt="Orson Pratt" src="../media/images/prophets/orson-pratt/orson-pratt-1851.png" title="Orson Pratt"></a>
+        <span>
+        Orson Pratt
+        <br>
+        Born:
+        <br>
+        September 19, 1811
+        </span>
+</div>
+<div class="prophet" data-role="apostle">
+        <a href=""><img alt="John F. Boynton" src="../media/images/prophets/john-f-boynton/wikipedia.jpg" title="John F. Boynton"></a>
+        <span>
+        John F. Boynton
+        <br>
+        Born:
+        <br>
+        September 20, 1811
+        </span>
+</div>
+<div class="prophet" data-role="apostle">
+        <a href=""><img alt="Lyman E. Johnson" src="../media/images/prophets/lyman-e-johnson/lyman-e-johnson.jpg" title="Lyman E. Johnson"></a>
+        <span>
+        Lyman E. Johnson
+        <br>
+        Born:
+        <br>
+        October 24, 1811
+        </span>
+</div>
+<div class="prophet" data-role="first-presidency">
+        <a href=""><img alt="Hyrum Smith" src="../media/images/prophets/hyrum-smith/filler.jpg" title="Hyrum Smith"></a>
+        <span>
+        Hyrum Smith
+        <br>
+        Born:
+        <br>
+        February 9, 1800
+        </span>
+</div>
+<div class="prophet" data-role="apostle first-presidency president">
+        <a href="biographies/john-taylor-bio.html"><img alt="John Taylor" src="../media/images/prophets/john-taylor/JohnTaylor2.jpg" title="John Taylor" ></a>
+        <span>
+        John Taylor
+        <br>
+        Born:
+        <br>
+        November 1, 1808
+        </span>
+</div>
+<div class="prophet" data-role="apostle">
+        <a href=""><img alt="John E. Page" src="../media/images/prophets/john-e-page/fillerimage.jpg" title="John E. Page"></a>
+        <span>
+        John E. Page
+        <br>
+        Born:
+        <br>
+        February 25, 1799
+        </span>
+</div>
+<div class="prophet" data-role="apostle first-presidency president">
+        <a href=""><img alt="Wilford Woodruff" src="../media/images/prophets/wilford-woodruff/Wilford_Woodruff_2.jpg" title="Wilford Woodruff" ></a>
+        <span>
+        Wilford Woodruff
+        <br>
+        Born:
+        <br>
+        March 1, 1807
+        </span>
+</div>
+<div class="prophet" data-role="apostle first-presidency">
+        <a href=""><img alt="George A. Smith" src="../media/images/prophets/george-a-smith/george-a-smith-byu.jpg" title="George A. Smith"></a>
+        <span>
+        George A. Smith
+        <br>
+        Born:
+        <br>
+        June 26, 1817
+        </span>
+</div>
+        <h2 id="1840">1790</h2>
+<div class="prophet" data-role="apostle first-presidency">
+        <a href=""><img alt="Willard Richards" src="../media/images/prophets/willard-richards/willard-richards.jpg" title="Willard Richards"></a>
+        <span>
+        Willard Richards
+        <br>
+        Ordained Apostle:
+        <br>
+        April 1840
+        </span>
+</div>
+<div class="prophet" data-role="apostle first-presidency">
+        <a href=""><img alt="William Law" src="../media/images/prophets/william-law/william-law.jpg" title="William Law"></a>
+        <span>
         William Law
+        <br>
+        Ordained 2nd Counselor:
+        <br>
+        Jan 1841
         </span>
 </div>
+<div class="prophet" data-role="first-presidency">
+        <a href=""><img alt="John C. Bennett" src="../media/images/prophets/john-c-bennett/wikipedia.jpg" title="John C. Bennett"></a>
+        <span>
+        John C. Bennett
+        <br>
+        Ordained Ass't Pres't:
+        <br>
+        April 1841
+        </span>
+</div>
+<div class="prophet" data-role="apostle">
+        <a href=""><img alt="Lyman Wight" src="../media/images/prophets/lyman-wight/lyman-wight.jpg" title="Lyman Wight"></a>
+        <span>
+        Lyman Wight
+        <br>
+        Ordained Apostle:
+        <br>
+        April 1841
+        </span>
+</div>
+<div class="prophet" data-role="apostle first-presidency">
+        <a href="sermons/amasa-m-lyman/amasa-m-lyman-sermons.html"><img alt="Amasa M. Lyman" src="../media/images/prophets/amasa-m-lyman/amasa-m-lyman-portrait.png" title="Amasa M. Lyman"></a>
+        <span>
+        Amasa M. Lyman
+        <br>
+        Ordained Apostle:
+        <br>
+        Aug 1842
+        </span>
+</div>
+<div class="prophet" data-role="apostle">
+        <a href="sermons/ezra-t-benson/ezra-t-benson-teachings.html"><img alt="Ezra T. Benson" src="../media/images/prophets/ezra-t-benson/filler.jpg" title="Ezra T. Benson"></a>
+        <span>
+        Ezra T. Benson
+        <br>
+        Ordained Apostle:
+        <br>
+        July 1846
+        </span>
+</div>
+<div class="prophet" data-role="patriarch">
+        <a href=""><img alt="Uncle John" src="../media/images/prophets/john-smith-unclejohn/john-smith-fourthpatriarch.jpg" title="Uncle John"></a>
+        <span>
+        Uncle John
+        <br>
+        Ordained Patriarch:
+        <br>
+        Jan 1849
+        </span>
+</div>
+<div class="prophet" data-role="apostle">
+        <a href=""><img alt="Charles C. Rich" src="../media/images/prophets/charles-c-rich/charles-c-rich-1880.jpg" title="Charles C. Rich"></a>
+        <span>
+        Charles C. Rich
+        <br>
+        Ordained Apostle:
+        <br>
+        Feb 1849
+        </span>
+</div>
+<div class="prophet" data-role="apostle first-presidency president">
+        <a href=""><img alt="Lorenzo Snow" src="../media/images/prophets/lorenzo-snow/lorenzo-snow.jpg" title="Lorenzo Snow" ></a>
+        <span>
+        Lorenzo Snow
+        <br>
+        Ordained Apostle:
+        <br>
+        Feb 1849
+        </span>
+</div>
+<div class="prophet" data-role="apostle">
+        <a href=""><img alt="Erastus Snow" src="../media/images/prophets/erastus-snow/filler.jpg" title="Erastus Snow"></a>
+        <span>
+        Erastus Snow
+        <br>
+        Ordained Apostle:
+        <br>
+        Feb 1849
+        </span>
+</div>
+<div class="prophet" data-role="apostle">
+        <a href="sermons/franklin-d-richards/franklin-d-richards-teachings.html"><img alt="Franklin D. Richards" src="../media/images/prophets/franklin-d-richards/filler.jpg" title="Franklin D. Richards"></a>
+        <span>
+        Franklin D. Richards
+        <br>
+        Ordained Apostle:
+        <br>
+        Feb 1849
+        </span>
+</div>
+        <h2 id="1850">1800</h2>
+<div class="prophet" data-role="apostle first-presidency">
+        <a href="sermons/jebediah-m-grant/jebediah-m-grant-teachings.html"><img alt="Jebediah M. Grant" src="../media/images/prophets/jebediah-m-grant/filler-image.gif" title="Jebediah M. Grant"></a>
+        <span>
+        Jebediah M. Grant
+        <br>
+        Ordained 2nd Counselor:
+        <br>
+        April 1854
+        </span>
+</div>
+<div class="prophet" data-role="patriarch">
+        <a href=""><img src="../media/images/prophets/john-smith-patriarch/john-smith-wikipedia-patriarch.jpg" alt="John Smith" title="John Smith"></a>
+        <span>
+        John Smith
+        <br>
+        Ordained a Patriarch:
+        <br>
+        Feb 1855
+        </span>
+</div>
+<div class="prophet" data-role="apostle first-presidency">
+        <a href="sermons/daniel-h-wells/daniel-h-wells-teachings.html"><img alt="Daniel H. Wells" src="../media/images/prophets/daniel-h-wells/daniel-h-wells-1904.jpg" title="Daniel H. Wells"></a>
+        <span>
+        Daniel H. Wells
+        <br>
+        Ordained 2nd Counselor:
+        <br>
+        Jan 1857
+        </span>
+</div>
+        <h2 id="1860">1810</h2>
+<div class="prophet" data-role="apostle first-presidency">
+        <a href=""><img alt="George Q. Cannon" src="../media/images/prophets/george-q-cannon/george-q-cannon-1870-1880.jpg" title="George Q. Cannon"></a>
+        <span>
+        George Q. Cannon
+        <br>
+        Ordained Apostle:
+        <br>
+        Aug 1860
+        </span>
+</div>
+<div class="prophet" data-role="apostle first-presidency president">
+        <a href=""><img alt="Joseph F. Smith" src="../media/images/prophets/joseph-f-smith/Joseph-F-Smith-mormon.jpg" title="Joseph F. Smith" ></a>
+        <span>
+        Joseph F. Smith
+        <br>
+        Ordained Counselor:
+        <br>
+        July 1866
+        </span>
+</div>
+<div class="prophet" data-role="apostle first-presidency">
+        <a href=""><img alt="Brigham Young Jr." src="../media/images/prophets/brigham-young-jr/brigham-youngjr-portrait.jpg" title="Brigham Young Jr."></a>
+        <span>
+        Brigham Young Jr.
+        <br>
+        Ordained Apostle:
+        <br>
+        Oct 1868
+        </span>
+</div>
+        <h2 id="1870">1820</h2>
+<div class="prophet" data-role="apostle first-presidency">
+        <a href="sermons/albert-carrington/albert-carrington-sermons.html"><img alt="Albert Carrington" src="../media/images/prophets/albert-carrington/albert-carrington-1866.jpg" title="Albert Carrington"></a>
+        <span>
+        Albert Carrington
+        <br>
+        Ordained Apostle:
+        <br>
+        July 1870
+        </span>
+</div>
+<div class="prophet" data-role="apostle">
+        <a href=""><img alt="John W. Young" src="../media/images/prophets/john-w-young/John_W_Young.gif" title="John W. Young"></a>
+        <span>
+        John W. Young
+        <br>
+        Ordained Counselor:
+        <br>
+        June 1873
+        </span>
+</div>
+<div class="prophet" data-role="apostle">
+        <a href=""><img alt="Moses Thatcher" src="../media/images/prophets/moses-thatcher/moses-thatcher-placeholder.jpg" title="Moses Thatcher"></a>
+        <span>
+        Moses Thatcher
+        <br>
+        Ordained Apostle:
+        <br>
+        April 1879
+        </span>
+</div>
+        <h2 id="1880">1880</h2>
+<div class="prophet" data-role="apostle">
+        <a href=""><img alt="Francis M. Lyman" src="../media/images/prophets/francis-m-lyman/francis-m-lyman-1917.jpg" title="Francis M. Lyman"></a>
+        <span>
+        Francis M. Lyman
+        <br>
+        Ordained Apostle:
+        <br>
+        Oct 1880
+        </span>
+</div>
+<div class="prophet" data-role="apostle first-presidency">
+        <a href=""><img alt="John H. Smith" src="../media/images/prophets/john-h-smith/john-h-smith-wikipedia.jpg" title="John H. Smith"></a>
+        <span>
+        John H. Smith
+        <br>
+        Ordained Apostle:
+        <br>
+        Oct 1880
+        </span>
+</div>
+<div class="prophet" data-role="apostle">
+        <a href=""><img alt="George Teasdale" src="../media/images/prophets/george-teasdale/filler.jpg" title="George Teasdale"></a>
+        <span>
+        George Teasdale
+        <br>
+        Ordained Apostle:
+        <br>
+        Oct 1882
+        </span>
+</div>
+<div class="prophet" data-role="apostle first-presidency president">
+        <a href=""><img alt="Heber J. Grant" src="../media/images/prophets/heber-j-grant/heber-j-grant-1880s.jpg" title="Heber J. Grant" ></a>
+        <span>
+        Heber J. Grant
+        <br>
+        Ordained Apostle:
+        <br>
+        Oct 1882
+        </span>
+</div>
+<div class="prophet" data-role="apostle">
+        <a href=""><img alt="John W. Taylor" src="../media/images/prophets/john-w-taylor/Johnwtaylor.gif" title="John W. Taylor"></a>
+        <span>
+        John W. Taylor
+        <br>
+        Ordained Apostle:
+        <br>
+        April 1884
+        </span>
+</div>
+<div class="prophet" data-role="apostle">
+        <a href=""><img alt="Marriner W. Merrill" src="../media/images/prophets/marriner-w-merrill/marriner-w-merrill.jpg" title="Marriner W. Merrill"></a>
+        <span>
+        Marriner W. Merrill
+        <br>
+        Ordained Apostle:
+        <br>
+        Oct 1889
+        </span>
+</div>
+<div class="prophet" data-role="apostle first-presidency">
+        <a href="sermons/anthon-h-lund/anthon-h-lund-sermons.html"><img alt="Anthon H. Lund" src="../media/images/prophets/anthon-h-lund/anthon-h-lund-1905.jpg" title="Anthon H. Lund"></a>
+        <span>
+        Anthon H. Lund
+        <br>
+        Ordained Apostle:
+        <br>
+        Oct 1889
+        </span>
+</div>
+<div class="prophet" data-role="apostle">
+        <a href="sermons/abraham-h-cannon/abraham-h-cannon-sermon.html"><img alt="Abraham H. Cannon" src="../media/images/prophets/abraham-h-cannon/abraham-h-cannon-1895.jpeg" title="Abraham H. Cannon"></a>
+        <span>
+        Abraham H. Cannon
+        <br>
+        Ordained Apostle:
+        <br>
+        Oct 1889
+        </span>
+</div>
+        <h2 id="1890">1890</h2>
+<div class="prophet" data-role="apostle">
+        <a href=""><img alt="Matthias F Cowley" src="../media/images/prophets/matthias-f-cowley/mattias-f-cowley-placeholder.jpg" title="Matthias F Cowley"></a>
+        <span>
+        Matthias F Cowley
+        <br>
+        Ordained Apostle:
+        <br>
+        Oct 1897
+        </span>
+</div>
+<div class="prophet" data-role="apostle">
+        <a href="sermons/abraham-o-woodruff/abraham-o-woodruff-sermon.html"><img alt="Abraham O. Woodruff" src="../media/images/prophets/abraham-o-woodruff/abraham-o-woodruff-1904.jpg" title="Abraham O. Woodruff"></a>
+        <span>
+        Abraham O. Woodruff
+        <br>
+        Ordained Apostle:
+        <br>
+        Oct 1897
+        </span>
+</div>
+<div class="prophet" data-role="apostle first-presidency">
+        <a href=""><img alt="Rudger Clawson" src="../media/images/prophets/rudger-clawson/rudger-clawson-placeholder.jpg" title="Rudger Clawson"></a>
+        <span>
+        Rudger Clawson
+        <br>
+        Ordained Apostle:
+        <br>
+        Oct 1898
+        </span>
+</div>
+        <h2 id="1900">1900</h2>
+<div class="prophet" data-role="apostle">
+        <a href=""><img alt="Reed Smoot" src="../media/images/prophets/reed-smoot/senator-reed-smoot-placeholder.jpg" title="Reed Smoot"></a>
+        <span>
+        Reed Smoot
+        <br>
+        Ordained Apostle:
+        <br>
+        April 1900
+        </span>
+</div>
+<div class="prophet" data-role="first-presidency">
+        <a href=""><img alt="John R. Winder" src="../media/images/prophets/john-r-winder/john-r-winder-1901-wikipedia.jpg" title="John R. Winder"></a>
+        <span>
+        John R. Winder
+        <br>
+        Ordained Counselor:
+        <br>
+        Oct 1901
+        </span>
+</div>
+<div class="prophet" data-role="apostle">
+        <a href=""><img alt="Hyrum M. Smith" src="../media/images/prophets/hyrum-m-smith/hyrum-m-smith-1926.jpg" title="Hyrum M. Smith"></a>
+        <span>
+        Hyrum M. Smith
+        <br>
+        Ordained Apostle:
+        <br>
+        Oct 1901
+        </span>
+</div>
+<div class="prophet" data-role="apostle first-presidency president">
+        <a href="sermons/george-albert-smith/george-albert-smith-teachings.html"><img alt="George Albert Smith" src="../media/images/prophets/george-albert-smith/george-albert-smith-1939.jpg" title="George Albert Smith" ></a>
+        <span>
+        George Albert Smith
+        <br>
+        Ordained Apostle:
+        <br>
+        Oct 1903
+        </span>
+</div>
+<div class="prophet" data-role="apostle first-presidency">
+        <a href=""><img alt="Charles W. Penrose" src="../media/images/prophets/charles-w-penrose/charles-w-penrose-first-presidency.jpg" title="Charles W. Penrose"></a>
+        <span>
+        Charles W. Penrose
+        <br>
+        Ordained Apostle:
+        <br>
+        July 1904
+        </span>
+</div>
+<div class="prophet" data-role="apostle">
+        <a href=""><img alt="George F. Richards" src="../media/images/prophets/george-f-richards/george-f-richards-1915.jpg" title="George F. Richards"></a>
+        <span>
+        George F. Richards
+        <br>
+        Ordained Apostle:
+        <br>
+        April 1906
+        </span>
+</div>
+<div class="prophet" data-role="apostle">
+        <a href=""><img alt="Orson F. Whitney" src="../media/images/prophets/orson-f-whitney/orson-f-whitney.jpg" title="Orson F. Whitney"></a>
+        <span>
+        Orson F. Whitney
+        <br>
+        Ordained Apostle:
+        <br>
+        April 1906
+        </span>
+</div>
+<div class="prophet" data-role="apostle first-presidency president">
+        <a href=""><img alt="David O. McKay" src="../media/images/prophets/david-o-mckay/david-o-mckay-1925.jpg" title="David O. McKay" ></a>
+        <span>
+        David O. McKay
+        <br>
+        Ordained Apostle:
+        <br>
+        April 1906
+        </span>
+</div>
+<div class="prophet" data-role="apostle first-presidency">
+        <a href="sermons/anthony-w-ivins/anthony-w-ivins-sermons.html"><img alt="Anthony W. Ivins" src="../media/images/prophets/anthony-w-ivins/anthony-w-ivins-1921.jpg" title="Anthony W. Ivins"></a>
+        <span>
+        Anthony W. Ivins
+        <br>
+        Ordained Apostle:
+        <br>
+        Oct 1907
+        </span>
+</div>
+        <h2 id="1910">1910</h2>
+<div class="prophet" data-role="apostle first-presidency president">
+        <a href=""><img alt="Joseph Fielding Smith" src="../media/images/prophets/joseph-fielding-smith/joseph-fielding-smith1943circa.jpg" title="Joseph Fielding Smith" ></a>
+        <span>
+        Joseph Fielding Smith
+        <br>
+        Ordained Apostle:
+        <br>
+        April 1910
+        </span>
+</div>
+<div class="prophet" data-role="apostle">
+        <a href=""><img alt="James E. Talmage" src="../media/images/prophets/james-e-talmage/filler-image.jpg" title="James E. Talmage"></a>
+        <span>
+        James E. Talmage
+        <br>
+        Ordained Apostle:
+        <br>
+        Dec 1911
+        </span>
+</div>
+<div class="prophet" data-role="patriarch">
+        <a href=""><img src="../media/images/prophets/hyrum-g-smith/hyrum-g-smith-1932.jpg" alt="Hyrum G. Smith" title="Hyrum G. Smith"></a>
+        <span>
+                Hyrum G. Smith
+                <br>
+                Ordained a Patriarch:
+                <br>
+                May 1912
+        </span>
+</div>
+<div class="prophet" data-role="apostle first-presidency">
+        <a href=""><img alt="Stephen L Richards" src="../media/images/prophets/stephen-l-richards/richards1920.jpg" title="Stephen L Richards"></a>
+        <span>
+        Stephen L Richards
+        <br>
+        Ordained Apostle:
+        <br>
+        Jan 1917
+        </span>
+</div>
+<div class="prophet" data-role="apostle">
+        <a href=""><img alt="Richard R. Lyman" src="../media/images/prophets/richard-r-lyman/richard-r-lyman1939.jpg" title="Richard R. Lyman"></a>
+        <span>
+        Richard R. Lyman
+        <br>
+        Ordained Apostle:
+        <br>
+        April 1918
+        </span>
+</div>
+<div class="prophet" data-role="apostle">
+        <a href="../sermons/a-g/bal-mel-j-sermon.html"><img alt="Melvin J. Ballard" src="../media/images/prophets/melvin-j-ballard/melvin-j-ballard1919.jpg" title="Melvin J. Ballard"></a>
+        <span>
+        Melvin J. Ballard
+        <br>
+        Ordained and Apostle:
+        <br>
+        Jan 1919
+        </span>
+</div>
+        <h2 id="1920">1920</h2>
+<div class="prophet" data-role="apostle">
+        <a href=""><img alt="John A. Widtsoe" src="../media/images/prophets/john-a-widtsoe/john-a-widtsoe-circa1920.jpg" title="John A. Widtsoe"></a>
+        <span>
+        John A. Widtsoe
+        <br>
+        Ordained an Apostle:
+        <br>
+        March 1921
+        </span>
+</div>
+<div class="prophet" data-role="first-presidency">
+        <a href=""><img alt="Charles W. Nibley" src="../media/images/prophets/charles-w-nibley/charles-w-nibley-first-presidency.jpg" title="Charles W. Nibley"></a>
+        <span>
+        Charles W. Nibley
+        <br>
+        Ordained a Counselor:
+        <br>
+        May 1925
+        </span>
+</div>
+        <h2 id="1930">1930</h2>
+<div class="prophet" data-role="apostle">
+        <a href=""><img alt="Joseph F. Merrill" src="../media/images/prophets/joseph-f-merrill/Joseph-F.-Merrill.webp" title="Joseph F. Merrill"></a>
+        <span>
+        Joseph F. Merrill
+        <br>
+        Ordained an Apostle:
+        <br>
+        Oct 1931
+        </span>
+</div>
+<div class="prophet" data-role="apostle first-presidency">
+        <a href=""><img alt="J. Reuben Clark Jr." src="../media/images/prophets/j-reuben-clark-jr/j-reuben-clark-jr-circa1914-wikipedia.jpg" title="J. Reuben Clark Jr."></a>
+        <span>
+        J. Reuben Clark Jr.
+        <br>
+        Ordained Second Counselor:
+        <br>
+        April 1933
+        </span>
+</div>
+<div class="prophet" data-role="apostle">
+        <a href=""><img alt="Charles A. Callis" src="../media/images/prophets/charles-a-callis/charles-a-callis-1939.jpg" title="Charles A. Callis"></a>
+        <span>
+        Charles A. Callis
+        <br>
+        Ordained an Apostle:
+        <br>
+        Oct 1933
+        </span>
+</div>
+<div class="prophet" data-role="apostle">
+        <a href="sermons/alonzo-a-hinckley/alonzo-a-hinckley-sermons.html"><img alt="Alonzo A. Hinckley" src="../media/images/prophets/alonzo-a-hinckley/alonzo-a-hinckley-1934.jpg" title="Alonzo A. Hinckley"></a>
+        <span>
+        Alonzo A. Hinckley
+        <br>
+        Ordained an Apostle:
+        <br>
+        Oct 1934
+        </span>
+</div>
+<div class="prophet" data-role="apostle">
+        <a href="sermons/albert-e-bowen/albert-e-bowen-sermons.html"><img alt="Albert E. Bowen" src="../media/images/prophets/albert-e-bowen/albert-e-bowen-1920.jpg" title="Albert E. Bowen"></a>
+        <span>
+        Albert E. Bowen
+        <br>
+        Ordained an Apostle:
+        <br>
+        April 1937
+        </span>
+</div>
+<div class="prophet" data-role="apostle">
+        <a href=""><img alt="Sylvester Q. Cannon" src="../media/images/prophets/sylvester-q-cannon/sylvester-q-cannon.png" title="Sylvester Q. Cannon"></a>
+        <span>
+        Sylvester Q. Cannon
+        <br>
+        Ordained an Apostle:
+        <br>
+        Oct 1939
+        </span>
+</div>
+        <h2 id="1940">1940</h2>
+<div class="prophet" data-role="apostle first-presidency president">
+        <a href="sermons/harold-b-lee/harold-b-lee-teachings.html"><img alt="Harold B. Lee" src="../media/images/prophets/harold-b-lee/harold-b-lee-1944.jpg" title="Harold B. Lee" ></a>
+        <span>
+        Harold B. Lee
+        <br>
+        Ordained an Apostle:
+        <br>
+        April 1941
+        </span>
+</div>
+<div class="prophet" data-role="patriarch">
+        <a href=""><img src="../media/images/prophets/joseph-f-smith-second/Joseph_Fielding_Smith_(presiding_patriarch).jpg" alt="Joseph F. Smith II" title="Joseph F. Smith II"></a>
+        <span>
+        Joseph F. Smith II
+        <br>
+        Ordained a Patriarch:
+        <br>
+        Sept 1942
+        </span>
+</div>
+<div class="prophet" data-role="apostle first-presidency president">
+        <a href=""><img alt="Spencer W. Kimball" src="../media/images/prophets/spencer-w-kimball/spencer-w-kimballplaceholder.png" title="Spencer W. Kimball" ></a>
+        <span>
+        Spencer W. Kimball
+        <br>
+        Ordained an Apostle:
+        <br>
+        Oct 1943
+        </span>
+</div>
+<div class="prophet" data-role="apostle first-presidency president">
+        <a href=""><img alt="Ezra Taft Benson" src="../media/images/prophets/ezra-taft-benson/Ezra_Taft_Benson.jpg" title="Ezra Taft Benson" ></a>
+        <span>
+        Ezra Taft Benson
+        <br>
+        Ordained an Apostle:
+        <br>
+        Oct 1943
+        </span>
+</div>
+<div class="prophet" data-role="apostle">
+        <a href=""><img alt="Mark E. Petersen" src="../media/images/prophets/mark-e-petersen/mark-e-petersen.jpg" title="Mark E. Petersen"></a>
+        <span>
+        Mark E. Petersen
+        <br>
+        Ordained an Apostle:
+        <br>
+        April 1944
+        </span>
+</div>
+<div class="prophet" data-role="apostle">
+        <a href=""><img alt="Matthew Cowley" src="../media/images/prophets/matthew-cowley/matthew-cowley.jpg" title="Matthew Cowley"></a>
+        <span>
+        Matthew Cowley
+        <br>
+        Ordained an Apostle:
+        <br>
+        Oct 1945
+        </span>
+</div>
+<div class="prophet" data-role="apostle first-presidency">
+        <a href=""><img alt="Henry D. Moyle" src="../media/images/prophets/henry-d-moyle/henry-d-moyle-1961.jpg" title="Henry D. Moyle"></a>
+        <span>
+        Henry D. Moyle
+        <br>
+        Ordained an Apostle:
+        <br>
+        April 1947
+        </span>
+</div>
+<div class="prophet" data-role="patriarch">
+        <a href=""><img src="../media/images/prophets/eldred-g-smith/eldred-g-smith-1957.jpg" alt="Eldred G. Smith" title="Eldred G. Smith"></a>
+        <span>
+        Eldred G. Smith
+        <br>
+        Ordained a Patriarch:
+        <br>
+        April 1947
+        </span>
+</div>
+        <h2 id="1950">1950</h2>
+<div class="prophet" data-role="apostle">
+        <a href=""><img alt="Delbert L. Stapley" src="../media/images/prophets/delbert-l-stapley/delbert-l-stapley-1963.jpg" title="Delbert L. Stapley"></a>
+        <span>
+        Delbert L. Stapley
+        <br>
+        Ordained an Apostle:
+        <br>
+        Oct 1950
+        </span>
+</div>
+<div class="prophet" data-role="apostle first-presidency">
+        <a href=""><img alt="Marion G. Romney" src="../media/images/prophets/marion-g-romney/marion-g-romney.jpg" title="Marion G. Romney"></a>
+        <span>
+        Marion G. Romney
+        <br>
+        Ordained an Apostle:
+        <br>
+        Oct 1951
+        </span>
+</div>
+<div class="prophet" data-role="apostle">
+        <a href=""><img alt="LeGrand Richards" src="../media/images/prophets/legrand-richards/legrand-richards1963.jpg" title="LeGrand Richards"></a>
+        <span>
+        LeGrand Richards
+        <br>
+        Ordained an Apostle:
+        <br>
+        April 1952
+        </span>
+</div>
+<div class="prophet" data-role="apostle">
+        <a href="sermons/adam-s-bennion/adam-s-bennion-sermons.html"><img alt="Adam S. Bennion" src="../media/images/prophets/adam-s-bennion/adam-s-bennion-1953.jpg" title="Adam S. Bennion"></a>
+        <span>
+        Adam S. Bennion
+        <br>
+        Ordained an Apostle:
+        <br>
+        April 1953
+        </span>
+</div>
+<div class="prophet" data-role="apostle">
+        <a href=""><img alt="Richard L. Evans" src="../media/images/prophets/richard-l-evans/richard-l-evans.jpg" title="Richard L. Evans"></a>
+        <span>
+        Richard L. Evans
+        <br>
+        Ordained an Apostle:
+        <br>
+        Oct 1953
+        </span>
+</div>
+<div class="prophet" data-role="apostle">
+        <a href=""><img alt="George Q. Morris" src="../media/images/prophets/george-q-morris/george-q-morris-1962.jpg" title="George Q. Morris"></a>
+        <span>
+        George Q. Morris
+        <br>
+        Ordained an Apostle:
+        <br>
+        April 1954
+        </span>
+</div>
+<div class="prophet" data-role="apostle first-presidency">
+        <a href=""><img alt="Hugh B. Brown" src="../media/images/prophets/hugh-b-brown/filler.jpg" title="Hugh B. Brown"></a>
+        <span>
+        Hugh B. Brown
+        <br>
+        Ordained an Apostle:
+        <br>
+        April 1958
+        </span>
+</div>
+<div class="prophet" data-role="apostle first-presidency president">
+        <a href=""><img alt="Howard W. Hunter" src="../media/images/prophets/howard-w-hunter/howard-w-hunter-1975.jpg" title="Howard W. Hunter" ></a>
+        <span>
+        Howard W. Hunter
+        <br>
+        Ordained an Apostle:
+        <br>
+        Oct 1959
+        </span>
+</div>
+        <h2 id="1960">1960</h2>
+<div class="prophet" data-role="apostle first-presidency president">
+        <a href=""><img alt="Gordon B. Hinckley" src="../media/images/prophets/gordon-b-hinckley/gordon-b-hinckley-1976.jpg" title="Gordon B. Hinckely" ></a>
+        <span>
+        Gordon B. Hinckley
+        <br>
+        Ordained an Apostle:
+        <br>
+        Oct 1961
+        </span>
+</div>
+<div class="prophet" data-role="apostle first-presidency">
+        <a href=""><img alt="Nathan E. Tanner" src="../media/images/prophets/nathan-e-tanner/n-eldon-tanner.jpg" title="Nathan E. Tanner"></a>
+        <span>
+        Nathan E. Tanner
+        <br>
+        Ordained an Apostle:
+        <br>
+        Oct 1962
+        </span>
+</div>
+<div class="prophet" data-role="apostle first-presidency president">
+        <a href=""><img alt="Thomas S. Monson" src="../media/images/prophets/thomas-s-monson/thomas-s-monson.jpg" title="Thomas S. Monson" ></a>
+        <span>
+        Thomas S. Monson
+        <br>
+        Ordained an Apostle:
+        <br>
+        Oct 1963
+        </span>
+</div>
+<div class="prophet" data-role="first-presidency">
+        <a href=""><img src="../media/images/prophets/thorpe-b-isaacson/thorpe-b-isaacson.jpg" alt="Thorpe B. Isaacson" title="Thorpe B. Isaacson"></a>
+        <span>
+        Thorpe B. Isaacson
+        <br>
+        Ordained a Counselor:
+        <br>
+        Oct 1965
+        </span>
+</div>
+<div class="prophet" data-role="first-presidency">
+        <a href=""><img src="../media/images/prophets/alvin-r-dyer/alvin-r-dyer-wikipedia.jpg" alt="Alvin R. Dyer" title="Alvin R. Dyer"></a>
+        <span>
+                Alvin R. Dyer
+                <br>
+                Ordained a Counselor:
+                <br>
+                April 1968
+        </span>
+</div>
+        <h2 id="1970">1970</h2>
+<div class="prophet" data-role="apostle">
+        <a href="sermons/boyd-k-packer/boyd-k-packer-sermons.html"><img alt="Boyd K. Packer" src="../media/images/prophets/boyd-k-packer/boyd-k-packer1961.jpg" title="Boyd K. Packer"></a>
+        <span>
+        Boyd K. Packer
+        <br>
+        Ordained an Apostle:
+        <br>
+        April 1970
+        </span>
+</div>
+<div class="prophet" data-role="apostle">
+        <a href="../sermons/a-g/ash-marv-j-sermon.html"><img alt="Marvin J. Ashton" src="../media/images/prophets/marvin-j-ashton/marvin-j-ashton.jpg" title="Marvin J. Ashton"></a>
+        <span>
+        Marvin J. Ashton
+        <br>
+        Ordained an Apostle:
+        <br>
+        Dec 1971
+        </span>
+</div>
+<div class="prophet" data-role="apostle">
+        <a href=""><img alt="Bruce R. McConkie" src="../media/images/prophets/bruce-r-mcconkie/bruce-r-mcconkie-1976.jpg" title="Bruce R. McConkie"></a>
+        <span>
+        Bruce R. McConkie
+        <br>
+        Ordained an Apostle:
+        <br>
+        Oct 1972
+        </span>
+</div>
+<div class="prophet" data-role="apostle">
+        <a href="sermons/l-tom-perry/l-tom-perry-teachings.html"><img alt="L. Tom Perry" src="../media/images/prophets/l-tom-perry/l-tom-perry.jpg" title="L. Tom Perry"></a>
+        <span>
+        L. Tom Perry
+        <br>
+        Ordained an Apostle:
+        <br>
+        April 1974
+        </span>
+</div>
+<div class="prophet" data-role="apostle">
+        <a href="sermons/david-b-haight/david-b-haight-teachings.html"><img alt="David B. Haight" src="../media/images/prophets/david-b-haight/filler-image-.jpg" title="David B. Haight"></a>
+        <span>
+        David B. Haight
+        <br>
+        Ordained an Apostle:
+        <br>
+        Jan 1976
+        </span>
+</div>
+<div class="prophet" data-role="apostle first-presidency">
+        <a href=""><img alt="James E. Faust" src="../media/images/prophets/james-e-faust/filler-image.jpg" title="James E. Faust"></a>
+        <span>
+        James E. Faust
+        <br>
+        Ordained an Apostle:
+        <br>
+        Oct 1978
+        </span>
+</div>
+        <h2 id="1980">1980</h2>
+<div class="prophet" data-role="apostle">
+        <a href=""><img alt="Neil A. Maxwell" src="../media/images/prophets/neil-a-maxwell/neil-a-maxwell.jpg" title="Neil A. Maxwell"></a>
+        <span>
+        Neil A. Maxwell
+        <br>
+        Ordained an Apostle:
+        <br>
+        July 1981
+        </span>
+</div>
+<div class="prophet" data-role="apostle first-presidency president">
+        <a href=""><img alt="Russell M. Nelson" src="../media/images/prophets/russel-m-nelson/russell-m-nelson.jpg" title="Russell M. Nelson" ></a>
+        <span>
+        Russell M. Nelson
+        <br>
+        Ordained an Apostle:
+        <br>
+        April 1984
+        </span>
+</div>
+<div class="prophet" data-role="apostle">
+        <a href=""><img alt="M. Russel Ballard" src="../media/images/prophets/m-russell-ballard/m-russell-ballard.jpg" title="M. Russel Ballard"></a>
+        <span>
+        M. Russell Ballard
+        <br>
+        Ordained an Apostle:
+        <br>
+        Oct 1985
+        </span>
+</div>
+<div class="prophet" data-role="apostle">
+        <a href=""><img alt="Joseph B. Wirthlin" src="../media/images/prophets/joseph-b-wirthlin/Wirthlin_Joseph-Web-compressor.jpg" title="Joseph B. Wirthlin"></a>
+        <span>
+        Joseph B. Wirthlin
+        <br>
+        Ordained an Apostle:
+        <br>
+        Oct 1986
+        </span>
+</div>
+<div class="prophet" data-role="apostle">
+        <a href=""><img alt="Richard G. Scott" src="../media/images/prophets/richard-g-scott/richard-g-scott.jpg" title="Richard G. Scott"></a>
+        <span>
+        Richard G. Scott
+        <br>
+        Ordained an Apostle:
+        <br>
+        Oct 6, 1988
+        </span>
+</div>
+        <h2 id="1990">1990</h2>
+<div class="prophet" data-role="apostle">
+        <a href=""><img alt="Robert D. Hales" src="../media/images/prophets/robert-d-hales/robert-d-hales.jpg" title="Robert D. Hales"></a>
+        <span>
+        Robert D. Hales
+        <br>
+        Ordained an Apostle:
+        <br>
+        April 1994
+        </span>
+</div>
+<div class="prophet" data-role="apostle">
+        <a href=""><img alt="Jeffery R. Holland" src="../media/images/prophets/jeffery-r-holland/filler-imaage.webp" title="Jeffery R. Holland"></a>
+        <span>
+        Jeffery R. Holland
+        <br>
+        Ordained an Apostle:
+        <br>
+        June 1994
+        </span>
+</div>
+        <h2 id="2000s">2000s</h2>
+        <p>None Yet</p>
+
+
+
+</div>
+</main>
+<script>
+function filterProphets() {
+
+    const selected = [...document.querySelectorAll('input[type="checkbox"]:checked')]
+        .map(box => box.value);
+
+    document.querySelectorAll('.prophet').forEach(prophet => {
+
+        const roles = prophet.dataset.role?.split(" ") || [];
+
+        const show = roles.some(role => selected.includes(role));
+
+        prophet.style.display = show ? "inline-block" : "none";
+    });
+}
+</script>
+<script>
+function searchProphets() {
+    const input = document.getElementById("searchBar").value.toLowerCase();
+    const prophets = document.querySelectorAll(".prophet");
+    const years = document.querySelectorAll("h2");
+
+    // Hide year headings while searching
+    years.forEach(year => {
+        year.style.display = input ? "none" : "block";
+    });
+
+    prophets.forEach(prophet => {
+        const text = prophet.textContent.toLowerCase();
+
+        prophet.style.display = text.includes(input)
+            ? "inline-block"
+            : "none";
+    });
+
+    const visible = [...prophets]
+        .some(prophet => prophet.style.display !== "none");
+
+    document.getElementById("noResults").style.display =
+        visible ? "none" : "block";
+
+    document.getElementById("filters").style.display =
+        visible ? "block" : "none";
+
+    document.getElementById("galleryLink").style.display =
+        visible ? "block" : "none";
+}
+</script>
+<script>
+        function toggleTimeline() {
+    const timeline = document.getElementById("timeline");
+    const button = document.getElementById("timelineButton");
+
+    if (timeline.style.display === "none") {
+        timeline.style.display = "block";
+        button.textContent = "Hide Timeline";
+    } else {
+        timeline.style.display = "none";
+        button.textContent = "Show Timeline";
+    }
+}
+</script>
+
+        <script>
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+}
+</script>
+
     </body>
 </html>
