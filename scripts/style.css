@@ -63,7 +63,8 @@ a:hover{
     }
 }
 .gc{
-    background-color:cornflowerblue;
+    background-color:slategray;
+    color:#18120c;
     a{
         color:black;
     }
@@ -94,13 +95,16 @@ body{
     font-family:'Bookman Old Style', 'Times New Roman', serif;
     text-align:center;
 }
+.biography{
+    background-color:#2a0566;
+}
 .container-flex {
     align-items: center; /* Centers content vertically */
     display: flex; /* Makes the container a flex container */
     justify-content: center; /* Centers content horizontally */
 }
 .first-presidency{
-    background-color:cornflowerblue;
+    background-color:rgb(109, 166, 222);
 }
 .funfact{
     background-color:darkblue;
