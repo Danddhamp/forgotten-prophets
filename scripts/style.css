@@ -11,6 +11,9 @@ a:hover{
     background-color:darkslategrey;
     color:goldenrod;
 }
+.apostle.byu-speeches{
+    background-color: darkblue;
+}
 .hc{
     background-color:lightblue;
     color:black;
@@ -74,6 +77,9 @@ a:hover{
                 color:white;
                 background-size: cover;
                 background-position: center;
+                .sources a{
+                    color:white;
+                }
 }
 .talk-link {
                 display: flex;
@@ -106,6 +112,9 @@ body{
 .first-presidency{
     background-color:rgb(109, 166, 222);
 }
+.first-presidency.byu-speeches{
+    background-color: darkblue;
+}
 .funfact{
     background-color:darkblue;
     font-size: larger;
@@ -133,6 +142,9 @@ img.shadow-filter:hover{
 .president{
     background-color:midnightblue;
     color:slategray;
+}
+.president.byu-speeches{
+    background-color: darkblue;
 }
 .quote{
     color:lightskyblue;
