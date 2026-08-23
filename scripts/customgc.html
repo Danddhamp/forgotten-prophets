@@ -1,45 +1,282 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Custom General Conference</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href=".//style.css">
-        <link rel="icon" type="image/png" href="./favicon/USVA_headstone_emb-11.svg.png">
-    </head>
-    <body>
-        <h1>Custom General Conference for July of 2026</h1>
-        <hr>
-        <h2>First Week Speakers</h2>
-        <h3>First Day</h3>
-        <p><a href="https://youtu.be/SI3t5wNypzY?si=YBHgFtwRCcHPZiL5">We Thank Thee O God For A Prophet</a>(First Hymn)</p>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/SI3t5wNypzY?si=duTXloyXlP3bXaOL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    <p><em>Albert E. Bowen,</em> "Forgive, If You Would be Forgiven"</p>
-        <a href="https://catalog.churchofjesuschrist.org/assets/5cb5ef96-7eec-4e0c-8cf2-4fae088c621e/0/0?lang=eng">Church History Catalog</a>
-        <br>
-        <iframe width="560" height="315" src="https://catalog.churchofjesuschrist.org/assets/5cb5ef96-7eec-4e0c-8cf2-4fae088c621e/0/0?lang=eng" frameborder="0"></iframe>
-        <h3>Second Day</h3>
-        <p><a href="https://www.churchofjesuschrist.org/media/music/songs/o-god-our-help-in-ages-past?crumbs=hymns&order=number&lang=eng">O God, Our Help in Ages Past</a>(Second Hymn)</p>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/jRbk16T_PT4?si=0cskOdnatbIbz7Zk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    <p><em>Boyd K. Packer,</em> "Agency and Control"</p>
-        <a href="https://www.churchofjesuschrist.org/study/general-conference/1983/04/agency-and-control?lang=eng">Churchofjesuschrist.org</a>
-        <h3>Third Day</h3>
-        <p><a href="https://www.churchofjesuschrist.org/media/music/songs/redeemer-of-israel?crumbs=hymns&order=number&lang=eng">Redeemer of Israel</a>(Third Hymn)</p>
-    <p><em>John A. Widtsoe,</em> "Jesus Christ is the Central Figure of the Gospel."</p>
-        <a href="https://catalog.churchofjesuschrist.org/assets/8069a871-bf56-42cb-bd93-5dac8c191bd6/0/0">Church History Catalog</a>
-        <h3>Fourth Day</h3>
-        <p><a href="https://www.churchofjesuschrist.org/media/music/songs/families-can-be-together-forever?crumbs=hymns&order=number&lang=eng">Families Can Be Together Forever</a>(Fourth Hymn)</p>
-    <p><em>Marvin J. Ashton,</em> "Family Communications"</p>
-        <a href="https://www.churchofjesuschrist.org/study/general-conference/1976/04/family-communications?lang=eng">Churchofjesuschrist.org</a>
-        <h3>Fifth Day</h3>
-        <p><a href="https://www.churchofjesuschrist.org/media/music/songs/true-to-the-faith?crumbs=hymns&order=number&lang=eng">True to the Faith</a>(Fifth Hymn)</p>
-    <p><em>Thomas S. Monson,</em> "Dare to Stand Alone"</p>
-        <a href="https://www.churchofjesuschrist.org/study/general-conference/2011/10/dare-to-stand-alone?lang=eng">Churchofjesuschrist.org</a>
-        <h3>Sixth Day</h3>
-    <p><em>Mark E. Petersen,</em> "A People of Sound Judgement"</p>
-        <a href="https://www.churchofjesuschrist.org/study/general-conference/1972/04/a-people-of-sound-judgment?lang=eng">Churchofjesuschrist.org</a>
-        <h3>Seventh Day</h3>
-    <p><em>Howard W. Hunter,</em> "His Final Hours"</p>
-        <a href="https://www.churchofjesuschrist.org/study/general-conference/1974/04/his-final-hours?lang=eng">Churchofjesuschrist.org</a>
-        <hr>
-    </body>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Custom General Conference</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="./style.css">
+<link rel="icon" type="image/png" href="./favicon/USVA_headstone_emb-11.svg.png">
+<style>
+  /* page-specific additions only — everything else comes from style.css */
+  .talk-card{
+      max-width:480px;
+      width:92%;
+      margin:60px auto;
+      padding:30px 25px 35px;
+      border:3px solid whitesmoke;
+      border-radius:10px;
+  }
+
+  .talk-portrait{
+      width:220px;
+      height:220px;
+      object-fit:cover;
+      margin:0 auto 20px;
+  }
+
+  .talk-card h2{
+      font-size:28px;
+      margin:0 0 10px;
+  }
+
+  .talk-card .talk-speaker{
+      font-size:20px;
+      color:goldenrod;
+      margin:0 0 6px;
+  }
+
+  .talk-card .talk-detail{
+      font-size:16px;
+      margin:0 0 4px;
+      opacity:0.85;
+  }
+
+  .talk-card p.talk-source{
+      margin:14px 0 20px;
+  }
+
+  .player-controls{
+      margin-top:10px;
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:8px;
+  }
+
+  audio{
+      width:100%;
+      max-width:400px;
+  }
+
+  #startOverlay{
+      position:fixed;
+      inset:0;
+      background-color:#002E5D;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      z-index:1000;
+  }
+
+  #startOverlay button{
+      font-size:20px;
+      padding:14px 30px;
+  }
+
+  #startOverlay.hidden{
+      display:none;
+  }
+
+  @media (max-width:768px){
+      .talk-portrait{
+          width:42vw;
+          height:42vw;
+      }
+  }
+</style>
+</head>
+<body>
+
+<a href="../index.html" id="homebutton" class="button">Home</a>
+
+<div id="startOverlay">
+  <button id="startBtn">▶ Start Playing</button>
+</div>
+
+<div class="container-flex">
+  <div class="apostle byu-speeches talk-card">
+    <img class="shadow-filter talk-portrait" id="talkImage" src="" alt="Speaker portrait">
+    <h2 id="talkTitle"></h2>
+    <p class="talk-speaker" id="talkSpeaker"></p>
+    <p class="talk-detail" id="talkRole"></p>
+    <p class="talk-detail" id="talkYear"></p>
+    <p class="talk-source"><a id="talkLink" href="#" target="_blank" rel="noopener">BYU Speeches</a></p>
+
+    <audio id="audio" controls></audio>
+
+    <div class="player-controls">
+      <button id="prevBtn">Previous</button>
+      <button id="back15Btn">-15s</button>
+      <button id="forward15Btn">+15s</button>
+      <button id="nextBtn">Next</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const talks = [
+    {
+      image: "../media/images/prophets/george-q-morris/george-q-morris-1962.jpg",
+      audio: "../media/audio/george-q-morris/august-1952-commencement.mp3",
+      title: "August 1952 Commencement",
+      role: "Assistant Quorum of the Twelve",
+      year: "1952",
+      speaker: "George Q. Morris",
+      link: "https://speeches.byu.edu/talks/george-q-morris/august-1952-commencement/"
+    },
+    {
+      image: "../media/images/prophets/george-q-morris/george-q-morris-1962.jpg",
+      audio: "../media/audio/george-q-morris/importance-of-habits.mp3",
+      title: "The Importance of Habits",
+      role: "Assistant Quorum of the Twelve",
+      year: "1953",
+      speaker: "George Q. Morris",
+      link: "https://speeches.byu.edu/talks/george-q-morris/importance-of-habits/"
+    },
+    {
+      image: "../media/images/prophets/george-q-morris/george-q-morris-1962.jpg",
+      audio: "../media/audio/george-q-morris/church-doctrines.mp3",
+      title: "Church Doctrines",
+      role: "Apostle in the Quorum of the Twelve",
+      year: "1955",
+      speaker: "George Q. Morris",
+      link: "https://speeches.byu.edu/talks/george-q-morris/church-doctrines/"
+    },
+    {
+      image: "../media/images/prophets/george-q-morris/george-q-morris-1962.jpg",
+      audio: "../media/audio/george-q-morris/be-the-best-you-know-how.mp3",
+      title: "Be the Best You Know How",
+      role: "Apostle in the Quorum of the Twelve",
+      year: "1957",
+      speaker: "George Q. Morris",
+      link: "https://speeches.byu.edu/talks/george-q-morris/be-the-best-you-know-how/"
+    },
+    {
+      image: "../media/images/prophets/george-q-morris/george-q-morris-1962.jpg",
+      audio: "../media/audio/george-q-morris/a-foundation-of-revealed-truth.mp3",
+      title: "A Foundation of Revealed Truth",
+      role: "Apostle in the Quorum of the Twelve",
+      year: "1957",
+      speaker: "George Q. Morris",
+      link: "https://speeches.byu.edu/talks/george-q-morris/foundation-of-revealed-truth/"
+    },
+    {
+      image: "../media/images/prophets/george-q-morris/george-q-morris-1962.jpg",
+      audio: "../media/audio/george-q-morris/will-you-pass-the-test.mp3",
+      title: "Will You Pass the Test?",
+      role: "Apostle in the Quorum of the Twelve",
+      year: "1958",
+      speaker: "George Q. Morris",
+      link: "https://speeches.byu.edu/talks/george-q-morris/will-pass-the-test/"
+    },
+    {
+      image: "../media/images/prophets/albert-e-bowen/albert-e-bowen-1920.jpg",
+      audio: "../media/audio/albert-e-bowen/true-christianity.mp3",
+      title: "True Christianity: The Ideal for Humanity",
+      role: "Apostle in the Quorum of the Twelve",
+      year: "1950",
+      speaker: "Albert E. Bowen",
+      link: "https://speeches.byu.edu/talks/albert-e-bowen/true-christianity-ideal-humanity/"
+    },
+    {
+      image: "../media/images/prophets/john-a-widtsoe/john-a-widtsoe-circa1920.jpg",
+      audio: "../media/audio/john-a-widtsoe/four-cornerstones-to-build-greatness.mp3",
+      title: "Four Cornerstones upon Which to Build Greatness",
+      role: "Apostle in the Quorum of the Twelve",
+      year: "1949",
+      speaker: "John A. Widtsoe",
+      link: "https://speeches.byu.edu/talks/john-a-widtsoe/four-cornerstones-build-greatness/"
+    },
+    {
+      image: "../media/images/prophets/john-a-widtsoe/john-a-widtsoe-circa1920.jpg",
+      audio: "../media/audio/john-a-widtsoe/your-living-testimony.mp3",
+      title: "Your Living Testimony",
+      role: "Apostle in the Quorum of the Twelve",
+      year: "1950",
+      speaker: "John A. Widtsoe",
+      link: "https://speeches.byu.edu/talks/john-a-widtsoe/your-living-testimony/"
+    }
+  ];
+
+  const audio = document.getElementById('audio');
+  const talkImage = document.getElementById('talkImage');
+  const talkTitle = document.getElementById('talkTitle');
+  const talkSpeaker = document.getElementById('talkSpeaker');
+  const talkRole = document.getElementById('talkRole');
+  const talkYear = document.getElementById('talkYear');
+  const talkLink = document.getElementById('talkLink');
+
+  let queue = [];
+  let queueIndex = 0;
+  let history = [];
+  let historyPos = -1;
+
+  function shuffledOrder(){
+    const idx = talks.map((_, i) => i);
+    for(let i = idx.length - 1; i > 0; i--){
+      const j = Math.floor(Math.random() * (i + 1));
+      [idx[i], idx[j]] = [idx[j], idx[i]];
+    }
+    return idx;
+  }
+
+  function nextRandomIndex(){
+    if(queueIndex >= queue.length){
+      queue = shuffledOrder();
+      queueIndex = 0;
+    }
+    return queue[queueIndex++];
+  }
+
+  function loadTalk(i, autoplay){
+    const t = talks[i];
+    talkImage.src = t.image;
+    talkTitle.textContent = t.title;
+    talkSpeaker.textContent = t.speaker;
+    talkRole.textContent = t.role;
+    talkYear.textContent = t.year;
+    talkLink.href = t.link;
+    audio.src = t.audio;
+    if(autoplay) audio.play().catch(() => {});
+  }
+
+  function playAt(i, autoplay = true){
+    history = history.slice(0, historyPos + 1);
+    history.push(i);
+    historyPos = history.length - 1;
+    loadTalk(i, autoplay);
+  }
+
+  function playNext(){
+    playAt(nextRandomIndex(), true);
+  }
+
+  function playPrevious(){
+    if(historyPos > 0){
+      historyPos--;
+      loadTalk(history[historyPos], true);
+    } else {
+      playNext();
+    }
+  }
+
+  function skip(seconds){
+    if(!isFinite(audio.duration)) return;
+    audio.currentTime = Math.min(Math.max(audio.currentTime + seconds, 0), audio.duration);
+  }
+
+  audio.addEventListener('ended', playNext);
+  document.getElementById('nextBtn').addEventListener('click', playNext);
+  document.getElementById('prevBtn').addEventListener('click', playPrevious);
+  document.getElementById('back15Btn').addEventListener('click', () => skip(-15));
+  document.getElementById('forward15Btn').addEventListener('click', () => skip(15));
+
+  document.getElementById('startBtn').addEventListener('click', () => {
+    queue = shuffledOrder();
+    queueIndex = 0;
+    playNext();
+    document.getElementById('startOverlay').classList.add('hidden');
+  });
+</script>
+</body>
 </html>
