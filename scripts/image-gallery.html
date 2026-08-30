@@ -1,100 +1,2436 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Image Gallery</title>
-        <link rel="icon" type="image/png" href="./favicon/favicon.png">
-        <link rel="stylesheet" type="text/css" href="style.css">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <style>
-            img{
-                display: block;
-                width:100%;
-                height:400px;
-            }
-        </style>
-    </head>
-    <body>
-        <a href="index.html"><img src="favicon/logo.png" alt="homepage" title="homepage"></a>
-        <h2>Contents</h2>
-        <p>Links to key decades</p>
-        <h2>1800-49</h2>
-            <table>
-                <tr>
-                    <td><img src="images/o-z/smith-jr,joseph.jpeg">
-                    <p>Joseph Smith Jr 
-                        <br> Unknown Painter circa 1840
-                        <br> Held in Community of Christ archives</p>
-                    </td>
-                    <td><img src="images/o-z/smith-sr,joseph.jpeg">
-                    <p>Joseph Smith Sr
-                        <br> Unknown Painter before 1856
-                        <br> Joseph Smith Birthplace Memorial
-                    </p></td>
-                    <td><img src="images/o-z/williams,frederick-g.jpeg">
-                    <p>Frederick G. Williams
-                        <br> Unknown Painter circa 1836
-                        <br> Church History Museum 
-                    </p></td>
-                    <!--td><img src="images/00-50/Tarring_and_feathering_Joseph_Smith_LCCN2003654762.jpg">
-                        <p>Tarring and Feathering of Joseph Smith Jr
-                            <br> Unknown painter circa 1850
-                            <br> Library of Congress
-                        </p>
-                    </td-->
-                    <td>
-                        <img src="images/o-z/smith,william-b.gif">
-                        <p>William B. Smith
-                            <br> Before 1845
-                            <br> Archives of the Latter-Day Saints
-                        </p>
-                    </td>
-                </tr>
-                <tr>
-                    <td><img src="images/00-50/Last_Public_Address_of_Lieutenant_General_Joseph_Smith.jpg">
-                    <p>Joseph Smith's last address
-                        <br> John Hafen 1888
-                    </p></td>
-                    <td><img src="images/00-50/John_Smith_(uncle_of_Joseph_Smith).jpg">
-                    <p>Uncle John (John Smith)
-                        <br> Taken before 1854
-                    </p></td>
-                    <td><img src="images/a-g/cowdery,oliver.jpeg">
-                    <p>Oliver Cowdery Daguerotype
-                        <br> James Presley Ball Circa 1850
-                        <br> Library of Congress
-                    </p></td>
-                    <td>
-                        <img src="images/00-50/LDS_Oliver_COWDERY.jpg">
-                        <p> Portrait of Oliver Cowdery
-                            <br> Lewis A. Ramsey circa 1840
-                        </p>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <img src="images/00-50/Joseph_Smith,_Jr._profile_by_Bathsheba_Smith_circa_1843.jpg">
-                        <p> Profile of Joseph Smith
-                            <br> Bathsheba Smith circa 1843
-                        </p>
-                    </td>
-                    <td>
-                        <img src="images/00-50/John_Smith_(uncle_of_Joseph_Smith,_Jr).jpg" alt="Uncle John">
-                        <p>Uncle John (John Smith)
-                            <br> Taken before 1854
-                            <br> LDS Church Archives
-                        </p>
-                    </td>
-                    <td>
-                        <img src="images/00-50/Hyrum_Smith_ca_1880-1920.png">
-                        <p>Hyrum Smith
-                            <br> George Edward Anderson circa 1880
-                        </p>
-                    </td>
-                </tr>
-            </table>
-        <h2>1850-89</h2>
-        <h2>1890-20</h2>
-        <h2>1920-69</h2>
-        <h2>1970-modern</h2>
-    </body>
+<head>
+    <title>Image Gallery</title>
+    <link rel="icon" type="image/png" href="./favicon/favicon.png">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="" target="_blank">
+    <style>
+        body {
+            background-color: #023465;
+            color: white;
+        }
+        a { color: #ffd24d; }
+        .date { color: rgb(9, 211, 211); }
+
+        .page-wrap {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px 60px 20px;
+        }
+
+        h1, h2.section-title {
+            border-bottom: 3px solid #ffd24d;
+            padding-bottom: 8px;
+        }
+
+        nav.top-nav {
+            position: sticky;
+            top: 0;
+            background: #023465;
+            padding: 12px 0;
+            z-index: 50;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            border-bottom: 2px solid #ffd24d;
+            margin-bottom: 30px;
+        }
+        nav.top-nav a {
+            text-decoration: none;
+            font-weight: bold;
+            color: white;
+            padding: 6px 12px;
+            border: 1px solid #ffd24d;
+            border-radius: 20px;
+            transition: .2s;
+        }
+        nav.top-nav a:hover {
+            background: #ffd24d;
+            color: #023465;
+        }
+
+        details > summary {
+            cursor: pointer;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        /* ---------- Section: Portraits ---------- */
+        .portraits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+            gap: 18px;
+            margin: 20px 0 10px 0;
+        }
+        .portrait-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: white;
+            text-align: center;
+        }
+        .portrait-card img {
+            width: 130px;
+            height: 130px;
+            object-fit: cover;
+            object-position: top;
+            border-radius: 50%;
+            border: 3px solid #ffd24d;
+            transition: transform .2s, box-shadow .2s;
+        }
+        .portrait-card:hover img {
+            transform: scale(1.07);
+            box-shadow: 0 0 14px rgba(255,210,77,0.7);
+        }
+        .portrait-card span {
+            margin-top: 8px;
+            font-size: 0.9rem;
+        }
+
+        /* ---------- Section: Individual Leaders (mini photo galleries) ---------- */
+        #leader-toc {
+            columns: 3;
+            column-gap: 20px;
+            margin: 15px 0 30px 0;
+            font-size: 0.95rem;
+        }
+        #leader-toc a {
+            display: block;
+            text-decoration: none;
+            padding: 3px 0;
+            break-inside: avoid;
+        }
+        #leader-toc a:hover { color: white; text-decoration: underline; }
+
+        .leader-block {
+            background: rgba(255,255,255,0.05);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+            scroll-margin-top: 80px;
+        }
+        .leader-header h3 {
+            margin: 0 0 8px 0;
+            font-size: 1.4rem;
+        }
+        .role-badges { margin-bottom: 8px; }
+        .role-badge {
+            display: inline-block;
+            font-size: 0.75rem;
+            padding: 2px 8px;
+            border-radius: 10px;
+            margin-right: 6px;
+            margin-bottom: 4px;
+            background: #003b75;
+            border: 1px solid #ffd24d;
+        }
+        .ordination { margin: 6px 0; color: #d8e6f5; }
+        .sermon-link {
+            display: inline-block;
+            margin: 4px 0 14px 0;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 12px;
+        }
+        .photo-thumb {
+            display: block;
+            border-radius: 6px;
+            overflow: hidden;
+            cursor: zoom-in;
+        }
+        .photo-thumb img {
+            width: 100%;
+            height: 190px;
+            object-fit: cover;
+            display: block;
+            transition: transform .2s;
+        }
+        .photo-thumb:hover img {
+            transform: scale(1.05);
+        }
+
+        /* ---------- Search ---------- */
+        #leaderSearch {
+            width: 100%;
+            max-width: 400px;
+            padding: 8px 12px;
+            border-radius: 6px;
+            border: 1px solid #ffd24d;
+            background: #012a52;
+            color: white;
+            margin: 15px 0;
+            box-sizing: border-box;
+        }
+
+        /* ---------- Lightbox ---------- */
+        #lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.88);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        #lightbox.open { display: flex; }
+        #lightbox img {
+            max-width: 90vw;
+            max-height: 80vh;
+            border-radius: 6px;
+            box-shadow: 0 0 30px rgba(0,0,0,0.6);
+        }
+        #lightbox .caption {
+            color: white;
+            margin-top: 14px;
+            font-size: 1.1rem;
+        }
+        #lightbox .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 2rem;
+            color: white;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        /* ---------- Section: Presidencies/Apostleships (original gallery) ---------- */
+        .gallery-row {
+            max-width: 900px;
+            margin: 0 auto 40px auto;
+        }
+        .gallery-item {
+            margin-bottom: 60px;
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .gallery-item p {
+            margin: 0;
+            padding: 15px 20px;
+            font-size: 1.05rem;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        @media (max-width: 700px) {
+            #leader-toc { columns: 2; }
+        }
+        @media (max-width: 420px) {
+            #leader-toc { columns: 1; }
+        }
+    </style>
+</head>
+<body>
+<div class="page-wrap">
+    <a href="../index.html">Home Page</a>
+    <h1>Image Gallery</h1>
+
+    <nav class="top-nav">
+        <a href="#resources">Resources</a>
+        <a href="#portraits">Portraits</a>
+        <a href="#individual-leaders">Individual Leaders</a>
+        <a href="#presidencies">Presidencies &amp; Apostleships</a>
+    </nav>
+
+    <h2 id="resources" class="section-title">Resources</h2>
+    <details open>
+        <summary>Church History Sources</summary>
+        <ul>
+            <li><a href="https://churchhistorylibrary.churchofjesuschrist.org/guides/photograph-collections?lang=eng">Photograph Collections</a></li>
+            <li><a href="https://catalog.churchofjesuschrist.org/assets/aa8e84c8-3e5d-4740-a95d-4524325aa324/0/0?lang=eng">General Authority photograph portraits, circa 1870s</a></li>
+            <li><a href="https://catalog.churchofjesuschrist.org/record/799cd835-cb2e-41d7-b9d8-378ed7a6c4f6/11cda390-da6a-451e-bee3-921cd48f08da?view=browse">General Authority portrait collection, circa 1850-1985</a></li>
+            <li><a href="https://catalog.churchofjesuschrist.org/record/0b45bf17-8421-4a20-aceb-c898a2691a7c/0?view=browse&lang=eng">Photograph album of LDS Church leaders, circa 1880s-early 1900s</a></li>
+            <li><a href="https://catalog.churchofjesuschrist.org/record/c4aff5f9-175d-4be6-95c0-42ebb1f43d58/853fa08e-a072-4fb9-b68a-243afbe5c04d?view=browse&lang=eng">Daguerreotype collection, circa 1850s-1860s</a></li>
+            <li><a href="https://catalog.churchofjesuschrist.org/record/312ab6d1-b11e-4dde-add0-2c59580015f1/d4be7023-d655-4cc8-a678-216e382fae2d?view=browse&lang=eng">Savage and Ottinger collection of studio portraits, circa 1862-1872</a></li>
+            <li><a href="https://catalog.churchofjesuschrist.org/record/5708a889-6343-4b5c-9561-668e5d40ba84/16caeb75-8263-4321-8b29-2f3c05c6f8d0?view=browse&lang=eng">Bathsheba W. Bigler Smith photograph collection, circa 1865-1900</a></li>
+        </ul>
+    </details>
+
+    <h2 id="portraits" class="section-title">Portraits of the Leaders</h2>
+    <p>Click any face to jump to that leader's photo gallery below.</p>
+    <div class="portraits-grid">
+    <a class="portrait-card" href="#joseph-smith-jr" data-role="apostle first-presidency president" title="Joseph Smith Jr.">
+        <img src="../media/images/prophets/joseph-smithjr/joseph-smith-jr-bathshebasmithportrait.jpg" alt="Joseph Smith Jr." loading="lazy">
+        <span>Joseph Smith Jr.</span>
+    </a>
+    <a class="portrait-card" href="#oliver-cowdery" data-role="first-presidency" title="Oliver Cowdery">
+        <img src="../media/images/prophets/oliver-cowdery/olivercowderydaugerrotype.jpg" alt="Oliver Cowdery" loading="lazy">
+        <span>Oliver Cowdery</span>
+    </a>
+    <a class="portrait-card" href="#sidney-rigdon" data-role="first-presidency" title="Sidney Rigdon">
+        <img src="../media/images/prophets/sidney-rigdon/rigdon-1873.jpg" alt="Sidney Rigdon" loading="lazy">
+        <span>Sidney Rigdon</span>
+    </a>
+    <a class="portrait-card" href="#frederick-g-william" data-role="apostle first-presidency" title="Frederick G. William">
+        <img src="../media/images/prophets/frederick-g-william/frederick-g-williams-portrait.jpg" alt="Frederick G. William" loading="lazy">
+        <span>Frederick G. William</span>
+    </a>
+    <a class="portrait-card" href="#joseph-smith-sr" data-role="patriarch first-presidency" title="Joseph Smith Sr.">
+        <img src="../media/images/prophets/joseph-smith-sr/joseph-smith-sr.jpg" alt="Joseph Smith Sr." loading="lazy">
+        <span>Joseph Smith Sr.</span>
+    </a>
+    <a class="portrait-card" href="#thomas-b-marsh" data-role="apostle" title="Thomas B. Marsh">
+        <img src="../media/images/prophets/thomas-b-marsh/thomas-b-marsh-wikipedia.jpg" alt="Thomas B. Marsh" loading="lazy">
+        <span>Thomas B. Marsh</span>
+    </a>
+    <a class="portrait-card" href="#david-w-patten" data-role="apostle" title="David W. Patten">
+        <img src="../media/images/prophets/david-w-patten/David-Wyman-Patten-church-website-1.jpg" alt="David W. Patten" loading="lazy">
+        <span>David W. Patten</span>
+    </a>
+    <a class="portrait-card" href="#brigham-young" data-role="president first-presidency apostle" title="Brigham Young">
+        <img src="../media/images/prophets/brigham-young/brigham-young-1855.jpg" alt="Brigham Young" loading="lazy">
+        <span>Brigham Young</span>
+    </a>
+    <a class="portrait-card" href="#heber-c-kimball" data-role="apostle first-presidency" title="Heber C. Kimball">
+        <img src="../media/images/prophets/heber-c-kimball/heber-c-kimball-portrait.jpg" alt="Heber C. Kimball" loading="lazy">
+        <span>Heber C. Kimball</span>
+    </a>
+    <a class="portrait-card" href="#orson-hyde" data-role="apostle" title="Orson Hyde">
+        <img src="../media/images/prophets/orson-hyde/orson-hydedaguerrotype.jpg" alt="Orson Hyde" loading="lazy">
+        <span>Orson Hyde</span>
+    </a>
+    <a class="portrait-card" href="#william-e-mcclellin" data-role="apostle" title="William E. McClellin">
+        <img src="../media/images/prophets/william-e-mcclellin/william-e-mcclellin.jpg" alt="William E. McClellin" loading="lazy">
+        <span>William E. McClellin</span>
+    </a>
+    <a class="portrait-card" href="#parley-p-pratt" data-role="apostle" title="Parley P. Pratt">
+        <img src="../media/images/prophets/parley-p-pratt/parley-p-pratt-1835.jpg" alt="Parley P. Pratt" loading="lazy">
+        <span>Parley P. Pratt</span>
+    </a>
+    <a class="portrait-card" href="#luke-s-johnson" data-role="apostle" title="Luke S. Johnson">
+        <img src="../media/images/prophets/luke-s-johnson/luke-s-johnson-painting.jpg" alt="Luke S. Johnson" loading="lazy">
+        <span>Luke S. Johnson</span>
+    </a>
+    <a class="portrait-card" href="#william-b-smith" data-role="apostle" title="William B. Smith">
+        <img src="../media/images/prophets/william-b-smith/william-b-smith-photo.jpg" alt="William B. Smith" loading="lazy">
+        <span>William B. Smith</span>
+    </a>
+    <a class="portrait-card" href="#orson-pratt" data-role="apostle" title="Orson Pratt">
+        <img src="../media/images/prophets/orson-pratt/orson-pratt-1851.png" alt="Orson Pratt" loading="lazy">
+        <span>Orson Pratt</span>
+    </a>
+    <a class="portrait-card" href="#john-f-boynton" data-role="apostle" title="John F. Boynton">
+        <img src="../media/images/prophets/john-f-boynton/wikipedia.jpg" alt="John F. Boynton" loading="lazy">
+        <span>John F. Boynton</span>
+    </a>
+    <a class="portrait-card" href="#lyman-e-johnson" data-role="apostle" title="Lyman E. Johnson">
+        <img src="../media/images/prophets/lyman-e-johnson/lyman-e-johnson.jpg" alt="Lyman E. Johnson" loading="lazy">
+        <span>Lyman E. Johnson</span>
+    </a>
+    <a class="portrait-card" href="#hyrum-smith" data-role="first-presidency" title="Hyrum Smith">
+        <img src="../media/images/prophets/hyrum-smith/filler.jpg" alt="Hyrum Smith" loading="lazy">
+        <span>Hyrum Smith</span>
+    </a>
+    <a class="portrait-card" href="#john-taylor" data-role="apostle first-presidency president" title="John Taylor">
+        <img src="../media/images/prophets/john-taylor/JohnTaylor2.jpg" alt="John Taylor" loading="lazy">
+        <span>John Taylor</span>
+    </a>
+    <a class="portrait-card" href="#john-e-page" data-role="apostle" title="John E. Page">
+        <img src="../media/images/prophets/john-e-page/fillerimage.jpg" alt="John E. Page" loading="lazy">
+        <span>John E. Page</span>
+    </a>
+    <a class="portrait-card" href="#wilford-woodruff" data-role="apostle first-presidency president" title="Wilford Woodruff">
+        <img src="../media/images/prophets/wilford-woodruff/Wilford_Woodruff_2.jpg" alt="Wilford Woodruff" loading="lazy">
+        <span>Wilford Woodruff</span>
+    </a>
+    <a class="portrait-card" href="#george-a-smith" data-role="apostle first-presidency" title="George A. Smith">
+        <img src="../media/images/prophets/george-a-smith/george-a-smith-byu.jpg" alt="George A. Smith" loading="lazy">
+        <span>George A. Smith</span>
+    </a>
+    <a class="portrait-card" href="#willard-richards" data-role="apostle first-presidency" title="Willard Richards">
+        <img src="../media/images/prophets/willard-richards/willard-richards.jpg" alt="Willard Richards" loading="lazy">
+        <span>Willard Richards</span>
+    </a>
+    <a class="portrait-card" href="#william-law" data-role="apostle first-presidency" title="William Law">
+        <img src="../media/images/prophets/william-law/william-law.jpg" alt="William Law" loading="lazy">
+        <span>William Law</span>
+    </a>
+    <a class="portrait-card" href="#john-c-bennett" data-role="first-presidency" title="John C. Bennett">
+        <img src="../media/images/prophets/john-c-bennett/wikipedia.jpg" alt="John C. Bennett" loading="lazy">
+        <span>John C. Bennett</span>
+    </a>
+    <a class="portrait-card" href="#lyman-wight" data-role="apostle" title="Lyman Wight">
+        <img src="../media/images/prophets/lyman-wight/lyman-wight.jpg" alt="Lyman Wight" loading="lazy">
+        <span>Lyman Wight</span>
+    </a>
+    <a class="portrait-card" href="#amasa-m-lyman" data-role="apostle first-presidency" title="Amasa M. Lyman">
+        <img src="../media/images/prophets/amasa-m-lyman/amasa-m-lyman-portrait.png" alt="Amasa M. Lyman" loading="lazy">
+        <span>Amasa M. Lyman</span>
+    </a>
+    <a class="portrait-card" href="#ezra-t-benson" data-role="apostle" title="Ezra T. Benson">
+        <img src="../media/images/prophets/ezra-t-benson/filler.jpg" alt="Ezra T. Benson" loading="lazy">
+        <span>Ezra T. Benson</span>
+    </a>
+    <a class="portrait-card" href="#uncle-john" data-role="patriarch" title="Uncle John">
+        <img src="../media/images/prophets/john-smith-unclejohn/john-smith-fourthpatriarch.jpg" alt="Uncle John" loading="lazy">
+        <span>Uncle John</span>
+    </a>
+    <a class="portrait-card" href="#charles-c-rich" data-role="apostle" title="Charles C. Rich">
+        <img src="../media/images/prophets/charles-c-rich/charles-c-rich-1880.jpg" alt="Charles C. Rich" loading="lazy">
+        <span>Charles C. Rich</span>
+    </a>
+    <a class="portrait-card" href="#lorenzo-snow" data-role="apostle first-presidency president" title="Lorenzo Snow">
+        <img src="../media/images/prophets/lorenzo-snow/lorenzo-snow.jpg" alt="Lorenzo Snow" loading="lazy">
+        <span>Lorenzo Snow</span>
+    </a>
+    <a class="portrait-card" href="#erastus-snow" data-role="apostle" title="Erastus Snow">
+        <img src="../media/images/prophets/erastus-snow/filler.jpg" alt="Erastus Snow" loading="lazy">
+        <span>Erastus Snow</span>
+    </a>
+    <a class="portrait-card" href="#franklin-d-richards" data-role="apostle" title="Franklin D. Richards">
+        <img src="../media/images/prophets/franklin-d-richards/filler.jpg" alt="Franklin D. Richards" loading="lazy">
+        <span>Franklin D. Richards</span>
+    </a>
+    <a class="portrait-card" href="#jebediah-m-grant" data-role="apostle first-presidency" title="Jebediah M. Grant">
+        <img src="../media/images/prophets/jebediah-m-grant/filler-image.gif" alt="Jebediah M. Grant" loading="lazy">
+        <span>Jebediah M. Grant</span>
+    </a>
+    <a class="portrait-card" href="#john-smith" data-role="patriarch" title="John Smith">
+        <img src="../media/images/prophets/john-smith-patriarch/john-smith-wikipedia-patriarch.jpg" alt="John Smith" loading="lazy">
+        <span>John Smith</span>
+    </a>
+    <a class="portrait-card" href="#daniel-h-wells" data-role="apostle first-presidency" title="Daniel H. Wells">
+        <img src="../media/images/prophets/daniel-h-wells/daniel-h-wells-1904.jpg" alt="Daniel H. Wells" loading="lazy">
+        <span>Daniel H. Wells</span>
+    </a>
+    <a class="portrait-card" href="#george-q-cannon" data-role="apostle first-presidency" title="George Q. Cannon">
+        <img src="../media/images/prophets/george-q-cannon/george-q-cannon-1870-1880.jpg" alt="George Q. Cannon" loading="lazy">
+        <span>George Q. Cannon</span>
+    </a>
+    <a class="portrait-card" href="#joseph-f-smith" data-role="apostle first-presidency president" title="Joseph F. Smith">
+        <img src="../media/images/prophets/joseph-f-smith/Joseph-F-Smith-mormon.jpg" alt="Joseph F. Smith" loading="lazy">
+        <span>Joseph F. Smith</span>
+    </a>
+    <a class="portrait-card" href="#brigham-young-jr" data-role="apostle first-presidency" title="Brigham Young Jr.">
+        <img src="../media/images/prophets/brigham-young-jr/brigham-youngjr-portrait.jpg" alt="Brigham Young Jr." loading="lazy">
+        <span>Brigham Young Jr.</span>
+    </a>
+    <a class="portrait-card" href="#albert-carrington" data-role="apostle first-presidency" title="Albert Carrington">
+        <img src="../media/images/prophets/albert-carrington/albert-carrington-1866.jpg" alt="Albert Carrington" loading="lazy">
+        <span>Albert Carrington</span>
+    </a>
+    <a class="portrait-card" href="#john-w-young" data-role="apostle" title="John W. Young">
+        <img src="../media/images/prophets/john-w-young/John_W_Young.gif" alt="John W. Young" loading="lazy">
+        <span>John W. Young</span>
+    </a>
+    <a class="portrait-card" href="#moses-thatcher" data-role="apostle" title="Moses Thatcher">
+        <img src="../media/images/prophets/moses-thatcher/moses-thatcher-placeholder.jpg" alt="Moses Thatcher" loading="lazy">
+        <span>Moses Thatcher</span>
+    </a>
+    <a class="portrait-card" href="#francis-m-lyman" data-role="apostle" title="Francis M. Lyman">
+        <img src="../media/images/prophets/francis-m-lyman/francis-m-lyman-1917.jpg" alt="Francis M. Lyman" loading="lazy">
+        <span>Francis M. Lyman</span>
+    </a>
+    <a class="portrait-card" href="#john-h-smith" data-role="apostle first-presidency" title="John H. Smith">
+        <img src="../media/images/prophets/john-h-smith/john-h-smith-wikipedia.jpg" alt="John H. Smith" loading="lazy">
+        <span>John H. Smith</span>
+    </a>
+    <a class="portrait-card" href="#george-teasdale" data-role="apostle" title="George Teasdale">
+        <img src="../media/images/prophets/george-teasdale/filler.jpg" alt="George Teasdale" loading="lazy">
+        <span>George Teasdale</span>
+    </a>
+    <a class="portrait-card" href="#heber-j-grant" data-role="apostle first-presidency president" title="Heber J. Grant">
+        <img src="../media/images/prophets/heber-j-grant/heber-j-grant-1880s.jpg" alt="Heber J. Grant" loading="lazy">
+        <span>Heber J. Grant</span>
+    </a>
+    <a class="portrait-card" href="#john-w-taylor" data-role="apostle" title="John W. Taylor">
+        <img src="../media/images/prophets/john-w-taylor/Johnwtaylor.gif" alt="John W. Taylor" loading="lazy">
+        <span>John W. Taylor</span>
+    </a>
+    <a class="portrait-card" href="#marriner-w-merrill" data-role="apostle" title="Marriner W. Merrill">
+        <img src="../media/images/prophets/marriner-w-merrill/marriner-w-merrill.jpg" alt="Marriner W. Merrill" loading="lazy">
+        <span>Marriner W. Merrill</span>
+    </a>
+    <a class="portrait-card" href="#anthon-h-lund" data-role="apostle first-presidency" title="Anthon H. Lund">
+        <img src="../media/images/prophets/anthon-h-lund/anthon-h-lund-1905.jpg" alt="Anthon H. Lund" loading="lazy">
+        <span>Anthon H. Lund</span>
+    </a>
+    <a class="portrait-card" href="#abraham-h-cannon" data-role="apostle" title="Abraham H. Cannon">
+        <img src="../media/images/prophets/abraham-h-cannon/abraham-h-cannon-1895.jpeg" alt="Abraham H. Cannon" loading="lazy">
+        <span>Abraham H. Cannon</span>
+    </a>
+    <a class="portrait-card" href="#matthias-f-cowley" data-role="apostle" title="Matthias F Cowley">
+        <img src="../media/images/prophets/matthias-f-cowley/mattias-f-cowley-placeholder.jpg" alt="Matthias F Cowley" loading="lazy">
+        <span>Matthias F Cowley</span>
+    </a>
+    <a class="portrait-card" href="#abraham-o-woodruff" data-role="apostle" title="Abraham O. Woodruff">
+        <img src="../media/images/prophets/abraham-o-woodruff/abraham-o-woodruff-1904.jpg" alt="Abraham O. Woodruff" loading="lazy">
+        <span>Abraham O. Woodruff</span>
+    </a>
+    <a class="portrait-card" href="#rudger-clawson" data-role="apostle first-presidency" title="Rudger Clawson">
+        <img src="../media/images/prophets/rudger-clawson/rudger-clawson-placeholder.jpg" alt="Rudger Clawson" loading="lazy">
+        <span>Rudger Clawson</span>
+    </a>
+    <a class="portrait-card" href="#reed-smoot" data-role="apostle" title="Reed Smoot">
+        <img src="../media/images/prophets/reed-smoot/senator-reed-smoot-placeholder.jpg" alt="Reed Smoot" loading="lazy">
+        <span>Reed Smoot</span>
+    </a>
+    <a class="portrait-card" href="#john-r-winder" data-role="first-presidency" title="John R. Winder">
+        <img src="../media/images/prophets/john-r-winder/john-r-winder-1901-wikipedia.jpg" alt="John R. Winder" loading="lazy">
+        <span>John R. Winder</span>
+    </a>
+    <a class="portrait-card" href="#hyrum-m-smith" data-role="apostle" title="Hyrum M. Smith">
+        <img src="../media/images/prophets/hyrum-m-smith/hyrum-m-smith-1926.jpg" alt="Hyrum M. Smith" loading="lazy">
+        <span>Hyrum M. Smith</span>
+    </a>
+    <a class="portrait-card" href="#george-albert-smith" data-role="apostle first-presidency president" title="George Albert Smith">
+        <img src="../media/images/prophets/george-albert-smith/george-albert-smith-1939.jpg" alt="George Albert Smith" loading="lazy">
+        <span>George Albert Smith</span>
+    </a>
+    <a class="portrait-card" href="#charles-w-penrose" data-role="apostle first-presidency" title="Charles W. Penrose">
+        <img src="../media/images/prophets/charles-w-penrose/charles-w-penrose-first-presidency.jpg" alt="Charles W. Penrose" loading="lazy">
+        <span>Charles W. Penrose</span>
+    </a>
+    <a class="portrait-card" href="#george-f-richards" data-role="apostle" title="George F. Richards">
+        <img src="../media/images/prophets/george-f-richards/george-f-richards-1915.jpg" alt="George F. Richards" loading="lazy">
+        <span>George F. Richards</span>
+    </a>
+    <a class="portrait-card" href="#orson-f-whitney" data-role="apostle" title="Orson F. Whitney">
+        <img src="../media/images/prophets/orson-f-whitney/orson-f-whitney.jpg" alt="Orson F. Whitney" loading="lazy">
+        <span>Orson F. Whitney</span>
+    </a>
+    <a class="portrait-card" href="#david-o-mckay" data-role="apostle first-presidency president" title="David O. McKay">
+        <img src="../media/images/prophets/david-o-mckay/david-o-mckay-1925.jpg" alt="David O. McKay" loading="lazy">
+        <span>David O. McKay</span>
+    </a>
+    <a class="portrait-card" href="#anthony-w-ivins" data-role="apostle first-presidency" title="Anthony W. Ivins">
+        <img src="../media/images/prophets/anthony-w-ivins/anthony-w-ivins-1921.jpg" alt="Anthony W. Ivins" loading="lazy">
+        <span>Anthony W. Ivins</span>
+    </a>
+    <a class="portrait-card" href="#joseph-fielding-smith" data-role="apostle first-presidency president" title="Joseph Fielding Smith">
+        <img src="../media/images/prophets/joseph-fielding-smith/joseph-fielding-smith1943circa.jpg" alt="Joseph Fielding Smith" loading="lazy">
+        <span>Joseph Fielding Smith</span>
+    </a>
+    <a class="portrait-card" href="#james-e-talmage" data-role="apostle" title="James E. Talmage">
+        <img src="../media/images/prophets/james-e-talmage/filler-image.jpg" alt="James E. Talmage" loading="lazy">
+        <span>James E. Talmage</span>
+    </a>
+    <a class="portrait-card" href="#hyrum-g-smith" data-role="patriarch" title="Hyrum G. Smith">
+        <img src="../media/images/prophets/hyrum-g-smith/hyrum-g-smith-1932.jpg" alt="Hyrum G. Smith" loading="lazy">
+        <span>Hyrum G. Smith</span>
+    </a>
+    <a class="portrait-card" href="#stephen-l-richards" data-role="apostle first-presidency" title="Stephen L Richards">
+        <img src="../media/images/prophets/stephen-l-richards/richards1920.jpg" alt="Stephen L Richards" loading="lazy">
+        <span>Stephen L Richards</span>
+    </a>
+    <a class="portrait-card" href="#richard-r-lyman" data-role="apostle" title="Richard R. Lyman">
+        <img src="../media/images/prophets/richard-r-lyman/richard-r-lyman1939.jpg" alt="Richard R. Lyman" loading="lazy">
+        <span>Richard R. Lyman</span>
+    </a>
+    <a class="portrait-card" href="#melvin-j-ballard" data-role="apostle" title="Melvin J. Ballard">
+        <img src="../media/images/prophets/melvin-j-ballard/melvin-j-ballard1919.jpg" alt="Melvin J. Ballard" loading="lazy">
+        <span>Melvin J. Ballard</span>
+    </a>
+    <a class="portrait-card" href="#john-a-widtsoe" data-role="apostle" title="John A. Widtsoe">
+        <img src="../media/images/prophets/john-a-widtsoe/john-a-widtsoe-circa1920.jpg" alt="John A. Widtsoe" loading="lazy">
+        <span>John A. Widtsoe</span>
+    </a>
+    <a class="portrait-card" href="#charles-w-nibley" data-role="first-presidency" title="Charles W. Nibley">
+        <img src="../media/images/prophets/charles-w-nibley/charles-w-nibley-first-presidency.jpg" alt="Charles W. Nibley" loading="lazy">
+        <span>Charles W. Nibley</span>
+    </a>
+    <a class="portrait-card" href="#joseph-f-merrill" data-role="apostle" title="Joseph F. Merrill">
+        <img src="../media/images/prophets/joseph-f-merrill/Joseph-F.-Merrill.webp" alt="Joseph F. Merrill" loading="lazy">
+        <span>Joseph F. Merrill</span>
+    </a>
+    <a class="portrait-card" href="#j-reuben-clark-jr" data-role="apostle first-presidency" title="J. Reuben Clark Jr.">
+        <img src="../media/images/prophets/j-reuben-clark-jr/j-reuben-clark-jr-circa1914-wikipedia.jpg" alt="J. Reuben Clark Jr." loading="lazy">
+        <span>J. Reuben Clark Jr.</span>
+    </a>
+    <a class="portrait-card" href="#charles-a-callis" data-role="apostle" title="Charles A. Callis">
+        <img src="../media/images/prophets/charles-a-callis/charles-a-callis-1939.jpg" alt="Charles A. Callis" loading="lazy">
+        <span>Charles A. Callis</span>
+    </a>
+    <a class="portrait-card" href="#alonzo-a-hinckley" data-role="apostle" title="Alonzo A. Hinckley">
+        <img src="../media/images/prophets/alonzo-a-hinckley/alonzo-a-hinckley-1934.jpg" alt="Alonzo A. Hinckley" loading="lazy">
+        <span>Alonzo A. Hinckley</span>
+    </a>
+    <a class="portrait-card" href="#albert-e-bowen" data-role="apostle" title="Albert E. Bowen">
+        <img src="../media/images/prophets/albert-e-bowen/albert-e-bowen-1920.jpg" alt="Albert E. Bowen" loading="lazy">
+        <span>Albert E. Bowen</span>
+    </a>
+    <a class="portrait-card" href="#sylvester-q-cannon" data-role="apostle" title="Sylvester Q. Cannon">
+        <img src="../media/images/prophets/sylvester-q-cannon/sylvester-q-cannon.png" alt="Sylvester Q. Cannon" loading="lazy">
+        <span>Sylvester Q. Cannon</span>
+    </a>
+    <a class="portrait-card" href="#harold-b-lee" data-role="apostle first-presidency president" title="Harold B. Lee">
+        <img src="../media/images/prophets/harold-b-lee/harold-b-lee-1944.jpg" alt="Harold B. Lee" loading="lazy">
+        <span>Harold B. Lee</span>
+    </a>
+    <a class="portrait-card" href="#joseph-f-smith-ii" data-role="patriarch" title="Joseph F. Smith II">
+        <img src="../media/images/prophets/joseph-f-smith-second/Joseph_Fielding_Smith_(presiding_patriarch).jpg" alt="Joseph F. Smith II" loading="lazy">
+        <span>Joseph F. Smith II</span>
+    </a>
+    <a class="portrait-card" href="#spencer-w-kimball" data-role="apostle first-presidency president" title="Spencer W. Kimball">
+        <img src="../media/images/prophets/spencer-w-kimball/spencer-w-kimballplaceholder.png" alt="Spencer W. Kimball" loading="lazy">
+        <span>Spencer W. Kimball</span>
+    </a>
+    <a class="portrait-card" href="#ezra-taft-benson" data-role="apostle first-presidency president" title="Ezra Taft Benson">
+        <img src="../media/images/prophets/ezra-taft-benson/Ezra_Taft_Benson.jpg" alt="Ezra Taft Benson" loading="lazy">
+        <span>Ezra Taft Benson</span>
+    </a>
+    <a class="portrait-card" href="#mark-e-petersen" data-role="apostle" title="Mark E. Petersen">
+        <img src="../media/images/prophets/mark-e-petersen/mark-e-petersen.jpg" alt="Mark E. Petersen" loading="lazy">
+        <span>Mark E. Petersen</span>
+    </a>
+    <a class="portrait-card" href="#matthew-cowley" data-role="apostle" title="Matthew Cowley">
+        <img src="../media/images/prophets/matthew-cowley/matthew-cowley.jpg" alt="Matthew Cowley" loading="lazy">
+        <span>Matthew Cowley</span>
+    </a>
+    <a class="portrait-card" href="#henry-d-moyle" data-role="apostle first-presidency" title="Henry D. Moyle">
+        <img src="../media/images/prophets/henry-d-moyle/henry-d-moyle-1961.jpg" alt="Henry D. Moyle" loading="lazy">
+        <span>Henry D. Moyle</span>
+    </a>
+    <a class="portrait-card" href="#eldred-g-smith" data-role="patriarch" title="Eldred G. Smith">
+        <img src="../media/images/prophets/eldred-g-smith/eldred-g-smith-1957.jpg" alt="Eldred G. Smith" loading="lazy">
+        <span>Eldred G. Smith</span>
+    </a>
+    <a class="portrait-card" href="#delbert-l-stapley" data-role="apostle" title="Delbert L. Stapley">
+        <img src="../media/images/prophets/delbert-l-stapley/delbert-l-stapley-1963.jpg" alt="Delbert L. Stapley" loading="lazy">
+        <span>Delbert L. Stapley</span>
+    </a>
+    <a class="portrait-card" href="#marion-g-romney" data-role="apostle first-presidency" title="Marion G. Romney">
+        <img src="../media/images/prophets/marion-g-romney/marion-g-romney.jpg" alt="Marion G. Romney" loading="lazy">
+        <span>Marion G. Romney</span>
+    </a>
+    <a class="portrait-card" href="#legrand-richards" data-role="apostle" title="LeGrand Richards">
+        <img src="../media/images/prophets/legrand-richards/legrand-richards1963.jpg" alt="LeGrand Richards" loading="lazy">
+        <span>LeGrand Richards</span>
+    </a>
+    <a class="portrait-card" href="#adam-s-bennion" data-role="apostle" title="Adam S. Bennion">
+        <img src="../media/images/prophets/adam-s-bennion/adam-s-bennion-1953.jpg" alt="Adam S. Bennion" loading="lazy">
+        <span>Adam S. Bennion</span>
+    </a>
+    <a class="portrait-card" href="#richard-l-evans" data-role="apostle" title="Richard L. Evans">
+        <img src="../media/images/prophets/richard-l-evans/richard-l-evans.jpg" alt="Richard L. Evans" loading="lazy">
+        <span>Richard L. Evans</span>
+    </a>
+    <a class="portrait-card" href="#george-q-morris" data-role="apostle" title="George Q. Morris">
+        <img src="../media/images/prophets/george-q-morris/george-q-morris-1962.jpg" alt="George Q. Morris" loading="lazy">
+        <span>George Q. Morris</span>
+    </a>
+    <a class="portrait-card" href="#hugh-b-brown" data-role="apostle first-presidency" title="Hugh B. Brown">
+        <img src="../media/images/prophets/hugh-b-brown/filler.jpg" alt="Hugh B. Brown" loading="lazy">
+        <span>Hugh B. Brown</span>
+    </a>
+    <a class="portrait-card" href="#howard-w-hunter" data-role="apostle first-presidency president" title="Howard W. Hunter">
+        <img src="../media/images/prophets/howard-w-hunter/howard-w-hunter-1975.jpg" alt="Howard W. Hunter" loading="lazy">
+        <span>Howard W. Hunter</span>
+    </a>
+    <a class="portrait-card" href="#gordon-b-hinckley" data-role="apostle first-presidency president" title="Gordon B. Hinckley">
+        <img src="../media/images/prophets/gordon-b-hinckley/gordon-b-hinckley-1976.jpg" alt="Gordon B. Hinckley" loading="lazy">
+        <span>Gordon B. Hinckley</span>
+    </a>
+    <a class="portrait-card" href="#nathan-e-tanner" data-role="apostle first-presidency" title="Nathan E. Tanner">
+        <img src="../media/images/prophets/nathan-e-tanner/n-eldon-tanner.jpg" alt="Nathan E. Tanner" loading="lazy">
+        <span>Nathan E. Tanner</span>
+    </a>
+    <a class="portrait-card" href="#thomas-s-monson" data-role="apostle first-presidency president" title="Thomas S. Monson">
+        <img src="../media/images/prophets/thomas-s-monson/thomas-s-monson.jpg" alt="Thomas S. Monson" loading="lazy">
+        <span>Thomas S. Monson</span>
+    </a>
+    <a class="portrait-card" href="#thorpe-b-isaacson" data-role="first-presidency" title="Thorpe B. Isaacson">
+        <img src="../media/images/prophets/thorpe-b-isaacson/thorpe-b-isaacson.jpg" alt="Thorpe B. Isaacson" loading="lazy">
+        <span>Thorpe B. Isaacson</span>
+    </a>
+    <a class="portrait-card" href="#alvin-r-dyer" data-role="first-presidency" title="Alvin R. Dyer">
+        <img src="../media/images/prophets/alvin-r-dyer/alvin-r-dyer-wikipedia.jpg" alt="Alvin R. Dyer" loading="lazy">
+        <span>Alvin R. Dyer</span>
+    </a>
+    <a class="portrait-card" href="#boyd-k-packer" data-role="apostle" title="Boyd K. Packer">
+        <img src="../media/images/prophets/boyd-k-packer/boyd-k-packer1961.jpg" alt="Boyd K. Packer" loading="lazy">
+        <span>Boyd K. Packer</span>
+    </a>
+    <a class="portrait-card" href="#marvin-j-ashton" data-role="apostle" title="Marvin J. Ashton">
+        <img src="../media/images/prophets/marvin-j-ashton/marvin-j-ashton.jpg" alt="Marvin J. Ashton" loading="lazy">
+        <span>Marvin J. Ashton</span>
+    </a>
+    <a class="portrait-card" href="#bruce-r-mcconkie" data-role="apostle" title="Bruce R. McConkie">
+        <img src="../media/images/prophets/bruce-r-mcconkie/bruce-r-mcconkie-1976.jpg" alt="Bruce R. McConkie" loading="lazy">
+        <span>Bruce R. McConkie</span>
+    </a>
+    <a class="portrait-card" href="#l-tom-perry" data-role="apostle" title="L. Tom Perry">
+        <img src="../media/images/prophets/l-tom-perry/l-tom-perry.jpg" alt="L. Tom Perry" loading="lazy">
+        <span>L. Tom Perry</span>
+    </a>
+    <a class="portrait-card" href="#david-b-haight" data-role="apostle" title="David B. Haight">
+        <img src="../media/images/prophets/david-b-haight/filler-image-.jpg" alt="David B. Haight" loading="lazy">
+        <span>David B. Haight</span>
+    </a>
+    <a class="portrait-card" href="#james-e-faust" data-role="apostle first-presidency" title="James E. Faust">
+        <img src="../media/images/prophets/james-e-faust/filler-image.jpg" alt="James E. Faust" loading="lazy">
+        <span>James E. Faust</span>
+    </a>
+    <a class="portrait-card" href="#neil-a-maxwell" data-role="apostle" title="Neil A. Maxwell">
+        <img src="../media/images/prophets/neil-a-maxwell/neil-a-maxwell.jpg" alt="Neil A. Maxwell" loading="lazy">
+        <span>Neil A. Maxwell</span>
+    </a>
+    <a class="portrait-card" href="#russell-m-nelson" data-role="apostle first-presidency president" title="Russell M. Nelson">
+        <img src="../media/images/prophets/russel-m-nelson/russell-m-nelson.jpg" alt="Russell M. Nelson" loading="lazy">
+        <span>Russell M. Nelson</span>
+    </a>
+    <a class="portrait-card" href="#m-russell-ballard" data-role="apostle" title="M. Russell Ballard">
+        <img src="../media/images/prophets/m-russell-ballard/m-russell-ballard.jpg" alt="M. Russel Ballard" loading="lazy">
+        <span>M. Russell Ballard</span>
+    </a>
+    <a class="portrait-card" href="#joseph-b-wirthlin" data-role="apostle" title="Joseph B. Wirthlin">
+        <img src="../media/images/prophets/joseph-b-wirthlin/Wirthlin_Joseph-Web-compressor.jpg" alt="Joseph B. Wirthlin" loading="lazy">
+        <span>Joseph B. Wirthlin</span>
+    </a>
+    <a class="portrait-card" href="#richard-g-scott" data-role="apostle" title="Richard G. Scott">
+        <img src="../media/images/prophets/richard-g-scott/richard-g-scott.jpg" alt="Richard G. Scott" loading="lazy">
+        <span>Richard G. Scott</span>
+    </a>
+    <a class="portrait-card" href="#robert-d-hales" data-role="apostle" title="Robert D. Hales">
+        <img src="../media/images/prophets/robert-d-hales/robert-d-hales.jpg" alt="Robert D. Hales" loading="lazy">
+        <span>Robert D. Hales</span>
+    </a>
+    <a class="portrait-card" href="#jeffery-r-holland" data-role="apostle" title="Jeffery R. Holland">
+        <img src="../media/images/prophets/jeffery-r-holland/filler-imaage.webp" alt="Jeffery R. Holland" loading="lazy">
+        <span>Jeffery R. Holland</span>
+    </a>
+    </div>
+
+    <h2 id="individual-leaders" class="section-title">Individual Leaders</h2>
+    <p>Each leader below has their own photo gallery. Click any photo to view it larger.</p>
+    <input type="text" id="leaderSearch" placeholder="Search leaders by name..." onkeyup="filterLeaders()">
+    <div id="leader-toc">
+<a href="#abraham-h-cannon">Abraham H. Cannon</a><a href="#abraham-o-woodruff">Abraham O. Woodruff</a><a href="#adam-s-bennion">Adam S. Bennion</a><a href="#albert-carrington">Albert Carrington</a><a href="#albert-e-bowen">Albert E. Bowen</a><a href="#alonzo-a-hinckley">Alonzo A. Hinckley</a><a href="#alvin-r-dyer">Alvin R. Dyer</a><a href="#amasa-m-lyman">Amasa M. Lyman</a><a href="#anthon-h-lund">Anthon H. Lund</a><a href="#anthony-w-ivins">Anthony W. Ivins</a><a href="#boyd-k-packer">Boyd K. Packer</a><a href="#brigham-young">Brigham Young</a><a href="#brigham-young-jr">Brigham Young Jr.</a><a href="#bruce-r-mcconkie">Bruce R. McConkie</a><a href="#charles-a-callis">Charles A. Callis</a><a href="#charles-c-rich">Charles C. Rich</a><a href="#charles-w-nibley">Charles W. Nibley</a><a href="#charles-w-penrose">Charles W. Penrose</a><a href="#daniel-h-wells">Daniel H. Wells</a><a href="#david-b-haight">David B. Haight</a><a href="#david-o-mckay">David O. McKay</a><a href="#david-w-patten">David W. Patten</a><a href="#delbert-l-stapley">Delbert L. Stapley</a><a href="#eldred-g-smith">Eldred G. Smith</a><a href="#erastus-snow">Erastus Snow</a><a href="#ezra-t-benson">Ezra T. Benson</a><a href="#ezra-taft-benson">Ezra Taft Benson</a><a href="#francis-m-lyman">Francis M. Lyman</a><a href="#franklin-d-richards">Franklin D. Richards</a><a href="#frederick-g-william">Frederick G. William</a><a href="#george-a-smith">George A. Smith</a><a href="#george-albert-smith">George Albert Smith</a><a href="#george-f-richards">George F. Richards</a><a href="#george-q-cannon">George Q. Cannon</a><a href="#george-q-morris">George Q. Morris</a><a href="#george-teasdale">George Teasdale</a><a href="#gordon-b-hinckley">Gordon B. Hinckley</a><a href="#harold-b-lee">Harold B. Lee</a><a href="#heber-c-kimball">Heber C. Kimball</a><a href="#heber-j-grant">Heber J. Grant</a><a href="#henry-d-moyle">Henry D. Moyle</a><a href="#howard-w-hunter">Howard W. Hunter</a><a href="#hugh-b-brown">Hugh B. Brown</a><a href="#hyrum-g-smith">Hyrum G. Smith</a><a href="#hyrum-m-smith">Hyrum M. Smith</a><a href="#hyrum-smith">Hyrum Smith</a><a href="#j-reuben-clark-jr">J. Reuben Clark Jr.</a><a href="#james-e-faust">James E. Faust</a><a href="#james-e-talmage">James E. Talmage</a><a href="#jebediah-m-grant">Jebediah M. Grant</a><a href="#jeffery-r-holland">Jeffery R. Holland</a><a href="#john-a-widtsoe">John A. Widtsoe</a><a href="#john-c-bennett">John C. Bennett</a><a href="#john-e-page">John E. Page</a><a href="#john-f-boynton">John F. Boynton</a><a href="#john-h-smith">John H. Smith</a><a href="#john-r-winder">John R. Winder</a><a href="#john-smith">John Smith</a><a href="#john-taylor">John Taylor</a><a href="#john-w-taylor">John W. Taylor</a><a href="#john-w-young">John W. Young</a><a href="#joseph-b-wirthlin">Joseph B. Wirthlin</a><a href="#joseph-f-merrill">Joseph F. Merrill</a><a href="#joseph-f-smith">Joseph F. Smith</a><a href="#joseph-f-smith-ii">Joseph F. Smith II</a><a href="#joseph-fielding-smith">Joseph Fielding Smith</a><a href="#joseph-smith-jr">Joseph Smith Jr.</a><a href="#joseph-smith-sr">Joseph Smith Sr.</a><a href="#l-tom-perry">L. Tom Perry</a><a href="#legrand-richards">LeGrand Richards</a><a href="#lorenzo-snow">Lorenzo Snow</a><a href="#luke-s-johnson">Luke S. Johnson</a><a href="#lyman-e-johnson">Lyman E. Johnson</a><a href="#lyman-wight">Lyman Wight</a><a href="#m-russell-ballard">M. Russell Ballard</a><a href="#marion-g-romney">Marion G. Romney</a><a href="#mark-e-petersen">Mark E. Petersen</a><a href="#marriner-w-merrill">Marriner W. Merrill</a><a href="#marvin-j-ashton">Marvin J. Ashton</a><a href="#matthew-cowley">Matthew Cowley</a><a href="#matthias-f-cowley">Matthias F Cowley</a><a href="#melvin-j-ballard">Melvin J. Ballard</a><a href="#moses-thatcher">Moses Thatcher</a><a href="#nathan-e-tanner">Nathan E. Tanner</a><a href="#neil-a-maxwell">Neil A. Maxwell</a><a href="#oliver-cowdery">Oliver Cowdery</a><a href="#orson-f-whitney">Orson F. Whitney</a><a href="#orson-hyde">Orson Hyde</a><a href="#orson-pratt">Orson Pratt</a><a href="#parley-p-pratt">Parley P. Pratt</a><a href="#reed-smoot">Reed Smoot</a><a href="#richard-g-scott">Richard G. Scott</a><a href="#richard-l-evans">Richard L. Evans</a><a href="#richard-r-lyman">Richard R. Lyman</a><a href="#robert-d-hales">Robert D. Hales</a><a href="#rudger-clawson">Rudger Clawson</a><a href="#russell-m-nelson">Russell M. Nelson</a><a href="#sidney-rigdon">Sidney Rigdon</a><a href="#spencer-w-kimball">Spencer W. Kimball</a><a href="#stephen-l-richards">Stephen L Richards</a><a href="#sylvester-q-cannon">Sylvester Q. Cannon</a><a href="#thomas-b-marsh">Thomas B. Marsh</a><a href="#thomas-s-monson">Thomas S. Monson</a><a href="#thorpe-b-isaacson">Thorpe B. Isaacson</a><a href="#uncle-john">Uncle John</a><a href="#wilford-woodruff">Wilford Woodruff</a><a href="#willard-richards">Willard Richards</a><a href="#william-b-smith">William B. Smith</a><a href="#william-e-mcclellin">William E. McClellin</a><a href="#william-law">William Law</a>
+    </div>
+    <div id="leadersContainer">
+<div class="leader-block" id="joseph-smith-jr" data-role="apostle first-presidency president">
+    <div class="leader-header">
+        <h3>Joseph Smith Jr.</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span><span class="role-badge role-first-presidency">First Presidency</span><span class="role-badge role-president">President</span></div>
+        <p class="ordination">Ordained Apostle: May 1829</p>
+        <a href="sermons/joseph-smithjr/joseph-smithjr-teachings.html" class="sermon-link">Read teachings &amp; sermons →</a>
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/joseph-smithjr/joseph-smith-jr-bathshebasmithportrait.jpg" data-caption="Joseph Smith Jr." onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/joseph-smithjr/joseph-smith-jr-bathshebasmithportrait.jpg" alt="Joseph Smith Jr." loading="lazy">
+        </a>
+        <!-- To add more photos of Joseph Smith Jr., copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="oliver-cowdery" data-role="first-presidency">
+    <div class="leader-header">
+        <h3>Oliver Cowdery</h3>
+        <div class="role-badges"><span class="role-badge role-first-presidency">First Presidency</span></div>
+        <p class="ordination">Ordained Apostle: May 1829</p>
+        <a href="sermons/oliver-cowdery/oliver-cowdery-teachings.html" class="sermon-link">Read teachings &amp; sermons →</a>
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/oliver-cowdery/olivercowderydaugerrotype.jpg" data-caption="Oliver Cowdery" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/oliver-cowdery/olivercowderydaugerrotype.jpg" alt="Oliver Cowdery" loading="lazy">
+        </a>
+        <!-- To add more photos of Oliver Cowdery, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="sidney-rigdon" data-role="first-presidency">
+    <div class="leader-header">
+        <h3>Sidney Rigdon</h3>
+        <div class="role-badges"><span class="role-badge role-first-presidency">First Presidency</span></div>
+        <p class="ordination">Ordained 2nd Counselor: March 1832</p>
+        <a href="sermons/sidney-rigdon/sidney-rigdon-teachings.html" class="sermon-link">Read teachings &amp; sermons →</a>
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/sidney-rigdon/rigdon-1873.jpg" data-caption="Sidney Rigdon" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/sidney-rigdon/rigdon-1873.jpg" alt="Sidney Rigdon" loading="lazy">
+        </a>
+        <!-- To add more photos of Sidney Rigdon, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="frederick-g-william" data-role="apostle first-presidency">
+    <div class="leader-header">
+        <h3>Frederick G. William</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span><span class="role-badge role-first-presidency">First Presidency</span></div>
+        <p class="ordination">Ordained 2nd Counselor: Feb 1833</p>
+        <a href="sermons/frederick-g-william/fdg-teachings.html" class="sermon-link">Read teachings &amp; sermons →</a>
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/frederick-g-william/frederick-g-williams-portrait.jpg" data-caption="Frederick G. William" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/frederick-g-william/frederick-g-williams-portrait.jpg" alt="Frederick G. William" loading="lazy">
+        </a>
+        <!-- To add more photos of Frederick G. William, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="joseph-smith-sr" data-role="patriarch first-presidency">
+    <div class="leader-header">
+        <h3>Joseph Smith Sr.</h3>
+        <div class="role-badges"><span class="role-badge role-patriarch">Patriarch</span><span class="role-badge role-first-presidency">First Presidency</span></div>
+        <p class="ordination">Oradained Patriarch: Dec 1833</p>
+        <a href="sermons/joseph-smithsr/joseph-smithsr-teachings.html" class="sermon-link">Read teachings &amp; sermons →</a>
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/joseph-smith-sr/joseph-smith-sr.jpg" data-caption="Joseph Smith Sr." onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/joseph-smith-sr/joseph-smith-sr.jpg" alt="Joseph Smith Sr." loading="lazy">
+        </a>
+        <!-- To add more photos of Joseph Smith Sr., copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="thomas-b-marsh" data-role="apostle">
+    <div class="leader-header">
+        <h3>Thomas B. Marsh</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span></div>
+        <p class="ordination">Ordained Apostle: April 1835</p>
+        <a href="sermons/thomas-b-marsh/thomas-b-marsh-teachings.html" class="sermon-link">Read teachings &amp; sermons →</a>
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/thomas-b-marsh/thomas-b-marsh-wikipedia.jpg" data-caption="Thomas B. Marsh" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/thomas-b-marsh/thomas-b-marsh-wikipedia.jpg" alt="Thomas B. Marsh" loading="lazy">
+        </a>
+        <!-- To add more photos of Thomas B. Marsh, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="david-w-patten" data-role="apostle">
+    <div class="leader-header">
+        <h3>David W. Patten</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span></div>
+        <p class="ordination">Ordained Apostle: Feb 1835</p>
+        <a href="sermons/david-w-patten/david-w-patten-teachings.html" class="sermon-link">Read teachings &amp; sermons →</a>
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/david-w-patten/David-Wyman-Patten-church-website-1.jpg" data-caption="David W. Patten" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/david-w-patten/David-Wyman-Patten-church-website-1.jpg" alt="David W. Patten" loading="lazy">
+        </a>
+        <!-- To add more photos of David W. Patten, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="brigham-young" data-role="president first-presidency apostle">
+    <div class="leader-header">
+        <h3>Brigham Young</h3>
+        <div class="role-badges"><span class="role-badge role-president">President</span><span class="role-badge role-first-presidency">First Presidency</span><span class="role-badge role-apostle">Apostle</span></div>
+        <p class="ordination">Ordained Apostle: Feb 1835</p>
+        <a href="sermons/brigham-young-sr/brigham-young-sermons.html" class="sermon-link">Read teachings &amp; sermons →</a>
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/brigham-young/brigham-young-1855.jpg" data-caption="Brigham Young" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/brigham-young/brigham-young-1855.jpg" alt="Brigham Young" loading="lazy">
+        </a>
+        <!-- To add more photos of Brigham Young, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="heber-c-kimball" data-role="apostle first-presidency">
+    <div class="leader-header">
+        <h3>Heber C. Kimball</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span><span class="role-badge role-first-presidency">First Presidency</span></div>
+        <p class="ordination">Ordained Apostle: Feb 1835</p>
+        <a href="sermons/heber-c-kimball/heber-c-kimball-teachings.html" class="sermon-link">Read teachings &amp; sermons →</a>
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/heber-c-kimball/heber-c-kimball-portrait.jpg" data-caption="Heber C. Kimball" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/heber-c-kimball/heber-c-kimball-portrait.jpg" alt="Heber C. Kimball" loading="lazy">
+        </a>
+        <!-- To add more photos of Heber C. Kimball, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="orson-hyde" data-role="apostle">
+    <div class="leader-header">
+        <h3>Orson Hyde</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span></div>
+        <p class="ordination">Ordained Apostle: Feb 1835</p>
+        <a href="sermons/orson-hyde/orson-hyde-teachings.html" class="sermon-link">Read teachings &amp; sermons →</a>
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/orson-hyde/orson-hydedaguerrotype.jpg" data-caption="Orson Hyde" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/orson-hyde/orson-hydedaguerrotype.jpg" alt="Orson Hyde" loading="lazy">
+        </a>
+        <!-- To add more photos of Orson Hyde, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="william-e-mcclellin" data-role="apostle">
+    <div class="leader-header">
+        <h3>William E. McClellin</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span></div>
+        <p class="ordination">Ordained Apostle: Feb 1835</p>
+        <a href="sermons/wil-e-mcclellin/wil-e-mcclellin.html" class="sermon-link">Read teachings &amp; sermons →</a>
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/william-e-mcclellin/william-e-mcclellin.jpg" data-caption="William E. McClellin" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/william-e-mcclellin/william-e-mcclellin.jpg" alt="William E. McClellin" loading="lazy">
+        </a>
+        <!-- To add more photos of William E. McClellin, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="parley-p-pratt" data-role="apostle">
+    <div class="leader-header">
+        <h3>Parley P. Pratt</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span></div>
+        <p class="ordination">Ordained Apostle: Feb 1835</p>
+        <a href="sermons/parley-p-pratt/parley-p-pratt.html" class="sermon-link">Read teachings &amp; sermons →</a>
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/parley-p-pratt/parley-p-pratt-1835.jpg" data-caption="Parley P. Pratt" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/parley-p-pratt/parley-p-pratt-1835.jpg" alt="Parley P. Pratt" loading="lazy">
+        </a>
+        <!-- To add more photos of Parley P. Pratt, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="luke-s-johnson" data-role="apostle">
+    <div class="leader-header">
+        <h3>Luke S. Johnson</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span></div>
+        <p class="ordination">Ordained Apostle: Feb 1835</p>
+        <a href="sermons/luke-s-johnson/luke-s-johnson.html" class="sermon-link">Read teachings &amp; sermons →</a>
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/luke-s-johnson/luke-s-johnson-painting.jpg" data-caption="Luke S. Johnson" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/luke-s-johnson/luke-s-johnson-painting.jpg" alt="Luke S. Johnson" loading="lazy">
+        </a>
+        <!-- To add more photos of Luke S. Johnson, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="william-b-smith" data-role="apostle">
+    <div class="leader-header">
+        <h3>William B. Smith</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span></div>
+        <p class="ordination">Ordained Apostle: Feb 1835</p>
+        <a href="sermons/wil-b-smith/wil-b-smith.html" class="sermon-link">Read teachings &amp; sermons →</a>
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/william-b-smith/william-b-smith-photo.jpg" data-caption="William B. Smith" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/william-b-smith/william-b-smith-photo.jpg" alt="William B. Smith" loading="lazy">
+        </a>
+        <!-- To add more photos of William B. Smith, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="orson-pratt" data-role="apostle">
+    <div class="leader-header">
+        <h3>Orson Pratt</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span></div>
+        <p class="ordination">Ordained Apostle: Feb 1835</p>
+        <a href="sermons/orson-pratt/orson-pratt.html" class="sermon-link">Read teachings &amp; sermons →</a>
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/orson-pratt/orson-pratt-1851.png" data-caption="Orson Pratt" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/orson-pratt/orson-pratt-1851.png" alt="Orson Pratt" loading="lazy">
+        </a>
+        <!-- To add more photos of Orson Pratt, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="john-f-boynton" data-role="apostle">
+    <div class="leader-header">
+        <h3>John F. Boynton</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span></div>
+        <p class="ordination">Oradained Apostle: Feb 1835</p>
+        <a href="sermons/john-f-boynton/john-f-boynton.html" class="sermon-link">Read teachings &amp; sermons →</a>
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/john-f-boynton/wikipedia.jpg" data-caption="John F. Boynton" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/john-f-boynton/wikipedia.jpg" alt="John F. Boynton" loading="lazy">
+        </a>
+        <!-- To add more photos of John F. Boynton, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="lyman-e-johnson" data-role="apostle">
+    <div class="leader-header">
+        <h3>Lyman E. Johnson</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span></div>
+        <p class="ordination">Ordained Apostle: Feb 1835</p>
+        <a href="sermons/lyman-e-johnson/lyman-e-johnson.html" class="sermon-link">Read teachings &amp; sermons →</a>
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/lyman-e-johnson/lyman-e-johnson.jpg" data-caption="Lyman E. Johnson" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/lyman-e-johnson/lyman-e-johnson.jpg" alt="Lyman E. Johnson" loading="lazy">
+        </a>
+        <!-- To add more photos of Lyman E. Johnson, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="hyrum-smith" data-role="first-presidency">
+    <div class="leader-header">
+        <h3>Hyrum Smith</h3>
+        <div class="role-badges"><span class="role-badge role-first-presidency">First Presidency</span></div>
+        <p class="ordination">Ordained 2nd Counselor: Nov 1837</p>
+        <a href="sermons/hyrum-smith/hyrum-smith.html" class="sermon-link">Read teachings &amp; sermons →</a>
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/hyrum-smith/filler.jpg" data-caption="Hyrum Smith" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/hyrum-smith/filler.jpg" alt="Hyrum Smith" loading="lazy">
+        </a>
+        <!-- To add more photos of Hyrum Smith, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="john-taylor" data-role="apostle first-presidency president">
+    <div class="leader-header">
+        <h3>John Taylor</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span><span class="role-badge role-first-presidency">First Presidency</span><span class="role-badge role-president">President</span></div>
+        <p class="ordination">Ordained Apostle: Dec 1838</p>
+        <a href="sermons/john-taylor/john-taylor.html" class="sermon-link">Read teachings &amp; sermons →</a>
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/john-taylor/JohnTaylor2.jpg" data-caption="John Taylor" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/john-taylor/JohnTaylor2.jpg" alt="John Taylor" loading="lazy">
+        </a>
+        <!-- To add more photos of John Taylor, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="john-e-page" data-role="apostle">
+    <div class="leader-header">
+        <h3>John E. Page</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span></div>
+        <p class="ordination">Ordained Apostle: Dec 1838</p>
+        <a href="sermons/john-e-page/john-e-page.html" class="sermon-link">Read teachings &amp; sermons →</a>
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/john-e-page/fillerimage.jpg" data-caption="John E. Page" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/john-e-page/fillerimage.jpg" alt="John E. Page" loading="lazy">
+        </a>
+        <!-- To add more photos of John E. Page, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="wilford-woodruff" data-role="apostle first-presidency president">
+    <div class="leader-header">
+        <h3>Wilford Woodruff</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span><span class="role-badge role-first-presidency">First Presidency</span><span class="role-badge role-president">President</span></div>
+        <p class="ordination">Ordained Apostle: April 1839</p>
+        <a href="sermons/wilford-woodruff/wilford-woodruff.html" class="sermon-link">Read teachings &amp; sermons →</a>
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/wilford-woodruff/Wilford_Woodruff_2.jpg" data-caption="Wilford Woodruff" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/wilford-woodruff/Wilford_Woodruff_2.jpg" alt="Wilford Woodruff" loading="lazy">
+        </a>
+        <!-- To add more photos of Wilford Woodruff, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="george-a-smith" data-role="apostle first-presidency">
+    <div class="leader-header">
+        <h3>George A. Smith</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span><span class="role-badge role-first-presidency">First Presidency</span></div>
+        <p class="ordination">Ordained Apostle: Aug 1839</p>
+        <a href="sermons/george-a-smith/george-a-smith.html" class="sermon-link">Read teachings &amp; sermons →</a>
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/george-a-smith/george-a-smith-byu.jpg" data-caption="George A. Smith" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/george-a-smith/george-a-smith-byu.jpg" alt="George A. Smith" loading="lazy">
+        </a>
+        <!-- To add more photos of George A. Smith, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="willard-richards" data-role="apostle first-presidency">
+    <div class="leader-header">
+        <h3>Willard Richards</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span><span class="role-badge role-first-presidency">First Presidency</span></div>
+        <p class="ordination">Ordained Apostle: April 1840</p>
+        
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/willard-richards/willard-richards.jpg" data-caption="Willard Richards" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/willard-richards/willard-richards.jpg" alt="Willard Richards" loading="lazy">
+        </a>
+        <!-- To add more photos of Willard Richards, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="william-law" data-role="apostle first-presidency">
+    <div class="leader-header">
+        <h3>William Law</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span><span class="role-badge role-first-presidency">First Presidency</span></div>
+        <p class="ordination">Ordained 2nd Counselor: Jan 1841</p>
+        
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/william-law/william-law.jpg" data-caption="William Law" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/william-law/william-law.jpg" alt="William Law" loading="lazy">
+        </a>
+        <!-- To add more photos of William Law, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="john-c-bennett" data-role="first-presidency">
+    <div class="leader-header">
+        <h3>John C. Bennett</h3>
+        <div class="role-badges"><span class="role-badge role-first-presidency">First Presidency</span></div>
+        <p class="ordination">Ordained Ass&#x27;t Pres&#x27;t: April 1841</p>
+        
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/john-c-bennett/wikipedia.jpg" data-caption="John C. Bennett" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/john-c-bennett/wikipedia.jpg" alt="John C. Bennett" loading="lazy">
+        </a>
+        <!-- To add more photos of John C. Bennett, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="lyman-wight" data-role="apostle">
+    <div class="leader-header">
+        <h3>Lyman Wight</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span></div>
+        <p class="ordination">Ordained Apostle: April 1841</p>
+        
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/lyman-wight/lyman-wight.jpg" data-caption="Lyman Wight" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/lyman-wight/lyman-wight.jpg" alt="Lyman Wight" loading="lazy">
+        </a>
+        <!-- To add more photos of Lyman Wight, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="amasa-m-lyman" data-role="apostle first-presidency">
+    <div class="leader-header">
+        <h3>Amasa M. Lyman</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span><span class="role-badge role-first-presidency">First Presidency</span></div>
+        <p class="ordination">Ordained Apostle: Aug 1842</p>
+        <a href="sermons/amasa-m-lyman/amasa-m-lyman-sermons.html" class="sermon-link">Read teachings &amp; sermons →</a>
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/amasa-m-lyman/amasa-m-lyman-portrait.png" data-caption="Amasa M. Lyman" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/amasa-m-lyman/amasa-m-lyman-portrait.png" alt="Amasa M. Lyman" loading="lazy">
+        </a>
+        <!-- To add more photos of Amasa M. Lyman, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="ezra-t-benson" data-role="apostle">
+    <div class="leader-header">
+        <h3>Ezra T. Benson</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span></div>
+        <p class="ordination">Ordained Apostle: July 1846</p>
+        <a href="sermons/ezra-t-benson/ezra-t-benson-teachings.html" class="sermon-link">Read teachings &amp; sermons →</a>
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/ezra-t-benson/filler.jpg" data-caption="Ezra T. Benson" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/ezra-t-benson/filler.jpg" alt="Ezra T. Benson" loading="lazy">
+        </a>
+        <!-- To add more photos of Ezra T. Benson, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="uncle-john" data-role="patriarch">
+    <div class="leader-header">
+        <h3>Uncle John</h3>
+        <div class="role-badges"><span class="role-badge role-patriarch">Patriarch</span></div>
+        <p class="ordination">Ordained Patriarch: Jan 1849</p>
+        
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/john-smith-unclejohn/john-smith-fourthpatriarch.jpg" data-caption="Uncle John" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/john-smith-unclejohn/john-smith-fourthpatriarch.jpg" alt="Uncle John" loading="lazy">
+        </a>
+        <!-- To add more photos of Uncle John, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="charles-c-rich" data-role="apostle">
+    <div class="leader-header">
+        <h3>Charles C. Rich</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span></div>
+        <p class="ordination">Ordained Apostle: Feb 1849</p>
+        
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/charles-c-rich/charles-c-rich-1880.jpg" data-caption="Charles C. Rich" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/charles-c-rich/charles-c-rich-1880.jpg" alt="Charles C. Rich" loading="lazy">
+        </a>
+        <!-- To add more photos of Charles C. Rich, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="lorenzo-snow" data-role="apostle first-presidency president">
+    <div class="leader-header">
+        <h3>Lorenzo Snow</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span><span class="role-badge role-first-presidency">First Presidency</span><span class="role-badge role-president">President</span></div>
+        <p class="ordination">Ordained Apostle: Feb 1849</p>
+        
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/lorenzo-snow/lorenzo-snow.jpg" data-caption="Lorenzo Snow" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/lorenzo-snow/lorenzo-snow.jpg" alt="Lorenzo Snow" loading="lazy">
+        </a>
+        <!-- To add more photos of Lorenzo Snow, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="erastus-snow" data-role="apostle">
+    <div class="leader-header">
+        <h3>Erastus Snow</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span></div>
+        <p class="ordination">Ordained Apostle: Feb 1849</p>
+        
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/erastus-snow/filler.jpg" data-caption="Erastus Snow" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/erastus-snow/filler.jpg" alt="Erastus Snow" loading="lazy">
+        </a>
+        <!-- To add more photos of Erastus Snow, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="franklin-d-richards" data-role="apostle">
+    <div class="leader-header">
+        <h3>Franklin D. Richards</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span></div>
+        <p class="ordination">Ordained Apostle: Feb 1849</p>
+        <a href="sermons/franklin-d-richards/franklin-d-richards-teachings.html" class="sermon-link">Read teachings &amp; sermons →</a>
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/franklin-d-richards/filler.jpg" data-caption="Franklin D. Richards" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/franklin-d-richards/filler.jpg" alt="Franklin D. Richards" loading="lazy">
+        </a>
+        <!-- To add more photos of Franklin D. Richards, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="jebediah-m-grant" data-role="apostle first-presidency">
+    <div class="leader-header">
+        <h3>Jebediah M. Grant</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span><span class="role-badge role-first-presidency">First Presidency</span></div>
+        <p class="ordination">Ordained 2nd Counselor: April 1854</p>
+        <a href="sermons/jebediah-m-grant/jebediah-m-grant-teachings.html" class="sermon-link">Read teachings &amp; sermons →</a>
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/jebediah-m-grant/filler-image.gif" data-caption="Jebediah M. Grant" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/jebediah-m-grant/filler-image.gif" alt="Jebediah M. Grant" loading="lazy">
+        </a>
+        <!-- To add more photos of Jebediah M. Grant, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="john-smith" data-role="patriarch">
+    <div class="leader-header">
+        <h3>John Smith</h3>
+        <div class="role-badges"><span class="role-badge role-patriarch">Patriarch</span></div>
+        <p class="ordination">Ordained a Patriarch: Feb 1855</p>
+        
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/john-smith-patriarch/john-smith-wikipedia-patriarch.jpg" data-caption="John Smith" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/john-smith-patriarch/john-smith-wikipedia-patriarch.jpg" alt="John Smith" loading="lazy">
+        </a>
+        <!-- To add more photos of John Smith, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="daniel-h-wells" data-role="apostle first-presidency">
+    <div class="leader-header">
+        <h3>Daniel H. Wells</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span><span class="role-badge role-first-presidency">First Presidency</span></div>
+        <p class="ordination">Ordained 2nd Counselor: Jan 1857</p>
+        <a href="sermons/daniel-h-wells/daniel-h-wells-teachings.html" class="sermon-link">Read teachings &amp; sermons →</a>
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/daniel-h-wells/daniel-h-wells-1904.jpg" data-caption="Daniel H. Wells" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/daniel-h-wells/daniel-h-wells-1904.jpg" alt="Daniel H. Wells" loading="lazy">
+        </a>
+        <!-- To add more photos of Daniel H. Wells, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="george-q-cannon" data-role="apostle first-presidency">
+    <div class="leader-header">
+        <h3>George Q. Cannon</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span><span class="role-badge role-first-presidency">First Presidency</span></div>
+        <p class="ordination">Ordained Apostle: Aug 1860</p>
+        
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/george-q-cannon/george-q-cannon-1870-1880.jpg" data-caption="George Q. Cannon" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/george-q-cannon/george-q-cannon-1870-1880.jpg" alt="George Q. Cannon" loading="lazy">
+        </a>
+        <!-- To add more photos of George Q. Cannon, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="joseph-f-smith" data-role="apostle first-presidency president">
+    <div class="leader-header">
+        <h3>Joseph F. Smith</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span><span class="role-badge role-first-presidency">First Presidency</span><span class="role-badge role-president">President</span></div>
+        <p class="ordination">Ordained Counselor: July 1866</p>
+        
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/joseph-f-smith/Joseph-F-Smith-mormon.jpg" data-caption="Joseph F. Smith" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/joseph-f-smith/Joseph-F-Smith-mormon.jpg" alt="Joseph F. Smith" loading="lazy">
+        </a>
+        <!-- To add more photos of Joseph F. Smith, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="brigham-young-jr" data-role="apostle first-presidency">
+    <div class="leader-header">
+        <h3>Brigham Young Jr.</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span><span class="role-badge role-first-presidency">First Presidency</span></div>
+        <p class="ordination">Ordained Apostle: Oct 1868</p>
+        
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/brigham-young-jr/brigham-youngjr-portrait.jpg" data-caption="Brigham Young Jr." onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/brigham-young-jr/brigham-youngjr-portrait.jpg" alt="Brigham Young Jr." loading="lazy">
+        </a>
+        <!-- To add more photos of Brigham Young Jr., copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="albert-carrington" data-role="apostle first-presidency">
+    <div class="leader-header">
+        <h3>Albert Carrington</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span><span class="role-badge role-first-presidency">First Presidency</span></div>
+        <p class="ordination">Ordained Apostle: July 1870</p>
+        <a href="sermons/albert-carrington/albert-carrington-sermons.html" class="sermon-link">Read teachings &amp; sermons →</a>
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/albert-carrington/albert-carrington-1866.jpg" data-caption="Albert Carrington" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/albert-carrington/albert-carrington-1866.jpg" alt="Albert Carrington" loading="lazy">
+        </a>
+        <!-- To add more photos of Albert Carrington, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="john-w-young" data-role="apostle">
+    <div class="leader-header">
+        <h3>John W. Young</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span></div>
+        <p class="ordination">Ordained Counselor: June 1873</p>
+        
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/john-w-young/John_W_Young.gif" data-caption="John W. Young" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/john-w-young/John_W_Young.gif" alt="John W. Young" loading="lazy">
+        </a>
+        <!-- To add more photos of John W. Young, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="moses-thatcher" data-role="apostle">
+    <div class="leader-header">
+        <h3>Moses Thatcher</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span></div>
+        <p class="ordination">Ordained Apostle: April 1879</p>
+        
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/moses-thatcher/moses-thatcher-placeholder.jpg" data-caption="Moses Thatcher" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/moses-thatcher/moses-thatcher-placeholder.jpg" alt="Moses Thatcher" loading="lazy">
+        </a>
+        <!-- To add more photos of Moses Thatcher, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="francis-m-lyman" data-role="apostle">
+    <div class="leader-header">
+        <h3>Francis M. Lyman</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span></div>
+        <p class="ordination">Ordained Apostle: Oct 1880</p>
+        
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/francis-m-lyman/francis-m-lyman-1917.jpg" data-caption="Francis M. Lyman" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/francis-m-lyman/francis-m-lyman-1917.jpg" alt="Francis M. Lyman" loading="lazy">
+        </a>
+        <!-- To add more photos of Francis M. Lyman, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="john-h-smith" data-role="apostle first-presidency">
+    <div class="leader-header">
+        <h3>John H. Smith</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span><span class="role-badge role-first-presidency">First Presidency</span></div>
+        <p class="ordination">Ordained Apostle: Oct 1880</p>
+        
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/john-h-smith/john-h-smith-wikipedia.jpg" data-caption="John H. Smith" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/john-h-smith/john-h-smith-wikipedia.jpg" alt="John H. Smith" loading="lazy">
+        </a>
+        <!-- To add more photos of John H. Smith, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="george-teasdale" data-role="apostle">
+    <div class="leader-header">
+        <h3>George Teasdale</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span></div>
+        <p class="ordination">Ordained Apostle: Oct 1882</p>
+        
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/george-teasdale/filler.jpg" data-caption="George Teasdale" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/george-teasdale/filler.jpg" alt="George Teasdale" loading="lazy">
+        </a>
+        <!-- To add more photos of George Teasdale, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="heber-j-grant" data-role="apostle first-presidency president">
+    <div class="leader-header">
+        <h3>Heber J. Grant</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span><span class="role-badge role-first-presidency">First Presidency</span><span class="role-badge role-president">President</span></div>
+        <p class="ordination">Ordained Apostle: Oct 1882</p>
+        
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/heber-j-grant/heber-j-grant-1880s.jpg" data-caption="Heber J. Grant" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/heber-j-grant/heber-j-grant-1880s.jpg" alt="Heber J. Grant" loading="lazy">
+        </a>
+        <!-- To add more photos of Heber J. Grant, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="john-w-taylor" data-role="apostle">
+    <div class="leader-header">
+        <h3>John W. Taylor</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span></div>
+        <p class="ordination">Ordained Apostle: April 1884</p>
+        
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/john-w-taylor/Johnwtaylor.gif" data-caption="John W. Taylor" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/john-w-taylor/Johnwtaylor.gif" alt="John W. Taylor" loading="lazy">
+        </a>
+        <!-- To add more photos of John W. Taylor, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="marriner-w-merrill" data-role="apostle">
+    <div class="leader-header">
+        <h3>Marriner W. Merrill</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span></div>
+        <p class="ordination">Ordained Apostle: Oct 1889</p>
+        
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/marriner-w-merrill/marriner-w-merrill.jpg" data-caption="Marriner W. Merrill" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/marriner-w-merrill/marriner-w-merrill.jpg" alt="Marriner W. Merrill" loading="lazy">
+        </a>
+        <!-- To add more photos of Marriner W. Merrill, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="anthon-h-lund" data-role="apostle first-presidency">
+    <div class="leader-header">
+        <h3>Anthon H. Lund</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span><span class="role-badge role-first-presidency">First Presidency</span></div>
+        <p class="ordination">Ordained Apostle: Oct 1889</p>
+        <a href="sermons/anthon-h-lund/anthon-h-lund-sermons.html" class="sermon-link">Read teachings &amp; sermons →</a>
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/anthon-h-lund/anthon-h-lund-1905.jpg" data-caption="Anthon H. Lund" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/anthon-h-lund/anthon-h-lund-1905.jpg" alt="Anthon H. Lund" loading="lazy">
+        </a>
+        <!-- To add more photos of Anthon H. Lund, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="abraham-h-cannon" data-role="apostle">
+    <div class="leader-header">
+        <h3>Abraham H. Cannon</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span></div>
+        <p class="ordination">Ordained Apostle: Oct 1889</p>
+        <a href="sermons/abraham-h-cannon/abraham-h-cannon-sermon.html" class="sermon-link">Read teachings &amp; sermons →</a>
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/abraham-h-cannon/abraham-h-cannon-1895.jpeg" data-caption="Abraham H. Cannon" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/abraham-h-cannon/abraham-h-cannon-1895.jpeg" alt="Abraham H. Cannon" loading="lazy">
+        </a>
+        <!-- To add more photos of Abraham H. Cannon, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="matthias-f-cowley" data-role="apostle">
+    <div class="leader-header">
+        <h3>Matthias F Cowley</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span></div>
+        <p class="ordination">Ordained Apostle: Oct 1897</p>
+        
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/matthias-f-cowley/mattias-f-cowley-placeholder.jpg" data-caption="Matthias F Cowley" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/matthias-f-cowley/mattias-f-cowley-placeholder.jpg" alt="Matthias F Cowley" loading="lazy">
+        </a>
+        <!-- To add more photos of Matthias F Cowley, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="abraham-o-woodruff" data-role="apostle">
+    <div class="leader-header">
+        <h3>Abraham O. Woodruff</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span></div>
+        <p class="ordination">Ordained Apostle: Oct 1897</p>
+        <a href="sermons/abraham-o-woodruff/abraham-o-woodruff-sermon.html" class="sermon-link">Read teachings &amp; sermons →</a>
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/abraham-o-woodruff/abraham-o-woodruff-1904.jpg" data-caption="Abraham O. Woodruff" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/abraham-o-woodruff/abraham-o-woodruff-1904.jpg" alt="Abraham O. Woodruff" loading="lazy">
+        </a>
+        <!-- To add more photos of Abraham O. Woodruff, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="rudger-clawson" data-role="apostle first-presidency">
+    <div class="leader-header">
+        <h3>Rudger Clawson</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span><span class="role-badge role-first-presidency">First Presidency</span></div>
+        <p class="ordination">Ordained Apostle: Oct 1898</p>
+        
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/rudger-clawson/rudger-clawson-placeholder.jpg" data-caption="Rudger Clawson" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/rudger-clawson/rudger-clawson-placeholder.jpg" alt="Rudger Clawson" loading="lazy">
+        </a>
+        <!-- To add more photos of Rudger Clawson, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="reed-smoot" data-role="apostle">
+    <div class="leader-header">
+        <h3>Reed Smoot</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span></div>
+        <p class="ordination">Ordained Apostle: April 1900</p>
+        
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/reed-smoot/senator-reed-smoot-placeholder.jpg" data-caption="Reed Smoot" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/reed-smoot/senator-reed-smoot-placeholder.jpg" alt="Reed Smoot" loading="lazy">
+        </a>
+        <!-- To add more photos of Reed Smoot, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="john-r-winder" data-role="first-presidency">
+    <div class="leader-header">
+        <h3>John R. Winder</h3>
+        <div class="role-badges"><span class="role-badge role-first-presidency">First Presidency</span></div>
+        <p class="ordination">Ordained Counselor: Oct 1901</p>
+        
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/john-r-winder/john-r-winder-1901-wikipedia.jpg" data-caption="John R. Winder" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/john-r-winder/john-r-winder-1901-wikipedia.jpg" alt="John R. Winder" loading="lazy">
+        </a>
+        <!-- To add more photos of John R. Winder, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="hyrum-m-smith" data-role="apostle">
+    <div class="leader-header">
+        <h3>Hyrum M. Smith</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span></div>
+        <p class="ordination">Ordained Apostle: Oct 1901</p>
+        
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/hyrum-m-smith/hyrum-m-smith-1926.jpg" data-caption="Hyrum M. Smith" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/hyrum-m-smith/hyrum-m-smith-1926.jpg" alt="Hyrum M. Smith" loading="lazy">
+        </a>
+        <!-- To add more photos of Hyrum M. Smith, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="george-albert-smith" data-role="apostle first-presidency president">
+    <div class="leader-header">
+        <h3>George Albert Smith</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span><span class="role-badge role-first-presidency">First Presidency</span><span class="role-badge role-president">President</span></div>
+        <p class="ordination">Ordained Apostle: Oct 1903</p>
+        <a href="sermons/george-albert-smith/george-albert-smith-teachings.html" class="sermon-link">Read teachings &amp; sermons →</a>
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/george-albert-smith/george-albert-smith-1939.jpg" data-caption="George Albert Smith" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/george-albert-smith/george-albert-smith-1939.jpg" alt="George Albert Smith" loading="lazy">
+        </a>
+        <!-- To add more photos of George Albert Smith, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="charles-w-penrose" data-role="apostle first-presidency">
+    <div class="leader-header">
+        <h3>Charles W. Penrose</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span><span class="role-badge role-first-presidency">First Presidency</span></div>
+        <p class="ordination">Ordained Apostle: July 1904</p>
+        
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/charles-w-penrose/charles-w-penrose-first-presidency.jpg" data-caption="Charles W. Penrose" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/charles-w-penrose/charles-w-penrose-first-presidency.jpg" alt="Charles W. Penrose" loading="lazy">
+        </a>
+        <!-- To add more photos of Charles W. Penrose, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="george-f-richards" data-role="apostle">
+    <div class="leader-header">
+        <h3>George F. Richards</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span></div>
+        <p class="ordination">Ordained Apostle: April 1906</p>
+        
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/george-f-richards/george-f-richards-1915.jpg" data-caption="George F. Richards" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/george-f-richards/george-f-richards-1915.jpg" alt="George F. Richards" loading="lazy">
+        </a>
+        <!-- To add more photos of George F. Richards, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="orson-f-whitney" data-role="apostle">
+    <div class="leader-header">
+        <h3>Orson F. Whitney</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span></div>
+        <p class="ordination">Ordained Apostle: April 1906</p>
+        
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/orson-f-whitney/orson-f-whitney.jpg" data-caption="Orson F. Whitney" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/orson-f-whitney/orson-f-whitney.jpg" alt="Orson F. Whitney" loading="lazy">
+        </a>
+        <!-- To add more photos of Orson F. Whitney, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="david-o-mckay" data-role="apostle first-presidency president">
+    <div class="leader-header">
+        <h3>David O. McKay</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span><span class="role-badge role-first-presidency">First Presidency</span><span class="role-badge role-president">President</span></div>
+        <p class="ordination">Ordained Apostle: April 1906</p>
+        
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/david-o-mckay/david-o-mckay-1925.jpg" data-caption="David O. McKay" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/david-o-mckay/david-o-mckay-1925.jpg" alt="David O. McKay" loading="lazy">
+        </a>
+        <!-- To add more photos of David O. McKay, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="anthony-w-ivins" data-role="apostle first-presidency">
+    <div class="leader-header">
+        <h3>Anthony W. Ivins</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span><span class="role-badge role-first-presidency">First Presidency</span></div>
+        <p class="ordination">Ordained Apostle: Oct 1907</p>
+        <a href="sermons/anthony-w-ivins/anthony-w-ivins-sermons.html" class="sermon-link">Read teachings &amp; sermons →</a>
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/anthony-w-ivins/anthony-w-ivins-1921.jpg" data-caption="Anthony W. Ivins" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/anthony-w-ivins/anthony-w-ivins-1921.jpg" alt="Anthony W. Ivins" loading="lazy">
+        </a>
+        <!-- To add more photos of Anthony W. Ivins, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="joseph-fielding-smith" data-role="apostle first-presidency president">
+    <div class="leader-header">
+        <h3>Joseph Fielding Smith</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span><span class="role-badge role-first-presidency">First Presidency</span><span class="role-badge role-president">President</span></div>
+        <p class="ordination">Ordained Apostle: April 1910</p>
+        <a href="sermons/joseph-fielding-smith/joseph-fielding-smith-teachings.html" class="sermon-link">Read teachings &amp; sermons →</a>
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/joseph-fielding-smith/joseph-fielding-smith1943circa.jpg" data-caption="Joseph Fielding Smith" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/joseph-fielding-smith/joseph-fielding-smith1943circa.jpg" alt="Joseph Fielding Smith" loading="lazy">
+        </a>
+        <!-- To add more photos of Joseph Fielding Smith, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="james-e-talmage" data-role="apostle">
+    <div class="leader-header">
+        <h3>James E. Talmage</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span></div>
+        <p class="ordination">Ordained Apostle: Dec 1911</p>
+        
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/james-e-talmage/filler-image.jpg" data-caption="James E. Talmage" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/james-e-talmage/filler-image.jpg" alt="James E. Talmage" loading="lazy">
+        </a>
+        <!-- To add more photos of James E. Talmage, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="hyrum-g-smith" data-role="patriarch">
+    <div class="leader-header">
+        <h3>Hyrum G. Smith</h3>
+        <div class="role-badges"><span class="role-badge role-patriarch">Patriarch</span></div>
+        <p class="ordination">Ordained a Patriarch: May 1912</p>
+        
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/hyrum-g-smith/hyrum-g-smith-1932.jpg" data-caption="Hyrum G. Smith" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/hyrum-g-smith/hyrum-g-smith-1932.jpg" alt="Hyrum G. Smith" loading="lazy">
+        </a>
+        <!-- To add more photos of Hyrum G. Smith, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="stephen-l-richards" data-role="apostle first-presidency">
+    <div class="leader-header">
+        <h3>Stephen L Richards</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span><span class="role-badge role-first-presidency">First Presidency</span></div>
+        <p class="ordination">Ordained Apostle: Jan 1917</p>
+        
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/stephen-l-richards/richards1920.jpg" data-caption="Stephen L Richards" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/stephen-l-richards/richards1920.jpg" alt="Stephen L Richards" loading="lazy">
+        </a>
+        <!-- To add more photos of Stephen L Richards, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="richard-r-lyman" data-role="apostle">
+    <div class="leader-header">
+        <h3>Richard R. Lyman</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span></div>
+        <p class="ordination">Ordained Apostle: April 1918</p>
+        
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/richard-r-lyman/richard-r-lyman1939.jpg" data-caption="Richard R. Lyman" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/richard-r-lyman/richard-r-lyman1939.jpg" alt="Richard R. Lyman" loading="lazy">
+        </a>
+        <!-- To add more photos of Richard R. Lyman, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="melvin-j-ballard" data-role="apostle">
+    <div class="leader-header">
+        <h3>Melvin J. Ballard</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span></div>
+        <p class="ordination">Ordained and Apostle: Jan 1919</p>
+        <a href="../sermons/a-g/bal-mel-j-sermon.html" class="sermon-link">Read teachings &amp; sermons →</a>
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/melvin-j-ballard/melvin-j-ballard1919.jpg" data-caption="Melvin J. Ballard" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/melvin-j-ballard/melvin-j-ballard1919.jpg" alt="Melvin J. Ballard" loading="lazy">
+        </a>
+        <!-- To add more photos of Melvin J. Ballard, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="john-a-widtsoe" data-role="apostle">
+    <div class="leader-header">
+        <h3>John A. Widtsoe</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span></div>
+        <p class="ordination">Ordained an Apostle: March 1921</p>
+        
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/john-a-widtsoe/john-a-widtsoe-circa1920.jpg" data-caption="John A. Widtsoe" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/john-a-widtsoe/john-a-widtsoe-circa1920.jpg" alt="John A. Widtsoe" loading="lazy">
+        </a>
+        <!-- To add more photos of John A. Widtsoe, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="charles-w-nibley" data-role="first-presidency">
+    <div class="leader-header">
+        <h3>Charles W. Nibley</h3>
+        <div class="role-badges"><span class="role-badge role-first-presidency">First Presidency</span></div>
+        <p class="ordination">Ordained a Counselor: May 1925</p>
+        
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/charles-w-nibley/charles-w-nibley-first-presidency.jpg" data-caption="Charles W. Nibley" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/charles-w-nibley/charles-w-nibley-first-presidency.jpg" alt="Charles W. Nibley" loading="lazy">
+        </a>
+        <!-- To add more photos of Charles W. Nibley, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="joseph-f-merrill" data-role="apostle">
+    <div class="leader-header">
+        <h3>Joseph F. Merrill</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span></div>
+        <p class="ordination">Ordained an Apostle: Oct 1931</p>
+        
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/joseph-f-merrill/Joseph-F.-Merrill.webp" data-caption="Joseph F. Merrill" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/joseph-f-merrill/Joseph-F.-Merrill.webp" alt="Joseph F. Merrill" loading="lazy">
+        </a>
+        <!-- To add more photos of Joseph F. Merrill, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="j-reuben-clark-jr" data-role="apostle first-presidency">
+    <div class="leader-header">
+        <h3>J. Reuben Clark Jr.</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span><span class="role-badge role-first-presidency">First Presidency</span></div>
+        <p class="ordination">Ordained Second Counselor: April 1933</p>
+        <a href="sermons/j-reuben-clark-jr/j-reuben-clark-jr-sermons.html" class="sermon-link">Read teachings &amp; sermons →</a>
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/j-reuben-clark-jr/j-reuben-clark-jr-circa1914-wikipedia.jpg" data-caption="J. Reuben Clark Jr." onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/j-reuben-clark-jr/j-reuben-clark-jr-circa1914-wikipedia.jpg" alt="J. Reuben Clark Jr." loading="lazy">
+        </a>
+        <!-- To add more photos of J. Reuben Clark Jr., copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="charles-a-callis" data-role="apostle">
+    <div class="leader-header">
+        <h3>Charles A. Callis</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span></div>
+        <p class="ordination">Ordained an Apostle: Oct 1933</p>
+        <a href="sermons/charles-a-callis/charles-a-callis-sermons.html" class="sermon-link">Read teachings &amp; sermons →</a>
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/charles-a-callis/charles-a-callis-1939.jpg" data-caption="Charles A. Callis" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/charles-a-callis/charles-a-callis-1939.jpg" alt="Charles A. Callis" loading="lazy">
+        </a>
+        <!-- To add more photos of Charles A. Callis, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="alonzo-a-hinckley" data-role="apostle">
+    <div class="leader-header">
+        <h3>Alonzo A. Hinckley</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span></div>
+        <p class="ordination">Ordained an Apostle: Oct 1934</p>
+        <a href="sermons/alonzo-a-hinckley/alonzo-a-hinckley-sermons.html" class="sermon-link">Read teachings &amp; sermons →</a>
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/alonzo-a-hinckley/alonzo-a-hinckley-1934.jpg" data-caption="Alonzo A. Hinckley" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/alonzo-a-hinckley/alonzo-a-hinckley-1934.jpg" alt="Alonzo A. Hinckley" loading="lazy">
+        </a>
+        <!-- To add more photos of Alonzo A. Hinckley, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="albert-e-bowen" data-role="apostle">
+    <div class="leader-header">
+        <h3>Albert E. Bowen</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span></div>
+        <p class="ordination">Ordained an Apostle: April 1937</p>
+        <a href="sermons/albert-e-bowen/albert-e-bowen-sermons.html" class="sermon-link">Read teachings &amp; sermons →</a>
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/albert-e-bowen/albert-e-bowen-1920.jpg" data-caption="Albert E. Bowen" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/albert-e-bowen/albert-e-bowen-1920.jpg" alt="Albert E. Bowen" loading="lazy">
+        </a>
+        <!-- To add more photos of Albert E. Bowen, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="sylvester-q-cannon" data-role="apostle">
+    <div class="leader-header">
+        <h3>Sylvester Q. Cannon</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span></div>
+        <p class="ordination">Ordained an Apostle: Oct 1939</p>
+        
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/sylvester-q-cannon/sylvester-q-cannon.png" data-caption="Sylvester Q. Cannon" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/sylvester-q-cannon/sylvester-q-cannon.png" alt="Sylvester Q. Cannon" loading="lazy">
+        </a>
+        <!-- To add more photos of Sylvester Q. Cannon, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="harold-b-lee" data-role="apostle first-presidency president">
+    <div class="leader-header">
+        <h3>Harold B. Lee</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span><span class="role-badge role-first-presidency">First Presidency</span><span class="role-badge role-president">President</span></div>
+        <p class="ordination">Ordained an Apostle: April 1941</p>
+        <a href="sermons/harold-b-lee/harold-b-lee-teachings.html" class="sermon-link">Read teachings &amp; sermons →</a>
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/harold-b-lee/harold-b-lee-1944.jpg" data-caption="Harold B. Lee" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/harold-b-lee/harold-b-lee-1944.jpg" alt="Harold B. Lee" loading="lazy">
+        </a>
+        <!-- To add more photos of Harold B. Lee, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="joseph-f-smith-ii" data-role="patriarch">
+    <div class="leader-header">
+        <h3>Joseph F. Smith II</h3>
+        <div class="role-badges"><span class="role-badge role-patriarch">Patriarch</span></div>
+        <p class="ordination">Ordained a Patriarch: Sept 1942</p>
+        
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/joseph-f-smith-second/Joseph_Fielding_Smith_(presiding_patriarch).jpg" data-caption="Joseph F. Smith II" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/joseph-f-smith-second/Joseph_Fielding_Smith_(presiding_patriarch).jpg" alt="Joseph F. Smith II" loading="lazy">
+        </a>
+        <!-- To add more photos of Joseph F. Smith II, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="spencer-w-kimball" data-role="apostle first-presidency president">
+    <div class="leader-header">
+        <h3>Spencer W. Kimball</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span><span class="role-badge role-first-presidency">First Presidency</span><span class="role-badge role-president">President</span></div>
+        <p class="ordination">Ordained an Apostle: Oct 1943</p>
+        
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/spencer-w-kimball/spencer-w-kimballplaceholder.png" data-caption="Spencer W. Kimball" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/spencer-w-kimball/spencer-w-kimballplaceholder.png" alt="Spencer W. Kimball" loading="lazy">
+        </a>
+        <!-- To add more photos of Spencer W. Kimball, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="ezra-taft-benson" data-role="apostle first-presidency president">
+    <div class="leader-header">
+        <h3>Ezra Taft Benson</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span><span class="role-badge role-first-presidency">First Presidency</span><span class="role-badge role-president">President</span></div>
+        <p class="ordination">Ordained an Apostle: Oct 1943</p>
+        
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/ezra-taft-benson/Ezra_Taft_Benson.jpg" data-caption="Ezra Taft Benson" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/ezra-taft-benson/Ezra_Taft_Benson.jpg" alt="Ezra Taft Benson" loading="lazy">
+        </a>
+        <!-- To add more photos of Ezra Taft Benson, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="mark-e-petersen" data-role="apostle">
+    <div class="leader-header">
+        <h3>Mark E. Petersen</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span></div>
+        <p class="ordination">Ordained an Apostle: April 1944</p>
+        
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/mark-e-petersen/mark-e-petersen.jpg" data-caption="Mark E. Petersen" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/mark-e-petersen/mark-e-petersen.jpg" alt="Mark E. Petersen" loading="lazy">
+        </a>
+        <!-- To add more photos of Mark E. Petersen, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="matthew-cowley" data-role="apostle">
+    <div class="leader-header">
+        <h3>Matthew Cowley</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span></div>
+        <p class="ordination">Ordained an Apostle: Oct 1945</p>
+        
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/matthew-cowley/matthew-cowley.jpg" data-caption="Matthew Cowley" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/matthew-cowley/matthew-cowley.jpg" alt="Matthew Cowley" loading="lazy">
+        </a>
+        <!-- To add more photos of Matthew Cowley, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="henry-d-moyle" data-role="apostle first-presidency">
+    <div class="leader-header">
+        <h3>Henry D. Moyle</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span><span class="role-badge role-first-presidency">First Presidency</span></div>
+        <p class="ordination">Ordained an Apostle: April 1947</p>
+        
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/henry-d-moyle/henry-d-moyle-1961.jpg" data-caption="Henry D. Moyle" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/henry-d-moyle/henry-d-moyle-1961.jpg" alt="Henry D. Moyle" loading="lazy">
+        </a>
+        <!-- To add more photos of Henry D. Moyle, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="eldred-g-smith" data-role="patriarch">
+    <div class="leader-header">
+        <h3>Eldred G. Smith</h3>
+        <div class="role-badges"><span class="role-badge role-patriarch">Patriarch</span></div>
+        <p class="ordination">Ordained a Patriarch: April 1947</p>
+        
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/eldred-g-smith/eldred-g-smith-1957.jpg" data-caption="Eldred G. Smith" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/eldred-g-smith/eldred-g-smith-1957.jpg" alt="Eldred G. Smith" loading="lazy">
+        </a>
+        <!-- To add more photos of Eldred G. Smith, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="delbert-l-stapley" data-role="apostle">
+    <div class="leader-header">
+        <h3>Delbert L. Stapley</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span></div>
+        <p class="ordination">Ordained an Apostle: Oct 1950</p>
+        
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/delbert-l-stapley/delbert-l-stapley-1963.jpg" data-caption="Delbert L. Stapley" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/delbert-l-stapley/delbert-l-stapley-1963.jpg" alt="Delbert L. Stapley" loading="lazy">
+        </a>
+        <!-- To add more photos of Delbert L. Stapley, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="marion-g-romney" data-role="apostle first-presidency">
+    <div class="leader-header">
+        <h3>Marion G. Romney</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span><span class="role-badge role-first-presidency">First Presidency</span></div>
+        <p class="ordination">Ordained an Apostle: Oct 1951</p>
+        
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/marion-g-romney/marion-g-romney.jpg" data-caption="Marion G. Romney" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/marion-g-romney/marion-g-romney.jpg" alt="Marion G. Romney" loading="lazy">
+        </a>
+        <!-- To add more photos of Marion G. Romney, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="legrand-richards" data-role="apostle">
+    <div class="leader-header">
+        <h3>LeGrand Richards</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span></div>
+        <p class="ordination">Ordained an Apostle: April 1952</p>
+        
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/legrand-richards/legrand-richards1963.jpg" data-caption="LeGrand Richards" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/legrand-richards/legrand-richards1963.jpg" alt="LeGrand Richards" loading="lazy">
+        </a>
+        <!-- To add more photos of LeGrand Richards, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="adam-s-bennion" data-role="apostle">
+    <div class="leader-header">
+        <h3>Adam S. Bennion</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span></div>
+        <p class="ordination">Ordained an Apostle: April 1953</p>
+        <a href="sermons/adam-s-bennion/adam-s-bennion-sermons.html" class="sermon-link">Read teachings &amp; sermons →</a>
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/adam-s-bennion/adam-s-bennion-1953.jpg" data-caption="Adam S. Bennion" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/adam-s-bennion/adam-s-bennion-1953.jpg" alt="Adam S. Bennion" loading="lazy">
+        </a>
+        <!-- To add more photos of Adam S. Bennion, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="richard-l-evans" data-role="apostle">
+    <div class="leader-header">
+        <h3>Richard L. Evans</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span></div>
+        <p class="ordination">Ordained an Apostle: Oct 1953</p>
+        
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/richard-l-evans/richard-l-evans.jpg" data-caption="Richard L. Evans" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/richard-l-evans/richard-l-evans.jpg" alt="Richard L. Evans" loading="lazy">
+        </a>
+        <!-- To add more photos of Richard L. Evans, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="george-q-morris" data-role="apostle">
+    <div class="leader-header">
+        <h3>George Q. Morris</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span></div>
+        <p class="ordination">Ordained an Apostle: April 1954</p>
+        <a href="sermons/george-q-morris/george-q-morris-teachings.html" class="sermon-link">Read teachings &amp; sermons →</a>
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/george-q-morris/george-q-morris-1962.jpg" data-caption="George Q. Morris" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/george-q-morris/george-q-morris-1962.jpg" alt="George Q. Morris" loading="lazy">
+        </a>
+        <!-- To add more photos of George Q. Morris, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="hugh-b-brown" data-role="apostle first-presidency">
+    <div class="leader-header">
+        <h3>Hugh B. Brown</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span><span class="role-badge role-first-presidency">First Presidency</span></div>
+        <p class="ordination">Ordained an Apostle: April 1958</p>
+        
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/hugh-b-brown/filler.jpg" data-caption="Hugh B. Brown" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/hugh-b-brown/filler.jpg" alt="Hugh B. Brown" loading="lazy">
+        </a>
+        <!-- To add more photos of Hugh B. Brown, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="howard-w-hunter" data-role="apostle first-presidency president">
+    <div class="leader-header">
+        <h3>Howard W. Hunter</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span><span class="role-badge role-first-presidency">First Presidency</span><span class="role-badge role-president">President</span></div>
+        <p class="ordination">Ordained an Apostle: Oct 1959</p>
+        
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/howard-w-hunter/howard-w-hunter-1975.jpg" data-caption="Howard W. Hunter" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/howard-w-hunter/howard-w-hunter-1975.jpg" alt="Howard W. Hunter" loading="lazy">
+        </a>
+        <!-- To add more photos of Howard W. Hunter, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="gordon-b-hinckley" data-role="apostle first-presidency president">
+    <div class="leader-header">
+        <h3>Gordon B. Hinckley</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span><span class="role-badge role-first-presidency">First Presidency</span><span class="role-badge role-president">President</span></div>
+        <p class="ordination">Ordained an Apostle: Oct 1961</p>
+        
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/gordon-b-hinckley/gordon-b-hinckley-1976.jpg" data-caption="Gordon B. Hinckley" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/gordon-b-hinckley/gordon-b-hinckley-1976.jpg" alt="Gordon B. Hinckley" loading="lazy">
+        </a>
+        <!-- To add more photos of Gordon B. Hinckley, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="nathan-e-tanner" data-role="apostle first-presidency">
+    <div class="leader-header">
+        <h3>Nathan E. Tanner</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span><span class="role-badge role-first-presidency">First Presidency</span></div>
+        <p class="ordination">Ordained an Apostle: Oct 1962</p>
+        
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/nathan-e-tanner/n-eldon-tanner.jpg" data-caption="Nathan E. Tanner" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/nathan-e-tanner/n-eldon-tanner.jpg" alt="Nathan E. Tanner" loading="lazy">
+        </a>
+        <!-- To add more photos of Nathan E. Tanner, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="thomas-s-monson" data-role="apostle first-presidency president">
+    <div class="leader-header">
+        <h3>Thomas S. Monson</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span><span class="role-badge role-first-presidency">First Presidency</span><span class="role-badge role-president">President</span></div>
+        <p class="ordination">Ordained an Apostle: Oct 1963</p>
+        
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/thomas-s-monson/thomas-s-monson.jpg" data-caption="Thomas S. Monson" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/thomas-s-monson/thomas-s-monson.jpg" alt="Thomas S. Monson" loading="lazy">
+        </a>
+        <!-- To add more photos of Thomas S. Monson, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="thorpe-b-isaacson" data-role="first-presidency">
+    <div class="leader-header">
+        <h3>Thorpe B. Isaacson</h3>
+        <div class="role-badges"><span class="role-badge role-first-presidency">First Presidency</span></div>
+        <p class="ordination">Ordained a Counselor: Oct 1965</p>
+        
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/thorpe-b-isaacson/thorpe-b-isaacson.jpg" data-caption="Thorpe B. Isaacson" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/thorpe-b-isaacson/thorpe-b-isaacson.jpg" alt="Thorpe B. Isaacson" loading="lazy">
+        </a>
+        <!-- To add more photos of Thorpe B. Isaacson, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="alvin-r-dyer" data-role="first-presidency">
+    <div class="leader-header">
+        <h3>Alvin R. Dyer</h3>
+        <div class="role-badges"><span class="role-badge role-first-presidency">First Presidency</span></div>
+        <p class="ordination">Ordained a Counselor: April 1968</p>
+        
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/alvin-r-dyer/alvin-r-dyer-wikipedia.jpg" data-caption="Alvin R. Dyer" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/alvin-r-dyer/alvin-r-dyer-wikipedia.jpg" alt="Alvin R. Dyer" loading="lazy">
+        </a>
+        <!-- To add more photos of Alvin R. Dyer, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="boyd-k-packer" data-role="apostle">
+    <div class="leader-header">
+        <h3>Boyd K. Packer</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span></div>
+        <p class="ordination">Ordained an Apostle: April 1970</p>
+        <a href="sermons/boyd-k-packer/boyd-k-packer-sermons.html" class="sermon-link">Read teachings &amp; sermons →</a>
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/boyd-k-packer/boyd-k-packer1961.jpg" data-caption="Boyd K. Packer" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/boyd-k-packer/boyd-k-packer1961.jpg" alt="Boyd K. Packer" loading="lazy">
+        </a>
+        <!-- To add more photos of Boyd K. Packer, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="marvin-j-ashton" data-role="apostle">
+    <div class="leader-header">
+        <h3>Marvin J. Ashton</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span></div>
+        <p class="ordination">Ordained an Apostle: Dec 1971</p>
+        <a href="../sermons/a-g/ash-marv-j-sermon.html" class="sermon-link">Read teachings &amp; sermons →</a>
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/marvin-j-ashton/marvin-j-ashton.jpg" data-caption="Marvin J. Ashton" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/marvin-j-ashton/marvin-j-ashton.jpg" alt="Marvin J. Ashton" loading="lazy">
+        </a>
+        <!-- To add more photos of Marvin J. Ashton, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="bruce-r-mcconkie" data-role="apostle">
+    <div class="leader-header">
+        <h3>Bruce R. McConkie</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span></div>
+        <p class="ordination">Ordained an Apostle: Oct 1972</p>
+        
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/bruce-r-mcconkie/bruce-r-mcconkie-1976.jpg" data-caption="Bruce R. McConkie" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/bruce-r-mcconkie/bruce-r-mcconkie-1976.jpg" alt="Bruce R. McConkie" loading="lazy">
+        </a>
+        <!-- To add more photos of Bruce R. McConkie, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="l-tom-perry" data-role="apostle">
+    <div class="leader-header">
+        <h3>L. Tom Perry</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span></div>
+        <p class="ordination">Ordained an Apostle: April 1974</p>
+        <a href="sermons/l-tom-perry/l-tom-perry-teachings.html" class="sermon-link">Read teachings &amp; sermons →</a>
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/l-tom-perry/l-tom-perry.jpg" data-caption="L. Tom Perry" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/l-tom-perry/l-tom-perry.jpg" alt="L. Tom Perry" loading="lazy">
+        </a>
+        <!-- To add more photos of L. Tom Perry, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="david-b-haight" data-role="apostle">
+    <div class="leader-header">
+        <h3>David B. Haight</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span></div>
+        <p class="ordination">Ordained an Apostle: Jan 1976</p>
+        <a href="sermons/david-b-haight/david-b-haight-teachings.html" class="sermon-link">Read teachings &amp; sermons →</a>
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/david-b-haight/filler-image-.jpg" data-caption="David B. Haight" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/david-b-haight/filler-image-.jpg" alt="David B. Haight" loading="lazy">
+        </a>
+        <!-- To add more photos of David B. Haight, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="james-e-faust" data-role="apostle first-presidency">
+    <div class="leader-header">
+        <h3>James E. Faust</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span><span class="role-badge role-first-presidency">First Presidency</span></div>
+        <p class="ordination">Ordained an Apostle: Oct 1978</p>
+        
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/james-e-faust/filler-image.jpg" data-caption="James E. Faust" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/james-e-faust/filler-image.jpg" alt="James E. Faust" loading="lazy">
+        </a>
+        <!-- To add more photos of James E. Faust, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="neil-a-maxwell" data-role="apostle">
+    <div class="leader-header">
+        <h3>Neil A. Maxwell</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span></div>
+        <p class="ordination">Ordained an Apostle: July 1981</p>
+        
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/neil-a-maxwell/neil-a-maxwell.jpg" data-caption="Neil A. Maxwell" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/neil-a-maxwell/neil-a-maxwell.jpg" alt="Neil A. Maxwell" loading="lazy">
+        </a>
+        <!-- To add more photos of Neil A. Maxwell, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="russell-m-nelson" data-role="apostle first-presidency president">
+    <div class="leader-header">
+        <h3>Russell M. Nelson</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span><span class="role-badge role-first-presidency">First Presidency</span><span class="role-badge role-president">President</span></div>
+        <p class="ordination">Ordained an Apostle: April 1984</p>
+        
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/russel-m-nelson/russell-m-nelson.jpg" data-caption="Russell M. Nelson" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/russel-m-nelson/russell-m-nelson.jpg" alt="Russell M. Nelson" loading="lazy">
+        </a>
+        <!-- To add more photos of Russell M. Nelson, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="m-russell-ballard" data-role="apostle">
+    <div class="leader-header">
+        <h3>M. Russell Ballard</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span></div>
+        <p class="ordination">Ordained an Apostle: Oct 1985</p>
+        
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/m-russell-ballard/m-russell-ballard.jpg" data-caption="M. Russell Ballard" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/m-russell-ballard/m-russell-ballard.jpg" alt="M. Russel Ballard" loading="lazy">
+        </a>
+        <!-- To add more photos of M. Russell Ballard, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="joseph-b-wirthlin" data-role="apostle">
+    <div class="leader-header">
+        <h3>Joseph B. Wirthlin</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span></div>
+        <p class="ordination">Ordained an Apostle: Oct 1986</p>
+        
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/joseph-b-wirthlin/Wirthlin_Joseph-Web-compressor.jpg" data-caption="Joseph B. Wirthlin" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/joseph-b-wirthlin/Wirthlin_Joseph-Web-compressor.jpg" alt="Joseph B. Wirthlin" loading="lazy">
+        </a>
+        <!-- To add more photos of Joseph B. Wirthlin, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="richard-g-scott" data-role="apostle">
+    <div class="leader-header">
+        <h3>Richard G. Scott</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span></div>
+        <p class="ordination">Ordained an Apostle: Oct 6, 1988</p>
+        
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/richard-g-scott/richard-g-scott.jpg" data-caption="Richard G. Scott" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/richard-g-scott/richard-g-scott.jpg" alt="Richard G. Scott" loading="lazy">
+        </a>
+        <!-- To add more photos of Richard G. Scott, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="robert-d-hales" data-role="apostle">
+    <div class="leader-header">
+        <h3>Robert D. Hales</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span></div>
+        <p class="ordination">Ordained an Apostle: April 1994</p>
+        
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/robert-d-hales/robert-d-hales.jpg" data-caption="Robert D. Hales" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/robert-d-hales/robert-d-hales.jpg" alt="Robert D. Hales" loading="lazy">
+        </a>
+        <!-- To add more photos of Robert D. Hales, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+<div class="leader-block" id="jeffery-r-holland" data-role="apostle">
+    <div class="leader-header">
+        <h3>Jeffery R. Holland</h3>
+        <div class="role-badges"><span class="role-badge role-apostle">Apostle</span></div>
+        <p class="ordination">Ordained an Apostle: June 1994</p>
+        
+    </div>
+    <div class="photo-grid">
+        <a class="photo-thumb" href="../media/images/prophets/jeffery-r-holland/filler-imaage.webp" data-caption="Jeffery R. Holland" onclick="openLightbox(this); return false;">
+            <img src="../media/images/prophets/jeffery-r-holland/filler-imaage.webp" alt="Jeffery R. Holland" loading="lazy">
+        </a>
+        <!-- To add more photos of Jeffery R. Holland, copy the <a class="photo-thumb"> block above,
+             point it at the new image path, and update the data-caption if needed. -->
+    </div>
+</div>
+    </div>
+    <p id="noLeaderResults" style="display:none;">No leaders found.</p>
+
+    <h2 id="presidencies" class="section-title">Presidencies and Apostleships</h2>
+    <div class="gallery-row">
+        <div class="gallery-item">
+            <img src="../media/images/0-apostleships-1-presidencies/1280px-First_Presidency_and_Council_of_the_Twelve_Apostles_of_the_Church_of_Jesus_Christ_of_Latter-day_Saints._Copyright_secured,_C.R._Savage._(cropped).jpg">
+            <p>(left to right) Anthon H. Lund, John W. Taylor, John H. Smith, Heber J. Grant, Franics M. Lyman, George Teasdale, Marriner W. Merrill
+                <br>
+                Brigham Young Jr, George Q. Cannon, Lorenzo Snow, Joseph F. Smith, Franklin D. Richards
+                <br>
+                Matthias F. Cowley, Abraham O. Woodruff
+                <br><span class="date"><strong>September, 1898</strong></span>
+            </p>
+        </div>
+        <div class="gallery-item">
+            <img src="../media/images/0-apostleships-1-presidencies/albert-smiths-presidency.png">
+            <p>(left to right) J. Reuben Clark Jr, George Albert Smith, David O. McKay
+                <br><span class="date"><strong>Circa 1945</strong></span>
+            </p>
+        </div>
+        <div class="gallery-item">
+            <img src="../media/images/0-apostleships-1-presidencies/dist.jpg">
+            <p>(left to right)
+                <br><span class="date"><strong>Circa 1945</strong></span>
+            </p>
+        </div>
+    </div>
+</div>
+
+<div id="lightbox" onclick="closeLightbox(event)">
+    <button class="close-btn" onclick="closeLightbox(event)">&times;</button>
+    <img id="lightboxImg" src="" alt="">
+    <div class="caption" id="lightboxCaption"></div>
+</div>
+
+<script>
+function openLightbox(el) {
+    const img = el.querySelector('img');
+    document.getElementById('lightboxImg').src = img.src;
+    document.getElementById('lightboxImg').alt = img.alt;
+    document.getElementById('lightboxCaption').textContent = el.getAttribute('data-caption') || '';
+    document.getElementById('lightbox').classList.add('open');
+}
+function closeLightbox(e) {
+    if (e.target.id === 'lightbox' || e.target.classList.contains('close-btn')) {
+        document.getElementById('lightbox').classList.remove('open');
+    }
+}
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') document.getElementById('lightbox').classList.remove('open');
+});
+
+function filterLeaders() {
+    const input = document.getElementById("leaderSearch").value.toLowerCase();
+    const blocks = document.querySelectorAll(".leader-block");
+    let anyVisible = false;
+    blocks.forEach(block => {
+        const match = block.textContent.toLowerCase().includes(input);
+        block.style.display = match ? "block" : "none";
+        if (match) anyVisible = true;
+    });
+    document.getElementById("noLeaderResults").style.display = anyVisible ? "none" : "block";
+    document.getElementById("leader-toc").style.display = input ? "none" : "block";
+}
+</script>
+</body>
 </html>
