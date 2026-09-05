@@ -44,6 +44,16 @@ a:hover{
         }
     }
 }
+.impera{
+    background-color: dodgerblue;
+    color:black;
+    a{
+        color:black;
+    }
+}
+.impera .sources a{
+    color:lightblue;
+}
 .mesadvo{
     background-color:greenyellow;
     color:black;
@@ -57,6 +67,19 @@ a:hover{
     a{
         color:black;
     }
+}
+.the-seer{
+    background-color:mediumvioletred;
+    color:black;
+    a{
+        color:black;
+    }
+}
+.the-seer .sources a{
+    color:aqua;
+}
+.the-seer .other-source a{
+    color:burlywood;
 }
 .chc{
     background-color:rgb(114, 121, 114);
