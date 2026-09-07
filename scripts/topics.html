@@ -1,66 +1,273 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <title>Topics</title>
         <link rel="stylesheet" type="text/css" href="style.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="../media/images/favicon/favicon.png" type="image/x-icon">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
         <style>
+            :root {
+                --navy-bg: #023465;
+                --navy-card: #002E5D;
+                --navy-deep: #001f3f;
+                --gold-bright: #ffd24d;
+                --gold-muted: #cdb571;
+                --text-light: #ffffff;
+                --text-dim: #d0d8e0;
+                --border-color: rgba(255, 255, 255, 0.2);
+            }
+
+            * { box-sizing: border-box; }
+
+            html, body {
+                margin: 0;
+                padding: 0;
+                background-color: var(--navy-bg);
+                background-image: 
+                    radial-gradient(ellipse at top left, rgba(255, 210, 77, 0.08), transparent 50%),
+                    radial-gradient(ellipse at bottom right, rgba(0, 31, 63, 0.8), transparent 60%);
+                color: var(--text-light);
+                font-family: Arial, sans-serif;
+                min-height: 100vh;
+            }
+
+            body {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 40px 24px 80px;
+            }
+
+            /* Floating Navigation Home Button */
+            .home-button {
+                position: fixed;
+                top: 20px;
+                left: 20px;
+                z-index: 100;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 50px;
+                height: 50px;
+                background: rgba(2, 52, 101, 0.85);
+                border: 2px solid #ffffff;
+                border-radius: 50%;
+                color: #ffffff;
+                text-decoration: none;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+                transition: all 0.3s ease;
+            }
+
+            .home-button svg {
+                width: 24px;
+                height: 24px;
+                fill: currentColor;
+            }
+
+            .home-button:hover {
+                background: var(--gold-bright);
+                color: var(--navy-card);
+                border-color: var(--gold-bright);
+                transform: scale(1.1);
+                box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+            }
+
+            .page {
+                width: 100%;
+                max-width: 680px;
+                margin-top: 30px;
+                animation: settle 0.7s ease-out both;
+            }
+
+            @keyframes settle {
+                from { opacity: 0; transform: translateY(10px); }
+                to   { opacity: 1; transform: translateY(0); }
+            }
+
+            @media (prefers-reduced-motion: reduce) {
+                .page { animation: none; }
+            }
+
+            h1 {
+                font-family: Arial, sans-serif;
+                font-weight: bold;
+                font-size: 3rem;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                color: var(--text-light);
+                margin: 0 0 8px;
+                text-align: center;
+            }
+
+            .subtitle {
+                font-style: italic;
+                font-family: 'EB Garamond', Georgia, serif;
+                color: var(--text-dim);
+                font-size: 1.1rem;
+                margin: 0 0 25px;
+                text-align: center;
+            }
+
+            .rule {
+                border: none;
+                height: 2px;
+                background: linear-gradient(to right, transparent, var(--border-color) 20%, var(--gold-bright) 50%, var(--border-color) 80%, transparent);
+                margin: 0 0 30px;
+            }
+
             #searchBar {
-                    width: 300px;
-                    max-width: 90%;
-                    padding: 8px 12px;
-                    margin: 15px 0;
-                    font-size: 16px;
-                    border: 2px solid whitesmoke;
-                    border-radius: 5px;
-                    background-color: #002E5D;
-                    color: whitesmoke;
+                width: 100%;
+                padding: 14px 20px;
+                font-family: Arial, sans-serif;
+                font-size: 1rem;
+                border: 2px solid var(--border-color);
+                border-radius: 8px;
+                background-color: rgba(0, 31, 63, 0.6);
+                color: var(--text-light);
+                outline: none;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+                transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+            }
+
+            #searchBar:focus {
+                border-color: var(--gold-bright);
+                background-color: rgba(0, 31, 63, 0.85);
+                box-shadow: 0 0 12px rgba(255, 210, 77, 0.3);
+            }
+
+            #searchBar::placeholder { color: #8fa3b8; }
+
+            .container-flex { margin-top: 30px; }
+
+            #topicList {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            #topicList li a {
+                display: flex;
+                align-items: center;
+                gap: 14px;
+                padding: 16px 24px;
+                font-family: Arial, sans-serif;
+                font-size: 1.25rem;
+                font-weight: bold;
+                color: var(--text-light);
+                text-decoration: none;
+                background: rgba(0, 46, 93, 0.75);
+                border: 2px solid var(--border-color);
+                border-radius: 8px;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+                transition: all 0.3s ease;
+            }
+
+            #topicList li a::before {
+                content: "❖";
+                font-size: 0.9rem;
+                color: var(--gold-muted);
+                transition: color 0.3s ease, transform 0.3s ease;
+            }
+
+            #topicList li a:hover {
+                background: var(--gold-bright);
+                color: var(--navy-card);
+                border-color: var(--gold-bright);
+                transform: translateX(6px) scale(1.01);
+                box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+            }
+
+            #topicList li a:hover::before {
+                color: var(--navy-card);
+                transform: rotate(45deg);
+            }
+
+            .empty-state {
+                display: none;
+                padding: 30px 4px;
+                font-style: italic;
+                color: var(--text-dim);
+                font-size: 1.1rem;
+                text-align: center;
+            }
+
+            .empty-state.visible { display: block; }
+
+            @media (max-width: 768px) {
+                .home-button {
+                    top: 15px;
+                    left: 15px;
+                    width: 42px;
+                    height: 42px;
                 }
-            #searchBar::placeholder {
-                    color: lightgray;
+                .home-button svg {
+                    width: 20px;
+                    height: 20px;
                 }
+                h1 { font-size: 2.2rem; }
+                #topicList li a { font-size: 1.1rem; padding: 14px 18px; }
+            }
         </style>
     </head>
     <body>
-        <h1>Topics</h1>
+        
+        <a href="../index.html" class="home-button" title="Go to Home">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+            </svg>
+        </a>
 
-        <a href="../index.html">Home</a>
+        <div class="page">
+            <h1>Topics</h1>
+            <p class="subtitle">An index of subjects worth returning to</p>
+            <hr class="rule">
 
-        <br><br>
+            <input type="text" id="searchBar" placeholder="Search topics…" onkeyup="searchTopics()" autocomplete="off">
 
-        <input type="text" id="searchBar" placeholder="Search topics..." onkeyup="searchTopics()">
-
-        <div class="container-flex">
-            <ul id="topicList" style="text-align:left;">
-                <li><a href="topics/brighamyoung.html">Brigham Young</a></li>
-                <li><a href="topics/josephsmithjr.html">Joseph Smith Jr.</a></li>
-                <li><a href="topics/facecards.html">Face Cards</a></li>
-                <li><a href="topics/pioneers.html">Pioneers</a></li>
-                <li><a href="topics/planofsalvation.html">Plan of Salvation</a></li>
-                <li><a href="topics/prophets.html">Prophets</a></li>
-                <li><a href="topics/revelation.html">Revelation</a></li>
-                <li><a href="topics/hypnotism.html">Hypnotism</a></li>
-                <li><a href="topics/wilfordwoodruff.html">Wilford Woodruff</a></li>
-                <li><a href="topics/zion.html">Zion</a></li>
-            </ul>
+            <div class="container-flex">
+                <ul id="topicList">
+                    <li><a href="topics/atonement.html">Atonement</a></li>
+                    <li><a href="topics/brighamyoung.html">Brigham Young</a></li>
+                    <li><a href="topics/josephsmithjr.html">Joseph Smith Jr.</a></li>
+                    <li><a href="topics/facecards.html">Face Cards</a></li>
+                    <li><a href="topics/pioneers.html">Pioneers</a></li>
+                    <li><a href="topics/planofsalvation.html">Plan of Salvation</a></li>
+                    <li><a href="topics/profanity.html">Profanity</a></li>
+                    <li><a href="topics/prophets.html">Prophets</a></li>
+                    <li><a href="topics/revelation.html">Revelation</a></li>
+                    <li><a href="topics/hypnotism.html">Hypnotism</a></li>
+                    <li><a href="topics/wilfordwoodruff.html">Wilford Woodruff</a></li>
+                    <li><a href="topics/zion.html">Zion</a></li>
+                </ul>
+                <p class="empty-state" id="emptyState">No topics match your search.</p>
+            </div>
         </div>
 
         <script>
             function searchTopics() {
-                let input = document.getElementById("searchBar").value.toLowerCase();
-                let ul = document.getElementById("topicList");
-                let li = ul.getElementsByTagName("li");
+                const input = document.getElementById("searchBar").value.toLowerCase();
+                const ul = document.getElementById("topicList");
+                const items = ul.getElementsByTagName("li");
+                const emptyState = document.getElementById("emptyState");
+                let visibleCount = 0;
 
-                for (let i = 0; i < li.length; i++) {
-                    let text = li[i].textContent || li[i].innerText;
-
+                for (let i = 0; i < items.length; i++) {
+                    const text = items[i].textContent || items[i].innerText;
                     if (text.toLowerCase().indexOf(input) > -1) {
-                        li[i].style.display = "";
+                        items[i].style.display = "";
+                        visibleCount++;
                     } else {
-                        li[i].style.display = "none";
+                        items[i].style.display = "none";
                     }
                 }
+
+                emptyState.classList.toggle("visible", visibleCount === 0);
             }
         </script>
     </body>
