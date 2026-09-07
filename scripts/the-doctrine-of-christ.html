@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Doctrine of Christ</title>
+    <link rel="icon" type="image/png" href="../favicon/favicon.png">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body, html {
+            height: 100%;
+            width: 100%;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+            background-color: #023465;
+        }
+
+        /* Home Button Styling */
+        .home-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: rgba(2, 52, 101, 0.85);
+            border: 2px solid #ffffff;
+            border-radius: 50%;
+            color: #ffffff;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .home-button svg {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+        }
+
+        .home-button:hover {
+            background: #ffd24d;
+            color: #002E5D;
+            border-color: #ffd24d;
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+        }
+
+        /* Split Screen Main Container */
+        .split-container {
+            display: flex;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        /* Base styling for both halves */
+        .split-side {
+            flex: 1;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            overflow: hidden;
+            border-right: 2px solid rgba(255, 255, 255, 0.2);
+            transition: flex 0.4s ease;
+        }
+
+        .split-side:last-child {
+            border-right: none;
+        }
+
+        /* Hover expansion effect */
+        .split-side:hover {
+            flex: 1.15;
+        }
+
+        /* Text overlay styling */
+        .side-label {
+            position: relative;
+            z-index: 10;
+            color: #ffffff;
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: 18px 36px;
+            background: rgba(2, 52, 101, 0.75);
+            border: 2px solid #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+            transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+        }
+
+        .split-side:hover .side-label {
+            background: #ffd24d;
+            color: #002E5D;
+            border-color: #ffd24d;
+            transform: scale(1.05);
+        }
+
+        /* --- LEFT SIDE: TOPICS --- */
+        .topics-side {
+            background: linear-gradient(135deg, #002E5D 0%, #023465 100%);
+        }
+
+        /* --- RIGHT SIDE: TEACHINGS (Sliding Background) --- */
+        .teachings-side {
+            background-color: #001f3f;
+        }
+
+        /* Dimming layer to make text readable over moving images */
+        .teachings-side::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(2, 52, 101, 0.55);
+            z-index: 1;
+        }
+
+        .carousel-track {
+            display: flex;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: max-content;
+            animation: slideLeft 35s linear infinite;
+        }
+
+        /* Pause animation on hover */
+        .teachings-side:hover .carousel-track {
+            animation-play-state: paused;
+        }
+
+        .carousel-track img {
+            height: 100%;
+            width: 320px;
+            object-fit: cover;
+            filter: brightness(0.7) grayscale(20%);
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Continuous Sliding Animation */
+        @keyframes slideLeft {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                /* Moves left by half the width of double-buffered track */
+                transform: translateX(-50%);
+            }
+        }
+
+        /* Responsive Mobile Layout */
+        @media (max-width: 768px) {
+            .home-button {
+                top: 15px;
+                left: 15px;
+                width: 42px;
+                height: 42px;
+            }
+            .home-button svg {
+                width: 20px;
+                height: 20px;
+            }
+            .split-container {
+                flex-direction: column;
+            }
+            .split-side {
+                border-right: none;
+                border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+            }
+            .side-label {
+                font-size: 1.8rem;
+                padding: 12px 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <a href="../index.html" class="home-button" title="Go to Home">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+        </svg>
+    </a>
+
+    <div class="split-container">
+        
+        <a href="topics.html" class="split-side topics-side">
+            <div class="carousel-track">
+                <img src="../media/images/topics-photos/adam-and-eve.jpg" alt="">
+                <img src="../media/images/topics-photos/america.jpg" alt="">
+                <img src="../media/images/topics-photos/assembly-hall.jpg" alt="">
+                <img src="../media/images/topics-photos/drugs.jpg" alt="">
+                <img src="../media/images/topics-photos/jesus-christ.jpg" alt="">
+                <img src="../media/images/topics-photos/temple.jpg" alt="">
+                <img src="../media/images/topics-photos/word-of-wisdom.jpg" alt="">
+            </div>
+            <span class="side-label">Topics</span>
+        </a>
+
+        <a href="sermons.html" class="split-side teachings-side">
+            <div class="carousel-track">
+                <img src="../media/images/0-apostleships-1-presidencies/1280px-First_Presidency_and_Council_of_the_Twelve_Apostles_of_the_Church_of_Jesus_Christ_of_Latter-day_Saints._Copyright_secured,_C.R._Savage._(cropped).jpg" alt="First Presidency and Q12">
+                <img src="../media/images/0-apostleships-1-presidencies/First_Presidency_1905_large.jpg" alt="Joseph F. Smith First Presidency">
+                <img src="../media/images/0-apostleships-1-presidencies/holy-apostleship.jpeg" alt="Apostleship">
+                <img src="../media/images/prophets/joseph-smithjr/joseph-smith-jr-bathshebasmithportrait.jpg" alt="Joseph Smith Jr.">
+                <img src="../media/images/prophets/oliver-cowdery/olivercowderydaugerrotype.jpg" alt="Oliver Cowdery">
+                <img src="../media/images/prophets/brigham-young/brigham-young-1855.jpg" alt="Brigham Young">
+                <img src="../media/images/prophets/john-taylor/JohnTaylor2.jpg" alt="John Taylor">
+                <img src="../media/images/prophets/wilford-woodruff/Wilford_Woodruff_2.jpg" alt="Wilford Woodruff">
+                <img src="../media/images/prophets/lorenzo-snow/lorenzo-snow.jpg" alt="Lorenzo Snow">
+
+                <img src="../media/images/0-apostleships-1-presidencies/1280px-First_Presidency_and_Council_of_the_Twelve_Apostles_of_the_Church_of_Jesus_Christ_of_Latter-day_Saints._Copyright_secured,_C.R._Savage._(cropped).jpg" alt="First Presidency and Q12">
+                <img src="../media/images/0-apostleships-1-presidencies/First_Presidency_1905_large.jpg" alt="Joseph F. Smith First Presidency">
+                <img src="../media/images/0-apostleships-1-presidencies/holy-apostleship.jpeg" alt="Apostleship">
+                <img src="../media/images/prophets/joseph-smithjr/joseph-smith-jr-bathshebasmithportrait.jpg" alt="Joseph Smith Jr.">
+                <img src="../media/images/prophets/oliver-cowdery/olivercowderydaugerrotype.jpg" alt="Oliver Cowdery">
+                <img src="../media/images/prophets/brigham-young/brigham-young-1855.jpg" alt="Brigham Young">
+                <img src="../media/images/prophets/john-taylor/JohnTaylor2.jpg" alt="John Taylor">
+                <img src="../media/images/prophets/wilford-woodruff/Wilford_Woodruff_2.jpg" alt="Wilford Woodruff">
+                <img src="../media/images/prophets/lorenzo-snow/lorenzo-snow.jpg" alt="Lorenzo Snow">
+            </div>
+            <span class="side-label">Teachings</span>
+        </a>
+
+    </div>
+
+</body>
+</html>
