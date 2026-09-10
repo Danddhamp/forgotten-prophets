@@ -23,6 +23,87 @@
             margin: 20px auto 0;
         }
 
+        /* ---------- Background prophets carousel ---------- */
+
+        .carousel-bg {
+            position: fixed;
+            inset: 0;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            z-index: -1;
+            background-color: #023465;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Each row is its own clipped strip; Apostles on top, Presidents
+           (largest, slowest) in the middle, First Presidency Counselors
+           (smallest, fastest) on the bottom. */
+        .carousel-row {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .row-apostles   { flex: 0 0 34%; }
+        .row-presidents { flex: 0 0 44%; }
+        .row-counselors { flex: 0 0 22%; }
+
+        .carousel-track {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            padding: 8px;
+            animation: slideLeft linear infinite;
+        }
+
+        .carousel-track img {
+            height: 100%;
+            flex-shrink: 0;
+            object-fit: cover;
+            filter: brightness(0.7) grayscale(20%);
+            border-radius: 6px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        /* Presidents: largest tiles, slowest scroll */
+        .track-presidents { animation-duration: 70s; }
+        .track-presidents img { width: 260px; }
+
+        /* Apostles of the Twelve: medium tiles, medium speed */
+        .track-apostles { animation-duration: 42s; }
+        .track-apostles img { width: 170px; }
+
+        /* First Presidency Counselors: smallest tiles, fastest scroll */
+        .track-counselors { animation-duration: 24s; }
+        .track-counselors img { width: 130px; }
+
+        /* Blue dimming overlay, kept from the split-screen treatment, laid
+           over all three rows at once */
+        .carousel-bg::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(2, 52, 101, 0.55);
+            z-index: 1;
+        }
+
+        @keyframes slideLeft {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* Wrapper to keep all real page content above the fixed background */
+        .page-content {
+            position: relative;
+            z-index: 2;
+        }
+
         /* ---------- Button mosaic — tiles kept full-size and uncropped ---------- */
 
         .icon-dock {
@@ -111,79 +192,178 @@
 </head>
 <body>
 
-    <header>
-        <a class="relief-society-link button" href="other-sites/relief-society/index.html">Wives of the Prophets</a>
-        <h1>The Forgotten Prophets</h1>
-        <p class="tagline">A memorial dedicated to the prophets, seers and revelators of the LORD who are on the other side — many of them forgotten to time.</p>
-    </header>
+    <!-- Fixed prophets carousel background with navy overlay: three rows
+         pulled from teachings.html's data-role groupings (Apostles /
+         Presidents / First Presidency Counselors) -->
+    <div class="carousel-bg">
 
-    <section id="quotes">
-        <p class="quote">
-            "I tell you that if we do not feel in our hearts to sustain the prophets of God, we would not believe the Lord if He were to come Himself"
-            <br>
-            <span class="source-line">-Abraham O. Woodruff, <a href="https://archive.org/details/conferencereport1899a/page/5/mode/1up" target="_blank">1899 General Conference</a></span>
-        </p>
-        <p class="quote">
-            "when the servants of god are not bodily present with the people and their voices are not heard in their congregations, they begin to murmur and complain, but when the prophets are with them, the sheep soon recognize the voices of the shepherds and they are again established"
-            <br>
-            <span class="source-line">-Abraham H. Cannon, <a href="https://newspapers.lib.utah.edu/search?facet_type=%22page%22&gallery=1&rows=200&parent_i=2680984#g24">1890 General Conference</a></span>
-        </p>
-        <p class="quote">
-            "Some of the General Authorities [the Apostles] have had assigned to them a special calling; they possess a special gift; they are sustained as prophets, seers, and revelators, which gives them a special spiritual endowment in connection with their teaching of [this] people. They have the right, the power, and the authority to declare the mind and will of God to his people, subject to the overall power and authority of the President of the Church."
-            <br>
-            <span class="source-line">-Boyd K. Packer (Quoting J. Reuben Clark Jr.) <a href="https://www.churchofjesuschrist.org/study/general-conference/1996/10/the-twelve-apostles?lang=eng">October 1996 General Conference</a></span>
-        </p>
-    </section>
+        <!-- Row 1: Apostles of the Twelve (excluding those who also served
+             as a Counselor in the First Presidency or became President) -->
+        <div class="carousel-row row-apostles">
+            <div class="carousel-track track-apostles">
+                <img src="media/images/prophets/thomas-b-marsh/thomas-b-marsh-wikipedia.jpg" alt="Thomas B. Marsh">
+                <img src="media/images/prophets/david-w-patten/David-Wyman-Patten-church-website-1.jpg" alt="David W. Patten">
+                <img src="media/images/prophets/orson-hyde/orson-hydedaguerrotype.jpg" alt="Orson Hyde">
+                <img src="media/images/prophets/parley-p-pratt/parley-p-pratt-1835.jpg" alt="Parley P. Pratt">
+                <img src="media/images/prophets/orson-pratt/orson-pratt-1851.png" alt="Orson Pratt">
+                <img src="media/images/prophets/heber-c-kimball/heber-c-kimball-portrait.jpg" alt="Heber C. Kimball">
+                <img src="media/images/prophets/charles-c-rich/charles-c-rich-1880.jpg" alt="Charles C. Rich">
+                <img src="media/images/prophets/francis-m-lyman/francis-m-lyman-1917.jpg" alt="Francis M. Lyman">
+                <img src="media/images/prophets/reed-smoot/senator-reed-smoot-placeholder.jpg" alt="Reed Smoot">
+                <img src="media/images/prophets/james-e-talmage/filler-image.jpg" alt="James E. Talmage">
+                <img src="media/images/prophets/melvin-j-ballard/melvin-j-ballard1919.jpg" alt="Melvin J. Ballard">
+                <img src="media/images/prophets/boyd-k-packer/boyd-k-packer1961.jpg" alt="Boyd K. Packer">
+                <img src="media/images/prophets/bruce-r-mcconkie/bruce-r-mcconkie-1976.jpg" alt="Bruce R. McConkie">
+                <img src="media/images/prophets/l-tom-perry/l-tom-perry.jpg" alt="L. Tom Perry">
+                <img src="media/images/prophets/david-b-haight/filler-image-.jpg" alt="David B. Haight">
+                <img src="media/images/prophets/neil-a-maxwell/neil-a-maxwell.jpg" alt="Neil A. Maxwell">
+                <img src="media/images/prophets/m-russell-ballard/m-russell-ballard.jpg" alt="M. Russell Ballard">
+                <img src="media/images/prophets/richard-g-scott/richard-g-scott.jpg" alt="Richard G. Scott">
+                <img src="media/images/prophets/jeffery-r-holland/filler-imaage.webp" alt="Jeffery R. Holland">
+            </div>
+        </div>
 
-    <script src="javascript/random-quote-homepage.js">
+        <!-- Row 2: Presidents of the Church — largest tiles, slowest scroll -->
+        <div class="carousel-row row-presidents">
+            <div class="carousel-track track-presidents">
+                <img src="media/images/prophets/joseph-smithjr/joseph-smith-jr-bathshebasmithportrait.jpg" alt="Joseph Smith Jr.">
+                <img src="media/images/prophets/brigham-young/brigham-young-1855.jpg" alt="Brigham Young">
+                <img src="media/images/prophets/john-taylor/JohnTaylor2.jpg" alt="John Taylor">
+                <img src="media/images/prophets/wilford-woodruff/Wilford_Woodruff_2.jpg" alt="Wilford Woodruff">
+                <img src="media/images/prophets/lorenzo-snow/lorenzo-snow.jpg" alt="Lorenzo Snow">
+                <img src="media/images/prophets/joseph-f-smith/joseph-f-smith-1860s.jpg" alt="Joseph F. Smith">
+                <img src="media/images/prophets/heber-j-grant/heber-j-grant-1880s.jpg" alt="Heber J. Grant">
+                <img src="media/images/prophets/george-albert-smith/george-albert-smith-1939.jpg" alt="George Albert Smith">
+                <img src="media/images/prophets/david-o-mckay/david-o-mckay-1925.jpg" alt="David O. McKay">
+                <img src="media/images/prophets/joseph-fielding-smith/joseph-fielding-smith1943circa.jpg" alt="Joseph Fielding Smith">
+                <img src="media/images/prophets/harold-b-lee/harold-b-lee-1944.jpg" alt="Harold B. Lee">
+                <img src="media/images/prophets/spencer-w-kimball/spencer-w-kimballplaceholder.png" alt="Spencer W. Kimball">
+                <img src="media/images/prophets/ezra-taft-benson/Ezra_Taft_Benson.jpg" alt="Ezra Taft Benson">
+                <img src="media/images/prophets/howard-w-hunter/howard-w-hunter-1975.jpg" alt="Howard W. Hunter">
+                <img src="media/images/prophets/gordon-b-hinckley/gordon-b-hinckley-1976.jpg" alt="Gordon B. Hinckley">
+                <img src="media/images/prophets/thomas-s-monson/thomas-s-monson.jpg" alt="Thomas S. Monson">
+                <img src="media/images/prophets/russel-m-nelson/russell-m-nelson.jpg" alt="Russell M. Nelson">
+            </div>
+        </div>
+
+        <!-- Row 3: Counselors in the First Presidency (excluding those who
+             became President) — smallest tiles, fastest scroll -->
+        <div class="carousel-row row-counselors">
+            <div class="carousel-track track-counselors">
+                <img src="media/images/prophets/sidney-rigdon/rigdon-1873.jpg" alt="Sidney Rigdon">
+                <img src="media/images/prophets/william-law/william-law.jpg" alt="William Law">
+                <img src="media/images/prophets/john-c-bennett/wikipedia.jpg" alt="John C. Bennett">
+                <img src="media/images/prophets/jebediah-m-grant/filler-image.gif" alt="Jebediah M. Grant">
+                <img src="media/images/prophets/daniel-h-wells/daniel-h-wells-1904.jpg" alt="Daniel H. Wells">
+                <img src="media/images/prophets/anthon-h-lund/anthon-h-lund-1905.jpg" alt="Anthon H. Lund">
+                <img src="media/images/prophets/charles-w-penrose/charles-w-penrose-first-presidency.jpg" alt="Charles W. Penrose">
+                <img src="media/images/prophets/anthony-w-ivins/anthony-w-ivins-1921.jpg" alt="Anthony W. Ivins">
+                <img src="media/images/prophets/john-r-winder/john-r-winder-1901-wikipedia.jpg" alt="John R. Winder">
+                <img src="media/images/prophets/charles-w-nibley/charles-w-nibley-first-presidency.jpg" alt="Charles W. Nibley">
+                <img src="media/images/prophets/j-reuben-clark-jr/j-reuben-clark-jr-circa1914-wikipedia.jpg" alt="J. Reuben Clark Jr.">
+                <img src="media/images/prophets/henry-d-moyle/henry-d-moyle-1961.jpg" alt="Henry D. Moyle">
+                <img src="media/images/prophets/marion-g-romney/marion-g-romney.jpg" alt="Marion G. Romney">
+                <img src="media/images/prophets/hugh-b-brown/filler.jpg" alt="Hugh B. Brown">
+                <img src="media/images/prophets/nathan-e-tanner/n-eldon-tanner.jpg" alt="Nathan E. Tanner">
+                <img src="media/images/prophets/thorpe-b-isaacson/thorpe-b-isaacson.jpg" alt="Thorpe B. Isaacson">
+                <img src="media/images/prophets/alvin-r-dyer/alvin-r-dyer-wikipedia.jpg" alt="Alvin R. Dyer">
+            </div>
+        </div>
+
+    </div>
+
+    <div class="page-content">
+
+        <header>
+            <h1>The Forgotten Prophets</h1>
+            <p class="tagline">A memorial dedicated to the prophets, seers and revelators of the LORD who are on the other side — many of them forgotten to time.</p>
+        </header>
+
+        <section id="quotes">
+            <p class="quote">
+                "I tell you that if we do not feel in our hearts to sustain the prophets of God, we would not believe the Lord if He were to come Himself"
+                <br>
+                <span class="source-line">-Abraham O. Woodruff, <a href="https://archive.org/details/conferencereport1899a/page/5/mode/1up" target="_blank">1899 General Conference</a></span>
+            </p>
+            <p class="quote">
+                "when the servants of god are not bodily present with the people and their voices are not heard in their congregations, they begin to murmur and complain, but when the prophets are with them, the sheep soon recognize the voices of the shepherds and they are again established"
+                <br>
+                <span class="source-line">-Abraham H. Cannon, <a href="https://newspapers.lib.utah.edu/search?facet_type=%22page%22&gallery=1&rows=200&parent_i=2680984#g24">1890 General Conference</a></span>
+            </p>
+            <p class="quote">
+                "Some of the General Authorities [the Apostles] have had assigned to them a special calling; they possess a special gift; they are sustained as prophets, seers, and revelators, which gives them a special spiritual endowment in connection with their teaching of [this] people. They have the right, the power, and the authority to declare the mind and will of God to his people, subject to the overall power and authority of the President of the Church."
+                <br>
+                <span class="source-line">-Boyd K. Packer (Quoting J. Reuben Clark Jr.) <a href="https://www.churchofjesuschrist.org/study/general-conference/1996/10/the-twelve-apostles?lang=eng">October 1996 General Conference</a></span>
+            </p>
+        </section>
+
+        <script src="javascript/random-quote-homepage.js">
+        </script>
+
+        <nav class="icon-dock">
+            <a href="scripts/reference-guide.html" title="Reference Guide">
+                <img class="shadow-filter" src="media/images/buttons/reference-guide.png" alt="Reference Guide">
+            </a>
+            <a href="scripts/the-doctrine-of-christ.html" title="Doctrine of Christ">
+                <img class="shadow-filter" src="media/images/buttons/doctrine-of-christ.png" alt="Doctrine of Christ">
+            </a>
+            <a href="scripts/resources.html" title="Resources">
+                <img class="shadow-filter" src="media/images/buttons/resources.png" alt="Resources">
+            </a>
+            <a href="scripts/biographies.htm" title="Biographies">
+                <img class="shadow-filter" src="media/images/buttons/biographies.png" alt="Biographies">
+            </a>
+            <a href="scripts/customgc.html" title="Custom GC">
+                <img class="shadow-filter" src="media/images/buttons/custom-gc.png" alt="Custom GC">
+            </a>
+            <a id="sermon-finder-link" href="javascript:void(0)" onclick="findSermon()" title="Find a Sermon">
+                <img id="sermon-finder-img" class="shadow-filter" src="media/images/buttons/random-sermon.png" alt="Find a Sermon">
+            </a>
+            <a href="scripts/image-gallery.html" title="Gallery">
+                <img class="shadow-filter" src="media/images/buttons/image-gallery.png" alt="Gallery">
+            </a>
+            <a class="relief-society-link button" href="other-sites/relief-society/index.html">Wives of the Prophets</a>
+        </nav>
+
+        <h6 id="disclaimer">
+            <span class="disclaimer-label">Disclaimer</span>
+            All images are within the Public Domain*. The biographies fall within America's fair-use laws**. Answers to questions are my own opinions, and should not be regarded as official Church teachings.
+        </h6>
+
+        <footer>
+            <p>Did we get something wrong? Contact us: <a href="mailto:theforgottenprophetslatterdays@gmail.com">Email</a></p>
+            <p>Do you want to learn more about the Gospel? <a href="https://www.churchofjesuschrist.org/comeuntochrist">Come and See!</a></p>
+            <h4>The Favicon is the USVA headstone for Latter-Day Saints</h4>
+        </footer>
+
+        <!-- Future additions, previously disabled on the old layout:
+        <iframe ... intro video ...>
+        <a href="/scripts/modern-bible.html">Modern Bible</a>
+        <a href="scripts/!common-questions.html">Common Questions</a>
+        <a href="scripts/onthisday.html">On This Day</a>
+        <a href="...">Daily Sermon</a>
+        <a href="#">Weekly Conference</a>
+        <a href="my-takes.html">My Takes</a>
+        <a href="">Videos</a>
+        -->
+
+        <script src="javascript/sermons.js"></script>
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const tracks = document.querySelectorAll('.carousel-bg .carousel-track');
+
+            tracks.forEach(track => {
+                // Duplicate the images (already in ordination order in the
+                // markup) so the 50% translateX loop is seamless, without
+                // reordering anything.
+                const images = Array.from(track.children);
+                images.forEach(img => track.appendChild(img.cloneNode(true)));
+            });
+        });
     </script>
 
-    <nav class="icon-dock">
-        <a href="scripts/reference-guide.html" title="Reference Guide">
-            <img class="shadow-filter" src="media/images/buttons/reference-guide.png" alt="Reference Guide">
-        </a>
-        <a href="scripts/the-doctrine-of-christ.html" title="Doctrine of Christ">
-            <img class="shadow-filter" src="media/images/buttons/doctrine-of-christ.png" alt="Doctrine of Christ">
-        </a>
-        <a href="scripts/resources.html" title="Resources">
-            <img class="shadow-filter" src="media/images/buttons/resources.png" alt="Resources">
-        </a>
-        <a href="scripts/biographies.htm" title="Biographies">
-            <img class="shadow-filter" src="media/images/buttons/biographies.png" alt="Biographies">
-        </a>
-        <a href="scripts/customgc.html" title="Custom GC">
-            <img class="shadow-filter" src="media/images/buttons/custom-gc.png" alt="Custom GC">
-        </a>
-        <a id="sermon-finder-link" href="javascript:void(0)" onclick="findSermon()" title="Find a Sermon">
-            <img id="sermon-finder-img" class="shadow-filter" src="media/images/buttons/random-sermon.png" alt="Find a Sermon">
-        </a>
-        <a href="scripts/image-gallery.html" title="Gallery">
-            <img class="shadow-filter" src="media/images/buttons/image-gallery.png" alt="Gallery">
-        </a>
-    </nav>
-
-    <h6 id="disclaimer">
-        <span class="disclaimer-label">Disclaimer</span>
-        All images are within the Public Domain*. The biographies fall within America's fair-use laws**. Answers to questions are my own opinions, and should not be regarded as official Church teachings.
-    </h6>
-
-    <footer>
-        <p>Did we get something wrong? Contact us: <a href="mailto:theforgottenprophetslatterdays@gmail.com">Email</a></p>
-        <p>Do you want to learn more about the Gospel? <a href="https://www.churchofjesuschrist.org/comeuntochrist">Come and See!</a></p>
-        <h4>The Favicon is the USVA headstone for Latter-Day Saints</h4>
-    </footer>
-
-    <!-- Future additions, previously disabled on the old layout:
-    <iframe ... intro video ...>
-    <a href="/scripts/modern-bible.html">Modern Bible</a>
-    <a href="scripts/!common-questions.html">Common Questions</a>
-    <a href="scripts/onthisday.html">On This Day</a>
-    <a href="...">Daily Sermon</a>
-    <a href="#">Weekly Conference</a>
-    <a href="my-takes.html">My Takes</a>
-    <a href="">Videos</a>
-    -->
-
-    <script src="javascript/sermons.js"></script>
 </body>
 </html>
