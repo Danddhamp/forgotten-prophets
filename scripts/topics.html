@@ -5,9 +5,6 @@
         <link rel="stylesheet" type="text/css" href="style.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="../media/images/favicon/favicon.png" type="image/x-icon">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
         <style>
             :root {
                 --navy-bg: #023465;
@@ -25,10 +22,7 @@
             html, body {
                 margin: 0;
                 padding: 0;
-                background-color: var(--navy-bg);
-                background-image: 
-                    radial-gradient(ellipse at top left, rgba(255, 210, 77, 0.08), transparent 50%),
-                    radial-gradient(ellipse at bottom right, rgba(0, 31, 63, 0.8), transparent 60%);
+                background: linear-gradient(135deg, var(--navy-card) 0%, var(--navy-bg) 100%);
                 color: var(--text-light);
                 font-family: Arial, sans-serif;
                 min-height: 100vh;
@@ -77,18 +71,8 @@
 
             .page {
                 width: 100%;
-                max-width: 680px;
+                max-width: 960px;
                 margin-top: 30px;
-                animation: settle 0.7s ease-out both;
-            }
-
-            @keyframes settle {
-                from { opacity: 0; transform: translateY(10px); }
-                to   { opacity: 1; transform: translateY(0); }
-            }
-
-            @media (prefers-reduced-motion: reduce) {
-                .page { animation: none; }
             }
 
             h1 {
@@ -103,89 +87,115 @@
             }
 
             .subtitle {
+                font-family: Arial, sans-serif;
                 font-style: italic;
-                font-family: 'EB Garamond', Georgia, serif;
                 color: var(--text-dim);
-                font-size: 1.1rem;
-                margin: 0 0 25px;
+                font-size: 1.05rem;
+                margin: 0 0 30px;
                 text-align: center;
             }
 
-            .rule {
-                border: none;
-                height: 2px;
-                background: linear-gradient(to right, transparent, var(--border-color) 20%, var(--gold-bright) 50%, var(--border-color) 80%, transparent);
-                margin: 0 0 30px;
-            }
-
             #searchBar {
+                display: block;
                 width: 100%;
+                max-width: 500px;
+                margin: 0 auto 40px;
                 padding: 14px 20px;
                 font-family: Arial, sans-serif;
                 font-size: 1rem;
                 border: 2px solid var(--border-color);
                 border-radius: 8px;
-                background-color: rgba(0, 31, 63, 0.6);
+                background-color: rgba(2, 52, 101, 0.75);
                 color: var(--text-light);
                 outline: none;
-                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
                 transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
             }
 
             #searchBar:focus {
                 border-color: var(--gold-bright);
-                background-color: rgba(0, 31, 63, 0.85);
-                box-shadow: 0 0 12px rgba(255, 210, 77, 0.3);
+                box-shadow: 0 0 12px rgba(255, 210, 77, 0.4);
             }
 
             #searchBar::placeholder { color: #8fa3b8; }
 
-            .container-flex { margin-top: 30px; }
-
+            /* Grid of photo tiles, matching the split-screen dimmed-image treatment */
             #topicList {
                 list-style: none;
                 margin: 0;
                 padding: 0;
-                display: flex;
-                flex-direction: column;
-                gap: 12px;
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+                gap: 18px;
             }
 
-            #topicList li a {
+            #topicList li a.topic-tile {
+                position: relative;
                 display: flex;
+                justify-content: center;
                 align-items: center;
-                gap: 14px;
-                padding: 16px 24px;
-                font-family: Arial, sans-serif;
-                font-size: 1.25rem;
-                font-weight: bold;
-                color: var(--text-light);
+                text-align: center;
+                min-height: 140px;
+                overflow: hidden;
                 text-decoration: none;
-                background: rgba(0, 46, 93, 0.75);
-                border: 2px solid var(--border-color);
+                background-color: var(--navy-card);
+                border: 2px solid #ffffff;
                 border-radius: 8px;
-                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-                transition: all 0.3s ease;
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+                transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
             }
 
-            #topicList li a::before {
-                content: "❖";
-                font-size: 0.9rem;
-                color: var(--gold-muted);
-                transition: color 0.3s ease, transform 0.3s ease;
+            .topic-tile img {
+                position: absolute;
+                inset: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                filter: brightness(0.6) grayscale(15%);
+                transition: filter 0.3s ease, transform 0.4s ease;
+                z-index: 0;
             }
 
-            #topicList li a:hover {
-                background: var(--gold-bright);
-                color: var(--navy-card);
+            /* Dimming layer so text stays readable over any photo */
+            .topic-tile::after {
+                content: '';
+                position: absolute;
+                inset: 0;
+                background: rgba(2, 52, 101, 0.55);
+                z-index: 1;
+                transition: background 0.3s ease;
+            }
+
+            .tile-label {
+                position: relative;
+                z-index: 2;
+                padding: 10px 16px;
+                font-family: Arial, sans-serif;
+                font-size: 1.1rem;
+                font-weight: bold;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                color: var(--text-light);
+                transition: color 0.3s ease;
+            }
+
+            #topicList li a.topic-tile:hover {
+                transform: scale(1.04);
                 border-color: var(--gold-bright);
-                transform: translateX(6px) scale(1.01);
-                box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+                box-shadow: 0 10px 28px rgba(0, 0, 0, 0.6);
             }
 
-            #topicList li a:hover::before {
+            #topicList li a.topic-tile:hover img {
+                filter: brightness(0.45) grayscale(0%);
+                transform: scale(1.08);
+            }
+
+            #topicList li a.topic-tile:hover::after {
+                background: rgba(255, 210, 77, 0.35);
+            }
+
+            #topicList li a.topic-tile:hover .tile-label {
                 color: var(--navy-card);
-                transform: rotate(45deg);
             }
 
             .empty-state {
@@ -211,12 +221,16 @@
                     height: 20px;
                 }
                 h1 { font-size: 2.2rem; }
-                #topicList li a { font-size: 1.1rem; padding: 14px 18px; }
+                #topicList {
+                    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                }
+                #topicList li a.topic-tile { min-height: 110px; }
+                .tile-label { font-size: 0.95rem; padding: 8px 12px; }
             }
         </style>
     </head>
     <body>
-        
+
         <a href="../index.html" class="home-button" title="Go to Home">
             <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
@@ -226,27 +240,180 @@
         <div class="page">
             <h1>Topics</h1>
             <p class="subtitle">An index of subjects worth returning to</p>
-            <hr class="rule">
 
             <input type="text" id="searchBar" placeholder="Search topics…" onkeyup="searchTopics()" autocomplete="off">
 
-            <div class="container-flex">
-                <ul id="topicList">
-                    <li><a href="topics/atonement.html">Atonement</a></li>
-                    <li><a href="topics/brighamyoung.html">Brigham Young</a></li>
-                    <li><a href="topics/josephsmithjr.html">Joseph Smith Jr.</a></li>
-                    <li><a href="topics/facecards.html">Face Cards</a></li>
-                    <li><a href="topics/pioneers.html">Pioneers</a></li>
-                    <li><a href="topics/planofsalvation.html">Plan of Salvation</a></li>
-                    <li><a href="topics/profanity.html">Profanity</a></li>
-                    <li><a href="topics/prophets.html">Prophets</a></li>
-                    <li><a href="topics/revelation.html">Revelation</a></li>
-                    <li><a href="topics/hypnotism.html">Hypnotism</a></li>
-                    <li><a href="topics/wilfordwoodruff.html">Wilford Woodruff</a></li>
-                    <li><a href="topics/zion.html">Zion</a></li>
-                </ul>
-                <p class="empty-state" id="emptyState">No topics match your search.</p>
-            </div>
+            <ul id="topicList">
+                <li><a href="topics/abortion.html" class="topic-tile">
+                    <img src="../media/images/topics-photos/abortion.jpg" alt="" onerror="this.style.display='none'">
+                    <span class="tile-label">Abortion</span>
+                </a></li>
+                <li><a href="topics/abrahamlincoln.html" class="topic-tile">
+                    <img src="../media/images/topics-photos/abraham-lincoln.jpg" alt="" onerror="this.style.display='none'">
+                    <span class="tile-label">Abraham Lincoln</span>
+                </a></li>
+                <li><a href="topics/adam.html" class="topic-tile">
+                    <img src="../media/images/topics-photos/adam-topic.jpg" alt="" onerror="this.style.display='none'">
+                    <span class="tile-label">Adam</span>
+                </a></li>
+                <li><a href="topics/adamandeve.html" class="topic-tile">
+                    <img src="../media/images/topics-photos/adam-and-eve.jpg" alt="" onerror="this.style.display='none'">
+                    <span class="tile-label">Adam and Eve</span>
+                </a></li>
+                <li><a href="topics/america.html" class="topic-tile">
+                    <img src="../media/images/topics-photos/america.jpg" alt="" onerror="this.style.display='none'">
+                    <span class="tile-label">America</span>
+                </a></li>
+                <li><a href="topics/assemblyhall.html" class="topic-tile">
+                    <img src="../media/images/topics-photos/assembly-hall.jpg" alt="" onerror="this.style.display='none'">
+                    <span class="tile-label">Assembly Hall</span>
+                </a></li>
+                <li><a href="topics/atonement.html" class="topic-tile">
+                    <img src="../media/images/topics-photos/atonement.jpg" alt="" onerror="this.style.display='none'">
+                    <span class="tile-label">Atonement</span>
+                </a></li>
+                <li><a href="topics/baptism.html" class="topic-tile">
+                    <img src="../media/images/topics-photos/baptism-topic.jpg" alt="" onerror="this.style.display='none'">
+                    <span class="tile-label">Baptism</span>
+                </a></li>
+                <li><a href="topics/bookofmormongeography.html" class="topic-tile">
+                    <img src="../media/images/topics-photos/book-of-mormon-geography.jpg" alt="" onerror="this.style.display='none'">
+                    <span class="tile-label">Book of Mormon Geography</span>
+                </a></li>
+                <li><a href="topics/brighamyoung.html" class="topic-tile">
+                    <img src="../media/images/prophets/brigham-young/brigham-young-1855.jpg" alt="" onerror="this.style.display='none'">
+                    <span class="tile-label">Brigham Young</span>
+                </a></li>
+                <li><a href="topics/catholicism.html" class="topic-tile">
+                    <img src="../media/images/topics-photos/catholicism.jpg" alt="" onerror="this.style.display='none'">
+                    <span class="tile-label">Catholicism</span>
+                </a></li>
+                <li><a href="topics/communism.html" class="topic-tile">
+                    <img src="../media/images/topics-photos/communism-topic.jpg" alt="" onerror="this.style.display='none'">
+                    <span class="tile-label">Communism</span>
+                </a></li>
+                <li><a href="topics/drugs.html" class="topic-tile">
+                    <img src="../media/images/topics-photos/drugs.jpg" alt="" onerror="this.style.display='none'">
+                    <span class="tile-label">Drugs</span>
+                </a></li>
+                <li><a href="topics/facecards.html" class="topic-tile">
+                    <img src="../media/images/topics-photos/facecards.jpg" alt="" onerror="this.style.display='none'">
+                    <span class="tile-label">Face Cards</span>
+                </a></li>
+                <li><a href="topics/firstvision.html" class="topic-tile">
+                    <img src="../media/images/topics-photos/first-vision.jpg" alt="" onerror="this.style.display='none'">
+                    <span class="tile-label">First Vision</span>
+                </a></li>
+                <li><a href="topics/foundingfathers.html" class="topic-tile">
+                    <img src="../media/images/topics-photos/founding-fathers.jpg" alt="" onerror="this.style.display='none'">
+                    <span class="tile-label">Founding Fathers</span>
+                </a></li>
+                <li><a href="topics/godthefather.html" class="topic-tile">
+                    <img src="../media/images/topics-photos/god-the-father-topic.jpg" alt="" onerror="this.style.display='none'">
+                    <span class="tile-label">God the Father</span>
+                </a></li>
+                <li><a href="topics/godhead.html" class="topic-tile">
+                    <img src="../media/images/topics-photos/godhead-topic.jpg" alt="" onerror="this.style.display='none'">
+                    <span class="tile-label">Godhead</span>
+                </a></li>
+                <li><a href="topics/holyspirit.html" class="topic-tile">
+                    <img src="../media/images/topics-photos/holy-spirit-topic.jpg" alt="" onerror="this.style.display='none'">
+                    <span class="tile-label">Holy Spirit</span>
+                </a></li>
+                <li><a href="topics/hypnotism.html" class="topic-tile">
+                    <img src="../media/images/topics-photos/hypnotism.jpg" alt="" onerror="this.style.display='none'">
+                    <span class="tile-label">Hypnotism</span>
+                </a></li>
+                <li><a href="topics/islam.html" class="topic-tile">
+                    <img src="../media/images/topics-photos/islam.jpg" alt="" onerror="this.style.display='none'">
+                    <span class="tile-label">Islam</span>
+                </a></li>
+                <li><a href="topics/jesuschrist.html" class="topic-tile">
+                    <img src="../media/images/topics-photos/jesus-christ.jpg" alt="" onerror="this.style.display='none'">
+                    <span class="tile-label">Jesus Christ</span>
+                </a></li>
+                <li><a href="topics/josephsmithjr.html" class="topic-tile">
+                    <img src="../media/images/prophets/joseph-smithjr/joseph-smith-jr-bathshebasmithportrait.jpg" alt="" onerror="this.style.display='none'">
+                    <span class="tile-label">Joseph Smith Jr.</span>
+                </a></li>
+                <li><a href="topics/lamanites.html" class="topic-tile">
+                    <img src="../media/images/topics-photos/lamanites-jpg.jpg" alt="" onerror="this.style.display='none'">
+                    <span class="tile-label">Lamanites</span>
+                </a></li>
+                <li><a href="topics/marriage.html" class="topic-tile">
+                    <img src="../media/images/topics-photos/marriage.jpg" alt="" onerror="this.style.display='none'">
+                    <span class="tile-label">Marriage</span>
+                </a></li>
+                <li><a href="topics/marymagdalene.html" class="topic-tile">
+                    <img src="../media/images/topics-photos/mary-magdalene.jpg" alt="" onerror="this.style.display='none'">
+                    <span class="tile-label">Mary Magdalene</span>
+                </a></li>
+                <li><a href="topics/marymotherofjesus.html" class="topic-tile">
+                    <img src="../media/images/topics-photos/mary-mother-of-jesus.jpg" alt="" onerror="this.style.display='none'">
+                    <span class="tile-label">Mary, Mother of Jesus</span>
+                </a></li>
+                <li><a href="topics/muhammad.html" class="topic-tile">
+                    <img src="../media/images/topics-photos/muhammad.jpg" alt="" onerror="this.style.display='none'">
+                    <span class="tile-label">Muhammad</span>
+                </a></li>
+                <li><a href="topics/pioneers.html" class="topic-tile">
+                    <img src="../media/images/topics-photos/pioneers.jpg" alt="" onerror="this.style.display='none'">
+                    <span class="tile-label">Pioneers</span>
+                </a></li>
+                <li><a href="topics/planofsalvation.html" class="topic-tile">
+                    <img src="../media/images/topics-photos/premortal-life-topic.jpg" alt="" onerror="this.style.display='none'">
+                    <span class="tile-label">Plan of Salvation</span>
+                </a></li>
+                <li><a href="topics/polygamy.html" class="topic-tile">
+                    <img src="../media/images/topics-photos/polygamy-topic.jpg" alt="" onerror="this.style.display='none'">
+                    <span class="tile-label">Polygamy</span>
+                </a></li>
+                <li><a href="topics/profanity.html" class="topic-tile">
+                    <img src="../media/images/topics-photos/profanity-topics.jpg" alt="" onerror="this.style.display='none'">
+                    <span class="tile-label">Profanity</span>
+                </a></li>
+                <li><a href="topics/prophets.html" class="topic-tile">
+                    <img src="../media/images/topics-photos/prophets-topics.jpg" alt="" onerror="this.style.display='none'">
+                    <span class="tile-label">Prophets</span>
+                </a></li>
+                <li><a href="topics/protestant-reformers.html" class="topic-tile">
+                    <img src="../media/images/topics-photos/protestant-reformers-topics.jpg" alt="" onerror="this.style.display='none'">
+                    <span class="tile-label">Protestant Reformers</span>
+                </a></li>
+                <li><a href="topics/revelation.html" class="topic-tile">
+                    <img src="../media/images/topics-photos/revelation.jpg" alt="" onerror="this.style.display='none'">
+                    <span class="tile-label">Revelation</span>
+                </a></li>
+                <li><a href="topics/rlds.html" class="topic-tile">
+                    <img src="../media/images/topics-photos/rlds.jpg" alt="" onerror="this.style.display='none'">
+                    <span class="tile-label">RLDS</span>
+                </a></li>
+                <li><a href="topics/scriptures.html" class="topic-tile">
+                    <img src="../media/images/topics-photos/scriptures.jpg" alt="" onerror="this.style.display='none'">
+                    <span class="tile-label">Scriptures</span>
+                </a></li>
+                <li><a href="topics/slavery.html" class="topic-tile">
+                    <img src="../media/images/topics-photos/slavery.jpg" alt="" onerror="this.style.display='none'">
+                    <span class="tile-label">Slavery</span>
+                </a></li>
+                <li><a href="topics/temple.html" class="topic-tile">
+                    <img src="../media/images/topics-photos/temple.jpg" alt="" onerror="this.style.display='none'">
+                    <span class="tile-label">Temple</span>
+                </a></li>
+                <li><a href="topics/wilfordwoodruff.html" class="topic-tile">
+                    <img src="../media/images/prophets/wilford-woodruff/Wilford_Woodruff_2.jpg" alt="" onerror="this.style.display='none'">
+                    <span class="tile-label">Wilford Woodruff</span>
+                </a></li>
+                <li><a href="topics/wordofwisdom.html" class="topic-tile">
+                    <img src="../media/images/topics-photos/word-of-wisdom.jpg" alt="" onerror="this.style.display='none'">
+                    <span class="tile-label">Word of Wisdom</span>
+                </a></li>
+                <li><a href="topics/zion.html" class="topic-tile">
+                    <img src="../media/images/topics-photos/zion.jpg" alt="" onerror="this.style.display='none'">
+                    <span class="tile-label">Zion</span>
+                </a></li>
+            </ul>
+            <p class="empty-state" id="emptyState">No topics match your search.</p>
         </div>
 
         <script>
