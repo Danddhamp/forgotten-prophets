@@ -68,9 +68,44 @@ a:hover{
         color:black;
     }
 }
+.hymn{
+    background-color:seagreen;
+    color:black;
+    a{
+        color:black;
+    }
+}
+.book{
+    background-color:#FFF8E7;
+    color:black;
+}
 .the-seer{
     background-color:cadetblue;
     color:black;
+    a{
+        color:black;
+    }
+}
+.frontier-guardian{
+    background-color:springgreen;
+    color:purple;
+    a{
+        color:purple;
+    }
+}
+.gospel-light{
+    background-color:#f7ba61;
+    color:#42230f;
+    a{
+        color:#42230f;
+    }
+}
+.louisluminary{
+    background-color:#932c1b;
+}
+.wasp{
+    background-color:yellow;
+    color:rgb(29, 40, 244);
     a{
         color:black;
     }
