@@ -93,6 +93,13 @@ a:hover{
         color:purple;
     }
 }
+.the-contributer{
+    background-color:indianred;
+    color:navajowhite;
+    a{
+        color:slateblue;
+    }
+}
 .gospel-light{
     background-color:#f7ba61;
     color:#42230f;
