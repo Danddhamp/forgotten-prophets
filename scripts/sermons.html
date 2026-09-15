@@ -43,9 +43,9 @@
 }
 .prophet.overlay-caption img {
         display: block;
-        width: 320px;
-        height: 200px;
-        object-fit: cover
+        width: 420px;
+        height: 280px;
+        object-fit: cover;
 }
 .prophet.overlay-caption span {
         position: absolute;
@@ -53,10 +53,10 @@
         left: 0;
         right: 0;
         margin-top: 0;
-        padding: 8px 6px;
-        background: rgba(0,0,0,0.6);
+        padding: 10px 8px;
+        background: rgba(0,0,0,0.65);
         font-weight: bold;
-        font-size: 15px;
+        font-size: 18px;
         line-height: 1.3;
 }
 .prophet.overlay-caption a {
@@ -155,6 +155,20 @@
         width: 100%;
     }
 
+    .prophet.overlay-caption {
+        width: calc(100% - 20px);
+        max-width: 420px;
+    }
+
+    .prophet.overlay-caption img {
+        width: 100%;
+        height: 240px;
+    }
+
+    .prophet.overlay-caption span {
+        font-size: 16px;
+    }
+
     #searchBar {
         width: 100%;
         box-sizing: border-box;
@@ -196,6 +210,52 @@ html, body {
         display: block;
     }
 }
+#randomProphetBtn {
+    position: fixed;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    background-color: #003b75;
+    color: white;
+    border: 2px solid white;
+    border-left: none;
+    border-radius: 0 8px 8px 0;
+    padding: 10px 8px;
+    font-size: 20px;
+    line-height: 1;
+    cursor: pointer;
+    z-index: 1000;
+    opacity: 0.55;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+    transition: opacity .2s, padding .2s;
+}
+
+#randomProphetBtn:hover {
+    opacity: 1;
+    background-color: #ffd24d;
+    color: #002E5D;
+    padding: 10px 14px;
+}
+
+@media (max-width: 768px) {
+    #randomProphetBtn {
+        top: auto;
+        bottom: 20px;
+        left: 20px;
+        transform: none;
+        border-radius: 50%;
+        border: 2px solid white;
+        width: 50px;
+        height: 50px;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    #randomProphetBtn:hover {
+        padding: 0;
+    }
+}
         </style>
     </head>
     <body>
@@ -223,6 +283,7 @@ html, body {
         </aside>
         <main class="content">
         <button id="backToTop" onclick="scrollToTop()" title="Back to top">↑</button>
+        <button id="randomProphetBtn" onclick="goToRandomProphet()" title="Take me to a random talk">🎲</button>
         <h1>The Prophets' Teachings</h1>
         <h4>Discourses, Epistles, Books, Sermons, &c.</h4>
         <a href="../index.html" class="button" id="homebutton">Home</a>
@@ -263,7 +324,7 @@ html, body {
         </a>
 </div>
 <div class="prophet overlay-caption" data-role="apostle">
-        <a href="">
+        <a href="messages/twelve-apostles.html">
         <img src="../media/images/0-apostleships-1-presidencies/holy-apostleship.jpeg" alt="1950s Apostleship" title="1950s Apostleship">
         <span>Q12</span>
         </a>
@@ -562,7 +623,7 @@ html, body {
         </span>
 </div>
 <div class="prophet" data-role="apostle">
-        <a href=""><img alt="Charles C. Rich" src="../media/images/prophets/charles-c-rich/charles-c-rich-1880.jpg" title="Charles C. Rich"></a>
+        <a href="sermons/charles-c-rich/charles-c-rich-teachings.html"><img alt="Charles C. Rich" src="../media/images/prophets/charles-c-rich/charles-c-rich-1880.jpg" title="Charles C. Rich"></a>
         <span>
         Charles C. Rich
         <br>
@@ -572,7 +633,7 @@ html, body {
         </span>
 </div>
 <div class="prophet" data-role="apostle first-presidency president">
-        <a href=""><img alt="Lorenzo Snow" src="../media/images/prophets/lorenzo-snow/lorenzo-snow.jpg" title="Lorenzo Snow" ></a>
+        <a href="sermons/lorenzo-snow/lorenzo-snow-teachings.html"><img alt="Lorenzo Snow" src="../media/images/prophets/lorenzo-snow/lorenzo-snow.jpg" title="Lorenzo Snow" ></a>
         <span>
         Lorenzo Snow
         <br>
@@ -582,7 +643,7 @@ html, body {
         </span>
 </div>
 <div class="prophet" data-role="apostle">
-        <a href=""><img alt="Erastus Snow" src="../media/images/prophets/erastus-snow/filler.jpg" title="Erastus Snow"></a>
+        <a href="sermons/erastus-snow/erastus-snow-teachings.html"><img alt="Erastus Snow" src="../media/images/prophets/erastus-snow/filler.jpg" title="Erastus Snow"></a>
         <span>
         Erastus Snow
         <br>
@@ -644,7 +705,7 @@ html, body {
         </span>
 </div>
 <div class="prophet" data-role="apostle first-presidency president">
-        <a href=""><img alt="Joseph F. Smith" src="../media/images/prophets/joseph-f-smith/joseph-f-smith-1860s.jpg" title="Joseph F. Smith" ></a>
+        <a href="sermons/joseph-f-smith/joseph-f-smith-teachings.html"><img alt="Joseph F. Smith" src="../media/images/prophets/joseph-f-smith/joseph-f-smith-1860s.jpg" title="Joseph F. Smith" ></a>
         <span>
         Joseph F. Smith
         <br>
@@ -654,7 +715,7 @@ html, body {
         </span>
 </div>
 <div class="prophet" data-role="apostle first-presidency">
-        <a href=""><img alt="Brigham Young Jr." src="../media/images/prophets/brigham-young-jr/brigham-youngjr-portrait.jpg" title="Brigham Young Jr."></a>
+        <a href="sermons/brigham-young-jr/brigham-young-jr-teachings.html"><img alt="Brigham Young Jr." src="../media/images/prophets/brigham-young-jr/brigham-youngjr-portrait.jpg" title="Brigham Young Jr."></a>
         <span>
         Brigham Young Jr.
         <br>
@@ -685,7 +746,7 @@ html, body {
         </span>
 </div>
 <div class="prophet" data-role="apostle">
-        <a href=""><img alt="Moses Thatcher" src="../media/images/prophets/moses-thatcher/moses-thatcher-placeholder.jpg" title="Moses Thatcher"></a>
+        <a href="sermons/moses-thatcher/moses-thatcher-teachings.html"><img alt="Moses Thatcher" src="../media/images/prophets/moses-thatcher/moses-thatcher-placeholder.jpg" title="Moses Thatcher"></a>
         <span>
         Moses Thatcher
         <br>
@@ -696,7 +757,7 @@ html, body {
 </div>
         <h2 id="1880">1880</h2>
 <div class="prophet" data-role="apostle">
-        <a href=""><img alt="Francis M. Lyman" src="../media/images/prophets/francis-m-lyman/francis-m-lyman-1917.jpg" title="Francis M. Lyman"></a>
+        <a href="sermons/francis-m-lyman/francis-m-lyman-teachings.html"><img alt="Francis M. Lyman" src="../media/images/prophets/francis-m-lyman/francis-m-lyman-1917.jpg" title="Francis M. Lyman"></a>
         <span>
         Francis M. Lyman
         <br>
@@ -706,7 +767,7 @@ html, body {
         </span>
 </div>
 <div class="prophet" data-role="apostle first-presidency">
-        <a href=""><img alt="John H. Smith" src="../media/images/prophets/john-h-smith/john-h-smith-wikipedia.jpg" title="John H. Smith"></a>
+        <a href="sermons/john-h-smith/john-h-smith-teachings.html"><img alt="John H. Smith" src="../media/images/prophets/john-h-smith/john-h-smith-wikipedia.jpg" title="John H. Smith"></a>
         <span>
         John H. Smith
         <br>
@@ -716,7 +777,7 @@ html, body {
         </span>
 </div>
 <div class="prophet" data-role="apostle">
-        <a href=""><img alt="George Teasdale" src="../media/images/prophets/george-teasdale/filler.jpg" title="George Teasdale"></a>
+        <a href="sermons/george-teasdale/george-teasdale-teachings.html"><img alt="George Teasdale" src="../media/images/prophets/george-teasdale/filler.jpg" title="George Teasdale"></a>
         <span>
         George Teasdale
         <br>
@@ -736,7 +797,7 @@ html, body {
         </span>
 </div>
 <div class="prophet" data-role="apostle">
-        <a href=""><img alt="John W. Taylor" src="../media/images/prophets/john-w-taylor/Johnwtaylor.gif" title="John W. Taylor"></a>
+        <a href="sermons/john-w-taylor/john-w-taylor-teachings.html"><img alt="John W. Taylor" src="../media/images/prophets/john-w-taylor/Johnwtaylor.gif" title="John W. Taylor"></a>
         <span>
         John W. Taylor
         <br>
@@ -746,7 +807,7 @@ html, body {
         </span>
 </div>
 <div class="prophet" data-role="apostle">
-        <a href=""><img alt="Marriner W. Merrill" src="../media/images/prophets/marriner-w-merrill/marriner-w-merrill.jpg" title="Marriner W. Merrill"></a>
+        <a href="sermons/marriner-w-merrill/marriner-w-merrill-teachings.html"><img alt="Marriner W. Merrill" src="../media/images/prophets/marriner-w-merrill/marriner-w-merrill.jpg" title="Marriner W. Merrill"></a>
         <span>
         Marriner W. Merrill
         <br>
@@ -1275,7 +1336,7 @@ html, body {
         </span>
 </div>
 <div class="prophet" data-role="apostle">
-        <a href=""><img alt="Bruce R. McConkie" src="../media/images/prophets/bruce-r-mcconkie/bruce-r-mcconkie-1976.jpg" title="Bruce R. McConkie"></a>
+        <a href="sermons/bruce-r-mcconkie/bruce-r-mcconkie-teachings.html"><img alt="Bruce R. McConkie" src="../media/images/prophets/bruce-r-mcconkie/bruce-r-mcconkie-1976.jpg" title="Bruce R. McConkie"></a>
         <span>
         Bruce R. McConkie
         <br>
@@ -1459,6 +1520,31 @@ function searchProphets() {
         <script>
 function scrollToTop() {
     window.scrollTo({ top: 0, behavior: "smooth" });
+}
+</script>
+
+        <script>
+function goToRandomProphet() {
+    const prophets = [...document.querySelectorAll(".prophet")];
+
+    // Only consider prophets that are currently visible (respects
+    // active filters and any search term) and that actually link
+    // somewhere (some entries have empty placeholder hrefs).
+    const candidates = prophets.filter(prophet => {
+        const isVisible = getComputedStyle(prophet).display !== "none";
+        const link = prophet.querySelector("a");
+        const hasRealLink = link && link.getAttribute("href") && link.getAttribute("href").trim() !== "";
+        return isVisible && hasRealLink;
+    });
+
+    if (candidates.length === 0) {
+        alert("No talks available to pick from with the current filters/search.");
+        return;
+    }
+
+    const choice = candidates[Math.floor(Math.random() * candidates.length)];
+    const link = choice.querySelector("a");
+    window.location.href = link.href;
 }
 </script>
 
