@@ -1,372 +1,632 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>The Forgotten Prophets</title>
-    <link rel="stylesheet" type="text/css" href="scripts/style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="media/images/favicon/favicon.png">
+<meta charset="utf-8"/>
+<title>The Forgotten Prophets</title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="media/images/favicon/favicon.png" rel="icon" type="image/png"/>
+<style>
+:root{
+    --paper: #eef3f8;
+    --paper-deep: #dce7f2;
+    --card: #ffffff;
+    --ink: #14253b;
+    --ink-soft: #48607a;
+    --rule: #c3d6e8;
+    --rule-strong: #9db9d6;
+    --oxblood: #1d5a99;
+    --oxblood-deep: #123a63;
+    --brass: #3b7ec2;
+    --brass-bright: #4f97dd;
+    --shadow: rgba(20, 37, 59, 0.15);
+  }
+  *{ box-sizing: border-box; }
 
-    <style>
-        /* Page-specific layout only — colors, fonts, and buttons all come from style.css */
 
-        .relief-society-link {
-            display: inline-block;
-            margin-top: 20px;
-        }
+  .home-link{
+    position: relative; z-index: 3;
+    display:inline-block; margin: 1.1rem 0 0 1.3rem;
+    font-family:'JetBrains Mono', monospace; font-size: 0.75rem;
+    letter-spacing: 0.05em; text-transform: uppercase;
+    color: var(--ink-soft); text-decoration:none;
+    border: 1px solid var(--rule-strong); border-radius: 3px;
+    padding: 0.3rem 0.7rem; background: var(--card);
+  }
+  .home-link:hover{ color: var(--oxblood-deep); border-color: var(--oxblood); }
 
-        .tagline {
-            font-size: 22px;
-            font-style: italic;
-            color: lightskyblue;
-            max-width: 62ch;
-            margin: 20px auto 0;
-        }
+  header.masthead{
+    position: relative; z-index: 2;
+    padding: 1.6rem 1.5rem 2.2rem;
+    text-align: center;
+    border-bottom: 3px double var(--rule-strong);
+    background: linear-gradient(180deg, rgba(255,255,255,0.25), transparent);
+  }
+  .eyebrow{
+    font-family: 'JetBrains Mono', monospace; letter-spacing: 0.35em; text-transform: uppercase;
+    font-size: 0.68rem; color: var(--brass); margin-bottom: 0.9rem;
+  }
+  .eyebrow::before, .eyebrow::after{ content: "· "; }
+  h1.title{
+    font-family: 'Playfair Display', serif; font-weight: 900;
+    font-size: clamp(2rem, 5vw, 3.1rem); margin: 0 0 0.5rem; color: var(--oxblood-deep);
+  }
+  .subtitle{ font-style: italic; color: var(--ink-soft); font-size: 1.02rem; max-width: 680px; margin: 0 auto; }
 
-        /* ---------- Background prophets carousel ---------- */
 
-        .carousel-bg {
-            position: fixed;
-            inset: 0;
-            width: 100vw;
-            height: 100vh;
-            overflow: hidden;
-            z-index: -1;
-            background-color: #023465;
-            display: flex;
-            flex-direction: column;
-        }
+  /* ---- Top-level drawers ---- */
+  details.drawer{
+    background: var(--card);
+    border: 1px solid var(--rule-strong);
+    border-radius: 6px;
+    margin-bottom: 1.2rem;
+    box-shadow: 0 3px 12px -8px var(--shadow);
+    overflow: hidden;
+  }
+  details.drawer > summary{
+    cursor:pointer; list-style:none;
+    padding: 1.1rem 1.4rem;
+    display:flex; align-items:center; gap:0.8rem;
+    font-family:'Playfair Display', serif; font-weight:700; font-size:1.25rem;
+    color: var(--oxblood-deep);
+    background: linear-gradient(180deg, rgba(59,126,194,0.05), transparent);
+  }
+  details.drawer > summary::-webkit-details-marker{ display:none; }
+  details.drawer > summary::before{
+    content:"▸"; color: var(--brass); font-size:1rem; transition: transform 0.15s;
+    font-family: 'Source Serif 4', serif;
+  }
+  details.drawer[open] > summary::before{ transform: rotate(90deg); }
+  details.drawer > summary .drawer-tag{
+    margin-left:auto;
+    font-family:'JetBrains Mono', monospace; font-size:0.65rem; letter-spacing:0.05em;
+    text-transform:uppercase; color: var(--brass);
+    border: 1px solid var(--rule-strong); border-radius: 3px; padding: 0.15rem 0.5rem;
+  }
+  .drawer-.drawer-body > p.lede{ color: var(--ink-soft); font-style: italic; margin: 1rem 0 1.2rem; font-size:0.92rem; }
 
-        /* Each row is its own clipped strip; Apostles on top, Presidents
-           (largest, slowest) in the middle, First Presidency Counselors
-           (smallest, fastest) on the bottom. */
-        .carousel-row {
-            position: relative;
-            width: 100%;
-            overflow: hidden;
-        }
+  /* link lists */
+  ul.plain{ list-style:none; margin:0; padding:0; }
+  ul.plain li{ padding: 0.4rem 0; border-bottom: 1px dotted var(--rule); }
+  ul.plain li:last-child{ border-bottom:none; }
+  ul.plain
 
-        .row-apostles   { flex: 0 0 34%; }
-        .row-presidents { flex: 0 0 44%; }
-        .row-counselors { flex: 0 0 22%; }
+  ul.periodicals{ list-style:none; margin: 0.5rem 0 0; padding:0; }
+  ul.periodicals > li{
+    padding: 0.65rem 0; border-bottom: 1px dotted var(--rule);
+    display:flex; flex-wrap:wrap; align-items:center; gap:0.55rem;
+  }
+  ul.periodicals > li:last-child{ border-bottom: none; }
+  .periodical-name{ font-weight:600; color: var(--ink); min-width: 210px; }
+  .chip-row{ display:flex; flex-wrap:wrap; gap:0.4rem; }
+  a.badge-link, span.badge-muted{
+    display:inline-block; font-family:'JetBrains Mono', monospace; font-size: 0.68rem;
+    padding: 0.15rem 0.5rem; border-radius: 3px; white-space:nowrap;
+  }
+  a.badge-link{ border: 1px solid var(--oxblood); color: var(--oxblood); text-decoration:none; }
+  a.badge-link:hover{ background: var(--oxblood); color: var(--card); }
+  a.badge-link.indexed{ border-color: var(--brass); color: var(--brass); font-weight:600; }
+  a.badge-link.indexed:hover{ background: var(--brass); color: var(--card); }
+  span.badge-muted{ border: 1px dashed var(--rule-strong); color: var(--rule-strong); font-style: italic; }
 
-        .carousel-track {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 100%;
-            padding: 8px;
-            animation: slideLeft linear infinite;
-        }
+  /* nested sub-drawers (categories, alphabet) */
+  details.sub-drawer{
+    border: 1px solid var(--rule); border-radius: 4px; background: rgba(255,255,255,0.35);
+    margin: 0.6rem 0;
+  }
+  details.sub-drawer > summary{
+    cursor:pointer; list-style:none; padding: 0.6rem 1rem;
+    font-family:'JetBrains Mono', monospace; font-size:0.78rem; letter-spacing:0.04em;
+    text-transform:uppercase; color: var(--oxblood-deep);
+  }
+  details.sub-drawer > summary::-webkit-details-marker{ display:none; }
+  details.sub-drawer > summary::before{ content:"▸ "; color:var(--brass); }
+  details.sub-drawer[open] > summary::before{ content:"▾ "; }
+  .sub-drawer-.person-block{ margin-bottom:0.9rem; }
+  .person-block > .person-name{ font-weight:600; margin-bottom:0.3rem; }
+  .person-block ul{ list-style:none; margin:0 0 0 0.4rem; padding:0; }
+  .person-block ul li{ padding: 0.15rem 0; font-size:0.9rem; }
+  .person-block ul li > span{ color: var(--ink-soft); }
 
-        .carousel-track img {
-            height: 100%;
-            flex-shrink: 0;
-            object-fit: cover;
-            filter: brightness(0.7) grayscale(20%);
-            border-radius: 6px;
-            border: 1px solid rgba(255, 255, 255, 0.15);
-        }
+  /* av aid row */
+  .av-aid{ display:flex; gap:1rem; flex-wrap:wrap; margin: 0.6rem 0 1.1rem; }
+  .av-aid
+  .av-aid
 
-        /* Presidents: largest tiles, slowest scroll */
-        .track-presidents { animation-duration: 70s; }
-        .track-presidents img { width: 260px; }
+  /* Teachings of the prophets quick links */
+  .quicklinks{ display:flex; gap:0.8rem; flex-wrap:wrap; margin: 0.9rem 0 1.4rem; }
+  .quicklinks
+  .quicklinks
 
-        /* Apostles of the Twelve: medium tiles, medium speed */
-        .track-apostles { animation-duration: 42s; }
-        .track-apostles img { width: 170px; }
+  /* ---------- Tabs (browser embedded) ---------- */
+  .browser-wrap{ margin-top: 0.5rem; }
+  nav.tabs-wrap{
+    background: var(--paper-deep);
+    border: 1px solid var(--rule-strong); border-bottom:none;
+    border-radius: 6px 6px 0 0;
+  }
+  .tabs{ display:flex; overflow-x:auto; scrollbar-width: thin; }
+  .tab-btn{
+    flex: 0 0 auto; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem;
+    letter-spacing: 0.03em; text-transform: uppercase; background: transparent; border: none;
+    border-right: 1px solid var(--rule); padding: 0.85rem 1.05rem; cursor: pointer;
+    color: var(--ink-soft); position: relative; white-space: nowrap; transition: background 0.15s, color 0.15s;
+  }
+  .tab-btn:first-child{ border-radius: 6px 0 0 0; }
+  .tab-btn:hover{ background: rgba(29,90,153,0.06); color: var(--oxblood-deep); }
+  .tab-btn.active{ color: var(--oxblood-deep); background: var(--card); font-weight: 600; }
+  .tab-btn.active::after{ content:""; position:absolute; left:0; right:0; bottom:-1px; height:3px; background: var(--oxblood); }
+  .tab-count{ display:inline-block; margin-left:0.4rem; color: var(--brass); font-size:0.66rem; }
 
-        /* First Presidency Counselors: smallest tiles, fastest scroll */
-        .track-counselors { animation-duration: 24s; }
-        .track-counselors img { width: 130px; }
+  .browser-.panel{ display:none; animation: fade 0.2s ease; }
+  .panel.active{ display:block; }
+  @keyframes fade{ from{ opacity:0; transform: translateY(4px);} to{opacity:1; transform:none;} }
 
-        /* Blue dimming overlay, kept from the split-screen treatment, laid
-           over all three rows at once */
-        .carousel-bg::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: rgba(2, 52, 101, 0.55);
-            z-index: 1;
-        }
+  .panel-head{ display:flex; justify-content:space-between; align-items:flex-end; gap: 1rem; flex-wrap: wrap; border-bottom: 1px solid var(--rule); padding-bottom: 0.8rem; margin-bottom: 1.1rem; }
+  .panel-head h3{ font-family:'Playfair Display', serif; font-weight: 700; font-size: 1.35rem; margin: 0; color: var(--oxblood-deep); }
+  .panel-desc{ font-size: 0.87rem; color: var(--ink-soft); font-style: italic; margin-top: 0.2rem; max-width: 620px; }
+  .controls{ display:flex; align-items:center; gap:0.55rem; flex-wrap: wrap; }
+  .search-box{ position:relative; }
+  .search-box input{
+    font-family:'Source Serif 4', serif; font-size: 0.9rem; padding: 0.45rem 0.85rem 0.45rem 1.9rem;
+    border: 1px solid var(--rule-strong); border-radius: 3px; background: var(--paper); color: var(--ink);
+    width: 220px; outline: none; transition: border-color 0.15s;
+  }
+  .search-box input:focus{ border-color: var(--oxblood); }
+  .search-box::before{ content: "⚲"; position:absolute; left:0.6rem; top:50%; transform: translateY(-50%); color: var(--ink-soft); font-size: 0.8rem; }
+  select.source-filter{
+    font-family:'JetBrains Mono', monospace; font-size:0.75rem; padding:0.4rem 0.6rem;
+    border:1px solid var(--rule-strong); border-radius:3px; background:var(--paper); color:var(--ink);
+  }
+  .result-count{ font-family:'JetBrains Mono', monospace; font-size: 0.7rem; color: var(--brass); white-space: nowrap; }
 
-        @keyframes slideLeft {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
+  .table-scroll{ border: 1px solid var(--rule-strong); border-radius: 4px; overflow: auto; max-height: 60vh; background: var(--paper); }
 
-        /* Wrapper to keep all real page content above the fixed background */
-        .page-content {
-            position: relative;
-            z-index: 2;
-        }
 
-        /* ---------- Button mosaic — tiles kept full-size and uncropped ---------- */
+  thead th .arrow{ opacity:0.5; margin-left:0.3rem; font-size:0.58rem; }
+  thead th.sorted .arrow{ opacity:1; color: var(--brass-bright); }
 
-        .icon-dock {
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            flex-wrap: wrap;
-            gap: 6px;
-            margin: 45px auto 55px;
-            max-width: 700px;
-        }
 
-        .icon-dock a {
-            display: block;
-            line-height: 0;
-            transition: transform 0.2s ease;
-        }
+  .hymn-grid{ display:grid; grid-template-columns: 1fr 1fr; gap: 1.4rem; }
+  @media (max-width: 800px){ .hymn-grid{ grid-template-columns: 1fr; } }
+  .hymn-grid h4{ font-family:'Playfair Display', serif; font-size: 1.02rem; color: var(--oxblood-deep); border-bottom: 1px solid var(--rule); padding-bottom: 0.35rem; margin: 0 0 0.6rem; }
 
-        .icon-dock a img {
-            width: 200px;
-            height: 200px;
-            display: block;
-        }
+  .placeholder-grid{
+    display:grid; grid-template-columns: repeat(auto-fill, minmax(190px,1fr)); gap:0.5rem;
+    margin-top: 0.6rem;
+  }
+  .placeholder-chip{
+    border: 1px dashed var(--rule-strong); border-radius: 4px; padding: 0.55rem 0.7rem;
+    font-size: 0.82rem; color: var(--ink-soft); background: rgba(255,255,255,0.4);
+  }
+  .placeholder-chip em{ display:block; font-size:0.68rem; color: var(--rule-strong); margin-top:0.15rem; font-style: italic; }
 
-        .icon-dock a:hover {
-            transform: translateY(-6px);
-        }
+  details.legend{ margin-top: 1.6rem; border: 1px solid var(--rule-strong); border-radius: 4px; background: var(--paper); }
+  details.legend summary{ cursor:pointer; padding: 0.75rem 1rem; font-family:'JetBrains Mono', monospace; font-size: 0.72rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--oxblood-deep); list-style: none; }
+  details.legend summary::-webkit-details-marker{ display:none; }
+  details.legend summary::before{ content: "▸ "; color: var(--brass); }
+  details.legend[open] summary::before{ content: "▾ "; }
+  .legend-.legend-row{ display:flex; gap:0.5rem; padding: 0.28rem 0; font-size: 0.82rem; border-bottom: 1px dotted var(--rule); }
+  .legend-row b{ font-family:'JetBrains Mono', monospace; color: var(--oxblood); min-width: 3.2rem; }
 
-        /* mark the interactive one without touching the artwork itself */
-        .icon-dock a#sermon-finder-link img {
-            outline: 3px solid goldenrod;
-            outline-offset: -3px;
-        }
 
-        /* ---------- Quotes ---------- */
-
-        section#quotes {
-            width: 90%;
-            max-width: 950px;
-            margin: 45px auto;
-        }
-
-        section#quotes p {
-            margin: 0 0 20px;
-            font-size: 15px;
-            line-height: 1.6;
-        }
-
-        section#quotes .source-line {
-            font-size: 14px;
-            font-weight: bold;
-        }
-
-        h6#disclaimer {
-            width: 80%;
-            max-width: 620px;
-            margin: 0 auto 50px;
-            padding: 16px 24px;
-            border-top: 1px solid rgba(245, 245, 245, 0.25);
-            border-bottom: 1px solid rgba(245, 245, 245, 0.25);
-            font-weight: normal;
-            font-size: 14px;
-            line-height: 1.6;
-            color: lightgray;
-        }
-
-        h6#disclaimer .disclaimer-label {
-            display: block;
-            font-weight: bold;
-            font-size: 13px;
-            letter-spacing: 0.06em;
-            color: goldenrod;
-            margin-bottom: 6px;
-        }
-
-        @media (max-width: 768px) {
-            .tagline { font-size: 18px; }
-            .quote-card { min-height: auto; }
-            .icon-dock a img { width: 140px; height: 140px; }
-        }
-
-        @media (max-width: 480px) {
-            .icon-dock a img { width: 105px; height: 105px; }
-        }
-    </style>
-</head>
+/* Integrated Resources section */
+#resources {
+  margin-top: 2rem;
+  scroll-margin-top: 1rem;
+}
+#resources .resources-heading {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+#resources .resources-heading h2 {
+  margin-bottom: 0.4rem;
+}
+#resources .resources-heading p {
+  margin-top: 0;
+}
+</style></head>
 <body>
+<!-- =====================================================
+     HEADER
+     ===================================================== -->
+    <header>
+<h1>The Forgotten Prophets</h1>
+<p>A memorial dedicated to the prophets, seers and revelators of the LORD who are on the other side — many of them forgotten to time.</p>
+<p><a href="javascript:void(0)" id="sermon-finder-link" onclick="findSermon()">Find a Sermon</a></p>
+</header>
+<hr/>
+<!-- =====================================================
+     NAVIGATION
+     ===================================================== -->
+    <nav>
+<h2><a href="scripts/the-doctrine-of-christ.html">Reference Guide</a></h2>
+<h2>Testimonies of the Prophets</h2>
+<h2>Doctrine of Christ</h2>
+<h2><a href="#resources">Resources</a></h2>
+<h4>Image Gallery</h4>
+    <table>
+            <thead>
+                <tr>
+                    <th>Resource</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Photograph Collections</td>
+                    <td><a href="https://churchhistorylibrary.churchofjesuschrist.org/guides/photograph-collections?lang=eng">ChurchofJesusChrist.org</a></td>
+                </tr>
+                <tr>
+                    <td>General Authority photograph portraits, circa 1870s</td>
+                    <td><a href="https://catalog.churchofjesuschrist.org/assets/aa8e84c8-3e5d-4740-a95d-4524325aa324/0/0?lang=eng">Church History Catalog</a></td>
+                </tr>
+                <tr>
+                    <td>General Authority portrait collection, circa 1850-1985</td>
+                    <td><a href="https://catalog.churchofjesuschrist.org/record/799cd835-cb2e-41d7-b9d8-378ed7a6c4f6/11cda390-da6a-451e-bee3-921cd48f08da?view=browse">Church History Catalog</a></td>
+                </tr>
+                <tr>
+                    <td>Photograph album of LDS Church leaders, circa 1880s-early 1900s</td>
+                    <td><a href="https://catalog.churchofjesuschrist.org/record/0b45bf17-8421-4a20-aceb-c898a2691a7c/0?view=browse&lang=eng">Church History Catalog</a></td>
+                </tr>
+                <tr>
+                    <td>Daguerreotype collection, circa 1850s-1860s</td>
+                    <td><a href="https://catalog.churchofjesuschrist.org/record/c4aff5f9-175d-4be6-95c0-42ebb1f43d58/853fa08e-a072-4fb9-b68a-243afbe5c04d?view=browse&lang=eng">Church History Catalog</a></td>
+                </tr>
+                <tr>
+                    <td>Savage and Ottinger collection of studio portraits, circa 1862-1872</td>
+                    <td><a href="https://catalog.churchofjesuschrist.org/record/312ab6d1-b11e-4dde-add0-2c59580015f1/d4be7023-d655-4cc8-a678-216e382fae2d?view=browse&lang=eng">Church History Catalog</a></td>
+                </tr>
+                <tr>
+                    <td>Bathsheba W. Bigler Smith photograph collection, circa 1865-1900</td>
+                    <td><a href="https://catalog.churchofjesuschrist.org/record/5708a889-6343-4b5c-9561-668e5d40ba84/16caeb75-8263-4321-8b29-2f3c05c6f8d0?view=browse&lang=eng">Church History Catalog</a></td>
+                </tr>
+            </tbody>
+    </table>
+<h4>Teachings</h4>
+    <table>
+            <thead>
+                <tr>
+                    <th>Resource</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1949-1970 General Conference Recordings (Video)</td>
+                    <td><a href="https://catalog.churchofjesuschrist.org/record/7eacaa5b-fb1e-4d82-a6b7-8f12159c97bf/40860424-63a7-49c0-950a-41fd0f74205b?view=browse&lang=eng">Church History Catalog</a></td>
+                </tr>
+            </tbody>
+    </table>
+<h2><a href="scripts/biographies.htm">Biographies</a></h2>
+<h2>Wives of the Prophets</h2>
+</nav>
+<hr/>
+<h2>Custom GC</h2>
+<div id="customgc">
+<p>
+<input autocomplete="off" id="talkSearch" placeholder="Search speaker, title, year, or topic..." size="40" type="text"/>
+</p>
+<ul id="searchResults"></ul>
+<p><button id="startBtn">Start Playing</button></p>
+<h3 id="talkTitle"></h3>
+<p id="talkSpeaker"></p>
+<p id="talkRole"></p>
+<p id="talkYear"></p>
+<p id="talkTopics"></p>
+<p id="talkSource"><a href="#" id="talkLink" rel="noopener" target="_blank"></a></p>
+<audio controls="" id="audio"></audio>
+<p>
+<button id="prevBtn">Previous</button>
+<button id="back15Btn">-15s</button>
+<button id="forward15Btn">+15s</button>
+<button id="nextBtn">Next</button>
+</p>
+</div>
+<hr/>
+<h2><a href="scripts/image-gallery.html">Gallery</a></h2>
+<hr/>
+<section id="quotes">
+<p class="quote">
+            "I tell you that if we do not feel in our hearts to sustain the prophets of God, we would not believe the Lord if He were to come Himself"
+            <br/>
+<span class="source-line">-Abraham O. Woodruff, <a href="https://archive.org/details/conferencereport1899a/page/5/mode/1up" target="_blank">1899 General Conference</a></span>
+</p>
+<p class="quote">
+            "when the servants of god are not bodily present with the people and their voices are not heard in their congregations, they begin to murmur and complain, but when the prophets are with them, the sheep soon recognize the voices of the shepherds and they are again established"
+            <br/>
+<span class="source-line">-Abraham H. Cannon, <a href="https://newspapers.lib.utah.edu/search?facet_type=%22page%22&amp;gallery=1&amp;rows=200&amp;parent_i=2680984#g24">1890 General Conference</a></span>
+</p>
+<p class="quote">
+            "Some of the General Authorities [the Apostles] have had assigned to them a special calling; they possess a special gift; they are sustained as prophets, seers, and revelators, which gives them a special spiritual endowment in connection with their teaching of [this] people. They have the right, the power, and the authority to declare the mind and will of God to his people, subject to the overall power and authority of the President of the Church."
+            <br/>
+<span class="source-line">-Boyd K. Packer (Quoting J. Reuben Clark Jr.) <a href="https://www.churchofjesuschrist.org/study/general-conference/1996/10/the-twelve-apostles?lang=eng">October 1996 General Conference</a></span>
+</p>
+</section>
+<hr/>
+<section id="resources">
 
-    <!-- Fixed prophets carousel background with navy overlay: three rows
-         pulled from teachings.html's data-role groupings (Apostles /
-         Presidents / First Presidency Counselors) -->
-    <div class="carousel-bg">
+        <!-- =====================================================
+             RESOURCES
+             Simple link table.
+             Add new resources as additional <tr> rows.
+             ===================================================== -->
 
-        <!-- Row 1: Apostles of the Twelve (excluding those who also served
-             as a Counselor in the First Presidency or became President) -->
-        <div class="carousel-row row-apostles">
-            <div class="carousel-track track-apostles">
-                <img src="media/images/prophets/thomas-b-marsh/thomas-b-marsh-wikipedia.jpg" alt="Thomas B. Marsh">
-                <img src="media/images/prophets/david-w-patten/David-Wyman-Patten-church-website-1.jpg" alt="David W. Patten">
-                <img src="media/images/prophets/orson-hyde/orson-hydedaguerrotype.jpg" alt="Orson Hyde">
-                <img src="media/images/prophets/parley-p-pratt/parley-p-pratt-1835.jpg" alt="Parley P. Pratt">
-                <img src="media/images/prophets/orson-pratt/orson-pratt-1851.png" alt="Orson Pratt">
-                <img src="media/images/prophets/heber-c-kimball/heber-c-kimball-portrait.jpg" alt="Heber C. Kimball">
-                <img src="media/images/prophets/charles-c-rich/charles-c-rich-1880.jpg" alt="Charles C. Rich">
-                <img src="media/images/prophets/francis-m-lyman/francis-m-lyman-1917.jpg" alt="Francis M. Lyman">
-                <img src="media/images/prophets/reed-smoot/senator-reed-smoot-placeholder.jpg" alt="Reed Smoot">
-                <img src="media/images/prophets/james-e-talmage/filler-image.jpg" alt="James E. Talmage">
-                <img src="media/images/prophets/melvin-j-ballard/melvin-j-ballard1919.jpg" alt="Melvin J. Ballard">
-                <img src="media/images/prophets/boyd-k-packer/boyd-k-packer1961.jpg" alt="Boyd K. Packer">
-                <img src="media/images/prophets/bruce-r-mcconkie/bruce-r-mcconkie-1976.jpg" alt="Bruce R. McConkie">
-                <img src="media/images/prophets/l-tom-perry/l-tom-perry.jpg" alt="L. Tom Perry">
-                <img src="media/images/prophets/david-b-haight/filler-image-.jpg" alt="David B. Haight">
-                <img src="media/images/prophets/neil-a-maxwell/neil-a-maxwell.jpg" alt="Neil A. Maxwell">
-                <img src="media/images/prophets/m-russell-ballard/m-russell-ballard.jpg" alt="M. Russell Ballard">
-                <img src="media/images/prophets/richard-g-scott/richard-g-scott.jpg" alt="Richard G. Scott">
-                <img src="media/images/prophets/jeffery-r-holland/filler-imaage.webp" alt="Jeffery R. Holland">
-            </div>
-        </div>
+    </section><h6 id="disclaimer">
+        Disclaimer: All images are within the Public Domain*. The biographies fall within America's fair-use laws**. Answers to questions are my own opinions, and should not be regarded as official Church teachings.
+    </h6>
+<footer>
+<p>Did we get something wrong? Contact us: <a href="mailto:theforgottenprophetslatterdays@gmail.com">Email</a></p>
+<p>Do you want to learn more about the Gospel? <a href="https://www.churchofjesuschrist.org/comeuntochrist">Come and See!</a></p>
+<p>The Favicon is the USVA headstone for Latter-Day Saints</p>
+</footer>
+<!-- Future additions, previously disabled on the old layout:
+    <iframe ... intro video ...>
+    <a href="/scripts/modern-bible.html">Modern Bible</a>
+    <a href="scripts/!common-questions.html">Common Questions</a>
+    <a href="scripts/onthisday.html">On This Day</a>
+    <a href="...">Daily Sermon</a>
+    <a href="#">Weekly Conference</a>
+    <a href="my-takes.html">My Takes</a>
+    <a href="">Videos</a>
+    -->
+<script src="javascript/random-quote-homepage.js"></script>
+<script src="javascript/sermons.js"></script>
+<script>
+    // ===== Custom General Conference =====
+    // NOTE: audio paths are relative to this page (site root), not to /scripts/
+    const talks = [
 
-        <!-- Row 2: Presidents of the Church — largest tiles, slowest scroll -->
-        <div class="carousel-row row-presidents">
-            <div class="carousel-track track-presidents">
-                <img src="media/images/prophets/joseph-smithjr/joseph-smith-jr-bathshebasmithportrait.jpg" alt="Joseph Smith Jr.">
-                <img src="media/images/prophets/brigham-young/brigham-young-1855.jpg" alt="Brigham Young">
-                <img src="media/images/prophets/john-taylor/JohnTaylor2.jpg" alt="John Taylor">
-                <img src="media/images/prophets/wilford-woodruff/Wilford_Woodruff_2.jpg" alt="Wilford Woodruff">
-                <img src="media/images/prophets/lorenzo-snow/lorenzo-snow.jpg" alt="Lorenzo Snow">
-                <img src="media/images/prophets/joseph-f-smith/joseph-f-smith-1860s.jpg" alt="Joseph F. Smith">
-                <img src="media/images/prophets/heber-j-grant/heber-j-grant-1880s.jpg" alt="Heber J. Grant">
-                <img src="media/images/prophets/george-albert-smith/george-albert-smith-1939.jpg" alt="George Albert Smith">
-                <img src="media/images/prophets/david-o-mckay/david-o-mckay-1925.jpg" alt="David O. McKay">
-                <img src="media/images/prophets/joseph-fielding-smith/joseph-fielding-smith1943circa.jpg" alt="Joseph Fielding Smith">
-                <img src="media/images/prophets/harold-b-lee/harold-b-lee-1944.jpg" alt="Harold B. Lee">
-                <img src="media/images/prophets/spencer-w-kimball/spencer-w-kimballplaceholder.png" alt="Spencer W. Kimball">
-                <img src="media/images/prophets/ezra-taft-benson/Ezra_Taft_Benson.jpg" alt="Ezra Taft Benson">
-                <img src="media/images/prophets/howard-w-hunter/howard-w-hunter-1975.jpg" alt="Howard W. Hunter">
-                <img src="media/images/prophets/gordon-b-hinckley/gordon-b-hinckley-1976.jpg" alt="Gordon B. Hinckley">
-                <img src="media/images/prophets/thomas-s-monson/thomas-s-monson.jpg" alt="Thomas S. Monson">
-                <img src="media/images/prophets/russel-m-nelson/russell-m-nelson.jpg" alt="Russell M. Nelson">
-            </div>
-        </div>
+      // 1936 — General Conference (Church History Catalog)
+      { title:"1936 Annual General Conference — Sunday Session", speaker:"David O. McKay", role:"Second Counselor in the First Presidency (CBS Church of the Air)", year:"1936", audio:"media/audio/general-conference/1936-annual-sunday-gc.mp3", link:"https://catalog.churchofjesuschrist.org/assets/d47c4ff3-6e5b-4d4e-87a4-efd2617fa45b/0/0?lang=eng", linkLabel:"Church History Catalog", start:135, end:473 },
+      { title:"1936 Annual General Conference — Sunday Session", speaker:"J. Reuben Clark, Jr.", role:"CBS Church of the Air Speaker", year:"1936", audio:"media/audio/general-conference/1936-annual-sunday-gc.mp3", link:"https://catalog.churchofjesuschrist.org/assets/d47c4ff3-6e5b-4d4e-87a4-efd2617fa45b/0/0?lang=eng", linkLabel:"Church History Catalog", start:473, end:794 },
+      { title:"1936 Annual General Conference — Sunday Session", speaker:"Heber J. Grant", role:"President of the Church (CBS Church of the Air)", year:"1936", audio:"media/audio/general-conference/1936-annual-sunday-gc.mp3", link:"https://catalog.churchofjesuschrist.org/assets/d47c4ff3-6e5b-4d4e-87a4-efd2617fa45b/0/0?lang=eng", linkLabel:"Church History Catalog", start:999, end:1502 },
+      { title:"1936 October General Conference — Sunday Session", speaker:"John A. Widtsoe", role:"Council of the Twelve Apostles (CBS Church of the Air)", year:"1936", audio:"media/audio/general-conference/1936-october-gc-sunday.mp3", link:"https://catalog.churchofjesuschrist.org/assets/54373712-0a15-4023-8fcc-051c9c84f9b5/0/0?lang=eng", linkLabel:"Church History Catalog", start:150, end:590 },
+      { title:"1936 October General Conference — Sunday Session", speaker:"Melvin J. Ballard", role:"Council of the Twelve Apostles (CBS Church of the Air)", year:"1936", audio:"media/audio/general-conference/1936-october-gc-sunday.mp3", link:"https://catalog.churchofjesuschrist.org/assets/54373712-0a15-4023-8fcc-051c9c84f9b5/0/0?lang=eng", linkLabel:"Church History Catalog", start:793, end:1488, topics:"Mission of the Church, Prophets, Pre-mortal life, Witnesses, Book of Mormon, Resurrection, Jesus Christ, Melvin J. Ballard's Testimony" },
 
-        <!-- Row 3: Counselors in the First Presidency (excluding those who
-             became President) — smallest tiles, fastest scroll -->
-        <div class="carousel-row row-counselors">
-            <div class="carousel-track track-counselors">
-                <img src="media/images/prophets/sidney-rigdon/rigdon-1873.jpg" alt="Sidney Rigdon">
-                <img src="media/images/prophets/william-law/william-law.jpg" alt="William Law">
-                <img src="media/images/prophets/john-c-bennett/wikipedia.jpg" alt="John C. Bennett">
-                <img src="media/images/prophets/jebediah-m-grant/filler-image.gif" alt="Jebediah M. Grant">
-                <img src="media/images/prophets/daniel-h-wells/daniel-h-wells-1904.jpg" alt="Daniel H. Wells">
-                <img src="media/images/prophets/anthon-h-lund/anthon-h-lund-1905.jpg" alt="Anthon H. Lund">
-                <img src="media/images/prophets/charles-w-penrose/charles-w-penrose-first-presidency.jpg" alt="Charles W. Penrose">
-                <img src="media/images/prophets/anthony-w-ivins/anthony-w-ivins-1921.jpg" alt="Anthony W. Ivins">
-                <img src="media/images/prophets/john-r-winder/john-r-winder-1901-wikipedia.jpg" alt="John R. Winder">
-                <img src="media/images/prophets/charles-w-nibley/charles-w-nibley-first-presidency.jpg" alt="Charles W. Nibley">
-                <img src="media/images/prophets/j-reuben-clark-jr/j-reuben-clark-jr-circa1914-wikipedia.jpg" alt="J. Reuben Clark Jr.">
-                <img src="media/images/prophets/henry-d-moyle/henry-d-moyle-1961.jpg" alt="Henry D. Moyle">
-                <img src="media/images/prophets/marion-g-romney/marion-g-romney.jpg" alt="Marion G. Romney">
-                <img src="media/images/prophets/hugh-b-brown/filler.jpg" alt="Hugh B. Brown">
-                <img src="media/images/prophets/nathan-e-tanner/n-eldon-tanner.jpg" alt="Nathan E. Tanner">
-                <img src="media/images/prophets/thorpe-b-isaacson/thorpe-b-isaacson.jpg" alt="Thorpe B. Isaacson">
-                <img src="media/images/prophets/alvin-r-dyer/alvin-r-dyer-wikipedia.jpg" alt="Alvin R. Dyer">
-            </div>
-        </div>
+      // 1949 — BYU Speeches
+      { title:"Four Cornerstones upon Which to Build Greatness", speaker:"John A. Widtsoe", role:"Apostle in the Quorum of the Twelve", year:"1949", audio:"media/audio/john-a-widtsoe/four-cornerstones-to-build-greatness.mp3", link:"https://speeches.byu.edu/talks/john-a-widtsoe/four-cornerstones-build-greatness/", linkLabel:"BYU Speeches" },
+      { title:"The Value of a Testimony", speaker:"Spencer W. Kimball", role:"Council of the Twelve Apostles", year:"1949", audio:"media/audio/spencer-w-kimball/byu-speeches/the-value-of-a-testimony.mp3", link:"https://speeches.byu.edu/talks/spencer-w-kimball/value-testimony-2/", linkLabel:"BYU Speeches", topics:"Testimonies (the Value of), Testimony (Dying for)" },
+      { title:"The Law of Divine Witnesses", speaker:"Joseph Fielding Smith", role:"Council of the Twelve Apostles", year:"1949", audio:"media/audio/joseph-fielding-smith/byu-speeches/the-law-of-divine-witnesses.mp3", link:"https://speeches.byu.edu/talks/joseph-fielding-smith/law-divine-witnesses/", linkLabel:"BYU Speeches", topics:"BYU" },
 
-    </div>
+      // 1950 — BYU Speeches
+      { title:"True Christianity: The Ideal for Humanity", speaker:"Albert E. Bowen", role:"Apostle in the Quorum of the Twelve", year:"1950", audio:"media/audio/albert-e-bowen/true-christianity.mp3", link:"https://speeches.byu.edu/talks/albert-e-bowen/true-christianity-ideal-humanity/", linkLabel:"BYU Speeches" },
+      { title:"Your Living Testimony", speaker:"John A. Widtsoe", role:"Apostle in the Quorum of the Twelve", year:"1950", audio:"media/audio/john-a-widtsoe/your-living-testimony.mp3", link:"https://speeches.byu.edu/talks/john-a-widtsoe/your-living-testimony/", linkLabel:"BYU Speeches" },
+      { title:"A Message for the World", speaker:"Ezra Taft Benson", role:"Apostle in the Quorum of the Twelve", year:"1950", audio:"media/audio/ezra-taft-benson/byu-speeches/a-message-for-the-world.mp3", link:"https://speeches.byu.edu/talks/ezra-taft-benson/message-world/", linkLabel:"BYU Speeches", topics:"Peculiar People, Missions, Church Service, Dancing, Persecution" },
+      { title:"Devotional: George Albert Smith, 1950", speaker:"George Albert Smith", role:"President of the Church", year:"1950", audio:"media/audio/george-albert-smith/byu-speeches/1950-devotional.mp3", link:"https://speeches.byu.edu/talks/george-albert-smith/devotional-george-albert-smith-1950/", linkLabel:"BYU Speeches" },
+      { title:"Leadership: the Salt of the Earth", speaker:"LeGrand Richards", role:"Presiding Bishop", year:"1950", audio:"media/audio/legrand-richards/byu-speeches/leadership-salt-of-the-earth.mp3", link:"https://speeches.byu.edu/talks/legrand-richards/leadership/", linkLabel:"BYU Speeches" },
+      { title:"Loyalty: 1950 Devotional", speaker:"Harold B. Lee", role:"Apostle in the Quorum of the Twelve", year:"1950", audio:"media/audio/harold-b-lee/byu-speeches/1950-devotional.mp3", link:"https://speeches.byu.edu/talks/harold-b-lee/1950-devotional/", linkLabel:"BYU Speeches" },
+      { title:"Protecting Political Freedom", speaker:"Henry D. Moyle", role:"Apostle in the Quorum of the Twelve", year:"1950", audio:"media/audio/henry-d-moyle/byu-speeches/protecting-political-freedom.mp3", link:"https://speeches.byu.edu/talks/henry-d-moyle/protecting-political-freedom/", linkLabel:"BYU Speeches" },
 
-    <div class="page-content">
+      // 1951 — BYU Speeches
+      { title:"A Style of Our Own", speaker:"Spencer W. Kimball", role:"Apostle in the Quorum of the Twelve", year:"1951", audio:"media/audio/spencer-w-kimball/byu-speeches/a-style-of-our-own-modesty-and-chastity.mp3", link:"https://speeches.byu.edu/talks/spencer-w-kimball/style/", linkLabel:"BYU Speeches", topics:"Chastity, Modesty" },
+      { title:"Eternal Truth Will Guide Us", speaker:"David O. McKay", role:"Counselor in the First Presidency", year:"1951", audio:"media/audio/david-o-mckay/byu-speeches/eternal-truth-will-guide.mp3", link:"https://speeches.byu.edu/talks/david-o-mckay/eternal-truth-will-guide-us/", linkLabel:"BYU Speeches" },
+      { title:"Life Under Control", speaker:"Harold B. Lee", role:"Apostle in the Quorum of the Twelve", year:"1951", audio:"media/audio/harold-b-lee/byu-speeches/life-under-control.mp3", link:"https://speeches.byu.edu/talks/harold-b-lee/life-control/", linkLabel:"BYU Speeches" },
+      { title:"Divine Witnesses", speaker:"Joseph Fielding Smith", role:"Apostle in the Quorum of the Twelve", year:"1951", audio:"media/audio/joseph-fielding-smith/byu-speeches/divine-witnesses.mp3", link:"https://speeches.byu.edu/talks/joseph-fielding-smith/divine-witnesses/", linkLabel:"BYU Speeches", topics:"Witnesses (Law of), Oliver Cowdery, Hyrum Smith, President of the Church (Only one)" },
+      { title:"Godhead", speaker:"J. Reuben Clark Jr.", role:"Apostle in the Quorum of the Twelve", year:"1951", audio:"media/audio/j-reuben-clark/byu-speeches/godhead.mp3", link:"https://speeches.byu.edu/talks/j-reuben-clark/godhead/", linkLabel:"BYU Speeches" },
 
-        <header>
-            <h1>The Forgotten Prophets</h1>
-            <p class="tagline">A memorial dedicated to the prophets, seers and revelators of the LORD who are on the other side — many of them forgotten to time.</p>
-        </header>
+      // 1952 — BYU Speeches
+      { title:"Whom Shall I Marry?", speaker:"Spencer W. Kimball", role:"Council of the Twelve Apostles", year:"1952", audio:"media/audio/spencer-w-kimball/byu-speeches/whom-shall-i-marry.mp3", link:"https://speeches.byu.edu/talks/spencer-w-kimball/shall-marry/", linkLabel:"BYU Speeches" },
+      { title:"What Men and Women Are Tomorrow Depends upon What You Do Today", speaker:"Harold B. Lee", role:"Council of the Twelve Apostles", year:"1952", audio:"media/audio/harold-b-lee/byu-speeches/what-men-and-women-are-tomorrow-depends-on-today.mp3", link:"https://speeches.byu.edu/talks/harold-b-lee/men-women-tomorrow-depends-upon/", linkLabel:"BYU Speeches" },
+      { title:"The Growth of the Church", speaker:"Ezra Taft Benson", role:"Council of the Twelve Apostles", year:"1952", audio:"media/audio/ezra-taft-benson/byu-speeches/growth-of-the-church.mp3", link:"https://speeches.byu.edu/talks/ezra-taft-benson/growth-church/", linkLabel:"BYU Speeches" },
+      { title:"Leadership Week: Fulfillment of Prophecy", speaker:"Joseph Fielding Smith", role:"Council of the Twelve Apostles", year:"1952", audio:"media/audio/joseph-fielding-smith/byu-speeches/leadership-week-fulfillment-of-prophecy.mp3", link:"https://speeches.byu.edu/talks/joseph-fielding-smith/leadership-week-fulfillment-prophecy/", linkLabel:"BYU Speeches", topics:"Prophecies fulfilled" },
+      { title:"Leadership Week Devotional", speaker:"Stephen L Richards", role:"Counselor in the First Presidency", year:"1952", audio:"media/audio/stephen-l-richards/byu-speeches/leadership-week-devotional.mp3", link:"https://speeches.byu.edu/talks/stephen-l-richards/leadership-week-devotional/", linkLabel:"BYU Speeches" },
+      { title:"Message for LDS College Youth", speaker:"David O. McKay", role:"President of the Church", year:"1952", audio:"media/audio/david-o-mckay/byu-speeches/message-for-lds-college-youth.mp3", link:"https://speeches.byu.edu/talks/david-o-mckay/message-lds-college-youth/", linkLabel:"BYU Speeches" },
+      { title:"August 1952 Commencement", speaker:"George Q. Morris", role:"Assistant Quorum of the Twelve", year:"1952", audio:"media/audio/george-q-morris/august-1952-commencement.mp3", link:"https://speeches.byu.edu/talks/george-q-morris/august-1952-commencement/", linkLabel:"BYU Speeches" },
+      { title:"Follow the Oracle of God", speaker:"Matthew Cowley", role:"Council of the Twelve Apostles", year:"1952", audio:"media/audio/matthew-cowley/follow-the-oracle.mp3", link:"https://speeches.byu.edu/talks/matthew-cowley/follow-oracle-god/", linkLabel:"BYU Speeches", topics:"Leading, Brigham Young" },
+      { title:"Divine Revelation", speaker:"Harold B. Lee", role:"Council of the Twelve Apostles", year:"1952", audio:"media/audio/harold-b-lee/byu-speeches/divine-revelation.mp3", link:"https://speeches.byu.edu/talks/harold-b-lee/divine-revelation/", linkLabel:"BYU Speeches" },
+      { title:"Honesty and Integrity", speaker:"Delbert L. Stapley", role:"Council of the Twelve Apostles", year:"1952", audio:"media/audio/delbert-l-stapley/byu-speeches/honesty-and-integrity.mp3", link:"https://speeches.byu.edu/talks/delbert-l-stapley/honesty-integrity-2/", linkLabel:"BYU Speeches" },
+      { title:"Be Thankful", speaker:"Richard L. Evans", role:"Writer and presenter of 'Music and the Spoken Word'", year:"1952", audio:"media/audio/richard-l-evans/byu-speeches/be-thankful.mp3", link:"https://speeches.byu.edu/talks/richard-l-evans/be-thankful/", linkLabel:"BYU Speeches" },
+      { title:"The LDS Church and Politics", speaker:"Ezra Taft Benson", role:"Council of the Twelve Apostles", year:"1952", audio:"media/audio/ezra-taft-benson/byu-speeches/theldschurchandpolitics.mp3", link:"https://speeches.byu.edu/talks/ezra-taft-benson/lds-church-politics/", linkLabel:"BYU Speeches" },
 
-        <section id="quotes">
-            <p class="quote">
-                "I tell you that if we do not feel in our hearts to sustain the prophets of God, we would not believe the Lord if He were to come Himself"
-                <br>
-                <span class="source-line">-Abraham O. Woodruff, <a href="https://archive.org/details/conferencereport1899a/page/5/mode/1up" target="_blank">1899 General Conference</a></span>
-            </p>
-            <p class="quote">
-                "when the servants of god are not bodily present with the people and their voices are not heard in their congregations, they begin to murmur and complain, but when the prophets are with them, the sheep soon recognize the voices of the shepherds and they are again established"
-                <br>
-                <span class="source-line">-Abraham H. Cannon, <a href="https://newspapers.lib.utah.edu/search?facet_type=%22page%22&gallery=1&rows=200&parent_i=2680984#g24">1890 General Conference</a></span>
-            </p>
-            <p class="quote">
-                "Some of the General Authorities [the Apostles] have had assigned to them a special calling; they possess a special gift; they are sustained as prophets, seers, and revelators, which gives them a special spiritual endowment in connection with their teaching of [this] people. They have the right, the power, and the authority to declare the mind and will of God to his people, subject to the overall power and authority of the President of the Church."
-                <br>
-                <span class="source-line">-Boyd K. Packer (Quoting J. Reuben Clark Jr.) <a href="https://www.churchofjesuschrist.org/study/general-conference/1996/10/the-twelve-apostles?lang=eng">October 1996 General Conference</a></span>
-            </p>
-        </section>
+      // 1953 — BYU Speeches
+      { title:"Patriarchal Blessings", speaker:"LeGrand Richards", role:"Council of the Twelve Apostles", year:"1953", audio:"media/audio/legrand-richards/byu-speeches/patriarchal-blessings.mp3", link:"https://speeches.byu.edu/talks/legrand-richards/patriarchal-blessings-2/", linkLabel:"BYU Speeches" },
+      { title:"The Immutable Laws of God", speaker:"Joseph Fielding Smith", role:"Council of the Twelve Apostles", year:"1953", audio:"media/audio/joseph-fielding-smith/byu-speeches/the-immutable-laws-of-god.mp3", link:"https://speeches.byu.edu/talks/joseph-fielding-smith/immutable-laws-god/", linkLabel:"BYU Speeches" },
+      { title:"The Glory of God Is Intelligence", speaker:"Harold B. Lee", role:"Council of the Twelve Apostles", year:"1953", audio:"media/audio/harold-b-lee/byu-speeches/glory-of-god-is-intelligence.mp3", link:"https://speeches.byu.edu/talks/harold-b-lee/glory-god-intelligence/", linkLabel:"BYU Speeches" },
+      { title:"Learning to Live in the Lord’s Way", speaker:"Marion G. Romney", role:"Council of the Twelve Apostles", year:"1953", audio:"media/audio/marion-g-romney/byu-speeches/learning-to-live-in-the-lords-way.mp3", link:"https://speeches.byu.edu/talks/marion-g-romney/learning-live-lords-way/", linkLabel:"BYU Speeches" },
+      { title:"The Spirit that Leads to Truth", speaker:"Richard L. Evans", role:"Council of the Twelve Apostles", year:"1953", audio:"media/audio/richard-l-evans/byu-speeches/the-spirit-that-leads-to-truth.mp3", link:"https://speeches.byu.edu/talks/richard-l-evans/spirit-leads-to-truth/", linkLabel:"BYU Speeches" },
+      { title:"Unto Every Kingdom a Law is Given", speaker:"Henry D. Moyle", role:"Council of the Twelve Apostles", year:"1953", audio:"media/audio/henry-d-moyle/byu-speeches/unto-every-kingdom-a-law-is-given.mp3", link:"https://speeches.byu.edu/talks/henry-d-moyle/unto-every-kingdom-a-law-is-given/", linkLabel:"BYU Speeches" },
+      { title:"Chastity", speaker:"Mark E. Petersen", role:"Council of the Twelve Apostles", year:"1953", audio:"media/audio/mark-e-petersen/byu-speeches/chastity.mp3", link:"https://speeches.byu.edu/talks/mark-e-petersen/chastity/", linkLabel:"BYU Speeches" },
+      { title:"Tolerance", speaker:"Mark E. Petersen", role:"Council of the Twelve Apostles", year:"1953", audio:"media/audio/mark-e-petersen/byu-speeches/tolerance.mp3", link:"https://speeches.byu.edu/talks/mark-e-petersen/tolerance/", linkLabel:"BYU Speeches" },
+      { title:"The Atonement", speaker:"Bruce R. McConkie", role:"Of the Seventy", year:"1953", audio:"media/audio/bruce-r-mcconkie/byu-speeches/the-atonement.mp3", link:"https://speeches.byu.edu/talks/bruce-r-mcconkie/atonement/", linkLabel:"BYU Speeches", topics:"The Atonement" },
+      { title:"A Simple Faith: Don’t Try to Rationalize", speaker:"J. Reuben Clark", role:"Counselor in the First Presidency", year:"1953", audio:"media/audio/j-reuben-clark/byu-speeches/a-simple-faith-dont-try-to-rationalize.mp3", link:"https://speeches.byu.edu/talks/j-reuben-clark/simple-faith/", linkLabel:"BYU Speeches" },
+      { title:"The Lamanite", speaker:"Spencer W. Kimball", role:"Council of the Twelve Apostles", year:"1953", audio:"media/audio/spencer-w-kimball/byu-speeches/the-lamanite.mp3", link:"https://speeches.byu.edu/talks/spencer-w-kimball/lamanite/", linkLabel:"BYU Speeches" },
+      { title:"The Importance of Habits", speaker:"George Q. Morris", role:"Assistant Quorum of the Twelve", year:"1953", audio:"media/audio/george-q-morris/importance-of-habits.mp3", link:"https://speeches.byu.edu/talks/george-q-morris/importance-of-habits/", linkLabel:"BYU Speeches" },
+      { title:"Achievement", speaker:"Matthew Cowley", role:"Council of the Twelve Apostles", year:"1953", audio:"media/audio/matthew-cowley/achievement.mp3", link:"https://speeches.byu.edu/talks/matthew-cowley/achievement/", linkLabel:"BYU Speeches" },
+      { title:"Learning to Live Simply", speaker:"Matthew Cowley", role:"Council of the Twelve Apostles", year:"1953", audio:"media/audio/matthew-cowley/learning-to-live-simply.mp3", link:"https://speeches.byu.edu/talks/matthew-cowley/learning-live-simply/", linkLabel:"BYU Speeches" },
+      { title:"Miracles", speaker:"Matthew Cowley", role:"Council of the Twelve Apostles", year:"1953", audio:"media/audio/matthew-cowley/miracles.mp3", link:"https://speeches.byu.edu/talks/matthew-cowley/miracles/", linkLabel:"BYU Speeches" },
+      { title:"Put Your Hand into the Hand of God", speaker:"Matthew Cowley", role:"Council of the Twelve Apostles", year:"1953", audio:"media/audio/matthew-cowley/put-your-hand-into-the-hand-of-god.mp3", link:"https://speeches.byu.edu/talks/matthew-cowley/put-hand-hand-god/", linkLabel:"BYU Speeches" },
+      { title:"Learning to Live Through Better Use of Vocational Opportunities", speaker:"Matthew Cowley", role:"Council of the Twelve Apostles", year:"1953", audio:"media/audio/matthew-cowley/vocational-opportunities.mp3", link:"https://speeches.byu.edu/talks/matthew-cowley/learning-live-better-use-vocational-opportunities/", linkLabel:"BYU Speeches" },
+      { title:"The Origin of Man", speaker:"Joseph Fielding Smith", role:"Council of the Twelve Apostles", year:"1953", audio:"media/audio/joseph-fielding-smith/byu-speeches/the-origin-of-man.mp3", link:"https://speeches.byu.edu/talks/joseph-fielding-smith/origin-man/", linkLabel:"BYU Speeches", topics:"Ancient Gods, Adam, Priesthood, Creation" },
+      { title:"The Divine Law of Witnesses", speaker:"Joseph Fielding Smith", role:"Council of the Twelve Apostles", year:"1953", audio:"media/audio/joseph-fielding-smith/byu-speeches/the-divine-law-of-witnesses.mp3", link:"https://speeches.byu.edu/talks/joseph-fielding-smith/divine-law-witnesses/", linkLabel:"BYU Speeches" },
 
-        <script src="javascript/random-quote-homepage.js">
-        </script>
+      // 1954 — BYU Speeches
+      { title:"Cram For Life’s Final Examination", speaker:"Harold B. Lee", role:"Apostle in the Quorum of the Twelve", year:"1954", audio:"media/audio/harold-b-lee/byu-speeches/cram-for-lifes-final-examination.mp3", link:"https://speeches.byu.edu/talks/harold-b-lee/cram-lifes-final-examination/", linkLabel:"BYU Speeches" },
+      { title:"Rewards of Missionary Work", speaker:"Stephen L Richards", role:"Counselor in the First Presidency", year:"1954", audio:"media/audio/stephen-l-richards/byu-speeches/rewards-of-missionary-work.mp3", link:"https://speeches.byu.edu/talks/stephen-l-richards/rewards-of-missionary-work-2/", linkLabel:"BYU Speeches" },
+      { title:"Why Religious Education!", speaker:"Hugh B. Brown", role:"Assistant to the Q12", year:"1954", audio:"media/audio/hugh-b-brown/byu-speeches/why-religious-education.mp3", link:"https://speeches.byu.edu/talks/hugh-b-brown/religious-education/", linkLabel:"BYU Speeches", topics:"Education, Testimony" },
+      { title:"Stability", speaker:"Mark E. Petersen", role:"Council of the Twelve Apostles", year:"1954", audio:"media/audio/mark-e-petersen/byu-speeches/stability.mp3", link:"https://speeches.byu.edu/talks/mark-e-petersen/stability/", linkLabel:"BYU Speeches" },
+      { title:"Prophecy", speaker:"LeGrand Richards", role:"Council of the Twelve Apostles", year:"1954", audio:"media/audio/legrand-richards/byu-speeches/prophecy.mp3", link:"https://speeches.byu.edu/talks/legrand-richards/prophecy/", linkLabel:"BYU Speeches" },
+      { title:"The World Is Waiting to Test You", speaker:"J. Reuben Clark, Jr.", role:"Counselor in the First Presidency", year:"1954", audio:"media/audio/j-reuben-clark/byu-speeches/the-world-is-waiting-to-test-you.mp3", link:"https://catalog.churchofjesuschrist.org/assets/d47c4ff3-6e5b-4d4e-87a4-efd2617fa45b/0/0?lang=eng", linkLabel:"BYU Speeches" },
+      { title:"The Knowledge That Saves", speaker:"Joseph Fielding Smith", role:"Council of the Twelve Apostles", year:"1954", audio:"media/audio/joseph-fielding-smith/byu-speeches/the-knowledge-that-saves.mp3", link:"https://speeches.byu.edu/talks/joseph-fielding-smith/knowledge-saves/", linkLabel:"BYU Speeches", topics:"BYU" },
+      { title:"Hold Fast to That Which Is Good", speaker:"Bruce R. McConkie", role:"Of the Seventy", year:"1954", audio:"media/audio/bruce-r-mcconkie/byu-speeches/hold-fast-to-that-which-is-old.mp3", link:"https://speeches.byu.edu/talks/bruce-r-mcconkie/hold-fast-good/", linkLabel:"BYU Speeches" },
+      { title:"Education and the Charge to Subdue the Earth", speaker:"Hugh B. Brown", role:"Assistant to the Q12", year:"1954", audio:"media/audio/hugh-b-brown/byu-speeches/education-and-charge-to-subdue-the-earth.mp3", link:"https://speeches.byu.edu/talks/hugh-b-brown/education-charge-subdue-earth/", linkLabel:"BYU Speeches", topics:"The Creation, Intelligence, Education" },
+      { title:"By Their Fruits Ye Shall Know Them", speaker:"Harold B. Lee", role:"Apostle in the Quorum of the Twelve", year:"1954", audio:"media/audio/harold-b-lee/byu-speeches/by-their-fruits-ye-shall-know-them.mp3", link:"https://speeches.byu.edu/talks/harold-b-lee/fruits-ye-shall-know-1954/", linkLabel:"BYU Speeches", topics:"Fruits of the Church, Church Standards, Fruits and Standards of the World, Testimony, Influence of our Fruits" },
+      { title:"Responsibilites of Citizenship", speaker:"Ezra Taft Benson", role:"Apostle in the Quorum of the Twelve", year:"1954", audio:"media/audio/ezra-taft-benson/byu-speeches/responsibilities-of-citizenship.mp3", link:"https://speeches.byu.edu/talks/ezra-taft-benson/responsibilites-citizenship/", linkLabel:"BYU Speeches" },
+      { title:"Personal Liberty vs Social Control", speaker:"Hugh B. Brown", role:"Assistant to the Q12", year:"1954", audio:"media/audio/hugh-b-brown/byu-speeches/personal-liberty-versus-social-growth.mp3", link:"https://speeches.byu.edu/talks/hugh-b-brown/personal-liberty-vs-social-control-2/", linkLabel:"BYU Speeches", topics:"Following Commandments (God's Law), Blessings and Punishment (God's Law), Lying, Judgement, Reporting, Treason, 'Being my Brother's Keeper', Helping Others, Law of the Harvest (Reeping and Sowing), Repentance, Rebuking Sin, Profane Language, Purity (Mind and Heart, Unclean Jokes)" },
 
-        <nav class="icon-dock">
-            <a href="scripts/reference-guide.html" title="Reference Guide">
-                <img class="shadow-filter" src="media/images/buttons/reference-guide.png" alt="Reference Guide">
-            </a>
-            <a href="scripts/testimonies.html" title="Testimonies of the Prophets">
-                <img src="media/images/buttons/testimonies-of-the-prophets.png" alt="Testimonies of the Prophets" class="shadow-filter">
-            </a>
-            <a href="scripts/the-doctrine-of-christ.html" title="Doctrine of Christ">
-                <img class="shadow-filter" src="media/images/buttons/doctrine-of-christ.png" alt="Doctrine of Christ">
-            </a>
-            <a href="scripts/resources.html" title="Resources">
-                <img class="shadow-filter" src="media/images/buttons/resources.png" alt="Resources">
-            </a>
-            <a href="scripts/biographies.htm" title="Biographies">
-                <img class="shadow-filter" src="media/images/buttons/biographies.png" alt="Biographies">
-            </a>
-            <a href="scripts/customgc.html" title="Custom GC">
-                <img class="shadow-filter" src="media/images/buttons/custom-gc.png" alt="Custom GC">
-            </a>
-            <a id="sermon-finder-link" href="javascript:void(0)" onclick="findSermon()" title="Find a Sermon">
-                <img id="sermon-finder-img" class="shadow-filter" src="media/images/buttons/random-sermon.png" alt="Find a Sermon">
-            </a>
-            <a href="scripts/image-gallery.html" title="Gallery">
-                <img class="shadow-filter" src="media/images/buttons/image-gallery.png" alt="Gallery">
-            </a>
-            <a class="relief-society-link button" href="other-sites/relief-society/index.html">Wives of the Prophets</a>
-        </nav>
+      // 1955 — BYU Speeches
+      { title:"Church Doctrines", speaker:"George Q. Morris", role:"Apostle in the Quorum of the Twelve", year:"1955", audio:"media/audio/george-q-morris/church-doctrines.mp3", link:"https://speeches.byu.edu/talks/george-q-morris/church-doctrines/", linkLabel:"BYU Speeches" },
 
-        <h6 id="disclaimer">
-            <span class="disclaimer-label">Disclaimer</span>
-            All images are within the Public Domain*. The biographies fall within America's fair-use laws**. Answers to questions are my own opinions, and should not be regarded as official Church teachings.
-        </h6>
+      // 1957 — BYU Speeches
+      { title:"Be the Best You Know How", speaker:"George Q. Morris", role:"Apostle in the Quorum of the Twelve", year:"1957", audio:"media/audio/george-q-morris/be-the-best-you-know-how.mp3", link:"https://speeches.byu.edu/talks/george-q-morris/be-the-best-you-know-how/", linkLabel:"BYU Speeches" },
+      { title:"A Foundation of Revealed Truth", speaker:"George Q. Morris", role:"Apostle in the Quorum of the Twelve", year:"1957", audio:"media/audio/george-q-morris/a-foundation-of-revealed-truth.mp3", link:"https://speeches.byu.edu/talks/george-q-morris/foundation-of-revealed-truth/", linkLabel:"BYU Speeches" },
 
-        <footer>
-            <p>Did we get something wrong? Contact us: <a href="mailto:theforgottenprophetslatterdays@gmail.com">Email</a></p>
-            <p>Do you want to learn more about the Gospel? <a href="https://www.churchofjesuschrist.org/comeuntochrist">Come and See!</a></p>
-            <h4>The Favicon is the USVA headstone for Latter-Day Saints</h4>
-        </footer>
+      // 1958 — BYU Speeches
+      { title:"Will You Pass the Test?", speaker:"George Q. Morris", role:"Apostle in the Quorum of the Twelve", year:"1958", audio:"media/audio/george-q-morris/will-you-pass-the-test.mp3", link:"https://speeches.byu.edu/talks/george-q-morris/will-pass-the-test/", linkLabel:"BYU Speeches" }
+    ];
 
-        <!-- Future additions, previously disabled on the old layout:
-        <iframe ... intro video ...>
-        <a href="/scripts/modern-bible.html">Modern Bible</a>
-        <a href="scripts/!common-questions.html">Common Questions</a>
-        <a href="scripts/onthisday.html">On This Day</a>
-        <a href="...">Daily Sermon</a>
-        <a href="#">Weekly Conference</a>
-        <a href="my-takes.html">My Takes</a>
-        <a href="">Videos</a>
-        -->
+    const audio = document.getElementById('audio');
+    const talkTitle = document.getElementById('talkTitle');
+    const talkSpeaker = document.getElementById('talkSpeaker');
+    const talkRole = document.getElementById('talkRole');
+    const talkYear = document.getElementById('talkYear');
+    const talkTopics = document.getElementById('talkTopics');
+    const talkLink = document.getElementById('talkLink');
+    const talkSource = document.getElementById('talkSource');
 
-        <script src="javascript/sermons.js"></script>
+    let queue = [];
+    let queueIndex = 0;
+    let history = [];
+    let historyPos = -1;
+    let onSeekReady = null;
+    let currentEnd = null;
 
-    </div>
+    function shuffledOrder(){
+      const idx = talks.map((_, i) => i);
+      for(let i = idx.length - 1; i > 0; i--){
+        const j = Math.floor(Math.random() * (i + 1));
+        [idx[i], idx[j]] = [idx[j], idx[i]];
+      }
+      return idx;
+    }
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const tracks = document.querySelectorAll('.carousel-bg .carousel-track');
+    function nextRandomIndex(){
+      if(queueIndex >= queue.length){
+        const lastPlayed = queue.length ? queue[queue.length - 1] : null;
+        let newQueue = shuffledOrder();
+        if(lastPlayed !== null && newQueue.length > 1 && newQueue[0] === lastPlayed){
+          const swapWith = 1 + Math.floor(Math.random() * (newQueue.length - 1));
+          [newQueue[0], newQueue[swapWith]] = [newQueue[swapWith], newQueue[0]];
+        }
+        queue = newQueue;
+        queueIndex = 0;
+      }
+      return queue[queueIndex++];
+    }
 
-            tracks.forEach(track => {
-                // Duplicate the images (already in ordination order in the
-                // markup) so the 50% translateX loop is seamless, without
-                // reordering anything.
-                const images = Array.from(track.children);
-                images.forEach(img => track.appendChild(img.cloneNode(true)));
-            });
+    function loadTalk(i, autoplay){
+      const t = talks[i];
+      talkTitle.textContent = t.title;
+      talkSpeaker.textContent = t.speaker;
+      talkRole.textContent = t.role;
+      talkYear.textContent = t.year;
+      talkTopics.textContent = t.topics ? "Topics: " + t.topics : '';
+
+      if(t.link){
+        talkLink.href = t.link;
+        talkLink.textContent = t.linkLabel || 'Source';
+        talkSource.style.display = '';
+      } else {
+        talkSource.style.display = 'none';
+      }
+
+      if(onSeekReady){
+        audio.removeEventListener('loadedmetadata', onSeekReady);
+        onSeekReady = null;
+      }
+
+      audio.src = t.audio;
+      currentEnd = t.end || null;
+
+      if(t.start){
+        onSeekReady = () => {
+          audio.currentTime = t.start;
+          audio.removeEventListener('loadedmetadata', onSeekReady);
+          onSeekReady = null;
+        };
+        audio.addEventListener('loadedmetadata', onSeekReady);
+      }
+
+      if(autoplay) audio.play().catch(() => {});
+    }
+
+    function playAt(i, autoplay = true){
+      history = history.slice(0, historyPos + 1);
+      history.push(i);
+      historyPos = history.length - 1;
+      loadTalk(i, autoplay);
+    }
+
+    function playNext(){
+      playAt(nextRandomIndex(), true);
+    }
+
+    function playPrevious(){
+      if(historyPos > 0){
+        historyPos--;
+        loadTalk(history[historyPos], true);
+      } else {
+        playNext();
+      }
+    }
+
+    function skip(seconds){
+      if(!isFinite(audio.duration)) return;
+      audio.currentTime = Math.min(Math.max(audio.currentTime + seconds, 0), audio.duration);
+    }
+
+    audio.addEventListener('timeupdate', () => {
+      if(currentEnd !== null && audio.currentTime >= currentEnd){
+        currentEnd = null;
+        playNext();
+      }
+    });
+
+    audio.addEventListener('ended', playNext);
+    document.getElementById('nextBtn').addEventListener('click', playNext);
+    document.getElementById('prevBtn').addEventListener('click', playPrevious);
+    document.getElementById('back15Btn').addEventListener('click', () => skip(-15));
+    document.getElementById('forward15Btn').addEventListener('click', () => skip(15));
+    document.getElementById('startBtn').addEventListener('click', () => {
+      queue = shuffledOrder();
+      queueIndex = 0;
+      playNext();
+    });
+
+    // ===== search =====
+    const searchInput = document.getElementById('talkSearch');
+    const searchResults = document.getElementById('searchResults');
+
+    function searchTalks(query){
+      const q = query.trim().toLowerCase();
+      if(!q) return [];
+      const terms = q.split(/\s+/);
+      return talks
+        .map((t, i) => ({ t, i }))
+        .filter(({ t }) => {
+          const haystack = [t.title, t.speaker, t.role, t.year, t.topics]
+            .filter(Boolean).join(' ').toLowerCase();
+          return terms.every(term => haystack.includes(term));
+        })
+        .slice(0, 30);
+    }
+
+    searchInput.addEventListener('input', () => {
+      searchResults.innerHTML = '';
+      if(searchInput.value.trim() === '') return;
+
+      const matches = searchTalks(searchInput.value);
+      if(matches.length === 0){
+        const li = document.createElement('li');
+        li.textContent = 'No talks found';
+        searchResults.appendChild(li);
+        return;
+      }
+
+      matches.forEach(({ t, i }) => {
+        const li = document.createElement('li');
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.textContent = t.title + ' — ' + t.speaker + ' (' + t.year + ')';
+        btn.addEventListener('click', () => {
+          playAt(i, true);
+          searchInput.value = '';
+          searchResults.innerHTML = '';
         });
+        li.appendChild(btn);
+        searchResults.appendChild(li);
+      });
+    });
     </script>
-
 </body>
 </html>
