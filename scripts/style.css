@@ -1,271 +1,338 @@
-a{
-    color:rgb(91, 176, 187);
+a {
+    color: rgb(91, 176, 187);
 }
-/*a:visited{
-    color:rgb(223, 93, 255);
-}*/
-a:hover{
-    color:rgb(19, 19, 19);
+a:hover {
+    color: rgb(19, 19, 19);
 }
-.apostle{
-    background-color:darkslategrey;
-    color:goldenrod;
-}
-.apostle.byu-speeches{
-    background-color: darkblue;
-}
-.hc{
-    background-color:lightblue;
-    color:black;
-}
-.timeseason{
-    background-color:lightseagreen;
-    color:black;
-    a{
-        color:#ffd24d;
-    }
-}
-.standardworks{
-    background-color:aquamarine;
-    color:black;
-    a{
-        color:#020236;
-    }
-}
-.dezweek{
-    background-color:honeydew;
-    color:black;
-    a{
-        color:black;
-    }
-    .sources{
-        a{
-            color:red;
-        }
-    }
-}
-.impera{
-    background-color: dodgerblue;
-    color:black;
-    a{
-        color:black;
-    }
-}
-.impera .sources a{
-    color:lightblue;
-}
-.mesadvo{
-    background-color:greenyellow;
-    color:black;
-    a{
-        color:black;
-    }
-}
-.jod{
-    background-color:tan;
-    color:black;
-    a{
-        color:black;
-    }
-}
-.hymn{
-    background-color:seagreen;
-    color:black;
-    a{
-        color:black;
-    }
-}
-.book{
-    background-color:#FFF8E7;
-    color:black;
-}
-.the-seer{
-    background-color:cadetblue;
-    color:black;
-    a{
-        color:black;
-    }
-}
-.frontier-guardian{
-    background-color:springgreen;
-    color:purple;
-    a{
-        color:purple;
-    }
-}
-.the-contributer{
-    background-color:indianred;
-    color:navajowhite;
-    a{
-        color:slateblue;
-    }
-}
-.gospel-light{
-    background-color:#f7ba61;
-    color:#42230f;
-    a{
-        color:#42230f;
-    }
-}
-.louisluminary{
-    background-color:#932c1b;
-}
-.wasp{
-    background-color:yellow;
-    color:rgb(29, 40, 244);
-    a{
-        color:black;
-    }
-}
-.the-seer .sources a{
-    color:aqua;
-}
-.the-seer .other-source a{
-    color:burlywood;
-}
-.chc{
-    background-color:rgb(114, 121, 114);
-    color:black;
-    a{
-        color:midnightblue;
-    }
-}
-.gc{
-    background-color:slategray;
-    color:#18120c;
-    a{
-        color:black;
-    }
-}
-.byu-speeches{
-                background-color:darkblue;
-                color:white;
-                background-size: cover;
-                background-position: center;
-                .sources a{
-                    color:white;
-                }
-}
-.talk-link {
-                display: flex;
-                align-items: center;   /* vertically centers image + text */
-                gap: 10px;             /* space between image and text */
-                text-decoration: none;  /* removes underline */
-                color: rgb(0, 0, 0);           /* or any color you want */
-            }
 
-            .talk-link img {
-                height: 200px;
+body {
+    text-align: center;
 }
-            .talk-link:hover {
-            text-decoration: underline;
+
+h1 {
+    font-size: 70px;
 }
-body{
-    background-color:#002E5D;
-    color:whitesmoke;
-    font-family:'Bookman Old Style', 'Times New Roman', serif;
-    text-align:center;
+h2 {
+    font-size: 40px;
 }
-.biography{
-    background-color:#2a0566;
-}
-.container-flex {
-    align-items: center; /* Centers content vertically */
-    display: flex; /* Makes the container a flex container */
-    justify-content: center; /* Centers content horizontally */
-}
-.first-presidency{
-    background-color:rgb(109, 166, 222);
-}
-.first-presidency.byu-speeches{
-    background-color: darkblue;
-}
-.funfact{
-    background-color:darkblue;
-    font-size: larger;
-}
-h1{
-    font-size:70px;
-}
-h2{
-    font-size:40px;
-}
-html{
-    scroll-behavior: smooth;
-}
-img{
-    width:200px;
+
+img {
+    width: 200px;
     height: auto;
 }
-img.shadow-filter:hover{
-    /*filter: drop-shadow(8px 8px 10px rgb(159, 213, 247));*/
-    box-shadow: 10px 5px 5px rgba(204, 207, 212, 0.607);
+
+table {
+    border-collapse: collapse;
+    margin: auto;
 }
-.otherprophet{
-    background-color:mediumpurple;
+th, td {
+    border: 1px solid black;
 }
-.president{
-    background-color:midnightblue;
-    color:slategray;
+
+/* ---------- Source-type color coding ---------- */
+
+.apostle {
+    background-color: darkslategrey;
+    color: goldenrod;
 }
-.president.byu-speeches{
+.apostle.byu-speeches {
     background-color: darkblue;
 }
-.quote{
-    color:lightskyblue;
-    font-style:italic;
+.hc {
+    background-color: lightblue;
+    color: black;
 }
-.sermon hr{
-    color:honeydew;
+.timeseason {
+    background-color: lightseagreen;
+    color: black;
 }
-.sermon p{
-    line-height: 2;
+.timeseason a {
+    color: #ffd24d;
 }
-table{
-    border:2px;
-    border-collapse:collapse; /*Border collapse gets rid of the gaps in the table */
-    margin:auto;
+.standardworks {
+    background-color: aquamarine;
+    color: black;
 }
-th, td{
-    border:5px solid black;
+.standardworks a {
+    color: #020236;
 }
-.epistle-background{
+.dezweek {
+    background-color: honeydew;
+    color: black;
+}
+.dezweek a {
+    color: black;
+}
+.dezweek .sources a {
+    color: red;
+}
+.impera {
+    background-color: dodgerblue;
+    color: black;
+}
+.impera a {
+    color: black;
+}
+.impera .sources a {
+    color: lightblue;
+}
+.mesadvo {
+    background-color: greenyellow;
+    color: black;
+}
+.mesadvo a {
+    color: black;
+}
+.jod {
+    background-color: tan;
+    color: black;
+}
+.jod a {
+    color: black;
+}
+.hymn {
+    background-color: seagreen;
+    color: black;
+}
+.hymn a {
+    color: black;
+}
+.book {
+    background-color: #FFF8E7;
+    color: black;
+}
+.the-seer {
+    background-color: cadetblue;
+    color: black;
+}
+.the-seer a {
+    color: black;
+}
+.the-seer .sources a {
+    color: aqua;
+}
+.the-seer .other-source a {
+    color: burlywood;
+}
+.frontier-guardian {
+    background-color: springgreen;
+    color: purple;
+}
+.frontier-guardian a {
+    color: purple;
+}
+.the-contributer {
+    background-color: indianred;
+    color: navajowhite;
+}
+.the-contributer a {
+    color: slateblue;
+}
+.gospel-light {
+    background-color: #f7ba61;
+    color: #42230f;
+}
+.gospel-light a {
+    color: #42230f;
+}
+.louisluminary {
+    background-color: #932c1b;
+}
+.wasp {
+    background-color: yellow;
+    color: rgb(29, 40, 244);
+}
+.wasp a {
+    color: black;
+}
+.chc {
+    background-color: rgb(114, 121, 114);
+    color: black;
+}
+.chc a {
+    color: midnightblue;
+}
+.gc {
+    background-color: slategray;
+    color: #18120c;
+}
+.gc a {
+    color: black;
+}
+.byu-speeches {
+    background-color: darkblue;
+    color: white;
+}
+.byu-speeches .sources a {
+    color: white;
+}
+.biography {
+    background-color: #2a0566;
+}
+.first-presidency {
+    background-color: rgb(109, 166, 222);
+}
+.first-presidency.byu-speeches {
+    background-color: darkblue;
+}
+.otherprophet {
+    background-color: mediumpurple;
+}
+.president {
+    background-color: midnightblue;
+    color: slategray;
+}
+.president.byu-speeches {
+    background-color: darkblue;
+}
+.epistle-background {
     background-color: #00A2E8;
 }
+.funfact {
+    background-color: darkblue;
+    font-size: larger;
+}
+.quote {
+    color: lightskyblue;
+    font-style: italic;
+}
+
+/* ---------- Layout helpers ---------- */
+
+.container-flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.talk-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: black;
+}
+.talk-link img {
+    height: 200px;
+}
+
+.sermon p {
+    line-height: 2;
+}
+
+.teaching-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+    gap: 25px;
+    width: 95%;
+    margin: 40px auto;
+}
+.teaching-tile {
+    border: 1px solid whitesmoke;
+    padding: 20px;
+    text-align: center;
+}
+.teaching-tile h2 {
+    margin: 0;
+    font-size: 30px;
+}
+.year {
+    font-size: 26px;
+    margin-top: 8px;
+}
+.calling {
+    font-size: 22px;
+    margin: 8px 0 18px;
+}
+.teaching-type {
+    font-size: 22px;
+    margin-bottom: 45px;
+}
+.topics {
+    text-align: left;
+    font-size: 20px;
+    line-height: 1.5;
+}
+.scripture-references {
+    text-align: left;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.sources {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+.sources a {
+    color: rgb(1, 17, 98);
+    text-decoration: none;
+    font-weight: bold;
+}
+.other-source {
+    margin-bottom: 20px;
+}
+.other-source a {
+    color: rgb(4, 84, 4);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.quote-section {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+.quote-section img {
+    width: 200px;
+    flex-shrink: 0;
+}
+.quote-section div {
+    flex: 1;
+}
+
+.left-image {
+    float: left;
+    width: 200px;
+    margin: 0 20px 15px 0;
+}
+.right-image {
+    float: right;
+    width: 200px;
+    margin: 0 20px 15px 0;
+}
+
+/* ---------- Controls ---------- */
+
 #searchBar {
-                    width: 300px;
-                    max-width: 90%;
-                    padding: 8px 12px;
-                    margin: 15px 0;
-                    font-size: 16px;
-                    border: 2px solid whitesmoke;
-                    border-radius: 5px;
-                    background-color: #002E5D;
-                    color: whitesmoke;
-                }
-#searchBar::placeholder {
-        color: lightgray;
-    }
+    width: 300px;
+    max-width: 90%;
+    padding: 8px 12px;
+    margin: 15px 0;
+    font-size: 16px;
+    border: 1px solid whitesmoke;
+    border-radius: 5px;
+    background-color: #002E5D;
+    color: whitesmoke;
+}
+
 button {
     padding: 8px 12px;
     margin: 15px 5px;
     font-size: 16px;
-    border: 2px solid whitesmoke;
+    border: 1px solid whitesmoke;
     border-radius: 5px;
     background-color: #002E5D;
     color: whitesmoke;
     cursor: pointer;
-    transition: 0.2s ease;
 }
-
 button:hover {
     background-color: whitesmoke;
     color: #002E5D;
 }
 
-button:active {
-    transform: scale(0.97);
-}
 .button {
     display: inline-block;
     padding: 10px 20px;
@@ -274,247 +341,21 @@ button:active {
     text-decoration: none;
     border-radius: 6px;
 }
+
 #timelineButton {
-     position: fixed;
+    position: fixed;
     top: 0;
     right: 0;
     margin: 10px;
-    z-index: 1000;
 }
 #homebutton {
     position: fixed;
     top: 50px;
     right: 20px;
-    z-index: 1000;
     padding: 10px 15px;
     border-radius: 8px;
 }
-* {
-    box-sizing: border-box;
-}
-
-html, body {
-    overflow-x: hidden;
-    max-width: 100%;
-}
-
-@media (max-width: 768px) {
-    h1 {
-        font-size: 2.4em;
-        padding: 0 10px;
-    }
-
-    h2 {
-        font-size: 1.3em;
-        padding: 0 15px;
-        line-height: 1.4;
-    }
-
-    img {
-        width: 28vw;
-    }
-
-    p {
-        font-size: 0.95em;
-        padding: 0 10px;
-    }
-
-    h6 {
-        padding: 0 10px;
-        font-size: 0.85em;
-    }
-
-    #searchBar {
-        font-size: 16px;
-    }
-}
-
-@media (max-width: 480px) {
-    h1 {
-        font-size: 1.9em;
-    }
-
-    img {
-        width: 42vw;
-    }
-}
-.teaching-grid{
-
-    display:grid;
-
-    grid-template-columns:repeat(auto-fit,minmax(420px,1fr));
-
-    gap:25px;
-
-    width:95%;
-
-    margin:auto;
-
-    margin-top:40px;
-
-}
-
-.teaching-tile{
-
-    border:3px solid whitesmoke;
-
-    padding:20px;
-
-    min-height:300px;
-
-    text-align:center;
-
-}
-
-.teaching-tile h2{
-
-    margin:0;
-
-    font-size:30px;
-
-}
-
-.year{
-
-    font-size:26px;
-
-    margin-top:8px;
-
-}
-
-.calling{
-
-    font-size:22px;
-
-    margin-top:8px;
-
-    margin-bottom:18px;
-
-}
-
-.sources{
-
-    display:flex;
-
-    justify-content:space-evenly;
-
-    flex-wrap:wrap;
-
-    gap:12px;
-
-    margin-bottom:15px;
-
-}
-
-.sources a{
-
-    color:rgb(1, 17, 98);
-
-    text-decoration:none;
-
-    font-weight:bold;
-
-}
-
-.sources a:hover{
-
-    text-decoration:underline;
-
-}
-
-.other-source{
-
-    margin-bottom:20px;
-
-}
-
-.other-source a{
-
-    color:rgb(4, 84, 4);
-
-    text-decoration:none;
-
-    font-weight:bold;
-
-}
-
-.other-source a:hover{
-
-    text-decoration:underline;
-
-}
-
-.teaching-type{
-
-    font-size:22px;
-
-    margin-bottom:45px;
-
-}
-
-.topics{
-
-    text-align:left;
-
-    font-size:20px;
-
-    line-height:1.5;
-
-}
-.scripture-references{
-
-    text-align:left;
-
-    font-size:18px;
-
-    line-height:1.5;
-
-}
-@media (max-width:768px){
-
-.teaching-grid{
-
-    grid-template-columns:1fr;
-
-}
-
-.teaching-tile{
-
-    min-height:auto;
-
-}
-
-.sources{
-
-    flex-direction:column;
-
-}
-
-}
-.filters{
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:15px;
-    margin:25px auto;
-}
-
-.filters select,
-.filters input{
-    padding:10px;
-    font-size:16px;
-    border:2px solid whitesmoke;
-    border-radius:8px;
-    background:#002E5D;
-    color:white;
-    font-family:inherit;
-}
-
-.filters select{
-    cursor:pointer;
-}
 #backToTop {
-    display: none;
     position: fixed;
     bottom: 20px;
     right: 20px;
@@ -523,62 +364,24 @@ html, body {
     border-radius: 50%;
     background-color: #003b75;
     color: white;
-    border: 2px solid white;
+    border: 1px solid white;
     font-size: 24px;
     cursor: pointer;
-    z-index: 1000;
-    box-shadow: 2px 2px 8px rgba(0,0,0,0.4);
 }
 
-#backToTop:hover {
-    background-color: #ffd24d;
-    color: #002E5D;
-}
-@media (max-width: 768px) {
-    #backToTop {
-        display: block;
-    }
-}
-            .left-image {
-                float: left;
-                width: 200px;       /* Adjust as desired */
-                margin: 0 20px 15px 0;
-                border: 1px solid #000; /* Optional */
-            }
-            .right-image {
-                float: right;
-                width: 200px;       /* Adjust as desired */
-                margin: 0 20px 15px 0;
-                border: 1px solid #000; /* Optional */
-            }
-            .quote-section {
-                display: flex;
-                align-items: flex-start;
-                gap: 20px;
-            }
-
-            .quote-section img {
-                width: 200px;
-                flex-shrink: 0;
-            }
-
-            .quote-section div {
-                flex: 1;
-            }
-            .quote-section {
+.filters {
     display: flex;
-    align-items: flex-start;
-    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 25px auto;
 }
-
-@media (max-width: 768px) {
-    .quote-section {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .quote-section img {
-        width: 200px;
-    }
+.filters select,
+.filters input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid whitesmoke;
+    border-radius: 8px;
+    background: #002E5D;
+    color: white;
 }
