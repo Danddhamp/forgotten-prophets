@@ -1,214 +1,13 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
 <title>The Forgotten Prophets</title>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <link href="media/images/favicon/favicon.png" rel="icon" type="image/png"/>
+<link rel="stylesheet" href="scripts/style.css">
 <style>
-:root{
-    --paper: #eef3f8;
-    --paper-deep: #dce7f2;
-    --card: #ffffff;
-    --ink: #14253b;
-    --ink-soft: #48607a;
-    --rule: #c3d6e8;
-    --rule-strong: #9db9d6;
-    --oxblood: #1d5a99;
-    --oxblood-deep: #123a63;
-    --brass: #3b7ec2;
-    --brass-bright: #4f97dd;
-    --shadow: rgba(20, 37, 59, 0.15);
-  }
-  *{ box-sizing: border-box; }
-
-
-  .home-link{
-    position: relative; z-index: 3;
-    display:inline-block; margin: 1.1rem 0 0 1.3rem;
-    font-family:'JetBrains Mono', monospace; font-size: 0.75rem;
-    letter-spacing: 0.05em; text-transform: uppercase;
-    color: var(--ink-soft); text-decoration:none;
-    border: 1px solid var(--rule-strong); border-radius: 3px;
-    padding: 0.3rem 0.7rem; background: var(--card);
-  }
-  .home-link:hover{ color: var(--oxblood-deep); border-color: var(--oxblood); }
-
-  header.masthead{
-    position: relative; z-index: 2;
-    padding: 1.6rem 1.5rem 2.2rem;
-    text-align: center;
-    border-bottom: 3px double var(--rule-strong);
-    background: linear-gradient(180deg, rgba(255,255,255,0.25), transparent);
-  }
-  .eyebrow{
-    font-family: 'JetBrains Mono', monospace; letter-spacing: 0.35em; text-transform: uppercase;
-    font-size: 0.68rem; color: var(--brass); margin-bottom: 0.9rem;
-  }
-  .eyebrow::before, .eyebrow::after{ content: "· "; }
-  h1.title{
-    font-family: 'Playfair Display', serif; font-weight: 900;
-    font-size: clamp(2rem, 5vw, 3.1rem); margin: 0 0 0.5rem; color: var(--oxblood-deep);
-  }
-  .subtitle{ font-style: italic; color: var(--ink-soft); font-size: 1.02rem; max-width: 680px; margin: 0 auto; }
-
-
-  /* ---- Top-level drawers ---- */
-  details.drawer{
-    background: var(--card);
-    border: 1px solid var(--rule-strong);
-    border-radius: 6px;
-    margin-bottom: 1.2rem;
-    box-shadow: 0 3px 12px -8px var(--shadow);
-    overflow: hidden;
-  }
-  details.drawer > summary{
-    cursor:pointer; list-style:none;
-    padding: 1.1rem 1.4rem;
-    display:flex; align-items:center; gap:0.8rem;
-    font-family:'Playfair Display', serif; font-weight:700; font-size:1.25rem;
-    color: var(--oxblood-deep);
-    background: linear-gradient(180deg, rgba(59,126,194,0.05), transparent);
-  }
-  details.drawer > summary::-webkit-details-marker{ display:none; }
-  details.drawer > summary::before{
-    content:"▸"; color: var(--brass); font-size:1rem; transition: transform 0.15s;
-    font-family: 'Source Serif 4', serif;
-  }
-  details.drawer[open] > summary::before{ transform: rotate(90deg); }
-  details.drawer > summary .drawer-tag{
-    margin-left:auto;
-    font-family:'JetBrains Mono', monospace; font-size:0.65rem; letter-spacing:0.05em;
-    text-transform:uppercase; color: var(--brass);
-    border: 1px solid var(--rule-strong); border-radius: 3px; padding: 0.15rem 0.5rem;
-  }
-  .drawer-.drawer-body > p.lede{ color: var(--ink-soft); font-style: italic; margin: 1rem 0 1.2rem; font-size:0.92rem; }
-
-  /* link lists */
-  ul.plain{ list-style:none; margin:0; padding:0; }
-  ul.plain li{ padding: 0.4rem 0; border-bottom: 1px dotted var(--rule); }
-  ul.plain li:last-child{ border-bottom:none; }
-  ul.plain
-
-  ul.periodicals{ list-style:none; margin: 0.5rem 0 0; padding:0; }
-  ul.periodicals > li{
-    padding: 0.65rem 0; border-bottom: 1px dotted var(--rule);
-    display:flex; flex-wrap:wrap; align-items:center; gap:0.55rem;
-  }
-  ul.periodicals > li:last-child{ border-bottom: none; }
-  .periodical-name{ font-weight:600; color: var(--ink); min-width: 210px; }
-  .chip-row{ display:flex; flex-wrap:wrap; gap:0.4rem; }
-  a.badge-link, span.badge-muted{
-    display:inline-block; font-family:'JetBrains Mono', monospace; font-size: 0.68rem;
-    padding: 0.15rem 0.5rem; border-radius: 3px; white-space:nowrap;
-  }
-  a.badge-link{ border: 1px solid var(--oxblood); color: var(--oxblood); text-decoration:none; }
-  a.badge-link:hover{ background: var(--oxblood); color: var(--card); }
-  a.badge-link.indexed{ border-color: var(--brass); color: var(--brass); font-weight:600; }
-  a.badge-link.indexed:hover{ background: var(--brass); color: var(--card); }
-  span.badge-muted{ border: 1px dashed var(--rule-strong); color: var(--rule-strong); font-style: italic; }
-
-  /* nested sub-drawers (categories, alphabet) */
-  details.sub-drawer{
-    border: 1px solid var(--rule); border-radius: 4px; background: rgba(255,255,255,0.35);
-    margin: 0.6rem 0;
-  }
-  details.sub-drawer > summary{
-    cursor:pointer; list-style:none; padding: 0.6rem 1rem;
-    font-family:'JetBrains Mono', monospace; font-size:0.78rem; letter-spacing:0.04em;
-    text-transform:uppercase; color: var(--oxblood-deep);
-  }
-  details.sub-drawer > summary::-webkit-details-marker{ display:none; }
-  details.sub-drawer > summary::before{ content:"▸ "; color:var(--brass); }
-  details.sub-drawer[open] > summary::before{ content:"▾ "; }
-  .sub-drawer-.person-block{ margin-bottom:0.9rem; }
-  .person-block > .person-name{ font-weight:600; margin-bottom:0.3rem; }
-  .person-block ul{ list-style:none; margin:0 0 0 0.4rem; padding:0; }
-  .person-block ul li{ padding: 0.15rem 0; font-size:0.9rem; }
-  .person-block ul li > span{ color: var(--ink-soft); }
-
-  /* av aid row */
-  .av-aid{ display:flex; gap:1rem; flex-wrap:wrap; margin: 0.6rem 0 1.1rem; }
-  .av-aid
-  .av-aid
-
-  /* Teachings of the prophets quick links */
-  .quicklinks{ display:flex; gap:0.8rem; flex-wrap:wrap; margin: 0.9rem 0 1.4rem; }
-  .quicklinks
-  .quicklinks
-
-  /* ---------- Tabs (browser embedded) ---------- */
-  .browser-wrap{ margin-top: 0.5rem; }
-  nav.tabs-wrap{
-    background: var(--paper-deep);
-    border: 1px solid var(--rule-strong); border-bottom:none;
-    border-radius: 6px 6px 0 0;
-  }
-  .tabs{ display:flex; overflow-x:auto; scrollbar-width: thin; }
-  .tab-btn{
-    flex: 0 0 auto; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem;
-    letter-spacing: 0.03em; text-transform: uppercase; background: transparent; border: none;
-    border-right: 1px solid var(--rule); padding: 0.85rem 1.05rem; cursor: pointer;
-    color: var(--ink-soft); position: relative; white-space: nowrap; transition: background 0.15s, color 0.15s;
-  }
-  .tab-btn:first-child{ border-radius: 6px 0 0 0; }
-  .tab-btn:hover{ background: rgba(29,90,153,0.06); color: var(--oxblood-deep); }
-  .tab-btn.active{ color: var(--oxblood-deep); background: var(--card); font-weight: 600; }
-  .tab-btn.active::after{ content:""; position:absolute; left:0; right:0; bottom:-1px; height:3px; background: var(--oxblood); }
-  .tab-count{ display:inline-block; margin-left:0.4rem; color: var(--brass); font-size:0.66rem; }
-
-  .browser-.panel{ display:none; animation: fade 0.2s ease; }
-  .panel.active{ display:block; }
-  @keyframes fade{ from{ opacity:0; transform: translateY(4px);} to{opacity:1; transform:none;} }
-
-  .panel-head{ display:flex; justify-content:space-between; align-items:flex-end; gap: 1rem; flex-wrap: wrap; border-bottom: 1px solid var(--rule); padding-bottom: 0.8rem; margin-bottom: 1.1rem; }
-  .panel-head h3{ font-family:'Playfair Display', serif; font-weight: 700; font-size: 1.35rem; margin: 0; color: var(--oxblood-deep); }
-  .panel-desc{ font-size: 0.87rem; color: var(--ink-soft); font-style: italic; margin-top: 0.2rem; max-width: 620px; }
-  .controls{ display:flex; align-items:center; gap:0.55rem; flex-wrap: wrap; }
-  .search-box{ position:relative; }
-  .search-box input{
-    font-family:'Source Serif 4', serif; font-size: 0.9rem; padding: 0.45rem 0.85rem 0.45rem 1.9rem;
-    border: 1px solid var(--rule-strong); border-radius: 3px; background: var(--paper); color: var(--ink);
-    width: 220px; outline: none; transition: border-color 0.15s;
-  }
-  .search-box input:focus{ border-color: var(--oxblood); }
-  .search-box::before{ content: "⚲"; position:absolute; left:0.6rem; top:50%; transform: translateY(-50%); color: var(--ink-soft); font-size: 0.8rem; }
-  select.source-filter{
-    font-family:'JetBrains Mono', monospace; font-size:0.75rem; padding:0.4rem 0.6rem;
-    border:1px solid var(--rule-strong); border-radius:3px; background:var(--paper); color:var(--ink);
-  }
-  .result-count{ font-family:'JetBrains Mono', monospace; font-size: 0.7rem; color: var(--brass); white-space: nowrap; }
-
-  .table-scroll{ border: 1px solid var(--rule-strong); border-radius: 4px; overflow: auto; max-height: 60vh; background: var(--paper); }
-
-
-  thead th .arrow{ opacity:0.5; margin-left:0.3rem; font-size:0.58rem; }
-  thead th.sorted .arrow{ opacity:1; color: var(--brass-bright); }
-
-
-  .hymn-grid{ display:grid; grid-template-columns: 1fr 1fr; gap: 1.4rem; }
-  @media (max-width: 800px){ .hymn-grid{ grid-template-columns: 1fr; } }
-  .hymn-grid h4{ font-family:'Playfair Display', serif; font-size: 1.02rem; color: var(--oxblood-deep); border-bottom: 1px solid var(--rule); padding-bottom: 0.35rem; margin: 0 0 0.6rem; }
-
-  .placeholder-grid{
-    display:grid; grid-template-columns: repeat(auto-fill, minmax(190px,1fr)); gap:0.5rem;
-    margin-top: 0.6rem;
-  }
-  .placeholder-chip{
-    border: 1px dashed var(--rule-strong); border-radius: 4px; padding: 0.55rem 0.7rem;
-    font-size: 0.82rem; color: var(--ink-soft); background: rgba(255,255,255,0.4);
-  }
-  .placeholder-chip em{ display:block; font-size:0.68rem; color: var(--rule-strong); margin-top:0.15rem; font-style: italic; }
-
-  details.legend{ margin-top: 1.6rem; border: 1px solid var(--rule-strong); border-radius: 4px; background: var(--paper); }
-  details.legend summary{ cursor:pointer; padding: 0.75rem 1rem; font-family:'JetBrains Mono', monospace; font-size: 0.72rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--oxblood-deep); list-style: none; }
-  details.legend summary::-webkit-details-marker{ display:none; }
-  details.legend summary::before{ content: "▸ "; color: var(--brass); }
-  details.legend[open] summary::before{ content: "▾ "; }
-  .legend-.legend-row{ display:flex; gap:0.5rem; padding: 0.28rem 0; font-size: 0.82rem; border-bottom: 1px dotted var(--rule); }
-  .legend-row b{ font-family:'JetBrains Mono', monospace; color: var(--oxblood); min-width: 3.2rem; }
-
+*{ box-sizing: border-box; }
 
 /* Integrated Resources section */
 #resources {
@@ -242,8 +41,8 @@
     <nav>
 <h2><a href="scripts/the-doctrine-of-christ.html">Reference Guide</a></h2>
 <h2>Testimonies of the Prophets</h2>
-<h2>Doctrine of Christ</h2>
-<h2><a href="#resources">Resources</a></h2>
+<h2><a href="scripts/biographies.htm">Biographies</a></h2>
+<h2><a href="scripts/resources.html">Resources</a></h2>
 <h4>Image Gallery</h4>
     <table>
             <thead>
@@ -298,7 +97,6 @@
                 </tr>
             </tbody>
     </table>
-<h2><a href="scripts/biographies.htm">Biographies</a></h2>
 <h2>Wives of the Prophets</h2>
 </nav>
 <hr/>
@@ -459,7 +257,7 @@
 
       // 1957 — BYU Speeches
       { title:"Be the Best You Know How", speaker:"George Q. Morris", role:"Apostle in the Quorum of the Twelve", year:"1957", audio:"media/audio/george-q-morris/be-the-best-you-know-how.mp3", link:"https://speeches.byu.edu/talks/george-q-morris/be-the-best-you-know-how/", linkLabel:"BYU Speeches" },
-      { title:"A Foundation of Revealed Truth", speaker:"George Q. Morris", role:"Apostle in the Quorum of the Twelve", year:"1957", audio:"media/audio/george-q-morris/a-foundation-of-revealed-truth.mp3", link:"https://speeches.byu.edu/talks/george-q-morris/foundation-of-revealed-truth/", linkLabel:"BYU Speeches" },
+      { title:"A Foundation of Revealed Truth", speaker:"George Q. Morris", role:"Apostle in the Quorum of the Twelve", year:"1957", audio:"media/audio/george-q-morris/foundation-of-revealed-truth.mp3", link:"https://speeches.byu.edu/talks/george-q-morris/foundation-of-revealed-truth/", linkLabel:"BYU Speeches" },
 
       // 1958 — BYU Speeches
       { title:"Will You Pass the Test?", speaker:"George Q. Morris", role:"Apostle in the Quorum of the Twelve", year:"1958", audio:"media/audio/george-q-morris/will-you-pass-the-test.mp3", link:"https://speeches.byu.edu/talks/george-q-morris/will-pass-the-test/", linkLabel:"BYU Speeches" }
