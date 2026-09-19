@@ -1,12 +1,6 @@
-a {
-    color: rgb(91, 176, 187);
-}
-a:hover {
-    color: rgb(19, 19, 19);
-}
-
 body {
     text-align: center;
+    background-color: rgb(121, 169, 224);
 }
 
 h1 {
@@ -27,6 +21,10 @@ table {
 }
 th, td {
     border: 1px solid black;
+    background-color:white;
+    a{
+        color:red;
+    }
 }
 
 /* ---------- Source-type color coding ---------- */
@@ -192,11 +190,6 @@ th, td {
     background-color: darkblue;
     font-size: larger;
 }
-.quote {
-    color: lightskyblue;
-    font-style: italic;
-}
-
 /* ---------- Layout helpers ---------- */
 
 .container-flex {
@@ -306,54 +299,14 @@ th, td {
 
 /* ---------- Controls ---------- */
 
-#searchBar {
-    width: 300px;
-    max-width: 90%;
-    padding: 8px 12px;
-    margin: 15px 0;
-    font-size: 16px;
-    border: 1px solid whitesmoke;
-    border-radius: 5px;
-    background-color: #002E5D;
-    color: whitesmoke;
-}
 
-button {
-    padding: 8px 12px;
-    margin: 15px 5px;
-    font-size: 16px;
-    border: 1px solid whitesmoke;
-    border-radius: 5px;
-    background-color: #002E5D;
-    color: whitesmoke;
-    cursor: pointer;
-}
-button:hover {
-    background-color: whitesmoke;
-    color: #002E5D;
-}
 
-.button {
-    display: inline-block;
-    padding: 10px 20px;
-    background: #003b75;
-    color: white;
-    text-decoration: none;
-    border-radius: 6px;
-}
 
 #timelineButton {
     position: fixed;
     top: 0;
     right: 0;
     margin: 10px;
-}
-#homebutton {
-    position: fixed;
-    top: 50px;
-    right: 20px;
-    padding: 10px 15px;
-    border-radius: 8px;
 }
 #backToTop {
     position: fixed;
@@ -382,6 +335,4 @@ button:hover {
     font-size: 16px;
     border: 1px solid whitesmoke;
     border-radius: 8px;
-    background: #002E5D;
-    color: white;
 }
