@@ -40,185 +40,42 @@
             .overlay-backdrop.active {
                 display: block;
             }
-
-            .add-quote-bar {
-                margin: 20px;
-                padding: 15px;
-                border: 2px dashed #999;
-                border-radius: 8px;
-                display: flex;
-                align-items: center;
-                gap: 12px;
-                max-width: 500px;
-            }
-
-            .add-quote-bar input[type="file"] {
-                flex: 1;
-            }
-
-            .add-quote-bar button {
-                padding: 8px 16px;
-                cursor: pointer;
-                border-radius: 4px;
-                border: 1px solid #999;
-                background: #f5f5f5;
-            }
-
-            .add-quote-bar button:hover {
-                background: #e5e5e5;
-            }
-
-            .remove-btn {
-                position: absolute;
-                top: 4px;
-                right: 4px;
-                background: rgba(200, 0, 0, 0.8);
-                color: white;
-                border: none;
-                border-radius: 50%;
-                width: 22px;
-                height: 22px;
-                cursor: pointer;
-                font-size: 14px;
-                line-height: 1;
-                display: none;
-            }
-
-            .img-wrapper {
-                position: relative;
-                display: inline-block;
-            }
-
-            .img-wrapper:hover .remove-btn {
-                display: block;
-            }
         </style>
     </head>
     <body>
+        <a href="index.html">Home</a>
+        <br><hr>
         <div class="overlay-backdrop" id="overlayBackdrop"></div>
 
-        <div class="add-quote-bar">
-            <input type="file" id="imageInput" accept="image/*">
-            <button id="addImageBtn">Add Quote Image</button>
-        </div>
-
-        <div id="galleryContainer">
-            <img src="quote-vault-media/amasa-lyman/amasa-lyman1.jpg" alt="Amasa Lyman Quote" class="gallery-img">
-            <img src="quote-vault-media/brigham-young-jr/brigham-young-jr1.jpg" alt="Brigham Young Jr Quote" class="gallery-img">
-        </div>
+        <img src="quote-vault-media/amasa-lyman/amasa-lyman1.jpg" alt="Amasa Lyman Quote" class="gallery-img">
+        <img src="quote-vault-media/brigham-young-jr/brigham-young-jr1.jpg" alt="Brigham Young Jr Quote" class="gallery-img">
+        <img src="quote-vault-media/ezra-t-benson/ezra-t-benson1.jpg" alt="Ezra T. Benson" class="gallery-img">
+        <img src="quote-vault-media/brigham-young/brigham-young1.jpg" alt="Brigham Young Quote" class="gallery-img">
+        <img src="quote-vault-media/albert-e-bowen/albert-e-bowen1.jpg" alt="Albert E. Bowen Quote" class="gallery-img">
+        <img src="quote-vault-media/abraham-o-woodruff/abraham-o-woodruff1.jpg" alt="Abraham O. Woodruff Quote" class="gallery-img">
+        <img src="quote-vault-media/heber-c-kimball/heber-c-kimball1.jpg" alt="Heber C. Kimball Quote" class="gallery-img">
 
         <script>
+            const images = document.querySelectorAll('.gallery-img');
             const backdrop = document.getElementById('overlayBackdrop');
-            const galleryContainer = document.getElementById('galleryContainer');
-            const imageInput = document.getElementById('imageInput');
-            const addImageBtn = document.getElementById('addImageBtn');
 
-            const STORAGE_KEY = 'quoteVaultAddedImages';
-
-            function attachEnlargeHandler(img) {
+            images.forEach(img => {
                 img.addEventListener('click', () => {
-                    const allImgs = document.querySelectorAll('.gallery-img');
                     const isEnlarged = img.classList.contains('enlarged');
 
-                    allImgs.forEach(i => {
+                    images.forEach(i => {
                         if (i !== img) i.classList.remove('enlarged');
                     });
 
                     img.classList.toggle('enlarged', !isEnlarged);
                     backdrop.classList.toggle('active', !isEnlarged);
                 });
-            }
-
-            function attachRemoveHandler(wrapper, img, dataUrl) {
-                const removeBtn = wrapper.querySelector('.remove-btn');
-                removeBtn.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    wrapper.remove();
-                    removeStoredImage(dataUrl);
-                });
-            }
-
-            function createImageElement(src, alt, isUserAdded) {
-                const wrapper = document.createElement('div');
-                wrapper.className = 'img-wrapper';
-
-                const img = document.createElement('img');
-                img.src = src;
-                img.alt = alt;
-                img.className = 'gallery-img';
-
-                wrapper.appendChild(img);
-
-                if (isUserAdded) {
-                    const removeBtn = document.createElement('button');
-                    removeBtn.className = 'remove-btn';
-                    removeBtn.textContent = '✕';
-                    removeBtn.title = 'Remove image';
-                    wrapper.appendChild(removeBtn);
-                    attachRemoveHandler(wrapper, img, src);
-                }
-
-                attachEnlargeHandler(img);
-                return wrapper;
-            }
-
-            function loadStoredImages() {
-                const stored = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
-                stored.forEach(dataUrl => {
-                    const wrapper = createImageElement(dataUrl, 'User added quote', true);
-                    galleryContainer.appendChild(wrapper);
-                });
-            }
-
-            function saveImageToStorage(dataUrl) {
-                const stored = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
-                stored.push(dataUrl);
-                try {
-                    localStorage.setItem(STORAGE_KEY, JSON.stringify(stored));
-                } catch (e) {
-                    alert('Storage limit reached. Try removing some images first, or use a smaller image.');
-                }
-            }
-
-            function removeStoredImage(dataUrl) {
-                let stored = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
-                stored = stored.filter(item => item !== dataUrl);
-                localStorage.setItem(STORAGE_KEY, JSON.stringify(stored));
-            }
-
-            addImageBtn.addEventListener('click', () => {
-                const file = imageInput.files[0];
-                if (!file) {
-                    alert('Choose an image first.');
-                    return;
-                }
-
-                const reader = new FileReader();
-                reader.onload = (e) => {
-                    const dataUrl = e.target.result;
-                    saveImageToStorage(dataUrl);
-                    const wrapper = createImageElement(dataUrl, 'User added quote', true);
-                    galleryContainer.appendChild(wrapper);
-                    imageInput.value = '';
-                };
-                reader.readAsDataURL(file);
             });
 
             backdrop.addEventListener('click', () => {
-                document.querySelectorAll('.gallery-img').forEach(img => img.classList.remove('enlarged'));
+                images.forEach(img => img.classList.remove('enlarged'));
                 backdrop.classList.remove('active');
             });
-
-            // Attach handlers to the original hardcoded images and load any saved ones
-            document.querySelectorAll('#galleryContainer > img.gallery-img').forEach(img => {
-                const wrapper = document.createElement('div');
-                wrapper.className = 'img-wrapper';
-                img.parentNode.insertBefore(wrapper, img);
-                wrapper.appendChild(img);
-                attachEnlargeHandler(img);
-            });
-
-            loadStoredImages();
         </script>
     </body>
 </html>
