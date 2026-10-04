@@ -126,6 +126,10 @@ th, td {
 .the-contributer a {
     color: slateblue;
 }
+.the-peoples-organ{
+    background-color:darkkhaki;
+    color:darkslategray;
+}
 .gospel-light {
     background-color: #f7ba61;
     color: #42230f;
@@ -151,15 +155,29 @@ th, td {
     color: midnightblue;
 }
 .gc {
-    background-color: slategray;
-    color: #18120c;
+    background-color: #F4F0E6;
+    color: #243447;
 }
 .gc a {
-    color: black;
+    color: #1E4E8C;
+}
+.gcldsorg{
+    background-color:royalblue;
+    color:#F5F1E6;
+    a{
+        color:#F2D27A;
+    }
+}
+.gcldsorg .sources a{
+    text-decoration: underline;
+    color:#F2D27A;
 }
 .byu-speeches {
     background-color: darkblue;
     color: white;
+    a{
+        color:white;
+    }
 }
 .byu-speeches .sources a {
     color: white;
@@ -178,7 +196,13 @@ th, td {
 }
 .president {
     background-color: midnightblue;
-    color: slategray;
+    color: rgb(145, 164, 182);
+}
+.president .sources a{
+    color:#338de0;
+}
+.president .other-source a{
+    color:#6ab77f;
 }
 .president.byu-speeches {
     background-color: darkblue;
@@ -260,17 +284,21 @@ th, td {
     margin-bottom: 15px;
 }
 .sources a {
-    color: rgb(1, 17, 98);
-    text-decoration: none;
+    color: #245A8D;
     font-weight: bold;
+}
+.sources a:hover{
+    text-decoration: underline;
 }
 .other-source {
     margin-bottom: 20px;
 }
 .other-source a {
-    color: rgb(4, 84, 4);
-    text-decoration: none;
+    color: #4F7A5A;
     font-weight: bold;
+}
+.other-source a:hover{
+    text-decoration: underline;
 }
 
 .quote-section {
