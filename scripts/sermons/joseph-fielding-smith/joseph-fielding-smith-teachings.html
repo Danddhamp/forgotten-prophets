@@ -16,33 +16,63 @@
         <a href="../../writings.htm#alonzo-a-hinckley" target="_self">Writings</a>
         <hr>
         <h1>Teachings from President <br> Joseph Fielding Smith</h1>
-        <img class="portrait" src="../../../media/images/prophets/joseph-fielding-smith/joseph-fielding-smith1943circa.jpg" alt="Joseph Fielding Smith">
-        <p class="photo-source">Joseph Fielding Smith, c. 1943</p>
+        <img class="portrait" id="portrait" src="../../../media/images/prophets/joseph-fielding-smith/joseph-fielding-smith-improvement-era-march1920.jpg" alt="Joseph Fielding Smith">
+        <p class="photo-source" id="portraitCaption">Joseph Fielding Smith, c. 1920</p>
 
         <div class="filters">
             <input type="text" id="searchBar" placeholder="Search teachings...">
 
             <select id="callingFilter">
-                <option value="all">All Callings</option>
-                <option value="apostle">Apostle</option>
-                <option value="first-presidency">First Presidency</option>
+                <option value="all" data-img="../../../media/images/prophets/joseph-fielding-smith/joseph-fielding-smith-improvement-era-march1920.jpg" data-caption="Joseph Fielding Smith, c. 1920">All Callings</option>
+                <option value="apostle" data-img="../../../media/images/prophets/joseph-fielding-smith/joseph-fielding-smith-improvement-era-march1920.jpg" data-caption="Joseph Fielding Smith, c. 1920">Apostle in Q12</option>
+                <option value="president-q12" data-img="../../../media/images/prophets/joseph-fielding-smith/joseph-fielding-smith1943circa.jpg" data-caption="Joseph Fielding Smith, c. 1943">President of Q12</option>
+                <option value="president-of-the-church" data-img="../../../media/images/prophets/joseph-fielding-smith/joseph-fielding-smith-president.jpg" data-caption="Joseph Fielding Smith, President of the Church">President of the Church</option>
             </select>
 
             <select id="typeFilter">
                 <option value="all">All Types</option>
-                <option value="byu-speeches">BYU Speeches</option>
                 <option value="general-conference">General Conference</option>
-                <option value="deseret-weekly">Deseret Weekly</option>
                 <option value="conference-report">Conference Report</option>
-                <option value="improvement-era">Improvement Era</option>
-                <option value="article">Article</option>
-                <option value="letter">Letter</option>
-                <option value="poem">Poems/Hymns</option>
+                <option value="byu-speeches">BYU Speeches</option>
             </select>
         </div>
     </header>
 
     <div class="teaching-grid">
+
+        <!-- Tile -->
+        <div class="teaching-tile apostle gc" data-calling="apostle" data-type="conference-report">
+            <h2 class="title">Blessed are they who obey when they hear the truth. — Admonition to reverence the Sabbath day.</h2>
+            <div class="year">1911</div>
+            <div class="calling">Elder in the Council of the Twelve Apostles</div>
+            <div class="sources">
+                <a href="https://archive.org/details/conferencereport1911a/page/85/mode/1up">Internet Archive (Conference Report)</a>
+            </div>
+            <div class="teaching-type">Sermon - General Conference (CR1911A:85-87)</div>
+            <div class="topics">
+                <strong>Topics</strong>
+            </div>
+            <div class="scripture-references">
+                <strong>Scripture References</strong>
+            </div>
+        </div>
+
+        <!-- Tile -->
+        <div class="teaching-tile apostle gc" data-calling="apostle" data-type="conference-report">
+            <h2 class="title">The greatest event in the modem world. — The gathering a fulfillment of predictions of ancient prophets. — Rejection of the Gospel of Peace will bring God's displeasure.</h2>
+            <div class="year">1911</div>
+            <div class="calling">Elder in the Council of the Twelve Apostles</div>
+            <div class="sources">
+                <a href="https://archive.org/details/conferencereport1911a/page/124/mode/1up">Internet Archive (Conference Report)</a>
+            </div>
+            <div class="teaching-type">Sermon - General Conference (CR1911A:124-126)</div>
+            <div class="topics">
+                <strong>Topics</strong>
+            </div>
+            <div class="scripture-references">
+                <strong>Scripture References</strong>
+            </div>
+        </div>
 
         <!-- Tile -->
         <div class="teaching-tile apostle byu-speeches" data-calling="apostle" data-type="byu-speeches">
@@ -83,6 +113,45 @@
             <div class="scripture-references"><strong>Scripture References</strong></div>
         </div>
 
+        <!-- Tile -->
+        <div class="teaching-tile president gc" data-calling="president-of-the-church" data-type="conference-report">
+            <h2 class="title"></h2>
+            <div class="year">1970</div>
+            <div class="calling">President of the Church</div>
+            <div class="sources">
+                <a href="https://archive.org/details/conferencereport1970a/page/4/mode/1up">Church History Catalog (Internet Archive)</a>
+            </div>
+            <div class="other-source">
+                <a href="">Church History Catalog, Video Recording (00:00:00-00:00:00)</a>
+                <br>
+                <a href="">Scripture Citation Index</a>
+            </div>
+            <div class="teaching-type">Sermon - General Conference (CR1970A:4-6)</div>
+            <div class="topics">
+                <strong>Topics</strong>
+            </div>
+            <div class="scripture-references">
+                <strong>Scripture References</strong>
+            </div>
+        </div>
+
+        <!-- Tile -->
+        <div class="teaching-tile president gcldsorg" data-calling="president-of-the-church" data-type="general-conference">
+            <h2 class="title">Eternal Keys and the Right to Preside</h2>
+            <div class="year">A-1972</div>
+            <div class="calling">President of the Church</div>
+            <div class="sources">
+                <a href="https://www.churchofjesuschrist.org/study/general-conference/1972/04/eternal-keys-and-the-right-to-preside?lang=eng">ChurchofJesusChrist.org</a>
+            </div>
+            <div class="teaching-type">Sermon - General Conference</div>
+            <div class="topics">
+                <strong>Topics</strong>
+            </div>
+            <div class="scripture-references">
+                <strong>Scripture References</strong>
+            </div>
+        </div>
+
     </div>
 
     <script>
@@ -112,6 +181,21 @@
                 }
             });
         }
+
+
+        const portrait = document.getElementById("portrait");
+        const portraitCaption = document.getElementById("portraitCaption");
+
+        function updatePortrait() {
+            const opt = callingFilter.options[callingFilter.selectedIndex];
+            if (opt.dataset.img) {
+                portrait.src = opt.dataset.img;
+                portrait.alt = opt.dataset.caption || "Joseph Fielding Smith";
+                portraitCaption.textContent = opt.dataset.caption || "";
+            }
+        }
+
+        callingFilter.addEventListener("change", updatePortrait);
 
         searchBar.addEventListener("input", filterTeachings);
         callingFilter.addEventListener("change", filterTeachings);
