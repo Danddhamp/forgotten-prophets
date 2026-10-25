@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <link rel="stylesheet" href="../style.css">
+        <base href="" target="_blank">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>
+            Abraham H. Cannon
+        </title>
+
+        <!-- Page-specific styles live here so style.css stays untouched. -->
+        <style>
+            /* Only the three-column layout lives here; everything else comes from style.css */
+            .page-layout {
+                display: grid;
+                grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+                grid-template-areas: "left bio right";
+                gap: 25px;
+                align-items: start;
+                width: 95%;
+                margin: 40px auto;
+            }
+            .teachings-left { grid-area: left; }
+            .teachings-right { grid-area: right; }
+            .biography-column { grid-area: bio; }
+
+            .teachings-left,
+            .teachings-right {
+                display: flex;
+                flex-direction: column;
+                gap: 25px;
+            }
+
+            /* Biography box matches the white table cells in style.css */
+            .biography-column {
+                background-color: white;
+                color: black;
+                border: 1px solid black;
+                padding: 20px;
+            }
+            .biography-column h2 {
+                margin: 0 0 15px;
+            }
+
+            @media (max-width: 1000px) {
+                .page-layout {
+                    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+                    grid-template-areas:
+                        "bio bio"
+                        "left right";
+                }
+            }
+            @media (max-width: 700px) {
+                h1 { font-size: 40px; }
+                .page-layout {
+                    grid-template-columns: minmax(0, 1fr);
+                    grid-template-areas:
+                        "bio"
+                        "left"
+                        "right";
+                }
+                .filters {
+                    flex-direction: column;
+                    align-items: stretch;
+                    width: 90%;
+                }
+            }
+        </style>
+
+    </head>
+    <body>
+        <a href="../../index.html">Home</a>
+        <br>
+        <a href="!prophet-guide.html">Reference Guide</a>
+        <h1>Abraham H. Cannon</h1>
+        <h3>1859-1896</h3>
+        <h3>First Seven Presidents of the Seventy: October 8, 1882</h3>
+        <h3>Ordained an Apostle: October 7, 1889</h3>
+
+        <!-- Images (top) -->
+        <div class="container-flex">
+            <img src="../../media/images/prophets/abraham-h-cannon/abraham-h-cannon-1895.jpeg" alt="Abraham H. Cannon 1895">
+            <img src="../../media/images/prophets/abraham-h-cannon/abraham-h-cannon-1896.jpg" alt="Abraham H. Cannon 1896">
+        </div>
+
+        <!-- Search and filters for the teachings on both sides -->
+        <div class="filters">
+            <input type="text" id="searchBar" placeholder="Search teachings...">
+
+            <select id="callingFilter">
+                <option value="all">All Callings</option>
+                <option value="presidency-of-seventy">Presidency of the Seventy</option>
+                <option value="apostle">Apostle in Q12</option>
+            </select>
+
+            <select id="typeFilter">
+                <option value="all">All Types</option>
+                <option value="deseret-weekly">Deseret Weekly</option>
+            </select>
+        </div>
+        <p id="teachingCount"></p>
+
+        <div class="page-layout">
+
+            <!-- Biography (middle) -->
+            <section class="biography-column">
+                <h2>Biography</h2>
+                <p>Biography coming soon.</p>
+            </section>
+
+            <!-- Teachings (left) -->
+            <section class="teachings-left" aria-label="Teachings">
+                <!-- Tile -->
+                <div class="teaching-tile presidency-of-seventy dezweek" data-calling="presidency-of-seventy" data-type="deseret-weekly">
+                                    <h2 class="title">April 1887 General Conference</h2>
+                                    <div class="year">1887</div>
+                                    <div class="calling">Presidency of the Seventy</div>
+                                    <div class="sources">
+                                        <a href="https://newspapers.lib.utah.edu/search?facet_type=%22page%22&gallery=1&rows=200&parent_i=2732239#g3">Utah Digital Newspapers (Deseret Weekly)</a>
+                                    </div>
+                                    <div class="other-source">
+                                        <a href="https://contentdm.lib.byu.edu/digital/collection/desnews6/id/31086">BYU Library</a>
+                                        <br>
+                                        <a href="https://historicalgeneralconferences.weebly.com/1887-april.html#AHC">Historical Conferences</a>
+                                    </div>
+                                    <div class="teaching-type">Sermon - Deseret Weekly A-1887</div>
+                                    <div class="topics">
+                                        <strong>Topics</strong> Gratitude, Suffering (purpose of), Success of the Saints, Community
+                                    </div>
+                                    <div class="scripture-references">
+                                        <strong>Scripture References</strong>
+                                    </div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile presidency-of-seventy dezweek" data-calling="presidency-of-seventy" data-type="deseret-weekly">
+                                    <h2 class="title">October 1887 General Conference</h2>
+                                    <div class="year">1887</div>
+                                    <div class="calling">Presidency of the Seventy</div>
+                                    <div class="sources">
+                                        <a href="https://newspapers.lib.utah.edu/search?facet_type=%22page%22&gallery=1&rows=200&parent_i=2736636#g3">Utah Digital Newspapers (Deseret Weekly)</a>
+                                    </div>
+                                    <div class="other-source">
+                                        <a href="https://contentdm.lib.byu.edu/digital/collection/desnews6/id/35633">BYU Library</a>
+                                        <br>
+                                        <a href="https://historicalgeneralconferences.weebly.com/1887-october.html#AHC">Historical Conferences</a>
+                                    </div>
+                                    <div class="teaching-type">Sermon - Deseret Weekly O-1887</div>
+                                    <div class="topics">
+                                        <strong>Topics</strong> Obedience, Blessings, Contention, Equality/Unity, Temporal Wealth, Sacrifice, Zion (New Jerusalem), Constitution
+                                    </div>
+                                    <div class="scripture-references">
+                                        <strong>Scripture References</strong>
+                                    </div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile presidency-of-seventy dezweek" data-calling="presidency-of-seventy" data-type="deseret-weekly">
+                                    <h2 class="title">April 1888 General Conference</h2>
+                                    <div class="year">1888</div>
+                                    <div class="calling">Presidency of the Seventy</div>
+                                    <div class="sources">
+                                        <a href="https://newspapers.lib.utah.edu/search?facet_type=%22page%22&gallery=1&rows=200&parent_i=2668577#g12">Utah Digital Newspapers (Deseret Weekly)</a>
+                                    </div>
+                                    <div class="other-source">
+                                        <a href="https://contentdm.lib.byu.edu/digital/collection/desnews9/id/5515">BYU Library</a>
+                                        <br>
+                                        <a href="https://historicalgeneralconferences.weebly.com/1888-april.html#AHC">Historical Conferences</a>
+                                    </div>
+                                    <div class="teaching-type">Sermon - Deseret Weekly A-1888</div>
+                                    <div class="topics">
+                                        <strong>Topics</strong> Peculiar People, Salvation (plan of), Gospel, Persecution, Division from the World, Marrying (non-LDS), Prophets (listening to/following), Humility, Obedience, Destruction, Holy Ghost, Callings, Apostles, Doctrine, Repentance
+                                    </div>
+                                    <div class="scripture-references">
+                                        <strong>Scripture References</strong>
+                                    </div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile presidency-of-seventy dezweek" data-calling="presidency-of-seventy" data-type="deseret-weekly">
+                                    <h2 class="title">October 1888 General Conference (1)</h2>
+                                    <div class="year">1888</div>
+                                    <div class="calling">Presidency of the Seventy</div>
+                                    <div class="sources">
+                                        <a href="https://newspapers.lib.utah.edu/search?facet_type=%22page%22&gallery=1&rows=200&parent_i=2672315#g8">Utah Digital Newspapers (Deseret Weekly)</a>
+                                    </div>
+                                    <div class="other-source">
+                                        <a href="https://contentdm.lib.byu.edu/digital/collection/desnews9/id/9855">BYU Library</a>
+                                        <br>
+                                        <a href="https://historicalgeneralconferences.weebly.com/1888-october.html#AHC1">Historical Conferences</a>
+                                    </div>
+                                    <div class="teaching-type">Sermon - Deseret Weekly O-1888 (1)</div>
+                                    <div class="topics">
+                                        <strong>Topics</strong> Success of the Saints, Persecution, Constitution, Trials
+                                    </div>
+                                    <div class="scripture-references">
+                                        <strong>Scripture References</strong>
+                                    </div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile presidency-of-seventy dezweek" data-calling="presidency-of-seventy" data-type="deseret-weekly">
+                                    <h2 class="title">October 1888 General Conference (2)</h2>
+                                    <div class="year">1888</div>
+                                    <div class="calling">Presidency of the Seventy</div>
+                                    <div class="sources">
+                                        <a href="https://newspapers.lib.utah.edu/search?facet_type=%22page%22&gallery=1&rows=200&parent_i=2672315#g12">Utah Digital Newspapers (Deseret Weekly)</a>
+                                    </div>
+                                    <div class="other-source">
+                                        <a href="https://contentdm.lib.byu.edu/digital/collection/desnews9/id/9859">BYU Library</a>
+                                        <br>
+                                        <a href="https://historicalgeneralconferences.weebly.com/1888-october.html#AHC2">Historical Conferences</a>
+                                    </div>
+                                    <div class="teaching-type">Sermon - Deseret Weekly O-1888 (2)</div>
+                                    <div class="topics">
+                                        <strong>Topics</strong> Ways of God v Man, Growth of the Church, Callings, Prophets (following, sustaining), Sinful Prophets
+                                    </div>
+                                    <div class="scripture-references">
+                                        <strong>Scripture References</strong>
+                                    </div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile presidency-of-seventy dezweek" data-calling="presidency-of-seventy" data-type="deseret-weekly">
+                                    <h2 class="title">October 1889 General Conference</h2>
+                                    <div class="year">1889</div>
+                                    <div class="calling">Presidency of the Seventy</div>
+                                    <div class="sources">
+                                        <a href="https://newspapers.lib.utah.edu/search?facet_type=%22page%22&gallery=1&rows=200&parent_i=2745784#g2">Utah Digital Newspapers (Deseret Weekly)</a>
+                                    </div>
+                                    <div class="other-source">
+                                        <a href="https://contentdm.lib.byu.edu/digital/collection/desnews7/id/1150">BYU Library</a>
+                                        <br>
+                                        <a href="https://www.google.com/books/edition/_/FawUAAAAYAAJ?gbpv=1&pg=PA483">Google Books</a>
+                                        <br>
+                                        <a href="https://historicalgeneralconferences.weebly.com/1889-october.html#AHC1">Historical Conferences</a>
+                                    </div>
+                                    <div class="teaching-type">Sermon - Deseret Weekly O-1889</div>
+                                    <div class="topics">
+                                        <strong>Topics</strong> Gospel, Prophets (following, sustaining), Following God
+                                    </div>
+                                    <div class="scripture-references">
+                                        <strong>Scripture References</strong>
+                                    </div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile apostle dezweek" data-calling="apostle" data-type="deseret-weekly">
+                                    <h2 class="title">April 1890 General Conference</h2>
+                                    <div class="year">1890</div>
+                                    <div class="calling">Elder in the Council of the Twelve Apostles</div>
+                                    <div class="sources">
+                                        <a href="https://newspapers.lib.utah.edu/search?facet_type=%22page%22&gallery=1&rows=200&parent_i=2677855#g14">Utah Digital Newspapers (Deseret Weekly)</a>
+                                    </div>
+                                    <div class="other-source">
+                                        <a href="https://contentdm.lib.byu.edu/digital/collection/desnews9/id/15922">BYU Library</a>
+                                        <br>
+                                        <a href="https://www.google.com/books/edition/_/iawUAAAAYAAJ?gbpv=1&pg=PA527">Google Books</a>
+                                        <br>
+                                        <a href="https://historicalgeneralconferences.weebly.com/1890-april.html#AHC1">Historical Conferences</a>
+                                    </div>
+                                    <div class="teaching-type">Sermon - Deseret Weekly A-1890</div>
+                                    <div class="topics">
+                                        <strong>Topics</strong> Power of God, Humility, God's Mercy, Wisdom of Men v God, God's Judgement, Covenants (blessings)
+                                    </div>
+                                    <div class="scripture-references">
+                                        <strong>Scripture References</strong>
+                                    </div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile apostle dezweek" data-calling="apostle" data-type="deseret-weekly">
+                                    <h2 class="title">October 1890 General Conference</h2>
+                                    <div class="year">1890</div>
+                                    <div class="calling">Elder in the Council of the Twelve Apostles</div>
+                                    <div class="sources">
+                                        <a href="https://newspapers.lib.utah.edu/search?facet_type=%22page%22&gallery=1&rows=200&parent_i=2680984#g24">Utah Digital Newspapers (Deseret Weekly)</a>
+                                    </div>
+                                    <div class="other-source">
+                                        <a href="https://contentdm.lib.byu.edu/digital/collection/desnews9/id/19070">BYU Library</a>
+                                        <br>
+                                        <a href="https://www.google.com/books/edition/_/lmHUAAAAMAAJ?gbpv=1&pg=PA527">Google Books</a>
+                                        <br>
+                                        <a href="https://historicalgeneralconferences.weebly.com/1890-october.html#AHC3">Historical Conferences</a>
+                                    </div>
+                                    <div class="teaching-type">Sermon - Deseret Weekly O-1890</div>
+                                    <div class="topics">
+                                        <strong>Topics</strong> Prophets, Revelation, God's Nature
+                                    </div>
+                                    <div class="scripture-references">
+                                        <strong>Scripture References</strong>
+                                    </div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile apostle dezweek" data-calling="apostle" data-type="deseret-weekly">
+                                    <h2 class="title">December 1890 Miscellaneous (Check Google Books Link)</h2>
+                                    <div class="year">1890</div>
+                                    <div class="calling">Elder in the Council of the Twelve Apostles</div>
+                                    <div class="sources">
+                                        <a href="https://www.google.com/books/edition/_/WLcUAAAAYAAJ?gbpv=1&pg=PA89">Google Books</a>
+                                    </div>
+                                    <div class="teaching-type">Sermon - Deseret Weekly D-1890</div>
+                                    <div class="topics">
+                                        <strong>Topics</strong> Prophets, Revelation, God's Nature
+                                    </div>
+                                    <div class="scripture-references">
+                                        <strong>Scripture References</strong>
+                                    </div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile apostle dezweek" data-calling="apostle" data-type="deseret-weekly">
+                                    <h2 class="title">April 1891 General Conference (1)</h2>
+                                    <div class="year">1891</div>
+                                    <div class="calling">Elder in the Council of the Twelve Apostles</div>
+                                    <div class="sources">
+                                        <a href="https://newspapers.lib.utah.edu/search?facet_type=%22page%22&gallery=1&rows=200&parent_i=2683957#g18">Utah Digital Newspapers (Deseret Weekly)</a>
+                                    </div>
+                                    <div class="teaching-type">Sermon - Deseret Weekly A-1891 (1)</div>
+                                    <div class="topics">
+                                        <strong>Topics</strong> Things to Come, Zion (building of), Zion (consecration), Judgement, Revelation (fallibility)
+                                    </div>
+                                    <div class="scripture-references">
+                                        <strong>Scripture References</strong>
+                                    </div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile apostle dezweek" data-calling="apostle" data-type="deseret-weekly">
+                                    <h2 class="title">April 1891 General Conference (2)</h2>
+                                    <div class="year">1891</div>
+                                    <div class="calling">Elder in the Council of the Twelve Apostles</div>
+                                    <div class="sources">
+                                        <a href="https://newspapers.lib.utah.edu/search?facet_type=%22page%22&gallery=1&rows=200&parent_i=2683957#g23">Utah Digital Newspapers (Deseret Weekly)</a>
+                                    </div>
+                                    <div class="teaching-type">Sermon - Deseret Weekly A-1891 (2)</div>
+                                    <div class="topics">
+                                        <strong>Topics</strong> Opposition in All Things, Growth of the Church, Potential of Saints, Withstanding Persecution
+                                    </div>
+                                    <div class="scripture-references">
+                                        <strong>Scripture References</strong>
+                                    </div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile apostle dezweek" data-calling="apostle" data-type="deseret-weekly">
+                                    <h2 class="title">October 1891 General Conference</h2>
+                                    <div class="year">1891</div>
+                                    <div class="calling">Elder in the Council of the Twelve Apostles</div>
+                                    <div class="sources">
+                                        <a href="https://newspapers.lib.utah.edu/search?facet_type=%22page%22&gallery=1&rows=200&parent_i=2687194#g25">Utah Digital Newspapers (Deseret Weekly)</a>
+                                    </div>
+                                    <div class="teaching-type">Sermon - Deseret Weekly O-1891</div>
+                                    <div class="topics">
+                                        <strong>Topics</strong> Success of the Saints, Constitution, Exile, Zion (Temple), Utah
+                                    </div>
+                                    <div class="scripture-references">
+                                        <strong>Scripture References</strong>
+                                    </div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile apostle dezweek" data-calling="apostle" data-type="deseret-weekly">
+                                    <h2 class="title">March 1891 Stake Conference (Miscellaneous, Check Google Books Link)</h2>
+                                    <div class="year">1891</div>
+                                    <div class="calling">Elder in the Council of the Twelve Apostles</div>
+                                    <div class="sources">
+                                        <a href="https://www.google.com/books/edition/_/WLcUAAAAYAAJ?gbpv=1&pg=PA337">Google Books</a>
+                                    </div>
+                                    <div class="teaching-type">Sermon - Deseret Weekly M-1891</div>
+                                    <div class="topics">
+                                        <strong>Topics</strong>
+                                    </div>
+                                    <div class="scripture-references">
+                                        <strong>Scripture References</strong>
+                                    </div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile apostle dezweek" data-calling="apostle" data-type="deseret-weekly">
+                                    <h2 class="title">April 1892 General Conference</h2>
+                                    <div class="year">1892</div>
+                                    <div class="calling">Elder in the Council of the Twelve Apostles</div>
+                                    <div class="sources">
+                                        <a href="https://newspapers.lib.utah.edu/search?facet_type=%22page%22&gallery=1&rows=200&parent_i=2690330#g15">Utah Digital Newspapers (Deseret Weekly)</a>
+                                    </div>
+                                    <div class="teaching-type">Sermon - Deseret Weekly A-1892</div>
+                                    <div class="topics">
+                                        <strong>Topics</strong> Success of the Saints, Missionary Work, Contention/Discord, Immigration, Work (Idleness)
+                                    </div>
+                                    <div class="scripture-references">
+                                        <strong>Scripture References</strong>
+                                    </div>
+                </div>
+            </section>
+
+            <!-- Teachings (right) -->
+            <section class="teachings-right" aria-label="More teachings">
+                <!-- Tile -->
+                <div class="teaching-tile apostle dezweek" data-calling="apostle" data-type="deseret-weekly">
+                                    <h2 class="title">October 1892 General Conference (1)</h2>
+                                    <div class="year">1892</div>
+                                    <div class="calling">Elder in the Council of the Twelve Apostles</div>
+                                    <div class="sources">
+                                        <a href="https://newspapers.lib.utah.edu/search?facet_type=%22page%22&gallery=1&rows=200&parent_i=2693882#g2">Utah Digital Newspapers (Deseret Weekly)</a>
+                                    </div>
+                                    <div class="teaching-type">Sermon - Deseret Weekly O-1892 (1)</div>
+                                    <div class="topics">
+                                        <strong>Topics</strong> Holy Ghost (Guidance of), Word of Wisdom, Temporal Salvation, Tithing, Church Leaders (Critiquing of/Faultfinding)
+                                    </div>
+                                    <div class="scripture-references">
+                                        <strong>Scripture References</strong>
+                                    </div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile apostle dezweek" data-calling="apostle" data-type="deseret-weekly">
+                                    <h2 class="title">October 1892 General Conference (2)</h2>
+                                    <div class="year">1892</div>
+                                    <div class="calling">Elder in the Council of the Twelve Apostles</div>
+                                    <div class="sources">
+                                        <a href="https://newspapers.lib.utah.edu/search?facet_type=%22page%22&gallery=1&rows=200&parent_i=2693882#g7">Utah Digital Newspapers (Deseret Weekly)</a>
+                                    </div>
+                                    <div class="teaching-type">Sermon - Deseret Weekly O-1892 (2)</div>
+                                    <div class="topics">
+                                        <strong>Topics</strong> Living in the Last Days, Priesthood, Children, Service, Charity
+                                    </div>
+                                    <div class="scripture-references">
+                                        <strong>Scripture References</strong>
+                                    </div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile apostle dezweek" data-calling="apostle" data-type="deseret-weekly">
+                                    <h2 class="title">April 1893 General Conference</h2>
+                                    <div class="year">1893</div>
+                                    <div class="calling">Elder in the Council of the Twelve Apostles</div>
+                                    <div class="sources">
+                                        <a href="https://newspapers.lib.utah.edu/search?facet_type=%22page%22&gallery=1&rows=200&parent_i=2697105#g17">Utah Digital Newspapers (Deseret Weekly)</a>
+                                    </div>
+                                    <div class="teaching-type">Sermon - Deseret Weekly A-1893</div>
+                                    <div class="topics">
+                                        <strong>Topics</strong> Forgiveness, Charity, The Gospel, Unity
+                                    </div>
+                                    <div class="scripture-references">
+                                        <strong>Scripture References</strong>
+                                    </div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile apostle dezweek" data-calling="apostle" data-type="deseret-weekly">
+                                    <h2 class="title">October 1893 General Conference (1)</h2>
+                                    <div class="year">1893</div>
+                                    <div class="calling">Elder in the Council of the Twelve Apostles</div>
+                                    <div class="sources">
+                                        <a href="https://newspapers.lib.utah.edu/search?facet_type=%22page%22&gallery=1&rows=200&parent_i=2739310#g9">Utah Digital Newspapers (Deseret Weekly)</a>
+                                    </div>
+                                    <div class="teaching-type">Sermon - Deseret Weekly O-1893 (1)</div>
+                                    <div class="topics">
+                                        <strong>Topics</strong> God (Leading the Church), A Different People, Education, Holy Ghost (Inspiration), Commandments
+                                    </div>
+                                    <div class="scripture-references">
+                                        <strong>Scripture References</strong>
+                                    </div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile apostle dezweek" data-calling="apostle" data-type="deseret-weekly">
+                                    <h2 class="title">October 1893 General Conference (2)</h2>
+                                    <div class="year">1893</div>
+                                    <div class="calling">Elder in the Council of the Twelve Apostles</div>
+                                    <div class="sources">
+                                        <a href="https://newspapers.lib.utah.edu/search?facet_type=%22page%22&gallery=1&rows=200&parent_i=2739310#g11">Utah Digital Newspapers (Deseret Weekly)</a>
+                                    </div>
+                                    <div class="teaching-type">Sermon - Deseret Weekly O-1893 (2)</div>
+                                    <div class="topics">
+                                        <strong>Topics</strong> Children, Repentance, Punishment (Sin), Culture (World vs Zion), Parenting (Family)
+                                    </div>
+                                    <div class="scripture-references">
+                                        <strong>Scripture References</strong>
+                                    </div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile apostle dezweek" data-calling="apostle" data-type="deseret-weekly">
+                                    <h2 class="title">April 1894 General Conference (1)</h2>
+                                    <div class="year">1894</div>
+                                    <div class="calling">Elder in the Council of the Twelve Apostles</div>
+                                    <div class="sources">
+                                        <a href="https://newspapers.lib.utah.edu/search?facet_type=%22page%22&gallery=1&rows=200&parent_i=2747935#g0">Utah Digital Newspapers (Deseret Weekly)</a>
+                                    </div>
+                                    <div class="teaching-type">Sermon - Deseret Weekly A-1894 (1)</div>
+                                    <div class="topics">
+                                        <strong>Topics</strong> Testimony, Faith (of the Saints), Temptations, Covenants (Second Coming), Prayer, Godly Tests, Blessings
+                                    </div>
+                                    <div class="scripture-references">
+                                        <strong>Scripture References</strong>
+                                    </div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile apostle dezweek" data-calling="apostle" data-type="deseret-weekly">
+                                    <h2 class="title">April 1894 General Conference (2)</h2>
+                                    <div class="year">1894</div>
+                                    <div class="calling">Elder in the Council of the Twelve Apostles</div>
+                                    <div class="sources">
+                                        <a href="https://newspapers.lib.utah.edu/search?facet_type=%22page%22&gallery=1&rows=200&parent_i=2747935#g4">Utah Digital Newspapers (Deseret Weekly)</a>
+                                    </div>
+                                    <div class="teaching-type">Sermon - Deseret Weekly A-1894 (2)</div>
+                                    <div class="topics">
+                                        <strong>Topics</strong> The Plan of the Redemption of the Dead, Afterlife, Sealings, Millennial Reign, God (With His People), Repentance, God (Character of)
+                                    </div>
+                                    <div class="scripture-references">
+                                        <strong>Scripture References</strong>
+                                    </div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile apostle dezweek" data-calling="apostle" data-type="deseret-weekly">
+                                    <h2 class="title">October 1894 General Conference</h2>
+                                    <div class="year">1894</div>
+                                    <div class="calling">Elder in the Council of the Twelve Apostles</div>
+                                    <div class="sources">
+                                        <a href="https://newspapers.lib.utah.edu/search?facet_type=%22page%22&gallery=1&rows=200&parent_i=2742582#g19">Utah Digital Newspapers (Deseret Weekly)</a>
+                                    </div>
+                                    <div class="teaching-type">Sermon - Deseret Weekly O-1894</div>
+                                    <div class="topics">
+                                        <strong>Topics</strong> Seeking Revelation, Prophets and Scripture, Charity, Dying for the Church
+                                    </div>
+                                    <div class="scripture-references">
+                                        <strong>Scripture References</strong>
+                                    </div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile apostle dezweek" data-calling="apostle" data-type="deseret-weekly">
+                                    <h2 class="title">April 1895 General Conference (1)</h2>
+                                    <div class="year">1895</div>
+                                    <div class="calling">Elder in the Council of the Twelve Apostles</div>
+                                    <div class="sources">
+                                        <a href="https://newspapers.lib.utah.edu/search?facet_type=%22page%22&gallery=1&rows=200&parent_i=2706096#g0">Utah Digital Newspapers (Deseret Weekly)</a>
+                                    </div>
+                                    <div class="teaching-type">Sermon - Deseret Weekly A-1895 (1)</div>
+                                    <div class="topics">
+                                        <strong>Topics</strong>
+                                    </div>
+                                    <div class="scripture-references">
+                                        <strong>Scripture References</strong>
+                                    </div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile apostle dezweek" data-calling="apostle" data-type="deseret-weekly">
+                                    <h2 class="title">April 1895 General Conference (2)</h2>
+                                    <div class="year">1895</div>
+                                    <div class="calling">Elder in the Council of the Twelve Apostles</div>
+                                    <div class="sources">
+                                        <a href="https://newspapers.lib.utah.edu/search?facet_type=%22page%22&gallery=1&rows=200&parent_i=2706096#g5">Utah Digital Newspapers (Deseret Weekly)</a>
+                                    </div>
+                                    <div class="teaching-type">Sermon - Deseret Weekly A-1895 (2)</div>
+                                    <div class="topics">
+                                        <strong>Topics</strong>
+                                    </div>
+                                    <div class="scripture-references">
+                                        <strong>Scripture References</strong>
+                                    </div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile apostle dezweek" data-calling="apostle" data-type="deseret-weekly">
+                                    <h2 class="title">October 1895 General Conference (1)</h2>
+                                    <div class="year">1895</div>
+                                    <div class="calling">Elder in the Council of the Twelve Apostles</div>
+                                    <div class="sources">
+                                        <a href="https://newspapers.lib.utah.edu/search?facet_type=%22page%22&gallery=1&rows=200&parent_i=2708606#g18">Utah Digital Newspapers (Deseret Weekly)</a>
+                                    </div>
+                                    <div class="teaching-type">Sermon - Deseret Weekly O-1895 (1)</div>
+                                    <div class="topics">
+                                        <strong>Topics</strong>
+                                    </div>
+                                    <div class="scripture-references">
+                                        <strong>Scripture References</strong>
+                                    </div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile apostle dezweek" data-calling="apostle" data-type="deseret-weekly">
+                                    <h2 class="title">October 1895 General Conference (2)</h2>
+                                    <div class="year">1895</div>
+                                    <div class="calling">Elder in the Council of the Twelve Apostles</div>
+                                    <div class="sources">
+                                        <a href="https://newspapers.lib.utah.edu/search?facet_type=%22page%22&gallery=1&rows=200&parent_i=2708606#g20">Utah Digital Newspapers (Deseret Weekly)</a>
+                                    </div>
+                                    <div class="teaching-type">Sermon - Deseret Weekly O-1895 (2)</div>
+                                    <div class="topics">
+                                        <strong>Topics</strong>
+                                    </div>
+                                    <div class="scripture-references">
+                                        <strong>Scripture References</strong>
+                                    </div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile apostle dezweek" data-calling="apostle" data-type="deseret-weekly">
+                                    <h2 class="title">April 1896 General Conference</h2>
+                                    <div class="year">1896</div>
+                                    <div class="calling">Elder in the Council of the Twelve Apostles</div>
+                                    <div class="sources">
+                                        <a href="https://newspapers.lib.utah.edu/search?facet_type=%22page%22&gallery=1&rows=200&parent_i=2716678#g16">Utah Digital Newspapers (Deseret Weekly)</a>
+                                    </div>
+                                    <div class="teaching-type">Sermon - Deseret Weekly A-1896</div>
+                                    <div class="topics">
+                                        <strong>Topics</strong>
+                                    </div>
+                                    <div class="scripture-references">
+                                        <strong>Scripture References</strong>
+                                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <script>
+            const searchBar = document.getElementById('searchBar');
+            const callingFilter = document.getElementById('callingFilter');
+            const typeFilter = document.getElementById('typeFilter');
+            const teachingCount = document.getElementById('teachingCount');
+            const tiles = document.querySelectorAll('.teaching-tile');
+
+            function filterTeachings() {
+                const search = searchBar.value.toLowerCase().trim();
+                const calling = callingFilter.value;
+                const type = typeFilter.value;
+                let shown = 0;
+
+                tiles.forEach(tile => {
+                    const tileText = tile.textContent.toLowerCase();
+                    const matchesSearch = search === '' || tileText.includes(search);
+                    const matchesCalling = calling === 'all' || (tile.dataset.calling || '') === calling;
+                    const matchesType = type === 'all' || (tile.dataset.type || '') === type;
+                    const visible = matchesSearch && matchesCalling && matchesType;
+
+                    tile.style.display = visible ? '' : 'none';
+                    if (visible) shown++;
+                });
+
+                teachingCount.textContent = 'Showing ' + shown + ' of ' + tiles.length + ' teachings';
+            }
+
+            searchBar.addEventListener('input', filterTeachings);
+            callingFilter.addEventListener('change', filterTeachings);
+            typeFilter.addEventListener('change', filterTeachings);
+            filterTeachings();
+        </script>
+    </body>
+</html>

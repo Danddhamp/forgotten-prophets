@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <link rel="stylesheet" href="../style.css">
+        <base href="" target="_blank">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>
+            Matthias F. Cowley
+        </title>
+
+        <!-- Page-specific styles live here so style.css stays untouched. -->
+        <style>
+            /* Only the three-column layout lives here; everything else comes from style.css */
+            .page-layout {
+                display: grid;
+                grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+                grid-template-areas: "left bio right";
+                gap: 25px;
+                align-items: start;
+                width: 95%;
+                margin: 40px auto;
+            }
+            .teachings-left { grid-area: left; }
+            .teachings-right { grid-area: right; }
+            .biography-column { grid-area: bio; }
+
+            .teachings-left,
+            .teachings-right {
+                display: flex;
+                flex-direction: column;
+                gap: 25px;
+            }
+
+            /* Biography box matches the white table cells in style.css */
+            .biography-column {
+                background-color: white;
+                color: black;
+                border: 1px solid black;
+                padding: 20px;
+            }
+            .biography-column h2 {
+                margin: 0 0 15px;
+            }
+
+            @media (max-width: 1000px) {
+                .page-layout {
+                    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+                    grid-template-areas:
+                        "bio bio"
+                        "left right";
+                }
+            }
+            @media (max-width: 700px) {
+                h1 { font-size: 40px; }
+                .page-layout {
+                    grid-template-columns: minmax(0, 1fr);
+                    grid-template-areas:
+                        "bio"
+                        "left"
+                        "right";
+                }
+                .filters {
+                    flex-direction: column;
+                    align-items: stretch;
+                    width: 90%;
+                }
+            }
+        </style>
+
+    </head>
+    <body>
+        <a href="../../index.html">Home</a>
+        <br>
+        <a href="!prophet-guide.html">Reference Guide</a>
+        <h1>Matthias F. Cowley</h1>
+        <h3>1858-1940</h3>
+        <h3>Ordained an Apostle: October 7, 1897</h3>
+        <h3>Resigned from the Apostleship: October 28, 1905</h3>
+        <h3>Priesthood Suspended: May 11, 1911</h3>
+        <h3>Priesthood Restored: April 3, 1936</h3>
+
+        <!-- Images (top) -->
+        <div class="container-flex">
+            <img src="../../media/images/prophets/matthias-f-cowley/mattias-f-cowley-placeholder.jpg" alt="Matthias F. Cowley">
+        </div>
+
+        <!-- Search and filters for the teachings on both sides -->
+        <div class="filters">
+            <input type="text" id="searchBar" placeholder="Search teachings...">
+
+            <select id="callingFilter">
+                <option value="all">All Callings</option>
+                <option value="apostle">Apostle in Q12</option>
+            </select>
+
+            <select id="typeFilter">
+                <option value="all">All Types</option>
+                <option value="conference-report">Conference Report</option>
+                <option value="book">Book</option>
+            </select>
+        </div>
+        <p id="teachingCount"></p>
+
+        <div class="page-layout">
+
+            <!-- Biography (middle) -->
+            <section class="biography-column">
+                <h2>Biography</h2>
+                <p>Matthias F. Cowley was born on the 25th of August, 1858 in Salt Lake City, Utah Territory, United States of America. He was born to parents, <a href="https://history.churchofjesuschrist.org/chd/individual/matthias-cowley-1829?lang=eng">Matthias Cowley(Father)</a> and <a href="https://history.churchofjesuschrist.org/chd/individual/sarah-elizabeth-foss-1827?lang=eng">Sarah E. Foss(Mother)</a>.</p>
+                <p>Matthias F. Cowley was baptised at the age of 8, in 1866, by <a href="https://history.churchofjesuschrist.org/chd/individual/samuel-turnbow-1804?lang=eng">Samuel Turnbow</a>.</p>
+                <p>Matthias served two missions in the Southern States. The first, from 1878-1880, and the second, from 1880-1882. In 1896 he was serving as a mission in Montana.</p>
+                <p>Matthias F. Cowley was called to the Apostleship in the October of 1897.</p>
+                <p>Matthias F. Cowley died June 1940.</p>
+                <hr>
+                <p><strong>Sources</strong></p>
+                <p></p>
+            </section>
+
+<!-- Teachings (left) -->
+            <section class="teachings-left" aria-label="Teachings">
+                <!-- Tile -->
+                <div class="teaching-tile apostle gc" data-calling="apostle" data-type="conference-report">
+                                    <h2 class="title">October 1897 General Conference</h2>
+                                    <div class="year">1897</div>
+                                    <div class="calling">Elder in the Council of the Twelve Apostles</div>
+                                    <div class="sources">
+                                        <a href="https://archive.org/details/conferencereport1897sa/page/44/mode/1up">Internet Archive (Conference Report)</a>
+                                    </div>
+                                    <div class="teaching-type">Sermon - General Conference (CR1897O:44)</div>
+                                    <div class="topics">
+                                        <strong>Topics</strong>
+                                        Calling as an Apostle, Testimony
+                                    </div>
+                                    <div class="scripture-references">
+                                        <strong>Scripture References</strong>
+                                        Reference to John W. Taylor (<a href="https://historicalgeneralconferences.weebly.com/matthias-f-cowley.html">Search: March 19, 1882, in which Elder Taylor wrote: "If you are faithful, you will yet become one of the Twelve Apostles of the Church of Jesus Christ of Latter-day Saints in all the world."</a>)
+                                    </div>
+                                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile apostle gc" data-calling="apostle" data-type="conference-report">
+                                    <h2 class="title">The hand of God in past and current events—The missionaries abroad—Mutual improvement work—Peace departing from the earth—Repentance needed.</h2>
+                                    <div class="year">1898</div>
+                                    <div class="calling">Elder in the Council of the Twelve Apostles</div>
+                                    <div class="sources">
+                                        <a href="https://archive.org/details/conferencereport1898a/page/22/mode/1up">Internet Archive (Conference Report)</a>
+                                    </div>
+                                    <div class="teaching-type">Sermon - General Conference (CR1898A:22-25)</div>
+                                    <div class="topics">
+                                        <strong>Topics</strong>
+                                    </div>
+                                    <div class="scripture-references">
+                                        <strong>Scripture References</strong>
+                                    </div>
+                                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile apostle gc" data-calling="apostle" data-type="conference-report">
+                                    <h2 class="title">Prophetic gift of Joseph Smith—Early manifestation of God and the ministration of Angels—Opposition of the world—God guides His work by revelation.</h2>
+                                    <div class="year">1899</div>
+                                    <div class="calling">Elder in the Council of the Twelve Apostles</div>
+                                    <div class="sources">
+                                        <a href="https://archive.org/details/conferencereport1899a/page/8/mode/1up">Internet Archive (Conference Report)</a>
+                                    </div>
+                                    <div class="teaching-type">Sermon - General Conference (CR1899A:8-10)</div>
+                                    <div class="topics">
+                                        <strong>Topics</strong>
+                                    </div>
+                                    <div class="scripture-references">
+                                        <strong>Scripture References</strong>
+                                    </div>
+                                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile apostle gc" data-calling="apostle" data-type="conference-report">
+                                    <h2 class="title">Importance of General Conferences—The Sphere and Regulation of Temporal Affairs—Need for Efficient Elders in the Missionary Field.</h2>
+                                    <div class="year">1899</div>
+                                    <div class="calling">Elder in the Council of the Twelve Apostles</div>
+                                    <div class="sources">
+                                        <a href="https://archive.org/details/conferencereport1899sa/page/8/mode/1up">Internet Archive (Conference Report)</a>
+                                    </div>
+                                    <div class="teaching-type">Sermon - General Conference (CR1899O:8-11)</div>
+                                    <div class="topics">
+                                        <strong>Topics</strong>
+                                    </div>
+                                    <div class="scripture-references">
+                                        <strong>Scripture References</strong>
+                                    </div>
+                                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile apostle gc" data-calling="apostle" data-type="conference-report">
+                                    <h2 class="title">The Church built on the foundation of Continuous Revelation—Each member entitled to an individual testimony of the truth.</h2>
+                                    <div class="year">1900</div>
+                                    <div class="calling">Elder in the Council of the Twelve Apostles</div>
+                                    <div class="sources">
+                                        <a href="https://archive.org/details/conferencereport1900a/page/34/mode/1up">Internet Archive (Conference Report)</a>
+                                    </div>
+                                    <div class="teaching-type">Sermon - General Conference (CR1900A:34-36)</div>
+                                    <div class="topics">
+                                        <strong>Topics</strong>
+                                    </div>
+                                    <div class="scripture-references">
+                                        <strong>Scripture References</strong>
+                                    </div>
+                                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile apostle gc" data-calling="apostle" data-type="conference-report">
+                                    <h2 class="title">Improvements in financial affairs of the Church—Organization of new Stakes of Zion—Necessary official changes in the Priesthood—Differences among brethren should be avoided—President of the Church and other authorities should be sustained.</h2>
+                                    <div class="year">1901</div>
+                                    <div class="calling">Elder in the Council of the Twelve Apostles</div>
+                                    <div class="sources">
+                                        <a href="https://archive.org/details/conferencereport1901a/page/14/mode/1up">Internet Archive (Conference Report)</a>
+                                    </div>
+                                    <div class="teaching-type">Sermon - General Conference (CR1901A:14-20)</div>
+                                    <div class="topics">
+                                        <strong>Topics</strong>
+                                    </div>
+                                    <div class="scripture-references">
+                                        <strong>Scripture References</strong>
+                                    </div>
+                                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile apostle gc" data-calling="apostle" data-type="conference-report">
+                                    <h2 class="title">Work of God not dependent upon the world—The only way to please the Lord—We hold a view to futurity—Parents should be exemplars to their children.</h2>
+                                    <div class="year">1902</div>
+                                    <div class="calling">Elder in the Council of the Twelve Apostles</div>
+                                    <div class="sources">
+                                        <a href="https://archive.org/details/conferencereport1902a/page/36/mode/1up">Internet Archive (Conference Report)</a>
+                                    </div>
+                                    <div class="teaching-type">Sermon - General Conference (CR1902A:36-39)</div>
+                                    <div class="topics">
+                                        <strong>Topics</strong>
+                                    </div>
+                                    <div class="scripture-references">
+                                        <strong>Scripture References</strong>
+                                    </div>
+                                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile apostle gc" data-calling="apostle" data-type="conference-report">
+                                    <h2 class="title">April 1902 General Conference</h2>
+                                    <div class="year">1902</div>
+                                    <div class="calling">Elder in the Council of the Twelve Apostles</div>
+                                    <div class="sources">
+                                        <a href="https://archive.org/details/conferencereport1902a/page/71/mode/1up">Internet Archive (Conference Report)</a>
+                                    </div>
+                                    <div class="teaching-type">Sermon - General Conference (CR1902A:71-75)</div>
+                                    <div class="topics">
+                                        <strong>Topics</strong>
+                                    </div>
+                                    <div class="scripture-references">
+                                        <strong>Scripture References</strong>
+                                    </div>
+                                </div>
+                <!-- Tile -->
+                <div class="teaching-tile apostle book" data-calling="apostle" data-type="book">
+                                    <h2 class="title">Cowley's Talks on Doctrine</h2>
+                                    <div class="year">1902</div>
+                                    <div class="calling">Elder in the Council of the Twelve Apostles</div>
+                                    <div class="sources">
+                                        <a href="https://archive.org/details/cowleystalksondo00cowlrich/page/n2/mode/1up">Internet Archive (Conference Report)</a>
+                                    </div>
+                                    <div class="teaching-type">Book</div>
+                                    <div class="topics">
+                                        <strong>Topics</strong>
+                                    </div>
+                                    <div class="scripture-references">
+                                        <strong>Scripture References</strong>
+                                    </div>
+                                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile apostle gc" data-calling="apostle" data-type="conference-report">
+                                    <h2 class="title">October 1903 General Conference</h2>
+                                    <div class="year">1903</div>
+                                    <div class="calling">Elder in the Council of the Twelve Apostles</div>
+                                    <div class="sources">
+                                        <a href="https://archive.org/details/conferencereport1903sa/page/36/mode/1up">Internet Archive (Conference Report)</a>
+                                    </div>
+                                    <div class="teaching-type">Sermon - General Conference (CR1903O:36-37)</div>
+                                    <div class="topics">
+                                        <strong>Topics</strong>
+                                    </div>
+                                    <div class="scripture-references">
+                                        <strong>Scripture References</strong>
+                                    </div>
+                                </div>
+            </section>
+
+<!-- Teachings (right) -->
+            <section class="teachings-right" aria-label="More teachings">
+                <!-- Tile -->
+                <div class="teaching-tile apostle gc" data-calling="apostle" data-type="conference-report">
+                                    <h2 class="title">Beneficial character of Mutual Improvement associations—Operation of the Holy Spirit—Reception of blessings predicated upon obedience—Secular education does not prevent crime.</h2>
+                                    <div class="year">1897</div>
+                                    <div class="calling">Elder in the Council of the Twelve Apostles</div>
+                                    <div class="sources">
+                                        <a href="https://archive.org/details/conferencereport1897sa/page/52/mode/1up">Internet Archive (Conference Report)</a>
+                                    </div>
+                                    <div class="teaching-type">Sermon - General Conference (CR1897O:52-56)</div>
+                                    <div class="topics">
+                                        <strong>Topics</strong>
+                                    </div>
+                                    <div class="scripture-references">
+                                        <strong>Scripture References</strong>
+                                    </div>
+                                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile apostle gc" data-calling="apostle" data-type="conference-report">
+                                    <h2 class="title">Guidance of the Holy Spirit—Perpetuity of the Church—Divine authority of the Priesthood—The power of Faith—Necessity of strictness in the payment of Tithing.</h2>
+                                    <div class="year">1898</div>
+                                    <div class="calling">Elder in the Council of the Twelve Apostles</div>
+                                    <div class="sources">
+                                        <a href="https://archive.org/details/conferencereport1898sa/page/6/mode/1up">Internet Archive (Conference Report)</a>
+                                    </div>
+                                    <div class="teaching-type">Sermon - General Conference (CR1898O:6-9)</div>
+                                    <div class="topics">
+                                        <strong>Topics</strong>
+                                    </div>
+                                    <div class="scripture-references">
+                                        <strong>Scripture References</strong>
+                                    </div>
+                                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile apostle gc" data-calling="apostle" data-type="conference-report">
+                                    <h2 class="title">April 1899 General Conference</h2>
+                                    <div class="year">1899</div>
+                                    <div class="calling">Elder in the Council of the Twelve Apostles</div>
+                                    <div class="sources">
+                                        <a href="https://archive.org/details/conferencereport1899a/page/59/mode/1up">Internet Archive (Conference Report)</a>
+                                    </div>
+                                    <div class="teaching-type">Sermon - General Conference (CR1899A:59-61)</div>
+                                    <div class="topics">
+                                        <strong>Topics</strong>
+                                    </div>
+                                    <div class="scripture-references">
+                                        <strong>Scripture References</strong>
+                                    </div>
+                                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile apostle gc" data-calling="apostle" data-type="conference-report">
+                                    <h2 class="title">October 1899 General Conference</h2>
+                                    <div class="year">1899</div>
+                                    <div class="calling">Elder in the Council of the Twelve Apostles</div>
+                                    <div class="sources">
+                                        <a href="https://archive.org/details/conferencereport1899sa/page/62/mode/1up">Internet Archive (Conference Report)</a>
+                                    </div>
+                                    <div class="teaching-type">Sermon - General Conference (CR1899O:62-64)</div>
+                                    <div class="topics">
+                                        <strong>Topics</strong>
+                                    </div>
+                                    <div class="scripture-references">
+                                        <strong>Scripture References</strong>
+                                    </div>
+                                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile apostle gc" data-calling="apostle" data-type="conference-report">
+                                    <h2 class="title">Patrick Henry’s eloquent plea for freedom—Regard of the Saints for the Constitution—Work of the Adversary—How to obtain the mind and will of the Lord—The duty to sustain the Government—The redemption of Zion—Striking experience at Galveston.</h2>
+                                    <div class="year">1900</div>
+                                    <div class="calling">Elder in the Council of the Twelve Apostles</div>
+                                    <div class="sources">
+                                        <a href="https://archive.org/details/conferencereport1900sa/page/17/mode/1up">Internet Archive (Conference Report)</a>
+                                    </div>
+                                    <div class="teaching-type">Sermon - General Conference (CR1900O:17-23)</div>
+                                    <div class="topics">
+                                        <strong>Topics</strong>
+                                    </div>
+                                    <div class="scripture-references">
+                                        <strong>Scripture References</strong>
+                                    </div>
+                                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile apostle gc" data-calling="apostle" data-type="conference-report">
+                                    <h2 class="title">Why many generations have been left without the Gospel—Growth of the work of the Lord from its inception—An incomparable organization—Sacredness of the name of Deity—Loyalty to the Priesthood and country—Religionists should marry within their own faith.</h2>
+                                    <div class="year">1901</div>
+                                    <div class="calling">Elder in the Council of the Twelve Apostles</div>
+                                    <div class="sources">
+                                        <a href="https://archive.org/details/conferencereport1901sa/page/14/mode/1up">Internet Archive (Conference Report)</a>
+                                    </div>
+                                    <div class="teaching-type">Sermon - General Conference (CR1901O:14-21)</div>
+                                    <div class="topics">
+                                        <strong>Topics</strong>
+                                    </div>
+                                    <div class="scripture-references">
+                                        <strong>Scripture References</strong>
+                                    </div>
+                                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile apostle book" data-calling="apostle" data-type="book">
+                                    <h2 class="title">The Blood of Prophets</h2>
+                                    <div class="year">1902</div>
+                                    <div class="calling">Elder in the Council of the Twelve Apostles</div>
+                                    <div class="sources">
+                                        <a href="https://archive.org/details/bloodofprophetsb00cowlrich/page/n10/mode/1up">Internet Archive (Conference Report)</a>
+                                    </div>
+                                    <div class="teaching-type">Book</div>
+                                    <div class="topics">
+                                        <strong>Topics</strong>
+                                    </div>
+                                    <div class="scripture-references">
+                                        <strong>Scripture References</strong>
+                                    </div>
+                                </div>
+
+                <div class="teaching-tile apostle gc" data-calling="apostle" data-type="conference-report">
+                                    <h2 class="title">Difficulties to be settled privately, if possible—Presiding authorities should not be appealed to unnecessarily—Honor every man in his position.</h2>
+                                    <div class="year">1902</div>
+                                    <div class="calling">Elder in the Council of the Twelve Apostles</div>
+                                    <div class="sources">
+                                        <a href="https://archive.org/details/conferencereport1902sa/page/59/mode/1up">Internet Archive (Conference Report)</a>
+                                    </div>
+                                    <div class="teaching-type">Sermon - General Conference (CR1902O:59-62)</div>
+                                    <div class="topics">
+                                        <strong>Topics</strong>
+                                    </div>
+                                    <div class="scripture-references">
+                                        <strong>Scripture References</strong>
+                                    </div>
+                                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile apostle gc" data-calling="apostle" data-type="conference-report">
+                                    <h2 class="title">The Saints responsible to God—How we are regarded by the world—United order versus socialism—Necessity of exact compliance with law of tithing—Development of natural resources—Important general duties.</h2>
+                                    <div class="year">1903</div>
+                                    <div class="calling">Elder in the Council of the Twelve Apostles</div>
+                                    <div class="sources">
+                                        <a href="https://archive.org/details/conferencereport1903sa/page/52/mode/1up">Internet Archive (Conference Report)</a>
+                                    </div>
+                                    <div class="teaching-type">Sermon - General Conference (CR1903O:52-57)</div>
+                                    <div class="topics">
+                                        <strong>Topics</strong>
+                                    </div>
+                                    <div class="scripture-references">
+                                        <strong>Scripture References</strong>
+                                    </div>
+                                </div>
+
+                        
+            </section>
+
+        </div>
+
+        <script>
+            const searchBar = document.getElementById('searchBar');
+            const callingFilter = document.getElementById('callingFilter');
+            const typeFilter = document.getElementById('typeFilter');
+            const teachingCount = document.getElementById('teachingCount');
+            const tiles = document.querySelectorAll('.teaching-tile');
+
+            function filterTeachings() {
+                const search = searchBar.value.toLowerCase().trim();
+                const calling = callingFilter.value;
+                const type = typeFilter.value;
+                let shown = 0;
+
+                tiles.forEach(tile => {
+                    const tileText = tile.textContent.toLowerCase();
+                    const matchesSearch = search === '' || tileText.includes(search);
+                    const matchesCalling = calling === 'all' || (tile.dataset.calling || '') === calling;
+                    const matchesType = type === 'all' || (tile.dataset.type || '') === type;
+                    const visible = matchesSearch && matchesCalling && matchesType;
+
+                    tile.style.display = visible ? '' : 'none';
+                    if (visible) shown++;
+                });
+
+                teachingCount.textContent = 'Showing ' + shown + ' of ' + tiles.length + ' teachings';
+            }
+
+            searchBar.addEventListener('input', filterTeachings);
+            callingFilter.addEventListener('change', filterTeachings);
+            typeFilter.addEventListener('change', filterTeachings);
+            filterTeachings();
+        </script>
+    </body>
+</html>
