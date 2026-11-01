@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../style.css">
+    <base href="" target="_blank">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>George Q. Cannon</title>
+
+    <style>
+        .page-layout {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+            grid-template-areas: "left bio right";
+            gap: 25px;
+            align-items: start;
+            width: 95%;
+            margin: 40px auto;
+        }
+        .teachings-left  { grid-area: left; }
+        .teachings-right { grid-area: right; }
+        .biography-column { grid-area: bio; }
+
+        .teachings-left,
+        .teachings-right {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .biography-column {
+            background-color: white;
+            color: black;
+            border: 1px solid black;
+            padding: 20px;
+        }
+        .biography-column h2 {
+            margin: 0 0 15px;
+        }
+
+        /* Image gallery – prevent cut-off */
+        .container-flex {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 12px;
+            width: 95%;
+            max-width: 1400px;
+            margin: 20px auto 30px;
+            padding: 10px 0;
+            overflow: visible;
+        }
+        .container-flex img {
+            max-width: 160px;
+            width: auto;
+            height: auto;
+            max-height: 220px;
+            object-fit: contain;
+            object-position: center top;
+            border: 1px solid #333;
+            background: #111;
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 1000px) {
+            .page-layout {
+                grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+                grid-template-areas:
+                    "bio bio"
+                    "left right";
+            }
+            .container-flex img {
+                max-width: 140px;
+                max-height: 190px;
+            }
+        }
+        @media (max-width: 700px) {
+            h1 { font-size: 40px; }
+            .page-layout {
+                grid-template-columns: minmax(0, 1fr);
+                grid-template-areas:
+                    "bio"
+                    "left"
+                    "right";
+            }
+            .filters {
+                flex-direction: column;
+                align-items: stretch;
+                width: 90%;
+            }
+            .container-flex img {
+                max-width: 120px;
+                max-height: 160px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="../../index.html">Home</a>
+    <br>
+    <a href="!prophet-guide.html">Reference Guide</a>
+
+    <h1>George Q. Cannon</h1>
+    <h3>1827-1901</h3>
+
+    <!-- Images -->
+    <div class="container-flex">
+        <img src="../../media/images/prophets/george-q-cannon/george-q-cannon-1870-1880.jpg" alt="George Q. Cannon 1870-80">
+    </div>
+
+    <!-- Filters -->
+    <div class="filters">
+        <input type="text" id="searchBar" placeholder="Search teachings...">
+
+        <select id="callingFilter">
+            <option value="all">All Callings</option>
+            <option value="apostle">Apostle</option>
+        </select>
+
+        <select id="typeFilter">
+            <option value="all">All Types</option>
+            <option value="journal-of-discourses">Journal of Discourses</option>
+            <option value="historical-conference">Historical Conference</option>
+            <option value="deseret-weekly">Deseret Weekly</option>
+            <option value="conference-report">Conference Report</option>
+            <option value="the-seer">The Seer</option>
+            <option value="times-and-seasons">Times and Seasons</option>
+            <option value="messenger-and-advocate">Messenger and Advocate</option>
+            <option value="article">Article</option>
+            <option value="letter">Letter</option>
+        </select>
+    </div>
+    <p id="teachingCount"></p>
+
+    <div class="page-layout">
+
+        <!-- Biography -->
+        <section class="biography-column">
+            <h2>Biography</h2>
+            <hr>
+            <p><strong>Sources</strong></p>
+            <p><a href="https://archive.org/details/gospeltruthdisco0000cann/mode/2up">The Gospel Truth, Volume 1</a>, <a href="">The Gospel Truth, Volume 2</a></p>
+        </section>
+
+        <!-- Left column -->
+        <section class="teachings-left" aria-label="Teachings">
+
+            
+
+        </section>
+
+        <!-- Right column -->
+        <section class="teachings-right" aria-label="More teachings">
+
+            
+
+        </section>
+    </div>
+
+    <p style="text-align: center; margin-top: 30px;">Died August 29, 1877</p>
+
+    <script>
+        const searchBar = document.getElementById('searchBar');
+        const callingFilter = document.getElementById('callingFilter');
+        const typeFilter = document.getElementById('typeFilter');
+        const teachingCount = document.getElementById('teachingCount');
+        const leftColumn = document.querySelector('.teachings-left');
+        const rightColumn = document.querySelector('.teachings-right');
+
+        const tiles = [
+            ...leftColumn.querySelectorAll('.teaching-tile'),
+            ...rightColumn.querySelectorAll('.teaching-tile')
+        ];
+
+        function filterTeachings() {
+            const search = searchBar.value.toLowerCase().trim();
+            const calling = callingFilter.value;
+            const type = typeFilter.value;
+            const visibleTiles = [];
+
+            tiles.forEach(tile => {
+                const tileText = tile.textContent.toLowerCase();
+                const matchesSearch = search === '' || tileText.includes(search);
+                const matchesCalling = calling === 'all' || (tile.dataset.calling || '') === calling;
+                const matchesType = type === 'all' || (tile.dataset.type || '') === type;
+
+                if (matchesSearch && matchesCalling && matchesType) {
+                    tile.style.display = '';
+                    visibleTiles.push(tile);
+                } else {
+                    tile.style.display = 'none';
+                    leftColumn.appendChild(tile);
+                }
+            });
+
+            const half = Math.ceil(visibleTiles.length / 2);
+            visibleTiles.forEach((tile, i) => {
+                (i < half ? leftColumn : rightColumn).appendChild(tile);
+            });
+
+            teachingCount.textContent = 'Showing ' + visibleTiles.length + ' of ' + tiles.length + ' teachings';
+        }
+
+        searchBar.addEventListener('input', filterTeachings);
+        callingFilter.addEventListener('change', filterTeachings);
+        typeFilter.addEventListener('change', filterTeachings);
+        filterTeachings();
+    </script>
+</body>
+</html>
