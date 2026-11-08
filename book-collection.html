@@ -26,7 +26,7 @@
                     flex-direction: column;
                     justify-content: center;
                 }
-                h1 {
+                h1, h2 {
                     margin: 0 0 1.5rem;
                     padding: 0 1.5rem;
                     font-weight: normal;
@@ -120,6 +120,11 @@
                     opacity: .75;
                 }
 
+                .shelf-section + .shelf-section { margin-top: 3.5rem; }
+                .shelf-section:last-child { padding-bottom: 3rem; }
+                .shelf.empty { min-height: 150px; align-items: center; padding-bottom: 1.5rem; }
+                .empty-note { margin: 0; font-style: italic; opacity: .6; }
+
                 /* Sizes per book */
                 .brigham { --w: 92px;  --h: 330px; }
                 .cannon1 { --w: 84px;  --h: 305px; }
@@ -151,12 +156,19 @@
                 .talmage  { --c1: #36424d; --c2: #1d252c; }
                 .whitney  { --c1: #7a2f5a; --c2: #431730; }
 
+                /* Periodicals: color by source */
+                .s-av  { --c1: #4f4436; --c2: #2b241b; }
+                .s-chc { --c1: #2f4f3a; --c2: #182b1f; }
+                .s-ia  { --c1: #6e2430; --c2: #3e1119; }
+                .s-coj { --c1: #1f3a68; --c2: #0f1d36; }
+
                 @media (prefers-reduced-motion: reduce) {
                     .spine { transition: none; }
                 }
             </style>
     </head>
     <body>
+        <section class="shelf-section">
         <h1>Book Collection</h1>
 
         <div class="shelf">
@@ -313,5 +325,372 @@
                 </span>
             </a>
         </div>
+        </section>
+
+        <section class="shelf-section">
+        <h2>Newspapers</h2>
+
+        <div class="shelf">
+            <a class="spine s-av" style="--w:93px; --h:300px; --title-size:15px;" href="https://archiveviewer.org/collections/en/the-evening-and-the-morning-star"
+               aria-label="The Evening and Morning Star, on Archive Viewer">
+                <span class="text">
+                    <span class="title">The Evening and Morning Star</span>
+                    <span class="source">Archive Viewer</span>
+                </span>
+            </a>
+
+            <a class="spine s-chc" style="--w:93px; --h:314px; --title-size:15px;" href="https://catalog.churchofjesuschrist.org/assets/4f409ef3-4279-4d4e-aa89-870de5498410/0/0"
+               aria-label="The Evening and Morning Star, on Church History Catalog">
+                <span class="text">
+                    <span class="title">The Evening and Morning Star</span>
+                    <span class="source">Church History Catalog</span>
+                </span>
+            </a>
+
+            <a class="spine s-av" style="--w:75px; --h:328px; --title-size:16px;" href="https://archiveviewer.org/collections/en/latter-day-saints-messenger-and-advocate"
+               aria-label="Messenger and Advocate, on Archive Viewer">
+                <span class="text">
+                    <span class="title">Messenger and Advocate</span>
+                    <span class="source">Archive Viewer</span>
+                </span>
+            </a>
+
+            <a class="spine s-chc" style="--w:75px; --h:342px; --title-size:16px;" href="https://catalog.churchofjesuschrist.org/record/20ac4aeb-6117-4cdb-8131-097568ce8d1f/0?view=browse"
+               aria-label="Messenger and Advocate, on Church History Catalog">
+                <span class="text">
+                    <span class="title">Messenger and Advocate</span>
+                    <span class="source">Church History Catalog</span>
+                </span>
+            </a>
+
+            <a class="spine s-av" style="--w:75px; --h:307px; --title-size:16px;" href="https://archiveviewer.org/collections/en/elders-journal-marsh"
+               aria-label="Elders’ Journal, on Archive Viewer">
+                <span class="text">
+                    <span class="title">Elders’ Journal</span>
+                    <span class="source">Archive Viewer</span>
+                </span>
+            </a>
+
+            <a class="spine s-ia" style="--w:75px; --h:321px; --title-size:16px;" href="https://archive.org/details/eldersjournalkir04smit/page/n5/mode/2up"
+               aria-label="Elders’ Journal, on Internet Archive">
+                <span class="text">
+                    <span class="title">Elders’ Journal</span>
+                    <span class="source">Internet Archive</span>
+                </span>
+            </a>
+
+            <a class="spine s-av" style="--w:75px; --h:335px; --title-size:16px;" href="https://archiveviewer.org/collections/en/times-and-seasons"
+               aria-label="Times and Seasons, on Archive Viewer">
+                <span class="text">
+                    <span class="title">Times and Seasons</span>
+                    <span class="source">Archive Viewer</span>
+                </span>
+            </a>
+
+            <a class="spine s-chc" style="--w:75px; --h:300px; --title-size:16px;" href="https://catalog.churchofjesuschrist.org/record/7c4aec9f-2e47-4490-8061-5c1ed6060e96/0?view=browse"
+               aria-label="Times and Seasons, on Church History Catalog">
+                <span class="text">
+                    <span class="title">Times and Seasons</span>
+                    <span class="source">Church History Catalog</span>
+                </span>
+            </a>
+
+            <a class="spine s-ia" style="--w:75px; --h:314px; --title-size:16px;" href="https://archive.org/details/TimesAndSeasons18391846/mode/1up"
+               aria-label="Times and Seasons, on Internet Archive">
+                <span class="text">
+                    <span class="title">Times and Seasons</span>
+                    <span class="source">Internet Archive</span>
+                </span>
+            </a>
+
+            <a class="spine s-av" style="--w:75px; --h:328px; --title-size:16px;" href="https://archiveviewer.org/collections/en/millennial-star"
+               aria-label="Millennial Star, on Archive Viewer">
+                <span class="text">
+                    <span class="title">Millennial Star</span>
+                    <span class="source">Archive Viewer</span>
+                </span>
+            </a>
+
+            <a class="spine s-av" style="--w:75px; --h:342px; --title-size:16px;" href="https://archiveviewer.org/collections/en/the-gospel-reflector"
+               aria-label="Gospel Reflector, on Archive Viewer">
+                <span class="text">
+                    <span class="title">Gospel Reflector</span>
+                    <span class="source">Archive Viewer</span>
+                </span>
+            </a>
+
+            <a class="spine s-av" style="--w:75px; --h:307px; --title-size:16px;" href="https://archiveviewer.org/collections/en/the-wasp"
+               aria-label="The Wasp, on Archive Viewer">
+                <span class="text">
+                    <span class="title">The Wasp</span>
+                    <span class="source">Archive Viewer</span>
+                </span>
+            </a>
+
+            <a class="spine s-av" style="--w:75px; --h:321px; --title-size:16px;" href="https://archiveviewer.org/collections/en/the-gospel-light"
+               aria-label="The Gospel Light, on Archive Viewer">
+                <span class="text">
+                    <span class="title">The Gospel Light</span>
+                    <span class="source">Archive Viewer</span>
+                </span>
+            </a>
+
+            <a class="spine s-chc" style="--w:75px; --h:335px; --title-size:16px;" href="https://catalog.churchofjesuschrist.org/assets/40601a16-bef0-47e1-99f3-851e5cd334a0/0/0"
+               aria-label="The Gospel Light, on Church History Catalog">
+                <span class="text">
+                    <span class="title">The Gospel Light</span>
+                    <span class="source">Church History Catalog</span>
+                </span>
+            </a>
+
+            <a class="spine s-ia" style="--w:75px; --h:300px; --title-size:16px;" href="https://archive.org/details/GospelLight18431844/mode/1up"
+               aria-label="The Gospel Light, on Internet Archive">
+                <span class="text">
+                    <span class="title">The Gospel Light</span>
+                    <span class="source">Internet Archive</span>
+                </span>
+            </a>
+
+            <a class="spine s-av" style="--w:75px; --h:314px; --title-size:16px;" href="https://archiveviewer.org/collections/en/nauvoo-neighbor"
+               aria-label="The Nauvoo Neighbor, on Archive Viewer">
+                <span class="text">
+                    <span class="title">The Nauvoo Neighbor</span>
+                    <span class="source">Archive Viewer</span>
+                </span>
+            </a>
+
+            <a class="spine s-av" style="--w:75px; --h:328px; --title-size:16px;" href="https://archiveviewer.org/collections/en/the-peoples-organ"
+               aria-label="The People’s Organ, on Archive Viewer">
+                <span class="text">
+                    <span class="title">The People’s Organ</span>
+                    <span class="source">Archive Viewer</span>
+                </span>
+            </a>
+
+            <a class="spine s-av" style="--w:75px; --h:342px; --title-size:16px;" href="https://archiveviewer.org/viewer/internet-archive/TheProphet18441845"
+               aria-label="The Prophet, on Archive Viewer">
+                <span class="text">
+                    <span class="title">The Prophet</span>
+                    <span class="source">Archive Viewer</span>
+                </span>
+            </a>
+
+            <a class="spine s-av" style="--w:75px; --h:307px; --title-size:16px;" href="https://archiveviewer.org/viewer/internet-archive/NewYorkMessenger1845"
+               aria-label="The New York Messenger, on Archive Viewer">
+                <span class="text">
+                    <span class="title">The New York Messenger</span>
+                    <span class="source">Archive Viewer</span>
+                </span>
+            </a>
+
+            <a class="spine s-av" style="--w:75px; --h:321px; --title-size:16px;" href="https://archiveviewer.org/collections/en/the-frontier-guardian"
+               aria-label="The Frontier Guardian, on Archive Viewer">
+                <span class="text">
+                    <span class="title">The Frontier Guardian</span>
+                    <span class="source">Archive Viewer</span>
+                </span>
+            </a>
+
+            <a class="spine s-av" style="--w:75px; --h:335px; --title-size:16px;" href="https://archiveviewer.org/collections/en/deseret-news-weekly"
+               aria-label="Deseret News, on Archive Viewer">
+                <span class="text">
+                    <span class="title">Deseret News</span>
+                    <span class="source">Archive Viewer</span>
+                </span>
+            </a>
+
+            <a class="spine s-av" style="--w:75px; --h:300px; --title-size:16px;" href="https://archiveviewer.org/collections/en/deseret-almanac"
+               aria-label="Deseret Almanac, on Archive Viewer">
+                <span class="text">
+                    <span class="title">Deseret Almanac</span>
+                    <span class="source">Archive Viewer</span>
+                </span>
+            </a>
+
+            <a class="spine s-av" style="--w:75px; --h:314px; --title-size:16px;" href="https://archiveviewer.org/collections/en/the-seer"
+               aria-label="The Seer, on Archive Viewer">
+                <span class="text">
+                    <span class="title">The Seer</span>
+                    <span class="source">Archive Viewer</span>
+                </span>
+            </a>
+
+            <a class="spine s-av" style="--w:75px; --h:328px; --title-size:16px;" href="https://archiveviewer.org/collections/en/zions-watchman"
+               aria-label="Zion’s Watchman, on Archive Viewer">
+                <span class="text">
+                    <span class="title">Zion’s Watchman</span>
+                    <span class="source">Archive Viewer</span>
+                </span>
+            </a>
+
+            <a class="spine s-av" style="--w:75px; --h:342px; --title-size:16px;" href="https://archiveviewer.org/collections/en/st-louis-luminary"
+               aria-label="St. Louis Luminary, on Archive Viewer">
+                <span class="text">
+                    <span class="title">St. Louis Luminary</span>
+                    <span class="source">Archive Viewer</span>
+                </span>
+            </a>
+
+            <a class="spine s-av" style="--w:75px; --h:307px; --title-size:16px;" href="https://archiveviewer.org/collections/en/the-mormon"
+               aria-label="The Mormon, on Archive Viewer">
+                <span class="text">
+                    <span class="title">The Mormon</span>
+                    <span class="source">Archive Viewer</span>
+                </span>
+            </a>
+
+            <a class="spine s-av" style="--w:75px; --h:321px; --title-size:16px;" href="https://archiveviewer.org/collections/en/western-standard"
+               aria-label="Western Standard, on Archive Viewer">
+                <span class="text">
+                    <span class="title">Western Standard</span>
+                    <span class="source">Archive Viewer</span>
+                </span>
+            </a>
+
+            <a class="spine s-av" style="--w:75px; --h:335px; --title-size:16px;" href="https://archiveviewer.org/collections/en/juvenile-instructor"
+               aria-label="Juvenile Instructor, on Archive Viewer">
+                <span class="text">
+                    <span class="title">Juvenile Instructor</span>
+                    <span class="source">Archive Viewer</span>
+                </span>
+            </a>
+
+            <a class="spine s-av" style="--w:75px; --h:300px; --title-size:16px;" href="https://archiveviewer.org/collections/en/womans-exponent"
+               aria-label="Woman’s Exponent, on Archive Viewer">
+                <span class="text">
+                    <span class="title">Woman’s Exponent</span>
+                    <span class="source">Archive Viewer</span>
+                </span>
+            </a>
+
+            <a class="spine s-av" style="--w:75px; --h:314px; --title-size:16px;" href="https://archiveviewer.org/collections/en/the-contributor"
+               aria-label="The Contributor, on Archive Viewer">
+                <span class="text">
+                    <span class="title">The Contributor</span>
+                    <span class="source">Archive Viewer</span>
+                </span>
+            </a>
+
+            <a class="spine s-av" style="--w:75px; --h:328px; --title-size:16px;" href="https://archiveviewer.org/collections/en/young-womans-journal"
+               aria-label="Young Woman’s Journal, on Archive Viewer">
+                <span class="text">
+                    <span class="title">Young Woman’s Journal</span>
+                    <span class="source">Archive Viewer</span>
+                </span>
+            </a>
+
+            <a class="spine s-av" style="--w:75px; --h:342px; --title-size:16px;" href="https://archiveviewer.org/collections/en/improvement-era"
+               aria-label="The Improvement Era, on Archive Viewer">
+                <span class="text">
+                    <span class="title">The Improvement Era</span>
+                    <span class="source">Archive Viewer</span>
+                </span>
+            </a>
+
+            <a class="spine s-av" style="--w:75px; --h:307px; --title-size:16px;" href="https://archiveviewer.org/collections/en/latter-day-saints-southern-star"
+               aria-label="Southern Star, on Archive Viewer">
+                <span class="text">
+                    <span class="title">Southern Star</span>
+                    <span class="source">Archive Viewer</span>
+                </span>
+            </a>
+
+            <a class="spine s-av" style="--w:75px; --h:321px; --title-size:16px;" href="https://archiveviewer.org/collections/en/the-childrens-friend"
+               aria-label="The Children’s Friend, on Archive Viewer">
+                <span class="text">
+                    <span class="title">The Children’s Friend</span>
+                    <span class="source">Archive Viewer</span>
+                </span>
+            </a>
+
+            <a class="spine s-av" style="--w:93px; --h:335px; --title-size:15px;" href="https://archiveviewer.org/collections/en/utah-genealogical-and-historical-magazine"
+               aria-label="Utah Genealogical and Historical Magazine, on Archive Viewer">
+                <span class="text">
+                    <span class="title">Utah Genealogical and Historical Magazine</span>
+                    <span class="source">Archive Viewer</span>
+                </span>
+            </a>
+
+            <a class="spine s-av" style="--w:75px; --h:300px; --title-size:16px;" href="https://archiveviewer.org/collections/en/relief-society-magazine"
+               aria-label="Relief Society Magazine, on Archive Viewer">
+                <span class="text">
+                    <span class="title">Relief Society Magazine</span>
+                    <span class="source">Archive Viewer</span>
+                </span>
+            </a>
+
+            <a class="spine s-av" style="--w:75px; --h:314px; --title-size:16px;" href="https://archiveviewer.org/collections/en/church-news"
+               aria-label="Church News, on Archive Viewer">
+                <span class="text">
+                    <span class="title">Church News</span>
+                    <span class="source">Archive Viewer</span>
+                </span>
+            </a>
+
+            <a class="spine s-av" style="--w:75px; --h:328px; --title-size:16px;" href="https://archiveviewer.org/collections/en/ensign"
+               aria-label="Ensign, on Archive Viewer">
+                <span class="text">
+                    <span class="title">Ensign</span>
+                    <span class="source">Archive Viewer</span>
+                </span>
+            </a>
+
+            <a class="spine s-coj" style="--w:75px; --h:342px; --title-size:16px;" href="https://www.churchofjesuschrist.org/study/magazines/ensign-19712020?lang=eng"
+               aria-label="Ensign, on ChurchOfJesusChrist.org">
+                <span class="text">
+                    <span class="title">Ensign</span>
+                    <span class="source">ChurchOfJesusChrist.org</span>
+                </span>
+            </a>
+
+            <a class="spine s-av" style="--w:75px; --h:307px; --title-size:16px;" href="https://archiveviewer.org/collections/en/new-era"
+               aria-label="New Era, on Archive Viewer">
+                <span class="text">
+                    <span class="title">New Era</span>
+                    <span class="source">Archive Viewer</span>
+                </span>
+            </a>
+
+            <a class="spine s-coj" style="--w:75px; --h:321px; --title-size:16px;" href="https://www.churchofjesuschrist.org/study/magazines/for-the-strength-of-youth/new-era-19712020?lang=eng"
+               aria-label="New Era, on ChurchOfJesusChrist.org">
+                <span class="text">
+                    <span class="title">New Era</span>
+                    <span class="source">ChurchOfJesusChrist.org</span>
+                </span>
+            </a>
+
+            <a class="spine s-av" style="--w:75px; --h:335px; --title-size:16px;" href="https://archiveviewer.org/collections/en/friend"
+               aria-label="Friend, on Archive Viewer">
+                <span class="text">
+                    <span class="title">Friend</span>
+                    <span class="source">Archive Viewer</span>
+                </span>
+            </a>
+
+            <a class="spine s-coj" style="--w:75px; --h:300px; --title-size:16px;" href="https://www.churchofjesuschrist.org/study/magazines/friend/1971-2020?lang=eng"
+               aria-label="Friend, on ChurchOfJesusChrist.org">
+                <span class="text">
+                    <span class="title">Friend</span>
+                    <span class="source">ChurchOfJesusChrist.org</span>
+                </span>
+            </a>
+
+            <a class="spine s-coj" style="--w:75px; --h:314px; --title-size:16px;" href="https://www.churchofjesuschrist.org/study/magazines/liahona?lang=eng"
+               aria-label="Liahona, on ChurchOfJesusChrist.org">
+                <span class="text">
+                    <span class="title">Liahona</span>
+                    <span class="source">ChurchOfJesusChrist.org</span>
+                </span>
+            </a>
+
+            <a class="spine s-coj" style="--w:75px; --h:328px; --title-size:16px;" href="https://www.churchofjesuschrist.org/study/magazines/for-the-strength-of-youth?lang=eng"
+               aria-label="For the Strength of Youth, on ChurchOfJesusChrist.org">
+                <span class="text">
+                    <span class="title">For the Strength of Youth</span>
+                    <span class="source">ChurchOfJesusChrist.org</span>
+                </span>
+            </a>
+        </div>
+        </section>
     </body>
 </html>
