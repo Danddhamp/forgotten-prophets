@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+            <title>Book Collection</title>
+            <base href="" target="_blank">
+            <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+            <link href="media/images/favicon/favicon.png" rel="icon" type="image/png"/>
+            <link rel="stylesheet" href="scripts/style.css">
+            <style>
+                :root {
+                    --wall: #2a211b;
+                    --wood: #5a3d27;
+                    --wood-dark: #3b2718;
+                    --gold: #d6b25e;
+                    --page-text: #f1e7d0;
+                }
+                * { box-sizing: border-box; }
+                body {
+                    margin: 0;
+                    min-height: 100vh;
+                    background: radial-gradient(ellipse at 50% 20%, #3b2d24 0%, var(--wall) 70%);
+                    color: var(--page-text);
+                    font-family: Georgia, "Palatino Linotype", Palatino, serif;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                }
+                h1 {
+                    margin: 0 0 1.5rem;
+                    padding: 0 1.5rem;
+                    font-weight: normal;
+                    font-size: 1.6rem;
+                    letter-spacing: 0.02em;
+                }
+
+                /* The shelf: scrolls sideways */
+                .shelf {
+                    display: flex;
+                    align-items: flex-end;
+                    gap: 3px;
+                    padding: 2rem 1.5rem 0;
+                    overflow-x: auto;
+                    overflow-y: hidden;
+                    scroll-snap-type: x proximity;
+                    scrollbar-color: var(--gold) var(--wood-dark);
+                    border-bottom: 18px solid var(--wood);
+                    box-shadow: 0 18px 0 -2px var(--wood-dark), 0 30px 30px rgba(0,0,0,.5);
+                    background: linear-gradient(to bottom, transparent 70%, rgba(0,0,0,.35));
+                }
+
+                /* A book spine */
+                .spine {
+                    --w: 88px;
+                    --h: 320px;
+                    --c1: #7a1f2b;
+                    --c2: #4d121a;
+                    flex: 0 0 var(--w);
+                    width: var(--w);
+                    height: var(--h);
+                    position: relative;
+                    display: block;
+                    padding: 14px 8px;
+                    color: var(--gold);
+                    text-decoration: none;
+                    scroll-snap-align: start;
+                    border-radius: 3px 3px 0 0;
+                    background:
+                        linear-gradient(to right,
+                            rgba(0,0,0,.45) 0%, rgba(255,255,255,.12) 12%,
+                            rgba(255,255,255,0) 40%, rgba(0,0,0,.25) 85%, rgba(0,0,0,.5) 100%),
+                        linear-gradient(to bottom, var(--c1), var(--c2));
+                    box-shadow: inset 0 0 0 1px rgba(0,0,0,.35), 2px 0 6px rgba(0,0,0,.4);
+                    transition: transform .18s ease;
+                }
+                /* gold bands near top and bottom */
+                .spine::before, .spine::after {
+                    content: "";
+                    position: absolute;
+                    left: 0; right: 0;
+                    height: 8px;
+                    border-top: 2px solid var(--gold);
+                    border-bottom: 1px solid var(--gold);
+                    opacity: .85;
+                }
+                .spine::before { top: 8px; }
+                .spine::after { bottom: 8px; }
+
+                .spine:hover, .spine:focus-visible { transform: translateY(-14px); }
+                .spine:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+
+                /* Text runs vertically down the spine, as on a real book */
+                .text {
+                    writing-mode: vertical-rl;
+                    height: 100%;
+                    padding: 14px 0;
+                    display: flex;
+                    flex-direction: column;  /* in vertical text, this lines up side-by-side columns */
+                    align-items: center;
+                    justify-content: center;
+                    text-align: center;
+                    margin: 0 auto;
+                    gap: .5em;
+                }
+                .title {
+                    font-size: var(--title-size, 17px);
+                    font-weight: bold;
+                    line-height: 1.25;
+                    max-height: 100%;
+                }
+                .author {
+                    font-size: 12px;
+                    font-style: italic;
+                    color: var(--page-text);
+                    opacity: .9;
+                }
+                .source {
+                    font-size: 10px;
+                    letter-spacing: .06em;
+                    opacity: .75;
+                }
+
+                /* Colors and sizes per book */
+                .brigham { --c1: #6e1d28; --c2: #43101a; --w: 92px;  --h: 330px; }
+                .cannon1 { --c1: #1f4a3a; --c2: #11291f; --w: 84px;  --h: 305px; }
+                .cannon2 { --c1: #24533f; --c2: #132f24; --w: 84px;  --h: 305px; }
+                .pratt   { --c1: #1d3556; --c2: #0f1d33; --w: 100px; --h: 340px; --title-size: 16px; }
+                .truth   { --c1: #6b4a22; --c2: #3e2a12; --w: 88px;  --h: 295px; }
+                .penrose { --c1: #4a2c5a; --c2: #2a1735; --w: 90px;  --h: 325px; }
+                .unveiled{ --c1: #36424d; --c2: #1d252c; --w: 84px;  --h: 300px; }
+                .classics{ --c1: #5e5a1f; --c2: #34320f; --w: 92px;  --h: 335px; }
+                .progress{ --c1: #7a3f1d; --c2: #45220e; --w: 86px;  --h: 312px; }
+                .voice   { --c1: #8a2d2d; --c2: #511515; --w: 82px;  --h: 298px; }
+                .apostasy{ --c1: #1f4d52; --c2: #102b2e; --w: 96px;  --h: 338px; --title-size: 16px; }
+                .christ  { --c1: #1b2f5e; --c2: #0e1936; --w: 90px;  --h: 345px; }
+                .elias   { --c1: #5a2a4a; --c2: #321428; --w: 88px;  --h: 315px; }
+                .kimball { --c1: #3d4a22; --c2: #212912; --w: 94px;  --h: 328px; --title-size: 16px; }
+                .key     { --c1: #7d5a1e; --c2: #463110; --w: 84px;  --h: 302px; }
+                .story   { --c1: #5b2020; --c2: #321010; --w: 86px;  --h: 322px; }
+                .scientist{--c1: #2c4a6b; --c2: #162739; --w: 96px;  --h: 310px; --title-size: 16px; }
+
+                @media (prefers-reduced-motion: reduce) {
+                    .spine { transition: none; }
+                }
+            </style>
+    </head>
+    <body>
+        <h1>Book Collection</h1>
+
+        <div class="shelf">
+            <a class="spine brigham" href="https://archive.org/details/discoursesofbrig028407mbp"
+               aria-label="Discourses of Brigham Young by John A. Widtsoe, on Internet Archive">
+                <span class="text">
+                    <span class="title">Discourses of Brigham Young</span>
+                    <span class="author">John A. Widtsoe</span>
+                    <span class="source">Internet Archive</span>
+                </span>
+            </a>
+
+            <a class="spine cannon1" href="https://archive.org/details/gospeltruthdisco0000cann/mode/2up"
+               aria-label="Gospel Truth, Volume 1 by Jerreld L. Newquist, on Internet Archive">
+                <span class="text">
+                    <span class="title">Gospel Truth, Vol. 1</span>
+                    <span class="author">Jerreld L. Newquist</span>
+                    <span class="source">Internet Archive</span>
+                </span>
+            </a>
+
+            <a class="spine cannon2" href="https://archive.org/details/gospeltruthdisco0002cann"
+               aria-label="Gospel Truth, Volume 2 by Jerreld L. Newquist, on Internet Archive">
+                <span class="text">
+                    <span class="title">Gospel Truth, Vol. 2</span>
+                    <span class="author">Jerreld L. Newquist</span>
+                    <span class="source">Internet Archive</span>
+                </span>
+            </a>
+
+            <a class="spine pratt" href="https://archive.org/details/masterfuldiscour00prat/page/n5/mode/2up"
+               aria-label="Masterful Discourses and Writings of Orson Pratt by N. B. Lundwall, on Internet Archive">
+                <span class="text">
+                    <span class="title">Masterful Discourses and Writings of Orson Pratt</span>
+                    <span class="author">N. B. Lundwall</span>
+                    <span class="source">Internet Archive</span>
+                </span>
+            </a>
+
+            <a class="spine truth" href="https://archive.org/details/truthseekermoemo0000drjo/page/n13/mode/2up"
+               aria-label="The Truth-Seeker and Mormonism by Joseph F. Merrill, on Internet Archive">
+                <span class="text">
+                    <span class="title">The Truth-Seeker and Mormonism</span>
+                    <span class="author">Joseph F. Merrill</span>
+                    <span class="source">Internet Archive</span>
+                </span>
+            </a>
+
+            <a class="spine penrose" href="https://archive.org/details/priesthoodpresid00penr/mode/1up"
+               aria-label="Priesthood and Presidency: Claims of the Josephite or Reorganized Church examined and compared with Reason and Revelation, by Charles W. Penrose, on Internet Archive">
+                <span class="text">
+                    <span class="title">Priesthood and Presidency</span>
+                    <span class="author">Charles W. Penrose</span>
+                    <span class="source">Internet Archive</span>
+                </span>
+            </a>
+
+            <a class="spine unveiled" href="https://archive.org/details/MormonismUnveiled/mode/1up"
+               aria-label="Mormonism Unveiled by Parley P. Pratt, on Internet Archive">
+                <span class="text">
+                    <span class="title">Mormonism Unveiled</span>
+                    <span class="author">Parley P. Pratt</span>
+                    <span class="source">Internet Archive</span>
+                </span>
+            </a>
+
+            <a class="spine classics" href="https://archive.org/details/bwb_Y0-DBY-351/mode/1up"
+               aria-label="Three Mormon Classics by Preston Nibley, on Internet Archive">
+                <span class="text">
+                    <span class="title">Three Mormon Classics</span>
+                    <span class="author">Preston Nibley</span>
+                    <span class="source">Internet Archive</span>
+                </span>
+            </a>
+
+            <a class="spine progress" href="https://archive.org/details/progressofman0000elde/mode/1up"
+               aria-label="The Progress of Man by Joseph Fielding Smith, on Internet Archive">
+                <span class="text">
+                    <span class="title">The Progress of Man</span>
+                    <span class="author">Joseph Fielding Smith</span>
+                    <span class="source">Internet Archive</span>
+                </span>
+            </a>
+
+            <a class="spine voice" href="https://www.amazon.com/clp/B004TSA0WM?lv=shuf&amp;channelId=520"
+               aria-label="A Voice of Warning by Parley P. Pratt, on Kindle">
+                <span class="text">
+                    <span class="title">A Voice of Warning</span>
+                    <span class="author">Parley P. Pratt</span>
+                    <span class="source">Kindle</span>
+                </span>
+            </a>
+
+            <a class="spine apostasy" href="https://archive.org/details/greatapostasycon02talm/mode/1up"
+               aria-label="The Great Apostasy, Considered in the Light of Scriptural and Secular History, by James E. Talmage, on Internet Archive">
+                <span class="text">
+                    <span class="title">The Great Apostasy</span>
+                    <span class="author">James E. Talmage</span>
+                    <span class="source">Internet Archive</span>
+                </span>
+            </a>
+
+            <a class="spine christ" href="https://www.churchofjesuschrist.org/study/manual/jesus-the-christ?lang=eng"
+               aria-label="Jesus the Christ by James E. Talmage, on ChurchOfJesusChrist.org">
+                <span class="text">
+                    <span class="title">Jesus the Christ</span>
+                    <span class="author">James E. Talmage</span>
+                    <span class="source">ChurchOfJesusChrist.org</span>
+                </span>
+            </a>
+
+            <a class="spine elias" href="https://www.amazon.com/clp/B006FLC93Y?lv=shuf&amp;channelId=520"
+               aria-label="Elias: An Epic of the Ages by Orson F. Whitney, on Kindle">
+                <span class="text">
+                    <span class="title">Elias: An Epic of the Ages</span>
+                    <span class="author">Orson F. Whitney</span>
+                    <span class="source">Kindle</span>
+                </span>
+            </a>
+
+            <a class="spine kimball" href="https://www.amazon.com/clp/B004TQUAXS?lv=shuf&amp;channelId=520"
+               aria-label="Life of Heber C. Kimball by Orson F. Whitney, on Kindle">
+                <span class="text">
+                    <span class="title">Life of Heber C. Kimball</span>
+                    <span class="author">Orson F. Whitney</span>
+                    <span class="source">Kindle</span>
+                </span>
+            </a>
+
+            <a class="spine key" href="https://www.amazon.com/clp/B004UJ1KFG?lv=shuf&amp;channelId=520"
+               aria-label="Key to the Science of Theology by Parley P. Pratt, on Kindle">
+                <span class="text">
+                    <span class="title">Key to the Science of Theology</span>
+                    <span class="author">Parley P. Pratt</span>
+                    <span class="source">Kindle</span>
+                </span>
+            </a>
+
+            <a class="spine story" href="https://www.amazon.com/clp/B004TP2RNA?lv=shuf&amp;channelId=520"
+               aria-label="The Story of Mormonism by James E. Talmage, on Kindle">
+                <span class="text">
+                    <span class="title">The Story of “Mormonism”</span>
+                    <span class="author">James E. Talmage</span>
+                    <span class="source">Kindle</span>
+                </span>
+            </a>
+
+            <a class="spine scientist" href="https://www.amazon.com/clp/B004UJH2XA?lv=shuf&amp;channelId=520"
+               aria-label="Joseph Smith as a Scientist: A Contribution to Mormon Philosophy, by John A. Widtsoe, on Kindle">
+                <span class="text">
+                    <span class="title">Joseph Smith as a Scientist</span>
+                    <span class="author">John A. Widtsoe</span>
+                    <span class="source">Kindle</span>
+                </span>
+            </a>
+        </div>
+    </body>
+</html>
