@@ -120,24 +120,36 @@
                     opacity: .75;
                 }
 
-                /* Colors and sizes per book */
-                .brigham { --c1: #6e1d28; --c2: #43101a; --w: 92px;  --h: 330px; }
-                .cannon1 { --c1: #1f4a3a; --c2: #11291f; --w: 84px;  --h: 305px; }
-                .cannon2 { --c1: #24533f; --c2: #132f24; --w: 84px;  --h: 305px; }
-                .pratt   { --c1: #1d3556; --c2: #0f1d33; --w: 100px; --h: 340px; --title-size: 16px; }
-                .truth   { --c1: #6b4a22; --c2: #3e2a12; --w: 88px;  --h: 295px; }
-                .penrose { --c1: #4a2c5a; --c2: #2a1735; --w: 90px;  --h: 325px; }
-                .unveiled{ --c1: #36424d; --c2: #1d252c; --w: 84px;  --h: 300px; }
-                .classics{ --c1: #5e5a1f; --c2: #34320f; --w: 92px;  --h: 335px; }
-                .progress{ --c1: #7a3f1d; --c2: #45220e; --w: 86px;  --h: 312px; }
-                .voice   { --c1: #8a2d2d; --c2: #511515; --w: 82px;  --h: 298px; }
-                .apostasy{ --c1: #1f4d52; --c2: #102b2e; --w: 96px;  --h: 338px; --title-size: 16px; }
-                .christ  { --c1: #1b2f5e; --c2: #0e1936; --w: 90px;  --h: 345px; }
-                .elias   { --c1: #5a2a4a; --c2: #321428; --w: 88px;  --h: 315px; }
-                .kimball { --c1: #3d4a22; --c2: #212912; --w: 94px;  --h: 328px; --title-size: 16px; }
-                .key     { --c1: #7d5a1e; --c2: #463110; --w: 84px;  --h: 302px; }
-                .story   { --c1: #5b2020; --c2: #321010; --w: 86px;  --h: 322px; }
-                .scientist{--c1: #2c4a6b; --c2: #162739; --w: 96px;  --h: 310px; --title-size: 16px; }
+                /* Sizes per book */
+                .brigham { --w: 92px;  --h: 330px; }
+                .cannon1 { --w: 84px;  --h: 305px; }
+                .cannon2 { --w: 84px;  --h: 305px; }
+                .pratt   { --w: 100px; --h: 340px; --title-size: 16px; }
+                .truth   { --w: 88px;  --h: 295px; }
+                .penrose { --w: 90px;  --h: 325px; }
+                .unveiled{ --w: 84px;  --h: 300px; }
+                .classics{ --w: 92px;  --h: 335px; }
+                .progress{ --w: 86px;  --h: 312px; }
+                .voice   { --w: 82px;  --h: 298px; }
+                .apostasy{ --w: 96px;  --h: 338px; --title-size: 16px; }
+                .christ  { --w: 90px;  --h: 345px; }
+                .elias   { --w: 88px;  --h: 315px; }
+                .kimball { --w: 94px;  --h: 328px; --title-size: 16px; }
+                .key     { --w: 84px;  --h: 302px; }
+                .story   { --w: 86px;  --h: 322px; }
+                .scientist{--w: 96px;  --h: 310px; --title-size: 16px; }
+
+                /* Colors per author: same author, same color */
+                .widtsoe  { --c1: #1f3a68; --c2: #0f1d36; }
+                .newquist { --c1: #1f4a3a; --c2: #11291f; }
+                .lundwall { --c1: #2a5d73; --c2: #143341; }
+                .merrill  { --c1: #6b4a22; --c2: #3e2a12; }
+                .penrose-a{ --c1: #4a2c5a; --c2: #2a1735; }
+                .ppratt   { --c1: #7a1f2b; --c2: #43101a; }
+                .nibley   { --c1: #5e5a1f; --c2: #34320f; }
+                .jfsmith  { --c1: #8a4219; --c2: #4d2309; }
+                .talmage  { --c1: #36424d; --c2: #1d252c; }
+                .whitney  { --c1: #7a2f5a; --c2: #431730; }
 
                 @media (prefers-reduced-motion: reduce) {
                     .spine { transition: none; }
@@ -148,7 +160,7 @@
         <h1>Book Collection</h1>
 
         <div class="shelf">
-            <a class="spine brigham" href="https://archive.org/details/discoursesofbrig028407mbp"
+            <a class="spine brigham widtsoe" href="https://archive.org/details/discoursesofbrig028407mbp"
                aria-label="Discourses of Brigham Young by John A. Widtsoe, on Internet Archive">
                 <span class="text">
                     <span class="title">Discourses of Brigham Young</span>
@@ -157,7 +169,7 @@
                 </span>
             </a>
 
-            <a class="spine cannon1" href="https://archive.org/details/gospeltruthdisco0000cann/mode/2up"
+            <a class="spine cannon1 newquist" href="https://archive.org/details/gospeltruthdisco0000cann/mode/2up"
                aria-label="Gospel Truth, Volume 1 by Jerreld L. Newquist, on Internet Archive">
                 <span class="text">
                     <span class="title">Gospel Truth, Vol. 1</span>
@@ -166,7 +178,7 @@
                 </span>
             </a>
 
-            <a class="spine cannon2" href="https://archive.org/details/gospeltruthdisco0002cann"
+            <a class="spine cannon2 newquist" href="https://archive.org/details/gospeltruthdisco0002cann"
                aria-label="Gospel Truth, Volume 2 by Jerreld L. Newquist, on Internet Archive">
                 <span class="text">
                     <span class="title">Gospel Truth, Vol. 2</span>
@@ -175,7 +187,7 @@
                 </span>
             </a>
 
-            <a class="spine pratt" href="https://archive.org/details/masterfuldiscour00prat/page/n5/mode/2up"
+            <a class="spine pratt lundwall" href="https://archive.org/details/masterfuldiscour00prat/page/n5/mode/2up"
                aria-label="Masterful Discourses and Writings of Orson Pratt by N. B. Lundwall, on Internet Archive">
                 <span class="text">
                     <span class="title">Masterful Discourses and Writings of Orson Pratt</span>
@@ -184,7 +196,7 @@
                 </span>
             </a>
 
-            <a class="spine truth" href="https://archive.org/details/truthseekermoemo0000drjo/page/n13/mode/2up"
+            <a class="spine truth merrill" href="https://archive.org/details/truthseekermoemo0000drjo/page/n13/mode/2up"
                aria-label="The Truth-Seeker and Mormonism by Joseph F. Merrill, on Internet Archive">
                 <span class="text">
                     <span class="title">The Truth-Seeker and Mormonism</span>
@@ -193,7 +205,7 @@
                 </span>
             </a>
 
-            <a class="spine penrose" href="https://archive.org/details/priesthoodpresid00penr/mode/1up"
+            <a class="spine penrose penrose-a" href="https://archive.org/details/priesthoodpresid00penr/mode/1up"
                aria-label="Priesthood and Presidency: Claims of the Josephite or Reorganized Church examined and compared with Reason and Revelation, by Charles W. Penrose, on Internet Archive">
                 <span class="text">
                     <span class="title">Priesthood and Presidency</span>
@@ -202,7 +214,7 @@
                 </span>
             </a>
 
-            <a class="spine unveiled" href="https://archive.org/details/MormonismUnveiled/mode/1up"
+            <a class="spine unveiled ppratt" href="https://archive.org/details/MormonismUnveiled/mode/1up"
                aria-label="Mormonism Unveiled by Parley P. Pratt, on Internet Archive">
                 <span class="text">
                     <span class="title">Mormonism Unveiled</span>
@@ -211,7 +223,7 @@
                 </span>
             </a>
 
-            <a class="spine classics" href="https://archive.org/details/bwb_Y0-DBY-351/mode/1up"
+            <a class="spine classics nibley" href="https://archive.org/details/bwb_Y0-DBY-351/mode/1up"
                aria-label="Three Mormon Classics by Preston Nibley, on Internet Archive">
                 <span class="text">
                     <span class="title">Three Mormon Classics</span>
@@ -220,7 +232,7 @@
                 </span>
             </a>
 
-            <a class="spine progress" href="https://archive.org/details/progressofman0000elde/mode/1up"
+            <a class="spine progress jfsmith" href="https://archive.org/details/progressofman0000elde/mode/1up"
                aria-label="The Progress of Man by Joseph Fielding Smith, on Internet Archive">
                 <span class="text">
                     <span class="title">The Progress of Man</span>
@@ -229,7 +241,7 @@
                 </span>
             </a>
 
-            <a class="spine voice" href="https://www.amazon.com/clp/B004TSA0WM?lv=shuf&amp;channelId=520"
+            <a class="spine voice ppratt" href="https://www.amazon.com/clp/B004TSA0WM?lv=shuf&amp;channelId=520"
                aria-label="A Voice of Warning by Parley P. Pratt, on Kindle">
                 <span class="text">
                     <span class="title">A Voice of Warning</span>
@@ -238,7 +250,7 @@
                 </span>
             </a>
 
-            <a class="spine apostasy" href="https://archive.org/details/greatapostasycon02talm/mode/1up"
+            <a class="spine apostasy talmage" href="https://archive.org/details/greatapostasycon02talm/mode/1up"
                aria-label="The Great Apostasy, Considered in the Light of Scriptural and Secular History, by James E. Talmage, on Internet Archive">
                 <span class="text">
                     <span class="title">The Great Apostasy</span>
@@ -247,7 +259,7 @@
                 </span>
             </a>
 
-            <a class="spine christ" href="https://www.churchofjesuschrist.org/study/manual/jesus-the-christ?lang=eng"
+            <a class="spine christ talmage" href="https://www.churchofjesuschrist.org/study/manual/jesus-the-christ?lang=eng"
                aria-label="Jesus the Christ by James E. Talmage, on ChurchOfJesusChrist.org">
                 <span class="text">
                     <span class="title">Jesus the Christ</span>
@@ -256,7 +268,7 @@
                 </span>
             </a>
 
-            <a class="spine elias" href="https://www.amazon.com/clp/B006FLC93Y?lv=shuf&amp;channelId=520"
+            <a class="spine elias whitney" href="https://www.amazon.com/clp/B006FLC93Y?lv=shuf&amp;channelId=520"
                aria-label="Elias: An Epic of the Ages by Orson F. Whitney, on Kindle">
                 <span class="text">
                     <span class="title">Elias: An Epic of the Ages</span>
@@ -265,7 +277,7 @@
                 </span>
             </a>
 
-            <a class="spine kimball" href="https://www.amazon.com/clp/B004TQUAXS?lv=shuf&amp;channelId=520"
+            <a class="spine kimball whitney" href="https://www.amazon.com/clp/B004TQUAXS?lv=shuf&amp;channelId=520"
                aria-label="Life of Heber C. Kimball by Orson F. Whitney, on Kindle">
                 <span class="text">
                     <span class="title">Life of Heber C. Kimball</span>
@@ -274,7 +286,7 @@
                 </span>
             </a>
 
-            <a class="spine key" href="https://www.amazon.com/clp/B004UJ1KFG?lv=shuf&amp;channelId=520"
+            <a class="spine key ppratt" href="https://www.amazon.com/clp/B004UJ1KFG?lv=shuf&amp;channelId=520"
                aria-label="Key to the Science of Theology by Parley P. Pratt, on Kindle">
                 <span class="text">
                     <span class="title">Key to the Science of Theology</span>
@@ -283,7 +295,7 @@
                 </span>
             </a>
 
-            <a class="spine story" href="https://www.amazon.com/clp/B004TP2RNA?lv=shuf&amp;channelId=520"
+            <a class="spine story talmage" href="https://www.amazon.com/clp/B004TP2RNA?lv=shuf&amp;channelId=520"
                aria-label="The Story of Mormonism by James E. Talmage, on Kindle">
                 <span class="text">
                     <span class="title">The Story of “Mormonism”</span>
@@ -292,7 +304,7 @@
                 </span>
             </a>
 
-            <a class="spine scientist" href="https://www.amazon.com/clp/B004UJH2XA?lv=shuf&amp;channelId=520"
+            <a class="spine scientist widtsoe" href="https://www.amazon.com/clp/B004UJH2XA?lv=shuf&amp;channelId=520"
                aria-label="Joseph Smith as a Scientist: A Contribution to Mormon Philosophy, by John A. Widtsoe, on Kindle">
                 <span class="text">
                     <span class="title">Joseph Smith as a Scientist</span>
