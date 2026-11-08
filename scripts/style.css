@@ -96,8 +96,8 @@ th, td {
     color: black;
 }
 .book {
-    background-color: #FFF8E7;
-    color: black;
+    background-color: #afda5f;
+    color: rgb(34, 115, 140);
 }
 .the-seer {
     background-color: cadetblue;
@@ -154,8 +154,15 @@ th, td {
 .chc a {
     color: midnightblue;
 }
+.misc{
+    background-color:#932c1b;
+    color:white;
+}
+.misc .sources a{
+    color:rgb(82, 163, 243);
+}
 .gc {
-    background-color: #F4F0E6;
+    background-color: #99eadd;
     color: #243447;
 }
 .gc a {
@@ -363,4 +370,109 @@ th, td {
     font-size: 16px;
     border: 1px solid whitesmoke;
     border-radius: 8px;
+}
+
+/* ---------- Prophet page layout ---------- */
+
+/* Three-column layout: teachings | biography | teachings */
+.page-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-areas: "left bio right";
+    gap: 25px;
+    align-items: start;
+    width: 95%;
+    margin: 40px auto;
+}
+.teachings-left { grid-area: left; }
+.teachings-right { grid-area: right; }
+.biography-column { grid-area: bio; }
+
+.teachings-left,
+.teachings-right {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* Biography box matches the white table cells in style.css */
+.biography-column {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    padding: 20px;
+}
+.biography-column h2 {
+    margin: 0 0 15px;
+}
+
+@media (max-width: 1000px) {
+    .page-layout {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        grid-template-areas:
+            "bio bio"
+            "left right";
+    }
+}
+@media (max-width: 700px) {
+    h1 { font-size: 40px; }
+    .page-layout {
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-areas:
+            "bio"
+            "left"
+            "right";
+    }
+    .filters {
+        flex-direction: column;
+        align-items: stretch;
+        width: 90%;
+    }
+}
+
+/* ===== View tabs: All / Biography / Teachings ===== */
+.view-tabs {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 25px auto 10px;
+}
+.view-tabs button {
+    font: inherit;
+    font-weight: bold;
+    padding: 8px 22px;
+    cursor: pointer;
+    background: transparent;
+    color: inherit;
+    border: 1px solid currentColor;
+}
+.view-tabs button:hover { opacity: 0.8; }
+.view-tabs button[aria-selected="true"] {
+    background: white;
+    color: black;
+    border-color: black;
+}
+
+/* Biography only: single centered column */
+.page-layout[data-view="bio"] {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: "bio";
+    max-width: 800px;
+}
+.page-layout[data-view="bio"] .teachings-left,
+.page-layout[data-view="bio"] .teachings-right { display: none; }
+
+/* Teachings only: two columns, no biography */
+.page-layout[data-view="teachings"] {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-areas: "left right";
+}
+.page-layout[data-view="teachings"] .biography-column { display: none; }
+
+@media (max-width: 700px) {
+    .page-layout[data-view="teachings"] {
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-areas: "left" "right";
+    }
 }
