@@ -120,6 +120,9 @@
                     opacity: .75;
                 }
 
+                .page-title { padding-top: 2.5rem; margin-bottom: 1rem; }
+                .page-title h1 { margin-bottom: 0; }
+                .page-title + .shelf-section { margin-top: 1.5rem; }
                 .shelf-section + .shelf-section { margin-top: 3.5rem; }
                 .shelf-section:last-child { padding-bottom: 3rem; }
                 .shelf.empty { min-height: 150px; align-items: center; padding-bottom: 1.5rem; }
@@ -244,241 +247,20 @@
             </style>
     </head>
     <body>
+        <header class="page-title">
+            <h1>Book Collection</h1>
+        </header>
+
         <section class="shelf-section">
-        <h1>Book Collection</h1>
+        <h2>Joseph Smith &amp; the Early Church</h2>
 
         <div class="shelf">
-            <a class="spine brigham widtsoe" href="https://archive.org/details/discoursesofbrig028407mbp"
-               aria-label="Discourses of Brigham Young by John A. Widtsoe, on Internet Archive">
+            <a class="spine teachingsjs jsmith" href="https://archive.org/details/teachingsofproph00smit"
+               aria-label="Teachings of the Prophet Joseph Smith by Joseph Smith Jr., on Internet Archive">
                 <span class="text">
-                    <span class="title">Discourses of Brigham Young</span>
-                    <span class="author">John A. Widtsoe</span>
+                    <span class="title">Teachings of the Prophet Joseph Smith</span>
+                    <span class="author">Joseph Smith Jr.</span>
                     <span class="source">Internet Archive</span>
-                </span>
-            </a>
-
-            <a class="spine cannon1 newquist" href="https://archive.org/details/gospeltruthdisco0000cann/mode/2up"
-               aria-label="Gospel Truth, Volume 1 by Jerreld L. Newquist, on Internet Archive">
-                <span class="text">
-                    <span class="title">Gospel Truth, Vol. 1</span>
-                    <span class="author">Jerreld L. Newquist</span>
-                    <span class="source">Internet Archive</span>
-                </span>
-            </a>
-
-            <a class="spine cannon2 newquist" href="https://archive.org/details/gospeltruthdisco0002cann"
-               aria-label="Gospel Truth, Volume 2 by Jerreld L. Newquist, on Internet Archive">
-                <span class="text">
-                    <span class="title">Gospel Truth, Vol. 2</span>
-                    <span class="author">Jerreld L. Newquist</span>
-                    <span class="source">Internet Archive</span>
-                </span>
-            </a>
-
-            <a class="spine pratt lundwall" href="https://archive.org/details/masterfuldiscour00prat/page/n5/mode/2up"
-               aria-label="Masterful Discourses and Writings of Orson Pratt by N. B. Lundwall, on Internet Archive">
-                <span class="text">
-                    <span class="title">Masterful Discourses and Writings of Orson Pratt</span>
-                    <span class="author">N. B. Lundwall</span>
-                    <span class="source">Internet Archive</span>
-                </span>
-            </a>
-
-            <a class="spine truth merrill" href="https://archive.org/details/truthseekermoemo0000drjo/page/n13/mode/2up"
-               aria-label="The Truth-Seeker and Mormonism by Joseph F. Merrill, on Internet Archive">
-                <span class="text">
-                    <span class="title">The Truth-Seeker and Mormonism</span>
-                    <span class="author">Joseph F. Merrill</span>
-                    <span class="source">Internet Archive</span>
-                </span>
-            </a>
-
-            <a class="spine penrose penrose-a" href="https://archive.org/details/priesthoodpresid00penr/mode/1up"
-               aria-label="Priesthood and Presidency: Claims of the Josephite or Reorganized Church examined and compared with Reason and Revelation, by Charles W. Penrose, on Internet Archive">
-                <span class="text">
-                    <span class="title">Priesthood and Presidency</span>
-                    <span class="author">Charles W. Penrose</span>
-                    <span class="source">Internet Archive</span>
-                </span>
-            </a>
-
-            <a class="spine unveiled ppratt" href="https://archive.org/details/MormonismUnveiled/mode/1up"
-               aria-label="Mormonism Unveiled by Parley P. Pratt, on Internet Archive">
-                <span class="text">
-                    <span class="title">Mormonism Unveiled</span>
-                    <span class="author">Parley P. Pratt</span>
-                    <span class="source">Internet Archive</span>
-                </span>
-            </a>
-
-            <a class="spine classics nibley" href="https://archive.org/details/bwb_Y0-DBY-351/mode/1up"
-               aria-label="Three Mormon Classics by Preston Nibley, on Internet Archive">
-                <span class="text">
-                    <span class="title">Three Mormon Classics</span>
-                    <span class="author">Preston Nibley</span>
-                    <span class="source">Internet Archive</span>
-                </span>
-            </a>
-
-            <a class="spine progress jfsmith" href="https://archive.org/details/progressofman0000elde/mode/1up"
-               aria-label="The Progress of Man by Joseph Fielding Smith, on Internet Archive">
-                <span class="text">
-                    <span class="title">The Progress of Man</span>
-                    <span class="author">Joseph Fielding Smith</span>
-                    <span class="source">Internet Archive</span>
-                </span>
-            </a>
-
-            <a class="spine voice ppratt" href="https://www.amazon.com/clp/B004TSA0WM?lv=shuf&amp;channelId=520"
-               aria-label="A Voice of Warning by Parley P. Pratt, on Kindle">
-                <span class="text">
-                    <span class="title">A Voice of Warning</span>
-                    <span class="author">Parley P. Pratt</span>
-                    <span class="source">Kindle</span>
-                </span>
-            </a>
-
-            <a class="spine apostasy talmage" href="https://archive.org/details/greatapostasycon02talm/mode/1up"
-               aria-label="The Great Apostasy, Considered in the Light of Scriptural and Secular History, by James E. Talmage, on Internet Archive">
-                <span class="text">
-                    <span class="title">The Great Apostasy</span>
-                    <span class="author">James E. Talmage</span>
-                    <span class="source">Internet Archive</span>
-                </span>
-            </a>
-
-            <a class="spine christ talmage" href="https://www.churchofjesuschrist.org/study/manual/jesus-the-christ?lang=eng"
-               aria-label="Jesus the Christ by James E. Talmage, on ChurchOfJesusChrist.org">
-                <span class="text">
-                    <span class="title">Jesus the Christ</span>
-                    <span class="author">James E. Talmage</span>
-                    <span class="source">ChurchOfJesusChrist.org</span>
-                </span>
-            </a>
-
-            <a class="spine elias whitney" href="https://www.amazon.com/clp/B006FLC93Y?lv=shuf&amp;channelId=520"
-               aria-label="Elias: An Epic of the Ages by Orson F. Whitney, on Kindle">
-                <span class="text">
-                    <span class="title">Elias: An Epic of the Ages</span>
-                    <span class="author">Orson F. Whitney</span>
-                    <span class="source">Kindle</span>
-                </span>
-            </a>
-
-            <a class="spine kimball whitney" href="https://www.amazon.com/clp/B004TQUAXS?lv=shuf&amp;channelId=520"
-               aria-label="Life of Heber C. Kimball by Orson F. Whitney, on Kindle">
-                <span class="text">
-                    <span class="title">Life of Heber C. Kimball</span>
-                    <span class="author">Orson F. Whitney</span>
-                    <span class="source">Kindle</span>
-                </span>
-            </a>
-
-            <a class="spine key ppratt" href="https://www.amazon.com/clp/B004UJ1KFG?lv=shuf&amp;channelId=520"
-               aria-label="Key to the Science of Theology by Parley P. Pratt, on Kindle">
-                <span class="text">
-                    <span class="title">Key to the Science of Theology</span>
-                    <span class="author">Parley P. Pratt</span>
-                    <span class="source">Kindle</span>
-                </span>
-            </a>
-
-            <a class="spine story talmage" href="https://www.amazon.com/clp/B004TP2RNA?lv=shuf&amp;channelId=520"
-               aria-label="The Story of Mormonism by James E. Talmage, on Kindle">
-                <span class="text">
-                    <span class="title">The Story of “Mormonism”</span>
-                    <span class="author">James E. Talmage</span>
-                    <span class="source">Kindle</span>
-                </span>
-            </a>
-
-            <a class="spine scientist widtsoe" href="https://www.amazon.com/clp/B004UJH2XA?lv=shuf&amp;channelId=520"
-               aria-label="Joseph Smith as a Scientist: A Contribution to Mormon Philosophy, by John A. Widtsoe, on Kindle">
-                <span class="text">
-                    <span class="title">Joseph Smith as a Scientist</span>
-                    <span class="author">John A. Widtsoe</span>
-                    <span class="source">Kindle</span>
-                </span>
-            </a>
-
-            <a class="spine articles talmage" href="https://www.gutenberg.org/ebooks/42238"
-               aria-label="Articles of Faith by James E. Talmage, on Project Gutenberg">
-                <span class="text">
-                    <span class="title">Articles of Faith</span>
-                    <span class="author">James E. Talmage</span>
-                    <span class="source">Project Gutenberg</span>
-                </span>
-            </a>
-
-            <a class="spine themes whitney" href="https://www.gutenberg.org/ebooks/50536"
-               aria-label="Gospel Themes by Orson F. Whitney, on Project Gutenberg">
-                <span class="text">
-                    <span class="title">Gospel Themes</span>
-                    <span class="author">Orson F. Whitney</span>
-                    <span class="source">Project Gutenberg</span>
-                </span>
-            </a>
-
-            <a class="spine rational widtsoe" href="https://www.gutenberg.org/ebooks/35562"
-               aria-label="A Rational Theology by John A. Widtsoe, on Project Gutenberg">
-                <span class="text">
-                    <span class="title">A Rational Theology</span>
-                    <span class="author">John A. Widtsoe</span>
-                    <span class="source">Project Gutenberg</span>
-                </span>
-            </a>
-
-            <a class="spine govgod taylor" href="https://www.gutenberg.org/ebooks/44941"
-               aria-label="The Government of God by John Taylor, on Project Gutenberg">
-                <span class="text">
-                    <span class="title">The Government of God</span>
-                    <span class="author">John Taylor</span>
-                    <span class="source">Project Gutenberg</span>
-                </span>
-            </a>
-
-            <a class="spine mediation taylor" href="https://www.gutenberg.org/ebooks/36327"
-               aria-label="Mediation and Atonement by John Taylor, on Project Gutenberg">
-                <span class="text">
-                    <span class="title">Mediation and Atonement</span>
-                    <span class="author">John Taylor</span>
-                    <span class="source">Project Gutenberg</span>
-                </span>
-            </a>
-
-            <a class="spine rays penrose-a" href="https://www.gutenberg.org/ebooks/46974"
-               aria-label="Rays of Living Light by Charles W. Penrose, on Project Gutenberg">
-                <span class="text">
-                    <span class="title">Rays of Living Light</span>
-                    <span class="author">Charles W. Penrose</span>
-                    <span class="source">Project Gutenberg</span>
-                </span>
-            </a>
-
-            <a class="spine cowley cowley" href="https://www.gutenberg.org/ebooks/47336"
-               aria-label="Cowley’s Talks on Doctrine by Matthias F. Cowley, on Project Gutenberg">
-                <span class="text">
-                    <span class="title">Cowley’s Talks on Doctrine</span>
-                    <span class="author">Matthias F. Cowley</span>
-                    <span class="source">Project Gutenberg</span>
-                </span>
-            </a>
-
-            <a class="spine blood jfsmith" href="https://www.gutenberg.org/ebooks/50535"
-               aria-label="Blood Atonement and the Origin of Plural Marriage by Joseph Fielding Smith &amp; R. C. Evans, on Project Gutenberg">
-                <span class="text">
-                    <span class="title">Blood Atonement and the Origin of Plural Marriage</span>
-                    <span class="author">Joseph Fielding Smith &amp; R. C. Evans</span>
-                    <span class="source">Project Gutenberg</span>
-                </span>
-            </a>
-
-            <a class="spine millennium ppratt" href="https://www.gutenberg.org/ebooks/60077"
-               aria-label="The Millennium, and Other Poems by Parley P. Pratt, on Project Gutenberg">
-                <span class="text">
-                    <span class="title">The Millennium, and Other Poems</span>
-                    <span class="author">Parley P. Pratt</span>
-                    <span class="source">Project Gutenberg</span>
                 </span>
             </a>
 
@@ -500,6 +282,204 @@
                 </span>
             </a>
 
+            <a class="spine jsmith" style="--w:87px; --h:296px; --title-size:17px;" href="https://www.gutenberg.org/ebooks/17"
+               aria-label="The Book of Mormon by Joseph Smith Jr., on Project Gutenberg">
+                <span class="text">
+                    <span class="title">The Book of Mormon</span>
+                    <span class="author">Joseph Smith Jr.</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+
+            <a class="spine jsmith" style="--w:88px; --h:322px; --title-size:15px;" href="https://www.gutenberg.org/ebooks/47091"
+               aria-label="History of the Church, Vol. 1 by Joseph Smith Jr., on Project Gutenberg">
+                <span class="text">
+                    <span class="title">History of the Church, Vol. 1</span>
+                    <span class="author">Joseph Smith Jr.</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+
+            <a class="spine jsmith" style="--w:86px; --h:347px; --title-size:15px;" href="https://www.gutenberg.org/ebooks/47192"
+               aria-label="History of the Church, Vol. 2 by Joseph Smith Jr., on Project Gutenberg">
+                <span class="text">
+                    <span class="title">History of the Church, Vol. 2</span>
+                    <span class="author">Joseph Smith Jr.</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+
+            <a class="spine jsmith" style="--w:95px; --h:339px; --title-size:15px;" href="https://www.gutenberg.org/ebooks/47707"
+               aria-label="History of the Church, Vol. 3 by Joseph Smith Jr., on Project Gutenberg">
+                <span class="text">
+                    <span class="title">History of the Church, Vol. 3</span>
+                    <span class="author">Joseph Smith Jr.</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+
+            <a class="spine jsmith" style="--w:96px; --h:305px; --title-size:15px;" href="https://www.gutenberg.org/ebooks/60708"
+               aria-label="History of the Church, Vol. 4 by Joseph Smith Jr., on Project Gutenberg">
+                <span class="text">
+                    <span class="title">History of the Church, Vol. 4</span>
+                    <span class="author">Joseph Smith Jr.</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+
+            <a class="spine jsmith" style="--w:98px; --h:306px; --title-size:15px;" href="https://www.gutenberg.org/ebooks/60736"
+               aria-label="History of the Church, Vol. 5 by Joseph Smith Jr., on Project Gutenberg">
+                <span class="text">
+                    <span class="title">History of the Church, Vol. 5</span>
+                    <span class="author">Joseph Smith Jr.</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+
+            <a class="spine jsmith" style="--w:83px; --h:329px; --title-size:15px;" href="https://www.gutenberg.org/ebooks/60758"
+               aria-label="History of the Church, Vol. 6 by Joseph Smith Jr., on Project Gutenberg">
+                <span class="text">
+                    <span class="title">History of the Church, Vol. 6</span>
+                    <span class="author">Joseph Smith Jr.</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+
+            <a class="spine" style="--w:94px; --h:327px; --title-size:13px; --c1:#5a3a3a; --c2:#301d1d;" href="https://www.gutenberg.org/ebooks/45619"
+               aria-label="History of the Prophet Joseph, by His Mother by Lucy Smith, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">History of the Prophet Joseph, by His Mother</span>
+                    <span class="author">Lucy Smith</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+
+            <a class="spine" style="--w:99px; --h:325px; --title-size:15px; --c1:#3a4a5e; --c2:#1d2733;" href="https://www.gutenberg.org/ebooks/54337"
+               aria-label="Reminiscences of Joseph, the Prophet by Edward Stevenson, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">Reminiscences of Joseph, the Prophet</span>
+                    <span class="author">Edward Stevenson</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+
+            <a class="spine" style="--w:82px; --h:337px; --title-size:17px; --c1:#2f4a2f; --c2:#182618;" href="https://www.gutenberg.org/ebooks/45051"
+               aria-label="William Clayton’s Journal by William Clayton, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">William Clayton’s Journal</span>
+                    <span class="author">William Clayton</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+
+            <a class="spine jsmith" style="--w:97px; --h:322px; --title-size:13px;" href="https://www.gutenberg.org/ebooks/45006"
+               aria-label="General Smith’s Views of the Powers and Policy of the Government by Joseph Smith Jr., on Project Gutenberg">
+                <span class="text">
+                    <span class="title">General Smith’s Views of the Powers and Policy of the Government</span>
+                    <span class="author">Joseph Smith Jr.</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+        </div>
+        </section>
+
+        <section class="shelf-section">
+        <h2>Brigham Young &amp; Heber C. Kimball</h2>
+
+        <div class="shelf">
+            <a class="spine brigham widtsoe" href="https://archive.org/details/discoursesofbrig028407mbp"
+               aria-label="Discourses of Brigham Young by John A. Widtsoe, on Internet Archive">
+                <span class="text">
+                    <span class="title">Discourses of Brigham Young</span>
+                    <span class="author">John A. Widtsoe</span>
+                    <span class="source">Internet Archive</span>
+                </span>
+            </a>
+
+            <a class="spine kimball whitney" href="https://www.amazon.com/clp/B004TQUAXS?lv=shuf&amp;channelId=520"
+               aria-label="Life of Heber C. Kimball by Orson F. Whitney, on Kindle">
+                <span class="text">
+                    <span class="title">Life of Heber C. Kimball</span>
+                    <span class="author">Orson F. Whitney</span>
+                    <span class="source">Kindle</span>
+                </span>
+            </a>
+
+            <a class="spine" style="--w:89px; --h:318px; --title-size:15px; --c1:#5a3a5a; --c2:#301d30;" href="https://www.gutenberg.org/ebooks/47519"
+               aria-label="President Heber C. Kimball’s Journal by Heber C. Kimball, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">President Heber C. Kimball’s Journal</span>
+                    <span class="author">Heber C. Kimball</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+        </div>
+        </section>
+
+        <section class="shelf-section">
+        <h2>Parley P. Pratt</h2>
+
+        <div class="shelf">
+            <a class="spine voice ppratt" href="https://www.amazon.com/clp/B004TSA0WM?lv=shuf&amp;channelId=520"
+               aria-label="A Voice of Warning by Parley P. Pratt, on Kindle">
+                <span class="text">
+                    <span class="title">A Voice of Warning</span>
+                    <span class="author">Parley P. Pratt</span>
+                    <span class="source">Kindle</span>
+                </span>
+            </a>
+
+            <a class="spine key ppratt" href="https://www.amazon.com/clp/B004UJ1KFG?lv=shuf&amp;channelId=520"
+               aria-label="Key to the Science of Theology by Parley P. Pratt, on Kindle">
+                <span class="text">
+                    <span class="title">Key to the Science of Theology</span>
+                    <span class="author">Parley P. Pratt</span>
+                    <span class="source">Kindle</span>
+                </span>
+            </a>
+
+            <a class="spine unveiled ppratt" href="https://archive.org/details/MormonismUnveiled/mode/1up"
+               aria-label="Mormonism Unveiled by Parley P. Pratt, on Internet Archive">
+                <span class="text">
+                    <span class="title">Mormonism Unveiled</span>
+                    <span class="author">Parley P. Pratt</span>
+                    <span class="source">Internet Archive</span>
+                </span>
+            </a>
+
+            <a class="spine millennium ppratt" href="https://www.gutenberg.org/ebooks/60077"
+               aria-label="The Millennium, and Other Poems by Parley P. Pratt, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">The Millennium, and Other Poems</span>
+                    <span class="author">Parley P. Pratt</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+
+            <a class="spine ppratt" style="--w:87px; --h:323px; --title-size:15px;" href="https://www.gutenberg.org/ebooks/44896"
+               aria-label="The Autobiography of Parley Parker Pratt by Parley P. Pratt, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">The Autobiography of Parley Parker Pratt</span>
+                    <span class="author">Parley P. Pratt</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+        </div>
+        </section>
+
+        <section class="shelf-section">
+        <h2>Orson Pratt</h2>
+
+        <div class="shelf">
+            <a class="spine pratt lundwall" href="https://archive.org/details/masterfuldiscour00prat/page/n5/mode/2up"
+               aria-label="Masterful Discourses and Writings of Orson Pratt by N. B. Lundwall, on Internet Archive">
+                <span class="text">
+                    <span class="title">Masterful Discourses and Writings of Orson Pratt</span>
+                    <span class="author">N. B. Lundwall</span>
+                    <span class="source">Internet Archive</span>
+                </span>
+            </a>
+
             <a class="spine polygamy ppratt" href="https://www.gutenberg.org/ebooks/51140"
                aria-label="The Bible and Polygamy by Orson Pratt et al., on Project Gutenberg">
                 <span class="text">
@@ -509,6 +489,850 @@
                 </span>
             </a>
 
+            <a class="spine" style="--w:84px; --h:330px; --title-size:15px; --c1:#2f4a2f; --c2:#182618;" href="https://www.gutenberg.org/ebooks/45005"
+               aria-label="Absurdities of Immaterialism by Orson Pratt, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">Absurdities of Immaterialism</span>
+                    <span class="author">Orson Pratt</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+
+            <a class="spine" style="--w:92px; --h:316px; --title-size:13px; --c1:#2f4a2f; --c2:#182618;" href="https://www.gutenberg.org/ebooks/44907"
+               aria-label="An Interesting Account of Several Remarkable Visions by Orson Pratt, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">An Interesting Account of Several Remarkable Visions</span>
+                    <span class="author">Orson Pratt</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+
+            <a class="spine" style="--w:95px; --h:329px; --title-size:17px; --c1:#2f4a2f; --c2:#182618;" href="https://www.gutenberg.org/ebooks/46244"
+               aria-label="The Kingdom of God, Part 1 by Orson Pratt, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">The Kingdom of God, Part 1</span>
+                    <span class="author">Orson Pratt</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+
+            <a class="spine" style="--w:93px; --h:305px; --title-size:13px; --c1:#2f4a2f; --c2:#182618;" href="https://www.gutenberg.org/ebooks/46243"
+               aria-label="Divine Authority: Was Joseph Smith Sent of God? by Orson Pratt, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">Divine Authority: Was Joseph Smith Sent of God?</span>
+                    <span class="author">Orson Pratt</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+        </div>
+        </section>
+
+        <section class="shelf-section">
+        <h2>John Taylor</h2>
+
+        <div class="shelf">
+            <a class="spine govgod taylor" href="https://www.gutenberg.org/ebooks/44941"
+               aria-label="The Government of God by John Taylor, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">The Government of God</span>
+                    <span class="author">John Taylor</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+
+            <a class="spine mediation taylor" href="https://www.gutenberg.org/ebooks/36327"
+               aria-label="Mediation and Atonement by John Taylor, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">Mediation and Atonement</span>
+                    <span class="author">John Taylor</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+
+            <a class="spine threenights taylor" href="https://archive.org/details/threenightspubli00tayl"
+               aria-label="Three Nights’ Public Discussion by John Taylor, on Internet Archive">
+                <span class="text">
+                    <span class="title">Three Nights’ Public Discussion</span>
+                    <span class="author">John Taylor</span>
+                    <span class="source">Internet Archive</span>
+                </span>
+            </a>
+
+            <a class="spine threenights taylor" href="https://archive.org/details/gospelkingdomsel0000tayl/page/n9/mode/2up"
+               aria-label="Three Nights’ Public Discussion by John Taylor, on Internet Archive">
+                <span class="text">
+                    <span class="title">The Gospel Kingdom</span>
+                    <span class="author">John Taylor</span>
+                    <span class="source">Internet Archive</span>
+                </span>
+            </a>
+            
+
+            <a class="spine itemspriest taylor" href="https://archive.org/details/itemsonpriesth1882tayl"
+               aria-label="Items on the Priesthood by John Taylor, on Internet Archive">
+                <span class="text">
+                    <span class="title">Items on the Priesthood</span>
+                    <span class="author">John Taylor</span>
+                    <span class="source">Internet Archive</span>
+                </span>
+            </a>
+
+            <a class="spine" style="--w:90px; --h:342px; --title-size:17px; --c1:#4e4a2a; --c2:#292715;" href="https://www.gutenberg.org/ebooks/45303"
+               aria-label="The Life of John Taylor by B. H. Roberts, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">The Life of John Taylor</span>
+                    <span class="author">B. H. Roberts</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+        </div>
+        </section>
+
+        <section class="shelf-section">
+        <h2>Wilford Woodruff &amp; Lorenzo Snow</h2>
+
+        <div class="shelf">
+            <a class="spine leaves woodruff" href="https://www.gutenberg.org/ebooks/46028"
+               aria-label="Leaves from My Journal by Wilford Woodruff, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">Leaves from My Journal</span>
+                    <span class="author">Wilford Woodruff</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+
+            <a class="spine wwlife cowley" href="https://archive.org/details/wilfordwoodrufff00cowl"
+               aria-label="Wilford Woodruff: History of His Life and Labors by Matthias F. Cowley, on Internet Archive">
+                <span class="text">
+                    <span class="title">Wilford Woodruff: History of His Life and Labors</span>
+                    <span class="author">Matthias F. Cowley</span>
+                    <span class="source">Internet Archive</span>
+                </span>
+            </a>
+
+            <a class="spine woodruff" style="--w:93px; --h:302px; --title-size:13px;" href="https://www.gutenberg.org/ebooks/47703"
+               aria-label="Wilford Woodruff, Fourth President of the Church by Wilford Woodruff, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">Wilford Woodruff, Fourth President of the Church</span>
+                    <span class="author">Wilford Woodruff</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+
+            <a class="spine snowteach snow" href="https://archive.org/details/teachingsofloren00snow"
+               aria-label="Teachings of Lorenzo Snow by Lorenzo Snow, on Internet Archive">
+                <span class="text">
+                    <span class="title">Teachings of Lorenzo Snow</span>
+                    <span class="author">Lorenzo Snow</span>
+                    <span class="source">Internet Archive</span>
+                </span>
+            </a>
+
+            <a class="spine snow" style="--w:83px; --h:310px; --title-size:13px;" href="https://www.gutenberg.org/ebooks/47708"
+               aria-label="Biography and Family Record of Lorenzo Snow by Eliza R. Snow, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">Biography and Family Record of Lorenzo Snow</span>
+                    <span class="author">Eliza R. Snow</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+        </div>
+        </section>
+
+        <section class="shelf-section">
+        <h2>George Q. Cannon</h2>
+
+        <div class="shelf">
+            <a class="spine cannon1 newquist" href="https://archive.org/details/gospeltruthdisco0000cann/mode/2up"
+               aria-label="Gospel Truth, Volume 1 by Jerreld L. Newquist, on Internet Archive">
+                <span class="text">
+                    <span class="title">Gospel Truth, Vol. 1</span>
+                    <span class="author">Jerreld L. Newquist</span>
+                    <span class="source">Internet Archive</span>
+                </span>
+            </a>
+
+            <a class="spine cannon2 newquist" href="https://archive.org/details/gospeltruthdisco0002cann"
+               aria-label="Gospel Truth, Volume 2 by Jerreld L. Newquist, on Internet Archive">
+                <span class="text">
+                    <span class="title">Gospel Truth, Vol. 2</span>
+                    <span class="author">Jerreld L. Newquist</span>
+                    <span class="source">Internet Archive</span>
+                </span>
+            </a>
+
+            <a class="spine" style="--w:94px; --h:339px; --title-size:15px; --c1:#2d4a4a; --c2:#162626;" href="https://www.gutenberg.org/ebooks/59970"
+               aria-label="The Life of Joseph Smith, the Prophet by George Q. Cannon, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">The Life of Joseph Smith, the Prophet</span>
+                    <span class="author">George Q. Cannon</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+
+            <a class="spine" style="--w:90px; --h:339px; --title-size:15px; --c1:#2d4a4a; --c2:#162626;" href="https://www.gutenberg.org/ebooks/49382"
+               aria-label="The Life of Nephi, the Son of Lehi by George Q. Cannon, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">The Life of Nephi, the Son of Lehi</span>
+                    <span class="author">George Q. Cannon</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+
+            <a class="spine" style="--w:83px; --h:329px; --title-size:15px; --c1:#2d4a4a; --c2:#162626;" href="https://www.gutenberg.org/ebooks/51095"
+               aria-label="Book of Mormon Stories, No. 1 by George Q. Cannon, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">Book of Mormon Stories, No. 1</span>
+                    <span class="author">George Q. Cannon</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+
+            <a class="spine" style="--w:99px; --h:322px; --title-size:17px; --c1:#2d4a4a; --c2:#162626;" href="https://www.gutenberg.org/ebooks/56698"
+               aria-label="The Latter-Day Prophet by George Q. Cannon, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">The Latter-Day Prophet</span>
+                    <span class="author">George Q. Cannon</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+
+            <a class="spine" style="--w:85px; --h:328px; --title-size:17px; --c1:#2d4a4a; --c2:#162626;" href="https://www.gutenberg.org/ebooks/45049"
+               aria-label="My First Mission by George Q. Cannon, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">My First Mission</span>
+                    <span class="author">George Q. Cannon</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+        </div>
+        </section>
+
+        <section class="shelf-section">
+        <h2>Joseph F. Smith &amp; Heber J. Grant</h2>
+
+        <div class="shelf">
+            <a class="spine gdoctrine jfsmithsr" href="https://www.gutenberg.org/ebooks/47109"
+               aria-label="Gospel Doctrine by Joseph F. Smith, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">Gospel Doctrine</span>
+                    <span class="author">Joseph F. Smith</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+
+            <a class="spine lifejfs jfsmith" href="https://babel.hathitrust.org/cgi/pt?id=inu.30000084063720&amp;seq=11"
+               aria-label="Life of Joseph F. Smith by Joseph Fielding Smith, on HathiTrust">
+                <span class="text">
+                    <span class="title">Life of Joseph F. Smith</span>
+                    <span class="author">Joseph Fielding Smith</span>
+                    <span class="source">HathiTrust</span>
+                </span>
+            </a>
+
+            <a class="spine gstandards grant" href="https://archive.org/details/gospelstandards0000hebe"
+               aria-label="Gospel Standards by Heber J. Grant, on Internet Archive">
+                <span class="text">
+                    <span class="title">Gospel Standards</span>
+                    <span class="author">Heber J. Grant</span>
+                    <span class="source">Internet Archive</span>
+                </span>
+            </a>
+        </div>
+        </section>
+
+        <section class="shelf-section">
+        <h2>Charles W. Penrose</h2>
+
+        <div class="shelf">
+            <a class="spine rays penrose-a" href="https://www.gutenberg.org/ebooks/46974"
+               aria-label="Rays of Living Light by Charles W. Penrose, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">Rays of Living Light</span>
+                    <span class="author">Charles W. Penrose</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+
+            <a class="spine penrose-a" style="--w:86px; --h:318px; --title-size:15px;" href="https://archive.org/details/mormondoctrinepl00penr"
+               aria-label="Mormon Doctrine Plain and Simple by Charles W. Penrose, on Internet Archive">
+                <span class="text">
+                    <span class="title">Mormon Doctrine Plain and Simple</span>
+                    <span class="author">Charles W. Penrose</span>
+                    <span class="source">Internet Archive</span>
+                </span>
+            </a>
+
+            <a class="spine penrose penrose-a" href="https://archive.org/details/priesthoodpresid00penr/mode/1up"
+               aria-label="Priesthood and Presidency: Claims of the Josephite or Reorganized Church examined and compared with Reason and Revelation, by Charles W. Penrose, on Internet Archive">
+                <span class="text">
+                    <span class="title">Priesthood and Presidency</span>
+                    <span class="author">Charles W. Penrose</span>
+                    <span class="source">Internet Archive</span>
+                </span>
+            </a>
+
+            <a class="spine penrose-a" style="--w:88px; --h:333px; --title-size:13px;" href="https://archive.org/details/bloodatonementas00penr"
+               aria-label="Blood Atonement as Taught by Leading Elders by Charles W. Penrose, on Internet Archive">
+                <span class="text">
+                    <span class="title">Blood Atonement as Taught by Leading Elders</span>
+                    <span class="author">Charles W. Penrose</span>
+                    <span class="source">Internet Archive</span>
+                </span>
+            </a>
+
+            <a class="spine penrose-a" style="--w:96px; --h:307px; --title-size:13px;" href="https://archive.org/details/mountainmeadowsm1899penr"
+               aria-label="The Mountain Meadows Massacre: Who Were Guilty of the Crime? by Charles W. Penrose, on Internet Archive">
+                <span class="text">
+                    <span class="title">The Mountain Meadows Massacre: Who Were Guilty of the Crime?</span>
+                    <span class="author">Charles W. Penrose</span>
+                    <span class="source">Internet Archive</span>
+                </span>
+            </a>
+
+            <a class="spine penrose-a" style="--w:91px; --h:320px; --title-size:17px;" href="https://babel.hathitrust.org/cgi/pt?id=njp.32101074866870&amp;seq=3"
+               aria-label="What the Mormons Believe by Charles W. Penrose, on HathiTrust">
+                <span class="text">
+                    <span class="title">What the Mormons Believe</span>
+                    <span class="author">Charles W. Penrose</span>
+                    <span class="source">HathiTrust</span>
+                </span>
+            </a>
+        </div>
+        </section>
+
+        <section class="shelf-section">
+        <h2>James E. Talmage</h2>
+
+        <div class="shelf">
+            <a class="spine christ talmage" href="https://www.churchofjesuschrist.org/study/manual/jesus-the-christ?lang=eng"
+               aria-label="Jesus the Christ by James E. Talmage, on ChurchOfJesusChrist.org">
+                <span class="text">
+                    <span class="title">Jesus the Christ</span>
+                    <span class="author">James E. Talmage</span>
+                    <span class="source">ChurchOfJesusChrist.org</span>
+                </span>
+            </a>
+
+            <a class="spine apostasy talmage" href="https://archive.org/details/greatapostasycon02talm/mode/1up"
+               aria-label="The Great Apostasy, Considered in the Light of Scriptural and Secular History, by James E. Talmage, on Internet Archive">
+                <span class="text">
+                    <span class="title">The Great Apostasy</span>
+                    <span class="author">James E. Talmage</span>
+                    <span class="source">Internet Archive</span>
+                </span>
+            </a>
+
+            <a class="spine articles talmage" href="https://www.gutenberg.org/ebooks/42238"
+               aria-label="Articles of Faith by James E. Talmage, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">Articles of Faith</span>
+                    <span class="author">James E. Talmage</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+
+            <a class="spine talmage" style="--w:84px; --h:335px; --title-size:17px;" href="https://www.gutenberg.org/ebooks/45149"
+               aria-label="The House of the Lord by James E. Talmage, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">The House of the Lord</span>
+                    <span class="author">James E. Talmage</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+
+            <a class="spine talmage" style="--w:90px; --h:311px; --title-size:17px;" href="https://www.gutenberg.org/ebooks/47182"
+               aria-label="The Vitality of Mormonism by James E. Talmage, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">The Vitality of Mormonism</span>
+                    <span class="author">James E. Talmage</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+
+            <a class="spine story talmage" href="https://www.amazon.com/clp/B004TP2RNA?lv=shuf&amp;channelId=520"
+               aria-label="The Story of Mormonism by James E. Talmage, on Kindle">
+                <span class="text">
+                    <span class="title">The Story of “Mormonism”</span>
+                    <span class="author">James E. Talmage</span>
+                    <span class="source">Kindle</span>
+                </span>
+            </a>
+
+            <a class="spine talmage" style="--w:90px; --h:307px; --title-size:15px;" href="https://www.gutenberg.org/ebooks/46099"
+               aria-label="The Vitality of “Mormonism”: An Address by James E. Talmage, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">The Vitality of “Mormonism”: An Address</span>
+                    <span class="author">James E. Talmage</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+        </div>
+        </section>
+
+        <section class="shelf-section">
+        <h2>Orson F. Whitney</h2>
+
+        <div class="shelf">
+            <a class="spine elias whitney" href="https://www.amazon.com/clp/B006FLC93Y?lv=shuf&amp;channelId=520"
+               aria-label="Elias: An Epic of the Ages by Orson F. Whitney, on Kindle">
+                <span class="text">
+                    <span class="title">Elias: An Epic of the Ages</span>
+                    <span class="author">Orson F. Whitney</span>
+                    <span class="source">Kindle</span>
+                </span>
+            </a>
+
+            <a class="spine themes whitney" href="https://www.gutenberg.org/ebooks/50536"
+               aria-label="Gospel Themes by Orson F. Whitney, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">Gospel Themes</span>
+                    <span class="author">Orson F. Whitney</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+
+            <a class="spine whitney" style="--w:86px; --h:340px; --title-size:17px;" href="https://archive.org/details/throughmemorysha00whit"
+               aria-label="Through Memory’s Halls by Orson F. Whitney, on Internet Archive">
+                <span class="text">
+                    <span class="title">Through Memory’s Halls</span>
+                    <span class="author">Orson F. Whitney</span>
+                    <span class="source">Internet Archive</span>
+                </span>
+            </a>
+
+            <a class="spine whitney" style="--w:89px; --h:311px; --title-size:15px;" href="https://archive.org/details/strengthofmormon00whit"
+               aria-label="The Strength of the “Mormon” Position by Orson F. Whitney, on Internet Archive">
+                <span class="text">
+                    <span class="title">The Strength of the “Mormon” Position</span>
+                    <span class="author">Orson F. Whitney</span>
+                    <span class="source">Internet Archive</span>
+                </span>
+            </a>
+
+            <a class="spine whitney" style="--w:94px; --h:345px; --title-size:17px;" href="https://www.gutenberg.org/ebooks/56691"
+               aria-label="Saturday Night Thoughts by Orson F. Whitney, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">Saturday Night Thoughts</span>
+                    <span class="author">Orson F. Whitney</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+        </div>
+        </section>
+
+        <section class="shelf-section">
+        <h2>John A. Widtsoe</h2>
+
+        <div class="shelf">
+            <a class="spine rational widtsoe" href="https://www.gutenberg.org/ebooks/35562"
+               aria-label="A Rational Theology by John A. Widtsoe, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">A Rational Theology</span>
+                    <span class="author">John A. Widtsoe</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+
+            <a class="spine scientist widtsoe" href="https://www.amazon.com/clp/B004UJH2XA?lv=shuf&amp;channelId=520"
+               aria-label="Joseph Smith as a Scientist: A Contribution to Mormon Philosophy, by John A. Widtsoe, on Kindle">
+                <span class="text">
+                    <span class="title">Joseph Smith as a Scientist</span>
+                    <span class="author">John A. Widtsoe</span>
+                    <span class="source">Kindle</span>
+                </span>
+            </a>
+
+            <a class="spine widtsoe" style="--w:91px; --h:298px; --title-size:17px;" href="https://archive.org/details/cu31924051996597"
+               aria-label="Dry-Farming by John A. Widtsoe, on Internet Archive">
+                <span class="text">
+                    <span class="title">Dry-Farming</span>
+                    <span class="author">John A. Widtsoe</span>
+                    <span class="source">Internet Archive</span>
+                </span>
+            </a>
+        </div>
+        </section>
+
+        <section class="shelf-section">
+        <h2>Joseph Fielding Smith</h2>
+
+        <div class="shelf">
+            <a class="spine dos1 jfsmith" href="https://archive.org/details/doctrinesofsalva01smit"
+               aria-label="Doctrines of Salvation, Vol. 1 by Joseph Fielding Smith, on Internet Archive">
+                <span class="text">
+                    <span class="title">Doctrines of Salvation, Vol. 1</span>
+                    <span class="author">Joseph Fielding Smith</span>
+                    <span class="source">Internet Archive</span>
+                </span>
+            </a>
+
+            <a class="spine dos3 jfsmith" href="https://archive.org/details/doctrinesofsalva03smit"
+               aria-label="Doctrines of Salvation, Vol. 3 by Joseph Fielding Smith, on Internet Archive">
+                <span class="text">
+                    <span class="title">Doctrines of Salvation, Vol. 3</span>
+                    <span class="author">Joseph Fielding Smith</span>
+                    <span class="source">Internet Archive</span>
+                </span>
+            </a>
+
+            <a class="spine dos13 jfsmith" href="https://archive.org/details/JFSDoctrinesOfSalvation"
+               aria-label="Doctrines of Salvation, Vols. 1–3 by Joseph Fielding Smith, on Internet Archive">
+                <span class="text">
+                    <span class="title">Doctrines of Salvation, Vols. 1–3</span>
+                    <span class="author">Joseph Fielding Smith</span>
+                    <span class="source">Internet Archive</span>
+                </span>
+            </a>
+
+            <a class="spine agq1 jfsmith" href="https://archive.org/details/JFSAnswersToGospelQuestionsVol1"
+               aria-label="Answers to Gospel Questions, Vol. 1 by Joseph Fielding Smith, on Internet Archive">
+                <span class="text">
+                    <span class="title">Answers to Gospel Questions, Vol. 1</span>
+                    <span class="author">Joseph Fielding Smith</span>
+                    <span class="source">Internet Archive</span>
+                </span>
+            </a>
+
+            <a class="spine perfection jfsmith" href="https://archive.org/details/waytoperfections00smit"
+               aria-label="The Way to Perfection by Joseph Fielding Smith, on Internet Archive">
+                <span class="text">
+                    <span class="title">The Way to Perfection</span>
+                    <span class="author">Joseph Fielding Smith</span>
+                    <span class="source">Internet Archive</span>
+                </span>
+            </a>
+
+            <a class="spine progress jfsmith" href="https://archive.org/details/progressofman0000elde/mode/1up"
+               aria-label="The Progress of Man by Joseph Fielding Smith, on Internet Archive">
+                <span class="text">
+                    <span class="title">The Progress of Man</span>
+                    <span class="author">Joseph Fielding Smith</span>
+                    <span class="source">Internet Archive</span>
+                </span>
+            </a>
+
+            <a class="spine essentials jfsmith" href="https://www.gutenberg.org/ebooks/45054"
+               aria-label="Essentials in Church History by Joseph Fielding Smith, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">Essentials in Church History</span>
+                    <span class="author">Joseph Fielding Smith</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+
+            <a class="spine jfsmith" style="--w:84px; --h:331px; --title-size:15px;" href="https://www.gutenberg.org/ebooks/50357"
+               aria-label="Origin of the “Reorganized” Church by Joseph Fielding Smith, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">Origin of the “Reorganized” Church</span>
+                    <span class="author">Joseph Fielding Smith</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+
+            <a class="spine blood jfsmith" href="https://www.gutenberg.org/ebooks/50535"
+               aria-label="Blood Atonement and the Origin of Plural Marriage by Joseph Fielding Smith &amp; R. C. Evans, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">Blood Atonement and the Origin of Plural Marriage</span>
+                    <span class="author">Joseph Fielding Smith &amp; R. C. Evans</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+
+            <a class="spine jfsmith" style="--w:88px; --h:303px; --title-size:17px;" href="https://www.gutenberg.org/ebooks/52840"
+               aria-label="Salvation Universal by Joseph Fielding Smith, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">Salvation Universal</span>
+                    <span class="author">Joseph Fielding Smith</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+        </div>
+        </section>
+
+        <section class="shelf-section">
+        <h2>Other Apostles of the Pioneer Era</h2>
+
+        <div class="shelf">
+            <a class="spine palestine gasmith" href="https://archive.org/details/palestietourutah00smit"
+               aria-label="Correspondence of Palestine Tourists by George A. Smith et al., on Internet Archive">
+                <span class="text">
+                    <span class="title">Correspondence of Palestine Tourists</span>
+                    <span class="author">George A. Smith et al.</span>
+                    <span class="source">Internet Archive</span>
+                </span>
+            </a>
+
+            <a class="spine" style="--w:85px; --h:296px; --title-size:13px; --c1:#6a4a2a; --c2:#37250f;" href="https://www.gutenberg.org/ebooks/51730"
+               aria-label="Life of David W. Patten, the First Apostolic Martyr by Lycurgus A. Wilson, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">Life of David W. Patten, the First Apostolic Martyr</span>
+                    <span class="author">Lycurgus A. Wilson</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+
+            <a class="spine lund" style="--w:94px; --h:320px; --title-size:13px;" href="https://archive.org/details/DanishApostleAnthonLund"
+               aria-label="Danish Apostle: The Diaries of Anthon H. Lund by Anthon H. Lund, on Internet Archive">
+                <span class="text">
+                    <span class="title">Danish Apostle: The Diaries of Anthon H. Lund</span>
+                    <span class="author">Anthon H. Lund</span>
+                    <span class="source">Internet Archive</span>
+                </span>
+            </a>
+
+            <a class="spine jhsmith" style="--w:82px; --h:312px; --title-size:15px;" href="https://archive.org/details/ChurchStateAndPoliticsJohnSmith"
+               aria-label="The Diaries of John Henry Smith by John H. Smith, on Internet Archive">
+                <span class="text">
+                    <span class="title">The Diaries of John Henry Smith</span>
+                    <span class="author">John H. Smith</span>
+                    <span class="source">Internet Archive</span>
+                </span>
+            </a>
+
+            <a class="spine cowley cowley" href="https://www.gutenberg.org/ebooks/47336"
+               aria-label="Cowley’s Talks on Doctrine by Matthias F. Cowley, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">Cowley’s Talks on Doctrine</span>
+                    <span class="author">Matthias F. Cowley</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+
+            <a class="spine ahcannon" style="--w:83px; --h:330px; --title-size:13px;" href="https://archive.org/details/questionsanswers00cann"
+               aria-label="Questions and Answers on the Book of Mormon by Abraham H. Cannon, on Internet Archive">
+                <span class="text">
+                    <span class="title">Questions and Answers on the Book of Mormon</span>
+                    <span class="author">Abraham H. Cannon</span>
+                    <span class="source">Internet Archive</span>
+                </span>
+            </a>
+
+            <a class="spine truth merrill" href="https://archive.org/details/truthseekermoemo0000drjo/page/n13/mode/2up"
+               aria-label="The Truth-Seeker and Mormonism by Joseph F. Merrill, on Internet Archive">
+                <span class="text">
+                    <span class="title">The Truth-Seeker and Mormonism</span>
+                    <span class="author">Joseph F. Merrill</span>
+                    <span class="source">Internet Archive</span>
+                </span>
+            </a>
+
+            <a class="spine" style="--w:94px; --h:316px; --title-size:17px; --c1:#5a3a5a; --c2:#301d30;" href="https://www.gutenberg.org/ebooks/46208"
+               aria-label="A Voice from Jerusalem by Orson Hyde, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">A Voice from Jerusalem</span>
+                    <span class="author">Orson Hyde</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+
+            <a class="spine" style="--w:98px; --h:327px; --title-size:15px; --c1:#2f4a2f; --c2:#182618;" href="https://www.gutenberg.org/ebooks/54278"
+               aria-label="Proclamation of the Twelve Apostles by Council of the Twelve Apostles, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">Proclamation of the Twelve Apostles</span>
+                    <span class="author">Council of the Twelve Apostles</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+        </div>
+        </section>
+
+        <section class="shelf-section">
+        <h2>Mid-Century Apostles</h2>
+
+        <div class="shelf">
+            <a class="spine treasures mckay" href="https://archive.org/details/treasuresoflife00mcka"
+               aria-label="Treasures of Life by David O. McKay, on Internet Archive">
+                <span class="text">
+                    <span class="title">Treasures of Life</span>
+                    <span class="author">David O. McKay</span>
+                    <span class="source">Internet Archive</span>
+                </span>
+            </a>
+
+            <a class="spine mckay" style="--w:97px; --h:319px; --title-size:17px;" href="https://www.gutenberg.org/ebooks/54309"
+               aria-label="Ancient Apostles by David O. McKay, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">Ancient Apostles</span>
+                    <span class="author">David O. McKay</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+
+            <a class="spine constancy bowen" href="https://archive.org/details/constancyamidcha00bowe"
+               aria-label="Constancy Amid Change by Albert E. Bowen, on Internet Archive">
+                <span class="text">
+                    <span class="title">Constancy Amid Change</span>
+                    <span class="author">Albert E. Bowen</span>
+                    <span class="source">Internet Archive</span>
+                </span>
+            </a>
+
+            <a class="spine bennion" style="--w:88px; --h:341px; --title-size:13px;" href="https://archive.org/details/fundamentalprobl00benn"
+               aria-label="Fundamental Problems in Teaching Religion by Adam S. Bennion, on Internet Archive">
+                <span class="text">
+                    <span class="title">Fundamental Problems in Teaching Religion</span>
+                    <span class="author">Adam S. Bennion</span>
+                    <span class="source">Internet Archive</span>
+                </span>
+            </a>
+
+            <a class="spine bennion" style="--w:98px; --h:300px; --title-size:15px;" href="https://archive.org/details/whatitmeanstobem00benn"
+               aria-label="What It Means to Be a Mormon by Adam S. Bennion, on Internet Archive">
+                <span class="text">
+                    <span class="title">What It Means to Be a Mormon</span>
+                    <span class="author">Adam S. Bennion</span>
+                    <span class="source">Internet Archive</span>
+                </span>
+            </a>
+
+            <a class="spine bennion" style="--w:99px; --h:323px; --title-size:17px;" href="https://archive.org/details/bwb_S0-DUD-338"
+               aria-label="The Candle of the Lord by Adam S. Bennion, on Internet Archive">
+                <span class="text">
+                    <span class="title">The Candle of the Lord</span>
+                    <span class="author">Adam S. Bennion</span>
+                    <span class="source">Internet Archive</span>
+                </span>
+            </a>
+
+            <a class="spine hblee" style="--w:89px; --h:340px; --title-size:17px;" href="https://archive.org/details/standyeinholypla0000leeh"
+               aria-label="Stand Ye in Holy Places by Harold B. Lee, on Internet Archive">
+                <span class="text">
+                    <span class="title">Stand Ye in Holy Places</span>
+                    <span class="author">Harold B. Lee</span>
+                    <span class="source">Internet Archive</span>
+                </span>
+            </a>
+
+            <a class="spine hblee" style="--w:92px; --h:344px; --title-size:17px;" href="https://archive.org/details/youthchurch0000leeh"
+               aria-label="Youth and the Church by Harold B. Lee, on Internet Archive">
+                <span class="text">
+                    <span class="title">Youth and the Church</span>
+                    <span class="author">Harold B. Lee</span>
+                    <span class="source">Internet Archive</span>
+                </span>
+            </a>
+
+            <a class="spine" style="--w:82px; --h:319px; --title-size:15px; --c1:#3a4f6b; --c2:#1d2736;" href="https://archive.org/details/marvelousworkandrich00rich"
+               aria-label="A Marvelous Work and a Wonder by LeGrand Richards, on Internet Archive">
+                <span class="text">
+                    <span class="title">A Marvelous Work and a Wonder</span>
+                    <span class="author">LeGrand Richards</span>
+                    <span class="source">Internet Archive</span>
+                </span>
+            </a>
+
+            <a class="spine" style="--w:83px; --h:301px; --title-size:17px; --c1:#3a4f6b; --c2:#1d2736;" href="https://archive.org/details/israeldoyouknow0000legr"
+               aria-label="Israel! Do You Know? by LeGrand Richards, on Internet Archive">
+                <span class="text">
+                    <span class="title">Israel! Do You Know?</span>
+                    <span class="author">LeGrand Richards</span>
+                    <span class="source">Internet Archive</span>
+                </span>
+            </a>
+        </div>
+        </section>
+
+        <section class="shelf-section">
+        <h2>Mark E. Petersen</h2>
+
+        <div class="shelf">
+            <a class="spine petersen" style="--w:87px; --h:346px; --title-size:17px;" href="https://archive.org/details/virtuemakessense00pete"
+               aria-label="Virtue Makes Sense! by Mark E. Petersen &amp; Emma Marr Petersen, on Internet Archive">
+                <span class="text">
+                    <span class="title">Virtue Makes Sense!</span>
+                    <span class="author">Mark E. Petersen &amp; Emma Marr Petersen</span>
+                    <span class="source">Internet Archive</span>
+                </span>
+            </a>
+
+            <a class="spine petersen" style="--w:91px; --h:309px; --title-size:17px;" href="https://archive.org/details/wayofmaster00pete"
+               aria-label="The Way of the Master by Mark E. Petersen, on Internet Archive">
+                <span class="text">
+                    <span class="title">The Way of the Master</span>
+                    <span class="author">Mark E. Petersen</span>
+                    <span class="source">Internet Archive</span>
+                </span>
+            </a>
+
+            <a class="spine petersen" style="--w:84px; --h:316px; --title-size:17px;" href="https://archive.org/details/greatprologue00pete"
+               aria-label="The Great Prologue by Mark E. Petersen, on Internet Archive">
+                <span class="text">
+                    <span class="title">The Great Prologue</span>
+                    <span class="author">Mark E. Petersen</span>
+                    <span class="source">Internet Archive</span>
+                </span>
+            </a>
+
+            <a class="spine petersen" style="--w:87px; --h:300px; --title-size:17px;" href="https://archive.org/details/adamwhoishe00pete"
+               aria-label="Adam, Who Is He? by Mark E. Petersen, on Internet Archive">
+                <span class="text">
+                    <span class="title">Adam, Who Is He?</span>
+                    <span class="author">Mark E. Petersen</span>
+                    <span class="source">Internet Archive</span>
+                </span>
+            </a>
+
+            <a class="spine petersen" style="--w:87px; --h:347px; --title-size:17px;" href="https://archive.org/details/saltsavor00pete"
+               aria-label="The Salt and the Savor by Mark E. Petersen, on Internet Archive">
+                <span class="text">
+                    <span class="title">The Salt and the Savor</span>
+                    <span class="author">Mark E. Petersen</span>
+                    <span class="source">Internet Archive</span>
+                </span>
+            </a>
+
+            <a class="spine petersen" style="--w:85px; --h:316px; --title-size:17px;" href="https://archive.org/details/mosesmanofmiracl00pete"
+               aria-label="Moses: Man of Miracles by Mark E. Petersen, on Internet Archive">
+                <span class="text">
+                    <span class="title">Moses: Man of Miracles</span>
+                    <span class="author">Mark E. Petersen</span>
+                    <span class="source">Internet Archive</span>
+                </span>
+            </a>
+
+            <a class="spine petersen" style="--w:89px; --h:335px; --title-size:17px;" href="https://archive.org/details/joshuamanoffaith00pete"
+               aria-label="Joshua, Man of Faith by Mark E. Petersen, on Internet Archive">
+                <span class="text">
+                    <span class="title">Joshua, Man of Faith</span>
+                    <span class="author">Mark E. Petersen</span>
+                    <span class="source">Internet Archive</span>
+                </span>
+            </a>
+
+            <a class="spine petersen" style="--w:91px; --h:314px; --title-size:17px;" href="https://archive.org/details/thosegoldplates00pete"
+               aria-label="Those Gold Plates! by Mark E. Petersen, on Internet Archive">
+                <span class="text">
+                    <span class="title">Those Gold Plates!</span>
+                    <span class="author">Mark E. Petersen</span>
+                    <span class="source">Internet Archive</span>
+                </span>
+            </a>
+
+            <a class="spine petersen" style="--w:83px; --h:320px; --title-size:17px;" href="https://archive.org/details/abrahamfriendofg00pete"
+               aria-label="Abraham, Friend of God by Mark E. Petersen, on Internet Archive">
+                <span class="text">
+                    <span class="title">Abraham, Friend of God</span>
+                    <span class="author">Mark E. Petersen</span>
+                    <span class="source">Internet Archive</span>
+                </span>
+            </a>
+
+            <a class="spine petersen" style="--w:98px; --h:332px; --title-size:17px;" href="https://archive.org/details/josephofegypt00pete"
+               aria-label="Joseph of Egypt by Mark E. Petersen, on Internet Archive">
+                <span class="text">
+                    <span class="title">Joseph of Egypt</span>
+                    <span class="author">Mark E. Petersen</span>
+                    <span class="source">Internet Archive</span>
+                </span>
+            </a>
+        </div>
+        </section>
+
+        <section class="shelf-section">
+        <h2>Bruce R. McConkie</h2>
+
+        <div class="shelf">
             <a class="spine mormondoc mcconkie" href="https://archive.org/details/mormondoctrine0000mcco_f0f5"
                aria-label="Mormon Doctrine by Bruce R. McConkie, on Internet Archive">
                 <span class="text">
@@ -554,357 +1378,30 @@
                 </span>
             </a>
 
-            <a class="spine forgiveness kimballsw" href="https://archive.org/details/miracleofforgivekimb00kimb"
-               aria-label="The Miracle of Forgiveness by Spencer W. Kimball, on Internet Archive">
+            <a class="spine mcconkie" style="--w:97px; --h:301px; --title-size:15px;" href="https://archive.org/details/isbn_0875796826"
+               aria-label="A New Witness for the Articles of Faith by Bruce R. McConkie, on Internet Archive">
                 <span class="text">
-                    <span class="title">The Miracle of Forgiveness</span>
-                    <span class="author">Spencer W. Kimball</span>
+                    <span class="title">A New Witness for the Articles of Faith</span>
+                    <span class="author">Bruce R. McConkie</span>
                     <span class="source">Internet Archive</span>
                 </span>
             </a>
 
-            <a class="spine perfection jfsmith" href="https://archive.org/details/waytoperfections00smit"
-               aria-label="The Way to Perfection by Joseph Fielding Smith, on Internet Archive">
+            <a class="spine mcconkie" style="--w:82px; --h:328px; --title-size:15px;" href="https://archive.org/details/doctrinesofresto0000mcco"
+               aria-label="Doctrines of the Restoration by Bruce R. McConkie, on Internet Archive">
                 <span class="text">
-                    <span class="title">The Way to Perfection</span>
-                    <span class="author">Joseph Fielding Smith</span>
+                    <span class="title">Doctrines of the Restoration</span>
+                    <span class="author">Bruce R. McConkie</span>
                     <span class="source">Internet Archive</span>
                 </span>
             </a>
+        </div>
+        </section>
 
-            <a class="spine essentials jfsmith" href="https://www.gutenberg.org/ebooks/45054"
-               aria-label="Essentials in Church History by Joseph Fielding Smith, on Project Gutenberg">
-                <span class="text">
-                    <span class="title">Essentials in Church History</span>
-                    <span class="author">Joseph Fielding Smith</span>
-                    <span class="source">Project Gutenberg</span>
-                </span>
-            </a>
+        <section class="shelf-section">
+        <h2>Boyd K. Packer</h2>
 
-            <a class="spine teachingsjs jsmith" href="https://archive.org/details/teachingsofproph00smit"
-               aria-label="Teachings of the Prophet Joseph Smith by Joseph Smith Jr., on Internet Archive">
-                <span class="text">
-                    <span class="title">Teachings of the Prophet Joseph Smith</span>
-                    <span class="author">Joseph Smith Jr.</span>
-                    <span class="source">Internet Archive</span>
-                </span>
-            </a>
-
-            <a class="spine threenights taylor" href="https://archive.org/details/threenightspubli00tayl"
-               aria-label="Three Nights’ Public Discussion by John Taylor, on Internet Archive">
-                <span class="text">
-                    <span class="title">Three Nights’ Public Discussion</span>
-                    <span class="author">John Taylor</span>
-                    <span class="source">Internet Archive</span>
-                </span>
-            </a>
-
-            <a class="spine itemspriest taylor" href="https://archive.org/details/itemsonpriesth1882tayl"
-               aria-label="Items on the Priesthood by John Taylor, on Internet Archive">
-                <span class="text">
-                    <span class="title">Items on the Priesthood</span>
-                    <span class="author">John Taylor</span>
-                    <span class="source">Internet Archive</span>
-                </span>
-            </a>
-
-            <a class="spine leaves woodruff" href="https://www.gutenberg.org/ebooks/46028"
-               aria-label="Leaves from My Journal by Wilford Woodruff, on Project Gutenberg">
-                <span class="text">
-                    <span class="title">Leaves from My Journal</span>
-                    <span class="author">Wilford Woodruff</span>
-                    <span class="source">Project Gutenberg</span>
-                </span>
-            </a>
-
-            <a class="spine wwlife cowley" href="https://archive.org/details/wilfordwoodrufff00cowl"
-               aria-label="Wilford Woodruff: History of His Life and Labors by Matthias F. Cowley, on Internet Archive">
-                <span class="text">
-                    <span class="title">Wilford Woodruff: History of His Life and Labors</span>
-                    <span class="author">Matthias F. Cowley</span>
-                    <span class="source">Internet Archive</span>
-                </span>
-            </a>
-
-            <a class="spine snowteach snow" href="https://archive.org/details/teachingsofloren00snow"
-               aria-label="Teachings of Lorenzo Snow by Lorenzo Snow, on Internet Archive">
-                <span class="text">
-                    <span class="title">Teachings of Lorenzo Snow</span>
-                    <span class="author">Lorenzo Snow</span>
-                    <span class="source">Internet Archive</span>
-                </span>
-            </a>
-
-            <a class="spine palestine gasmith" href="https://archive.org/details/palestietourutah00smit"
-               aria-label="Correspondence of Palestine Tourists by George A. Smith et al., on Internet Archive">
-                <span class="text">
-                    <span class="title">Correspondence of Palestine Tourists</span>
-                    <span class="author">George A. Smith et al.</span>
-                    <span class="source">Internet Archive</span>
-                </span>
-            </a>
-
-            <a class="spine treasures mckay" href="https://archive.org/details/treasuresoflife00mcka"
-               aria-label="Treasures of Life by David O. McKay, on Internet Archive">
-                <span class="text">
-                    <span class="title">Treasures of Life</span>
-                    <span class="author">David O. McKay</span>
-                    <span class="source">Internet Archive</span>
-                </span>
-            </a>
-
-            <a class="spine etbteach benson" href="https://archive.org/details/teachingsofezrat0000bens"
-               aria-label="Teachings of Ezra Taft Benson by Ezra Taft Benson, on Internet Archive">
-                <span class="text">
-                    <span class="title">Teachings of Ezra Taft Benson</span>
-                    <span class="author">Ezra Taft Benson</span>
-                    <span class="source">Internet Archive</span>
-                </span>
-            </a>
-
-            <a class="spine crossfire benson" href="https://archive.org/details/crossfireeightye0000bens"
-               aria-label="Cross Fire: The Eight Years with Eisenhower by Ezra Taft Benson, on Internet Archive">
-                <span class="text">
-                    <span class="title">Cross Fire: The Eight Years with Eisenhower</span>
-                    <span class="author">Ezra Taft Benson</span>
-                    <span class="source">Internet Archive</span>
-                </span>
-            </a>
-
-            <a class="spine heart nelson" href="https://archive.org/details/from-heart-to-heart-an-autobiography-by-russell-m.-nelson"
-               aria-label="From Heart to Heart by Russell M. Nelson, on Internet Archive">
-                <span class="text">
-                    <span class="title">From Heart to Heart</span>
-                    <span class="author">Russell M. Nelson</span>
-                    <span class="source">Internet Archive</span>
-                </span>
-            </a>
-
-            <a class="spine dos1 jfsmith" href="https://archive.org/details/doctrinesofsalva01smit"
-               aria-label="Doctrines of Salvation, Vol. 1 by Joseph Fielding Smith, on Internet Archive">
-                <span class="text">
-                    <span class="title">Doctrines of Salvation, Vol. 1</span>
-                    <span class="author">Joseph Fielding Smith</span>
-                    <span class="source">Internet Archive</span>
-                </span>
-            </a>
-
-            <a class="spine dos3 jfsmith" href="https://archive.org/details/doctrinesofsalva03smit"
-               aria-label="Doctrines of Salvation, Vol. 3 by Joseph Fielding Smith, on Internet Archive">
-                <span class="text">
-                    <span class="title">Doctrines of Salvation, Vol. 3</span>
-                    <span class="author">Joseph Fielding Smith</span>
-                    <span class="source">Internet Archive</span>
-                </span>
-            </a>
-
-            <a class="spine dos13 jfsmith" href="https://archive.org/details/JFSDoctrinesOfSalvation"
-               aria-label="Doctrines of Salvation, Vols. 1–3 by Joseph Fielding Smith, on Internet Archive">
-                <span class="text">
-                    <span class="title">Doctrines of Salvation, Vols. 1–3</span>
-                    <span class="author">Joseph Fielding Smith</span>
-                    <span class="source">Internet Archive</span>
-                </span>
-            </a>
-
-            <a class="spine agq1 jfsmith" href="https://archive.org/details/JFSAnswersToGospelQuestionsVol1"
-               aria-label="Answers to Gospel Questions, Vol. 1 by Joseph Fielding Smith, on Internet Archive">
-                <span class="text">
-                    <span class="title">Answers to Gospel Questions, Vol. 1</span>
-                    <span class="author">Joseph Fielding Smith</span>
-                    <span class="source">Internet Archive</span>
-                </span>
-            </a>
-
-            <a class="spine lifejfs jfsmith" href="https://babel.hathitrust.org/cgi/pt?id=inu.30000084063720&amp;seq=11"
-               aria-label="Life of Joseph F. Smith by Joseph Fielding Smith, on HathiTrust">
-                <span class="text">
-                    <span class="title">Life of Joseph F. Smith</span>
-                    <span class="author">Joseph Fielding Smith</span>
-                    <span class="source">HathiTrust</span>
-                </span>
-            </a>
-
-            <a class="spine constancy bowen" href="https://archive.org/details/constancyamidcha00bowe"
-               aria-label="Constancy Amid Change by Albert E. Bowen, on Internet Archive">
-                <span class="text">
-                    <span class="title">Constancy Amid Change</span>
-                    <span class="author">Albert E. Bowen</span>
-                    <span class="source">Internet Archive</span>
-                </span>
-            </a>
-
-            <a class="spine untohills evans" href="https://archive.org/details/untohills00evan"
-               aria-label="Unto the Hills by Richard L. Evans, on Internet Archive">
-                <span class="text">
-                    <span class="title">Unto the Hills</span>
-                    <span class="author">Richard L. Evans</span>
-                    <span class="source">Internet Archive</span>
-                </span>
-            </a>
-
-            <a class="spine spokenword evans" href="https://archive.org/details/andthespokenword00evan"
-               aria-label="…and “The Spoken Word” by Richard L. Evans, on Internet Archive">
-                <span class="text">
-                    <span class="title">…and “The Spoken Word”</span>
-                    <span class="author">Richard L. Evans</span>
-                    <span class="source">Internet Archive</span>
-                </span>
-            </a>
-
-            <a class="spine samehour evans" href="https://archive.org/details/atthissamehour00evan"
-               aria-label="At This Same Hour by Richard L. Evans, on Internet Archive">
-                <span class="text">
-                    <span class="title">At This Same Hour</span>
-                    <span class="author">Richard L. Evans</span>
-                    <span class="source">Internet Archive</span>
-                </span>
-            </a>
-
-            <a class="spine tonic evans" href="https://archive.org/details/tonicforourtimes00evan"
-               aria-label="Tonic for Our Times by Richard L. Evans, on Internet Archive">
-                <span class="text">
-                    <span class="title">Tonic for Our Times</span>
-                    <span class="author">Richard L. Evans</span>
-                    <span class="source">Internet Archive</span>
-                </span>
-            </a>
-
-            <a class="spine everlasting evans" href="https://archive.org/details/everlastingthing00evan"
-               aria-label="The Everlasting Things by Richard L. Evans, on Internet Archive">
-                <span class="text">
-                    <span class="title">The Everlasting Things</span>
-                    <span class="author">Richard L. Evans</span>
-                    <span class="source">Internet Archive</span>
-                </span>
-            </a>
-
-            <a class="spine faithfuture evans" href="https://archive.org/details/faithinfuture00evan"
-               aria-label="Faith in the Future by Richard L. Evans, on Internet Archive">
-                <span class="text">
-                    <span class="title">Faith in the Future</span>
-                    <span class="author">Richard L. Evans</span>
-                    <span class="source">Internet Archive</span>
-                </span>
-            </a>
-
-            <a class="spine gdoctrine jfsmithsr" href="https://www.gutenberg.org/ebooks/47109"
-               aria-label="Gospel Doctrine by Joseph F. Smith, on Project Gutenberg">
-                <span class="text">
-                    <span class="title">Gospel Doctrine</span>
-                    <span class="author">Joseph F. Smith</span>
-                    <span class="source">Project Gutenberg</span>
-                </span>
-            </a>
-
-            <a class="spine gstandards grant" href="https://archive.org/details/gospelstandards0000hebe"
-               aria-label="Gospel Standards by Heber J. Grant, on Internet Archive">
-                <span class="text">
-                    <span class="title">Gospel Standards</span>
-                    <span class="author">Heber J. Grant</span>
-                    <span class="source">Internet Archive</span>
-                </span>
-            </a>
-
-            <a class="spine ahcannon" style="--w:83px; --h:330px; --title-size:13px;" href="https://archive.org/details/questionsanswers00cann"
-               aria-label="Questions and Answers on the Book of Mormon by Abraham H. Cannon, on Internet Archive">
-                <span class="text">
-                    <span class="title">Questions and Answers on the Book of Mormon</span>
-                    <span class="author">Abraham H. Cannon</span>
-                    <span class="source">Internet Archive</span>
-                </span>
-            </a>
-
-            <a class="spine bennion" style="--w:88px; --h:341px; --title-size:13px;" href="https://archive.org/details/fundamentalprobl00benn"
-               aria-label="Fundamental Problems in Teaching Religion by Adam S. Bennion, on Internet Archive">
-                <span class="text">
-                    <span class="title">Fundamental Problems in Teaching Religion</span>
-                    <span class="author">Adam S. Bennion</span>
-                    <span class="source">Internet Archive</span>
-                </span>
-            </a>
-
-            <a class="spine bennion" style="--w:98px; --h:300px; --title-size:15px;" href="https://archive.org/details/whatitmeanstobem00benn"
-               aria-label="What It Means to Be a Mormon by Adam S. Bennion, on Internet Archive">
-                <span class="text">
-                    <span class="title">What It Means to Be a Mormon</span>
-                    <span class="author">Adam S. Bennion</span>
-                    <span class="source">Internet Archive</span>
-                </span>
-            </a>
-
-            <a class="spine bennion" style="--w:99px; --h:323px; --title-size:17px;" href="https://archive.org/details/bwb_S0-DUD-338"
-               aria-label="The Candle of the Lord by Adam S. Bennion, on Internet Archive">
-                <span class="text">
-                    <span class="title">The Candle of the Lord</span>
-                    <span class="author">Adam S. Bennion</span>
-                    <span class="source">Internet Archive</span>
-                </span>
-            </a>
-
-            <a class="spine dyer" style="--w:84px; --h:319px; --title-size:17px;" href="https://archive.org/details/refinersfiresign0000dyer"
-               aria-label="The Refiner’s Fire by Alvin R. Dyer, on Internet Archive">
-                <span class="text">
-                    <span class="title">The Refiner’s Fire</span>
-                    <span class="author">Alvin R. Dyer</span>
-                    <span class="source">Internet Archive</span>
-                </span>
-            </a>
-
-            <a class="spine dyer" style="--w:95px; --h:343px; --title-size:17px;" href="https://archive.org/details/challenge0000alvi"
-               aria-label="The Challenge by Alvin R. Dyer, on Internet Archive">
-                <span class="text">
-                    <span class="title">The Challenge</span>
-                    <span class="author">Alvin R. Dyer</span>
-                    <span class="source">Internet Archive</span>
-                </span>
-            </a>
-
-            <a class="spine dyer" style="--w:87px; --h:314px; --title-size:17px;" href="https://archive.org/details/meaningoftruth0000dyer"
-               aria-label="The Meaning of Truth by Alvin R. Dyer, on Internet Archive">
-                <span class="text">
-                    <span class="title">The Meaning of Truth</span>
-                    <span class="author">Alvin R. Dyer</span>
-                    <span class="source">Internet Archive</span>
-                </span>
-            </a>
-
-            <a class="spine dyer" style="--w:91px; --h:306px; --title-size:17px;" href="https://archive.org/details/thisageofconfusi0000alvi"
-               aria-label="This Age of Confusion by Alvin R. Dyer, on Internet Archive">
-                <span class="text">
-                    <span class="title">This Age of Confusion</span>
-                    <span class="author">Alvin R. Dyer</span>
-                    <span class="source">Internet Archive</span>
-                </span>
-            </a>
-
-            <a class="spine dyer" style="--w:93px; --h:331px; --title-size:17px;" href="https://archive.org/details/whoamisequelvolu00dyer"
-               aria-label="Who Am I? by Alvin R. Dyer, on Internet Archive">
-                <span class="text">
-                    <span class="title">Who Am I?</span>
-                    <span class="author">Alvin R. Dyer</span>
-                    <span class="source">Internet Archive</span>
-                </span>
-            </a>
-
-            <a class="spine dyer" style="--w:97px; --h:323px; --title-size:17px;" href="https://archive.org/details/fallacy0000alvi"
-               aria-label="The Fallacy by Alvin R. Dyer, on Internet Archive">
-                <span class="text">
-                    <span class="title">The Fallacy</span>
-                    <span class="author">Alvin R. Dyer</span>
-                    <span class="source">Internet Archive</span>
-                </span>
-            </a>
-
-            <a class="spine lund" style="--w:94px; --h:320px; --title-size:13px;" href="https://archive.org/details/DanishApostleAnthonLund"
-               aria-label="Danish Apostle: The Diaries of Anthon H. Lund by Anthon H. Lund, on Internet Archive">
-                <span class="text">
-                    <span class="title">Danish Apostle: The Diaries of Anthon H. Lund</span>
-                    <span class="author">Anthon H. Lund</span>
-                    <span class="source">Internet Archive</span>
-                </span>
-            </a>
-
+        <div class="shelf">
             <a class="spine packer" style="--w:88px; --h:321px; --title-size:15px;" href="https://archive.org/details/truthsmostworthk0000pack"
                aria-label="Truths Most Worth Knowing by Boyd K. Packer, on Internet Archive">
                 <span class="text">
@@ -1030,183 +1527,96 @@
                     <span class="source">Internet Archive</span>
                 </span>
             </a>
+        </div>
+        </section>
 
-            <a class="spine mcconkie" style="--w:97px; --h:301px; --title-size:15px;" href="https://archive.org/details/isbn_0875796826"
-               aria-label="A New Witness for the Articles of Faith by Bruce R. McConkie, on Internet Archive">
+        <section class="shelf-section">
+        <h2>Alvin R. Dyer</h2>
+
+        <div class="shelf">
+            <a class="spine dyer" style="--w:84px; --h:319px; --title-size:17px;" href="https://archive.org/details/refinersfiresign0000dyer"
+               aria-label="The Refiner’s Fire by Alvin R. Dyer, on Internet Archive">
                 <span class="text">
-                    <span class="title">A New Witness for the Articles of Faith</span>
-                    <span class="author">Bruce R. McConkie</span>
+                    <span class="title">The Refiner’s Fire</span>
+                    <span class="author">Alvin R. Dyer</span>
                     <span class="source">Internet Archive</span>
                 </span>
             </a>
 
-            <a class="spine mcconkie" style="--w:82px; --h:328px; --title-size:15px;" href="https://archive.org/details/doctrinesofresto0000mcco"
-               aria-label="Doctrines of the Restoration by Bruce R. McConkie, on Internet Archive">
+            <a class="spine dyer" style="--w:95px; --h:343px; --title-size:17px;" href="https://archive.org/details/challenge0000alvi"
+               aria-label="The Challenge by Alvin R. Dyer, on Internet Archive">
                 <span class="text">
-                    <span class="title">Doctrines of the Restoration</span>
-                    <span class="author">Bruce R. McConkie</span>
+                    <span class="title">The Challenge</span>
+                    <span class="author">Alvin R. Dyer</span>
                     <span class="source">Internet Archive</span>
                 </span>
             </a>
 
-            <a class="spine penrose-a" style="--w:86px; --h:318px; --title-size:15px;" href="https://archive.org/details/mormondoctrinepl00penr"
-               aria-label="Mormon Doctrine Plain and Simple by Charles W. Penrose, on Internet Archive">
+            <a class="spine dyer" style="--w:87px; --h:314px; --title-size:17px;" href="https://archive.org/details/meaningoftruth0000dyer"
+               aria-label="The Meaning of Truth by Alvin R. Dyer, on Internet Archive">
                 <span class="text">
-                    <span class="title">Mormon Doctrine Plain and Simple</span>
-                    <span class="author">Charles W. Penrose</span>
+                    <span class="title">The Meaning of Truth</span>
+                    <span class="author">Alvin R. Dyer</span>
                     <span class="source">Internet Archive</span>
                 </span>
             </a>
 
-            <a class="spine penrose-a" style="--w:88px; --h:333px; --title-size:13px;" href="https://archive.org/details/bloodatonementas00penr"
-               aria-label="Blood Atonement as Taught by Leading Elders by Charles W. Penrose, on Internet Archive">
+            <a class="spine dyer" style="--w:91px; --h:306px; --title-size:17px;" href="https://archive.org/details/thisageofconfusi0000alvi"
+               aria-label="This Age of Confusion by Alvin R. Dyer, on Internet Archive">
                 <span class="text">
-                    <span class="title">Blood Atonement as Taught by Leading Elders</span>
-                    <span class="author">Charles W. Penrose</span>
+                    <span class="title">This Age of Confusion</span>
+                    <span class="author">Alvin R. Dyer</span>
                     <span class="source">Internet Archive</span>
                 </span>
             </a>
 
-            <a class="spine penrose-a" style="--w:96px; --h:307px; --title-size:13px;" href="https://archive.org/details/mountainmeadowsm1899penr"
-               aria-label="The Mountain Meadows Massacre: Who Were Guilty of the Crime? by Charles W. Penrose, on Internet Archive">
+            <a class="spine dyer" style="--w:93px; --h:331px; --title-size:17px;" href="https://archive.org/details/whoamisequelvolu00dyer"
+               aria-label="Who Am I? by Alvin R. Dyer, on Internet Archive">
                 <span class="text">
-                    <span class="title">The Mountain Meadows Massacre: Who Were Guilty of the Crime?</span>
-                    <span class="author">Charles W. Penrose</span>
+                    <span class="title">Who Am I?</span>
+                    <span class="author">Alvin R. Dyer</span>
                     <span class="source">Internet Archive</span>
                 </span>
             </a>
 
-            <a class="spine penrose-a" style="--w:91px; --h:320px; --title-size:17px;" href="https://babel.hathitrust.org/cgi/pt?id=njp.32101074866870&amp;seq=3"
-               aria-label="What the Mormons Believe by Charles W. Penrose, on HathiTrust">
+            <a class="spine dyer" style="--w:97px; --h:323px; --title-size:17px;" href="https://archive.org/details/fallacy0000alvi"
+               aria-label="The Fallacy by Alvin R. Dyer, on Internet Archive">
                 <span class="text">
-                    <span class="title">What the Mormons Believe</span>
-                    <span class="author">Charles W. Penrose</span>
-                    <span class="source">HathiTrust</span>
+                    <span class="title">The Fallacy</span>
+                    <span class="author">Alvin R. Dyer</span>
+                    <span class="source">Internet Archive</span>
                 </span>
             </a>
+        </div>
+        </section>
 
-            <a class="spine widtsoe" style="--w:91px; --h:298px; --title-size:17px;" href="https://archive.org/details/cu31924051996597"
-               aria-label="Dry-Farming by John A. Widtsoe, on Internet Archive">
+        <section class="shelf-section">
+        <h2>Ezra Taft Benson, Spencer W. Kimball, Neal A. Maxwell &amp; Russell M. Nelson</h2>
+
+        <div class="shelf">
+            <a class="spine etbteach benson" href="https://archive.org/details/teachingsofezrat0000bens"
+               aria-label="Teachings of Ezra Taft Benson by Ezra Taft Benson, on Internet Archive">
                 <span class="text">
-                    <span class="title">Dry-Farming</span>
-                    <span class="author">John A. Widtsoe</span>
+                    <span class="title">Teachings of Ezra Taft Benson</span>
+                    <span class="author">Ezra Taft Benson</span>
                     <span class="source">Internet Archive</span>
                 </span>
             </a>
 
-            <a class="spine jhsmith" style="--w:82px; --h:312px; --title-size:15px;" href="https://archive.org/details/ChurchStateAndPoliticsJohnSmith"
-               aria-label="The Diaries of John Henry Smith by John H. Smith, on Internet Archive">
+            <a class="spine crossfire benson" href="https://archive.org/details/crossfireeightye0000bens"
+               aria-label="Cross Fire: The Eight Years with Eisenhower by Ezra Taft Benson, on Internet Archive">
                 <span class="text">
-                    <span class="title">The Diaries of John Henry Smith</span>
-                    <span class="author">John H. Smith</span>
+                    <span class="title">Cross Fire: The Eight Years with Eisenhower</span>
+                    <span class="author">Ezra Taft Benson</span>
                     <span class="source">Internet Archive</span>
                 </span>
             </a>
 
-            <a class="spine whitney" style="--w:86px; --h:340px; --title-size:17px;" href="https://archive.org/details/throughmemorysha00whit"
-               aria-label="Through Memory’s Halls by Orson F. Whitney, on Internet Archive">
+            <a class="spine forgiveness kimballsw" href="https://archive.org/details/miracleofforgivekimb00kimb"
+               aria-label="The Miracle of Forgiveness by Spencer W. Kimball, on Internet Archive">
                 <span class="text">
-                    <span class="title">Through Memory’s Halls</span>
-                    <span class="author">Orson F. Whitney</span>
-                    <span class="source">Internet Archive</span>
-                </span>
-            </a>
-
-            <a class="spine whitney" style="--w:89px; --h:311px; --title-size:15px;" href="https://archive.org/details/strengthofmormon00whit"
-               aria-label="The Strength of the “Mormon” Position by Orson F. Whitney, on Internet Archive">
-                <span class="text">
-                    <span class="title">The Strength of the “Mormon” Position</span>
-                    <span class="author">Orson F. Whitney</span>
-                    <span class="source">Internet Archive</span>
-                </span>
-            </a>
-
-            <a class="spine petersen" style="--w:87px; --h:346px; --title-size:17px;" href="https://archive.org/details/virtuemakessense00pete"
-               aria-label="Virtue Makes Sense! by Mark E. Petersen &amp; Emma Marr Petersen, on Internet Archive">
-                <span class="text">
-                    <span class="title">Virtue Makes Sense!</span>
-                    <span class="author">Mark E. Petersen &amp; Emma Marr Petersen</span>
-                    <span class="source">Internet Archive</span>
-                </span>
-            </a>
-
-            <a class="spine petersen" style="--w:91px; --h:309px; --title-size:17px;" href="https://archive.org/details/wayofmaster00pete"
-               aria-label="The Way of the Master by Mark E. Petersen, on Internet Archive">
-                <span class="text">
-                    <span class="title">The Way of the Master</span>
-                    <span class="author">Mark E. Petersen</span>
-                    <span class="source">Internet Archive</span>
-                </span>
-            </a>
-
-            <a class="spine petersen" style="--w:84px; --h:316px; --title-size:17px;" href="https://archive.org/details/greatprologue00pete"
-               aria-label="The Great Prologue by Mark E. Petersen, on Internet Archive">
-                <span class="text">
-                    <span class="title">The Great Prologue</span>
-                    <span class="author">Mark E. Petersen</span>
-                    <span class="source">Internet Archive</span>
-                </span>
-            </a>
-
-            <a class="spine petersen" style="--w:87px; --h:300px; --title-size:17px;" href="https://archive.org/details/adamwhoishe00pete"
-               aria-label="Adam, Who Is He? by Mark E. Petersen, on Internet Archive">
-                <span class="text">
-                    <span class="title">Adam, Who Is He?</span>
-                    <span class="author">Mark E. Petersen</span>
-                    <span class="source">Internet Archive</span>
-                </span>
-            </a>
-
-            <a class="spine petersen" style="--w:87px; --h:347px; --title-size:17px;" href="https://archive.org/details/saltsavor00pete"
-               aria-label="The Salt and the Savor by Mark E. Petersen, on Internet Archive">
-                <span class="text">
-                    <span class="title">The Salt and the Savor</span>
-                    <span class="author">Mark E. Petersen</span>
-                    <span class="source">Internet Archive</span>
-                </span>
-            </a>
-
-            <a class="spine petersen" style="--w:85px; --h:316px; --title-size:17px;" href="https://archive.org/details/mosesmanofmiracl00pete"
-               aria-label="Moses: Man of Miracles by Mark E. Petersen, on Internet Archive">
-                <span class="text">
-                    <span class="title">Moses: Man of Miracles</span>
-                    <span class="author">Mark E. Petersen</span>
-                    <span class="source">Internet Archive</span>
-                </span>
-            </a>
-
-            <a class="spine petersen" style="--w:89px; --h:335px; --title-size:17px;" href="https://archive.org/details/joshuamanoffaith00pete"
-               aria-label="Joshua, Man of Faith by Mark E. Petersen, on Internet Archive">
-                <span class="text">
-                    <span class="title">Joshua, Man of Faith</span>
-                    <span class="author">Mark E. Petersen</span>
-                    <span class="source">Internet Archive</span>
-                </span>
-            </a>
-
-            <a class="spine petersen" style="--w:91px; --h:314px; --title-size:17px;" href="https://archive.org/details/thosegoldplates00pete"
-               aria-label="Those Gold Plates! by Mark E. Petersen, on Internet Archive">
-                <span class="text">
-                    <span class="title">Those Gold Plates!</span>
-                    <span class="author">Mark E. Petersen</span>
-                    <span class="source">Internet Archive</span>
-                </span>
-            </a>
-
-            <a class="spine petersen" style="--w:83px; --h:320px; --title-size:17px;" href="https://archive.org/details/abrahamfriendofg00pete"
-               aria-label="Abraham, Friend of God by Mark E. Petersen, on Internet Archive">
-                <span class="text">
-                    <span class="title">Abraham, Friend of God</span>
-                    <span class="author">Mark E. Petersen</span>
-                    <span class="source">Internet Archive</span>
-                </span>
-            </a>
-
-            <a class="spine petersen" style="--w:98px; --h:332px; --title-size:17px;" href="https://archive.org/details/josephofegypt00pete"
-               aria-label="Joseph of Egypt by Mark E. Petersen, on Internet Archive">
-                <span class="text">
-                    <span class="title">Joseph of Egypt</span>
-                    <span class="author">Mark E. Petersen</span>
+                    <span class="title">The Miracle of Forgiveness</span>
+                    <span class="author">Spencer W. Kimball</span>
                     <span class="source">Internet Archive</span>
                 </span>
             </a>
@@ -1247,12 +1657,695 @@
                 </span>
             </a>
 
-            <a class="spine hblee" style="--w:89px; --h:340px; --title-size:17px;" href="https://archive.org/details/standyeinholypla0000leeh"
-               aria-label="Stand Ye in Holy Places by Harold B. Lee, on Internet Archive">
+            <a class="spine heart nelson" href="https://archive.org/details/from-heart-to-heart-an-autobiography-by-russell-m.-nelson"
+               aria-label="From Heart to Heart by Russell M. Nelson, on Internet Archive">
                 <span class="text">
-                    <span class="title">Stand Ye in Holy Places</span>
-                    <span class="author">Harold B. Lee</span>
+                    <span class="title">From Heart to Heart</span>
+                    <span class="author">Russell M. Nelson</span>
                     <span class="source">Internet Archive</span>
+                </span>
+            </a>
+
+            <a class="spine benson" style="--w:91px; --h:346px; --title-size:17px;" href="https://archive.org/details/godfamilycountry00bens"
+               aria-label="God, Family, Country by Ezra Taft Benson, on Internet Archive">
+                <span class="text">
+                    <span class="title">God, Family, Country</span>
+                    <span class="author">Ezra Taft Benson</span>
+                    <span class="source">Internet Archive</span>
+                </span>
+            </a>
+
+            <a class="spine kimballsw" style="--w:94px; --h:332px; --title-size:17px;" href="https://archive.org/details/faithprecedesmir00kimb"
+               aria-label="Faith Precedes the Miracle by Spencer W. Kimball, on Internet Archive">
+                <span class="text">
+                    <span class="title">Faith Precedes the Miracle</span>
+                    <span class="author">Spencer W. Kimball</span>
+                    <span class="source">Internet Archive</span>
+                </span>
+            </a>
+        </div>
+        </section>
+
+        <section class="shelf-section">
+        <h2>Late Twentieth &amp; Early Twenty-First Century Apostles</h2>
+
+        <div class="shelf">
+            <a class="spine" style="--w:83px; --h:332px; --title-size:15px; --c1:#3a6b52; --c2:#1d3629;" href="https://archive.org/details/teachingsofgordo00hinc"
+               aria-label="Teachings of Gordon B. Hinckley by Gordon B. Hinckley, on Internet Archive">
+                <span class="text">
+                    <span class="title">Teachings of Gordon B. Hinckley</span>
+                    <span class="author">Gordon B. Hinckley</span>
+                    <span class="source">Internet Archive</span>
+                </span>
+            </a>
+
+            <a class="spine" style="--w:87px; --h:335px; --title-size:17px; --c1:#3a6b52; --c2:#1d3629;" href="https://archive.org/details/standingforsomet0000hinc_j4r1"
+               aria-label="Standing for Something by Gordon B. Hinckley, on Internet Archive">
+                <span class="text">
+                    <span class="title">Standing for Something</span>
+                    <span class="author">Gordon B. Hinckley</span>
+                    <span class="source">Internet Archive</span>
+                </span>
+            </a>
+
+            <a class="spine" style="--w:83px; --h:312px; --title-size:17px; --c1:#6b5a3a; --c2:#362d1d;" href="https://archive.org/details/thatwemighthavej00hunt"
+               aria-label="That We Might Have Joy by Howard W. Hunter, on Internet Archive">
+                <span class="text">
+                    <span class="title">That We Might Have Joy</span>
+                    <span class="author">Howard W. Hunter</span>
+                    <span class="source">Internet Archive</span>
+                </span>
+            </a>
+
+            <a class="spine" style="--w:96px; --h:305px; --title-size:17px; --c1:#5a3a6b; --c2:#2d1d36;" href="https://archive.org/details/pathwaystoperfec0000mons"
+               aria-label="Pathways to Perfection by Thomas S. Monson, on Internet Archive">
+                <span class="text">
+                    <span class="title">Pathways to Perfection</span>
+                    <span class="author">Thomas S. Monson</span>
+                    <span class="source">Internet Archive</span>
+                </span>
+            </a>
+
+            <a class="spine" style="--w:84px; --h:337px; --title-size:17px; --c1:#3a6b6b; --c2:#1d3636;" href="https://archive.org/details/pureinheart0000oaks"
+               aria-label="Pure in Heart by Dallin H. Oaks, on Internet Archive">
+                <span class="text">
+                    <span class="title">Pure in Heart</span>
+                    <span class="author">Dallin H. Oaks</span>
+                    <span class="source">Internet Archive</span>
+                </span>
+            </a>
+
+            <a class="spine" style="--w:95px; --h:301px; --title-size:17px; --c1:#3a6b6b; --c2:#1d3636;" href="https://archive.org/details/lordsway0000oaks"
+               aria-label="The Lord’s Way by Dallin H. Oaks, on Internet Archive">
+                <span class="text">
+                    <span class="title">The Lord’s Way</span>
+                    <span class="author">Dallin H. Oaks</span>
+                    <span class="source">Internet Archive</span>
+                </span>
+            </a>
+
+            <a class="spine" style="--w:93px; --h:306px; --title-size:15px; --c1:#6b3a5a; --c2:#361d2d;" href="https://archive.org/details/howeverlonghardr00holl"
+               aria-label="However Long and Hard the Road by Jeffrey R. Holland, on Internet Archive">
+                <span class="text">
+                    <span class="title">However Long and Hard the Road</span>
+                    <span class="author">Jeffrey R. Holland</span>
+                    <span class="source">Internet Archive</span>
+                </span>
+            </a>
+
+            <a class="spine" style="--w:95px; --h:326px; --title-size:15px; --c1:#6b3a5a; --c2:#361d2d;" href="https://archive.org/details/onearthasitisinh00holl"
+               aria-label="On Earth as It Is in Heaven by Jeffrey R. Holland &amp; Patricia T. Holland, on Internet Archive">
+                <span class="text">
+                    <span class="title">On Earth as It Is in Heaven</span>
+                    <span class="author">Jeffrey R. Holland &amp; Patricia T. Holland</span>
+                    <span class="source">Internet Archive</span>
+                </span>
+            </a>
+        </div>
+        </section>
+
+        <section class="shelf-section">
+        <h2>B. H. Roberts &amp; Church Histories</h2>
+
+        <div class="shelf">
+            <a class="spine" style="--w:87px; --h:337px; --title-size:15px; --c1:#4e4a2a; --c2:#292715;" href="https://www.gutenberg.org/ebooks/46202"
+               aria-label="A New Witness for God, Vol. 1 by B. H. Roberts, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">A New Witness for God, Vol. 1</span>
+                    <span class="author">B. H. Roberts</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+
+            <a class="spine" style="--w:99px; --h:345px; --title-size:15px; --c1:#4e4a2a; --c2:#292715;" href="https://www.gutenberg.org/ebooks/47316"
+               aria-label="New Witnesses for God, Vol. 2 by B. H. Roberts, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">New Witnesses for God, Vol. 2</span>
+                    <span class="author">B. H. Roberts</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+
+            <a class="spine" style="--w:97px; --h:335px; --title-size:13px; --c1:#4e4a2a; --c2:#292715;" href="https://www.gutenberg.org/ebooks/45464"
+               aria-label="The Mormon Doctrine of Deity: The Roberts-Van Der Donckt Discussion by B. H. Roberts, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">The Mormon Doctrine of Deity: The Roberts-Van Der Donckt Discussion</span>
+                    <span class="author">B. H. Roberts</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+
+            <a class="spine" style="--w:95px; --h:316px; --title-size:13px; --c1:#4e4a2a; --c2:#292715;" href="https://www.gutenberg.org/ebooks/60235"
+               aria-label="The Seventy’s Course in Theology, First Year by B. H. Roberts, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">The Seventy’s Course in Theology, First Year</span>
+                    <span class="author">B. H. Roberts</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+
+            <a class="spine" style="--w:87px; --h:322px; --title-size:13px; --c1:#4e4a2a; --c2:#292715;" href="https://www.gutenberg.org/ebooks/60491"
+               aria-label="The Seventy’s Course in Theology, Fourth Year by B. H. Roberts, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">The Seventy’s Course in Theology, Fourth Year</span>
+                    <span class="author">B. H. Roberts</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+
+            <a class="spine" style="--w:85px; --h:329px; --title-size:15px; --c1:#4e4a2a; --c2:#292715;" href="https://www.gutenberg.org/ebooks/52391"
+               aria-label="Outlines of Ecclesiastical History by B. H. Roberts, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">Outlines of Ecclesiastical History</span>
+                    <span class="author">B. H. Roberts</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+
+            <a class="spine" style="--w:90px; --h:326px; --title-size:15px; --c1:#4e4a2a; --c2:#292715;" href="https://www.gutenberg.org/ebooks/50302"
+               aria-label="The Rise and Fall of Nauvoo by B. H. Roberts, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">The Rise and Fall of Nauvoo</span>
+                    <span class="author">B. H. Roberts</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+
+            <a class="spine" style="--w:96px; --h:312px; --title-size:17px; --c1:#4e4a2a; --c2:#292715;" href="https://www.gutenberg.org/ebooks/42152"
+               aria-label="The Mormon Battalion by B. H. Roberts, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">The Mormon Battalion</span>
+                    <span class="author">B. H. Roberts</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+
+            <a class="spine" style="--w:91px; --h:299px; --title-size:13px; --c1:#4e4a2a; --c2:#292715;" href="https://www.gutenberg.org/ebooks/47730"
+               aria-label="Defense of the Faith and the Saints, Vol. 1 by B. H. Roberts, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">Defense of the Faith and the Saints, Vol. 1</span>
+                    <span class="author">B. H. Roberts</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+
+            <a class="spine" style="--w:95px; --h:342px; --title-size:15px; --c1:#2a3f5a; --c2:#141f2e;" href="https://www.gutenberg.org/ebooks/9661"
+               aria-label="Mormon Settlement in Arizona by James H. McClintock, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">Mormon Settlement in Arizona</span>
+                    <span class="author">James H. McClintock</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+
+            <a class="spine" style="--w:94px; --h:335px; --title-size:15px; --c1:#4a3b2a; --c2:#271f15;" href="https://www.gutenberg.org/ebooks/49432"
+               aria-label="The Myth of the “Manuscript Found”, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">The Myth of the “Manuscript Found”</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+
+            <a class="spine" style="--w:85px; --h:339px; --title-size:15px; --c1:#4a3b2a; --c2:#271f15;" href="https://www.gutenberg.org/ebooks/50029"
+               aria-label="The Story of the Book of Mormon, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">The Story of the Book of Mormon</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+
+            <a class="spine" style="--w:96px; --h:343px; --title-size:15px; --c1:#4e4a2a; --c2:#292715;" href="https://www.gutenberg.org/ebooks/35360"
+               aria-label="Joseph Smith the Prophet-Teacher by B. H. Roberts, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">Joseph Smith the Prophet-Teacher</span>
+                    <span class="author">B. H. Roberts</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+
+            <a class="spine" style="--w:96px; --h:302px; --title-size:13px; --c1:#4e4a2a; --c2:#292715;" href="https://www.gutenberg.org/ebooks/46536"
+               aria-label="The Gospel: An Exposition of Its First Principles by B. H. Roberts, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">The Gospel: An Exposition of Its First Principles</span>
+                    <span class="author">B. H. Roberts</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+
+            <a class="spine" style="--w:97px; --h:302px; --title-size:13px; --c1:#4e4a2a; --c2:#292715;" href="https://www.gutenberg.org/ebooks/35556"
+               aria-label="Succession in the Presidency of the Church by B. H. Roberts, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">Succession in the Presidency of the Church</span>
+                    <span class="author">B. H. Roberts</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+
+            <a class="spine" style="--w:82px; --h:319px; --title-size:17px; --c1:#4e4a2a; --c2:#292715;" href="https://www.gutenberg.org/ebooks/49526"
+               aria-label="The Missouri Persecutions by B. H. Roberts, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">The Missouri Persecutions</span>
+                    <span class="author">B. H. Roberts</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+
+            <a class="spine" style="--w:84px; --h:300px; --title-size:17px; --c1:#4e4a2a; --c2:#292715;" href="https://www.gutenberg.org/ebooks/35974"
+               aria-label="Corianton: A Nephite Story by B. H. Roberts, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">Corianton: A Nephite Story</span>
+                    <span class="author">B. H. Roberts</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+
+            <a class="spine" style="--w:84px; --h:308px; --title-size:15px; --c1:#4e4a2a; --c2:#292715;" href="https://www.gutenberg.org/ebooks/59951"
+               aria-label="New Witnesses for God, Vol. 3 by B. H. Roberts, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">New Witnesses for God, Vol. 3</span>
+                    <span class="author">B. H. Roberts</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+
+            <a class="spine" style="--w:95px; --h:299px; --title-size:13px; --c1:#4e4a2a; --c2:#292715;" href="https://www.gutenberg.org/ebooks/52819"
+               aria-label="Defense of the Faith and the Saints, Vol. 2 by B. H. Roberts, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">Defense of the Faith and the Saints, Vol. 2</span>
+                    <span class="author">B. H. Roberts</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+
+            <a class="spine" style="--w:99px; --h:346px; --title-size:13px; --c1:#4e4a2a; --c2:#292715;" href="https://www.gutenberg.org/ebooks/60490"
+               aria-label="The Seventy’s Course in Theology, Second Year by B. H. Roberts, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">The Seventy’s Course in Theology, Second Year</span>
+                    <span class="author">B. H. Roberts</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+
+            <a class="spine" style="--w:98px; --h:345px; --title-size:13px; --c1:#4e4a2a; --c2:#292715;" href="https://www.gutenberg.org/ebooks/60575"
+               aria-label="The Seventy’s Course in Theology, Third Year by B. H. Roberts, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">The Seventy’s Course in Theology, Third Year</span>
+                    <span class="author">B. H. Roberts</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+
+            <a class="spine" style="--w:85px; --h:328px; --title-size:13px; --c1:#4e4a2a; --c2:#292715;" href="https://www.gutenberg.org/ebooks/60492"
+               aria-label="The Seventy’s Course in Theology, Fifth Year by B. H. Roberts, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">The Seventy’s Course in Theology, Fifth Year</span>
+                    <span class="author">B. H. Roberts</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+        </div>
+        </section>
+
+        <section class="shelf-section">
+        <h2>Pioneer Lives &amp; Journals</h2>
+
+        <div class="shelf">
+            <a class="spine" style="--w:93px; --h:326px; --title-size:13px; --c1:#2a3f5a; --c2:#141f2e;" href="https://www.gutenberg.org/ebooks/48284"
+               aria-label="Jacob Hamblin: A Narrative of His Personal Experience by Jacob Hamblin, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">Jacob Hamblin: A Narrative of His Personal Experience</span>
+                    <span class="author">Jacob Hamblin</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+
+            <a class="spine" style="--w:82px; --h:347px; --title-size:13px; --c1:#5a2f3f; --c2:#2e1720;" href="https://www.gutenberg.org/ebooks/46391"
+               aria-label="Memoirs of John R. Young, Utah Pioneer, 1847 by John R. Young, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">Memoirs of John R. Young, Utah Pioneer, 1847</span>
+                    <span class="author">John R. Young</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+
+            <a class="spine" style="--w:90px; --h:341px; --title-size:17px; --c1:#3f5a5a; --c2:#1f2e2e;" href="https://www.gutenberg.org/ebooks/54331"
+               aria-label="Life of a Pioneer by James S. Brown, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">Life of a Pioneer</span>
+                    <span class="author">James S. Brown</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+
+            <a class="spine" style="--w:89px; --h:305px; --title-size:15px; --c1:#4a2f2f; --c2:#271717;" href="https://www.gutenberg.org/ebooks/46521"
+               aria-label="Forty Years Among the Indians by Daniel W. Jones, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">Forty Years Among the Indians</span>
+                    <span class="author">Daniel W. Jones</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+
+            <a class="spine" style="--w:95px; --h:296px; --title-size:17px; --c1:#4a3b2a; --c2:#271f15;" href="https://www.gutenberg.org/ebooks/46602"
+               aria-label="Lydia Knight’s History by Susa Young Gates, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">Lydia Knight’s History</span>
+                    <span class="author">Susa Young Gates</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+
+            <a class="spine" style="--w:95px; --h:313px; --title-size:15px; --c1:#2d4a4a; --c2:#162626;" href="https://www.gutenberg.org/ebooks/50958"
+               aria-label="Representative Women of Deseret by Augusta Joyce Crocheron, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">Representative Women of Deseret</span>
+                    <span class="author">Augusta Joyce Crocheron</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+
+            <a class="spine" style="--w:98px; --h:343px; --title-size:17px; --c1:#5a3a3a; --c2:#301d1d;" href="https://www.gutenberg.org/ebooks/54335"
+               aria-label="The Women of Mormondom by Edward W. Tullidge, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">The Women of Mormondom</span>
+                    <span class="author">Edward W. Tullidge</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+
+            <a class="spine" style="--w:98px; --h:318px; --title-size:17px; --c1:#3a4a5e; --c2:#1d2733;" href="https://www.gutenberg.org/ebooks/51097"
+               aria-label="Heroines of “Mormondom” by Various, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">Heroines of “Mormondom”</span>
+                    <span class="author">Various</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+
+            <a class="spine classics nibley" href="https://archive.org/details/bwb_Y0-DBY-351/mode/1up"
+               aria-label="Three Mormon Classics by Preston Nibley, on Internet Archive">
+                <span class="text">
+                    <span class="title">Three Mormon Classics</span>
+                    <span class="author">Preston Nibley</span>
+                    <span class="source">Internet Archive</span>
+                </span>
+            </a>
+
+            <a class="spine" style="--w:94px; --h:336px; --title-size:17px; --c1:#6a4a2a; --c2:#37250f;" href="https://www.gutenberg.org/ebooks/49401"
+               aria-label="Eventful Narratives by Robert Aveson &amp; Oliver B. Huntington, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">Eventful Narratives</span>
+                    <span class="author">Robert Aveson &amp; Oliver B. Huntington</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+
+            <a class="spine" style="--w:84px; --h:344px; --title-size:15px; --c1:#3a4a5e; --c2:#1d2733;" href="https://www.gutenberg.org/ebooks/46783"
+               aria-label="Early Scenes in Church History by Various, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">Early Scenes in Church History</span>
+                    <span class="author">Various</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+
+            <a class="spine" style="--w:90px; --h:298px; --title-size:17px; --c1:#3a4a5e; --c2:#1d2733;" href="https://www.gutenberg.org/ebooks/49327"
+               aria-label="Labors in the Vineyard by Various, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">Labors in the Vineyard</span>
+                    <span class="author">Various</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+
+            <a class="spine" style="--w:91px; --h:324px; --title-size:17px; --c1:#3a4a5e; --c2:#1d2733;" href="https://www.gutenberg.org/ebooks/46734"
+               aria-label="Scraps of Biography by Various, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">Scraps of Biography</span>
+                    <span class="author">Various</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+
+            <a class="spine" style="--w:92px; --h:297px; --title-size:17px; --c1:#3a4a5e; --c2:#1d2733;" href="https://www.gutenberg.org/ebooks/50072"
+               aria-label="Fragments of Experience by Various, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">Fragments of Experience</span>
+                    <span class="author">Various</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+
+            <a class="spine" style="--w:84px; --h:334px; --title-size:17px; --c1:#3a4a5e; --c2:#1d2733;" href="https://www.gutenberg.org/ebooks/46733"
+               aria-label="A String of Pearls by Various, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">A String of Pearls</span>
+                    <span class="author">Various</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+
+            <a class="spine" style="--w:95px; --h:343px; --title-size:17px; --c1:#3a4a5e; --c2:#1d2733;" href="https://www.gutenberg.org/ebooks/49362"
+               aria-label="Helpful Visions by Various, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">Helpful Visions</span>
+                    <span class="author">Various</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+        </div>
+        </section>
+
+        <section class="shelf-section">
+        <h2>Other Authors: Doctrine, Essays &amp; Stories</h2>
+
+        <div class="shelf">
+            <a class="spine" style="--w:90px; --h:340px; --title-size:13px; --c1:#4e4a2a; --c2:#292715;" href="https://www.gutenberg.org/ebooks/45846"
+               aria-label="Letters Exhibiting the Most Prominent Doctrines by Orson Spencer, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">Letters Exhibiting the Most Prominent Doctrines</span>
+                    <span class="author">Orson Spencer</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+
+            <a class="spine" style="--w:86px; --h:298px; --title-size:17px; --c1:#5a3a5a; --c2:#301d30;" href="https://www.gutenberg.org/ebooks/46635"
+               aria-label="Gospel Philosophy by J. H. Ward, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">Gospel Philosophy</span>
+                    <span class="author">J. H. Ward</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+
+            <a class="spine" style="--w:91px; --h:344px; --title-size:17px; --c1:#6a4a2a; --c2:#37250f;" href="https://www.gutenberg.org/ebooks/54292"
+               aria-label="What Jesus Taught by Osborne J. P. Widtsoe, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">What Jesus Taught</span>
+                    <span class="author">Osborne J. P. Widtsoe</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+
+            <a class="spine" style="--w:97px; --h:298px; --title-size:17px; --c1:#2d4a4a; --c2:#162626;" href="https://www.gutenberg.org/ebooks/17249"
+               aria-label="Added Upon by Nephi Anderson, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">Added Upon</span>
+                    <span class="author">Nephi Anderson</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+
+            <a class="spine untohills evans" href="https://archive.org/details/untohills00evan"
+               aria-label="Unto the Hills by Richard L. Evans, on Internet Archive">
+                <span class="text">
+                    <span class="title">Unto the Hills</span>
+                    <span class="author">Richard L. Evans</span>
+                    <span class="source">Internet Archive</span>
+                </span>
+            </a>
+
+            <a class="spine spokenword evans" href="https://archive.org/details/andthespokenword00evan"
+               aria-label="…and “The Spoken Word” by Richard L. Evans, on Internet Archive">
+                <span class="text">
+                    <span class="title">…and “The Spoken Word”</span>
+                    <span class="author">Richard L. Evans</span>
+                    <span class="source">Internet Archive</span>
+                </span>
+            </a>
+
+            <a class="spine samehour evans" href="https://archive.org/details/atthissamehour00evan"
+               aria-label="At This Same Hour by Richard L. Evans, on Internet Archive">
+                <span class="text">
+                    <span class="title">At This Same Hour</span>
+                    <span class="author">Richard L. Evans</span>
+                    <span class="source">Internet Archive</span>
+                </span>
+            </a>
+
+            <a class="spine tonic evans" href="https://archive.org/details/tonicforourtimes00evan"
+               aria-label="Tonic for Our Times by Richard L. Evans, on Internet Archive">
+                <span class="text">
+                    <span class="title">Tonic for Our Times</span>
+                    <span class="author">Richard L. Evans</span>
+                    <span class="source">Internet Archive</span>
+                </span>
+            </a>
+
+            <a class="spine everlasting evans" href="https://archive.org/details/everlastingthing00evan"
+               aria-label="The Everlasting Things by Richard L. Evans, on Internet Archive">
+                <span class="text">
+                    <span class="title">The Everlasting Things</span>
+                    <span class="author">Richard L. Evans</span>
+                    <span class="source">Internet Archive</span>
+                </span>
+            </a>
+
+            <a class="spine faithfuture evans" href="https://archive.org/details/faithinfuture00evan"
+               aria-label="Faith in the Future by Richard L. Evans, on Internet Archive">
+                <span class="text">
+                    <span class="title">Faith in the Future</span>
+                    <span class="author">Richard L. Evans</span>
+                    <span class="source">Internet Archive</span>
+                </span>
+            </a>
+
+            <a class="spine" style="--w:89px; --h:333px; --title-size:15px; --c1:#4a3b2a; --c2:#271f15;" href="https://www.gutenberg.org/ebooks/60056"
+               aria-label="Scrap Book of Mormon Literature, Vol. 1, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">Scrap Book of Mormon Literature, Vol. 1</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+
+            <a class="spine" style="--w:82px; --h:313px; --title-size:15px; --c1:#4a3b2a; --c2:#271f15;" href="https://www.gutenberg.org/ebooks/54298"
+               aria-label="Scrap Book of Mormon Literature, Vol. 2, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">Scrap Book of Mormon Literature, Vol. 2</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+
+            <a class="spine" style="--w:86px; --h:323px; --title-size:17px; --c1:#2a3f5a; --c2:#141f2e;" href="https://www.gutenberg.org/ebooks/46617"
+               aria-label="The Plan of Salvation by John Morgan, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">The Plan of Salvation</span>
+                    <span class="author">John Morgan</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+
+            <a class="spine" style="--w:82px; --h:324px; --title-size:15px; --c1:#6a4a2a; --c2:#37250f;" href="https://www.gutenberg.org/ebooks/49357"
+               aria-label="Outlines of Mormon Philosophy by Lycurgus A. Wilson, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">Outlines of Mormon Philosophy</span>
+                    <span class="author">Lycurgus A. Wilson</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+
+            <a class="spine" style="--w:99px; --h:339px; --title-size:15px; --c1:#2d4a4a; --c2:#162626;" href="https://www.gutenberg.org/ebooks/16534"
+               aria-label="A Young Folks’ History of the Church by Nephi Anderson, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">A Young Folks’ History of the Church</span>
+                    <span class="author">Nephi Anderson</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+
+            <a class="spine" style="--w:88px; --h:333px; --title-size:17px; --c1:#2d4a4a; --c2:#162626;" href="https://www.gutenberg.org/ebooks/13756"
+               aria-label="Story of Chester Lawrence by Nephi Anderson, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">Story of Chester Lawrence</span>
+                    <span class="author">Nephi Anderson</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+
+            <a class="spine" style="--w:88px; --h:346px; --title-size:17px; --c1:#2d4a4a; --c2:#162626;" href="https://www.gutenberg.org/ebooks/12684"
+               aria-label="Dorian by Nephi Anderson, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">Dorian</span>
+                    <span class="author">Nephi Anderson</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+        </div>
+        </section>
+
+        <section class="shelf-section">
+        <h2>Critical &amp; Outside Perspectives</h2>
+
+        <div class="shelf">
+            <a class="spine" style="--w:91px; --h:320px; --title-size:17px; --c1:#5a2f3f; --c2:#2e1720;" href="https://www.gutenberg.org/ebooks/2443"
+               aria-label="The Story of the Mormons by William Alexander Linn, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">The Story of the Mormons</span>
+                    <span class="author">William Alexander Linn</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+
+            <a class="spine" style="--w:85px; --h:306px; --title-size:17px; --c1:#3f5a5a; --c2:#1f2e2e;" href="https://www.gutenberg.org/ebooks/7066"
+               aria-label="Under the Prophet in Utah by Frank J. Cannon &amp; Harvey J. O’Higgins, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">Under the Prophet in Utah</span>
+                    <span class="author">Frank J. Cannon &amp; Harvey J. O’Higgins</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+
+            <a class="spine" style="--w:96px; --h:316px; --title-size:17px; --c1:#4a2f2f; --c2:#271717;" href="https://www.gutenberg.org/ebooks/23519"
+               aria-label="The Mormon Menace by Alfred Henry Lewis &amp; John Doyle Lee, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">The Mormon Menace</span>
+                    <span class="author">Alfred Henry Lewis &amp; John Doyle Lee</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+
+            <a class="spine" style="--w:96px; --h:327px; --title-size:15px; --c1:#4a3b2a; --c2:#271f15;" href="https://www.gutenberg.org/ebooks/44414"
+               aria-label="The Mormon Prophet and His Harem by C. V. Waite, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">The Mormon Prophet and His Harem</span>
+                    <span class="author">C. V. Waite</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+
+            <a class="spine" style="--w:84px; --h:310px; --title-size:17px; --c1:#5a2f3f; --c2:#2e1720;" href="https://www.gutenberg.org/ebooks/51096"
+               aria-label="The Mormons: A Discourse by Thomas L. Kane, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">The Mormons: A Discourse</span>
+                    <span class="author">Thomas L. Kane</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+
+            <a class="spine" style="--w:96px; --h:302px; --title-size:17px; --c1:#3f5a5a; --c2:#1f2e2e;" href="https://www.gutenberg.org/ebooks/36486"
+               aria-label="The City of the Mormons by Henry Caswall, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">The City of the Mormons</span>
+                    <span class="author">Henry Caswall</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+
+            <a class="spine" style="--w:99px; --h:305px; --title-size:17px; --c1:#4a2f2f; --c2:#271717;" href="https://www.gutenberg.org/ebooks/54079"
+               aria-label="Sinners and Saints by Phil Robinson, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">Sinners and Saints</span>
+                    <span class="author">Phil Robinson</span>
+                    <span class="source">Project Gutenberg</span>
+                </span>
+            </a>
+
+            <a class="spine" style="--w:87px; --h:320px; --title-size:15px; --c1:#4a3b2a; --c2:#271f15;" href="https://www.gutenberg.org/ebooks/36791"
+               aria-label="The Mormon Puzzle, and How to Solve It by R. W. Beers, on Project Gutenberg">
+                <span class="text">
+                    <span class="title">The Mormon Puzzle, and How to Solve It</span>
+                    <span class="author">R. W. Beers</span>
+                    <span class="source">Project Gutenberg</span>
                 </span>
             </a>
         </div>
