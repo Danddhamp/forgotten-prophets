@@ -1,18 +1,43 @@
+/* =====================================================
+   Brown palette restyle
+   - Boxes removed: entries are open, bulleted list items
+   - Source-type color coding kept, now as shades of brown
+     applied to the bullet, title and links
+   ===================================================== */
+
+:root {
+    --bg: #241810;          /* espresso */
+    --ink: #ead9bf;         /* parchment */
+    --muted: #b39b7d;       /* weathered tan */
+    --rule: #4a3626;        /* dark leather seam */
+    --panel: #2f2016;       /* only used for table cells + inputs */
+    --accent: #c4a27a;      /* default bullet/link color (latte) */
+}
+
 body {
     text-align: center;
-    background-color: rgb(121, 169, 224);
+    background-color: var(--bg);
+    color: var(--ink);
+    font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    line-height: 1.5;
 }
+
+a { color: #e3b86b; }
+a:hover { color: #f3d08f; }
 
 h1 {
     font-size: 70px;
+    margin-bottom: 0;
+    color: #f1e2c8;
 }
-h2 {
-    font-size: 40px;
-}
+h2 { font-size: 40px; }
+h3 { color: var(--muted); font-weight: normal; margin: 4px 0; }
 
 img {
     width: 200px;
     height: auto;
+    border-radius: 4px;
+    border: 3px solid var(--rule);
 }
 
 table {
@@ -20,207 +45,55 @@ table {
     margin: auto;
 }
 th, td {
-    border: 1px solid black;
-    background-color:white;
-    a{
-        color:red;
-    }
+    border: 1px solid var(--rule);
+    background-color: var(--panel);
+    color: var(--ink);
+    padding: 6px 10px;
 }
+th a, td a { color: #e3b86b; }
 
-/* ---------- Source-type color coding ---------- */
+/* ---------- Source-type color coding ----------
+   These classes now only set --accent (bullet, title, links).
+   Backgrounds are no longer filled, so nothing looks like a box. */
 
-.apostle {
-    background-color: darkslategrey;
-    color: goldenrod;
-}
-.apostle.byu-speeches {
-    background-color: darkblue;
-}
-.hc {
-    background-color: lightblue;
-    color: black;
-}
-.timeseason {
-    background-color: lightseagreen;
-    color: black;
-}
-.timeseason a {
-    color: #ffd24d;
-}
-.standardworks {
-    background-color: aquamarine;
-    color: black;
-}
-.standardworks a {
-    color: #020236;
-}
-.dezweek {
-    background-color: honeydew;
-    color: black;
-}
-.dezweek a {
-    color: black;
-}
-.dezweek .sources a {
-    color: red;
-}
-.impera {
-    background-color: dodgerblue;
-    color: black;
-}
-.impera a {
-    color: black;
-}
-.impera .sources a {
-    color: lightblue;
-}
-.mesadvo {
-    background-color: greenyellow;
-    color: black;
-}
-.mesadvo a {
-    color: black;
-}
-.jod {
-    background-color: tan;
-    color: black;
-}
-.jod a {
-    color: black;
-}
-.hymn {
-    background-color: seagreen;
-    color: black;
-}
-.hymn a {
-    color: black;
-}
-.book {
-    background-color: #afda5f;
-    color: rgb(34, 115, 140);
-}
-.the-seer {
-    background-color: cadetblue;
-    color: black;
-}
-.the-seer a {
-    color: black;
-}
-.the-seer .sources a {
-    color: aqua;
-}
-.the-seer .other-source a {
-    color: burlywood;
-}
-.frontier-guardian {
-    background-color: springgreen;
-    color: purple;
-}
-.frontier-guardian a {
-    color: purple;
-}
-.the-contributer {
-    background-color: indianred;
-    color: navajowhite;
-}
-.the-contributer a {
-    color: slateblue;
-}
-.the-peoples-organ{
-    background-color:darkkhaki;
-    color:darkslategray;
-}
-.gospel-light {
-    background-color: #f7ba61;
-    color: #42230f;
-}
-.gospel-light a {
-    color: #42230f;
-}
-.louisluminary {
-    background-color: #932c1b;
-}
-.wasp {
-    background-color: yellow;
-    color: rgb(29, 40, 244);
-}
-.wasp a {
-    color: black;
-}
-.chc {
-    background-color: rgb(114, 121, 114);
-    color: black;
-}
-.chc a {
-    color: midnightblue;
-}
-.misc{
-    background-color:#932c1b;
-    color:white;
-}
-.misc .sources a{
-    color:rgb(82, 163, 243);
-}
-.gc {
-    background-color: #99eadd;
-    color: #243447;
-}
-.gc a {
-    color: #1E4E8C;
-}
-.gcldsorg{
-    background-color:royalblue;
-    color:#F5F1E6;
-    a{
-        color:#F2D27A;
-    }
-}
-.gcldsorg .sources a{
-    text-decoration: underline;
-    color:#F2D27A;
-}
-.byu-speeches {
-    background-color: darkblue;
-    color: white;
-    a{
-        color:white;
-    }
-}
-.byu-speeches .sources a {
-    color: white;
-}
-.biography {
-    background-color: #2a0566;
-}
-.first-presidency {
-    background-color: rgb(109, 166, 222);
-}
-.first-presidency.byu-speeches {
-    background-color: darkblue;
-}
-.otherprophet {
-    background-color: mediumpurple;
-}
-.president {
-    background-color: midnightblue;
-    color: rgb(145, 164, 182);
-}
-.president .sources a{
-    color:#338de0;
-}
-.president .other-source a{
-    color:#6ab77f;
-}
-.president.byu-speeches {
-    background-color: darkblue;
-}
-.epistle-background {
-    background-color: #00A2E8;
-}
+.gc                 { --accent: #c4a27a; }  /* latte */
+.apostle            { --accent: #d08a4e; }  /* copper */
+.president          { --accent: #e3b86b; }  /* honey */
+.hc                 { --accent: #b8895f; }
+.timeseason         { --accent: #a67c52; }
+.standardworks      { --accent: #d9a273; }
+.dezweek            { --accent: #c9b08a; }
+.impera             { --accent: #bf7f54; }
+.mesadvo            { --accent: #b8a15a; }
+.jod                { --accent: #cfa07a; }
+.hymn               { --accent: #9c7a4f; }
+.book               { --accent: #d6b48a; }
+.the-seer           { --accent: #b28b6a; }
+.frontier-guardian  { --accent: #c79a5e; }
+.the-contributer    { --accent: #a8704a; }
+.the-peoples-organ  { --accent: #b5a07a; }
+.gospel-light       { --accent: #e0a85a; }
+.louisluminary      { --accent: #9e5a3c; }
+.wasp               { --accent: #dcb25e; }
+.chc                { --accent: #a89078; }
+.misc               { --accent: #b0674a; }
+.gcldsorg           { --accent: #c8944f; }
+.byu-speeches       { --accent: #c9a67a; }
+.first-presidency   { --accent: #cf9d6a; }
+.otherprophet       { --accent: #b9926c; }
+.epistle-background { --accent: #c08a5c; }
+.biography          { --accent: #c4a27a; }
+
+/* Combined classes (e.g. apostle + byu-speeches) share one tone */
+.apostle.byu-speeches,
+.first-presidency.byu-speeches,
+.president.byu-speeches { --accent: #c9a67a; }
+
 .funfact {
-    background-color: darkblue;
+    color: #f1e2c8;
     font-size: larger;
 }
+
 /* ---------- Layout helpers ---------- */
 
 .container-flex {
@@ -234,15 +107,11 @@ th, td {
     align-items: center;
     gap: 10px;
     text-decoration: none;
-    color: black;
+    color: var(--ink);
 }
-.talk-link img {
-    height: 200px;
-}
+.talk-link img { height: 200px; }
 
-.sermon p {
-    line-height: 2;
-}
+.sermon p { line-height: 2; }
 
 .teaching-grid {
     display: grid;
@@ -251,62 +120,87 @@ th, td {
     width: 95%;
     margin: 40px auto;
 }
+
+/* ---------- Teaching entries: bulleted list items, no boxes ---------- */
+
 .teaching-tile {
-    border: 1px solid whitesmoke;
-    padding: 20px;
-    text-align: center;
+    position: relative;
+    border: none;
+    border-bottom: 1px solid var(--rule);
+    background: none;
+    color: var(--ink);
+    padding: 18px 0 22px 34px;   /* room for the bullet on the left */
+    text-align: left;
 }
+.teaching-tile:last-child { border-bottom: none; }
+
+/* The bullet */
+.teaching-tile::before {
+    content: "";
+    position: absolute;
+    left: 6px;
+    top: 30px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--accent);
+}
+
 .teaching-tile h2 {
     margin: 0;
-    font-size: 30px;
+    font-size: 24px;
+    line-height: 1.3;
+    color: var(--accent);
 }
 .year {
-    font-size: 26px;
+    font-size: 20px;
     margin-top: 8px;
+    color: var(--ink);
 }
 .calling {
-    font-size: 22px;
-    margin: 8px 0 18px;
+    font-size: 18px;
+    margin: 2px 0 14px;
+    color: var(--muted);
+    font-style: italic;
 }
 .teaching-type {
-    font-size: 22px;
-    margin-bottom: 45px;
+    font-size: 18px;
+    margin-bottom: 18px;
+    color: var(--ink);
 }
 .topics {
-    text-align: left;
-    font-size: 20px;
-    line-height: 1.5;
-}
-.scripture-references {
     text-align: left;
     font-size: 18px;
     line-height: 1.5;
 }
+.scripture-references {
+    text-align: left;
+    font-size: 17px;
+    line-height: 1.5;
+    color: var(--muted);
+}
+.topics strong,
+.scripture-references strong { color: var(--ink); }
 
 .sources {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     flex-wrap: wrap;
-    gap: 12px;
+    gap: 6px 22px;
     margin-bottom: 15px;
 }
 .sources a {
-    color: #245A8D;
+    color: var(--accent);
     font-weight: bold;
 }
-.sources a:hover{
-    text-decoration: underline;
-}
-.other-source {
-    margin-bottom: 20px;
-}
+.sources a:hover { text-decoration: underline; }
+
+.other-source { margin-bottom: 20px; }
 .other-source a {
-    color: #4F7A5A;
+    color: var(--muted);
     font-weight: bold;
 }
-.other-source a:hover{
-    text-decoration: underline;
-}
+.other-source a:hover { text-decoration: underline; }
 
 .quote-section {
     display: flex;
@@ -317,9 +211,7 @@ th, td {
     width: 200px;
     flex-shrink: 0;
 }
-.quote-section div {
-    flex: 1;
-}
+.quote-section div { flex: 1; }
 
 .left-image {
     float: left;
@@ -334,9 +226,6 @@ th, td {
 
 /* ---------- Controls ---------- */
 
-
-
-
 #timelineButton {
     position: fixed;
     top: 0;
@@ -350,13 +239,14 @@ th, td {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background-color: #003b75;
-    color: white;
-    border: 1px solid white;
+    background-color: #6b4a2f;
+    color: #f1e2c8;
+    border: 1px solid #c4a27a;
     font-size: 24px;
     cursor: pointer;
 }
 
+/* Filters: underlined fields instead of boxed ones */
 .filters {
     display: flex;
     justify-content: center;
@@ -366,10 +256,21 @@ th, td {
 }
 .filters select,
 .filters input {
-    padding: 10px;
+    padding: 10px 4px;
+    font: inherit;
     font-size: 16px;
-    border: 1px solid whitesmoke;
-    border-radius: 8px;
+    background: transparent;
+    color: var(--ink);
+    border: none;
+    border-bottom: 2px solid #8a6a4a;
+    border-radius: 0;
+}
+.filters select option { background: var(--bg); color: var(--ink); }
+.filters input::placeholder { color: var(--muted); }
+.filters select:focus,
+.filters input:focus {
+    outline: none;
+    border-bottom-color: #e3b86b;
 }
 
 /* ---------- Prophet page layout ---------- */
@@ -379,12 +280,12 @@ th, td {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
     grid-template-areas: "left bio right";
-    gap: 25px;
+    gap: 40px;
     align-items: start;
     width: 95%;
     margin: 40px auto;
 }
-.teachings-left { grid-area: left; }
+.teachings-left  { grid-area: left; }
 .teachings-right { grid-area: right; }
 .biography-column { grid-area: bio; }
 
@@ -392,19 +293,28 @@ th, td {
 .teachings-right {
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 0;
 }
 
-/* Biography box matches the white table cells in style.css */
+/* Biography: open text between two seams, no box */
 .biography-column {
-    background-color: white;
-    color: black;
-    border: 1px solid black;
-    padding: 20px;
+    background: none;
+    color: var(--ink);
+    border: none;
+    border-left: 1px solid var(--rule);
+    border-right: 1px solid var(--rule);
+    padding: 0 28px;
+    text-align: left;
 }
 .biography-column h2 {
     margin: 0 0 15px;
+    color: #f1e2c8;
 }
+.biography-column hr {
+    border: none;
+    border-top: 1px solid var(--rule);
+}
+.biography-column a { color: #e3b86b; }
 
 @media (max-width: 1000px) {
     .page-layout {
@@ -412,6 +322,12 @@ th, td {
         grid-template-areas:
             "bio bio"
             "left right";
+    }
+    .biography-column {
+        border-left: none;
+        border-right: none;
+        border-bottom: 1px solid var(--rule);
+        padding: 0 0 24px;
     }
 }
 @media (max-width: 700px) {
@@ -435,23 +351,25 @@ th, td {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 22px;
     margin: 25px auto 10px;
 }
 .view-tabs button {
     font: inherit;
     font-weight: bold;
-    padding: 8px 22px;
+    padding: 6px 4px;
     cursor: pointer;
     background: transparent;
-    color: inherit;
-    border: 1px solid currentColor;
+    color: var(--muted);
+    border: none;
+    border-bottom: 3px solid transparent;
+    border-radius: 0;
 }
-.view-tabs button:hover { opacity: 0.8; }
+.view-tabs button:hover { color: var(--ink); }
 .view-tabs button[aria-selected="true"] {
-    background: white;
-    color: black;
-    border-color: black;
+    background: transparent;
+    color: #f1e2c8;
+    border-bottom-color: #e3b86b;
 }
 
 /* Biography only: single centered column */
@@ -475,4 +393,399 @@ th, td {
         grid-template-columns: minmax(0, 1fr);
         grid-template-areas: "left" "right";
     }
+}
+
+
+/* =====================================================================
+   PROPHET PAGE: single reading column
+   Turn it on by adding class="prophet-page" to <body>.
+
+   Everything here is scoped to .prophet-page, so prophet pages that
+   haven't been updated yet keep the three-column layout above.
+
+   prophet-page.js is unchanged. .teachings-left and .teachings-right are
+   still the two containers it fills, but here they are flattened
+   (display: contents) so the entries read as one chronological list.
+   ===================================================================== */
+
+.prophet-page {
+    --ink-strong: #f6ead2;
+    --field: #8a6a4a;       /* underline on inputs */
+    --link: #e3b86b;        /* honey */
+}
+.prophet-page *,
+.prophet-page *::before,
+.prophet-page *::after { box-sizing: border-box; }
+
+body.prophet-page {
+    margin: 0;
+    padding: 28px 24px 96px;
+    text-align: left;
+    font-size: 1.125rem;
+    line-height: 1.5;
+}
+.prophet-page a { text-underline-offset: 3px; }
+.prophet-page a:hover { color: #f6d79b; }
+.prophet-page :focus-visible {
+    outline: 2px solid var(--link);
+    outline-offset: 3px;
+}
+
+/* One shared column for everything */
+.prophet-page .top-links,
+.prophet-page .prophet-header,
+.prophet-page .view-tabs,
+.prophet-page .page-layout[data-view] {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ---------- Top links ---------- */
+
+.prophet-page .top-links {
+    display: flex;
+    gap: 24px;
+    font-size: 1rem;
+}
+
+/* ---------- Header: portrait, name, offices ---------- */
+
+.prophet-page .prophet-header {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 40px;
+    align-items: end;
+    margin-top: 48px;
+}
+.prophet-page .prophet-header img {
+    display: block;
+    width: 200px;
+    height: auto;
+    padding: 6px;
+    background: #33231a;
+    border: 1px solid var(--rule);
+    border-radius: 0;
+}
+.prophet-page .prophet-intro h1 {
+    margin: 0;
+    font-size: clamp(2.5rem, 7vw, 4.25rem);
+    line-height: 1.05;
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    color: var(--ink-strong);
+}
+.prophet-page .lifespan {
+    margin: 10px 0 22px;
+    font-size: 1.25rem;
+    color: var(--muted);
+}
+.prophet-page .offices {
+    margin: 0;
+    max-width: 540px;
+}
+.prophet-page .offices > div {
+    display: grid;
+    grid-template-columns: 13em 1fr;
+    gap: 4px 16px;
+    padding: 8px 0;
+    border-top: 1px solid var(--rule);
+}
+.prophet-page .offices dt { color: var(--muted); }
+.prophet-page .offices dd { margin: 0; color: var(--ink); }
+
+/* ---------- View tabs (sticky) ---------- */
+
+.prophet-page .view-tabs {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 0 28px;
+    margin-top: 48px;
+    margin-bottom: 44px;
+    padding-top: 8px;
+    background: var(--bg);
+    border-bottom: 1px solid var(--rule);
+}
+.prophet-page .view-tabs button {
+    margin-bottom: -1px;
+    padding: 12px 2px;
+    font: inherit;
+    font-weight: 700;
+    color: var(--muted);
+    background: transparent;
+    border: none;
+    border-bottom: 3px solid transparent;
+    border-radius: 0;
+    cursor: pointer;
+}
+.prophet-page .view-tabs button:hover { color: var(--ink); }
+.prophet-page .view-tabs button[aria-selected="true"] {
+    background: transparent;
+    color: var(--ink-strong);
+    border-bottom-color: var(--link);
+}
+
+/* ---------- Page body ---------- */
+
+.prophet-page .page-layout[data-view] {
+    display: block;
+    width: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.prophet-page .biography-column h2,
+.prophet-page h2.section-heading {
+    margin: 0 0 22px;
+    font-size: 2rem;
+    line-height: 1.2;
+    color: var(--ink-strong);
+}
+
+/* Biography */
+.prophet-page .biography-column {
+    padding: 0 0 64px;
+    margin-bottom: 56px;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid var(--rule);
+}
+.prophet-page .bio-text {
+    max-width: 68ch;
+    line-height: 1.8;
+}
+.prophet-page .bio-text p { margin: 0 0 1.2em; }
+
+.prophet-page .sources-heading {
+    margin: 40px 0 10px;
+    font-size: 1.1rem;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--muted);
+}
+.prophet-page .source-list {
+    margin: 0;
+    padding-left: 1.25em;
+    font-size: 1rem;
+}
+.prophet-page .source-list li { margin: 6px 0; }
+.prophet-page .source-list li::marker { color: var(--field); }
+
+/* The two script-managed containers become one flowing list */
+.prophet-page .teachings-left,
+.prophet-page .teachings-right { display: contents; }
+
+/* View switching (prophet-page.js sets data-view) */
+.prophet-page .page-layout[data-view="bio"] .teachings-left,
+.prophet-page .page-layout[data-view="bio"] .teachings-right { display: none; }
+.prophet-page .page-layout[data-view="bio"] .biography-column {
+    margin-bottom: 0;
+    border-bottom: none;
+}
+.prophet-page .page-layout[data-view="teachings"] .biography-column { display: none; }
+
+/* ---------- Search and filters ---------- */
+
+.prophet-page .filters {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-end;
+    gap: 14px 22px;
+    width: auto;
+    margin: 0 0 10px;
+}
+.prophet-page .filters input,
+.prophet-page .filters select {
+    padding: 10px 2px;
+    font: inherit;
+    font-size: 1rem;
+    color: var(--ink);
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid var(--field);
+    border-radius: 0;
+}
+.prophet-page .filters input { flex: 1 1 260px; }
+.prophet-page .filters input:focus,
+.prophet-page .filters select:focus {
+    outline: none;
+    border-bottom-color: var(--link);
+}
+.prophet-page #teachingCount {
+    margin: 10px 0 40px;
+    font-size: 0.95rem;
+    color: var(--muted);
+}
+
+/* ---------- Teachings: timeline entries ----------
+   year in the left gutter | dot on a vertical line | entry text */
+
+.prophet-page .teaching-tile {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 100px;
+    padding: 0 0 44px 36px;
+    background: none;
+    border: none;
+    border-left: 2px solid var(--rule);
+    text-align: left;
+}
+.prophet-page .teaching-tile::before {
+    content: "";
+    position: absolute;
+    left: -8px;
+    top: 9px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 0 4px var(--bg);   /* gap in the line around the dot */
+}
+
+/* Visual order is set here, so the HTML order doesn't matter */
+.prophet-page .teaching-tile .year {
+    order: 0;
+    position: absolute;
+    left: -100px;
+    top: 0;
+    width: 72px;
+    margin: 0;
+    font-size: 1.5rem;
+    line-height: 1.3;
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+    color: var(--ink-strong);
+}
+.prophet-page .teaching-tile .title {
+    order: 1;
+    margin: 0 0 6px;
+    font-size: 1.5rem;
+    line-height: 1.3;
+    font-weight: 600;
+    color: var(--accent);
+}
+.prophet-page .teaching-tile .calling {
+    order: 2;
+    margin: 0 0 4px;
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--muted);
+}
+.prophet-page .teaching-tile .teaching-type {
+    order: 3;
+    margin: 0 0 14px;
+    font-size: 1rem;
+    color: var(--ink);
+}
+.prophet-page .teaching-tile .sources {
+    order: 4;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 4px 20px;
+    margin: 0 0 14px;
+    font-size: 0.95rem;
+}
+.prophet-page .teaching-tile .sources a { color: var(--accent); font-weight: 700; }
+.prophet-page .teaching-tile .sources a:hover {
+    text-decoration: underline;
+    color: var(--ink-strong);
+}
+.prophet-page .teaching-tile .other-source { order: 5; margin: 0 0 14px; font-size: 0.95rem; }
+.prophet-page .teaching-tile .other-source a { color: var(--muted); font-weight: 700; }
+.prophet-page .teaching-tile .topics,
+.prophet-page .teaching-tile .scripture-references {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--muted);
+}
+.prophet-page .teaching-tile .topics { order: 6; }
+.prophet-page .teaching-tile .scripture-references { order: 7; }
+.prophet-page .teaching-tile .topics strong,
+.prophet-page .teaching-tile .scripture-references strong {
+    color: var(--ink);
+    font-weight: 600;
+}
+
+/* ---------- Previous / next page arrows ---------- */
+
+.prophet-page .page-arrow {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 96px;
+    color: var(--muted);
+    text-decoration: none;
+}
+.prophet-page .page-arrow svg {
+    width: 36px;
+    height: 36px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+.prophet-page .page-arrow:hover { color: var(--link); }
+.prophet-page .page-arrow-prev { left: 8px; }
+.prophet-page .page-arrow-next { right: 8px; }
+
+/* On narrower screens they would cover the text, so move them to the bottom corners */
+@media (max-width: 1150px) {
+    .prophet-page .page-arrow {
+        top: auto;
+        bottom: 16px;
+        transform: none;
+        width: 52px;
+        height: 52px;
+        background: var(--bg);
+        border: 1px solid var(--rule);
+        border-radius: 50%;
+    }
+    .prophet-page .page-arrow svg { width: 26px; height: 26px; }
+    .prophet-page .page-arrow-prev { left: 12px; }
+    .prophet-page .page-arrow-next { right: 12px; }
+}
+
+/* ---------- Small screens ---------- */
+
+@media (max-width: 700px) {
+    body.prophet-page { padding: 20px 18px 72px; }
+
+    .prophet-page .prophet-header {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        margin-top: 32px;
+    }
+    .prophet-page .prophet-header img { width: 160px; }
+    .prophet-page .offices > div { grid-template-columns: 1fr; }
+    .prophet-page .filters { flex-direction: row; width: auto; }
+
+    /* Year moves above the title instead of sitting in a gutter */
+    .prophet-page .teaching-tile {
+        margin-left: 8px;
+        padding-left: 26px;
+    }
+    .prophet-page .teaching-tile .year {
+        position: static;
+        width: auto;
+        margin-bottom: 4px;
+        font-size: 1.1rem;
+        text-align: left;
+        color: var(--muted);
+    }
+    .prophet-page .teaching-tile::before { top: 5px; }
 }
