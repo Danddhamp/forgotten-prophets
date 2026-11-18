@@ -56,19 +56,21 @@ th a, td a { color: #e3b86b; }
    These classes now only set --accent (bullet, title, links).
    Backgrounds are no longer filled, so nothing looks like a box. */
 
+.collections        { --accent: #d9f1f0; }
 .gc                 { --accent: #c4a27a; }  /* latte */
 .apostle            { --accent: #d08a4e; }  /* copper */
 .president          { --accent: #e3b86b; }  /* honey */
-.hc                 { --accent: #b8895f; }
-.timeseason         { --accent: #a67c52; }
-.standardworks      { --accent: #d9a273; }
-.dezweek            { --accent: #c9b08a; }
-.impera             { --accent: #bf7f54; }
-.mesadvo            { --accent: #b8a15a; }
-.jod                { --accent: #cfa07a; }
+.hc                 { --accent: #e4a773; }
+.ems                { --accent: #de62c5; }
+.timeseason         { --accent: #cde650; }
+.standardworks      { --accent: #12bde8; }
+.dezweek            { --accent: #ec3b32; }
+.impera             { --accent: #c70606; }
+.mesadvo            { --accent: #27f461; }
+.jod                { --accent: #FFD700; }
 .hymn               { --accent: #9c7a4f; }
 .book               { --accent: #d6b48a; }
-.the-seer           { --accent: #b28b6a; }
+.the-seer           { --accent: #a322df; }
 .frontier-guardian  { --accent: #c79a5e; }
 .the-contributer    { --accent: #a8704a; }
 .the-peoples-organ  { --accent: #b5a07a; }
@@ -788,4 +790,122 @@ body.prophet-page {
         color: var(--muted);
     }
     .prophet-page .teaching-tile::before { top: 5px; }
+}
+
+/* ---------- Books tab: bookshelf (same look as book-collection.html) ---------- */
+
+.prophet-page .books-section { display: none; }
+.prophet-page .page-layout[data-view="books"] .books-section { display: block; }
+.prophet-page .page-layout[data-view="books"] .biography-column,
+.prophet-page .page-layout[data-view="books"] .teachings-left,
+.prophet-page .page-layout[data-view="books"] .teachings-right { display: none; }
+
+.prophet-page .book-shelves {
+    --wood: #5a3d27;
+    --wood-dark: #3b2718;
+    --gold: #d6b25e;
+    --page-text: #f1e7d0;
+    text-align: left;
+}
+.prophet-page .book-shelves .shelf-title {
+    margin: 0 0 1rem;
+    font-size: 1.25rem;
+    font-weight: normal;
+    color: var(--ink);
+}
+.prophet-page .book-shelves .shelf-title:not(:first-child) { margin-top: 3rem; }
+
+.prophet-page .book-shelves .shelf {
+    display: flex;
+    align-items: flex-end;
+    gap: 3px;
+    padding: 2rem 1rem 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x proximity;
+    scrollbar-color: var(--gold) var(--wood-dark);
+    border-bottom: 18px solid var(--wood);
+    box-shadow: 0 18px 0 -2px var(--wood-dark), 0 30px 30px rgba(0,0,0,.5);
+    background: linear-gradient(to bottom, transparent 70%, rgba(0,0,0,.35));
+}
+.prophet-page .book-shelves .spine {
+    --w: 88px;
+    --h: 320px;
+    --c1: #7a1f2b;
+    --c2: #4d121a;
+    flex: 0 0 var(--w);
+    width: var(--w);
+    height: var(--h);
+    position: relative;
+    display: block;
+    padding: 14px 8px;
+    color: var(--gold);
+    text-decoration: none;
+    scroll-snap-align: start;
+    border-radius: 3px 3px 0 0;
+    background:
+        linear-gradient(to right,
+            rgba(0,0,0,.45) 0%, rgba(255,255,255,.12) 12%,
+            rgba(255,255,255,0) 40%, rgba(0,0,0,.25) 85%, rgba(0,0,0,.5) 100%),
+        linear-gradient(to bottom, var(--c1), var(--c2));
+    box-shadow: inset 0 0 0 1px rgba(0,0,0,.35), 2px 0 6px rgba(0,0,0,.4);
+    transition: transform .18s ease;
+}
+.prophet-page .book-shelves .spine:hover { color: var(--gold); }
+.prophet-page .book-shelves .spine::before,
+.prophet-page .book-shelves .spine::after {
+    content: "";
+    position: absolute;
+    left: 0; right: 0;
+    height: 8px;
+    border-top: 2px solid var(--gold);
+    border-bottom: 1px solid var(--gold);
+    opacity: .85;
+}
+.prophet-page .book-shelves .spine::before { top: 8px; }
+.prophet-page .book-shelves .spine::after { bottom: 8px; }
+.prophet-page .book-shelves .spine:hover,
+.prophet-page .book-shelves .spine:focus-visible { transform: translateY(-14px); }
+.prophet-page .book-shelves .spine:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+
+.prophet-page .book-shelves .spine .text {
+    writing-mode: vertical-rl;
+    height: 100%;
+    padding: 14px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto;
+    gap: .5em;
+}
+.prophet-page .book-shelves .spine .title {
+    font-size: var(--title-size, 17px);
+    font-weight: bold;
+    line-height: 1.25;
+    max-height: 100%;
+}
+.prophet-page .book-shelves .spine .author {
+    font-size: 12px;
+    font-style: italic;
+    color: var(--page-text);
+    opacity: .9;
+}
+.prophet-page .book-shelves .spine .source {
+    font-size: 10px;
+    letter-spacing: .06em;
+    opacity: .75;
+}
+
+/* Per-book sizes and author colors (same as book-collection.html) */
+.prophet-page .book-shelves .brigham { --w: 92px; --h: 330px; }
+.prophet-page .book-shelves .kimball { --w: 94px; --h: 328px; --title-size: 16px; }
+.prophet-page .book-shelves .widtsoe { --c1: #1f3a68; --c2: #0f1d36; }
+.prophet-page .book-shelves .whitney { --c1: #7a2f5a; --c2: #431730; }
+.prophet-page .book-shelves .talmage { --c1: #36424d; --c2: #1d252c; }
+.prophet-page .book-shelves .jfsmith { --c1: #8a4219; --c2: #4d2309; }
+
+@media (prefers-reduced-motion: reduce) {
+    .prophet-page .book-shelves .spine { transition: none; }
 }
