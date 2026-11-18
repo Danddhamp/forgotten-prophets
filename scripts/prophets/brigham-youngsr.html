@@ -1,0 +1,1281 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <link rel="stylesheet" href="../style.css">
+        <base href="" target="_blank">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>
+            Brigham Young
+        </title>
+    </head>
+    <body class="prophet-page">
+
+        <!-- Previous / next prophet (target="_self" so they open in this tab despite <base target="_blank">).
+             Change the file names below to match your pages. -->
+        <a class="page-arrow page-arrow-prev" href="david-w-patten.html" target="_self" aria-label="Previous: David W. Patten" title="Previous: David W. Patten">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 4 7 12l8 8"/></svg>
+        </a>
+        <a class="page-arrow page-arrow-next" href="heber-c-kimball.html" target="_self" aria-label="Next: Heber C. Kimball" title="Next: Heber C. Kimball">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 4 8 8-8 8"/></svg>
+        </a>
+
+        <nav class="top-links">
+            <a href="../../index.html">Home</a>
+            <a href="!prophet-guide.html">Reference Guide</a>
+        </nav>
+
+        <!-- Header: portrait, name, dates and offices -->
+        <header class="prophet-header">
+            <img src="../../media/images/prophets/brigham-young/brigham-young-1865.jpg" alt="Brigham Young 1855">
+            <div class="prophet-intro">
+                <h1>Brigham Young</h1>
+                <p class="lifespan">1801–1877</p>
+                <dl class="offices">
+                    <div>
+                        <dt>Quorum of the Twelve Apostles</dt>
+                        <dd>February 14, 1835</dd>
+                    </div>
+                    <div>
+                        <dt>President of the Quorum of the Twelve Apostles</dt>
+                        <dd>April 14, 1840</dd>
+                    </div>
+                    <div>
+                        <dt>President of the Church of Jesus Christ of Latter-day Saints</dt>
+                        <dd>December 27, 1847</dd>
+                    </div>
+                </dl>
+            </div>
+        </header>
+
+        <!-- View tabs -->
+        <div class="view-tabs" role="tablist" aria-label="Page view">
+            <button type="button" role="tab" data-view="all" aria-selected="true">All</button>
+            <button type="button" role="tab" data-view="bio" aria-selected="false">Biography</button>
+            <button type="button" role="tab" data-view="teachings" aria-selected="false">Teachings</button>
+            <button type="button" role="tab" data-view="books" aria-selected="false">Books</button>
+        </div>
+
+        <main class="page-layout" data-view="all">
+
+            <!-- Biography -->
+            <section class="biography-column" aria-label="Biography">
+                <h2>Biography</h2>
+                <div class="bio-text">
+                    <p>Died August 29, 1877</p>
+                </div>
+
+                <h3 class="sources-heading">Sources</h3>
+                <ul class="source-list">
+                    <li><a href=""></a></li>
+                </ul>
+            </section>
+
+            <!-- Teachings: heading, search and filters live here so they sit with the list.
+                 prophet-page.js fills .teachings-left and .teachings-right; the CSS
+                 flattens both into one chronological list. -->
+            <section class="teachings-left" aria-label="Teachings">
+                <h2 class="section-heading">Teachings</h2>
+
+                <div class="filters" id="filters">
+                    <input type="text" id="searchBar" placeholder="Search teachings...">
+
+                    <select id="callingFilter">
+                        <option value="all">All Callings</option>
+                        <option value="apostle">Apostle</option>
+                        <option value="church-president">President of the Church</option>
+                    </select>
+
+                    <select id="typeFilter">
+                        <option value="all">All Types</option>
+                        <option value="journal-of-discourses">Journal of Discourses</option>
+                        <option value="historical-conference">Historical Conference</option>
+                        <option value="deseret-weekly">Deseret Weekly</option>
+                        <option value="conference-report">Conference Report</option>
+                        <option value="the-seer">The Seer</option>
+                        <option value="times-and-seasons">Times and Seasons</option>
+                        <option value="messenger-and-advocate">Messenger and Advocate</option>
+                        <option value="article">Article</option>
+                        <option value="letter">Letter</option>
+                    </select>
+                </div>
+                <p id="teachingCount"></p>
+
+                <!-- Tile -->
+                <div class="teaching-tile mesadvo" data-calling="apostle" data-type="messenger-and-advocate">
+                    <h2 class="title">Brother O. Cowdery</h2>
+                    <div class="year">1835</div>
+                    <div class="calling">Apostle in the Council of the Twelve</div>
+                    <div class="sources">
+                        <a href="https://archive.org/details/latterdaysaintsm01unse/page/n413/mode/1up">Internet Archive (Messenger and Advocate)</a>
+                    </div>
+                    <div class="other-source">
+                        <a href="https://archive.org/details/conferencereport1943a/page/124/mode/1up">Church History Catalog (Messenger and Advocate)</a>
+                    </div>
+                    <div class="teaching-type">Epistle – Messenger and Advocate</div>
+                    <div class="topics">
+                        <strong>Topics</strong> Recollecting experiences while serving in New England
+                    </div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile timeseason" data-calling="apostle" data-type="times-and-seasons">
+                    <h2 class="title">To Pres't Joseph Smith and counselors. Dear brethren…</h2>
+                    <div class="year">1842</div>
+                    <div class="calling">President of the Council of the Twelve Apostles</div>
+                    <div class="sources">
+                        <a href="https://archive.org/details/TimesAndSeasons18391846/page/n136/mode/1up">Internet Archive (Times and Seasons)</a>
+                    </div>
+                    <div class="teaching-type">Epistle – Times and Seasons</div>
+                    <div class="topics">
+                        <strong>Topics</strong> Message to Joseph Smith
+                    </div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile timeseason" data-calling="apostle" data-type="times-and-seasons">
+                    <h2 class="title">Notice to the Elders Preachings Abroad</h2>
+                    <div class="year">1842</div>
+                    <div class="calling">President of the Council of the Twelve Apostles</div>
+                    <div class="sources">
+                        <a href="https://archive.org/details/TimesAndSeasons18391846/page/n717/mode/1up">Internet Archive (Times and Seasons)</a>
+                    </div>
+                    <div class="teaching-type">Epistle – Times and Seasons</div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile timeseason" data-calling="apostle" data-type="times-and-seasons">
+                    <h2 class="title">To the Elders and Churches Abroad</h2>
+                    <div class="year">1843</div>
+                    <div class="calling">President of the Council of the Twelve Apostles</div>
+                    <div class="sources">
+                        <a href="https://archive.org/details/TimesAndSeasons18391846/page/n1340/mode/1up">Internet Archive (Times and Seasons)</a>
+                    </div>
+                    <div class="teaching-type">Epistle – Times and Seasons</div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile timeseason" data-calling="apostle" data-type="times-and-seasons">
+                    <h2 class="title">A Word to the Churches Abroad</h2>
+                    <div class="year">1845</div>
+                    <div class="calling">President of the Council of the Twelve Apostles</div>
+                    <div class="sources">
+                        <a href="https://archive.org/details/TimesAndSeasons18391846/page/n1751/mode/1up">Internet Archive (Times and Seasons)</a>
+                    </div>
+                    <div class="teaching-type">Epistle – Times and Seasons</div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile timeseason" data-calling="apostle" data-type="times-and-seasons">
+                    <h2 class="title">Br. Taylor</h2>
+                    <div class="year">1845</div>
+                    <div class="calling">President of the Council of the Twelve Apostles</div>
+                    <div class="sources">
+                        <a href="https://archive.org/details/TimesAndSeasons18391846/page/n1783/mode/1up">Internet Archive (Times and Seasons)</a>
+                    </div>
+                    <div class="teaching-type">Epistle – Times and Seasons</div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile timeseason" data-calling="apostle" data-type="times-and-seasons">
+                    <h2 class="title">Notice to the Churches Abroad</h2>
+                    <div class="year">1845</div>
+                    <div class="calling">President of the Council of the Twelve Apostles</div>
+                    <div class="sources">
+                        <a href="https://archive.org/details/TimesAndSeasons18391846/page/n1871/mode/1up">Internet Archive (Times and Seasons)</a>
+                    </div>
+                    <div class="teaching-type">Epistle – Times and Seasons</div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile jod" data-calling="church-president" data-type="journal-of-discourses">
+                    <h2 class="title">Message from the First Presidency</h2>
+                    <div class="year">1853</div>
+                    <div class="calling">President of the Church of Jesus Christ of Latter-day Saints</div>
+                    <div class="sources">
+                        <a href="https://archive.org/details/JoDV01/page/n5/mode/1up">Internet Archive (Journal of Discourses)</a>
+                    </div>
+                    <div class="teaching-type">Sermon – JoD Preface</div>
+                    <div class="topics">
+                        <strong>Topics</strong>
+                        The Journal of Discourses
+                    </div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile jod" data-calling="church-president" data-type="journal-of-discourses">
+                    <h2 class="title">Salvation</h2>
+                    <div class="year">1853</div>
+                    <div class="calling">President of the Church of Jesus Christ of Latter-day Saints</div>
+                    <div class="sources">
+                        <a href="https://archive.org/details/JoDV01/page/n8/mode/1up">Internet Archive (Journal of Discourses)</a>
+                    </div>
+                    <div class="other-source">
+                        <a href="https://journalofdiscourses.com/1/1">JournalOfDiscourses.com</a>
+                    </div>
+                    <div class="teaching-type">Sermon – JoD 1:1-6</div>
+                    <div class="topics">
+                        <strong>Topics</strong>
+                    </div>
+                    <div class="scripture-references">
+                        <strong>Scripture References</strong>
+                    </div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile jod" data-calling="church-president" data-type="journal-of-discourses">
+                    <h2 class="title">Recreation, and the Proper Use of It</h2>
+                    <div class="year">1852</div>
+                    <div class="calling">President of the Church of Jesus Christ of Latter-day Saints</div>
+                    <div class="sources">
+                        <a href="https://archive.org/details/JoDV01/page/28/mode/1up">Internet Archive (Journal of Discourses)</a>
+                    </div>
+                    <div class="other-source">
+                        <a href="https://journalofdiscourses.com/1/4">JournalOfDiscourses.com</a>
+                    </div>
+                    <div class="teaching-type">Sermon – JoD 1:28-34</div>
+                    <div class="topics">
+                        <strong>Topics</strong>
+                    </div>
+                    <div class="scripture-references">
+                        <strong>Scripture References</strong>
+                    </div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile jod" data-calling="church-president" data-type="journal-of-discourses">
+                    <h2 class="title">Knowledge of the Doctrine of Christ, The Religions of Men and the Religion of God, Joseph Smith, Persecutions, etc.</h2>
+                    <div class="year">1852</div>
+                    <div class="calling">President of the Church of Jesus Christ of Latter-day Saints</div>
+                    <div class="sources">
+                        <a href="https://archive.org/details/JoDV01/page/37/mode/1up">Internet Archive (Journal of Discourses)</a>
+                    </div>
+                    <div class="other-source">
+                        <a href="https://journalofdiscourses.com/1/6">JournalOfDiscourses.com</a>
+                    </div>
+                    <div class="teaching-type">Sermon – JoD 1:37-42</div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile jod" data-calling="church-president" data-type="journal-of-discourses">
+                    <h2 class="title">Self-Government, Mysteries, Recreation and Amusement (Not in themselves Sinful), Tithing, Adam (Our Father and our God)</h2>
+                    <div class="year">1852</div>
+                    <div class="calling">President of the Church of Jesus Christ of Latter-day Saints</div>
+                    <div class="sources">
+                        <a href="https://archive.org/details/JoDV01/page/46/mode/1up">Internet Archive (Journal of Discourses)</a>
+                    </div>
+                    <div class="other-source">
+                        <a href="https://journalofdiscourses.com/1/8">JournalOfDiscourses.com</a>
+                    </div>
+                    <div class="teaching-type">Sermon – JoD 1:46-53</div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile jod" data-calling="church-president" data-type="journal-of-discourses">
+                    <h2 class="title">Education</h2>
+                    <div class="year">1852</div>
+                    <div class="calling">President of the Church of Jesus Christ of Latter-day Saints</div>
+                    <div class="sources">
+                        <a href="https://archive.org/details/JoDV01/page/66/mode/1up">Internet Archive (Journal of Discourses)</a>
+                    </div>
+                    <div class="other-source">
+                        <a href="https://journalofdiscourses.com/1/10">JournalOfDiscourses.com</a>
+                    </div>
+                    <div class="teaching-type">Sermon – JoD 1:66-71</div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile jod" data-calling="church-president" data-type="journal-of-discourses">
+                    <h2 class="title">Confidence, Advice to Immigrants, Danger in Prosperity</h2>
+                    <div class="year">1853</div>
+                    <div class="calling">President of the Church of Jesus Christ of Latter-day Saints</div>
+                    <div class="sources">
+                        <a href="https://archive.org/details/JoDV01/page/74/mode/1up">Internet Archive (Journal of Discourses)</a>
+                    </div>
+                    <div class="other-source">
+                        <a href="https://journalofdiscourses.com/1/12">JournalOfDiscourses.com</a>
+                    </div>
+                    <div class="teaching-type">Sermon – JoD 1:74-79</div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile jod" data-calling="church-president" data-type="journal-of-discourses">
+                    <h2 class="title">Joseph a True Prophet, Apostates, Dream, etc.</h2>
+                    <div class="year">1853</div>
+                    <div class="calling">President of the Church of Jesus Christ of Latter-day Saints</div>
+                    <div class="sources">
+                        <a href="https://archive.org/details/JoDV01/page/81/mode/1up">Internet Archive (Journal of Discourses)</a>
+                    </div>
+                    <div class="other-source">
+                        <a href="https://journalofdiscourses.com/1/14">JournalOfDiscourses.com</a>
+                    </div>
+                    <div class="teaching-type">Sermon – JoD 1:81-84</div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile jod" data-calling="church-president" data-type="journal-of-discourses">
+                    <h2 class="title">March of “Mormonism”, The Power of God and the Wisdom of Man, Good and Evil Influences, the Law of Increase</h2>
+                    <div class="year">1852</div>
+                    <div class="calling">President of the Church of Jesus Christ of Latter-day Saints</div>
+                    <div class="sources">
+                        <a href="https://archive.org/details/JoDV01/page/88/mode/1up">Internet Archive (Journal of Discourses)</a>
+                    </div>
+                    <div class="other-source">
+                        <a href="https://journalofdiscourses.com/1/16">JournalOfDiscourses.com</a>
+                    </div>
+                    <div class="teaching-type">Sermon – JoD 1:88-94</div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile jod" data-calling="church-president" data-type="journal-of-discourses">
+                    <h2 class="title">President B. Young’s Journey South, Indian Difficulties, Walker, Watching and Prayer, Thieves and their Deserts, Eastern Intelligence, Financial State of the Church, Gaining Knowledge, etc.</h2>
+                    <div class="year">1853</div>
+                    <div class="calling">President of the Church of Jesus Christ of Latter-day Saints</div>
+                    <div class="sources">
+                        <a href="https://archive.org/details/JoDV01/page/103/mode/1up">Internet Archive (Journal of Discourses)</a>
+                    </div>
+                    <div class="other-source">
+                        <a href="https://journalofdiscourses.com/1/19">JournalOfDiscourses.com</a>
+                    </div>
+                    <div class="teaching-type">Sermon – JoD 1:103-111</div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile jod" data-calling="church-president" data-type="journal-of-discourses">
+                    <h2 class="title">Duties and Privileges, Sacrifices, Confidence, Language, Organization and Disorganization, Taking Wives</h2>
+                    <div class="year">1853</div>
+                    <div class="calling">President of the Church of Jesus Christ of Latter-day Saints</div>
+                    <div class="sources">
+                        <a href="https://archive.org/details/JoDV01/page/112/mode/1up">Internet Archive (Journal of Discourses)</a>
+                    </div>
+                    <div class="other-source">
+                        <a href="https://journalofdiscourses.com/1/20">JournalOfDiscourses.com</a>
+                    </div>
+                    <div class="teaching-type">Sermon – JoD 1:112-120</div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile jod" data-calling="church-president" data-type="journal-of-discourses">
+                    <h2 class="title">The Temple Cornerstones, The Apostleship, etc.</h2>
+                    <div class="year">1853</div>
+                    <div class="calling">President of the Church of Jesus Christ of Latter-day Saints</div>
+                    <div class="sources">
+                        <a href="https://archive.org/details/JoDV01/page/131/mode/1up">Internet Archive (Journal of Discourses)</a>
+                    </div>
+                    <div class="other-source">
+                        <a href="https://journalofdiscourses.com/1/22">JournalOfDiscourses.com</a>
+                    </div>
+                    <div class="teaching-type">Sermon – JoD 1:131-137</div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile jod" data-calling="church-president" data-type="journal-of-discourses">
+                    <h2 class="title">The Pioneers, Capabilities and Settlement of the Great Basin, Exhortation and Faithfulness</h2>
+                    <div class="year">1852</div>
+                    <div class="calling">President of the Church of Jesus Christ of Latter-day Saints</div>
+                    <div class="sources">
+                        <a href="https://archive.org/details/JoDV01/page/144/mode/1up">Internet Archive (Journal of Discourses)</a>
+                    </div>
+                    <div class="other-source">
+                        <a href="https://journalofdiscourses.com/1/24">JournalOfDiscourses.com</a>
+                    </div>
+                    <div class="teaching-type">Sermon – JoD 1:144-146</div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile jod" data-calling="church-president" data-type="journal-of-discourses">
+                    <h2 class="title">Blessings of the Saints, A House For the Lord</h2>
+                    <div class="year">1851</div>
+                    <div class="calling">President of the Church of Jesus Christ of Latter-day Saints</div>
+                    <div class="sources">
+                        <a href="https://archive.org/details/JoDV01/page/376/mode/1up">Internet Archive (Journal of Discourses)</a>
+                    </div>
+                    <div class="other-source">
+                        <a href="https://journalofdiscourses.com/1/54">JournalOfDiscourses.com</a>
+                    </div>
+                    <div class="teaching-type">Sermon – JoD 1:376</div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile jod" data-calling="church-president" data-type="journal-of-discourses">
+                    <h2 class="title">The Gospel, Growing in Knowledge, The Lord’s Supper, Blessings of Faithfulness, Utility of Persecution, Creation of Adam, Experience</h2>
+                    <div class="year">1853</div>
+                    <div class="calling">President of the Church of Jesus Christ of Latter-day Saints</div>
+                    <div class="sources">
+                        <a href="https://archive.org/details/JoDV02/page/n8/mode/1up">Internet Archive (Journal of Discourses)</a>
+                    </div>
+                    <div class="other-source">
+                        <a href="https://journalofdiscourses.com/2/1">JournalOfDiscourses.com</a>
+                    </div>
+                    <div class="teaching-type">Sermon – JoD 2:1-10</div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile jod" data-calling="church-president" data-type="journal-of-discourses">
+                    <h2 class="title">Word of Wisdom Especially Suited to Infants and Youth, Privations in Missouri, Necessity of Integrity (and strife for excellence), Responsibility of Parents</h2>
+                    <div class="year">1854</div>
+                    <div class="calling">President of the Church of Jesus Christ of Latter-day Saints</div>
+                    <div class="sources">
+                        <a href="https://archive.org/details/JoDV02/page/n23/mode/1up">Internet Archive (Journal of Discourses)</a>
+                    </div>
+                    <div class="other-source">
+                        <a href="https://journalofdiscourses.com/2/3">JournalOfDiscourses.com</a>
+                    </div>
+                    <div class="teaching-type">Sermon – JoD 2:16-21</div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile the-seer" data-calling="church-president" data-type="the-seer">
+                    <h2 class="title">Extract from Message to the Utah Legislature</h2>
+                    <div class="year">1854</div>
+                    <div class="calling">Governor of the Utah Territory</div>
+                    <div class="sources">
+                        <a href="https://archive.org/details/TheSeer18531854/page/272/mode/1up">Internet Archive (The Seer)</a>
+                    </div>
+                    <div class="teaching-type">Epistle – The Seer, January 1854</div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile jod" data-calling="church-president" data-type="journal-of-discourses">
+                    <h2 class="title">Necessity of Building Temples, The Endowment</h2>
+                    <div class="year">1853</div>
+                    <div class="calling">President of the Church of Jesus Christ of Latter-day Saints</div>
+                    <div class="sources">
+                        <a href="https://archive.org/details/JoDV02/page/n36/mode/1up">Internet Archive (Journal of Discourses)</a>
+                    </div>
+                    <div class="other-source">
+                        <a href="https://journalofdiscourses.com/2/6">JournalOfDiscourses.com</a>
+                    </div>
+                    <div class="teaching-type">Sermon – JoD 2:29-33</div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile jod" data-calling="church-president" data-type="journal-of-discourses">
+                    <h2 class="title">Debtors to the Perpetual Emigrating Fund</h2>
+                    <div class="year">1854</div>
+                    <div class="calling">President of the Church of Jesus Christ of Latter-day Saints</div>
+                    <div class="sources">
+                        <a href="https://archive.org/details/JoDV02/page/n56/mode/1up">Internet Archive (Journal of Discourses)</a>
+                    </div>
+                    <div class="other-source">
+                        <a href="https://journalofdiscourses.com/2/14">JournalOfDiscourses.com</a>
+                    </div>
+                    <div class="teaching-type">Sermon – JoD 2:49-53</div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile jod" data-calling="church-president" data-type="journal-of-discourses">
+                    <h2 class="title">Marriage Relations of Bishops and Deacons</h2>
+                    <div class="year">1854</div>
+                    <div class="calling">President of the Church of Jesus Christ of Latter-day Saints</div>
+                    <div class="sources">
+                        <a href="https://archive.org/details/JoDV02/page/n95/mode/1up">Internet Archive (Journal of Discourses)</a>
+                    </div>
+                    <div class="other-source">
+                        <a href="https://journalofdiscourses.com/2/19">JournalOfDiscourses.com</a>
+                    </div>
+                    <div class="teaching-type">Sermon – JoD 2:88-90</div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile jod" data-calling="church-president" data-type="journal-of-discourses">
+                    <h2 class="title">Organization and Development of Man</h2>
+                    <div class="year">1853</div>
+                    <div class="calling">President of the Church of Jesus Christ of Latter-day Saints</div>
+                    <div class="sources">
+                        <a href="https://archive.org/details/JoDV02/page/n97/mode/1up">Internet Archive (Journal of Discourses)</a>
+                    </div>
+                    <div class="other-source">
+                        <a href="https://journalofdiscourses.com/2/20">JournalOfDiscourses.com</a>
+                    </div>
+                    <div class="teaching-type">Sermon – JoD 2:90-96</div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile jod" data-calling="church-president" data-type="journal-of-discourses">
+                    <h2 class="title">Saints Subject to Temptation; True Riches, Virtue, and Sanctification; “Mormonites”; Gladdenites, Apostles, and Saints; Devils without Tabernacles</h2>
+                    <div class="year">1853</div>
+                    <div class="calling">President of the Church of Jesus Christ of Latter-day Saints</div>
+                    <div class="sources">
+                        <a href="https://archive.org/details/JoDV02/page/n128/mode/1up">Internet Archive (Journal of Discourses)</a>
+                    </div>
+                    <div class="other-source">
+                        <a href="https://journalofdiscourses.com/2/24">JournalOfDiscourses.com</a>
+                    </div>
+                    <div class="teaching-type">Sermon – JoD 2:121-129</div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile jod" data-calling="church-president" data-type="journal-of-discourses">
+                    <h2 class="title">Perfection and Salvation; Self-Government</h2>
+                    <div class="year">1853</div>
+                    <div class="calling">President of the Church of Jesus Christ of Latter-day Saints</div>
+                    <div class="sources">
+                        <a href="https://archive.org/details/JoDV02/page/n136/mode/1up">Internet Archive (Journal of Discourses)</a>
+                    </div>
+                    <div class="other-source">
+                        <a href="https://journalofdiscourses.com/2/25">JournalOfDiscourses.com</a>
+                    </div>
+                    <div class="teaching-type">Sermon – JoD 2:129-136</div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile jod" data-calling="church-president" data-type="journal-of-discourses">
+                    <h2 class="title">Spiritual Gifts; Hell; The Spirit World; The Elders and The Nations; The Lamanites; The Temple</h2>
+                    <div class="year">1854</div>
+                    <div class="calling">President of the Church of Jesus Christ of Latter-day Saints</div>
+                    <div class="sources">
+                        <a href="https://archive.org/details/JoDV02/page/n143/mode/1up">Internet Archive (Journal of Discourses)</a>
+                    </div>
+                    <div class="other-source">
+                        <a href="https://journalofdiscourses.com/2/26">JournalOfDiscourses.com</a>
+                    </div>
+                    <div class="teaching-type">Sermon – JoD 2:136-145</div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile jod" data-calling="church-president" data-type="journal-of-discourses">
+                    <h2 class="title">The Constitution and Government of the United States; Rights and Policy of the Latter-day Saints</h2>
+                    <div class="year">1855</div>
+                    <div class="calling">President of the Church of Jesus Christ of Latter-day Saints</div>
+                    <div class="sources">
+                        <a href="https://archive.org/details/JoDV02/page/n177/mode/1up">Internet Archive (Journal of Discourses)</a>
+                    </div>
+                    <div class="other-source">
+                        <a href="https://journalofdiscourses.com/2/31">JournalOfDiscourses.com</a>
+                    </div>
+                    <div class="teaching-type">Sermon – JoD 2:170-178</div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile jod" data-calling="church-president" data-type="journal-of-discourses">
+                    <h2 class="title">The Priesthood and Satan; The Constitution and Government of the United States; Rights and Policy of the Latter-day Saints</h2>
+                    <div class="year">1855</div>
+                    <div class="calling">President of the Church of Jesus Christ of Latter-day Saints</div>
+                    <div class="sources">
+                        <a href="https://archive.org/details/JoDV02/page/n186/mode/1up">Internet Archive (Journal of Discourses)</a>
+                    </div>
+                    <div class="other-source">
+                        <a href="https://journalofdiscourses.com/2/32">JournalOfDiscourses.com</a>
+                    </div>
+                    <div class="teaching-type">Sermon – JoD 2:179-191</div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile jod" data-calling="church-president" data-type="journal-of-discourses">
+                    <h2 class="title">Faithfulness and Apostacy</h2>
+                    <div class="year">1855</div>
+                    <div class="calling">President of the Church of Jesus Christ of Latter-day Saints</div>
+                    <div class="sources">
+                        <a href="https://archive.org/details/JoDV02/page/n255/mode/1up">Internet Archive (Journal of Discourses)</a>
+                    </div>
+                    <div class="other-source">
+                        <a href="https://journalofdiscourses.com/2/40">JournalOfDiscourses.com</a>
+                    </div>
+                    <div class="teaching-type">Sermon – JoD 2:248-258</div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile jod" data-calling="church-president" data-type="journal-of-discourses">
+                    <h2 class="title">Preaching and Testimony; Gathering of Israel; The Blood of Israel and Gentiles; The Science of Life</h2>
+                    <div class="year">1855</div>
+                    <div class="calling">President of the Church of Jesus Christ of Latter-day Saints</div>
+                    <div class="sources">
+                        <a href="https://archive.org/details/JoDV02/page/n273/mode/1up">Internet Archive (Journal of Discourses)</a>
+                    </div>
+                    <div class="other-source">
+                        <a href="https://journalofdiscourses.com/2/42">JournalOfDiscourses.com</a>
+                    </div>
+                    <div class="teaching-type">Sermon – JoD 2:266-271</div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile jod" data-calling="church-president" data-type="journal-of-discourses">
+                    <h2 class="title">Dependence on the Lord; Coal and Iron Works; Family Excursions</h2>
+                    <div class="year">1855</div>
+                    <div class="calling">President of the Church of Jesus Christ of Latter-day Saints</div>
+                    <div class="sources">
+                        <a href="https://archive.org/details/JoDV02/page/n286/mode/1up">Internet Archive (Journal of Discourses)</a>
+                    </div>
+                    <div class="other-source">
+                        <a href="https://journalofdiscourses.com/2/44">JournalOfDiscourses.com</a>
+                    </div>
+                    <div class="teaching-type">Sermon – JoD 2:279-284</div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile jod" data-calling="church-president" data-type="journal-of-discourses">
+                    <h2 class="title">Consecration</h2>
+                    <div class="year">1855</div>
+                    <div class="calling">President of the Church of Jesus Christ of Latter-day Saints</div>
+                    <div class="sources">
+                        <a href="https://archive.org/details/JoDV02/page/n305/mode/1up">Internet Archive (Journal of Discourses)</a>
+                    </div>
+                    <div class="other-source">
+                        <a href="https://journalofdiscourses.com/2/46">JournalOfDiscourses.com</a>
+                    </div>
+                    <div class="teaching-type">Sermon – JoD 2:298-308</div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile jod" data-calling="church-president" data-type="journal-of-discourses">
+                    <h2 class="title">Utah Delegate to Washington; U.S. Government and Officers</h2>
+                    <div class="year">1855</div>
+                    <div class="calling">President of the Church of Jesus Christ of Latter-day Saints</div>
+                    <div class="sources">
+                        <a href="https://archive.org/details/JoDV02/page/n325/mode/1up">Internet Archive (Journal of Discourses)</a>
+                    </div>
+                    <div class="other-source">
+                        <a href="https://journalofdiscourses.com/2/48">JournalOfDiscourses.com</a>
+                    </div>
+                    <div class="teaching-type">Sermon – JoD 2:318-323</div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile jod" data-calling="church-president" data-type="journal-of-discourses">
+                    <h2 class="title">Gathering the Poor</h2>
+                    <div class="year">1855</div>
+                    <div class="calling">President of the Church of Jesus Christ of Latter-day Saints</div>
+                    <div class="sources">
+                        <a href="https://archive.org/details/JoDV03/page/n8/mode/1up">Internet Archive (Journal of Discourses)</a>
+                    </div>
+                    <div class="other-source">
+                        <a href="https://journalofdiscourses.com/3/1">JournalOfDiscourses.com</a>
+                    </div>
+                    <div class="teaching-type">Sermon – JoD 3:1-6</div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile jod" data-calling="church-president" data-type="journal-of-discourses">
+                    <h2 class="title">Faith; Practical Religion; Chastisement; Necessity of Devils</h2>
+                    <div class="year">1855</div>
+                    <div class="calling">President of the Church of Jesus Christ of Latter-day Saints</div>
+                    <div class="sources">
+                        <a href="https://archive.org/details/JoDV03/page/n50/mode/1up">Internet Archive (Journal of Discourses)</a>
+                    </div>
+                    <div class="other-source">
+                        <a href="https://journalofdiscourses.com/3/8">JournalOfDiscourses.com</a>
+                    </div>
+                    <div class="teaching-type">Sermon – JoD 3:43-51</div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile jod" data-calling="church-president" data-type="journal-of-discourses">
+                    <h2 class="title">Times for All Things—Prayer—Chastisement—Unity—Faithfulness—Reverence for Sacred Things—Reformation</h2>
+                    <div class="year">1855</div>
+                    <div class="calling">President of the Church of Jesus Christ of Latter-day Saints</div>
+                    <div class="sources">
+                        <a href="https://archive.org/details/JoDV03/page/n58/mode/1up">Internet Archive (Journal of Discourses)</a>
+                    </div>
+                    <div class="other-source">
+                        <a href="https://journalofdiscourses.com/3/9">JournalOfDiscourses.com</a>
+                    </div>
+                    <div class="teaching-type">Sermon – JoD 3:51-65</div>
+                </div>
+
+            </section>
+
+            <section class="teachings-right" aria-label="More teachings">
+
+                <!-- Tile -->
+                <div class="teaching-tile jod" data-calling="church-president" data-type="journal-of-discourses">
+                    <h2 class="title">The Gospel of Salvation—A Vision—Redemption of the Earth and All that Pertains to It</h2>
+                    <div class="year">1852</div>
+                    <div class="calling">President of the Church of Jesus Christ of Latter-day Saints</div>
+                    <div class="sources">
+                        <a href="https://archive.org/details/JoDV03/page/n87/mode/1up">Internet Archive (Journal of Discourses)</a>
+                    </div>
+                    <div class="other-source">
+                        <a href="https://journalofdiscourses.com/3/13">JournalOfDiscourses.com</a>
+                    </div>
+                    <div class="teaching-type">Sermon – JoD 3:80-96</div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile jod" data-calling="church-president" data-type="journal-of-discourses">
+                    <h2 class="title">Necessity of Home Missions—Purification of the Saints—Chastisement—Honesty in Business</h2>
+                    <div class="year">1855</div>
+                    <div class="calling">President of the Church of Jesus Christ of Latter-day Saints</div>
+                    <div class="sources">
+                        <a href="https://archive.org/details/JoDV03/page/n122/mode/1up">Internet Archive (Journal of Discourses)</a>
+                    </div>
+                    <div class="other-source">
+                        <a href="https://journalofdiscourses.com/3/16">JournalOfDiscourses.com</a>
+                    </div>
+                    <div class="teaching-type">Sermon – JoD 3:115-123</div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile jod" data-calling="church-president" data-type="journal-of-discourses">
+                    <h2 class="title">The Necessity of the Saints Having the Spirit of Revelation—Faith and Works—The Power of God and of the Devil</h2>
+                    <div class="year">1855</div>
+                    <div class="calling">President of the Church of Jesus Christ of Latter-day Saints</div>
+                    <div class="sources">
+                        <a href="https://archive.org/details/JoDV03/page/n160/mode/1up">Internet Archive (Journal of Discourses)</a>
+                    </div>
+                    <div class="other-source">
+                        <a href="https://journalofdiscourses.com/3/21">JournalOfDiscourses.com</a>
+                    </div>
+                    <div class="teaching-type">Sermon – JoD 3:153-160</div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile jod" data-calling="church-president" data-type="journal-of-discourses">
+                    <h2 class="title">The Powers of the Priesthood not Generally Understood—The Necessity of Living By Revelation—The Abuse of Blessings</h2>
+                    <div class="year">1856</div>
+                    <div class="calling">President of the Church of Jesus Christ of Latter-day Saints</div>
+                    <div class="sources">
+                        <a href="https://archive.org/details/JoDV03/page/n198/mode/1up">Internet Archive (Journal of Discourses)</a>
+                    </div>
+                    <div class="other-source">
+                        <a href="https://journalofdiscourses.com/3/25">JournalOfDiscourses.com</a>
+                    </div>
+                    <div class="teaching-type">Sermon – JoD 3:191-196</div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile jod" data-calling="church-president" data-type="journal-of-discourses">
+                    <h2 class="title">Eternal Increase of Knowledge—Necessity of Cleaving to Every Good Principle—Men Are not Made Saints By Miraculous Gifts, But Through Obeying the Truth, and Obtaining the Witness of the Spirit</h2>
+                    <div class="year">1856</div>
+                    <div class="calling">President of the Church of Jesus Christ of Latter-day Saints</div>
+                    <div class="sources">
+                        <a href="https://archive.org/details/JoDV03/page/n209/mode/1up">Internet Archive (Journal of Discourses)</a>
+                    </div>
+                    <div class="other-source">
+                        <a href="https://journalofdiscourses.com/3/28">JournalOfDiscourses.com</a>
+                    </div>
+                    <div class="teaching-type">Sermon – JoD 3:202-213</div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile jod" data-calling="church-president" data-type="journal-of-discourses">
+                    <h2 class="title">The Necessity of the Saints Living Up to the Light Which Has Been Given Them</h2>
+                    <div class="year">1856</div>
+                    <div class="calling">President of the Church of Jesus Christ of Latter-day Saints</div>
+                    <div class="sources">
+                        <a href="https://archive.org/details/JoDV03/page/n228/mode/1up">Internet Archive (Journal of Discourses)</a>
+                    </div>
+                    <div class="other-source">
+                        <a href="https://journalofdiscourses.com/3/30">JournalOfDiscourses.com</a>
+                    </div>
+                    <div class="teaching-type">Sermon – JoD 3:221-226</div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile jod" data-calling="church-president" data-type="journal-of-discourses">
+                    <h2 class="title">Lawyers, and Those Who Practice Attending Law Courts, Rebuked—a Curse Pronounced Upon All Who Love Litigation and Do not Repent</h2>
+                    <div class="year">1856</div>
+                    <div class="calling">President of the Church of Jesus Christ of Latter-day Saints</div>
+                    <div class="sources">
+                        <a href="https://archive.org/details/JoDV03/page/n243/mode/1up">Internet Archive (Journal of Discourses)</a>
+                    </div>
+                    <div class="other-source">
+                        <a href="https://journalofdiscourses.com/3/33">JournalOfDiscourses.com</a>
+                    </div>
+                    <div class="teaching-type">Sermon – JoD 3:236-241</div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile jod" data-calling="church-president" data-type="journal-of-discourses">
+                    <h2 class="title">Instructions to the Bishops—Men Judged According to Their Knowledge—Organization of the Spirit and Body—Thought and Labor to Be Blended Together</h2>
+                    <div class="year">1856</div>
+                    <div class="calling">President of the Church of Jesus Christ of Latter-day Saints</div>
+                    <div class="sources">
+                        <a href="https://archive.org/details/JoDV03/page/n250/mode/1up">Internet Archive (Journal of Discourses)</a>
+                    </div>
+                    <div class="other-source">
+                        <a href="https://journalofdiscourses.com/3/35">JournalOfDiscourses.com</a>
+                    </div>
+                    <div class="teaching-type">Sermon – JoD 3:243-249</div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile jod" data-calling="church-president" data-type="journal-of-discourses">
+                    <h2 class="title">Difficulties Not Found Among the Saints Who Live Their Religion—Adversity Will Teach Them Their Dependence on God—God Invisibly Controls the Affairs of Mankind</h2>
+                    <div class="year">1856</div>
+                    <div class="calling">President of the Church of Jesus Christ of Latter-day Saints</div>
+                    <div class="sources">
+                        <a href="https://archive.org/details/JoDV03/page/n261/mode/1up">Internet Archive (Journal of Discourses)</a>
+                    </div>
+                    <div class="other-source">
+                        <a href="https://journalofdiscourses.com/3/37">JournalOfDiscourses.com</a>
+                    </div>
+                    <div class="teaching-type">Sermon – JoD 3:254-260</div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile jod" data-calling="church-president" data-type="journal-of-discourses">
+                    <h2 class="title">Plurality of Wives—The Free Agency of Man</h2>
+                    <div class="year">1855</div>
+                    <div class="calling">President of the Church of Jesus Christ of Latter-day Saints</div>
+                    <div class="sources">
+                        <a href="https://archive.org/details/JoDV03/page/n271/mode/1up">Internet Archive (Journal of Discourses)</a>
+                    </div>
+                    <div class="other-source">
+                        <a href="https://journalofdiscourses.com/3/39">JournalOfDiscourses.com</a>
+                    </div>
+                    <div class="teaching-type">Sermon – JoD 3:264-268</div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile jod" data-calling="church-president" data-type="journal-of-discourses">
+                    <h2 class="title">Preaching—Necessity of the Saints Having Confidence in Those Over Them—Necessity of Wisdom in Dealing With Those Who Are Dead to Good Works—Ignorance of Worldly Philosophers—The Principle of Life As Shown in the Dissolution of Organized Matter</h2>
+                    <div class="year">1856</div>
+                    <div class="calling">President of the Church of Jesus Christ of Latter-day Saints</div>
+                    <div class="sources">
+                        <a href="https://archive.org/details/JoDV03/page/n279/mode/1up">Internet Archive (Journal of Discourses)</a>
+                    </div>
+                    <div class="other-source">
+                        <a href="https://journalofdiscourses.com/3/41">JournalOfDiscourses.com</a>
+                    </div>
+                    <div class="teaching-type">Sermon – JoD 3:272-279</div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile jod" data-calling="church-president" data-type="journal-of-discourses">
+                    <h2 class="title">Disinclination of Men to Learn Through the Teachings and Experience of Others—Latter-Day Saints Compared With Those of Former Days—Sacrifice—Sheep and Goats—Customs and Traditions</h2>
+                    <div class="year">1856</div>
+                    <div class="calling">President of the Church of Jesus Christ of Latter-day Saints</div>
+                    <div class="sources">
+                        <a href="https://archive.org/details/JoDV03/page/n323/mode/1up">Internet Archive (Journal of Discourses)</a>
+                    </div>
+                    <div class="other-source">
+                        <a href="https://journalofdiscourses.com/3/46">JournalOfDiscourses.com</a>
+                    </div>
+                    <div class="teaching-type">Sermon – JoD 3:316-327</div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile jod" data-calling="church-president" data-type="journal-of-discourses">
+                    <h2 class="title">Irrigation—Every Saint Should Labor for the Interest of the Community—It is the Lord that Gives the Increase—Etc</h2>
+                    <div class="year">1856</div>
+                    <div class="calling">President of the Church of Jesus Christ of Latter-day Saints</div>
+                    <div class="sources">
+                        <a href="https://archive.org/details/JoDV03/page/n335/mode/1up">Internet Archive (Journal of Discourses)</a>
+                    </div>
+                    <div class="other-source">
+                        <a href="https://journalofdiscourses.com/3/47">JournalOfDiscourses.com</a>
+                    </div>
+                    <div class="teaching-type">Sermon – JoD 3:328-333</div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile jod" data-calling="church-president" data-type="journal-of-discourses">
+                    <h2 class="title">Remarks on a Revelation Given in August, 1831—General Instructions</h2>
+                    <div class="year">1856</div>
+                    <div class="calling">President of the Church of Jesus Christ of Latter-day Saints</div>
+                    <div class="sources">
+                        <a href="https://archive.org/details/JoDV03/page/n340/mode/1up">Internet Archive (Journal of Discourses)</a>
+                    </div>
+                    <div class="other-source">
+                        <a href="https://journalofdiscourses.com/3/48">JournalOfDiscourses.com</a>
+                    </div>
+                    <div class="teaching-type">Sermon – JoD 3:333-344</div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile jod" data-calling="church-president" data-type="journal-of-discourses">
+                    <h2 class="title">The Order of Progression in Knowledge—The Way By Which Saints Become One—Aptness of Men to Remember Evil Rather Than Good—a Characteristic of Saints is to Remember Good and Forget Evil—Our Affections Should Be Placed on the Kingdom of God Above All Other Things</h2>
+                    <div class="year">1856</div>
+                    <div class="calling">President of the Church of Jesus Christ of Latter-day Saints</div>
+                    <div class="sources">
+                        <a href="https://archive.org/details/JoDV03/page/n361/mode/1up">Internet Archive (Journal of Discourses)</a>
+                    </div>
+                    <div class="other-source">
+                        <a href="https://journalofdiscourses.com/3/50">JournalOfDiscourses.com</a>
+                    </div>
+                    <div class="teaching-type">Sermon – JoD 3:354-361</div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile jod" data-calling="church-president" data-type="journal-of-discourses">
+                    <h2 class="title">The Gifts of Prophecy and Tongues—The Former Circumstances and Present Condition of the Saints Contrasted—Trials and Temptations Necessary to Exaltation—The Condition of Disembodied Spirits—Redemption of the Dead</h2>
+                    <div class="year">1856</div>
+                    <div class="calling">President of the Church of Jesus Christ of Latter-day Saints</div>
+                    <div class="sources">
+                        <a href="https://archive.org/details/JoDV03/page/n369/mode/1up">Internet Archive (Journal of Discourses)</a>
+                    </div>
+                    <div class="other-source">
+                        <a href="https://journalofdiscourses.com/3/51">JournalOfDiscourses.com</a>
+                    </div>
+                    <div class="teaching-type">Sermon – JoD 3:362-375</div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile jod" data-calling="church-president" data-type="journal-of-discourses">
+                    <h2 class="title">The Holy Ghost Necessary in Preaching—Faith—Healing the Sick—The Saints' Interests Are One—All of Our Efforts Should Tend to the Upbuilding of the Kingdom of God</h2>
+                    <div class="year">1856</div>
+                    <div class="calling">President of the Church of Jesus Christ of Latter-day Saints</div>
+                    <div class="sources">
+                        <a href="https://archive.org/details/JoDV04/page/n27/mode/1up">Internet Archive (Journal of Discourses)</a>
+                    </div>
+                    <div class="other-source">
+                        <a href="https://journalofdiscourses.com/4/5">JournalOfDiscourses.com</a>
+                    </div>
+                    <div class="teaching-type">Sermon – JoD 4:20-32</div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile jod" data-calling="church-president" data-type="journal-of-discourses">
+                    <h2 class="title">Testimony to the Divinity of Joseph Smith's Mission—Elders Should Go to Their Missions Without Purse or Scrip—The Lord Deals With the Saints—Jesus Their President—Satan Angry</h2>
+                    <div class="year">1856</div>
+                    <div class="calling">President of the Church of Jesus Christ of Latter-day Saints</div>
+                    <div class="sources">
+                        <a href="https://archive.org/details/JoDV04/page/n40/mode/1up">Internet Archive (Journal of Discourses)</a>
+                    </div>
+                    <div class="other-source">
+                        <a href="https://journalofdiscourses.com/4/6">JournalOfDiscourses.com</a>
+                    </div>
+                    <div class="teaching-type">Sermon – JoD 4:33-42</div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile jod" data-calling="church-president" data-type="journal-of-discourses">
+                    <h2 class="title">A Call for An Expression of the Condition of the People—Repentance Among the Saints Necessary—Renewing of Covenants</h2>
+                    <div class="year">1856</div>
+                    <div class="calling">President of the Church of Jesus Christ of Latter-day Saints</div>
+                    <div class="sources">
+                        <a href="https://archive.org/details/JoDV04/page/n50/mode/1up">Internet Archive (Journal of Discourses)</a>
+                    </div>
+                    <div class="other-source">
+                        <a href="https://journalofdiscourses.com/4/7">JournalOfDiscourses.com</a>
+                    </div>
+                    <div class="teaching-type">Sermon – JoD 4:43-45</div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile jod" data-calling="church-president" data-type="journal-of-discourses">
+                    <h2 class="title">The People of God Disciplined By Trials—Atonement By the Shedding of Blood—Our Heavenly Father—A Privilege Given to All the Married Sisters in Utah</h2>
+                    <div class="year">1856</div>
+                    <div class="calling">President of the Church of Jesus Christ of Latter-day Saints</div>
+                    <div class="sources">
+                        <a href="https://archive.org/details/JoDV04/page/n58/mode/1up">Internet Archive (Journal of Discourses)</a>
+                    </div>
+                    <div class="other-source">
+                        <a href="https://journalofdiscourses.com/4/10">JournalOfDiscourses.com</a>
+                    </div>
+                    <div class="teaching-type">Sermon – JoD 4:51-57</div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile jod" data-calling="church-president" data-type="journal-of-discourses">
+                    <h2 class="title">Reformation Necessary Among the Saints—Infidel Philosophy</h2>
+                    <div class="year">1856</div>
+                    <div class="calling">President of the Church of Jesus Christ of Latter-day Saints</div>
+                    <div class="sources">
+                        <a href="https://archive.org/details/JoDV04/page/n65/mode/1up">Internet Archive (Journal of Discourses)</a>
+                    </div>
+                    <div class="other-source">
+                        <a href="https://journalofdiscourses.com/4/11">JournalOfDiscourses.com</a>
+                    </div>
+                    <div class="teaching-type">Sermon – JoD 4:58-63</div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile jod" data-calling="church-president" data-type="journal-of-discourses">
+                    <h2 class="title">Counsel Concerning Immigration—Benefits to Be Derived From An Early Start—Crossing the Plains With Handcarts, Etc</h2>
+                    <div class="year">1856</div>
+                    <div class="calling">President of the Church of Jesus Christ of Latter-day Saints</div>
+                    <div class="sources">
+                        <a href="https://archive.org/details/JoDV04/page/n73/mode/1up">Internet Archive (Journal of Discourses)</a>
+                    </div>
+                    <div class="other-source">
+                        <a href="https://journalofdiscourses.com/4/13">JournalOfDiscourses.com</a>
+                    </div>
+                    <div class="teaching-type">Sermon – JoD 4:66-70</div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile jod" data-calling="church-president" data-type="journal-of-discourses">
+                    <h2 class="title">The Gospel Like a Net Cast Into the Sea—Good and Bad in the Church—Embrace Principles in Your Faith, not Men—Confess Only to Those Against Whom You Have Sinned—Economize the Gifts of God, Etc</h2>
+                    <div class="year">1856</div>
+                    <div class="calling">President of the Church of Jesus Christ of Latter-day Saints</div>
+                    <div class="sources">
+                        <a href="https://archive.org/details/JoDV04/page/n82/mode/1up">Internet Archive (Journal of Discourses)</a>
+                    </div>
+                    <div class="other-source">
+                        <a href="https://journalofdiscourses.com/4/15">JournalOfDiscourses.com</a>
+                    </div>
+                    <div class="teaching-type">Sermon – JoD 4:75-80</div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile jod" data-calling="church-president" data-type="journal-of-discourses">
+                    <h2 class="title">Temptation and Trials Necessary to Exaltation—If the Saints Perform Their Obligations, the Lord Will not Fail in His—Handcart Emigration Preferable to that By Ox-Teams</h2>
+                    <div class="year">1856</div>
+                    <div class="calling">President of the Church of Jesus Christ of Latter-day Saints</div>
+                    <div class="sources">
+                        <a href="https://archive.org/details/JoDV04/page/n96/mode/1up">Internet Archive (Journal of Discourses)</a>
+                    </div>
+                    <div class="other-source">
+                        <a href="https://journalofdiscourses.com/4/19">JournalOfDiscourses.com</a>
+                    </div>
+                    <div class="teaching-type">Sermon – JoD 4:89-94</div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile jod" data-calling="church-president" data-type="journal-of-discourses">
+                    <h2 class="title">The Handcart Emigration—Opinions of the Emigrants Concerning It—Females Endure the Journey Better Than Males, Etc</h2>
+                    <div class="year">1856</div>
+                    <div class="calling">President of the Church of Jesus Christ of Latter-day Saints</div>
+                    <div class="sources">
+                        <a href="https://archive.org/details/JoDV04/page/n108/mode/1up">Internet Archive (Journal of Discourses)</a>
+                    </div>
+                    <div class="other-source">
+                        <a href="https://journalofdiscourses.com/4/21">JournalOfDiscourses.com</a>
+                    </div>
+                    <div class="teaching-type">Sermon – JoD 4:101-105</div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile jod" data-calling="church-president" data-type="journal-of-discourses">
+                    <h2 class="title">The Emigrating Saints Were Prompted By The Spirit of God</h2>
+                    <div class="year">1856</div>
+                    <div class="calling">President of the Church of Jesus Christ of Latter-day Saints</div>
+                    <div class="sources">
+                        <a href="https://archive.org/details/JoDV04/page/n118/mode/1up">Internet Archive (Journal of Discourses)</a>
+                    </div>
+                    <div class="other-source">
+                        <a href="https://journalofdiscourses.com/4/23">JournalOfDiscourses.com</a>
+                    </div>
+                    <div class="teaching-type">Sermon – JoD 4:111</div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile jod" data-calling="church-president" data-type="journal-of-discourses">
+                    <h2 class="title">Discord at Meetings Rebuked—A Text for Speakers at the Conference—Subject for the People—A Call for Mules, Horses, Wagons, Teamsters, Flour, Etc</h2>
+                    <div class="year">1856</div>
+                    <div class="calling">President of the Church of Jesus Christ of Latter-day Saints</div>
+                    <div class="sources">
+                        <a href="https://archive.org/details/JoDV04/page/n119/mode/1up">Internet Archive (Journal of Discourses)</a>
+                    </div>
+                    <div class="other-source">
+                        <a href="https://journalofdiscourses.com/4/24">JournalOfDiscourses.com</a>
+                    </div>
+                    <div class="teaching-type">Sermon – JoD 4:112-114</div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile jod" data-calling="church-president" data-type="journal-of-discourses">
+                    <h2 class="title">On the Death of President Jedediah M. Grant</h2>
+                    <div class="year">1856</div>
+                    <div class="calling">President of the Church of Jesus Christ of Latter-day Saints</div>
+                    <div class="sources">
+                        <a href="https://archive.org/details/JoDV04/page/n136/mode/1up">Internet Archive (Journal of Discourses)</a>
+                    </div>
+                    <div class="other-source">
+                        <a href="https://journalofdiscourses.com/4/28">JournalOfDiscourses.com</a>
+                    </div>
+                    <div class="teaching-type">Sermon – JoD 4:129-134</div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile jod" data-calling="church-president" data-type="journal-of-discourses">
+                    <h2 class="title">Prophets Weep Because of the Sins of the People—One Generation Should Improve Upon the Experience of Another—Many Set Their Hearts on Perishable Things—Provisions Are Made for the Exaltation of All—The Spirit Should Rule the Flesh—Limited Knowledge of Man—Phenomenon of Forgetfulness—Natural Philosophy—Emigration</h2>
+                    <div class="year">1857</div>
+                    <div class="calling">President of the Church of Jesus Christ of Latter-day Saints</div>
+                    <div class="sources">
+                        <a href="https://archive.org/details/JoDV04/page/n201/mode/1up">Internet Archive (Journal of Discourses)</a>
+                    </div>
+                    <div class="other-source">
+                        <a href="https://journalofdiscourses.com/4/39">JournalOfDiscourses.com</a>
+                    </div>
+                    <div class="teaching-type">Sermon – JoD 4:194-206</div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile jod" data-calling="church-president" data-type="journal-of-discourses">
+                    <h2 class="title">To Know God is Eternal Life—God the Father of Our Spirits and Bodies—Things Created Spiritually First—Atonement By the Shedding of Blood</h2>
+                    <div class="year">1857</div>
+                    <div class="calling">President of the Church of Jesus Christ of Latter-day Saints</div>
+                    <div class="sources">
+                        <a href="https://archive.org/details/JoDV04/page/n222/mode/1up">Internet Archive (Journal of Discourses)</a>
+                    </div>
+                    <div class="other-source">
+                        <a href="https://journalofdiscourses.com/4/42">JournalOfDiscourses.com</a>
+                    </div>
+                    <div class="teaching-type">Sermon – JoD 4:215-221</div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile jod" data-calling="church-president" data-type="journal-of-discourses">
+                    <h2 class="title">Necessity for Reformation a Disgrace—Intelligence a Gift, Increased By Imparting—Spirit of God—Variety in Spiritual As Well As in Natural Organizations—God the Father of the Spirits of All Mankind—Etc</h2>
+                    <div class="year">1857</div>
+                    <div class="calling">President of the Church of Jesus Christ of Latter-day Saints</div>
+                    <div class="sources">
+                        <a href="https://archive.org/details/JoDV04/page/n271/mode/1up">Internet Archive (Journal of Discourses)</a>
+                    </div>
+                    <div class="other-source">
+                        <a href="https://journalofdiscourses.com/4/50">JournalOfDiscourses.com</a>
+                    </div>
+                    <div class="teaching-type">Sermon – JoD 4:264-272</div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile jod" data-calling="church-president" data-type="journal-of-discourses">
+                    <h2 class="title">Our Relatives, Those Who Do the Will of God—The Elders Should Be As Fathers and Shepherds in Israel, and not As Masters—Self-Confidence, and the Way to Obtain It—The Prophet Joseph not Yet Resurrected—Preaching to the Spirits in Prison, Etc</h2>
+                    <div class="year">1857</div>
+                    <div class="calling">President of the Church of Jesus Christ of Latter-day Saints</div>
+                    <div class="sources">
+                        <a href="https://archive.org/details/JoDV04/page/n286/mode/1up">Internet Archive (Journal of Discourses)</a>
+                    </div>
+                    <div class="other-source">
+                        <a href="https://journalofdiscourses.com/4/52">JournalOfDiscourses.com</a>
+                    </div>
+                    <div class="teaching-type">Sermon – JoD 4:279-291</div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile jod" data-calling="church-president" data-type="journal-of-discourses">
+                    <h2 class="title">He that Loveth Not His Brother Loveth Not God—If We Have Not Confidence in Our Leaders We Shall Not Have It in a Higher Power—The Church Holds the Keys of Salvation—The Providences of God to the Saints</h2>
+                    <div class="year">1857</div>
+                    <div class="calling">President of the Church of Jesus Christ of Latter-day Saints</div>
+                    <div class="sources">
+                        <a href="https://archive.org/details/JoDV04/page/n302/mode/1up">Internet Archive (Journal of Discourses)</a>
+                    </div>
+                    <div class="other-source">
+                        <a href="https://journalofdiscourses.com/4/54">JournalOfDiscourses.com</a>
+                    </div>
+                    <div class="teaching-type">Sermon – JoD 4:295-302</div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile jod" data-calling="church-president" data-type="journal-of-discourses">
+                    <h2 class="title">Object of the Express Carrying Company—Why Success Attends the Ministerial Labors of Some Elders, and Not Those of Others—Counsel to Store Up Grain Enough to Last Seven Years</h2>
+                    <div class="year">1857</div>
+                    <div class="calling">President of the Church of Jesus Christ of Latter-day Saints</div>
+                    <div class="sources">
+                        <a href="https://archive.org/details/JoDV04/page/n309/mode/1up">Internet Archive (Journal of Discourses)</a>
+                    </div>
+                    <div class="other-source">
+                        <a href="https://journalofdiscourses.com/4/55">JournalOfDiscourses.com</a>
+                    </div>
+                    <div class="teaching-type">Sermon – JoD 4:302-308</div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile jod" data-calling="church-president" data-type="journal-of-discourses">
+                    <h2 class="title">The Power and Importance of Economy—Domestic Extravagance and Mismanagement, With Their Bad Results</h2>
+                    <div class="year">1857</div>
+                    <div class="calling">President of the Church of Jesus Christ of Latter-day Saints</div>
+                    <div class="sources">
+                        <a href="https://archive.org/details/JoDV04/page/n319/mode/1up">Internet Archive (Journal of Discourses)</a>
+                    </div>
+                    <div class="other-source">
+                        <a href="https://journalofdiscourses.com/4/57">JournalOfDiscourses.com</a>
+                    </div>
+                    <div class="teaching-type">Sermon – JoD 4:312-320</div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile jod" data-calling="church-president" data-type="journal-of-discourses">
+                    <h2 class="title">Journey to the North—Unanimity and Peaceful Order of the Company—Geographical Character of the Country Traversed—Good Condition and Blessings of the Saints in Zion</h2>
+                    <div class="year">1857</div>
+                    <div class="calling">President of the Church of Jesus Christ of Latter-day Saints</div>
+                    <div class="sources">
+                        <a href="https://archive.org/details/JoDV04/page/n330/mode/1up">Internet Archive (Journal of Discourses)</a>
+                    </div>
+                    <div class="other-source">
+                        <a href="https://journalofdiscourses.com/4/59">JournalOfDiscourses.com</a>
+                    </div>
+                    <div class="teaching-type">Sermon – JoD 4:323-327</div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile jod" data-calling="church-president" data-type="journal-of-discourses">
+                    <h2 class="title">Practical Religion—Simplicity—Temporal Salvation—Advantages of Utah As a Settlement for the Saints—False Reports, Etc</h2>
+                    <div class="year">1857</div>
+                    <div class="calling">President of the Church of Jesus Christ of Latter-day Saints</div>
+                    <div class="sources">
+                        <a href="https://archive.org/details/JoDV04/page/n348/mode/1up">Internet Archive (Journal of Discourses)</a>
+                    </div>
+                    <div class="other-source">
+                        <a href="https://journalofdiscourses.com/4/63">JournalOfDiscourses.com</a>
+                    </div>
+                    <div class="teaching-type">Sermon – JoD 4:341-346</div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile jod" data-calling="church-president" data-type="journal-of-discourses">
+                    <h2 class="title">The Constitution of the United States Guarantees All We Ask—Hollow Gentility—Power of the "Mormon"Leaders—Government Corruption</h2>
+                    <div class="year">1857</div>
+                    <div class="calling">President of the Church of Jesus Christ of Latter-day Saints</div>
+                    <div class="sources">
+                        <a href="https://archive.org/details/JoDV04/page/n352/mode/1up">Internet Archive (Journal of Discourses)</a>
+                    </div>
+                    <div class="other-source">
+                        <a href="https://journalofdiscourses.com/4/64">JournalOfDiscourses.com</a>
+                    </div>
+                    <div class="teaching-type">Sermon – JoD 4:347-352</div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile jod" data-calling="church-president" data-type="journal-of-discourses">
+                    <h2 class="title">Comprehensiveness of True Religion—Sacrifice for the Kingdom of God—The Saints Should Be Superior to the World in All Things—Trust in God, Etc</h2>
+                    <div class="year">1857</div>
+                    <div class="calling">President of the Church of Jesus Christ of Latter-day Saints</div>
+                    <div class="sources">
+                        <a href="https://archive.org/details/JoDV04/page/n361/mode/1up">Internet Archive (Journal of Discourses)</a>
+                    </div>
+                    <div class="other-source">
+                        <a href="https://journalofdiscourses.com/4/66">JournalOfDiscourses.com</a>
+                    </div>
+                    <div class="teaching-type">Sermon – JoD 4:354-360</div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile jod" data-calling="church-president" data-type="journal-of-discourses">
+                    <h2 class="title">Exchange of Feeling and Sentiment Produces Mutual Confidence—Necessity of Cultivating a Childlike Spirit—Devotedness of the Saints in Utah Towards the Work of God—God Will Take Care of His Own Work, Etc</h2>
+                    <div class="year">1857</div>
+                    <div class="calling">President of the Church of Jesus Christ of Latter-day Saints</div>
+                    <div class="sources">
+                        <a href="https://archive.org/details/JoDV04/page/n374/mode/1up">Internet Archive (Journal of Discourses)</a>
+                    </div>
+                    <div class="other-source">
+                        <a href="https://journalofdiscourses.com/4/69">JournalOfDiscourses.com</a>
+                    </div>
+                    <div class="teaching-type">Sermon – JoD 4:367-374</div>
+                </div>
+
+            </section>
+
+            <!-- Books: bookshelf styled like book-collection.html (CSS lives in style.css) -->
+            <section class="books-section" aria-label="Books">
+                <h2 class="section-heading">Books</h2>
+
+                <div class="book-shelves">
+                    <h3 class="shelf-title">Collection</h3>
+                    <div class="shelf">
+                    <a class="spine brigham widtsoe" href="https://archive.org/details/discoursesofbrig028407mbp"
+                       aria-label="Discourses of Brigham Young by John A. Widtsoe, on Internet Archive">
+                        <span class="text">
+                            <span class="title">Discourses of Brigham Young</span>
+                            <span class="author">John A. Widtsoe</span>
+                            <span class="source">Internet Archive</span>
+                        </span>
+                    </a>
+                    </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <script src="../../javascript/prophet-page.js"></script>
+        <script>
+            /* Books tab: makes sure the new view switches on its own (prophet-page.js may already do this). */
+            (function () {
+                var layout = document.querySelector('.page-layout');
+                var tabs = document.querySelectorAll('.view-tabs button');
+                tabs.forEach(function (btn) {
+                    btn.addEventListener('click', function () {
+                        layout.setAttribute('data-view', btn.getAttribute('data-view'));
+                        tabs.forEach(function (b) { b.setAttribute('aria-selected', b === btn ? 'true' : 'false'); });
+                    });
+                });
+            })();
+        </script>
+    </body>
+</html>

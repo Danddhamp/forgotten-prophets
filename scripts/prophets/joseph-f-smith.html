@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <link rel="stylesheet" href="../style.css">
+        <base href="" target="_blank">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>
+            Joseph F. Smith
+        </title>
+    </head>
+    <body class="prophet-page">
+
+        <!-- Previous / next prophet (target="_self" so they open in this tab despite <base target="_blank">).
+             Change the file names below to match your pages. -->
+        <a class="page-arrow page-arrow-prev" href="george-q-cannon.html" target="_self" aria-label="Previous: George Q. Cannon" title="Previous: George Q. Cannon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 4 7 12l8 8"/></svg>
+        </a>
+        <a class="page-arrow page-arrow-next" href="brigham-young-jr.html" target="_self" aria-label="Next: Brigham Young Jr." title="Next: Brigham Young Jr.">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 4 8 8-8 8"/></svg>
+        </a>
+
+        <nav class="top-links">
+            <a href="../../index.html">Home</a>
+            <a href="!prophet-guide.html">Reference Guide</a>
+        </nav>
+
+        <!-- Header: portrait, name, dates and offices -->
+        <header class="prophet-header">
+            <img src="../../media/images/prophets/joseph-f-smith/joseph-f-smith-circa1910.jpg" alt="Joseph F. Smith">
+            <div class="prophet-intro">
+                <h1>Joseph F. Smith</h1>
+                <p class="lifespan">1838-1918</p>
+                <dl class="offices">
+                    <div>
+                        <dt>Counselor in the First Presidency</dt>
+                        <dd>July 1, 1866</dd>
+                    </div>
+                    <div>
+                        <dt>Quorum of the Twelve Apostles</dt>
+                        <dd>August 29, 1877</dd>
+                    </div>
+                    <div>
+                        <dt>Second Counselor in the First Presidency</dt>
+                        <dd>October 10, 1880</dd>
+                    </div>
+                    <div>
+                        <dt>Quorum of the Twelve Apostles</dt>
+                        <dd>July 25, 1887</dd>
+                    </div>
+                    <div>
+                        <dt>Second Counselor in the First Presidency</dt>
+                        <dd>April 7, 1889</dd>
+                    </div>
+                    <div>
+                        <dt>First Counselor in the First Presidency</dt>
+                        <dd>October 6, 1901</dd>
+                    </div>
+                    <div>
+                        <dt>President of the Quorum of the Twelve Apostles</dt>
+                        <dd>October 10, 1901</dd>
+                    </div>
+                    <div>
+                        <dt>President of the Church of Jesus Christ of Latter-day Saints</dt>
+                        <dd>October 17, 1901</dd>
+                    </div>
+                </dl>
+            </div>
+        </header>
+
+        <!-- View tabs -->
+        <div class="view-tabs" role="tablist" aria-label="Page view">
+            <button type="button" role="tab" data-view="all" aria-selected="true">All</button>
+            <button type="button" role="tab" data-view="bio" aria-selected="false">Biography</button>
+            <button type="button" role="tab" data-view="teachings" aria-selected="false">Teachings</button>
+        </div>
+
+        <main class="page-layout" data-view="all">
+
+            <!-- Biography -->
+            <section class="biography-column" aria-label="Biography">
+                <h2>Biography</h2>
+                <div class="bio-text">
+                    <p>Joseph F. Smith died November 1918.</p>
+                </div>
+
+                <h3 class="sources-heading">Sources</h3>
+                <ul class="source-list">
+                    <li><a href=""></a></li>
+                </ul>
+            </section>
+
+            <!-- Teachings: heading, search and filters live here so they sit with the list.
+                 prophet-page.js fills .teachings-left and .teachings-right; the CSS
+                 flattens both into one chronological list. -->
+            <section class="teachings-left" aria-label="Teachings">
+                <h2 class="section-heading">Teachings</h2>
+
+                <div class="filters" id="filters">
+                    <input type="text" id="searchBar" placeholder="Search teachings...">
+
+                    <select id="callingFilter">
+                        <option value="all">All Callings</option>
+                        <option value="apostle">Apostle in Q12</option>
+                        <option value="second-counselor">Second Counselor in the First Presidency</option>
+                    </select>
+
+                    <select id="typeFilter">
+                        <option value="all">All Types</option>
+                        <option value="conference-report">Conference Report</option>
+                        <option value="book">Book</option>
+                        <option value="journal-of-discourses">Journal of Discourses</option>
+                        <option value="misc">Miscellaneous</option>
+                    </select>
+                </div>
+                <p id="teachingCount"></p>
+
+                <!-- Tile -->
+                <div class="teaching-tile" data-calling="apostle" data-type="miscellaneous">
+                    <h2 class="title">Testimony of President Smith. In a talking Machine.</h2>
+                    lds9999 YouTube Channel
+                    <div class="year">1917</div>
+                    <div class="calling">President of the Church</div>
+                    <div class="sources">
+                        <a href="https://www.youtube.com/watch?v=BZcMP6flPuc">YouTube</a>
+                    </div>
+                    <div class="teaching-type">Miscellaneous Content</div>
+                    <div class="topics">
+                        <strong>Topics</strong>
+                    </div>
+                    <div class="scripture-references">
+                        <strong>Scripture References</strong>
+                    </div>
+                </div>
+
+            </section>
+
+            <section class="teachings-right" aria-label="More teachings">
+
+            </section>
+
+        </main>
+
+        <script src="../../javascript/prophet-page.js"></script>
+    </body>
+</html>

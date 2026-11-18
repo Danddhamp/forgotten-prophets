@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <link rel="stylesheet" href="../style.css">
+        <base href="" target="_blank">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>
+            James E. Talmage
+        </title>
+    </head>
+    <body class="prophet-page">
+
+        <!-- Previous / next prophet (target="_self" so they open in this tab despite <base target="_blank">).
+             Change the file names below to match your pages. -->
+        <a class="page-arrow page-arrow-prev" href="joseph-fielding-smith.html" target="_self" aria-label="Previous: Joseph Fielding Smith" title="Previous: Joseph Fielding Smith">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 4 7 12l8 8"/></svg>
+        </a>
+        <a class="page-arrow page-arrow-next" href="hyrum-g-smith.html" target="_self" aria-label="Next: Hyrum G. Smith" title="Next: Hyrum G. Smith">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 4 8 8-8 8"/></svg>
+        </a>
+
+        <nav class="top-links">
+            <a href="../../index.html">Home</a>
+            <a href="!prophet-guide.html">Reference Guide</a>
+        </nav>
+
+        <!-- Header: portrait, name, dates and offices -->
+        <header class="prophet-header">
+            <img src="../../media/images/prophets/james-e-talmage/filler-image.jpg" alt="James E. Talmage">
+            <div class="prophet-intro">
+                <h1>James E. Talmage</h1>
+                <p class="lifespan">1862-1933</p>
+                <dl class="offices">
+                    <div>
+                        <dt>Quorum of the Twelve Apostles</dt>
+                        <dd>December 8, 1911</dd>
+                    </div>
+                </dl>
+            </div>
+        </header>
+
+        <!-- View tabs -->
+        <div class="view-tabs" role="tablist" aria-label="Page view">
+            <button type="button" role="tab" data-view="all" aria-selected="true">All</button>
+            <button type="button" role="tab" data-view="bio" aria-selected="false">Biography</button>
+            <button type="button" role="tab" data-view="teachings" aria-selected="false">Teachings</button>
+            <button type="button" role="tab" data-view="books" aria-selected="false">Books</button>
+        </div>
+
+        <main class="page-layout" data-view="all">
+
+            <!-- Biography -->
+            <section class="biography-column" aria-label="Biography">
+                <h2>Biography</h2>
+                <div class="bio-text">
+                    <p></p>
+                </div>
+
+                <h3 class="sources-heading">Sources</h3>
+                <ul class="source-list">
+                    <li><a href=""></a></li>
+                </ul>
+            </section>
+
+            <!-- Teachings: heading, search and filters live here so they sit with the list.
+                 prophet-page.js fills .teachings-left and .teachings-right; the CSS
+                 flattens both into one chronological list. -->
+            <section class="teachings-left" aria-label="Teachings">
+                <h2 class="section-heading">Teachings</h2>
+
+                <div class="filters" id="filters">
+                    <input type="text" id="searchBar" placeholder="Search teachings...">
+
+                    <select id="callingFilter">
+                        <option value="all">All Callings</option>
+                        <option value="apostle">Apostle in Q12</option>
+                    </select>
+
+                    <select id="typeFilter">
+                        <option value="all">All Types</option>
+                        <option value="conference-report">Conference Report</option>
+                        <option value="book">Book</option>
+                    </select>
+                </div>
+                <p id="teachingCount"></p>
+
+                <!-- Tile -->
+                <div class="teaching-tile" data-calling="apostle" data-type="conference-report">
+                    <h2 class="title">[Title]</h2>
+                    <div class="year">[Year]</div>
+                    <div class="calling">Elder in the Council of the Twelve Apostles</div>
+                    <div class="sources">
+                        <a href="">Internet Archive (Conference Report)</a>
+                    </div>
+                    <div class="teaching-type">Sermon - General Conference ([Reference])</div>
+                    <div class="topics">
+                        <strong>Topics</strong>
+                    </div>
+                    <div class="scripture-references">
+                        <strong>Scripture References</strong>
+                    </div>
+                </div>
+
+            </section>
+
+            <section class="teachings-right" aria-label="More teachings">
+
+                <!-- Tile -->
+                <div class="teaching-tile" data-calling="apostle" data-type="conference-report">
+                    <h2 class="title">[Title]</h2>
+                    <div class="year">[Year]</div>
+                    <div class="calling">Elder in the Council of the Twelve Apostles</div>
+                    <div class="sources">
+                        <a href="">Internet Archive (Conference Report)</a>
+                    </div>
+                    <div class="teaching-type">Sermon - General Conference ([Reference])</div>
+                    <div class="topics">
+                        <strong>Topics</strong>
+                    </div>
+                    <div class="scripture-references">
+                        <strong>Scripture References</strong>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- Books: bookshelf styled like book-collection.html (CSS lives in style.css) -->
+            <section class="books-section" aria-label="Books">
+                <h2 class="section-heading">Books</h2>
+
+                <div class="book-shelves">
+                    <div class="shelf">
+                        <a class="spine talmage" style="--w:90px; --h:345px;" href="https://www.churchofjesuschrist.org/study/manual/jesus-the-christ?lang=eng"
+                           aria-label="Jesus the Christ by James E. Talmage, on ChurchOfJesusChrist.org">
+                            <span class="text">
+                                <span class="title">Jesus the Christ</span>
+                                <span class="author">James E. Talmage</span>
+                                <span class="source">ChurchOfJesusChrist.org</span>
+                            </span>
+                        </a>
+
+                        <a class="spine talmage" style="--w:96px; --h:338px; --title-size:16px;" href="https://archive.org/details/greatapostasycon02talm/mode/1up"
+                           aria-label="The Great Apostasy by James E. Talmage, on Internet Archive">
+                            <span class="text">
+                                <span class="title">The Great Apostasy</span>
+                                <span class="author">James E. Talmage</span>
+                                <span class="source">Internet Archive</span>
+                            </span>
+                        </a>
+
+                        <a class="spine talmage" style="--w:92px; --h:330px;" href="https://www.gutenberg.org/ebooks/42238"
+                           aria-label="Articles of Faith by James E. Talmage, on Project Gutenberg">
+                            <span class="text">
+                                <span class="title">Articles of Faith</span>
+                                <span class="author">James E. Talmage</span>
+                                <span class="source">Project Gutenberg</span>
+                            </span>
+                        </a>
+
+                        <a class="spine talmage" style="--w:84px; --h:335px; --title-size:17px;" href="https://www.gutenberg.org/ebooks/45149"
+                           aria-label="The House of the Lord by James E. Talmage, on Project Gutenberg">
+                            <span class="text">
+                                <span class="title">The House of the Lord</span>
+                                <span class="author">James E. Talmage</span>
+                                <span class="source">Project Gutenberg</span>
+                            </span>
+                        </a>
+
+                        <a class="spine talmage" style="--w:90px; --h:311px; --title-size:17px;" href="https://www.gutenberg.org/ebooks/47182"
+                           aria-label="The Vitality of Mormonism by James E. Talmage, on Project Gutenberg">
+                            <span class="text">
+                                <span class="title">The Vitality of Mormonism</span>
+                                <span class="author">James E. Talmage</span>
+                                <span class="source">Project Gutenberg</span>
+                            </span>
+                        </a>
+
+                        <a class="spine talmage" style="--w:86px; --h:322px;" href="https://www.amazon.com/clp/B004TP2RNA?lv=shuf&amp;channelId=520"
+                           aria-label="The Story of “Mormonism” by James E. Talmage, on Kindle">
+                            <span class="text">
+                                <span class="title">The Story of “Mormonism”</span>
+                                <span class="author">James E. Talmage</span>
+                                <span class="source">Kindle</span>
+                            </span>
+                        </a>
+
+                        <a class="spine talmage" style="--w:90px; --h:307px; --title-size:15px;" href="https://www.gutenberg.org/ebooks/46099"
+                           aria-label="The Vitality of “Mormonism”: An Address by James E. Talmage, on Project Gutenberg">
+                            <span class="text">
+                                <span class="title">The Vitality of “Mormonism”: An Address</span>
+                                <span class="author">James E. Talmage</span>
+                                <span class="source">Project Gutenberg</span>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <script src="../../javascript/prophet-page.js"></script>
+        <script>
+            /* Books tab: makes sure the new view switches on its own (prophet-page.js may already do this). */
+            (function () {
+                var layout = document.querySelector('.page-layout');
+                var tabs = document.querySelectorAll('.view-tabs button');
+                tabs.forEach(function (btn) {
+                    btn.addEventListener('click', function () {
+                        layout.setAttribute('data-view', btn.getAttribute('data-view'));
+                        tabs.forEach(function (b) { b.setAttribute('aria-selected', b === btn ? 'true' : 'false'); });
+                    });
+                });
+            })();
+        </script>
+    </body>
+</html>

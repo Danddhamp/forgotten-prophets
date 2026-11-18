@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <link rel="stylesheet" href="../style.css">
+        <base href="" target="_blank">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>
+            Joseph Fielding Smith
+        </title>
+    </head>
+    <body class="prophet-page">
+
+        <!-- Previous / next prophet (target="_self" so they open in this tab despite <base target="_blank">).
+             Change the file names below to match your pages. -->
+        <a class="page-arrow page-arrow-prev" href="anthony-w-ivins.html" target="_self" aria-label="Previous: Anthony Ivins" title="Previous: Anthony Ivins">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 4 7 12l8 8"/></svg>
+        </a>
+        <a class="page-arrow page-arrow-next" href="james-e-talmage.html" target="_self" aria-label="Next: James E. Talmage" title="Next: James E. Talmage">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 4 8 8-8 8"/></svg>
+        </a>
+
+        <nav class="top-links">
+            <a href="../../index.html">Home</a>
+            <a href="!prophet-guide.html">Reference Guide</a>
+        </nav>
+
+        <!-- Header: portrait, name, dates and offices -->
+        <header class="prophet-header">
+            <img src="../../media/images/prophets/joseph-fielding-smith/joseph-fielding-smith-improvement-era-march1920.jpg" alt="Joseph Fielding Smith">
+            <div class="prophet-intro">
+                <h1>Joseph Fielding Smith</h1>
+                <p class="lifespan">1876-1972</p>
+                <dl class="offices">
+                    <div>
+                        <dt>Quorum of the Twelve Apostles</dt>
+                        <dd>April 7, 1910</dd>
+                    </div>
+                    <div>
+                        <dt>(Acting) President of the Quorum of the Twelve Apostles</dt>
+                        <dd>August 8, 1950</dd>
+                    </div>
+                    <div>
+                        <dt>President of the Quorum of the Twelve Apostles</dt>
+                        <dd>April 9, 1951</dd>
+                    </div>
+                    <div>
+                        <dt>Counselor in the First Presidency</dt>
+                        <dd>October 29, 1965</dd>
+                    </div>
+                    <div>
+                        <dt>President of the Church</dt>
+                        <dd>January 23, 1970</dd>
+                    </div>
+                </dl>
+            </div>
+        </header>
+
+        <!-- View tabs -->
+        <div class="view-tabs" role="tablist" aria-label="Page view">
+            <button type="button" role="tab" data-view="all" aria-selected="true">All</button>
+            <button type="button" role="tab" data-view="bio" aria-selected="false">Biography</button>
+            <button type="button" role="tab" data-view="teachings" aria-selected="false">Teachings</button>
+            <button type="button" role="tab" data-view="books" aria-selected="false">Books</button>
+        </div>
+
+        <main class="page-layout" data-view="all">
+
+            <!-- Biography -->
+            <section class="biography-column" aria-label="Biography">
+                <h2>Biography</h2>
+                <div class="bio-text">
+                    <p></p>
+                </div>
+
+                <h3 class="sources-heading">Sources</h3>
+                <ul class="source-list">
+                    <li><a href=""></a></li>
+                </ul>
+            </section>
+
+            <!-- Teachings: heading, search and filters live here so they sit with the list.
+                 prophet-page.js fills .teachings-left and .teachings-right; the CSS
+                 flattens both into one chronological list. -->
+            <section class="teachings-left" aria-label="Teachings">
+                <h2 class="section-heading">Teachings</h2>
+
+                <div class="filters" id="filters">
+                    <input type="text" id="searchBar" placeholder="Search teachings...">
+
+                    <select id="callingFilter">
+                        <option value="all">All Callings</option>
+                        <option value="apostle">Apostle in Q12</option>
+                    </select>
+
+                    <select id="typeFilter">
+                        <option value="all">All Types</option>
+                        <option value="conference-report">Conference Report</option>
+                        <option value="book">Book</option>
+                    </select>
+                </div>
+                <p id="teachingCount"></p>
+
+                <!-- Tile -->
+                <div class="teaching-tile" data-calling="apostle" data-type="conference-report">
+                    <h2 class="title">[Title]</h2>
+                    <div class="year">[Year]</div>
+                    <div class="calling">Elder in the Council of the Twelve Apostles</div>
+                    <div class="sources">
+                        <a href="">Internet Archive (Conference Report)</a>
+                    </div>
+                    <div class="teaching-type">Sermon - General Conference ([Reference])</div>
+                    <div class="topics">
+                        <strong>Topics</strong>
+                    </div>
+                    <div class="scripture-references">
+                        <strong>Scripture References</strong>
+                    </div>
+                </div>
+
+            </section>
+
+            <section class="teachings-right" aria-label="More teachings">
+
+                <!-- Tile -->
+                <div class="teaching-tile" data-calling="apostle" data-type="conference-report">
+                    <h2 class="title">[Title]</h2>
+                    <div class="year">[Year]</div>
+                    <div class="calling">Elder in the Council of the Twelve Apostles</div>
+                    <div class="sources">
+                        <a href="">Internet Archive (Conference Report)</a>
+                    </div>
+                    <div class="teaching-type">Sermon - General Conference ([Reference])</div>
+                    <div class="topics">
+                        <strong>Topics</strong>
+                    </div>
+                    <div class="scripture-references">
+                        <strong>Scripture References</strong>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- Books: bookshelf styled like book-collection.html (CSS lives in style.css) -->
+            <section class="books-section" aria-label="Books">
+                <h2 class="section-heading">Books</h2>
+
+                <div class="book-shelves">
+                    <div class="shelf">
+                        <a class="spine jfsmith" style="--w:92px; --h:332px; --title-size:15px;" href="https://archive.org/details/doctrinesofsalva01smit"
+                           aria-label="Doctrines of Salvation, Vol. 1 by Joseph Fielding Smith, on Internet Archive">
+                            <span class="text">
+                                <span class="title">Doctrines of Salvation, Vol. 1</span>
+                                <span class="author">Joseph Fielding Smith</span>
+                                <span class="source">Internet Archive</span>
+                            </span>
+                        </a>
+
+                        <a class="spine jfsmith" style="--w:92px; --h:326px; --title-size:15px;" href="https://archive.org/details/doctrinesofsalva03smit"
+                           aria-label="Doctrines of Salvation, Vol. 3 by Joseph Fielding Smith, on Internet Archive">
+                            <span class="text">
+                                <span class="title">Doctrines of Salvation, Vol. 3</span>
+                                <span class="author">Joseph Fielding Smith</span>
+                                <span class="source">Internet Archive</span>
+                            </span>
+                        </a>
+
+                        <a class="spine jfsmith" style="--w:96px; --h:344px; --title-size:15px;" href="https://archive.org/details/JFSDoctrinesOfSalvation"
+                           aria-label="Doctrines of Salvation, Vols. 1–3 by Joseph Fielding Smith, on Internet Archive">
+                            <span class="text">
+                                <span class="title">Doctrines of Salvation, Vols. 1–3</span>
+                                <span class="author">Joseph Fielding Smith</span>
+                                <span class="source">Internet Archive</span>
+                            </span>
+                        </a>
+
+                        <a class="spine jfsmith" style="--w:94px; --h:338px; --title-size:15px;" href="https://archive.org/details/JFSAnswersToGospelQuestionsVol1"
+                           aria-label="Answers to Gospel Questions, Vol. 1 by Joseph Fielding Smith, on Internet Archive">
+                            <span class="text">
+                                <span class="title">Answers to Gospel Questions, Vol. 1</span>
+                                <span class="author">Joseph Fielding Smith</span>
+                                <span class="source">Internet Archive</span>
+                            </span>
+                        </a>
+
+                        <a class="spine jfsmith" style="--w:86px; --h:310px;" href="https://archive.org/details/waytoperfections00smit"
+                           aria-label="The Way to Perfection by Joseph Fielding Smith, on Internet Archive">
+                            <span class="text">
+                                <span class="title">The Way to Perfection</span>
+                                <span class="author">Joseph Fielding Smith</span>
+                                <span class="source">Internet Archive</span>
+                            </span>
+                        </a>
+
+                        <a class="spine jfsmith" style="--w:86px; --h:312px;" href="https://archive.org/details/progressofman0000elde/mode/1up"
+                           aria-label="The Progress of Man by Joseph Fielding Smith, on Internet Archive">
+                            <span class="text">
+                                <span class="title">The Progress of Man</span>
+                                <span class="author">Joseph Fielding Smith</span>
+                                <span class="source">Internet Archive</span>
+                            </span>
+                        </a>
+
+                        <a class="spine jfsmith" style="--w:92px; --h:340px; --title-size:15px;" href="https://www.gutenberg.org/ebooks/45054"
+                           aria-label="Essentials in Church History by Joseph Fielding Smith, on Project Gutenberg">
+                            <span class="text">
+                                <span class="title">Essentials in Church History</span>
+                                <span class="author">Joseph Fielding Smith</span>
+                                <span class="source">Project Gutenberg</span>
+                            </span>
+                        </a>
+
+                        <a class="spine jfsmith" style="--w:84px; --h:331px; --title-size:15px;" href="https://www.gutenberg.org/ebooks/50357"
+                           aria-label="Origin of the “Reorganized” Church by Joseph Fielding Smith, on Project Gutenberg">
+                            <span class="text">
+                                <span class="title">Origin of the “Reorganized” Church</span>
+                                <span class="author">Joseph Fielding Smith</span>
+                                <span class="source">Project Gutenberg</span>
+                            </span>
+                        </a>
+
+                        <a class="spine jfsmith" style="--w:100px; --h:342px; --title-size:15px;" href="https://www.gutenberg.org/ebooks/50535"
+                           aria-label="Blood Atonement and the Origin of Plural Marriage by Joseph Fielding Smith &amp; R. C. Evans, on Project Gutenberg">
+                            <span class="text">
+                                <span class="title">Blood Atonement and the Origin of Plural Marriage</span>
+                                <span class="author">Joseph Fielding Smith &amp; R. C. Evans</span>
+                                <span class="source">Project Gutenberg</span>
+                            </span>
+                        </a>
+
+                        <a class="spine jfsmith" style="--w:88px; --h:303px; --title-size:17px;" href="https://www.gutenberg.org/ebooks/52840"
+                           aria-label="Salvation Universal by Joseph Fielding Smith, on Project Gutenberg">
+                            <span class="text">
+                                <span class="title">Salvation Universal</span>
+                                <span class="author">Joseph Fielding Smith</span>
+                                <span class="source">Project Gutenberg</span>
+                            </span>
+                        </a>
+
+                        <a class="spine jfsmith" style="--w:88px; --h:312px; --title-size:15px;" href="https://babel.hathitrust.org/cgi/pt?id=inu.30000084063720&amp;seq=11"
+                           aria-label="Life of Joseph F. Smith by Joseph Fielding Smith, on HathiTrust">
+                            <span class="text">
+                                <span class="title">Life of Joseph F. Smith</span>
+                                <span class="author">Joseph Fielding Smith</span>
+                                <span class="source">HathiTrust</span>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <script src="../../javascript/prophet-page.js"></script>
+        <script>
+            /* Books tab: makes sure the new view switches on its own (prophet-page.js may already do this). */
+            (function () {
+                var layout = document.querySelector('.page-layout');
+                var tabs = document.querySelectorAll('.view-tabs button');
+                tabs.forEach(function (btn) {
+                    btn.addEventListener('click', function () {
+                        layout.setAttribute('data-view', btn.getAttribute('data-view'));
+                        tabs.forEach(function (b) { b.setAttribute('aria-selected', b === btn ? 'true' : 'false'); });
+                    });
+                });
+            })();
+        </script>
+    </body>
+</html>

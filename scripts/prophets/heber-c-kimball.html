@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <link rel="stylesheet" href="../style.css">
+        <base href="" target="_blank">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>
+            Heber C. Kimball
+        </title>
+    </head>
+    <body class="prophet-page">
+
+        <!-- Previous / next prophet (target="_self" so they open in this tab despite <base target="_blank">).
+             Change the file names below to match your pages. -->
+        <a class="page-arrow page-arrow-prev" href="brigham-youngsr.html" target="_self" aria-label="Previous: Brigham Young Sr." title="Previous: Brigham Young Sr.">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 4 7 12l8 8"/></svg>
+        </a>
+        <a class="page-arrow page-arrow-next" href="orson-hyde.html" target="_self" aria-label="Next: Orson Hyde" title="Next: Orson Hyde">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 4 8 8-8 8"/></svg>
+        </a>
+
+        <nav class="top-links">
+            <a href="../../index.html">Home</a>
+            <a href="!prophet-guide.html">Reference Guide</a>
+        </nav>
+
+        <!-- Header: portrait, name, dates and offices -->
+        <header class="prophet-header">
+            <img src="../../media/images/prophets/heber-c-kimball/heber-c-kimball-circa1860.jpg" alt="Heber C. Kimball">
+            <div class="prophet-intro">
+                <h1>Heber C. Kimball</h1>
+                <p class="lifespan">1801-1868</p>
+                <dl class="offices">
+                    <div>
+                        <dt>Quorum of the Twelve Apostles</dt>
+                        <dd>February 14, 1835</dd>
+                    </div>
+                    <div>
+                        <dt>Ordained First Counselor in the First Presidency</dt>
+                        <dd>December 27, 1847</dd>
+                    </div>
+                </dl>
+            </div>
+        </header>
+
+        <!-- View tabs -->
+        <div class="view-tabs" role="tablist" aria-label="Page view">
+            <button type="button" role="tab" data-view="all" aria-selected="true">All</button>
+            <button type="button" role="tab" data-view="bio" aria-selected="false">Biography</button>
+            <button type="button" role="tab" data-view="teachings" aria-selected="false">Teachings</button>
+        </div>
+
+        <main class="page-layout" data-view="all">
+
+            <!-- Biography -->
+            <section class="biography-column" aria-label="Biography">
+                <h2>Biography</h2>
+                <div class="bio-text">
+                    <p></p>
+                </div>
+
+                <h3 class="sources-heading">Sources</h3>
+                <ul class="source-list">
+                    <li><a href=""></a></li>
+                </ul>
+            </section>
+
+            <!-- Teachings: heading, search and filters live here so they sit with the list.
+                 prophet-page.js fills .teachings-left and .teachings-right; the CSS
+                 flattens both into one chronological list. -->
+            <section class="teachings-left" aria-label="Teachings">
+                <h2 class="section-heading">Teachings</h2>
+
+                <div class="filters" id="filters">
+                    <input type="text" id="searchBar" placeholder="Search teachings...">
+
+                    <select id="callingFilter">
+                        <option value="all">All Callings</option>
+                        <option value="apostle">Apostle in Q12</option>
+                        <option value="church-president">President of the Church</option>
+                    </select>
+
+                    <select id="typeFilter">
+                        <option value="all">All Types</option>
+                        <option value="conference-report">Conference Report</option>
+                        <option value="book">Book</option>
+                    </select>
+                </div>
+                <p id="teachingCount"></p>
+
+                <!-- Tile -->
+                <div class="teaching-tile" data-calling="" data-type="">
+                    <h2 class="title"></h2>
+                    <div class="year"></div>
+                    <div class="calling"></div>
+                    <div class="sources">
+                        <a href=""></a>
+                    </div>
+                    <div class="teaching-type"></div>
+                    <div class="topics">
+                        <strong>Topics</strong>
+                    </div>
+                    <div class="scripture-references">
+                        <strong>Scripture References</strong>
+                    </div>
+                </div>
+
+            </section>
+
+            <section class="teachings-right" aria-label="More teachings">
+
+                <!-- Tile -->
+                <div class="teaching-tile" data-calling="" data-type="">
+                    <h2 class="title"></h2>
+                    <div class="year"></div>
+                    <div class="calling"></div>
+                    <div class="sources">
+                        <a href=""></a>
+                    </div>
+                    <div class="teaching-type"></div>
+                    <div class="topics">
+                        <strong>Topics</strong>
+                    </div>
+                    <div class="scripture-references">
+                        <strong>Scripture References</strong>
+                    </div>
+                </div>
+
+                <!-- Tile -->
+                <div class="teaching-tile" data-calling="" data-type="">
+                    <h2 class="title"></h2>
+                    <div class="year"></div>
+                    <div class="calling"></div>
+                    <div class="sources">
+                        <a href=""></a>
+                    </div>
+                    <div class="teaching-type"></div>
+                    <div class="topics">
+                        <strong>Topics</strong>
+                    </div>
+                    <div class="scripture-references">
+                        <strong>Scripture References</strong>
+                    </div>
+                </div>
+
+            </section>
+
+        </main>
+
+        <script src="../../javascript/prophet-page.js"></script>
+    </body>
+</html>
