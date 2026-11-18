@@ -68,3 +68,19 @@ if (pageLayout && tabButtons.length) {
     tabButtons.forEach(b => b.addEventListener('click', () => setView(b.dataset.view)));
     setView('all');
 }
+
+// Left/right arrow keys go to the previous/next prophet
+document.addEventListener('keydown', (e) => {
+    // Don't hijack arrows while typing in the search bar or using a dropdown
+    const tag = document.activeElement.tagName;
+    if (tag === 'INPUT' || tag === 'SELECT' || tag === 'TEXTAREA') return;
+
+    // Leave browser shortcuts alone (e.g. Alt+Left = back)
+    if (e.altKey || e.ctrlKey || e.metaKey || e.shiftKey) return;
+
+    if (e.key === 'ArrowLeft') {
+        document.querySelector('.page-arrow-prev')?.click();
+    } else if (e.key === 'ArrowRight') {
+        document.querySelector('.page-arrow-next')?.click();
+    }
+});
