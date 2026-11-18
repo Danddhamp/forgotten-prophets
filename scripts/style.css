@@ -57,7 +57,7 @@ th a, td a { color: #e3b86b; }
    Backgrounds are no longer filled, so nothing looks like a box. */
 
 .collections        { --accent: #d9f1f0; }
-.gc                 { --accent: #c4a27a; }  /* latte */
+.gc                 { --accent: #deddda; }  /* latte */
 .apostle            { --accent: #d08a4e; }  /* copper */
 .president          { --accent: #e3b86b; }  /* honey */
 .hc                 { --accent: #e4a773; }
