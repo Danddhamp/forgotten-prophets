@@ -57,7 +57,7 @@ th a, td a { color: #e3b86b; }
    Backgrounds are no longer filled, so nothing looks like a box. */
 
 .collections        { --accent: #d9f1f0; }
-.gc                 { --accent: #deddda; }  /* latte */
+.gc                 { --accent: #4f93eb; }  /* latte */
 .apostle            { --accent: #d08a4e; }  /* copper */
 .president          { --accent: #e3b86b; }  /* honey */
 .hc                 { --accent: #e4a773; }
@@ -68,7 +68,7 @@ th a, td a { color: #e3b86b; }
 .impera             { --accent: #c70606; }
 .mesadvo            { --accent: #27f461; }
 .jod                { --accent: #FFD700; }
-.hymn               { --accent: #9c7a4f; }
+.hymn               { --accent: #7851A9; }
 .book               { --accent: #d6b48a; }
 .the-seer           { --accent: #a322df; }
 .frontier-guardian  { --accent: #c79a5e; }
@@ -908,4 +908,22 @@ body.prophet-page {
 
 @media (prefers-reduced-motion: reduce) {
     .prophet-page .book-shelves .spine { transition: none; }
+}
+
+/* Photo Images, Rights, Etc. */
+.portrait {
+    margin: 0;
+    width: 200px;          /* matches the img width */
+}
+.portrait figcaption {
+    margin-top: 6px;
+    font-size: 13px;
+    line-height: 1.4;
+    color: var(--muted);
+    text-align: center;
+}
+.portrait .image-rights {
+    display: block;
+    font-size: 12px;
+    opacity: 0.8;
 }
