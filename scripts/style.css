@@ -68,6 +68,7 @@ th a, td a { color: #e3b86b; }
 .impera             { --accent: #c70606; }
 .mesadvo            { --accent: #27f461; }
 .jod                { --accent: #FFD700; }
+.e-journal            { --accent: #92eaf0; }
 .hymn               { --accent: #7851A9; }
 .book               { --accent: #d6b48a; }
 .the-seer           { --accent: #a322df; }
@@ -926,4 +927,14 @@ body.prophet-page {
     display: block;
     font-size: 12px;
     opacity: 0.8;
+}
+
+.featured {
+    font-size: 18px;
+    margin: 2px 0 14px;
+    color: var(--muted);
+    font-style: italic;
+}
+.calling + .featured {
+    margin-top: -10px; 
 }
