@@ -1,17 +1,17 @@
 /* =====================================================
-   Brown palette restyle
+   Blue palette restyle
    - Boxes removed: entries are open, bulleted list items
-   - Source-type color coding kept, now as shades of brown
+   - Source-type color coding kept, now as shades of blue
      applied to the bullet, title and links
    ===================================================== */
 
 :root {
-    --bg: #241810;          /* espresso */
-    --ink: #ead9bf;         /* parchment */
-    --muted: #b39b7d;       /* weathered tan */
-    --rule: #4a3626;        /* dark leather seam */
-    --panel: #2f2016;       /* only used for table cells + inputs */
-    --accent: #c4a27a;      /* default bullet/link color (latte) */
+    --bg: #101a2b;          /* deep navy */
+    --ink: #d9e4f2;         /* pale ice */
+    --muted: #8fa6c4;       /* slate blue */
+    --rule: #263a56;        /* dark steel seam */
+    --panel: #16233a;       /* only used for table cells + inputs */
+    --accent: #7fa8d9;      /* default bullet/link color (sky) */
 }
 
 body {
@@ -22,13 +22,13 @@ body {
     line-height: 1.5;
 }
 
-a { color: #e3b86b; }
-a:hover { color: #f3d08f; }
+a { color: #7ab8f5; }
+a:hover { color: #a8d2fb; }
 
 h1 {
     font-size: 70px;
     margin-bottom: 0;
-    color: #f1e2c8;
+    color: #eaf2fc;
 }
 h2 { font-size: 40px; }
 h3 { color: var(--muted); font-weight: normal; margin: 4px 0; }
@@ -50,17 +50,17 @@ th, td {
     color: var(--ink);
     padding: 6px 10px;
 }
-th a, td a { color: #e3b86b; }
+th a, td a { color: #7ab8f5; }
 
 /* ---------- Source-type color coding ----------
    These classes now only set --accent (bullet, title, links).
    Backgrounds are no longer filled, so nothing looks like a box. */
 
 .collections        { --accent: #d9f1f0; }
-.gc                 { --accent: #4f93eb; }  /* latte */
-.apostle            { --accent: #d08a4e; }  /* copper */
-.president          { --accent: #e3b86b; }  /* honey */
-.hc                 { --accent: #e4a773; }
+.gc                 { --accent: #4f93eb; }
+.apostle            { --accent: #5a7fd6; }
+.president          { --accent: #8ec5f5; }  /* sky blue */
+.hc                 { --accent: #7d9de0; }
 .ems                { --accent: #de62c5; }
 .timeseason         { --accent: #cde650; }
 .standardworks      { --accent: #12bde8; }
@@ -70,30 +70,30 @@ th a, td a { color: #e3b86b; }
 .jod                { --accent: #FFD700; }
 .e-journal            { --accent: #92eaf0; }
 .hymn               { --accent: #7851A9; }
-.book               { --accent: #d6b48a; }
+.book               { --accent: #a9c4e8; }
 .the-seer           { --accent: #a322df; }
-.frontier-guardian  { --accent: #c79a5e; }
-.the-contributer    { --accent: #a8704a; }
-.the-peoples-organ  { --accent: #b5a07a; }
-.gospel-light       { --accent: #e0a85a; }
-.louisluminary      { --accent: #9e5a3c; }
-.wasp               { --accent: #dcb25e; }
-.chc                { --accent: #a89078; }
-.misc               { --accent: #b0674a; }
-.gcldsorg           { --accent: #c8944f; }
-.byu-speeches       { --accent: #c9a67a; }
-.first-presidency   { --accent: #cf9d6a; }
-.otherprophet       { --accent: #b9926c; }
-.epistle-background { --accent: #c08a5c; }
-.biography          { --accent: #c4a27a; }
+.frontier-guardian  { --accent: #4a86c7; }
+.the-contributer    { --accent: #3f6fa8; }
+.the-peoples-organ  { --accent: #9fb4cf; }
+.gospel-light       { --accent: #6bb0e8; }
+.louisluminary      { --accent: #3a5f94; }
+.wasp               { --accent: #84b7e0; }
+.chc                { --accent: #8497b3; }
+.misc               { --accent: #4c78b5; }
+.gcldsorg           { --accent: #5fa0d6; }
+.byu-speeches       { --accent: #94b6e3; }
+.first-presidency   { --accent: #6c9bd6; }
+.otherprophet       { --accent: #7aa3c9; }
+.epistle-background { --accent: #5689bd; }
+.biography          { --accent: #7fa8d9; }
 
 /* Combined classes (e.g. apostle + byu-speeches) share one tone */
 .apostle.byu-speeches,
 .first-presidency.byu-speeches,
-.president.byu-speeches { --accent: #c9a67a; }
+.president.byu-speeches { --accent: #94b6e3; }
 
 .funfact {
-    color: #f1e2c8;
+    color: #eaf2fc;
     font-size: larger;
 }
 
@@ -242,9 +242,9 @@ th a, td a { color: #e3b86b; }
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background-color: #6b4a2f;
-    color: #f1e2c8;
-    border: 1px solid #c4a27a;
+    background-color: #2f5a94;
+    color: #eaf2fc;
+    border: 1px solid #7fa8d9;
     font-size: 24px;
     cursor: pointer;
 }
@@ -265,7 +265,7 @@ th a, td a { color: #e3b86b; }
     background: transparent;
     color: var(--ink);
     border: none;
-    border-bottom: 2px solid #8a6a4a;
+    border-bottom: 2px solid #4f739f;
     border-radius: 0;
 }
 .filters select option { background: var(--bg); color: var(--ink); }
@@ -273,7 +273,7 @@ th a, td a { color: #e3b86b; }
 .filters select:focus,
 .filters input:focus {
     outline: none;
-    border-bottom-color: #e3b86b;
+    border-bottom-color: #7ab8f5;
 }
 
 /* ---------- Prophet page layout ---------- */
@@ -311,13 +311,13 @@ th a, td a { color: #e3b86b; }
 }
 .biography-column h2 {
     margin: 0 0 15px;
-    color: #f1e2c8;
+    color: #eaf2fc;
 }
 .biography-column hr {
     border: none;
     border-top: 1px solid var(--rule);
 }
-.biography-column a { color: #e3b86b; }
+.biography-column a { color: #7ab8f5; }
 
 @media (max-width: 1000px) {
     .page-layout {
@@ -371,8 +371,8 @@ th a, td a { color: #e3b86b; }
 .view-tabs button:hover { color: var(--ink); }
 .view-tabs button[aria-selected="true"] {
     background: transparent;
-    color: #f1e2c8;
-    border-bottom-color: #e3b86b;
+    color: #eaf2fc;
+    border-bottom-color: #7ab8f5;
 }
 
 /* Biography only: single centered column */
@@ -412,9 +412,9 @@ th a, td a { color: #e3b86b; }
    ===================================================================== */
 
 .prophet-page {
-    --ink-strong: #f6ead2;
-    --field: #8a6a4a;       /* underline on inputs */
-    --link: #e3b86b;        /* honey */
+    --ink-strong: #f2f7fd;
+    --field: #4f739f;       /* underline on inputs */
+    --link: #7ab8f5;        /* sky blue */
 }
 .prophet-page *,
 .prophet-page *::before,
@@ -428,7 +428,7 @@ body.prophet-page {
     line-height: 1.5;
 }
 .prophet-page a { text-underline-offset: 3px; }
-.prophet-page a:hover { color: #f6d79b; }
+.prophet-page a:hover { color: #a8d2fb; }
 .prophet-page :focus-visible {
     outline: 2px solid var(--link);
     outline-offset: 3px;
@@ -466,7 +466,7 @@ body.prophet-page {
     width: 200px;
     height: auto;
     padding: 6px;
-    background: #33231a;
+    background: #182741;
     border: 1px solid var(--rule);
     border-radius: 0;
 }
@@ -802,10 +802,10 @@ body.prophet-page {
 .prophet-page .page-layout[data-view="books"] .teachings-right { display: none; }
 
 .prophet-page .book-shelves {
-    --wood: #5a3d27;
-    --wood-dark: #3b2718;
+    --wood: #34506f;
+    --wood-dark: #1f3047;
     --gold: #d6b25e;
-    --page-text: #f1e7d0;
+    --page-text: #e6eef9;
     text-align: left;
 }
 .prophet-page .book-shelves .shelf-title {
@@ -905,7 +905,7 @@ body.prophet-page {
 .prophet-page .book-shelves .widtsoe { --c1: #1f3a68; --c2: #0f1d36; }
 .prophet-page .book-shelves .whitney { --c1: #7a2f5a; --c2: #431730; }
 .prophet-page .book-shelves .talmage { --c1: #36424d; --c2: #1d252c; }
-.prophet-page .book-shelves .jfsmith { --c1: #8a4219; --c2: #4d2309; }
+.prophet-page .book-shelves .jfsmith { --c1: #2f6fa3; --c2: #173a57; }
 
 @media (prefers-reduced-motion: reduce) {
     .prophet-page .book-shelves .spine { transition: none; }
@@ -936,5 +936,5 @@ body.prophet-page {
     font-style: italic;
 }
 .calling + .featured {
-    margin-top: -10px; 
+    margin-top: -10px;
 }
